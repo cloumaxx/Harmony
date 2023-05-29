@@ -1,0 +1,4 @@
+crear pantalla 
+    python manage.py startapp (nombre de la app)
+    Ej:
+    python manage.py startapp pantalla_inicial
