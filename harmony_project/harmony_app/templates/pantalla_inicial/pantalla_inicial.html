@@ -1,9 +1,4 @@
 {% load static %}
-
-
-
-
-
 <html>
     <head>
         <title>Harmony</title>
@@ -14,12 +9,11 @@
     </head>
     <body>
         <div>
-            <header></header>
-            <ul class="nav nav-tabs" style="background: #FAC2E5;">
-                <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
-            </ul>
+            <header>
+                {% include 'navbar.html' %}
+
+            </header>
+            
             <main>
                 <div class="container">
                     <div class="row">
@@ -29,7 +23,9 @@
                                 <button class="btn btn-primary" type="button" style="background: #D9D9D9;">Button</button></div>
                         </div>
                         <div class="col-md-6">
-                            <div style="margin-top: 10%;"><input class="placeholder" type="text"></div>
+                            <div style="margin-top: 10%;">
+                                <input class="placeholder" type="text">
+                            </div>
                         </div>
                     </div>
                 </div>

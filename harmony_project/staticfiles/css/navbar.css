@@ -1,0 +1,15 @@
+#logoNavbar{
+    width: 20%; 
+    height: 15%; 
+}
+#navBarContent{
+    background-color: #FAC2E5;
+}
+.half-colored-heading {
+    display: inline-block;
+    background: linear-gradient(to right, #930E61 50%, black 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font: 'Open Sans';
+}
