@@ -7,3 +7,6 @@ def pantalla_inicial(request):
 
 def pantalla_login(request):
     return render(request, "pantalla_login/pantalla_login.html")
+
+def pantalla_registro(request):
+    return render(request, "pantalla_registro/pantalla_registro.html")
