@@ -1,0 +1,37 @@
+#logoNavbar {
+    width: 20%;
+    height: 15%;
+}
+
+#logoNavbar2 {
+    width: auto;
+    height: auto;
+}
+
+#navBarContent {
+    background-color: #FAC2E5;
+}
+
+.half-colored-heading {
+    display: inline-block;
+    background: linear-gradient(to right, #930E61 50%, black 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font: 'Open Sans';
+}
+
+#textNavbarPrin p{
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 41px;
+
+    color: red;
+
+}
+#navitemx{
+
+}

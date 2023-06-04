@@ -1,0 +1,60 @@
+{% load static %}
+<link rel="stylesheet" href="{% static '/css/navbar.css' %}">
+
+<nav id="navBarContent" class="navbar navbar-light navbar-expand-md">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img id="logoNavbar" src="{% static '/images/logo_harmony.png'  %}">
+      <h1 class="half-colored-heading">
+        Harmony
+      </h1>
+    </a>
+
+    <div class="collapse navbar-collapse">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Chat</a>
+        </li>
+        <li style="text-align: center;  " class="nav-item">
+          <a class="nav-link active" href="#">Foro</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle nav-link" aria-expanded="false"
+            data-bs-toggle="dropdown" >Usuarios 
+            <img style="width: 20%;" src="{% static '/images/logo_harmony.png'  %}">
+
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">First Item</a>
+            <a class="dropdown-item" href="#">Second Item</a>
+            <a class="dropdown-item" href="#">Third Item</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--
+
+<nav class="navbar navbar-light navbar-expand-md">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Brand</a>
+    <button class="navbar-toggler"
+      data-bs-toggle="collapse" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
+        class="navbar-toggler-icon"></span></button>
+    <div id="navcol-1" class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#">Chat</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Foro</a></li>
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle nav-link" aria-expanded="false"
+            data-bs-toggle="dropdown" href="#">Usuarios <img /></a>
+          <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item"
+              href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -- >
