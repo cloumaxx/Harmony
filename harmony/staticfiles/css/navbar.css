@@ -32,6 +32,11 @@
     color: red;
 
 }
-#navitemx{
+.nav-item {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+}
 
+.nav-link {
+    font-size: 100px; /* Tamaño del texto */
 }
