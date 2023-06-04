@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <html>
     <head>
         <title>Registrate</title>
@@ -25,56 +24,40 @@
                                 Registrate
                             </h1>
                         </div>
-                        <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ejem: marian03">
+                        <form method="POST" action="{% url 'pantalla_registro' %}">
+                            {% csrf_token %}
+                            <label for="id_nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="id_nombre" name="nombre" aria-describedby="emailHelp" placeholder="Ejem: marian03">
 
-                        <label for="exampleInputEmail1" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ejem: marian03">
+                            <label for="id_apellido" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="id_apellido" name="apellido" aria-describedby="emailHelp" placeholder="Ejem: marian03">
                         
-                        <label for="exampleInputEmail1" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ejem: marian03">
-                        
-                        <label for="exampleInputEmail1" class="form-label">Correo</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ejem: marian03">
+                            <label for="id_correo" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="id_correo" name="correo" aria-describedby="emailHelp" placeholder="Ejem: marian03">
 
-                        <label for="exampleInputEmail1" class="form-label">Fecha de Nacimiento</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ejem: marian03">
-
-                        <label for="disabledSelect" class="form-label">Genero</label>
-                        <select id="disabledSelect" class="form-select">
-                            <option>F</option>
-                            <option>M</option>
-                        </select>
-                        <label for="exampleInputEmail1" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="id_clave" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="id_clave" name="clave" aria-describedby="emailHelp">
                         
-                        <label for="exampleInputEmail1" class="form-label">Confirmar Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <br><br>
-                    <div class="buttons"></div>
-                        <div class="action_btn">
+                            <label for="id_edad" class="form-label">Edad</label>
+                            <input type="number" class="form-control" id="id_edad" name="edad" aria-describedby="emailHelp">
 
-                            <a href="{% url 'pantalla_inicial' %}">
-                                <button class="btn btn-primary " id="custom-register-button"><p id="text_button">Entrar</p></button>
-    
-                            </a>
-                        
-                            <a href="{% url 'pantalla_inicial' %}">
-                                <button class="btn btn-primary " id="custom-cancel-button"><p id="text_button2">Cancelar</p> </button>
-                            </a>
-                
-                            <p id="saved"></p>
-                
-                        </div>
+                            <br><br>
+                            <div class="buttons"></div>
+                            <div class="action_btn">
+                                <button type="submit" class="btn btn-primary" id="custom-register-button">
+                                    <p id="text_button">Registrarse</p>
+                                </button>
+                                <a href="{% url 'pantalla_inicial' %}">
+                                    <button class="btn btn-primary" id="custom-cancel-button">
+                                        <p id="text_button2">Cancelar</p>
+                                    </button>
+                                </a>
+                                <p id="saved"></p>
+                            </div>
+                        </form>
                     </div>
-                    </div>
-                    
-                       
-                   
-                    
                 </div>
             </main>
-            <footer></footer>
         </div>
     </body>
 </html>

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+import ssl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,9 +77,17 @@ WSGI_APPLICATION = "harmony_project.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'HarmonyDB',
+        'ENFORCE_SCHEMA': True,
+        'CLIENT': {
+            'host': 'mongodb+srv://alvearmutis:rn6u9fDDZ8WoDErT@cluster.lq0jp3j.mongodb.net/?retryWrites=true&w=majority',
+            'retryWrites': True,
+            'w': 'majority',
+            'ssl': True,
+            'ssl_cert_reqs': ssl.CERT_NONE
+        }
     }
 }
 
