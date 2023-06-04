@@ -1,0 +1,81 @@
+.centered-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 30%;
+    background: linear-gradient(208.36deg, #FC72FF 0%, #EBE0E7 100%);
+    border-radius: 50px;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+}
+
+.container img {
+    display: inline-block;
+    height: 50%;
+}
+
+.half-colored-heading {
+    display: inline-block;
+    background: linear-gradient(to right, #930E61 50%, black 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+#custom-register-button {
+    background: #960F62;
+    border-color: #FAC2E5;
+    width: 40%;
+    height: 5%;
+    border-radius: 30px 30px 30px 30px;
+}
+
+#custom-cancel-button {
+    background: #FAC2E5;
+    border-color: #960F62;
+    width: 40%;
+    height: 5%;
+    text-decoration-color: #960F62;
+    border-radius: 30px 30px 30px 30px;
+}
+
+#text_button {
+    font-family: 'Open Sans';
+    font-size: 1.8em;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+#text_button2 {
+    font-family: 'Open Sans';
+    font-size: 1.8em;
+    text-align: center;
+    color: #960F62;
+
+}
+
+#img_logo{
+    padding-top: 0%;
+    width: 80%;
+    height: auto;
+}
+
+.buttons {
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+    display: inline;}
+
+.action_btn {
+    text-align: center;
+    width: 100px;
+    margin: 0 auto;
+    display: inline;}
