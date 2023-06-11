@@ -1,0 +1,22 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" value="{{ usuario_id.nombre }}"><br><br>
+    
+    <label for="apellido">Apellido:</label>
+    <input type="text" name="apellido" value="{{ usuario_id.apellido }}"><br><br>
+    
+    <label for="correo">Correo:</label>
+    <input type="email" name="correo" value="{{ usuario_id.correo }}"><br><br>
+    
+    <label for="genero">Género:</label>
+    <select name="genero">
+        <option value="H" {% if usuario_id.genero == 'H' %}selected{% endif %}>Hombre</option>
+        <option value="M" {% if usuario_id.genero == 'M' %}selected{% endif %}>Mujer</option>
+    </select><br><br>
+    
+    <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+    <input type="date" name="fecha_nacimiento" value="{{ usuario_id.fecha_nacimiento|date:'Y-m-d' }}"><br><br>
+    
+    <input type="submit" value="Guardar cambios">
+</form>

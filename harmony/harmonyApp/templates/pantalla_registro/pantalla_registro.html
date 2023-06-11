@@ -37,17 +37,23 @@
 
                             <label for="id_clave" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="id_clave" name="clave" aria-describedby="emailHelp">
-                        
-                            <label for="id_edad" class="form-label">Edad</label>
-                            <input type="number" class="form-control" id="id_edad" name="edad" aria-describedby="emailHelp">
-
+                            
+                            <label for="id_genero" class="form-label">Género</label>
+                            <select class="form-control" id="id_genero" name="genero">
+                                <option value="" disabled selected>Selecciona tu género</option>
+                                <option value="H">Hombre</option>
+                                <option value="M">Mujer</option>
+                            </select>
+                            
+                            <label for="id_fecha_nacimiento" class="form-label">Cuando naciste</label>
+                            <input type="date" class="form-control" id="id_fecha_nacimiento" name="fecha_nacimiento" aria-describedby="emailHelp">
                             <br><br>
                             <div class="buttons"></div>
                             <div class="action_btn">
                                 <button type="submit" class="btn btn-primary" id="custom-register-button">
                                     <p id="text_button">Registrarse</p>
                                 </button>
-                                <a href="{% url 'pantalla_inicial' %}">
+                                <a href="{% url 'pantalla_login' %}">
                                     <button class="btn btn-primary" id="custom-cancel-button">
                                         <p id="text_button2">Cancelar</p>
                                     </button>

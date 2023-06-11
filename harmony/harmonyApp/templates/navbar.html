@@ -69,12 +69,12 @@
         </li>
         <li class="nav-item dropdown">
           <a class="dropdown-toggle nav-link" aria-expanded="false"
-            data-bs-toggle="dropdown" >Usuarios 
+            data-bs-toggle="dropdown" >Usuario 
             <img style="width: 20%;" src="{% static '/images/logo_harmony.png'  %}">
 
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" >Usuario</a>
+            <a class="dropdown-item"  href="{% url 'pantalla_perfil_usuario' usuario_id=usuario_id %}">Usuario</a>
             <a class="dropdown-item" >Mi perfil</a>
             <a class="dropdown-item" >Mi actividad </a>
             <a class="dropdown-item" id="bton_CerrarSesion" >Cerrar sesion </a>
