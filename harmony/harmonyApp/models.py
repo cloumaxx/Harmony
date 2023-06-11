@@ -6,7 +6,6 @@ class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     correo = models.EmailField(max_length=100)
-    #clave = models.CharField(max_length=10)
     fecha_nacimiento = models.DateField()
     genero = models.CharField(max_length=1)
 

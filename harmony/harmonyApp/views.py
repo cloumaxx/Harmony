@@ -1,19 +1,21 @@
-import datetime
+from datetime import datetime
 from imaplib import _Authenticator
 from bson import ObjectId
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from pymongo import MongoClient
 from harmonyApp.models import Credenciales, Usuario
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .forms import LoginForm
+from dateutil import parser
+
 
 # Create your views here.
 
-def pantalla_inicial(request,id):
-    return render(request, "pantalla_inicial/pantalla_inicial.html",{"id": id})
+def pantalla_inicial(request,usuario_id ):
+    return render(request, "pantalla_inicial/pantalla_inicial.html",{"usuario_id": usuario_id })
 
 def pantalla_login(request):
     db_connection = MongoDBConnection()  # Crear una instancia de la clase MongoDBConnection
@@ -30,7 +32,7 @@ def pantalla_login(request):
             
             if user is not None:
                 user_id = str(user['_id'])
-                return redirect('pantalla_inicial',id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
+                return redirect('pantalla_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
             else:
                 form.add_error(None, 'Credenciales inválidas')
     else:
@@ -45,13 +47,18 @@ def pantalla_registro(request):
         correo = request.POST.get('correo')
         clave = request.POST.get('clave')
         genero = request.POST.get('genero')
-        fecha_nacimiento = request.POST.get('fecha_nacimiento')
+        fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
+
+        # Convertir la cadena de fecha en un objeto de tipo datetime
+        fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
 
         # Crear una instancia del modelo Usuario con los datos ingresados
-        usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo,genero=genero, fecha_nacimiento=fecha_nacimiento)
+        usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento)
         credenciales = Credenciales(correo=correo, clave=clave)
+        
         # Obtener la conexión a la base de datos MongoDB
         db_connection = MongoDBConnection()
+
 
         # Guardar el usuario en la base de datos MongoDB
         usuario_dict = {
@@ -70,7 +77,7 @@ def pantalla_registro(request):
         }
         db_connection.db.Credenciales.insert_one(usuario_cred)
 
-        return redirect('pantalla_inicial')
+        return redirect('pantalla_login')
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
@@ -78,9 +85,9 @@ def pantalla_perfil_usuario(request,usuario_id):
     #
     # Obtener la conexión a la base de datos MongoDB
     db_connection = MongoDBConnection()
-
+    
     # Obtener el ID específico del usuario que deseas consultar
-    usuario_dict = db_connection.db.usuarios.find_one({'_id': ObjectId(usuario_id)})
+    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
 
     # Verificar si se encontró un usuario con el ID especificado
     if usuario_dict:
@@ -90,11 +97,10 @@ def pantalla_perfil_usuario(request,usuario_id):
             nombre=usuario_dict['nombre'],
             apellido=usuario_dict['apellido'],
             correo=usuario_dict['correo'],
-            clave=usuario_dict['clave'],
             genero=usuario_dict['genero'],
             fecha_nacimiento=usuario_dict['fecha_nacimiento']
         )
-        print(usuario_obj)
+        #print(usuario_obj)
         # Imprimir los datos del usuario
         return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_obj})
     else:
@@ -102,36 +108,42 @@ def pantalla_perfil_usuario(request,usuario_id):
         print("No se encontró ningún usuario con el ID especificado.")
         return render(request, "pantalla_perfil_usuario/pantalla_perfil_usuario.html",{'usuario_id': usuario_id})
     
+
 def actualizar_usuario(request, usuario_id):
-    usuario_id = "647ff20bcf493386707c470a"
+    # Obtener el usuario específico que se desea actualizar
+    db_connection = MongoDBConnection()
+    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+
+    if not usuario_dict:
+        # Si no se encuentra el usuario, mostrar un mensaje de error o redireccionar a alguna otra página.
+        return HttpResponse("No se encontró el usuario con el ID especificado.")
 
     if request.method == 'POST':
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
         correo = request.POST.get('correo')
-        clave = request.POST.get('clave')
-        fecha_nacimiento = datetime.strptime(request.POST.get('fecha_nacimiento'), '%Y-%m-%d').date()
+        genero = request.POST.get('genero')
+        
+        fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
+        fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, "%Y-%m-%d").date()
 
-        try:
-            # Obtener el usuario de la base de datos
-            usuario = Usuario.objects.get(id=usuario_id)
+        # Convertir el objeto datetime.date en datetime.datetime
+        fecha_nacimiento = datetime.combine(fecha_nacimiento, datetime.min.time())
 
-            # Actualizar los datos del usuario con los valores ingresados
-            usuario.nombre = nombre
-            usuario.apellido = apellido
-            usuario.correo = correo
-            usuario.clave = clave
-            usuario.fecha_nacimiento = fecha_nacimiento
+        # Actualizar los datos del usuario en MongoDB
+        db_connection.db.Usuario.update_one(
+            {'_id': ObjectId(usuario_id)},
+            {'$set': {
+                'nombre': nombre,
+                'apellido': apellido,
+                'correo': correo,
+                'genero': genero,
+                'fecha_nacimiento': fecha_nacimiento
+            }}
+        )
 
-            # Guardar los cambios en la base de datos
-            usuario.save()
+        # Redirigir al perfil del usuario actualizado
+        return redirect('pantalla_perfil_usuario', usuario_id=usuario_id)
 
-            # Redirigir al perfil del usuario actualizado
-            return redirect('pantalla_perfil_usuario', usuario_id=usuario.id)
-
-        except Usuario.DoesNotExist:
-            # Si no se encuentra el usuario, mostrar un mensaje de error o redirigir a otra página
-            return HttpResponse("El usuario no existe.")
-    else:
-        # Si el método de la solicitud no es POST, redirigir a otra página o mostrar un mensaje de error
-        return HttpResponse("Método no permitido.")
+    # Si el método de la solicitud no es POST, renderizar la plantilla de edición de perfil
+    return render(request, 'pantalla_perfil_usuario/pantalla_editar_perfil.html', {'usuario_id': usuario_dict})
