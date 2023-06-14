@@ -4,18 +4,122 @@ from bson import ObjectId
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from pymongo import MongoClient
-from harmonyApp.models import Credenciales, Usuario
+from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-from .forms import LoginForm
+from .forms import ComentarioForm, LoginForm
 from dateutil import parser
+from django.contrib import messages
 
 
 # Create your views here.
 
 def pantalla_inicial(request,usuario_id ):
     return render(request, "pantalla_inicial/pantalla_inicial.html",{"usuario_id": usuario_id })
+"""
+////////////////////////////////////////////////////////
+////// Funciones enfocadas en los comentarios  /////////
+////////////////////////////////////////////////////////
+"""
+def pantalla_foro(request,usuario_id):
+    db_connection = MongoDBConnection()
+    if request.method == 'POST':
+        id_reda_Comet = usuario_id
+        comentario_data = request.POST['comentario']
+        likes = request.POST.getlist('likes')
+        id_replicas = request.POST.getlist('id_replicas')
+        
+        comentario = Comentarios(id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, id_replicas=id_replicas)
+        
+        db_connection = MongoDBConnection()
+
+        comentario_dict ={
+            'id_reda_Comet': comentario.id_reda_Comet,
+            'comentario': comentario.comentario,
+            'likes': comentario.likes,
+            'id_replicas': comentario.id_replicas
+        }
+
+        db_connection.db.Comentarios.insert_one(comentario_dict)
+
+        return redirect('pantalla_foro', usuario_id=usuario_id)
+    
+    comentarios =  db_connection.db.Comentarios.find() # Obtener todos los comentarios de la base de datos
+    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
+    return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": comentarios_con_nombre_id})
+
+
+def incrementar_likes(request, usuario_id, comentario_id):
+    print("usuario_id: ", usuario_id)
+    print("comentario_id: ", comentario_id)
+    if request.method == 'POST':
+        # Obtener el comentario de la base de datos
+        db_connection = MongoDBConnection()
+        comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
+        
+        if comentario:
+            # Obtener los likes actuales del comentario
+            likes = comentario.get('likes', [])
+            
+            # Verificar si el usuario ya ha dado like al comentario
+            if usuario_id not in likes:
+                # Agregar el usuario_id a los likes
+                likes.append(usuario_id)
+                
+                # Actualizar los likes en la base de datos
+                db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
+    
+    # Redirigir a la página de pantalla_foro
+    return redirect('pantalla_foro', usuario_id=usuario_id)
+
+
+def get_Nombre(comentario):
+    db_connection = MongoDBConnection()
+    user = db_connection.db.Usuario.find_one({'_id': ObjectId(comentario['id_reda_Comet'])})
+    try:
+        return user['nombre']
+    except user.DoesNotExist:
+        return None
+
+def get_idComentario(comentario):
+    db_connection = MongoDBConnection()
+    user = db_connection.db.Usuario.find_one({'_id': ObjectId(comentario['id_reda_Comet'])})
+    try:
+        return user['id']
+    except user.DoesNotExist:
+        return None
+    
+def pantalla_nuevo_comentario(request, usuario_id):
+    if request.method == 'POST':
+        id_reda_Comet = usuario_id
+        comentario_data = request.POST['comentario']
+        likes = request.POST.getlist('likes')
+        id_replicas = request.POST.getlist('id_replicas')
+        
+        comentario = Comentarios(id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, id_replicas=id_replicas)
+        
+        db_connection = MongoDBConnection()
+
+        comentario_dict ={
+            'id_reda_Comet': comentario.id_reda_Comet,
+            'comentario': comentario.comentario,
+            'likes': comentario.likes,
+            'id_replicas': comentario.id_replicas
+        }
+
+        db_connection.db.Comentarios.insert_one(comentario_dict)
+
+        return redirect('pantalla_foro', usuario_id=usuario_id)
+
+    return render(request, 'pantalla_foro/pantalla_nuevo_comentario.html', {'usuario_id': usuario_id})
+
+"""
+/////////////////////////////////////////////////////
+////// Funciones enfocadas en los usuarios  /////////
+/////////////////////////////////////////////////////
+"""
+
 
 def pantalla_login(request):
     db_connection = MongoDBConnection()  # Crear una instancia de la clase MongoDBConnection
@@ -38,7 +142,6 @@ def pantalla_login(request):
     else:
         form = LoginForm()
     return render(request, 'pantalla_login/pantalla_login.html', {'form': form})
-
 
 def pantalla_registro(request):
     if request.method == 'POST':
@@ -100,7 +203,6 @@ def pantalla_perfil_usuario(request,usuario_id):
             genero=usuario_dict['genero'],
             fecha_nacimiento=usuario_dict['fecha_nacimiento']
         )
-        #print(usuario_obj)
         # Imprimir los datos del usuario
         return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_obj})
     else:
@@ -108,7 +210,6 @@ def pantalla_perfil_usuario(request,usuario_id):
         print("No se encontró ningún usuario con el ID especificado.")
         return render(request, "pantalla_perfil_usuario/pantalla_perfil_usuario.html",{'usuario_id': usuario_id})
     
-
 def actualizar_usuario(request, usuario_id):
     # Obtener el usuario específico que se desea actualizar
     db_connection = MongoDBConnection()
@@ -142,8 +243,11 @@ def actualizar_usuario(request, usuario_id):
             }}
         )
 
+        messages.success(request, 'Usuario actualizado correctamente.')
+
         # Redirigir al perfil del usuario actualizado
         return redirect('pantalla_perfil_usuario', usuario_id=usuario_id)
 
     # Si el método de la solicitud no es POST, renderizar la plantilla de edición de perfil
     return render(request, 'pantalla_perfil_usuario/pantalla_editar_perfil.html', {'usuario_id': usuario_dict})
+

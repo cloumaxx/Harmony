@@ -1,0 +1,141 @@
+{% load static %}
+
+<style>
+#conText {
+  border-top: 1px solid black;
+  padding-top: 10px; /* Opcional, agrega un espacio entre la línea y el contenido */
+}
+#contComentario{
+    background-color: #FAC2E5;
+    border-radius: 45px;
+}
+.fixed-input {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.btn-enviar{
+    background-color: #960F62;
+    border-radius: 30px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    line-height: 48px;
+    text-align: center;
+    width: 100%;
+    color: #FFFFFF;
+    border: none;
+    
+}
+</style>
+<html>
+    <head>
+        <title>Harmony</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    </head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+            <div>
+                <header>
+                    {% include 'navbar.html' %}
+                </header>
+                <br><br>
+                <main>
+                    {% for comentario, nombre, id_comentario in comentarios %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div id="contComentario" class="container">
+                                    <div class="row">
+                                        <div class="col-md-2 d-flex align-items-center">
+                                            <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%; width: 50%; height: auto;" src="{% static '/images/nina.png' %}">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h2 class="text-start">{{ nombre }}</h2>
+                                            <p class="text-start">{{ comentario.comentario }}</p>
+                                        </div>
+                                        <div class="col-md-2 d-flex align-items-center justify-content-end">
+                                            <p>{{ comentario.likes|length }}</p>
+                                            <div style="width: 5px;"></div> <!-- Espacio entre los botones -->
+                                            <form method="POST" action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                                {% csrf_token %}
+                                                <button type="submit">❤️</button>
+                                              </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                            </div>
+                            <div class="col-md-2">
+                                <div class="btn-group dropup">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        ...
+                                      </button>
+                                      <ul class="dropdown-menu">
+                                        <!-- Dropdown menu links -->
+                                        <li><a class="dropdown-item" href="#">Responder</a></li>
+                                        <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><a class="dropdown-item" href="#">Eliminar</a></li>
+                                      </ul>
+                                    
+                                </div>
+                            </div>
+                                  
+                        </div>
+                    </div>
+                    
+                    <br>
+                    {% endfor %}
+                    <br><br><br><br><br>
+                </main>
+                <footer>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="fixed-input">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <input name="comentario" placeholder="Escribe tu aporte aquí" type="text" class="form-control" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn-enviar">Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </footer>
+            </div>
+        <!-- Ventana Modal -->
+        <div class="modal fade" id="modalAgregarComentario" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Contenido de la ventana modal -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalAgregarComentarioLabel">Agregar Comentario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Formulario de agregar comentario -->
+                        <form method="POST" action="{% url 'pantalla_nuevo_comentario' usuario_id=usuario_id %}">
+                            {% csrf_token %}
+                            <!-- Agrega los campos del formulario aquí -->
+                            <input type="text" name="comentario" placeholder="Comentario">
+                            <!-- Otros campos del formulario -->
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts de Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
