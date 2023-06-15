@@ -27,7 +27,7 @@
             <main>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-5" style="height: 100%;">
                             <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%;" src ="{% static '/images/nina.png'  %}" width="40%" height="100%">
                             <div>
                                 <h1>{{ usuario_id.nombre }} {{ usuario_id.apellido }}</h1>
@@ -58,55 +58,87 @@
 
                             </div>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-7" style="height: 100%;">
                             <h1>Tus Comentarios </h1>
+                            {% for comentario, nombre, id_comentario in comentarios %}
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-2 d-flex align-items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="45%" height="45%" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                                        </svg>
-                                        <div style="width: 10px;"></div> <!-- Espacio entre los botones -->
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="45%" height="45%" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                          <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-                                        </svg>
+                                            <button  class="btn btn-sm p-0 custom-button" data-bs-toggle="modal" data-bs-target="#modalEditarComentario{{ id_comentario }}" data-id-comentario="{{ id_comentario }}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                                            </svg>
+                                          </button>
+                                          
+                                          <div style="width: 10px;"></div> <!-- Espacio entre los botones -->
+                                          
+                                          <form method="POST" action="{% url 'borrar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                            {% csrf_token %}
+                                           
+                                              <button type="submit" class="btn btn-sm p-0 custom-button">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                                                </svg>
+                                              </button>
+                                            
+                                          </form>
+                                          
+                                       
                                       </div>
                                     <div class="col-md-10">
                                         <div id="contComentario" class="container">
                                             <div class="row">
                                                 <div class="col-md-2 d-flex align-items-center">
-                                                    <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%;" src="{% static '/images/nina.png' %}" width="100%" height="100%">
+                                                    <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%; width: 50%; height: auto;" src="{% static '/images/nina.png' %}">
                                                 </div>
                                                 <div class="col-md-8" >
-                                                    <h2 class="text-start">Nombre</h2>
-                                                    <p class="text-start">Comentario</p>
+                                                    <h2 class="text-start">{{nombre}}</h2>
+                                                    <p class="text-start">{{comentario.comentario}}</p>
                                                   </div>
                                                   <div class="col-md-2 d-flex align-items-center justify-content-end">
-                                                    <p>10</p>
+                                                    <p>{{ comentario.likes|length }}</p>
                                                     <div style="width: 10px;"></div> <!-- Espacio entre los botones -->
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                                                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                                                    </svg>
+                                                    <button class="btn btn-sm p-0" style="font-size: 2rem;">❤️</button>
+
                                                   </div>
                                             
                                         </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                  
-                                
-                                
-                                
+                                </div>     
                               
                             </div>
+                            <br>
+                            {% endfor %}
+
+                            
                     </div>
                 </div>
             </main>
             <footer></footer>
         </div>
-
+<!-- Ventana Modal -->
+{% for comentario, _, id_comentario in comentarios %}
+<div class="modal fade" id="modalEditarComentario{{ id_comentario }}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Contenido de la ventana modal -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAgregarComentarioLabel">Editar Comentario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulario para editar el comentario -->
+                <form method="POST" action="{% url 'editar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
+                    {% csrf_token %}
+                    <input type="text" name="comentario" value="{{ comentario.comentario }}" placeholder="Editar Comentario">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
   </script>
     </body>
 </html>

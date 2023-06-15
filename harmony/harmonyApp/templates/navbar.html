@@ -66,7 +66,7 @@
         </li>
         <li style="text-align: center;  " class="nav-item">
           <a class="nav-link active"  href="{% url 'pantalla_foro' usuario_id=usuario_id %}" >
-            <button class="btn btn-primary" >
+            <button class="btn  btn-sm p-0" >
               Foro
             </button>
           </a>
@@ -79,8 +79,7 @@
 
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item"  href="{% url 'pantalla_perfil_usuario' usuario_id=usuario_id %}">..{{usuario_id.nombre}}</a>
-            <a class="dropdown-item" >Mi perfil</a>
+            <a class="dropdown-item" href="{% url 'pantalla_perfil_usuario' usuario_id=usuario_id %}">Mi perfil</a>
             <a class="dropdown-item" >Mi actividad </a>
             <a class="dropdown-item" id="bton_CerrarSesion" >Cerrar sesion </a>
           </div>

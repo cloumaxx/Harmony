@@ -1,7 +1,7 @@
 from datetime import datetime
 from imaplib import _Authenticator
 from bson import ObjectId
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from pymongo import MongoClient
 from harmonyApp.models import Comentarios, Credenciales, Usuario
@@ -51,8 +51,7 @@ def pantalla_foro(request,usuario_id):
 
 
 def incrementar_likes(request, usuario_id, comentario_id):
-    print("usuario_id: ", usuario_id)
-    print("comentario_id: ", comentario_id)
+    
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
         db_connection = MongoDBConnection()
@@ -72,7 +71,6 @@ def incrementar_likes(request, usuario_id, comentario_id):
     
     # Redirigir a la página de pantalla_foro
     return redirect('pantalla_foro', usuario_id=usuario_id)
-
 
 def get_Nombre(comentario):
     db_connection = MongoDBConnection()
@@ -114,6 +112,31 @@ def pantalla_nuevo_comentario(request, usuario_id):
 
     return render(request, 'pantalla_foro/pantalla_nuevo_comentario.html', {'usuario_id': usuario_id})
 
+
+def editar_comentario(request, usuario_id, comentario_id):
+    if request.method == 'POST':
+        nuevo_comentario = request.POST['comentario']
+        
+        # Actualizar el comentario en la base de datos
+        db_connection = MongoDBConnection()
+        db_connection.db.Comentarios.update_one(
+            {'_id': ObjectId(comentario_id)},
+            {'$set': {'comentario': nuevo_comentario}}
+        )
+        
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    
+    return HttpResponseBadRequest("Bad Request")
+
+def borrar_comentario(request, usuario_id, comentario_id):
+    if request.method == 'POST':
+        # Eliminar el comentario de la base de datos
+        db_connection = MongoDBConnection()
+        db_connection.db.Comentarios.delete_one({'_id': ObjectId(comentario_id)})
+        
+        return redirect('pantalla_foro', usuario_id=usuario_id)
+    
+    return HttpResponseBadRequest("Bad Request")
 """
 /////////////////////////////////////////////////////
 ////// Funciones enfocadas en los usuarios  /////////
@@ -203,8 +226,10 @@ def pantalla_perfil_usuario(request,usuario_id):
             genero=usuario_dict['genero'],
             fecha_nacimiento=usuario_dict['fecha_nacimiento']
         )
-        # Imprimir los datos del usuario
-        return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_obj})
+        comentarios =  db_connection.db.Comentarios.find({'id_reda_Comet': usuario_id}) # Obtener todos los comentarios de la base de datos
+        comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
+    
+        return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_obj, "comentarios": comentarios_con_nombre_id})
     else:
 
         print("No se encontró ningún usuario con el ID especificado.")
