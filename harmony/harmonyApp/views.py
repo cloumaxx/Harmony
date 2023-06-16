@@ -16,6 +16,7 @@ from django.contrib import messages
 # Create your views here.
 
 def pantalla_inicial(request,usuario_id ):
+    
     return render(request, "pantalla_inicial/pantalla_inicial.html",{"usuario_id": usuario_id })
 """
 ////////////////////////////////////////////////////////
@@ -23,6 +24,7 @@ def pantalla_inicial(request,usuario_id ):
 ////////////////////////////////////////////////////////
 """
 def pantalla_foro(request,usuario_id):
+    print("::>>",type(usuario_id),usuario_id)
     db_connection = MongoDBConnection()
     if request.method == 'POST':
         id_reda_Comet = usuario_id
@@ -208,7 +210,7 @@ def pantalla_registro(request):
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
 def pantalla_perfil_usuario(request,usuario_id):
-    #
+    print(usuario_id)
     # Obtener la conexión a la base de datos MongoDB
     db_connection = MongoDBConnection()
     
@@ -229,16 +231,14 @@ def pantalla_perfil_usuario(request,usuario_id):
         comentarios =  db_connection.db.Comentarios.find({'id_reda_Comet': usuario_id}) # Obtener todos los comentarios de la base de datos
         comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
     
-        return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_obj, "comentarios": comentarios_con_nombre_id})
-    else:
-
-        print("No se encontró ningún usuario con el ID especificado.")
-        return render(request, "pantalla_perfil_usuario/pantalla_perfil_usuario.html",{'usuario_id': usuario_id})
+        return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": comentarios_con_nombre_id})
     
-def actualizar_usuario(request, usuario_id):
+    return HttpResponseBadRequest("Bad Request")
+    
+def actualizar_usuario(request, usuario_obj):
     # Obtener el usuario específico que se desea actualizar
     db_connection = MongoDBConnection()
-    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_obj)})
 
     if not usuario_dict:
         # Si no se encuentra el usuario, mostrar un mensaje de error o redireccionar a alguna otra página.
@@ -258,7 +258,7 @@ def actualizar_usuario(request, usuario_id):
 
         # Actualizar los datos del usuario en MongoDB
         db_connection.db.Usuario.update_one(
-            {'_id': ObjectId(usuario_id)},
+            {'_id': ObjectId(usuario_obj)},
             {'$set': {
                 'nombre': nombre,
                 'apellido': apellido,
@@ -269,9 +269,9 @@ def actualizar_usuario(request, usuario_id):
         )
 
         messages.success(request, 'Usuario actualizado correctamente.')
-
+        print('-->',usuario_dict['_id'])
         # Redirigir al perfil del usuario actualizado
-        return redirect('pantalla_perfil_usuario', usuario_id=usuario_id)
+        return redirect('pantalla_perfil_usuario', usuario_id=usuario_obj)
 
     # Si el método de la solicitud no es POST, renderizar la plantilla de edición de perfil
     return render(request, 'pantalla_perfil_usuario/pantalla_editar_perfil.html', {'usuario_id': usuario_dict})
