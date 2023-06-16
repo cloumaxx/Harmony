@@ -30,25 +30,26 @@
                         <div class="col-md-5" style="height: 100%;">
                             <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%;" src ="{% static '/images/nina.png'  %}" width="40%" height="100%">
                             <div>
-                                <h1>{{ usuario_id.nombre }} {{ usuario_id.apellido }}</h1>
+                                <h1>{{ usuario_obj.nombre }} {{ usuario_obj.apellido }}</h1>
                                 <div id="conText">
                                     <h2>Correo:</h2>
-                                    <p>{{ usuario_id.correo }}</p>
+                                    <p>{{ usuario_obj.correo }}</p>
                                 </div>
                                 <div id="conText">
                                     <h2>Fecha de nacimiento:</h2>
-                                    <p>{{usuario_id.fecha_nacimiento}}</p>
+                                    <p>{{usuario_obj.fecha_nacimiento}}</p>
                                 </div>
                                 <div id="conText">
                                     <h2>Genero:</h2>
-                                    {% if usuario_id.genero == "H" %}
+                                    {% if usuario_obj.genero == "H" %}
                                         <p>Hombre</p>
                                     {% else %}
                                         <p>Mujer</p>
                                     {% endif %}
                                 </div>
                                 <div>
-                                    <a href="{% url 'actualizar_usuario' usuario_id=usuario_id.id  %}">
+                                    <p>{{usuario_id.id}}</p>
+                                    <a  >
                                         <button class="btn btn-primary" id="custom-button">
                                             <p id="text_button">Editar perfil</p>
                                         </button>
