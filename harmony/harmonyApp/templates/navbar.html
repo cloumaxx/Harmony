@@ -50,9 +50,9 @@
 </style>
 <nav id="navBarContent" class="navbar navbar-light navbar-expand-md">
   <div class="container-fluid">
-    <a class="navbar-brand">
-      <img id="logoNavbar" src="{% static '/images/logo_harmony.png'  %}">
-      <h1 class="half-colored-heading">
+    <a class="navbar-brand" href="{% url 'pantalla_inicial' usuario_id=usuario_id %}">
+      <img id="logoNavbar" src="{% static '/images/logo_harmony.png'  %}"> 
+      <h1 class="half-colored-heading" >
         Harmony
       </h1>
     </a>
@@ -61,9 +61,6 @@
 
       <ul class="navbar-nav ms-auto">
 
-        <li class="nav-item">
-          <a class="nav-link active" >Chat</a>
-        </li>
         <li style="text-align: center;  " class="nav-item">
           <a class="nav-link active"  href="{% url 'pantalla_foro' usuario_id=usuario_id %}" >
             <button class="btn  btn-sm p-0" >

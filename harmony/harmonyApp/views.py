@@ -235,23 +235,30 @@ def pantalla_perfil_usuario(request,usuario_id):
     
     return HttpResponseBadRequest("Bad Request")
     
-def actualizar_usuario(request, usuario_id):
+def actualizar_usuario(request, usuario_obj):
+    # Obtener el usuario específico que se desea actualizar
     db_connection = MongoDBConnection()
-    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_obj)})
+
+    if not usuario_dict:
+        # Si no se encuentra el usuario, mostrar un mensaje de error o redireccionar a alguna otra página.
+        return HttpResponse("No se encontró el usuario con el ID especificado.")
 
     if request.method == 'POST':
-        # Obtener los datos actualizados del formulario
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
         correo = request.POST.get('correo')
         genero = request.POST.get('genero')
+        
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, "%Y-%m-%d").date()
+
+        # Convertir el objeto datetime.date en datetime.datetime
         fecha_nacimiento = datetime.combine(fecha_nacimiento, datetime.min.time())
 
         # Actualizar los datos del usuario en MongoDB
         db_connection.db.Usuario.update_one(
-            {'_id': ObjectId(usuario_id)},
+            {'_id': ObjectId(usuario_obj)},
             {'$set': {
                 'nombre': nombre,
                 'apellido': apellido,
@@ -262,7 +269,43 @@ def actualizar_usuario(request, usuario_id):
         )
 
         messages.success(request, 'Usuario actualizado correctamente.')
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+        print('-->',usuario_dict['_id'])
+        # Redirigir al perfil del usuario actualizado
+        return redirect('pantalla_perfil_usuario', usuario_id=usuario_obj)
 
-    # Si el método de la solicitud no es POST, renderizar el perfil del usuario en el modal
-    return HttpResponseBadRequest("Bad Request")
+    # Si el método de la solicitud no es POST, renderizar la plantilla de edición de perfil
+    return render(request, 'pantalla_perfil_usuario/pantalla_editar_perfil.html', {'usuario_id': usuario_dict})
+
+"""
+/////////////////////////////////////////////////////
+//////   Funciones enfocadas en el chatbot  /////////
+/////////////////////////////////////////////////////
+"""
+def pantalla_chatbot(request,usuario_id):
+    print("::>>",type(usuario_id),usuario_id)
+    db_connection = MongoDBConnection()
+    if request.method == 'POST':
+        id_reda_Comet = usuario_id
+        comentario_data = request.POST['comentario']
+        likes = request.POST.getlist('likes')
+        id_replicas = request.POST.getlist('id_replicas')
+        
+        comentario = Comentarios(id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, id_replicas=id_replicas)
+        
+        db_connection = MongoDBConnection()
+
+        comentario_dict ={
+            'id_reda_Comet': comentario.id_reda_Comet,
+            'comentario': comentario.comentario,
+            'likes': comentario.likes,
+            'id_replicas': comentario.id_replicas
+        }
+
+        db_connection.db.Comentarios.insert_one(comentario_dict)
+
+        return redirect('pantalla_foro', usuario_id=usuario_id)
+    
+    comentarios =  db_connection.db.Comentarios.find() # Obtener todos los comentarios de la base de datos
+    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "comentarios": comentarios_con_nombre_id})
+
