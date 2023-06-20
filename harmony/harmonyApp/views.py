@@ -235,30 +235,23 @@ def pantalla_perfil_usuario(request,usuario_id):
     
     return HttpResponseBadRequest("Bad Request")
     
-def actualizar_usuario(request, usuario_obj):
-    # Obtener el usuario específico que se desea actualizar
+def actualizar_usuario(request, usuario_id):
     db_connection = MongoDBConnection()
-    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_obj)})
-
-    if not usuario_dict:
-        # Si no se encuentra el usuario, mostrar un mensaje de error o redireccionar a alguna otra página.
-        return HttpResponse("No se encontró el usuario con el ID especificado.")
+    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
 
     if request.method == 'POST':
+        # Obtener los datos actualizados del formulario
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
         correo = request.POST.get('correo')
         genero = request.POST.get('genero')
-        
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, "%Y-%m-%d").date()
-
-        # Convertir el objeto datetime.date en datetime.datetime
         fecha_nacimiento = datetime.combine(fecha_nacimiento, datetime.min.time())
 
         # Actualizar los datos del usuario en MongoDB
         db_connection.db.Usuario.update_one(
-            {'_id': ObjectId(usuario_obj)},
+            {'_id': ObjectId(usuario_id)},
             {'$set': {
                 'nombre': nombre,
                 'apellido': apellido,
@@ -269,10 +262,7 @@ def actualizar_usuario(request, usuario_obj):
         )
 
         messages.success(request, 'Usuario actualizado correctamente.')
-        print('-->',usuario_dict['_id'])
-        # Redirigir al perfil del usuario actualizado
-        return redirect('pantalla_perfil_usuario', usuario_id=usuario_obj)
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
-    # Si el método de la solicitud no es POST, renderizar la plantilla de edición de perfil
-    return render(request, 'pantalla_perfil_usuario/pantalla_editar_perfil.html', {'usuario_id': usuario_dict})
-
+    # Si el método de la solicitud no es POST, renderizar el perfil del usuario en el modal
+    return HttpResponseBadRequest("Bad Request")
