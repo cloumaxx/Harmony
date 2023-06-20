@@ -276,3 +276,36 @@ def actualizar_usuario(request, usuario_obj):
     # Si el método de la solicitud no es POST, renderizar la plantilla de edición de perfil
     return render(request, 'pantalla_perfil_usuario/pantalla_editar_perfil.html', {'usuario_id': usuario_dict})
 
+"""
+/////////////////////////////////////////////////////
+//////   Funciones enfocadas en el chatbot  /////////
+/////////////////////////////////////////////////////
+"""
+def pantalla_chatbot(request,usuario_id):
+    print("::>>",type(usuario_id),usuario_id)
+    db_connection = MongoDBConnection()
+    if request.method == 'POST':
+        id_reda_Comet = usuario_id
+        comentario_data = request.POST['comentario']
+        likes = request.POST.getlist('likes')
+        id_replicas = request.POST.getlist('id_replicas')
+        
+        comentario = Comentarios(id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, id_replicas=id_replicas)
+        
+        db_connection = MongoDBConnection()
+
+        comentario_dict ={
+            'id_reda_Comet': comentario.id_reda_Comet,
+            'comentario': comentario.comentario,
+            'likes': comentario.likes,
+            'id_replicas': comentario.id_replicas
+        }
+
+        db_connection.db.Comentarios.insert_one(comentario_dict)
+
+        return redirect('pantalla_foro', usuario_id=usuario_id)
+    
+    comentarios =  db_connection.db.Comentarios.find() # Obtener todos los comentarios de la base de datos
+    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "comentarios": comentarios_con_nombre_id})
+
