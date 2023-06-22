@@ -1,4 +1,24 @@
 
+
+
+.centered-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 30%;
+    background: linear-gradient(208.36deg, #FC72FF 0%, #EBE0E7 100%);
+    border-radius: 50px;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+}
+
+
 .half-colored-heading {
     display: inline-block;
     background: linear-gradient(to right, #930E61 50%, black 50%);
@@ -20,4 +40,9 @@
     text-align: center;
     color: #FAC2E5;
 
+}
+#img_logo{
+    padding-top: 10%;
+    width: 75%;
+    height: auto;
 }
