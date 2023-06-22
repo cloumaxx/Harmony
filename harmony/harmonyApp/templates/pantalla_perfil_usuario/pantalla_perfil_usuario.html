@@ -50,7 +50,7 @@
                                 <div>
                                     <p>{{usuario_obj.id}}</p>
                                     <a  >
-                                        <button class="btn btn-sm p-0 custom-button" id="custom-button" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario{{ usuario_obj }}" data-id-usuario="{{ usuario_obj }}">
+                                        <button class="btn btn-sm p-0 custom-button" id="custom-button" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario{{ usuario_obj.id }}" data-id-usuario="{{ usuario_obj.id }}">
 
                                             <p id="text_button">Editar perfil</p>
                                         </button>
@@ -120,7 +120,7 @@
             <footer></footer>
         </div>
 <!-- Ventana Modal Editar Usuario-->
-<div class="modal fade" id="modalEditarUsuario{{ usuario_obj }}">
+<div class="modal fade" id="modalEditarUsuario{{ usuario_id }}">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Contenido de la ventana modal -->
@@ -130,7 +130,7 @@
             </div>
             <div class="modal-body">
                 <!-- Formulario para editar el perfil -->
-                <form method="POST" >
+                <form method="POST" action="{% url 'editar_usuario' usuario_id=usuario_id %}" >
                     {% csrf_token %}
                     <input type="text" name="nombre" value="{{ usuario_obj.nombre }}" placeholder="Nombre">
                     <input type="text" name="apellido" value="{{ usuario_obj.apellido }}" placeholder="Apellido">
