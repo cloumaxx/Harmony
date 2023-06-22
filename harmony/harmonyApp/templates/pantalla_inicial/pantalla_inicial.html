@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-md-6 text-center">
                             <div>
-                                <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%;" src ="{% static '/images/mily.png'  %}" width="396" height="400">
+                                <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%;" src ="{% static '/images/mily.png'  %}" height="400">
                                 <br>
                                 <h1 class="half-colored-heading">Mily</h1>
                             </div>
@@ -30,8 +30,14 @@
                                 <br>
                                 <h4 style="text-align: center;">Hola, soy Mily, tu chatbot de confianza. Estoy aqui para que hables conmigo todo lo que necesites </h4>
                                 <br>
+                                <a href="{% url 'pantalla_chatbot' usuario_id=usuario_id %}">
+                                    <button class="btn btn-primary" id="custom-button">
+                                        <p id="text_button"><img src="https://ouch-cdn2.icons8.com/pdGpWJ4lti4-OfNuuM3LeIQpashnWrVdZkCKvxaHJ6o/rs:fit:256:256/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNzMy/LzQyNGRhYTIyLTFj/NzQtNGNmYy1hYjVh/LTUxMjk3OTNkZWU5/Mi5wbmc.png" width="40"> Hablemos</p>
+                                    </button>
+                                </a>
+                                <br><br>
                                 <button class="btn btn-primary" id="custom-button">
-                                    <p id="text_button">Hablemos</p>
+                                    <p id="text_button" style="color: yellow;"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Plain_Yellow_Star.png" width="40"></img>Califica nuestra app</p>
                                 </button>
                             </div>
                         </div>

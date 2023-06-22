@@ -53,7 +53,7 @@ def pantalla_foro(request,usuario_id):
 
 
 def incrementar_likes(request, usuario_id, comentario_id):
-    
+
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
         db_connection = MongoDBConnection()
@@ -62,17 +62,15 @@ def incrementar_likes(request, usuario_id, comentario_id):
         if comentario:
             # Obtener los likes actuales del comentario
             likes = comentario.get('likes', [])
-            
-            # Verificar si el usuario ya ha dado like al comentario
             if usuario_id not in likes:
                 # Agregar el usuario_id a los likes
                 likes.append(usuario_id)
-                
-                # Actualizar los likes en la base de datos
-                db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
-    
-    # Redirigir a la página de pantalla_foro
+            elif usuario_id in likes:
+                likes.remove(usuario_id)
+            # Actualizar los likes en la base de datos
+            db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
     return redirect('pantalla_foro', usuario_id=usuario_id)
+
 
 def get_Nombre(comentario):
     db_connection = MongoDBConnection()
@@ -303,9 +301,9 @@ def pantalla_chatbot(request,usuario_id):
 
         db_connection.db.Comentarios.insert_one(comentario_dict)
 
-        return redirect('pantalla_foro', usuario_id=usuario_id)
+        return redirect('pantalla_chatbot', usuario_id=usuario_id)
     
     comentarios =  db_connection.db.Comentarios.find() # Obtener todos los comentarios de la base de datos
     comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
-    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "comentarios": comentarios_con_nombre_id})
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
