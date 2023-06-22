@@ -63,7 +63,7 @@
                                     <div class="col-md-2 d-flex align-items-center justify-content-end">
                                         <p>{{ comentario.likes|length }}</p>
                                         <div style="width: 5px;"></div> <!-- Espacio entre los botones -->
-                                        <form method="POST" action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                        <form method="POST" action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario%}">
                                             {% csrf_token %}
                                             <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">❤️</button>
                                         </form>
