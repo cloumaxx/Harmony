@@ -130,7 +130,7 @@
             </div>
             <div class="modal-body">
                 <!-- Formulario para editar el perfil -->
-                <form method="POST" action="{% url 'actualizar_usuario' usuario_id=usuario_obj.id %}">
+                <form method="POST" >
                     {% csrf_token %}
                     <input type="text" name="nombre" value="{{ usuario_obj.nombre }}" placeholder="Nombre">
                     <input type="text" name="apellido" value="{{ usuario_obj.apellido }}" placeholder="Apellido">
