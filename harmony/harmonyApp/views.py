@@ -4,6 +4,7 @@ from bson import ObjectId
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from pymongo import MongoClient
+from harmonyApp.chatbot_functions.model_eleutherAi_gpt_neo_2_7B import generate_response
 from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
@@ -272,7 +273,18 @@ def editar_usuario(request, usuario_id):
 /////////////////////////////////////////////////////
 """
 def pantalla_chatbot(request,usuario_id):
-    db_connection = MongoDBConnection()
+    if request.method == "POST":
+        user_input = request.POST.get("user_input")
+        
+        # Generar la respuesta del chatbot
+        response = generate_response(user_input)
+        
+        return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "response": response})
+    
+
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
+
+    """    db_connection = MongoDBConnection()
     if request.method == 'POST':
         id_reda_Comet = usuario_id
         comentario_data = request.POST['comentario']
@@ -296,5 +308,4 @@ def pantalla_chatbot(request,usuario_id):
     
     comentarios =  db_connection.db.Comentarios.find() # Obtener todos los comentarios de la base de datos
     comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
-    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
-
+    """
