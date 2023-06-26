@@ -1,17 +1,23 @@
-from transformers import GPT2Tokenizer, TFGPT2LMHeadModel
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-# Cargar el tokenizer y el modelo DialoGPT preentrenado en PyTorch
-tokenizer = GPT2Tokenizer.from_pretrained("microsoft/DialoGPT-medium")
-model = TFGPT2LMHeadModel.from_pretrained("microsoft/DialoGPT-medium")
+# Cargar el modelo y el tokenizador de GPT-2
+model_name = 'gpt2'
+model = GPT2LMHeadModel.from_pretrained(model_name)
+tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 
 # Función para generar respuestas del chatbot
+import torch
+
 def obtener_respuesta(pregunta, contexto):
-    print(pregunta)
-    input_ids = tokenizer.encode(pregunta, return_tensors="tf")
-
-    response = model.generate(input_ids, max_length=100)
-    response_text = tokenizer.decode(response[:, input_ids.shape[-1]:][0], skip_special_tokens=True)
-
-    print("-->", response)
-
-    return response_text
+    input_ids = tokenizer.encode(pregunta, return_tensors='pt')
+    
+    # Set the seed for reproducibility
+    torch.manual_seed(0)
+    
+    # Generate text using greedy search
+    output = model.generate(input_ids, max_length=100, num_return_sequences=1, temperature=1.0, early_stopping=True)
+    
+    generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
+    print(len(generated_text),type(generated_text))
+    print(generated_text)
+    return generated_text

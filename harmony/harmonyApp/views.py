@@ -272,20 +272,23 @@ def editar_usuario(request, usuario_id):
 //////   Funciones enfocadas en el chatbot  /////////
 /////////////////////////////////////////////////////
 """
+
 def pantalla_chatbot(request, usuario_id):
+    contes = 0 
+    print("Contador:",contes)
+    contes = contes + 1
     if request.method == 'POST':
         pregunta = request.POST.get('pregunta')
-        contexto = "Conversacion con un familiar"
+        contexto = "I am planning a picnic."
         print(pregunta)
         respuesta = obtener_respuesta(pregunta, contexto)
         
-        print(respuesta)
+        #print("->",respuesta)
 
         return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "respuesta": respuesta})
     
-    contexto = "Conversacion con un familiar"
     
-    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "contexto": contexto})
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
     """    db_connection = MongoDBConnection()
     if request.method == 'POST':

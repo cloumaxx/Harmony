@@ -8,6 +8,7 @@ Scripts\activate
 
 
 ///////////////////////////////
-////// Scripts LLM     ////////
+////// Scripts librerias     ////////
 //////////////////////////////
-pip install transformers
+pip freeze > requirements.txt
+
