@@ -4,7 +4,7 @@ from bson import ObjectId
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from pymongo import MongoClient
-from harmonyApp.chatbot_functions.model_eleutherAi_gpt_neo_2_7B import generate_response
+from harmonyApp.chatbot_functions.model_bert_multilingual_cased import obtener_respuesta
 from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
@@ -272,17 +272,20 @@ def editar_usuario(request, usuario_id):
 //////   Funciones enfocadas en el chatbot  /////////
 /////////////////////////////////////////////////////
 """
-def pantalla_chatbot(request,usuario_id):
-    if request.method == "POST":
-        user_input = request.POST.get("user_input")
+def pantalla_chatbot(request, usuario_id):
+    if request.method == 'POST':
+        pregunta = request.POST.get('pregunta')
+        contexto = "Conversacion con un familiar"
+        print(pregunta)
+        respuesta = obtener_respuesta(pregunta, contexto)
         
-        # Generar la respuesta del chatbot
-        response = generate_response(user_input)
-        
-        return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "response": response})
-    
+        print(respuesta)
 
-    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
+        return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "respuesta": respuesta})
+    
+    contexto = "Conversacion con un familiar"
+    
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "contexto": contexto})
 
     """    db_connection = MongoDBConnection()
     if request.method == 'POST':
