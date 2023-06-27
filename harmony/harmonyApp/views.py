@@ -71,9 +71,10 @@ def agregar_replica(request, usuario_id, comentario_id):
                     print(replica_dict)
                     db_connection.db.Replicas.insert_one(replica_dict)
         else:
-            print('replica vacia')
+            messages.error(request, 'Reply cannot be empty.')
 
-    return render('pantalla_foro', usuario_id=usuario_id)
+
+    return redirect('pantalla_foro', usuario_id=usuario_id)
 
 def incrementar_likes(request, usuario_id, comentario_id):
 
