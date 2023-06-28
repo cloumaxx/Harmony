@@ -106,20 +106,34 @@
                         </div>
                     </div>
                     <br>
-                    
+                    <div id="replicas_realizadas">
+                        <p> {{comentario.id_replicas}}</p>
+                    </div>
                     <div id="cont_agregar_replica">
                         <form method="POST" action="{% url 'agregar_replica' usuario_id=usuario_id comentario_id=id_comentario %}">
                             {% csrf_token %}
                             <p style="margin-right: 10px;" >¿Deseas responder?</p>
                             <input  name = "replica" style="width: 50%;" placeholder="Escribe algo">
-                            <button style="margin-right: 5%;">enviar</button>
+                            <button >enviar</button>
                         </form>
                         
                     </div>
                     
                 </div>
                 <br>
+
                 {% endfor %}
+                <br>
+  <!-- Botones de navegación -->
+{% if comentarios.has_previous %}
+<a href="?page={{ comentarios.previous_page_number }}">Anterior</a>
+{% endif %}
+
+<span>{{ comentarios.number }}</span>
+
+{% if comentarios.has_next %}
+<a href="?page={{ comentarios.next_page_number }}">Siguiente</a>
+{% endif %}   
                 <br><br><br><br><br>
             </main>
             <footer>

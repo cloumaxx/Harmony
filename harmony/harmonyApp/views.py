@@ -12,6 +12,7 @@ from django.shortcuts import render, redirect
 from .forms import ComentarioForm, LoginForm
 from dateutil import parser
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage
 
 
 # Create your views here.
@@ -47,9 +48,19 @@ def pantalla_foro(request,usuario_id):
         return redirect('pantalla_foro', usuario_id=usuario_id)
     
     comentarios =  db_connection.db.Comentarios.find() # Obtener todos los comentarios de la base de datos
+   
+    # Crear el objeto Paginator
+    
     comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
-    return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": comentarios_con_nombre_id})
-
+    items_por_pagina = 2
+    paginator = Paginator(comentarios_con_nombre_id, items_por_pagina)
+    # Obtener el número de página a mostrar
+    numero_pagina = request.GET.get('page')
+    page_obj = paginator.get_page(numero_pagina)
+    print(page_obj)
+    
+     
+    return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
 
 def agregar_replica(request, usuario_id, comentario_id):
     if request.method == 'POST':
@@ -57,21 +68,34 @@ def agregar_replica(request, usuario_id, comentario_id):
         if len(replica_comentario) > 0:
 
             comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
+            id_replicas = comentario.get('id_replicas', [])
+            print(id_replicas,"<--->_")
+            
             if comentario:
+                replica_dict ={
+                    'idComentario': comentario_id,
+                    'idRedactorReplica': usuario_id,
+                    'contenidoReplica': replica_comentario,
+                    'likes': []
+                }
+
+                print(replica_dict)
+                insert_result = db_connection.db.Replicas.insert_one(replica_dict)
                 
+                # Obtener el ID asignado a la réplica
+                replica_id = insert_result.inserted_id 
+                id_replicas.append(replica_id)
                 
-                    print("tama:",len(replica_comentario))
-                    
-                    replica_dict ={
-                        'idComentario': comentario_id,
-                        'idRedactorReplica': usuario_id,
-                        'contenidoReplica': replica_comentario,
-                        'likes': []
-                        }
-                    print(replica_dict)
-                    db_connection.db.Replicas.insert_one(replica_dict)
+                print(id_replicas)
+                db_connection.db.Comentarios.update_one(
+                    {'_id': ObjectId(comentario_id)},
+                    {'$set': {'id_replicas': id_replicas}}
+                )
+                
+                print(comentario)
         else:
             messages.error(request, 'Reply cannot be empty.')
+
 
 
     return redirect('pantalla_foro', usuario_id=usuario_id)
