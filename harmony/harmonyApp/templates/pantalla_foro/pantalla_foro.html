@@ -30,6 +30,13 @@
     border: none;
     
 }
+#cont_agregar_replica{
+    
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+}
+
 </style>
 <html>
     <head>
@@ -98,12 +105,26 @@
                             </div>
                         </div>
                     </div>
+                    <br>
+                    
+                    <div id="cont_agregar_replica">
+                        <form method="POST" action="{% url 'agregar_replica' usuario_id=usuario_id comentario_id=id_comentario %}">
+                            {% csrf_token %}
+                            <p style="margin-right: 10px;" >¿Deseas responder?</p>
+                            <input  name = "replica" style="width: 50%;" placeholder="Escribe algo">
+                            <button style="margin-right: 5%;">enviar</button>
+                        </form>
+                        
+                    </div>
+                    
                 </div>
                 <br>
                 {% endfor %}
                 <br><br><br><br><br>
             </main>
             <footer>
+                
+
                 <form method="POST">
                     {% csrf_token %}
                     <div class="fixed-input">

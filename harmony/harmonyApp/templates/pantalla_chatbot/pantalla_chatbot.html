@@ -47,7 +47,8 @@
             </header>
             <br><br>
             <main>
-                {% for comentario, nombre, id_comentario in comentarios %}
+                <!--
+{% for comentario, nombre, id_comentario in comentarios %}
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10">
@@ -62,7 +63,7 @@
                                     </div>
                                     <div class="col-md-2 d-flex align-items-center justify-content-end">
                                         <p>{{ comentario.likes|length }}</p>
-                                        <div style="width: 5px;"></div> <!-- Espacio entre los botones -->
+                                        <div style="width: 5px;"></div>  Espacio entre los botones 
                                         <form method="POST" action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
                                             {% csrf_token %}
                                             <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">❤️</button>
@@ -77,7 +78,7 @@
                                     ...
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <!-- Enlaces del menú desplegable -->
+                                     Enlaces del menú desplegable 
                                     <li><a class="dropdown-item" href="#">Responder</a></li>
                                     {% if usuario_id == comentario.id_reda_Comet %}
                                     <li>
@@ -102,15 +103,23 @@
                 <br>
                 {% endfor %}
                 <br><br><br><br><br>
+
+                -->
+                {% if respuesta %}
+                <div class="respuesta">
+                    <h4>Respuesta:</h4>
+                    <p>{{ respuesta }}</p>
+                </div>
+                {% endif %}
             </main>
             <footer>
-                <form method="POST">
+                <form method="post" action="{% url 'pantalla_chatbot' usuario_id=usuario_id %}">
                     {% csrf_token %}
                     <div class="fixed-input">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-10">
-                                    <input name="comentario" placeholder="Escribe tu aporte aquí" type="text" class="form-control" aria-describedby="emailHelp">
+                                    <input type="text" name="pregunta" placeholder="Escribe tu pregunta aquí"  class="form-control">
                                 </div>
                                 <div class="col-md-2">
                                     <button type="submit" class="btn-enviar">Enviar</button>

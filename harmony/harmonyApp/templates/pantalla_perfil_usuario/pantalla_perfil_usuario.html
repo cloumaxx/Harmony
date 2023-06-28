@@ -48,9 +48,10 @@
                                     {% endif %}
                                 </div>
                                 <div>
-                                    <p>{{usuario_id.id}}</p>
+                                    <p>{{usuario_obj.id}}</p>
                                     <a  >
-                                        <button class="btn btn-primary" id="custom-button">
+                                        <button class="btn btn-sm p-0 custom-button" id="custom-button" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario{{ usuario_obj.id }}" data-id-usuario="{{ usuario_obj.id }}">
+
                                             <p id="text_button">Editar perfil</p>
                                         </button>
                                     </a>
@@ -118,7 +119,36 @@
             </main>
             <footer></footer>
         </div>
-<!-- Ventana Modal -->
+<!-- Ventana Modal Editar Usuario-->
+<!-- Ventana Modal Editar Usuario-->
+<div class="modal fade" id="modalEditarUsuario{{ usuario_id }}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Contenido de la ventana modal -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAgregarComentarioLabel">Editar tu perfil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulario para editar el perfil -->
+                <form method="POST" action="{% url 'editar_usuario' usuario_id=usuario_id %}" >
+                    {% csrf_token %}
+                    <input type="text" name="nombre" value="{{ usuario_obj.nombre }}" placeholder="Nombre">
+                    <input type="text" name="apellido" value="{{ usuario_obj.apellido }}" placeholder="Apellido">
+                    <input type="email" name="correo" value="{{ usuario_obj.correo }}" placeholder="Correo electrónico">
+                    <input type="text" name="genero" value="{{ usuario_obj.genero }}" placeholder="Género">
+                    <input type="date" name="fecha_nacimiento" value="{{ usuario_obj.fecha_nacimiento|date:'Y-m-d' }}" placeholder="Fecha de nacimiento">
+                    <!-- Agrega los demás campos del formulario -->
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- Ventana Modal Editar Comentario-->
 {% for comentario, _, id_comentario in comentarios %}
 <div class="modal fade" id="modalEditarComentario{{ id_comentario }}">
     <div class="modal-dialog">

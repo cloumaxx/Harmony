@@ -4,7 +4,8 @@ from bson import ObjectId
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from pymongo import MongoClient
-from harmonyApp.models import Comentarios, Credenciales, Usuario
+from harmonyApp.chatbot_functions.model_bert_multilingual_cased import obtener_respuesta
+from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
@@ -14,6 +15,7 @@ from django.contrib import messages
 
 
 # Create your views here.
+db_connection = MongoDBConnection()
 
 def pantalla_inicial(request,usuario_id ):
     
@@ -24,8 +26,6 @@ def pantalla_inicial(request,usuario_id ):
 ////////////////////////////////////////////////////////
 """
 def pantalla_foro(request,usuario_id):
-    print("::>>",type(usuario_id),usuario_id)
-    db_connection = MongoDBConnection()
     if request.method == 'POST':
         id_reda_Comet = usuario_id
         comentario_data = request.POST['comentario']
@@ -34,7 +34,6 @@ def pantalla_foro(request,usuario_id):
         
         comentario = Comentarios(id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, id_replicas=id_replicas)
         
-        db_connection = MongoDBConnection()
 
         comentario_dict ={
             'id_reda_Comet': comentario.id_reda_Comet,
@@ -52,11 +51,35 @@ def pantalla_foro(request,usuario_id):
     return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": comentarios_con_nombre_id})
 
 
+def agregar_replica(request, usuario_id, comentario_id):
+    if request.method == 'POST':
+        replica_comentario = request.POST['replica']
+        if len(replica_comentario) > 0:
+
+            comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
+            if comentario:
+                
+                
+                    print("tama:",len(replica_comentario))
+                    
+                    replica_dict ={
+                        'idComentario': comentario_id,
+                        'idRedactorReplica': usuario_id,
+                        'contenidoReplica': replica_comentario,
+                        'likes': []
+                        }
+                    print(replica_dict)
+                    db_connection.db.Replicas.insert_one(replica_dict)
+        else:
+            print('replica vacia')
+
+    return render('pantalla_foro', usuario_id=usuario_id)
+
 def incrementar_likes(request, usuario_id, comentario_id):
 
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
-        db_connection = MongoDBConnection()
+        
         comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
         
         if comentario:
@@ -73,7 +96,7 @@ def incrementar_likes(request, usuario_id, comentario_id):
 
 
 def get_Nombre(comentario):
-    db_connection = MongoDBConnection()
+    
     user = db_connection.db.Usuario.find_one({'_id': ObjectId(comentario['id_reda_Comet'])})
     try:
         return user['nombre']
@@ -81,7 +104,7 @@ def get_Nombre(comentario):
         return None
 
 def get_idComentario(comentario):
-    db_connection = MongoDBConnection()
+    
     user = db_connection.db.Usuario.find_one({'_id': ObjectId(comentario['id_reda_Comet'])})
     try:
         return user['id']
@@ -96,8 +119,6 @@ def pantalla_nuevo_comentario(request, usuario_id):
         id_replicas = request.POST.getlist('id_replicas')
         
         comentario = Comentarios(id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, id_replicas=id_replicas)
-        
-        db_connection = MongoDBConnection()
 
         comentario_dict ={
             'id_reda_Comet': comentario.id_reda_Comet,
@@ -118,7 +139,7 @@ def editar_comentario(request, usuario_id, comentario_id):
         nuevo_comentario = request.POST['comentario']
         
         # Actualizar el comentario en la base de datos
-        db_connection = MongoDBConnection()
+        
         db_connection.db.Comentarios.update_one(
             {'_id': ObjectId(comentario_id)},
             {'$set': {'comentario': nuevo_comentario}}
@@ -131,7 +152,7 @@ def editar_comentario(request, usuario_id, comentario_id):
 def borrar_comentario(request, usuario_id, comentario_id):
     if request.method == 'POST':
         # Eliminar el comentario de la base de datos
-        db_connection = MongoDBConnection()
+        
         db_connection.db.Comentarios.delete_one({'_id': ObjectId(comentario_id)})
         
         return redirect('pantalla_foro', usuario_id=usuario_id)
@@ -145,7 +166,7 @@ def borrar_comentario(request, usuario_id, comentario_id):
 
 
 def pantalla_login(request):
-    db_connection = MongoDBConnection()  # Crear una instancia de la clase MongoDBConnection
+      # Crear una instancia de la clase MongoDBConnection
 
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -153,7 +174,7 @@ def pantalla_login(request):
             correo = form.cleaned_data['correo']
             clave = form.cleaned_data['clave']
             
-            db_connection = MongoDBConnection()
+            
             credenciales = db_connection.db.Credenciales
             user = credenciales.find_one({'correo': correo, 'clave': clave})
             
@@ -183,7 +204,7 @@ def pantalla_registro(request):
         credenciales = Credenciales(correo=correo, clave=clave)
         
         # Obtener la conexión a la base de datos MongoDB
-        db_connection = MongoDBConnection()
+        
 
 
         # Guardar el usuario en la base de datos MongoDB
@@ -210,7 +231,7 @@ def pantalla_registro(request):
 def pantalla_perfil_usuario(request,usuario_id):
     print(usuario_id)
     # Obtener la conexión a la base de datos MongoDB
-    db_connection = MongoDBConnection()
+    
     
     # Obtener el ID específico del usuario que deseas consultar
     usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
@@ -233,15 +254,9 @@ def pantalla_perfil_usuario(request,usuario_id):
     
     return HttpResponseBadRequest("Bad Request")
     
-def actualizar_usuario(request, usuario_obj):
+def editar_usuario(request, usuario_id):
     # Obtener el usuario específico que se desea actualizar
-    db_connection = MongoDBConnection()
-    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_obj)})
-
-    if not usuario_dict:
-        # Si no se encuentra el usuario, mostrar un mensaje de error o redireccionar a alguna otra página.
-        return HttpResponse("No se encontró el usuario con el ID especificado.")
-
+    
     if request.method == 'POST':
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
@@ -253,10 +268,12 @@ def actualizar_usuario(request, usuario_obj):
 
         # Convertir el objeto datetime.date en datetime.datetime
         fecha_nacimiento = datetime.combine(fecha_nacimiento, datetime.min.time())
+        
+        
 
         # Actualizar los datos del usuario en MongoDB
         db_connection.db.Usuario.update_one(
-            {'_id': ObjectId(usuario_obj)},
+            {'_id': ObjectId(usuario_id)},
             {'$set': {
                 'nombre': nombre,
                 'apellido': apellido,
@@ -266,22 +283,34 @@ def actualizar_usuario(request, usuario_obj):
             }}
         )
 
-        messages.success(request, 'Usuario actualizado correctamente.')
-        print('-->',usuario_dict['_id'])
         # Redirigir al perfil del usuario actualizado
-        return redirect('pantalla_perfil_usuario', usuario_id=usuario_obj)
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
     # Si el método de la solicitud no es POST, renderizar la plantilla de edición de perfil
-    return render(request, 'pantalla_perfil_usuario/pantalla_editar_perfil.html', {'usuario_id': usuario_dict})
-
+    return HttpResponseBadRequest("Bad Request")
 """
 /////////////////////////////////////////////////////
 //////   Funciones enfocadas en el chatbot  /////////
 /////////////////////////////////////////////////////
 """
-def pantalla_chatbot(request,usuario_id):
-    print("::>>",type(usuario_id),usuario_id)
-    db_connection = MongoDBConnection()
+
+def pantalla_chatbot(request, usuario_id):
+    contes = 0 
+    contes = contes + 1
+    if request.method == 'POST':
+        pregunta = request.POST.get('pregunta')
+        contexto = "I am planning a picnic."
+        print(pregunta)
+        respuesta = obtener_respuesta(pregunta, contexto)
+        
+        #print("->",respuesta)
+
+        return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "respuesta": respuesta})
+    
+    
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
+
+    """    
     if request.method == 'POST':
         id_reda_Comet = usuario_id
         comentario_data = request.POST['comentario']
@@ -290,7 +319,7 @@ def pantalla_chatbot(request,usuario_id):
         
         comentario = Comentarios(id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, id_replicas=id_replicas)
         
-        db_connection = MongoDBConnection()
+        
 
         comentario_dict ={
             'id_reda_Comet': comentario.id_reda_Comet,
@@ -305,5 +334,4 @@ def pantalla_chatbot(request,usuario_id):
     
     comentarios =  db_connection.db.Comentarios.find() # Obtener todos los comentarios de la base de datos
     comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
-    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
-
+    """
