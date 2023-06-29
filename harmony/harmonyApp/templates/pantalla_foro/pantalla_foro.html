@@ -36,7 +36,12 @@
     display: flex;
     align-items: center;
 }
-
+#replica{
+    background-color: rgb(192, 192, 192);
+    border-radius: 45px;
+    margin-left: 5%;
+    width: 80%;
+}
 </style>
 <html>
     <head>
@@ -64,7 +69,7 @@
                                         <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%; width: 50%; height: auto;" src="{% static '/images/nina.png' %}">
                                     </div>
                                     <div class="col-md-7">
-                                        <h2 class="text-start">{{ nombre }}</h2>
+                                        <h2 class="text-start"> <b>Autor:</b>{{ nombre }}</h2>
                                         <p class="text-start">{{ comentario.comentario }}</p>
                                     </div>
                                     <div class="col-md-2 d-flex align-items-center justify-content-end">
@@ -107,7 +112,28 @@
                     </div>
                     <br>
                     <div id="replicas_realizadas">
-                        <p> {{comentario.id_replicas}}</p>
+                        <h6>Comentarios:</h6>
+                        {% for replica in comentario.id_replicas %}
+                            <div id="replica" >
+                                <h7 style="margin-top: 10%;margin-left: 4%; "><b>Autor:</b> {{replica.nombreRedactor}}</h7>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-10" >
+                                            <p style="margin-left: 4%;">
+                                                {{replica.contenidoReplica}}
+                                            </p>
+                                           
+                                        </div>
+                                        <div class="col-md-2">
+                                            {{replica.likes}}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>          
+                            <br>
+                            
+                        {% endfor %}
                     </div>
                     <div id="cont_agregar_replica">
                         <form method="POST" action="{% url 'agregar_replica' usuario_id=usuario_id comentario_id=id_comentario %}">
