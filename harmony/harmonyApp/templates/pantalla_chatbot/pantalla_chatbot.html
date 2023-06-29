@@ -105,6 +105,12 @@
                 <br><br><br><br><br>
 
                 -->
+                {% if pregunta %}
+                <div class="pregunta">
+                    <h4>Pregunta:</h4>
+                    <p>{{ pregunta }}</p>
+                </div>
+                {% endif %}
                 {% if respuesta %}
                 <div class="respuesta">
                     <h4>Respuesta:</h4>

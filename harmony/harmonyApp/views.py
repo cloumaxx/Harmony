@@ -4,13 +4,14 @@ from bson import ObjectId
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from pymongo import MongoClient
-from harmonyApp.chatbot_functions.model_bert_multilingual_cased import obtener_respuesta
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .forms import ComentarioForm, LoginForm
 from dateutil import parser
+from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
+from textwrap import wrap
 from django.contrib import messages
 
 
@@ -293,7 +294,7 @@ def editar_usuario(request, usuario_id):
 //////   Funciones enfocadas en el chatbot  /////////
 /////////////////////////////////////////////////////
 """
-
+"""
 def pantalla_chatbot(request, usuario_id):
     contes = 0 
     contes = contes + 1
@@ -306,6 +307,37 @@ def pantalla_chatbot(request, usuario_id):
         #print("->",respuesta)
 
         return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "respuesta": respuesta})
+    
+    
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
+"""
+
+def pantalla_chatbot(request, usuario_id):
+    
+    modelo_importado = 'mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es'
+    tokenizer  = AutoTokenizer.from_pretrained(modelo_importado, do_lower_case = False)
+    modelo = AutoModelForQuestionAnswering.from_pretrained(modelo_importado)
+    file_name = r'C:\Users\usuario\Dropbox\My PC (DESKTOP-23VV5U8)\Documents\GitHub\Harmony\harmony\harmonyApp\chatbot\contexto\contexto.txt'
+    f = open(file_name,'r',encoding='utf-8')
+    contexto= f.read()
+
+    encode = tokenizer.encode_plus(contexto, return_tensors='pt')
+    inputs_ids = encode['input_ids'].tolist()
+    tokens = tokenizer.convert_ids_to_tokens(inputs_ids[0])
+
+    nlp = pipeline('question-answering',model=modelo, tokenizer=tokenizer)
+
+    if request.method == 'POST':
+
+    
+        pregunta = request.POST.get('pregunta')
+        
+        salida = nlp({'question':pregunta,'context':contexto})
+    
+        respuesta=salida['answer']
+        #print("->",respuesta)
+
+        return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "respuesta": respuesta,"pregunta": pregunta})
     
     
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
