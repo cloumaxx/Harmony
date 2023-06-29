@@ -82,6 +82,7 @@ def get_inforeplicas(idReplica):
         nombreRedactor = db_connection.db.Usuario.find_one(
             {'_id': ObjectId(replicas['idRedactorReplica'])})['nombre']
         dic = {
+            "idReplica":str(idReplica),
             "nombreRedactor": nombreRedactor,
             "contenidoReplica": replicas['contenidoReplica'],
             "likes": replicas['likes']
@@ -99,7 +100,6 @@ def agregar_replica(request, usuario_id, comentario_id):
             comentario = db_connection.db.Comentarios.find_one(
                 {'_id': ObjectId(comentario_id)})
             id_replicas = comentario.get('id_replicas', [])
-
             if comentario:
                 replica_dict = {
                     'idComentario': comentario_id,
@@ -125,12 +125,27 @@ def agregar_replica(request, usuario_id, comentario_id):
 
     return redirect('pantalla_foro', usuario_id=usuario_id)
 
-
-def incrementar_likes(request, usuario_id, comentario_id):
-
+def incrementar_likes_replica(request, usuario_id, replica):
+    replica_id = replica.idReplica
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
+        comentario = db_connection.db.Replicas.find_one({'_id': ObjectId(replica_id)})
         
+        if comentario:
+            # Obtener los likes actuales del comentario
+            likes = comentario.get('likes', [])
+            if usuario_id not in likes:
+                # Agregar el usuario_id a los likes
+                likes.append(usuario_id)
+            elif usuario_id in likes:
+                likes.remove(usuario_id)
+            # Actualizar los likes en la base de datos
+            db_connection.db.Replicas.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
+    return redirect('pantalla_foro', usuario_id=usuario_id)
+
+def incrementar_likes(request, usuario_id, comentario_id):
+    if request.method == 'POST':
+        # Obtener el comentario de la base de datos
         comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
         
         if comentario:

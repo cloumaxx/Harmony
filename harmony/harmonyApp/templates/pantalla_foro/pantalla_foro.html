@@ -79,7 +79,7 @@
                                     <div class="col-md-2 d-flex align-items-center justify-content-end">
                                         <p>{{ comentario.likes|length }}</p>
                                         <div style="width: 5px;"></div> <!-- Espacio entre los botones -->
-                                        <form method="POST" action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario%}">
+                                        <form method="POST" action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
                                             {% csrf_token %}
                                             <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">❤️</button>
                                         </form>
@@ -119,7 +119,6 @@
                         {% for replica in comentario.id_replicas %}
                             <div id="replica" >
                                 <div style="height: 2%;"></div>
-
                                 <h7 style="margin-top: 10%;margin-left: 4%; "><b>Autor:</b> {{replica.nombreRedactor}}</h7>
                                 <div class="container">
                                     <div class="row">
@@ -133,6 +132,8 @@
                                             {{ replica.likes|length }}
                                             <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">❤️</button>
                                           </div>
+                                        
+                                        
                                           
                                           
 
