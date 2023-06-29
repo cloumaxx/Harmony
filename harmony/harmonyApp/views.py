@@ -13,6 +13,7 @@ from dateutil import parser
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
 from textwrap import wrap
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage
 
 
 # Create your views here.
@@ -32,11 +33,11 @@ def pantalla_foro(request,usuario_id):
         comentario_data = request.POST['comentario']
         likes = request.POST.getlist('likes')
         id_replicas = request.POST.getlist('id_replicas')
-        
-        comentario = Comentarios(id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, id_replicas=id_replicas)
-        
 
-        comentario_dict ={
+        comentario = Comentarios(
+            id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, id_replicas=id_replicas)
+
+        comentario_dict = {
             'id_reda_Comet': comentario.id_reda_Comet,
             'comentario': comentario.comentario,
             'likes': comentario.likes,
@@ -46,10 +47,49 @@ def pantalla_foro(request,usuario_id):
         db_connection.db.Comentarios.insert_one(comentario_dict)
 
         return redirect('pantalla_foro', usuario_id=usuario_id)
-    
-    comentarios =  db_connection.db.Comentarios.find() # Obtener todos los comentarios de la base de datos
-    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
-    return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": comentarios_con_nombre_id})
+
+    # Obtener todos los comentarios de la base de datos
+    comentarios = db_connection.db.Comentarios.find()
+
+    # Crear el objeto Paginator
+
+    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(
+        comentario['_id'])) for comentario in comentarios]
+    for comentario_tuple in comentarios_con_nombre_id:
+        comentario2 = comentario_tuple[0]  # Extract the comment dictionary
+        # Get the 'id_replicas' value (empty list if not present)
+        id_replicas = comentario2.get('id_replicas', [])
+        if len(id_replicas) > 0:
+            new_id_replicas = []  # Lista para almacenar los nuevos valores de 'id_replicas'
+            for j in id_replicas:
+                # Obtiene el valor actualizado de 'id_replicas' usando la función get_inforeplicas
+                new_id_replicas.append(get_inforeplicas(j))
+            comentario2['id_replicas'] = new_id_replicas
+    items_por_pagina = 2
+    paginator = Paginator(comentarios_con_nombre_id, items_por_pagina)
+    # Obtener el número de página a mostrar
+    numero_pagina = request.GET.get('page')
+    page_obj = paginator.get_page(numero_pagina)
+    cont = 0
+
+    # ['id_replicas']
+    return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
+
+def get_inforeplicas(idReplica):
+    replicas = db_connection.db.Replicas.find_one({'_id': ObjectId(idReplica)})
+    try:
+
+        nombreRedactor = db_connection.db.Usuario.find_one(
+            {'_id': ObjectId(replicas['idRedactorReplica'])})['nombre']
+        dic = {
+            "idReplica":str(idReplica),
+            "nombreRedactor": nombreRedactor,
+            "contenidoReplica": replicas['contenidoReplica'],
+            "likes": replicas['likes']
+        }
+        return dic
+    except:
+        return None
 
 
 def agregar_replica(request, usuario_id, comentario_id):
@@ -57,30 +97,55 @@ def agregar_replica(request, usuario_id, comentario_id):
         replica_comentario = request.POST['replica']
         if len(replica_comentario) > 0:
 
-            comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
+            comentario = db_connection.db.Comentarios.find_one(
+                {'_id': ObjectId(comentario_id)})
+            id_replicas = comentario.get('id_replicas', [])
             if comentario:
-                
-                
-                    print("tama:",len(replica_comentario))
-                    
-                    replica_dict ={
-                        'idComentario': comentario_id,
-                        'idRedactorReplica': usuario_id,
-                        'contenidoReplica': replica_comentario,
-                        'likes': []
-                        }
-                    print(replica_dict)
-                    db_connection.db.Replicas.insert_one(replica_dict)
+                replica_dict = {
+                    'idComentario': comentario_id,
+                    'idRedactorReplica': usuario_id,
+                    'contenidoReplica': replica_comentario,
+                    'likes': []
+                }
+
+                insert_result = db_connection.db.Replicas.insert_one(
+                    replica_dict)
+
+                # Obtener el ID asignado a la réplica
+                replica_id = insert_result.inserted_id
+                id_replicas.append(replica_id)
+
+                db_connection.db.Comentarios.update_one(
+                    {'_id': ObjectId(comentario_id)},
+                    {'$set': {'id_replicas': id_replicas}}
+                )
+
         else:
-            print('replica vacia')
+            messages.error(request, 'Reply cannot be empty.')
 
-    return render('pantalla_foro', usuario_id=usuario_id)
+    return redirect('pantalla_foro', usuario_id=usuario_id)
 
-def incrementar_likes(request, usuario_id, comentario_id):
-
+def incrementar_likes_replica(request, usuario_id, replica):
+    replica_id = replica.idReplica
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
+        comentario = db_connection.db.Replicas.find_one({'_id': ObjectId(replica_id)})
         
+        if comentario:
+            # Obtener los likes actuales del comentario
+            likes = comentario.get('likes', [])
+            if usuario_id not in likes:
+                # Agregar el usuario_id a los likes
+                likes.append(usuario_id)
+            elif usuario_id in likes:
+                likes.remove(usuario_id)
+            # Actualizar los likes en la base de datos
+            db_connection.db.Replicas.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
+    return redirect('pantalla_foro', usuario_id=usuario_id)
+
+def incrementar_likes(request, usuario_id, comentario_id):
+    if request.method == 'POST':
+        # Obtener el comentario de la base de datos
         comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
         
         if comentario:
@@ -230,7 +295,6 @@ def pantalla_registro(request):
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
 def pantalla_perfil_usuario(request,usuario_id):
-    print(usuario_id)
     # Obtener la conexión a la base de datos MongoDB
     
     
@@ -317,7 +381,7 @@ def pantalla_chatbot(request, usuario_id):
     modelo_importado = 'mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es'
     tokenizer  = AutoTokenizer.from_pretrained(modelo_importado, do_lower_case = False)
     modelo = AutoModelForQuestionAnswering.from_pretrained(modelo_importado)
-    file_name = r'C:\Users\usuario\Dropbox\My PC (DESKTOP-23VV5U8)\Documents\GitHub\Harmony\harmony\harmonyApp\chatbot\contexto\contexto.txt'
+    file_name = r'harmonyApp/chatbot/contexto/contexto.txt'
     f = open(file_name,'r',encoding='utf-8')
     contexto= f.read()
 
