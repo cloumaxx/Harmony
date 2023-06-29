@@ -60,9 +60,13 @@
             <br><br>
             <main>
                 {% for comentario, nombre, id_comentario in comentarios %}
-                <div class="container">
+                <div class="container" style="border-radius: 45px; border: 1px solid black;  background-color: rgba(172, 167, 167, 0.185);">
+                    <div style="height: 5%;"></div>
+
                     <div class="row">
+
                         <div class="col-md-10">
+                            
                             <div id="contComentario" class="container">
                                 <div class="row">
                                     <div class="col-md-2 d-flex align-items-center">
@@ -84,30 +88,29 @@
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div class="btn-group dropup">
+                            <div class="btn-group dropup d-flex align-items-center" style="height: 100%;">
                                 <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    ...
+                                  ...
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <!-- Enlaces del menú desplegable -->
-                                    <li><a class="dropdown-item" href="#">Responder</a></li>
-                                    {% if usuario_id == comentario.id_reda_Comet %}
-                                    <li>
-                                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalEditarComentario{{ id_comentario }}" data-id-comentario="{{ id_comentario }}">Editar</a>
-                                    </li>
-                                    <li>
-                                        <form method="POST" action="{% url 'borrar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
-                                            {% csrf_token %}
-                                            <a class="dropdown-item" >
-                                                <button type="submit"class="btn  btn-sm p-0">Eliminar</button>
-
-                                            </a>
-                                        </form>
-                                        
-                                    </li>
-                                    {% endif %}
+                                  <!-- Enlaces del menú desplegable -->
+                                  <li><a class="dropdown-item" href="#">Responder</a></li>
+                                  {% if usuario_id == comentario.id_reda_Comet %}
+                                  <li>
+                                    <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalEditarComentario{{ id_comentario }}" data-id-comentario="{{ id_comentario }}">Editar</a>
+                                  </li>
+                                  <li>
+                                    <form method="POST" action="{% url 'borrar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                      {% csrf_token %}
+                                      <a class="dropdown-item">
+                                        <button type="submit" class="btn btn-sm p-0">Eliminar</button>
+                                      </a>
+                                    </form>
+                                  </li>
+                                  {% endif %}
                                 </ul>
-                            </div>
+                              </div>
+                              
                         </div>
                     </div>
                     <br>
@@ -115,6 +118,8 @@
                         <h6>Comentarios:</h6>
                         {% for replica in comentario.id_replicas %}
                             <div id="replica" >
+                                <div style="height: 2%;"></div>
+
                                 <h7 style="margin-top: 10%;margin-left: 4%; "><b>Autor:</b> {{replica.nombreRedactor}}</h7>
                                 <div class="container">
                                     <div class="row">
@@ -124,9 +129,12 @@
                                             </p>
                                            
                                         </div>
-                                        <div class="col-md-2">
-                                            {{replica.likes}}
-                                        </div>
+                                        <div class="col-md-2 d-flex align-items-center justify-content-center " > 
+                                            {{ replica.likes|length }}
+                                            <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">❤️</button>
+                                          </div>
+                                          
+                                          
 
                                     </div>
                                 </div>
@@ -138,9 +146,12 @@
                     <div id="cont_agregar_replica">
                         <form method="POST" action="{% url 'agregar_replica' usuario_id=usuario_id comentario_id=id_comentario %}">
                             {% csrf_token %}
-                            <p style="margin-right: 10px;" >¿Deseas responder?</p>
-                            <input  name = "replica" style="width: 50%;" placeholder="Escribe algo">
-                            <button >enviar</button>
+                            <div style="display: flex; align-items: center; background-color: rgb(205, 175, 206); width:  50rem; border-radius: 45px;">
+                                <p style="padding-left: 5%; padding-top: 2%">¿Deseas responder?</p>
+                                <input name="replica" style="width: 90%;" placeholder="Escribe algo">
+                                <button style="margin-left: 5%;">enviar</button>
+                                <div style="width: 10%;"></div>
+                              </div>
                         </form>
                         
                     </div>
