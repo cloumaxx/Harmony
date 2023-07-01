@@ -19,9 +19,14 @@ from django.core.paginator import Paginator, EmptyPage
 # Create your views here.
 db_connection = MongoDBConnection()
 
-def pantalla_inicial(request,usuario_id ):
+
+def pantalla_inicial(request):
+    return render(request,"pantalla_inicial\pantalla_incial.html")
+
+
+def pantalla_menu_inicial(request,usuario_id ):
     
-    return render(request, "pantalla_inicial/pantalla_inicial.html",{"usuario_id": usuario_id })
+    return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id })
 """
 ////////////////////////////////////////////////////////
 ////// Funciones enfocadas en los comentarios  /////////
@@ -140,7 +145,7 @@ def incrementar_likes_replica(request, usuario_id, replica):
             elif usuario_id in likes:
                 likes.remove(usuario_id)
             # Actualizar los likes en la base de datos
-            db_connection.db.Replicas.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
+            db_connection.db.Replicas.update_one({'_id': ObjectId(replica_id)}, {'$set': {'likes': likes}})
     return redirect('pantalla_foro', usuario_id=usuario_id)
 
 def incrementar_likes(request, usuario_id, comentario_id):
@@ -246,7 +251,7 @@ def pantalla_login(request):
             
             if user is not None:
                 user_id = str(user['_id'])
-                return redirect('pantalla_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
+                return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
             else:
                 form.add_error(None, 'Credenciales inválidas')
     else:
