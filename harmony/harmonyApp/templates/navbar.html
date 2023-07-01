@@ -14,27 +14,12 @@
   }
 
   #navBarContent {
-      background-color: #FAC2E5;
+      background-color: #D9D9D9;
+      height: 10%;
+      margin-bottom: 2%;
   }
   
-  #bton_CerrarSesion {
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
-    background: #FF0000;
-    border-radius: 0px 30px 0px 30px;
-  }
 
-  .dropdown-menu {
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-  }
-  .dropdown-item {
-    text-align: center;
-  }
- 
   .navbar-nav {
     display: flex;
     align-items: center;
@@ -46,6 +31,32 @@
     font-size: 1.5vw; /* El tamaño se ajustará según el ancho de la pantalla */
     display: flex;
     align-items: center;
+  }
+  #txt_boton{
+    color: #1D1919;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .dropdown-menu{
+    border-radius: 8px;
+    background: #D9D9D9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.50);
+    flex-direction: column;
+    align-items: center;
+  }
+  .dropdown-item{
+    margin-left: 10%;
+    border-radius: 10px;
+    background: #BBB;
+    width: 80%;
+  }
+  #bton_CerrarSesion{
+    background-color: red;
+  }
+  #bton_CerrarSesion:active {
+    color: white;
   }
 </style>
 <nav id="navBarContent" class="navbar navbar-light navbar-expand-md">
@@ -63,30 +74,47 @@
         <li style="text-align: center;  " class="nav-item">
           <a class="nav-link active"  href="{% url 'pantalla_chatbot' usuario_id=usuario_id %}" >
             <button class="btn  btn-sm p-0" >
-              Chatbot
+              <p id="txt_boton"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="8%" height="8%" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                  <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                </svg> 
+                Chat
+              </p>
             </button>
           </a>
         </li>
         <li style="text-align: center;  " class="nav-item">
           <a class="nav-link active"  href="{% url 'pantalla_foro' usuario_id=usuario_id %}" >
             <button class="btn  btn-sm p-0" >
-              Foro
+              <p id="txt_boton"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="8%" height="8%" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                </svg>
+                Foro
+              </p>
             </button>
           </a>
         </li>
         
         <li class="nav-item dropdown">
-          <a class="dropdown-toggle nav-link" aria-expanded="false"
-            data-bs-toggle="dropdown" >Usuario 
-            <img style="width: 20%;" src="{% static '/images/logo_harmony.png'  %}">
-
+          <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown">
+            <button class="btn  btn-sm p-0" >
+            <p id="txt_boton">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="8%" height="8%" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                  </svg>
+                  Usuario
+              </p>
+            </button>
+              
           </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="{% url 'pantalla_perfil_usuario' usuario_id=usuario_id %}">Mi perfil</a>
-            <a class="dropdown-item" >Mi actividad </a>
-            <a class="dropdown-item" id="bton_CerrarSesion" >Cerrar sesion </a>
+          <div class="dropdown-menu" >
+              <a class="dropdown-item"  href="{% url 'pantalla_perfil_usuario' usuario_id=usuario_id %}">Mi perfil</a><br>
+              <a class="dropdown-item">Mi actividad</a><br>
+              <a class="dropdown-item" id="bton_CerrarSesion">Cerrar sesión</a><br>
           </div>
-        </li>
+      </li>
+      
       </ul>
     </div>
   </div>
