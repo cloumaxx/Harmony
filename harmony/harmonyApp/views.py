@@ -4,6 +4,7 @@ from bson import ObjectId
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from pymongo import MongoClient
+from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
@@ -18,7 +19,7 @@ from django.core.paginator import Paginator, EmptyPage
 
 # Create your views here.
 db_connection = MongoDBConnection()
-
+chat = []
 
 def pantalla_inicial(request):
     return render(request,"pantalla_inicial\pantalla_incial.html")
@@ -235,7 +236,6 @@ def borrar_comentario(request, usuario_id, comentario_id):
 /////////////////////////////////////////////////////
 """
 
-
 def pantalla_login(request):
       # Crear una instancia de la clase MongoDBConnection
 
@@ -383,31 +383,31 @@ def pantalla_chatbot(request, usuario_id):
 
 def pantalla_chatbot(request, usuario_id):
     
-    modelo_importado = 'mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es'
-    tokenizer  = AutoTokenizer.from_pretrained(modelo_importado, do_lower_case = False)
-    modelo = AutoModelForQuestionAnswering.from_pretrained(modelo_importado)
-    file_name = r'harmonyApp/chatbot/contexto/contexto.txt'
-    f = open(file_name,'r',encoding='utf-8')
-    contexto= f.read()
-
-    encode = tokenizer.encode_plus(contexto, return_tensors='pt')
-    inputs_ids = encode['input_ids'].tolist()
-    tokens = tokenizer.convert_ids_to_tokens(inputs_ids[0])
-
-    nlp = pipeline('question-answering',model=modelo, tokenizer=tokenizer)
-
     if request.method == 'POST':
+        boton_limpiar_chat_value = request.POST.get('boton_limpiar_chat')
+        if boton_limpiar_chat_value == "borrar":
+            chat.clear()
+            return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "chat": chat})
 
-    
-        pregunta = request.POST.get('pregunta')
-        
-        salida = nlp({'question':pregunta,'context':contexto})
-    
-        respuesta=salida['answer']
-        #print("->",respuesta)
+        else:
+            pregunta = request.POST.get('pregunta')
+            print(boton_limpiar_chat_value)
+            if pregunta == "" or pregunta == None or len(pregunta)==0:
+                print(">>",boton_limpiar_chat_value)
+                return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
-        return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "respuesta": respuesta,"pregunta": pregunta})
-    
+            else:
+                salida = respuesta_modelo_bert_contexto(pregunta)
+            
+                respuesta=salida['answer']
+                nuevo_mensaje ={
+                    'pregunta': pregunta,
+                    'respuesta': respuesta}
+
+                chat.append(nuevo_mensaje)
+                print(chat)
+                return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "chat": chat})
+            
     
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
