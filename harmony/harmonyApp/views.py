@@ -5,11 +5,12 @@ from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedire
 from django.shortcuts import get_object_or_404, redirect, render
 from pymongo import MongoClient
 from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
+from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
+from harmonyApp.operations.utils import get_Nombre, get_inforeplicas
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-from .forms import ComentarioForm, LoginForm
 from dateutil import parser
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
 from textwrap import wrap
@@ -59,7 +60,7 @@ def pantalla_foro(request,usuario_id):
 
     # Crear el objeto Paginator
 
-    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(
+    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), str(
         comentario['_id'])) for comentario in comentarios]
     for comentario_tuple in comentarios_con_nombre_id:
         comentario2 = comentario_tuple[0]  # Extract the comment dictionary
@@ -69,7 +70,7 @@ def pantalla_foro(request,usuario_id):
             new_id_replicas = []  # Lista para almacenar los nuevos valores de 'id_replicas'
             for j in id_replicas:
                 # Obtiene el valor actualizado de 'id_replicas' usando la función get_inforeplicas
-                new_id_replicas.append(get_inforeplicas(j))
+                new_id_replicas.append(get_inforeplicas(j,db_connection))
             comentario2['id_replicas'] = new_id_replicas
     items_por_pagina = 2
     paginator = Paginator(comentarios_con_nombre_id, items_por_pagina)
@@ -80,23 +81,6 @@ def pantalla_foro(request,usuario_id):
 
     # ['id_replicas']
     return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
-
-def get_inforeplicas(idReplica):
-    replicas = db_connection.db.Replicas.find_one({'_id': ObjectId(idReplica)})
-    try:
-
-        nombreRedactor = db_connection.db.Usuario.find_one(
-            {'_id': ObjectId(replicas['idRedactorReplica'])})['nombre']
-        dic = {
-            "idReplica":str(idReplica),
-            "nombreRedactor": nombreRedactor,
-            "contenidoReplica": replicas['contenidoReplica'],
-            "likes": replicas['likes']
-        }
-        return dic
-    except:
-        return None
-
 
 def agregar_replica(request, usuario_id, comentario_id):
     if request.method == 'POST':
@@ -167,22 +151,6 @@ def incrementar_likes(request, usuario_id, comentario_id):
     return redirect('pantalla_foro', usuario_id=usuario_id)
 
 
-def get_Nombre(comentario):
-    
-    user = db_connection.db.Usuario.find_one({'_id': ObjectId(comentario['id_reda_Comet'])})
-    try:
-        return user['nombre']
-    except user.DoesNotExist:
-        return None
-
-def get_idComentario(comentario):
-    
-    user = db_connection.db.Usuario.find_one({'_id': ObjectId(comentario['id_reda_Comet'])})
-    try:
-        return user['id']
-    except user.DoesNotExist:
-        return None
-    
 def pantalla_nuevo_comentario(request, usuario_id):
     if request.method == 'POST':
         id_reda_Comet = usuario_id
@@ -300,7 +268,6 @@ def pantalla_registro(request):
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
 def pantalla_perfil_usuario(request,usuario_id):
-    # Obtener la conexión a la base de datos MongoDB
     
     
     # Obtener el ID específico del usuario que deseas consultar
@@ -318,7 +285,7 @@ def pantalla_perfil_usuario(request,usuario_id):
             fecha_nacimiento=usuario_dict['fecha_nacimiento']
         )
         comentarios =  db_connection.db.Comentarios.find({'id_reda_Comet': usuario_id}) # Obtener todos los comentarios de la base de datos
-        comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
+        comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), str(comentario['_id'])) for comentario in comentarios]
     
         return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": comentarios_con_nombre_id})
     
@@ -382,8 +349,8 @@ def pantalla_chatbot(request, usuario_id):
 """
 
 def pantalla_chatbot(request, usuario_id):
-    
-    if request.method == 'POST':
+    print("chat", chat)
+    if request.method == 'POST':    
         boton_limpiar_chat_value = request.POST.get('boton_limpiar_chat')
         if boton_limpiar_chat_value == "borrar":
             chat.clear()
@@ -391,9 +358,7 @@ def pantalla_chatbot(request, usuario_id):
 
         else:
             pregunta = request.POST.get('pregunta')
-            print(boton_limpiar_chat_value)
             if pregunta == "" or pregunta == None or len(pregunta)==0:
-                print(">>",boton_limpiar_chat_value)
                 return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
             else:
@@ -405,7 +370,6 @@ def pantalla_chatbot(request, usuario_id):
                     'respuesta': respuesta}
 
                 chat.append(nuevo_mensaje)
-                print(chat)
                 return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "chat": chat})
             
     
