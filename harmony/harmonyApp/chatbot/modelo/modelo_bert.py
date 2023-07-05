@@ -1,23 +1,30 @@
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
 from textwrap import wrap
+import json
+
+import json
+from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
 
 def respuesta_modelo_bert_contexto(pregunta):
     modelo_importado = 'mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es'
-    tokenizer  = AutoTokenizer.from_pretrained(modelo_importado, do_lower_case = False)
+    tokenizer = AutoTokenizer.from_pretrained(modelo_importado, do_lower_case=False)
     modelo = AutoModelForQuestionAnswering.from_pretrained(modelo_importado)
-    file_name = r'harmonyApp/chatbot/contexto/contexto.txt'
-    f = open(file_name,'r',encoding='utf-8')
-    contexto= f.read()
-
+    ruta = "harmonyApp/chatbot/contexto/contexto.json"
+    
+    with open(ruta, 'r') as f:
+        data = json.load(f)
+        contexto = data['titanic']  # Extract the 'titanic' field from the JSON data
+    
     encode = tokenizer.encode_plus(contexto, return_tensors='pt')
-    inputs_ids = encode['input_ids'].tolist()
-    tokens = tokenizer.convert_ids_to_tokens(inputs_ids[0])
-
-    nlp = pipeline('question-answering',model=modelo, tokenizer=tokenizer)
-
-    salida = nlp({'question':pregunta,'context':contexto})
-
+    input_ids = encode['input_ids'].tolist()
+    tokens = tokenizer.convert_ids_to_tokens(input_ids[0])
+    print(tokens)
+    
+    nlp = pipeline('question-answering', model=modelo, tokenizer=tokenizer)
+    salida = nlp({'question': pregunta, 'context': contexto})
+    
     return salida
+
 """
 modelo_importado = 'mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es'
 tokenizer  = AutoTokenizer.from_pretrained(modelo_importado, do_lower_case = False)
