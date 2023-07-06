@@ -400,6 +400,12 @@ def pantalla_chatbot(request, usuario_id):
                 salida = respuesta_modelo_bert_contexto(pregunta)
             
                 respuesta=salida['answer']
+                if respuesta == 'Triste':
+                    respuesta = 'No me gusta escuchar eso, cuentame que sucede?'
+                elif respuesta == 'Feliz':
+                    respuesta = 'Me alegro que estes bien :)'
+                elif respuesta == 'Hola':
+                    respuesta = 'Hola, soy Milly. ¿Como te encuentras el dia de hoy?'
                 nuevo_mensaje ={
                     'pregunta': pregunta,
                     'respuesta': respuesta}
