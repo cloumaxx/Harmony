@@ -18,6 +18,7 @@ def get_inforeplicas(idReplica,db_connection):
             {'_id': ObjectId(replicas['idRedactorReplica'])})['nombre']
         dic = {
             "idReplica":str(idReplica),
+            "idRedactorReplica": replicas['idRedactorReplica'],
             "nombreRedactor": nombreRedactor,
             "contenidoReplica": replicas['contenidoReplica'],
             "likes": replicas['likes']

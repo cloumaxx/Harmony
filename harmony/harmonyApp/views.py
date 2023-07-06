@@ -12,7 +12,6 @@ from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from dateutil import parser
-from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
 from textwrap import wrap
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage
@@ -77,9 +76,7 @@ def pantalla_foro(request,usuario_id):
     # Obtener el número de página a mostrar
     numero_pagina = request.GET.get('page')
     page_obj = paginator.get_page(numero_pagina)
-    cont = 0
 
-    # ['id_replicas']
     return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
 
 def agregar_replica(request, usuario_id, comentario_id):
