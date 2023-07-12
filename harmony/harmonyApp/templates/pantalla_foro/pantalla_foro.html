@@ -1,150 +1,371 @@
 {% load static %}
 
 <style>
-#conText {
-  border-top: 1px solid black;
-  padding-top: 10px; /* Opcional, agrega un espacio entre la línea y el contenido */
-}
-#contComentario{
-    background-color: #FAC2E5;
-    border-radius: 45px;
-}
-.fixed-input {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-.btn-enviar{
-    background-color: #960F62;
-    border-radius: 30px;
-    font-family: 'Open Sans';
-    font-style: normal;
-    line-height: 48px;
-    text-align: center;
-    width: 100%;
-    color: #FFFFFF;
-    border: none;
-    
-}
-#cont_agregar_replica{
-    
-    margin-left: 5%;
-    display: flex;
-    align-items: center;
-}
-#replica{
-    background-color: rgb(192, 192, 192);
-    border-radius: 45px;
-    margin-left: 5%;
-    width: 80%;
-}
+    #conText {
+        border-top: 1px solid black;
+        padding-top: 10px;
+        /* Opcional, agrega un espacio entre la línea y el contenido */
+    }
+
+    #contComentario {
+        border-radius: 17px;
+        background: #E9DEB3;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .fixed-input {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+       
+        
+    }
+
+    .btn-enviar {
+        border-radius: 29px;
+        background: #424050;
+        height: 100%;
+        width: 100%;
+    }
+
+    .dropdown-item {
+        margin-top: 5px;
+    }
+
+    #cont_agregar_replica {
+
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+    }
+
+    #replica {
+        border-radius: 17px;
+        background: #9FC5EB;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    #Foro_titulo {
+        color: #FFF;
+        text-align: center;
+        font-size: 76px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    #container_like {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #container_like button,
+    #container_like p {
+        margin: 1px;
+    }
+
+    #btn_dropdown {
+        background: none;
+        border: none;
+    }
+
+    #btn_dropdown .dropdown-toggle::after {
+        display: none;
+    }
+    #input_comentario{
+        border-radius: 19px;
+        background: #424050;
+        color: white;
+        border-color: transparent;
+        height: 100%;
+        
+    }
+    #input_comentario::placeholder{
+        color: white;
+        text-align: center; 
+    }
+    #body {
+        background: linear-gradient(180deg, #686381 0%, rgba(50, 16, 229, 0.40) 100%);
+    }
 </style>
 <html>
-    <head>
-        <title>Harmony</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    </head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body>
+
+<head>
+    <title>Harmony</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function abrirModalComentario(idModal) {
+        // Ocultar las modales anteriores (si las hay)
+        $(".modal").modal("hide");
+
+        // Mostrar la modal actual
+        $("#" + idModal).modal("show");
+    }
+
+    function cerrarModalComentario(idModal) {
+        // Ocultar la modal actual
+        $("#" + idModal).modal("hide");
+    }
+
+    function abrirModalAgregarReplica(idModal) {
+        // Ocultar las modales anteriores (si las hay)
+        $(".modal").modal("hide");
+
+        // Mostrar la modal actual
+        $("#" + idModal).modal("show");
+    }
+
+    function cerrarAgregarReplica(idModal) {
+        // Ocultar la modal actual
+        $("#" + idModal).modal("hide");
+    }
+
+    function abrirModalReplica(replica) {
+        // Ocultar las modales anteriores (si las hay)
+        $(".modal").modal("hide");
+
+        // Mostrar la modal actual
+        $("#" + replica).modal("show");
+    }
+
+    function cerrarModalReplica(replica) {
+        // Ocultar la modal actual
+        $("#" + replica).modal("hide");
+    }
+    function mostrarTexto() {
+        var textoOculto = document.getElementById("texto-oculto");
+        var boton = document.querySelector("button");
+
+        if (textoOculto.style.display === "none") {
+            //textoOculto.style.display = "inline";
+            //boton.textContent = "Ver menos";
+        } else {
+            textoOculto.style.display = "none";
+            boton.textContent = "Ver más";
+        }
+    }
+</script>
+</head>
+
+<body id="body">
+
+    <header>
+        {% include 'navbar.html' %}
+    </header>
+
+    <main>
         <div>
-            <header>
-                {% include 'navbar.html' %}
-            </header>
-            <br><br>
-            <main>
-                {% for comentario, nombre, id_comentario in comentarios %}
-                <div class="container" style="border-radius: 45px; border: 1px solid black;  background-color: rgba(172, 167, 167, 0.185);">
-                    <div style="height: 5%;"></div>
+            <h1 id="Foro_titulo">Foro</h1>
+        </div>
+        {% for comentario, nombre, id_comentario in comentarios %}
+        <div class="container">
+            <div style="height: 5%;"></div>
 
-                    <div class="row">
+            <div class="row">
 
-                        <div class="col-md-10">
-                            
-                            <div id="contComentario" class="container">
-                                <div class="row">
-                                    <div class="col-md-2 d-flex align-items-center">
-                                        <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%; width: 50%; height: auto;" src="{% static '/images/nina.png' %}">
-                                    </div>
-                                    <div class="col-md-7">
-                                        <h2 class="text-start"> <b>Autor:</b>{{ nombre }}</h2>
-                                        <p class="text-start">{{ comentario.comentario }}</p>
-                                    </div>
-                                    <div class="col-md-2 d-flex align-items-center justify-content-end">
+                <div class="col-md-10">
+
+                    <div id="contComentario" class="container">
+                        <div class="row">
+                            <div class="col-md-2 d-flex align-items-center">
+                                <img class="border rounded-circle border-1 border-dark"
+                                    style="border-radius: 50%; width: 50%; height: auto;"
+                                    src="{% static '/images/nina.png' %}">
+                            </div>
+                            <div class="col-md-6">
+                                <h2 class="text-start"> <b>{{ nombre }}</b></h2>
+                                <p> {{ comentario.comentario|length }}</p>
+                                {% with valor=200 %}
+                                {% if comentario.comentario|length > valor %}
+                                    <p id="comentario">
+                                        {{ comentario.comentario|slice:":valor"|truncatechars:valor }}
+                                        <span id="texto-oculto" style="display: none;">
+                                            {{ comentario.comentario }}
+                                        </span>
+                                    </p>
+                                    <button onclick="mostrarTexto()">Ver más</button>
+                                {% else %}
+                                    <p>{{ comentario.comentario }}</p>
+                                {% endif %}
+                            {% endwith %}
+
+
+                            </div>
+                            <div class="col-md-2 d-flex align-items-center justify-content-end">
+
+                                <!-- Espacio entre los botones -->
+                                <form method="POST"
+                                    action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                    {% csrf_token %}
+                                    <div class="container" id="container_like">
+                                        <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" style="color: red;" class="bi bi-heart-fill"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                            </svg>
+                                        </button>
                                         <p>{{ comentario.likes|length }}</p>
-                                        <div style="width: 5px;"></div> <!-- Espacio entre los botones -->
-                                        <form method="POST" action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
-                                            {% csrf_token %}
-                                            <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">❤️</button>
-                                        </form>
                                     </div>
+                                </form>
+
+
+                            </div>
+                            <div class="col-md-1">
+                                <div class="btn-group dropup d-flex align-items-center" style="height: 100%;">
+                                    <button id="btn_dropdown" type="button" class="btn-svg" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            style="color:black; width: 25px; height: 25px; "
+                                            class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                            <path
+                                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                        </svg>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <!-- Enlaces del menú desplegable -->
+                                        <li>
+                                            <a class="dropdown-item"
+                                                onclick="abrirModalAgregarReplica('modalAgregarReplica{{ id_comentario }}')">Responder</a>
+                                        </li>
+                                        {% if usuario_id == comentario.id_reda_Comet %}
+                                        <li>
+                                            <a class="dropdown-item"
+                                                onclick="abrirModalComentario('modalEditarComentario{{ id_comentario }}')">Editar</a>
+                                        </li>
+                                        <li>
+                                            <form method="POST"
+                                                action="{% url 'borrar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                                {% csrf_token %}
+                                                <a class="dropdown-item">
+                                                    <button type="submit" class="btn btn-sm p-0">Eliminar</button>
+                                                </a>
+                                            </form>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
                                 </div>
+
                             </div>
                         </div>
-                        <div class="col-md-2">
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <div id="replicas_realizadas">
+                {% for replica in comentario.id_replicas %}
+                <div id="replica" class="container">
+
+                    <div class="row">
+                        <div class="col-md-2 d-flex align-items-center">
+                            <img class="border rounded-circle border-1 border-dark"
+                                style="border-radius: 50%; width: 50%; height: auto;"
+                                src="{% static '/images/nina.png' %}">
+                        </div>
+                        <div class="col-md-6">
+
+                            <h7 style="margin-top: 10%;margin-left: 4%; "><b>{{replica.nombreRedactor}}</b> </h7>
+
+
+                            {% with valor=200 %}
+                            {% if comentario.comentario|length > valor %}
+                            <p style="margin-left: 4%;" id="comentario">
+                                {{ replica.contenidoReplica | slice:":valor"|truncatechars:valor }} </p>
+                            <a href="#" id="ver-mas">ver más{{valor}}</a>
+
+
+                            {% else %}
+                            <p>{{ replica.contenidoReplica }}</p>
+                            {% endif %}
+                            {% endwith %}
+
+                        </div>
+                        <div class="col-md-2 d-flex align-items-center justify-content-center ">
+                            <form method="POST"
+                                action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                {% csrf_token %}
+                                <div class="container" id="container_like">
+                                    <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" style="color: red;" class="bi bi-heart-fill"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                        </svg>
+                                    </button>
+                                    <p>{{ replica.likes|length }}</p>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-1">
                             <div class="btn-group dropup d-flex align-items-center" style="height: 100%;">
-                                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                  ...
+                                <button id="btn_dropdown" type="button" class="btn-svg" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                        style="color:black; width: 25px; height: 25px; "
+                                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                        <path
+                                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                    </svg>
                                 </button>
                                 <ul class="dropdown-menu">
-                                  <!-- Enlaces del menú desplegable -->
-                                  <li><a class="dropdown-item" href="#">Responder</a></li>
-                                  {% if usuario_id == comentario.id_reda_Comet %}
-                                  <li>
-                                    <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalEditarComentario{{ id_comentario }}" data-id-comentario="{{ id_comentario }}">Editar</a>
-                                  </li>
-                                  <li>
-                                    <form method="POST" action="{% url 'borrar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
-                                      {% csrf_token %}
-                                      <a class="dropdown-item">
-                                        <button type="submit" class="btn btn-sm p-0">Eliminar</button>
-                                      </a>
-                                    </form>
-                                  </li>
-                                  {% endif %}
-                                </ul>
-                              </div>
-                              
-                        </div>
-                    </div>
-                    <br>
-                    <div id="replicas_realizadas">
-                        <h6>Comentarios:</h6>
-                        {% for replica in comentario.id_replicas %}
-                            <div id="replica" >
-                                <div style="height: 2%;"></div>
-                                <h7 style="margin-top: 10%;margin-left: 4%; "><b>Autor:</b> {{replica.nombreRedactor}}</h7>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-10" >
-                                            <p style="margin-left: 4%;">
-                                                {{replica.contenidoReplica}}
-                                            </p>
-                                           
-                                        </div>
-                                        <div class="col-md-2 d-flex align-items-center justify-content-center " > 
-                                            {{ replica.likes|length }}
-                                            <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">❤️</button>
-                                          </div>
-                                        
-                                        
-                                          
-                                          
+                                    <!-- Enlaces del menú desplegable -->
+                                    <li>
+                                        <a class="dropdown-item"
+                                            onclick="abrirModalAgregarReplica('modalAgregarReplica{{ id_comentario }}')">Responder</a>
 
-                                    </div>
-                                </div>
-                            </div>          
-                            <br>
-                            
-                        {% endfor %}
+
+                                    </li>
+                                    {% if usuario_id == replica.idRedactorReplica %}
+                                    <li>
+
+                                        <a class="dropdown-item"
+                                            onclick="cerrarAgregarReplica('modalEditarReplica{{ id_comentario }}')">Editar</a>
+
+                                    </li>
+                                    <li>
+                                        <form method="POST"
+                                            action="{% url 'borrar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                            {% csrf_token %}
+                                            <a class="dropdown-item">
+                                                <button type="submit" class="btn btn-sm p-0">Eliminar</button>
+                                            </a>
+                                        </form>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+
+
                     </div>
-                    <div id="cont_agregar_replica">
+
+                </div>
+                <br>
+
+                {% endfor %}
+            </div>
+            <!--
+<div id="cont_agregar_replica">
                         <form method="POST" action="{% url 'agregar_replica' usuario_id=usuario_id comentario_id=id_comentario %}">
                             {% csrf_token %}
                             <div style="display: flex; align-items: center; background-color: rgb(205, 175, 206); width:  50rem; border-radius: 45px;">
@@ -156,59 +377,29 @@
                         </form>
                         
                     </div>
-                    
-                </div>
-                <br>
 
-                {% endfor %}
-                <br>
-  <!-- Botones de navegación -->
-{% if comentarios.has_previous %}
-<a href="?page={{ comentarios.previous_page_number }}">Anterior</a>
-{% endif %}
+                    -->
 
-<span>{{ comentarios.number }}</span>
 
-{% if comentarios.has_next %}
-<a href="?page={{ comentarios.next_page_number }}">Siguiente</a>
-{% endif %}   
-                <br><br><br><br><br>
-            </main>
-            <footer>
-                
-
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="fixed-input">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <input name="comentario" placeholder="Escribe tu aporte aquí" type="text" class="form-control" aria-describedby="emailHelp">
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="submit" class="btn-enviar">Enviar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </footer>
         </div>
-        <!-- Ventana Modal -->
-        {% for comentario, _, id_comentario in comentarios %}
-        <div class="modal fade" id="modalEditarComentario{{ id_comentario }}">
+        <br>
+        <!-- Ventana Modal Agregar Replica -->
+        <div class="modal fade" id="modalAgregarReplica{{ id_comentario }}">
+            <!-- Contenido de la ventana modal -->
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <!-- Contenido de la ventana modal -->
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalAgregarComentarioLabel">Editar Comentario</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title" id="modalAgregarComentarioLabel">Agregar replica {{id_comentario}}</h5>
+                        <button type="button" class="btn-close"
+                            onclick="cerrarAgregarReplica('modalAgregarReplica{{ id_comentario }}')"
+                            aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <!-- Formulario para editar el comentario -->
-                        <form method="POST" action="{% url 'editar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
+                        <form method="POST"
+                            action="{% url 'agregar_replica' usuario_id=usuario_id comentario_id=id_comentario %}">
                             {% csrf_token %}
-                            <input type="text" name="comentario" value="{{ comentario.comentario }}" placeholder="Editar Comentario">
+                            <input name="replica" style="width: 90%;" placeholder="Escribe algo">
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </form>
                     </div>
@@ -216,8 +407,93 @@
             </div>
         </div>
         {% endfor %}
-    
-        <!-- Scripts de Bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    </html>
+        <br>
+        <!-- Botones de navegación -->
+        {% if comentarios.has_previous %}
+        <a href="?page={{ comentarios.previous_page_number }}">Anterior</a>
+        {% endif %}
+
+        <span>{{ comentarios.number }}</span>
+
+        {% if comentarios.has_next %}
+        <a href="?page={{ comentarios.next_page_number }}">Siguiente</a>
+        {% endif %}
+        <br><br><br><br><br>
+    </main>
+    <footer>
+
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="fixed-input">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <input id="input_comentario" name="comentario" placeholder="Escribe tu aporte aquí" type="text"
+                                class="form-control" aria-describedby="emailHelp">
+                        </div>
+                        <br><br>
+                        <div class="col-md-1">
+                            <button type="submit" class="btn-enviar">
+                                <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                                    <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+                                  </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </footer>
+    </div>
+    <!-- Ventana Modal Editar Comentario-->
+    {% for comentario, _, id_comentario in comentarios %}
+    <div class="modal fade" id="modalEditarComentario{{ id_comentario }}">
+        <!-- Contenido de la ventana modal -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAgregarComentarioLabel">Editar Comentario</h5>
+                    <button type="button" class="btn-close"
+                        onclick="cerrarModalComentario('modalEditarComentario{{ id_comentario }}')"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para editar el comentario -->
+                    <form method="POST"
+                        action="{% url 'editar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
+                        {% csrf_token %}
+                        <input type="text" name="comentario" value="{{ comentario.comentario }}"
+                            placeholder="Editar Comentario">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- Ventana Modal Editar Replica-->
+    <div class="modal fade" id="modalEditarReplica{{ replica }}">
+        <!-- Contenido de la ventana modal -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAgregarComentarioLabel">Editar Replica</h5>
+                    <button type="button" class="btn-close"
+                        onclick="cerrarModalReplica('modalEditarReplica{{ replica }}')" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para editar el comentario -->
+                    <p> {{replica}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -10,5 +10,10 @@ Scripts\activate
 ///////////////////////////////
 ////// Scripts librerias     ////////
 //////////////////////////////
+Guardar las librerias en un archivo txt
 pip freeze > requirements.txt
+
+instalar las librerias
+pip install -r requirements.txt
+
 
