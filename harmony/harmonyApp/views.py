@@ -283,8 +283,13 @@ def pantalla_perfil_usuario(request,usuario_id):
         )
         comentarios =  db_connection.db.Comentarios.find({'id_reda_Comet': usuario_id}) # Obtener todos los comentarios de la base de datos
         comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), str(comentario['_id'])) for comentario in comentarios]
-    
-        return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": comentarios_con_nombre_id})
+
+        items_por_pagina = 2
+        paginator = Paginator(comentarios_con_nombre_id, items_por_pagina)
+        # Obtener el número de página a mostrar
+        numero_pagina = request.GET.get('page')
+        page_obj = paginator.get_page(numero_pagina)
+        return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": page_obj})
     
     return HttpResponseBadRequest("Bad Request")
     
