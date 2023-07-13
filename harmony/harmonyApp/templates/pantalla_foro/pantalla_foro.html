@@ -19,8 +19,8 @@
         left: 0;
         width: 100%;
         padding: 10px;
-       
-        
+
+
     }
 
     .btn-enviar {
@@ -79,18 +79,21 @@
     #btn_dropdown .dropdown-toggle::after {
         display: none;
     }
-    #input_comentario{
+
+    #input_comentario {
         border-radius: 19px;
         background: #424050;
         color: white;
         border-color: transparent;
         height: 100%;
-        
+
     }
-    #input_comentario::placeholder{
+
+    #input_comentario::placeholder {
         color: white;
-        text-align: center; 
+        text-align: center;
     }
+
     #body {
         background: linear-gradient(180deg, #686381 0%, rgba(50, 16, 229, 0.40) 100%);
     }
@@ -146,18 +149,6 @@
         // Ocultar la modal actual
         $("#" + replica).modal("hide");
     }
-    function mostrarTexto() {
-        var textoOculto = document.getElementById("texto-oculto");
-        var boton = document.querySelector("button");
-
-        if (textoOculto.style.display === "none") {
-            //textoOculto.style.display = "inline";
-            //boton.textContent = "Ver menos";
-        } else {
-            textoOculto.style.display = "none";
-            boton.textContent = "Ver más";
-        }
-    }
 </script>
 </head>
 
@@ -171,7 +162,7 @@
         <div>
             <h1 id="Foro_titulo">Foro</h1>
         </div>
-        {% for comentario, nombre, id_comentario in comentarios %}
+        {% for comentario, nombre,url_img_perfil, id_comentario in comentarios %}
         <div class="container">
             <div style="height: 5%;"></div>
 
@@ -182,26 +173,36 @@
                     <div id="contComentario" class="container">
                         <div class="row">
                             <div class="col-md-2 d-flex align-items-center">
+
                                 <img class="border rounded-circle border-1 border-dark"
-                                    style="border-radius: 50%; width: 50%; height: auto;"
-                                    src="{% static '/images/nina.png' %}">
+                                    style="border-radius: 50%; width: 50%; height: auto;" src='{{ url_img_perfil }}'>
                             </div>
                             <div class="col-md-6">
                                 <h2 class="text-start"> <b>{{ nombre }}</b></h2>
                                 <p> {{ comentario.comentario|length }}</p>
                                 {% with valor=200 %}
                                 {% if comentario.comentario|length > valor %}
-                                    <p id="comentario">
-                                        {{ comentario.comentario|slice:":valor"|truncatechars:valor }}
-                                        <span id="texto-oculto" style="display: none;">
-                                            {{ comentario.comentario }}
-                                        </span>
-                                    </p>
-                                    <button onclick="mostrarTexto()">Ver más</button>
+                                <p id="texto_comentario">{{ comentario.comentario|truncatechars:valor }}</p>
+                                <button id="boton_text_coment" onclick="mostrarTexto()">Mostrar más</button>
+                                <script>
+                                    function mostrarTexto() {
+                                        var textoComentario = document.getElementById("texto_comentario");
+                                        var botonTextComent = document.getElementById("boton_text_coment");
+                                        if (textoComentario.innerHTML === "{{ comentario.comentario }}") {
+                                            textoComentario.innerHTML =
+                                                "{{ comentario.comentario|truncatechars:valor }}";
+                                            botonTextComent.innerHTML = "Mostrar más";
+                                        } else {
+                                            textoComentario.innerHTML = "{{ comentario.comentario }}";
+                                            botonTextComent.innerHTML = "Mostrar menos";
+                                        }
+                                    }
+                                </script>
                                 {% else %}
-                                    <p>{{ comentario.comentario }}</p>
+                                <p>{{ comentario.comentario }}</p>
                                 {% endif %}
-                            {% endwith %}
+                                {% endwith %}
+
 
 
                             </div>
@@ -276,24 +277,42 @@
                         <div class="col-md-2 d-flex align-items-center">
                             <img class="border rounded-circle border-1 border-dark"
                                 style="border-radius: 50%; width: 50%; height: auto;"
-                                src="{% static '/images/nina.png' %}">
+                                src="{{ replica.url_imagen_perfil }}">
                         </div>
                         <div class="col-md-6">
 
                             <h7 style="margin-top: 10%;margin-left: 4%; "><b>{{replica.nombreRedactor}}</b> </h7>
 
 
-                            {% with valor=200 %}
-                            {% if comentario.comentario|length > valor %}
-                            <p style="margin-left: 4%;" id="comentario">
-                                {{ replica.contenidoReplica | slice:":valor"|truncatechars:valor }} </p>
-                            <a href="#" id="ver-mas">ver más{{valor}}</a>
+                          
+
+{% with valor=200 %}
+                                {% if replica.contenidoReplica|length > valor %}
+                                <p id="texto_comentario_replica">{{ replica.contenidoReplica|truncatechars:valor }} </p>
+                                <button id="boton_text_coment_replica" onclick="mostrarTextoReplica()">Mostrar más</button>
+                                <script>
+                                    function mostrarTextoReplica() {
+                                        var textoComentario_replica = document.getElementById("texto_comentario_replica");
+                                        var botonTextComent_replica = document.getElementById("boton_text_coment_replica");
+                                        if (textoComentario_replica.innerHTML === "{{ replica.contenidoReplica }}") {
+                                            textoComentario_replica.innerHTML =
+                                                "{{ replica.contenidoReplica|truncatechars:valor }}";
+                                            botonTextComent_replica.innerHTML = "Mostrar más";
+                                        } else {
+                                            textoComentario_replica.innerHTML = "{{ replica.contenidoReplica }}";
+                                            botonTextComent_replica.innerHTML = "Mostrar menos";
+                                        }
+                                    }
+                                </script>
+                                {% else %}
+                                <p>{{ replica.contenidoReplica }}</p>
+                                {% endif %}
+                                {% endwith %}
 
 
-                            {% else %}
-                            <p>{{ replica.contenidoReplica }}</p>
-                            {% endif %}
-                            {% endwith %}
+
+
+
 
                         </div>
                         <div class="col-md-2 d-flex align-items-center justify-content-center ">
@@ -429,15 +448,17 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-11">
-                            <input id="input_comentario" name="comentario" placeholder="Escribe tu aporte aquí" type="text"
-                                class="form-control" aria-describedby="emailHelp">
+                            <input id="input_comentario" name="comentario" placeholder="Escribe tu aporte aquí"
+                                type="text" class="form-control" aria-describedby="emailHelp">
                         </div>
                         <br><br>
                         <div class="col-md-1">
                             <button type="submit" class="btn-enviar">
-                                <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
-                                    <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
-                                  </svg>
+                                <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z" />
+                                </svg>
                             </button>
                         </div>
                     </div>
@@ -447,7 +468,7 @@
     </footer>
     </div>
     <!-- Ventana Modal Editar Comentario-->
-    {% for comentario, _, id_comentario in comentarios %}
+    {% for comentario, _, _, id_comentario in comentarios %}
     <div class="modal fade" id="modalEditarComentario{{ id_comentario }}">
         <!-- Contenido de la ventana modal -->
         <div class="modal-dialog">

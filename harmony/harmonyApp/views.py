@@ -1,5 +1,6 @@
 from datetime import datetime
 from imaplib import _Authenticator
+import os
 from bson import ObjectId
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
@@ -7,7 +8,9 @@ from pymongo import MongoClient
 from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
-from harmonyApp.operations.utils import get_Nombre, get_inforeplicas
+from harmonyApp.operations.imgru import subir_imagen
+from harmonyApp.operations.utils import get_Nombre, get_img_perfil, get_inforeplicas
+from harmonyProject import settings
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
@@ -60,8 +63,9 @@ def pantalla_foro(request,usuario_id):
 
     # Crear el objeto Paginator
 
-    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), str(
+    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), get_img_perfil(comentario,db_connection),str(
         comentario['_id'])) for comentario in comentarios]
+    
     for comentario_tuple in comentarios_con_nombre_id:
         comentario2 = comentario_tuple[0]  # Extract the comment dictionary
         # Get the 'id_replicas' value (empty list if not present)
@@ -72,12 +76,13 @@ def pantalla_foro(request,usuario_id):
                 # Obtiene el valor actualizado de 'id_replicas' usando la función get_inforeplicas
                 new_id_replicas.append(get_inforeplicas(j,db_connection))
             comentario2['id_replicas'] = new_id_replicas
+    
     items_por_pagina = 2
     paginator = Paginator(comentarios_con_nombre_id, items_por_pagina)
     # Obtener el número de página a mostrar
     numero_pagina = request.GET.get('page')
     page_obj = paginator.get_page(numero_pagina)
-    cont = 0
+    
 
     # ['id_replicas']
     return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
@@ -227,43 +232,49 @@ def pantalla_login(request):
     return render(request, 'pantalla_login/pantalla_login.html', {'form': form})
 
 def pantalla_registro(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.FILES.get('imagen_perfil'):
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
         correo = request.POST.get('correo')
         clave = request.POST.get('clave')
         genero = request.POST.get('genero')
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
-
-        # Convertir la cadena de fecha en un objeto de tipo datetime
-        fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
-
-        # Crear una instancia del modelo Usuario con los datos ingresados
-        usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento)
-        credenciales = Credenciales(correo=correo, clave=clave)
+        #archivo = request.FILES.get('imagen_perfil')
+        image = request.FILES['imagen_perfil']
         
-        # Obtener la conexión a la base de datos MongoDB
-        
+        val=subir_imagen(image.name, image.file)
 
+        if val.status_code == 200:
+            json_img=val.json()
+            url_imagen_perfil = str(json_img['data']['link'])
+            
+            # Convertir la cadena de fecha en un objeto de tipo datetime
+            fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
 
-        # Guardar el usuario en la base de datos MongoDB
-        usuario_dict = {
-            'nombre': usuario.nombre,
-            'apellido': usuario.apellido,
-            'correo': usuario.correo,
-            'genero': usuario.genero,
-            'fecha_nacimiento': usuario.fecha_nacimiento,
-        }
-        
-        result = db_connection.db.Usuario.insert_one(usuario_dict)
-        usuario_cred ={
-            '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
-            'correo': credenciales.correo,
-            'clave': credenciales.clave,
-        }
-        db_connection.db.Credenciales.insert_one(usuario_cred)
+            # Crear una instancia del modelo Usuario con los datos ingresados
+            usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil)
+            credenciales = Credenciales(correo=correo, clave=clave)
+            # Guardar el usuario en la base de datos MongoDB
+            usuario_dict = {
+                'nombre': usuario.nombre,
+                'apellido': usuario.apellido,
+                'correo': usuario.correo,
+                'genero': usuario.genero,
+                'fecha_nacimiento': usuario.fecha_nacimiento,
+                'url_imagen_perfil': usuario.url_imagen_perfil,
+            }
+            
+            result = db_connection.db.Usuario.insert_one(usuario_dict)
+            usuario_cred ={
+                '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
+                'correo': credenciales.correo,
+                'clave': credenciales.clave,
+            }
+            db_connection.db.Credenciales.insert_one(usuario_cred)
 
-        return redirect('pantalla_login')
+            return redirect('pantalla_login')
+        else:
+            print('no se pudo subir la imagen')
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
@@ -379,29 +390,3 @@ def pantalla_chatbot(request, usuario_id):
             
     
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
-
-    """    
-    if request.method == 'POST':
-        id_reda_Comet = usuario_id
-        comentario_data = request.POST['comentario']
-        likes = request.POST.getlist('likes')
-        id_replicas = request.POST.getlist('id_replicas')
-        
-        comentario = Comentarios(id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, id_replicas=id_replicas)
-        
-        
-
-        comentario_dict ={
-            'id_reda_Comet': comentario.id_reda_Comet,
-            'comentario': comentario.comentario,
-            'likes': comentario.likes,
-            'id_replicas': comentario.id_replicas
-        }
-
-        db_connection.db.Comentarios.insert_one(comentario_dict)
-
-        return redirect('pantalla_chatbot', usuario_id=usuario_id)
-    
-    comentarios =  db_connection.db.Comentarios.find() # Obtener todos los comentarios de la base de datos
-    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario), str(comentario['_id'])) for comentario in comentarios]
-    """
