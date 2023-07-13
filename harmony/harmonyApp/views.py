@@ -379,8 +379,12 @@ def pantalla_chatbot(request, usuario_id):
 
             else:
                 salida = respuesta_modelo_bert_contexto(pregunta)
-            
-                respuesta=salida['answer']
+                score = salida['score']
+                if (score > 1 or score < 0.01):
+                    respuesta='Lo siento, no puedo entenderte. Intentalo de nuevo'
+                else:
+                    respuesta = salida['answer']
+
                 nuevo_mensaje ={
                     'pregunta': pregunta,
                     'respuesta': respuesta}

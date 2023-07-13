@@ -39,6 +39,36 @@
          "respuestas": "El estres es un sentimiento de tensión física o emocional. Puede provenir de cualquier situación o pensamiento que lo haga sentir a uno frustrado, furioso o nervioso."
       },
       {
+         "tag":"depresion",
+         "entradas":[
+         "que es la depresion?",
+         "que es la depresión?",
+         "Depresión",
+         "Miedo",
+         "Estrés",
+         "Inquietud",
+         "Tensión",
+         "Nerviosismo",
+         "Angustia",
+         "Ansiedad"],
+         "respuestas": "La depresion es una enfermedad grave que interfiere con la vida diariade las personas"
+      },
+      {
+         "tag":"depresion",
+         "entradas":[
+         "que es la depresion?",
+         "que es la depresión?",
+         "Depresión",
+         "Miedo",
+         "Estrés",
+         "Inquietud",
+         "Tensión",
+         "Nerviosismo",
+         "Angustia",
+         "Ansiedad"],
+         "respuestas": "La depresion es una enfermedad común pero grave que interfiere con la vida diaria, con la capacidad para trabajar, dormir, estudiar, comer y disfrutar de la vida"
+      },
+      {
          "tag":"sentimientoMal",
          "entradas":[
          "Me siento mal",
@@ -48,8 +78,7 @@
          "Depresion",
          "Decaimiento",
          "Ansiedad",
-         "Angustia",
-         "Ansiedad"],
+         "Angustia"],
          "respuestas":"Triste"
       }
    ]
