@@ -284,17 +284,35 @@
                             <h7 style="margin-top: 10%;margin-left: 4%; "><b>{{replica.nombreRedactor}}</b> </h7>
 
 
-                            {% with valor=200 %}
-                            {% if comentario.comentario|length > valor %}
-                            <p style="margin-left: 4%;" id="comentario">
-                                {{ replica.contenidoReplica | slice:":valor"|truncatechars:valor }} </p>
-                            <a href="#" id="ver-mas">ver más{{valor}}</a>
+                          
+
+{% with valor=200 %}
+                                {% if replica.contenidoReplica|length > valor %}
+                                <p id="texto_comentario_replica">{{ replica.contenidoReplica|truncatechars:valor }} </p>
+                                <button id="boton_text_coment_replica" onclick="mostrarTextoReplica()">Mostrar más</button>
+                                <script>
+                                    function mostrarTextoReplica() {
+                                        var textoComentario_replica = document.getElementById("texto_comentario_replica");
+                                        var botonTextComent_replica = document.getElementById("boton_text_coment_replica");
+                                        if (textoComentario_replica.innerHTML === "{{ replica.contenidoReplica }}") {
+                                            textoComentario_replica.innerHTML =
+                                                "{{ replica.contenidoReplica|truncatechars:valor }}";
+                                            botonTextComent_replica.innerHTML = "Mostrar más";
+                                        } else {
+                                            textoComentario_replica.innerHTML = "{{ replica.contenidoReplica }}";
+                                            botonTextComent_replica.innerHTML = "Mostrar menos";
+                                        }
+                                    }
+                                </script>
+                                {% else %}
+                                <p>{{ replica.contenidoReplica }}</p>
+                                {% endif %}
+                                {% endwith %}
 
 
-                            {% else %}
-                            <p>{{ replica.contenidoReplica }}</p>
-                            {% endif %}
-                            {% endwith %}
+
+
+
 
                         </div>
                         <div class="col-md-2 d-flex align-items-center justify-content-center ">
