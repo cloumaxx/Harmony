@@ -1,6 +1,9 @@
 from django.urls import path
 from . import views
 from . import models
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path("", views.pantalla_inicial, name="pantalla_inicial"),
     path("pantalla_login", views.pantalla_login, name="pantalla_login"),

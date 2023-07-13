@@ -10,6 +10,8 @@ class Usuario(models.Model):
     correo = models.EmailField(max_length=100)
     fecha_nacimiento = models.DateField()
     genero = models.CharField(max_length=1)
+    url_imagen_perfil = models.CharField(max_length=300)
+
 
 
     class Meta:

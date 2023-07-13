@@ -2,6 +2,9 @@
 from bson import ObjectId
 
 
+from django.conf import settings
+
+
 def get_Nombre(comentario,db_connection):
     
     user = db_connection.db.Usuario.find_one({'_id': ObjectId(comentario['id_reda_Comet'])})

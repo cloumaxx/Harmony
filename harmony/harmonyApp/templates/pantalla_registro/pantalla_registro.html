@@ -93,7 +93,7 @@
             <div id="contendor" class="container">
                 
                 <div class="centered-div">
-                    <form id="formulario" method="POST" action="{% url 'pantalla_registro' %}">
+                    <form id="formulario" method="POST" action="{% url 'pantalla_registro' %}" enctype="multipart/form-data">
                         <div id="titulo">
                             <br>
                             <h1>
@@ -130,6 +130,11 @@
                         <label for="id_fecha_nacimiento" class="form-label">Cuando naciste</label>
                         <input type="date" class="form-control" id="id_fecha_nacimiento" name="fecha_nacimiento"
                             aria-describedby="emailHelp">
+                        <br>
+                        <label for="imagen_perfil_label" class="form-label">¿Deseas subir una imagen tuya?</label>
+                        <br>
+                        <input type="file" id="imagen_perfil" name="imagen_perfil">
+
                         <br><br>
                         <div class="buttons"></div>
                         <div id="cont_button" class="action_btn">
