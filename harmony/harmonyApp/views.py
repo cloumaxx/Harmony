@@ -9,7 +9,7 @@ from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
 from harmonyApp.operations.imgru import subir_imagen
-from harmonyApp.operations.utils import get_Nombre, get_inforeplicas
+from harmonyApp.operations.utils import get_Nombre, get_img_perfil, get_inforeplicas
 from harmonyProject import settings
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
@@ -63,8 +63,9 @@ def pantalla_foro(request,usuario_id):
 
     # Crear el objeto Paginator
 
-    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), str(
+    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), get_img_perfil(comentario,db_connection),str(
         comentario['_id'])) for comentario in comentarios]
+    
     for comentario_tuple in comentarios_con_nombre_id:
         comentario2 = comentario_tuple[0]  # Extract the comment dictionary
         # Get the 'id_replicas' value (empty list if not present)
@@ -75,12 +76,13 @@ def pantalla_foro(request,usuario_id):
                 # Obtiene el valor actualizado de 'id_replicas' usando la función get_inforeplicas
                 new_id_replicas.append(get_inforeplicas(j,db_connection))
             comentario2['id_replicas'] = new_id_replicas
+    
     items_por_pagina = 2
     paginator = Paginator(comentarios_con_nombre_id, items_por_pagina)
     # Obtener el número de página a mostrar
     numero_pagina = request.GET.get('page')
     page_obj = paginator.get_page(numero_pagina)
-    cont = 0
+    
 
     # ['id_replicas']
     return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
@@ -261,9 +263,7 @@ def pantalla_registro(request):
                 'fecha_nacimiento': usuario.fecha_nacimiento,
                 'url_imagen_perfil': usuario.url_imagen_perfil,
             }
-            print(usuario)
-            print()
-            print(usuario_dict)
+            
             result = db_connection.db.Usuario.insert_one(usuario_dict)
             usuario_cred ={
                 '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
