@@ -39,6 +39,6 @@ def actualizar_imagen(code,nombre,ruta):
     if respuesta_subida.status_code == 200 and respuesta_eliminacion.status_code == 200:
         return respuesta_subida
     elif respuesta_subida.status_code == 200 and respuesta_eliminacion.status_code != 200:
-            return respuesta_eliminacion
+            return respuesta_subida
     else:
             return respuesta_eliminacion

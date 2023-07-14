@@ -118,7 +118,7 @@ def agregar_replica(request, usuario_id, comentario_id):
         else:
             messages.error(request, 'Reply cannot be empty.')
 
-    return redirect('pantalla_foro', usuario_id=usuario_id)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 def incrementar_likes_replica(request, usuario_id, replica):
     replica_id = replica.idReplica
@@ -136,7 +136,8 @@ def incrementar_likes_replica(request, usuario_id, replica):
                 likes.remove(usuario_id)
             # Actualizar los likes en la base de datos
             db_connection.db.Replicas.update_one({'_id': ObjectId(replica_id)}, {'$set': {'likes': likes}})
-    return redirect('pantalla_foro', usuario_id=usuario_id)
+     # Redirigir al perfil del usuario actualizado
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 def incrementar_likes(request, usuario_id, comentario_id):
     if request.method == 'POST':
@@ -153,7 +154,7 @@ def incrementar_likes(request, usuario_id, comentario_id):
                 likes.remove(usuario_id)
             # Actualizar los likes en la base de datos
             db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
-    return redirect('pantalla_foro', usuario_id=usuario_id)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
 def pantalla_nuevo_comentario(request, usuario_id):
@@ -174,7 +175,8 @@ def pantalla_nuevo_comentario(request, usuario_id):
 
         db_connection.db.Comentarios.insert_one(comentario_dict)
 
-        return redirect('pantalla_foro', usuario_id=usuario_id)
+         # Redirigir al perfil del usuario actualizado
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
     return render(request, 'pantalla_foro/pantalla_nuevo_comentario.html', {'usuario_id': usuario_id})
 
@@ -200,7 +202,8 @@ def borrar_comentario(request, usuario_id, comentario_id):
         
         db_connection.db.Comentarios.delete_one({'_id': ObjectId(comentario_id)})
         
-        return redirect('pantalla_foro', usuario_id=usuario_id)
+         # Redirigir al perfil del usuario actualizado
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
     
     return HttpResponseBadRequest("Bad Request")
 """
@@ -232,50 +235,77 @@ def pantalla_login(request):
     return render(request, 'pantalla_login/pantalla_login.html', {'form': form})
 
 def pantalla_registro(request):
-    if request.method == 'POST' and request.FILES.get('imagen_perfil'):
+    if request.method == 'POST':
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
         correo = request.POST.get('correo')
         clave = request.POST.get('clave')
         genero = request.POST.get('genero')
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
+        # Convertir la cadena de fecha en un objeto de tipo datetime
+        fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
+
         #archivo = request.FILES.get('imagen_perfil')
-        image = request.FILES['imagen_perfil']
-        
-        val=subir_imagen(image.name, image.file)
-
-        if val.status_code == 200:
-            json_img=val.json()
-            url_imagen_perfil = str(json_img['data']['link'])
-            code_delete_img = json_img['data']['deletehash']
-            # Convertir la cadena de fecha en un objeto de tipo datetime
-            fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
-
-            # Crear una instancia del modelo Usuario con los datos ingresados
-            usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img)
-            credenciales = Credenciales(correo=correo, clave=clave)
-            # Guardar el usuario en la base de datos MongoDB
-            usuario_dict = {
-                'nombre': usuario.nombre,
-                'apellido': usuario.apellido,
-                'correo': usuario.correo,
-                'genero': usuario.genero,
-                'fecha_nacimiento': usuario.fecha_nacimiento,
-                'url_imagen_perfil': usuario.url_imagen_perfil,
-                'code_delete_img': usuario.code_delete_img,
-            }
+        try:
+            image = request.FILES['imagen_perfil']
             
-            result = db_connection.db.Usuario.insert_one(usuario_dict)
-            usuario_cred ={
-                '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
-                'correo': credenciales.correo,
-                'clave': credenciales.clave,
-            }
-            db_connection.db.Credenciales.insert_one(usuario_cred)
+            val=subir_imagen(image.name, image.file)
 
-            return redirect('pantalla_login')
-        else:
-            print('no se pudo subir la imagen')
+            if val.status_code == 200:
+                json_img=val.json()
+                url_imagen_perfil = str(json_img['data']['link'])
+                code_delete_img = json_img['data']['deletehash']
+                
+                # Crear una instancia del modelo Usuario con los datos ingresados
+                usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img)
+                credenciales = Credenciales(correo=correo, clave=clave)
+                # Guardar el usuario en la base de datos MongoDB
+                usuario_dict = {
+                    'nombre': usuario.nombre,
+                    'apellido': usuario.apellido,
+                    'correo': usuario.correo,
+                    'genero': usuario.genero,
+                    'fecha_nacimiento': usuario.fecha_nacimiento,
+                    'url_imagen_perfil': usuario.url_imagen_perfil,
+                    'code_delete_img': usuario.code_delete_img,
+                }
+                
+                result = db_connection.db.Usuario.insert_one(usuario_dict)
+                usuario_cred ={
+                    '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
+                    'correo': credenciales.correo,
+                    'clave': credenciales.clave,
+                }
+                db_connection.db.Credenciales.insert_one(usuario_cred)
+
+                return redirect('pantalla_login')
+            else:
+                print('no se pudo subir la imagen')
+        except:
+                print('no se pudo subir la imagen')
+ # Crear una instancia del modelo Usuario con los datos ingresados
+                usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil='https://i.imgur.com/0RW7b5J.jpg',code_delete_img='noHayFoto')
+                credenciales = Credenciales(correo=correo, clave=clave)
+                # Guardar el usuario en la base de datos MongoDB
+                usuario_dict = {
+                    'nombre': usuario.nombre,
+                    'apellido': usuario.apellido,
+                    'correo': usuario.correo,
+                    'genero': usuario.genero,
+                    'fecha_nacimiento': usuario.fecha_nacimiento,
+                    'url_imagen_perfil': usuario.url_imagen_perfil,
+                    'code_delete_img': usuario.code_delete_img,
+                }
+                
+                result = db_connection.db.Usuario.insert_one(usuario_dict)
+                usuario_cred ={
+                    '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
+                    'correo': credenciales.correo,
+                    'clave': credenciales.clave,
+                }
+                db_connection.db.Credenciales.insert_one(usuario_cred)
+
+                return redirect('pantalla_login')
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
@@ -345,7 +375,6 @@ def editar_usuario(request, usuario_id):
                     }}
                 )
         except:
-                print('no se pudo subir la imagen')
                 db_connection.db.Usuario.update_one(
                     {'_id': ObjectId(usuario_id)},
                     {'$set': {
