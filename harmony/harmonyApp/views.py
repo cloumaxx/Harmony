@@ -8,7 +8,7 @@ from pymongo import MongoClient
 from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
-from harmonyApp.operations.imgru import subir_imagen
+from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
 from harmonyApp.operations.utils import get_Nombre, get_img_perfil, get_inforeplicas
 from harmonyProject import settings
 from harmonyProject.database import MongoDBConnection
@@ -247,12 +247,12 @@ def pantalla_registro(request):
         if val.status_code == 200:
             json_img=val.json()
             url_imagen_perfil = str(json_img['data']['link'])
-            
+            code_delete_img = json_img['data']['deletehash']
             # Convertir la cadena de fecha en un objeto de tipo datetime
             fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
 
             # Crear una instancia del modelo Usuario con los datos ingresados
-            usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil)
+            usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img)
             credenciales = Credenciales(correo=correo, clave=clave)
             # Guardar el usuario en la base de datos MongoDB
             usuario_dict = {
@@ -262,6 +262,7 @@ def pantalla_registro(request):
                 'genero': usuario.genero,
                 'fecha_nacimiento': usuario.fecha_nacimiento,
                 'url_imagen_perfil': usuario.url_imagen_perfil,
+                'code_delete_img': usuario.code_delete_img,
             }
             
             result = db_connection.db.Usuario.insert_one(usuario_dict)
@@ -293,10 +294,11 @@ def pantalla_perfil_usuario(request,usuario_id):
             apellido=usuario_dict['apellido'],
             correo=usuario_dict['correo'],
             genero=usuario_dict['genero'],
-            fecha_nacimiento=usuario_dict['fecha_nacimiento']
+            fecha_nacimiento=usuario_dict['fecha_nacimiento'],
+            url_imagen_perfil=usuario_dict['url_imagen_perfil'],
         )
         comentarios =  db_connection.db.Comentarios.find({'id_reda_Comet': usuario_id}) # Obtener todos los comentarios de la base de datos
-        comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), str(comentario['_id'])) for comentario in comentarios]
+        comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection),get_img_perfil(comentario,db_connection), str(comentario['_id'])) for comentario in comentarios]
 
         items_por_pagina = 2
         paginator = Paginator(comentarios_con_nombre_id, items_por_pagina)
@@ -311,30 +313,51 @@ def editar_usuario(request, usuario_id):
     # Obtener el usuario específico que se desea actualizar
     
     if request.method == 'POST':
+        usuarioAux = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+        code_delete_img_ante = usuarioAux['code_delete_img']    
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
         correo = request.POST.get('correo')
         genero = request.POST.get('genero')
-        
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, "%Y-%m-%d").date()
-
-        # Convertir el objeto datetime.date en datetime.datetime
         fecha_nacimiento = datetime.combine(fecha_nacimiento, datetime.min.time())
         
-        
+        try:
+            image = request.FILES['nueva_imagen_perfil']
+            val=actualizar_imagen(code_delete_img_ante,image.name, image.file)
+            if val.status_code == 200:
+                json_img=val.json()
+                url_imagen_perfil = str(json_img['data']['link'])
+                code_delete_img = json_img['data']['deletehash']
 
-        # Actualizar los datos del usuario en MongoDB
-        db_connection.db.Usuario.update_one(
-            {'_id': ObjectId(usuario_id)},
-            {'$set': {
-                'nombre': nombre,
-                'apellido': apellido,
-                'correo': correo,
-                'genero': genero,
-                'fecha_nacimiento': fecha_nacimiento
-            }}
-        )
+                # Actualizar los datos del usuario en MongoDB
+                db_connection.db.Usuario.update_one(
+                    {'_id': ObjectId(usuario_id)},
+                    {'$set': {
+                        'nombre': nombre,
+                        'apellido': apellido,
+                        'correo': correo,
+                        'genero': genero,
+                        'fecha_nacimiento': fecha_nacimiento,
+                        'url_imagen_perfil': url_imagen_perfil,
+                        'code_delete_img': code_delete_img,
+                    }}
+                )
+        except:
+                print('no se pudo subir la imagen')
+                db_connection.db.Usuario.update_one(
+                    {'_id': ObjectId(usuario_id)},
+                    {'$set': {
+                        'nombre': nombre,
+                        'apellido': apellido,
+                        'correo': correo,
+                        'genero': genero,
+                        'fecha_nacimiento': fecha_nacimiento,
+                        'url_imagen_perfil': usuarioAux['url_imagen_perfil'],
+                        'code_delete_img': usuarioAux['code_delete_img'],
+                    }}
+                )
 
         # Redirigir al perfil del usuario actualizado
         return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))

@@ -2,7 +2,33 @@
    "informacion":[
       {
          "tag":"saludos",
-         "entradas":["Hola, ¿cómo estás?", "¡Buenos días!", "¡Hola, qué tal!"],
+         "entradas":[
+            "Hola, ¿cómo estás?",
+            "¡Buenos días!",
+            "¡Hola, qué tal!",
+            "Hola, ¿qué haces?",
+            "¡Buenas tardes!",
+            "¡Hola, buen día!",
+            "¿Cómo estás?",
+            "¡Hola, encantado de conocerte!",
+            "¡Buenas noches!",
+            "Hola, ¿cómo va todo?",
+            "¡Hola! ¿En qué puedo ayudarte?",
+            "¡Hola, bienvenido!",
+            "¡Hola!",
+            "Hola",
+            "¿Qué tal?",
+            "¿Cómo estás?",
+            "Hola, ¿qué onda?",
+            "¡Hey!",
+            "¿Qué pasa?",
+            "¿Cómo va?",
+            "¿Qué hay de nuevo?",
+            "¡Ey, qué tal!",
+            "Hola, ¿me echas una mano?",
+            "¡Saludos!",
+            "¡Hola, amigo!"
+         ],
          "respuestas":"¡Saludos Mi nombre es Milly!, una inteligencia artificial diseñada específicamente para brindarte información valiosa y precisa sobre el desarrollo hormonal en adolescentes. Con mi capacidad de aprendizaje y mi vasta base de conocimientos, estoy aquí para responder tus preguntas y proporcionarte orientación confiable en este importante tema. El período de la adolescencia es una etapa de transformación física y emocional, y entender los cambios hormonales que ocurren durante este tiempo puede resultar confuso y abrumador. Pero no te preocupes, Milly está aquí para ayudarte a navegar por este viaje. Desde la pubertad hasta la madurez, el cuerpo experimenta una serie de cambios hormonales que afectan el crecimiento, la madurez sexual y el desarrollo físico. Puedes contar conmigo para explicarte cómo se producen estos cambios, cómo influyen en el cuerpo y cómo manejarlos de manera saludable."
       },
       {

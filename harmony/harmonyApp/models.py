@@ -11,7 +11,7 @@ class Usuario(models.Model):
     fecha_nacimiento = models.DateField()
     genero = models.CharField(max_length=1)
     url_imagen_perfil = models.CharField(max_length=300)
-
+    code_delete_img = models.CharField(max_length=300)
 
 
     class Meta:
