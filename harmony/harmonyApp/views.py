@@ -156,7 +156,6 @@ def incrementar_likes(request, usuario_id, comentario_id):
             db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
-
 def pantalla_nuevo_comentario(request, usuario_id):
     if request.method == 'POST':
         id_reda_Comet = usuario_id
@@ -179,7 +178,6 @@ def pantalla_nuevo_comentario(request, usuario_id):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
     return render(request, 'pantalla_foro/pantalla_nuevo_comentario.html', {'usuario_id': usuario_id})
-
 
 def editar_comentario(request, usuario_id, comentario_id):
     if request.method == 'POST':
@@ -206,6 +204,7 @@ def borrar_comentario(request, usuario_id, comentario_id):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
     
     return HttpResponseBadRequest("Bad Request")
+
 """
 /////////////////////////////////////////////////////
 ////// Funciones enfocadas en los usuarios  /////////
@@ -227,6 +226,7 @@ def pantalla_login(request):
             
             if user is not None:
                 user_id = str(user['_id'])
+                
                 return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
             else:
                 form.add_error(None, 'Credenciales inválidas')
@@ -257,7 +257,7 @@ def pantalla_registro(request):
                 code_delete_img = json_img['data']['deletehash']
                 
                 # Crear una instancia del modelo Usuario con los datos ingresados
-                usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img)
+                usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img,conversaciones=[])
                 credenciales = Credenciales(correo=correo, clave=clave)
                 # Guardar el usuario en la base de datos MongoDB
                 usuario_dict = {
@@ -268,6 +268,7 @@ def pantalla_registro(request):
                     'fecha_nacimiento': usuario.fecha_nacimiento,
                     'url_imagen_perfil': usuario.url_imagen_perfil,
                     'code_delete_img': usuario.code_delete_img,
+                    'conversaciones': usuario.conversaciones
                 }
                 
                 result = db_connection.db.Usuario.insert_one(usuario_dict)
@@ -284,7 +285,7 @@ def pantalla_registro(request):
         except:
                 print('no se pudo subir la imagen')
  # Crear una instancia del modelo Usuario con los datos ingresados
-                usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil='https://i.imgur.com/0RW7b5J.jpg',code_delete_img='noHayFoto')
+                usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil='https://i.imgur.com/0RW7b5J.jpg',code_delete_img='noHayFoto',conversaciones=[])
                 credenciales = Credenciales(correo=correo, clave=clave)
                 # Guardar el usuario en la base de datos MongoDB
                 usuario_dict = {
@@ -295,6 +296,7 @@ def pantalla_registro(request):
                     'fecha_nacimiento': usuario.fecha_nacimiento,
                     'url_imagen_perfil': usuario.url_imagen_perfil,
                     'code_delete_img': usuario.code_delete_img,
+                    'conversaciones': usuario.conversaciones
                 }
                 
                 result = db_connection.db.Usuario.insert_one(usuario_dict)
@@ -310,8 +312,7 @@ def pantalla_registro(request):
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
 def pantalla_perfil_usuario(request,usuario_id):
-    
-    
+  
     # Obtener el ID específico del usuario que deseas consultar
     usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
 
@@ -398,26 +399,74 @@ def editar_usuario(request, usuario_id):
 //////   Funciones enfocadas en el chatbot  /////////
 /////////////////////////////////////////////////////
 """
-"""
+
+
 def pantalla_chatbot(request, usuario_id):
-    contes = 0 
-    contes = contes + 1
+    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+    url_imagen_perfil = usuario_dict['url_imagen_perfil']
+    conversaciones = usuario_dict['conversaciones']
+    posicion = len(conversaciones) - 1
+    if len(conversaciones) > 0:
+
+        conversacion = conversaciones[posicion]
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion})
+
+def busqueda_foro_chatbot(request,usuario_id,url_imagen_perfil,conversaciones,conversacion,posicion):
+    palabra_especifica = request.GET.get('palabra_buscar')
+    print(palabra_especifica)
+    comentarios_foro = db_connection.db.Comentarios.find({"comentario": {"$regex": palabra_especifica, "$options": "i"}})
+    print(comentarios_foro)
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion,"comentarios_foro":comentarios_foro})
+
+def crearNuevoChat(request, usuario_id):
     if request.method == 'POST':
-        pregunta = request.POST.get('pregunta')
-        contexto = "I am planning a picnic."
-        print(pregunta)
-        respuesta = obtener_respuesta(pregunta, contexto)
+        # Obtener el usuario de la base de datos
+        usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
         
-        #print("->",respuesta)
+        if usuario:
+            # Obtener las conversaciones actuales del usuario
+            conversaciones = usuario.get('conversaciones', [])
+            
+                # Agregar una nueva conversación vacía
+            conversaciones.append([])
+            # Actualizar las conversaciones en la base de datos
+            db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
+        return redirect('pantalla_chatbot', usuario_id=usuario_id)
 
-        return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "respuesta": respuesta})
-    
-    
-    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
+def enviarMensajeChatBot(request,usuario_id,posicion):
+    if request.method == 'POST':
+        # Obtener el usuario de la base de datos
+        usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+        
+        if usuario:
+            conversaciones = usuario.get('conversaciones', [])
+            conversacion = conversaciones[posicion]
+            print("conversacion",conversacion)
+            pregunta = request.POST.get('pregunta')
+            print("pregunta",pregunta)
+            if pregunta == "" or pregunta == None or len(pregunta)==0:
+                pass
+                #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
+
+            else:
+                salida = respuesta_modelo_bert_contexto(pregunta)
+                score = salida['score']
+                if (score > 1 or score < 0.01):
+                    respuesta='Lo siento, no puedo entenderte. Intentalo de nuevo'
+                else:
+                    respuesta = salida['answer']
+
+                nuevo_mensaje ={
+                    'pregunta': pregunta,
+                    'respuesta': respuesta}
+
+                conversacion.append(nuevo_mensaje)
+                print("conversacion",conversacion)
+                db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
+
+        return redirect('pantalla_chatbot', usuario_id=usuario_id)
 """
-
-def pantalla_chatbot(request, usuario_id):
-    print("chat", chat)
+print("chat", chat)
     if request.method == 'POST':    
         boton_limpiar_chat_value = request.POST.get('boton_limpiar_chat')
         if boton_limpiar_chat_value == "borrar":
@@ -443,6 +492,5 @@ def pantalla_chatbot(request, usuario_id):
 
                 chat.append(nuevo_mensaje)
                 return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "chat": chat})
-            
-    
-    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
+        
+"""

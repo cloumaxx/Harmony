@@ -13,7 +13,10 @@ urlpatterns = [
     path('editar_usuario/<str:usuario_id>/', views.editar_usuario, name='editar_usuario'),
     
     path('pantalla_chatbot/<str:usuario_id>/', views.pantalla_chatbot, name='pantalla_chatbot'),
-
+    path('pantalla_chatbot/<str:usuario_id>/crearNuevoChat/', views.crearNuevoChat, name='crearNuevoChat'),
+    path('pantalla_chatbot/<str:usuario_id>/enviarMensajeChatBot/<int:posicion>/', views.enviarMensajeChatBot, name='enviarMensajeChatBot'),
+    path('pantalla_chatbot/<str:usuario_id>/busqueda_foro_chatbot/', views.busqueda_foro_chatbot, name='busqueda_foro_chatbot'),
+   
     path('pantalla_foro/<str:usuario_id>/', views.pantalla_foro, name='pantalla_foro'),
     path('pantalla_nuevo_comentario/<str:usuario_id>/', views.pantalla_nuevo_comentario, name='pantalla_nuevo_comentario'),
     path('pantalla_foro/<str:usuario_id>/comentario/<str:comentario_id>/incrementar_likes/', views.incrementar_likes, name='incrementar_likes'),

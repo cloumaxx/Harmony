@@ -12,7 +12,7 @@ class Usuario(models.Model):
     genero = models.CharField(max_length=1)
     url_imagen_perfil = models.CharField(max_length=300)
     code_delete_img = models.CharField(max_length=300)
-
+    conversaciones = ArrayField(models.JSONField())
 
     class Meta:
         db_table = 'usuarioDB'
@@ -50,6 +50,7 @@ class Comentarios(models.Model):
         return f"Comentarios ID: {self.id}, ID del redactor: {self.id_reda_Comet}, Comentario: {self.comentario}, Likes: {self.likes}, ID de replicas: {self.id_replicas}"
     
 class Replicas(models.Model): 
+
     id = models.AutoField(primary_key=True) 
     idComentario = models.CharField(max_length=100)    
     idRedactorReplica = models.CharField(max_length=100)
@@ -61,3 +62,4 @@ class Replicas(models.Model):
     
     def __str__(self):
         return f"Replicas ID: {self.id}, ID del comentario: {self.idComentario}, ID del redactor: {self.idRedactorReplica}, Contenido de la replica: {self.contenidoReplica}, Likes: {self.likes}"
+        
