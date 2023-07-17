@@ -399,9 +399,37 @@ def editar_usuario(request, usuario_id):
 //////   Funciones enfocadas en el chatbot  /////////
 /////////////////////////////////////////////////////
 """
-
-
 def pantalla_chatbot(request, usuario_id):
+    palabraBuscar = request.GET.get('palabraBuscar')
+    if request.method == 'GET' and palabraBuscar != None:
+        
+        
+        print(palabraBuscar)
+        comentarios = db_connection.db.Comentarios.find({ "comentario": { "$regex":str(palabraBuscar), "$options": "i" } })
+
+        print(comentarios)
+
+    else:
+        print("no es get")
+        comentarios = db_connection.db.Comentarios.find()
+
+    # Crear el objeto Paginator
+
+    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), get_img_perfil(comentario,db_connection),str(
+        comentario['_id'])) for comentario in comentarios]
+    for comentario_tuple in comentarios_con_nombre_id:
+        comentario2 = comentario_tuple[0]  # Extract the comment dictionary
+        # Get the 'id_replicas' value (empty list if not present)
+        id_replicas = comentario2.get('id_replicas', [])
+        if len(id_replicas) > 0:
+            new_id_replicas = []  # Lista para almacenar los nuevos valores de 'id_replicas'
+            for j in id_replicas:
+                # Obtiene el valor actualizado de 'id_replicas' usando la función get_inforeplicas
+                new_id_replicas.append(get_inforeplicas(j,db_connection))
+            comentario2['id_replicas'] = new_id_replicas
+
+
+
     usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
     url_imagen_perfil = usuario_dict['url_imagen_perfil']
     conversaciones = usuario_dict['conversaciones']
@@ -409,7 +437,9 @@ def pantalla_chatbot(request, usuario_id):
     if len(conversaciones) > 0:
 
         conversacion = conversaciones[posicion]
-    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion})
+    
+    
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion,"comentarios_con_nombre_id":comentarios_con_nombre_id})
 
 def busqueda_foro_chatbot(request,usuario_id,url_imagen_perfil,conversaciones,conversacion,posicion):
     palabra_especifica = request.GET.get('palabra_buscar')
