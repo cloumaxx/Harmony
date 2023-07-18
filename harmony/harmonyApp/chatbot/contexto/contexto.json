@@ -2,18 +2,18 @@
    "informacion":[
       {
          "tag":"saludos",
-         "entradas":["Hola, ¿cómo estás?", "¡Buenos días!", "¡Hola, qué tal!"],
-         "respuestas":"¡Saludos Mi nombre es Milly!, una inteligencia artificial diseñada específicamente para brindarte información valiosa y precisa sobre el desarrollo hormonal en adolescentes. Con mi capacidad de aprendizaje y mi vasta base de conocimientos, estoy aquí para responder tus preguntas y proporcionarte orientación confiable en este importante tema. El período de la adolescencia es una etapa de transformación física y emocional, y entender los cambios hormonales que ocurren durante este tiempo puede resultar confuso y abrumador. Pero no te preocupes, Milly está aquí para ayudarte a navegar por este viaje. Desde la pubertad hasta la madurez, el cuerpo experimenta una serie de cambios hormonales que afectan el crecimiento, la madurez sexual y el desarrollo físico. Puedes contar conmigo para explicarte cómo se producen estos cambios, cómo influyen en el cuerpo y cómo manejarlos de manera saludable."
+         "entradas":["Hola, ¿como estas?", "¡Buenos dias!", "¡Hola, que tal!"],
+         "respuestas":"Saludos Mi nombre es Milly, una inteligencia artificial diseñada específicamente para brindarte información valiosa y precisa sobre el desarrollo hormonal en adolescentes. Con mi capacidad de aprendizaje y mi vasta base de conocimientos, estoy aquí para responder tus preguntas y proporcionarte orientación confiable en este importante tema. El período de la adolescencia es una etapa de transformación física y emocional, y entender los cambios hormonales que ocurren durante este tiempo puede resultar confuso y abrumador. Pero no te preocupes, Milly está aquí para ayudarte a navegar por este viaje. Desde la pubertad hasta la madurez, el cuerpo experimenta una serie de cambios hormonales que afectan el crecimiento, la madurez sexual y el desarrollo físico. Puedes contar conmigo para explicarte cómo se producen estos cambios, cómo influyen en el cuerpo y cómo manejarlos de manera saludable."
       },
       {
          "tag":"despedidas",
-         "entradas":["Adiós, que tengas un buen día.", "Hasta luego.", "Nos vemos pronto."],
-         "respuestas": "¡Gracias por interactuar con Milly! Siempre estoy aquí para ayudarte con tus consultas sobre el desarrollo hormonal en adolescentes. No dudes en volver en cualquier momento. ¡Que tengas un día maravilloso!"
+         "entradas":["Adios, que tengas un buen día.", "Hasta luego.", "Nos vemos pronto.","Chao"],
+         "respuestas": "Adios ¡Gracias por interactuar con Milly! Siempre estoy aquí para ayudarte con tus consultas sobre el desarrollo hormonal en adolescentes. No dudes en volver en cualquier momento. ¡Que tengas un día maravilloso!"
       },
       {
          "tag":"ansiedad",
          "entradas":[
-         "que es la ansiedad?",
+         "que es la ansiedad",
          "Preocupación",
          "Miedo",
          "Estrés",
@@ -34,8 +34,7 @@
          "Inquietud",
          "Tensión",
          "Nerviosismo",
-         "Angustia",
-         "Ansiedad"],
+         "Angustia"],
          "respuestas": "El estres es un sentimiento de tensión física o emocional. Puede provenir de cualquier situación o pensamiento que lo haga sentir a uno frustrado, furioso o nervioso."
       },
       {
@@ -43,30 +42,8 @@
          "entradas":[
          "que es la depresion?",
          "que es la depresión?",
-         "Depresión",
-         "Miedo",
-         "Estrés",
-         "Inquietud",
-         "Tensión",
-         "Nerviosismo",
-         "Angustia",
-         "Ansiedad"],
-         "respuestas": "La depresion es una enfermedad grave que interfiere con la vida diariade las personas"
-      },
-      {
-         "tag":"depresion",
-         "entradas":[
-         "que es la depresion?",
-         "que es la depresión?",
-         "Depresión",
-         "Miedo",
-         "Estrés",
-         "Inquietud",
-         "Tensión",
-         "Nerviosismo",
-         "Angustia",
-         "Ansiedad"],
-         "respuestas": "La depresion es una enfermedad común pero grave que interfiere con la vida diaria, con la capacidad para trabajar, dormir, estudiar, comer y disfrutar de la vida"
+         "Depresión"],
+         "respuestas": "La depresion es una enfermedad grave que interfiere con la vida diaria de las personas"
       },
       {
          "tag":"sentimientoMal",
