@@ -1,221 +1,589 @@
 {% load static %}
 
-<style>
-#conText {
-  border-top: 1px solid black;
-  padding-top: 10px; /* Opcional, agrega un espacio entre la línea y el contenido */
-}
-#contComentario{
-    background-color: #FAC2E5;
-    border-radius: 45px;
-}
-.fixed-input {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-}
-#nav_bar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 115%;
-}
-#btn-enviar{
-    border-radius: 29px;
-    background: #424050;
-    height: 120%;
-    width: 100%;
-}
-#boton_limpiar_chat{
-    border-radius: 29px;
-    background: #424050;
-    height: 120%;
-    width: 100%;
-}
-#cont_pregunta{
-    border-radius: 17px;
-    background: #D9D9D9;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 80%;
-    margin-left: auto;
-}
-#user_nombre_pregunta{
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-bottom: 1%;
-}
-#user_pregunta{
-    margin-left: 5%;
-    margin-bottom: 2%;
-}
-#cont_respuesta{
-    border-radius: 17px;
-    background: #D9D9D9;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 50%;
-   
-}
-#milly_nombre_respuesta{
-    margin-top: 2%;
-    margin-left: 3%;
-}
-#milly_respuesta{
-    margin-left: 3%;
-    margin-bottom: 2%;
-}
-#input_pregunta{
-    border-radius: 15px;
-    background: #424050;
-    height: 120%;
-    border-color: transparent;
-    color: white;
-}
-#body{
-    background: linear-gradient(180deg, #6A638D 13.02%, #9485DE 80.21%);
-}
-#main{
-    margin-top: 50px;
-}
-#footer{
-    margin-top: 100px;
-    
-}
-</style>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Harmony</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    </head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body id="body">
-        <div>
-            <header>
-                <div id="nav_bar">
-                    {% include 'navbar.html' %}
 
+<head>
+    <link rel="icon" href="{% static '/images/icono.png' %}" type="image/x-icon">
+
+    <title>Harmony</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos para las columnas */
+        #container_global {
+            padding-top: 90px;
+            flex: 1;
+            display: flex;
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(180deg, #6A638D 13.02%, #9485DE 80.21%);
+
+        }
+
+        #column_foro,
+        #column_chat {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        #btn-enviar {
+            border-radius: 29px;
+            background: #424050;
+            height: 100%;
+            width: 100%;
+        }
+
+        #btn_enviar2 {
+            border-radius: 29px;
+            background: #424050;
+            height: 100%;
+            width: 70%;
+        }
+
+        .dropdown-item {
+            position: relative;
+            margin-top: 5px;
+        }
+
+        #container_like {
+            margin-top: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #container_like button,
+        #container_like p {
+            margin: 1px;
+        }
+
+        .mensaje {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            white-space: nowrap;
+            margin-left: 30px;
+            display: none;
+            background-color: #f9f9f9;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .dropdown-item:hover {
+            cursor: pointer;
+
+        }
+
+        .dropdown-item:hover .mensaje {
+            display: block;
+        }
+
+        #cont_buscador_foro {
+
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        #cont_pregunta {
+            border-radius: 17px;
+            background: #D9D9D9;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            margin-left: auto;
+        }
+
+        #user_nombre_pregunta {
+            margin-top: 2%;
+            margin-left: 5%;
+            margin-bottom: 1%;
+        }
+
+        #user_pregunta {
+            margin-left: 5%;
+            margin-bottom: 2%;
+        }
+
+        #cont_respuesta {
+            border-radius: 17px;
+            background: #D9D9D9;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            width: 80%;
+
+        }
+
+        #milly_nombre_respuesta {
+            margin-top: 2%;
+            margin-left: 3%;
+        }
+
+        #milly_respuesta {
+            margin-left: 3%;
+            margin-bottom: 2%;
+        }
+
+        #input_pregunta_foro,
+        #input_pregunta {
+            border-radius: 15px;
+            background: #424050;
+            width: 100%;
+            border-color: transparent;
+            color: white;
+           
+        }
+
+        #input_pregunta_foro::placeholder,
+        #input_pregunta::placeholder {
+
+            color: white;
+        }
+
+        #btn_dropdown {
+            border-radius: 20px;
+            background: #424050;
+            width: 100%;
+            width: 100%;
+
+        }
+
+        #btn_dropdown_foro {
+            background: none;
+            border: none;
+        }
+
+        #contendor_no_hay_chat {
+            display: grid;
+            place-items: center;
+        }
+
+        #btn_nuevo_chat:hover+.mensaje {
+            display: block;
+        }
+
+        #btn_nuevo_chat:hover {
+
+            position: relative;
+            margin-top: 5px;
+
+        }
+
+        #cont_footer {
+            position: fixed;
+            bottom: 0;
+            background-color: transparent;
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+
+        .dropdown-item {
+            margin-top: 5px;
+        }
+
+        .dropdown-item:hover {
+            cursor: pointer;
+
+        }
+
+        #cont_agregar_replica {
+
+            margin-left: 5%;
+            display: flex;
+            align-items: center;
+        }
+
+        #replica {
+            border-radius: 17px;
+            background: #9FC5EB;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            margin-left: 10%;
+            width: 80%;
+        }
+
+        #contComentario {
+            border-radius: 17px;
+            background: #E9DEB3;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        #container_pregunta_foro {
+            width: 50%;
+            position: fixed;
+            z-index: 999;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var columnChat = document.getElementById('column_chat');
+            columnChat.scrollTop = columnChat.scrollHeight;
+        });
+    </script>
+    
+</head>
+
+<body>
+    <header class="navbar-fixed">
+        {% include 'navbar.html' %}
+    </header>
+    <main id="container_global">
+        <div id="column_foro">
+            <form method="GET" action="{% url 'pantalla_chatbot' usuario_id=usuario_id %}">
+                {% csrf_token %}
+                <div id="container_pregunta_foro" class="container">
+                    <div class="row">
+                        <div class="col-9">
+                            <input id="input_pregunta_foro" type="text" name="palabraBuscar" class="form-control"
+                                placeholder="Buscar en el foro">
+                        </div>
+                        <div class="col-2">
+                            <button id="btn_enviar2" type="submit">
+                                <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </header>
-            <br><br>
-            <main id="main">
-                {% if chat %}
-                    {% for item in chat %}
-                    <div class="pregunta" >
-                        <div class="container" >
-                            <div class="row">
-                              <div class="col-md-7">
-                                    <div id="cont_pregunta" >
-                                        <p id ="user_nombre_pregunta"><b>Usuario:</b></p>
-                                        <p id="user_pregunta">{{ item.pregunta }}</p>
-                                </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%; width: 50%; height: auto; float: left;" src="{% static '/images/nina.png' %}">
-                                </div>
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <br>
-                    <div class="respuesta">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%; width: 50%; height: auto; float: right;" src="{% static '/images/mily.png' %}">
-                             
-                                </div>
-                                <div class="col-md-7" id="cont_respuesta" >
-                                    <p id="milly_nombre_respuesta"><b>Milly:</b><p>
-                                    <p id="milly_respuesta">{{ item.respuesta }}</p>
-                                </div>
-                                
-    
-                            </div>
-    
-                        </div>
-                        
-                    </div>
-                    <br>
-                    {% endfor %}
 
-                {% endif %}
-                <!--
-{% if pregunta %}
-                
-                {% endif %}
-                <br>
-                {% if respuesta %}
-                <div class="respuesta">
-                    <div class="container">
+
+            </form>
+            <br><br><br>
+            <div id="comentarios_foro">
+                {% for comentario, nombre, url_img_perfil, id_comentario in comentarios_con_nombre_id %}
+                <div class="container">
+                  <div style="height: 5%;"></div>
+                  <div class="row">
+                    <div class="col-md-10">
+                      <div id="contComentario" class="container">
                         <div class="row">
-                            <div class="col-md-2">
-                                <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%; width: 50%; height: auto; float: right;" src="{% static '/images/mily.png' %}">
-                         
+                          <div class="col-md-2 d-flex align-items-center">
+                            <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%; width: 50%; height: auto;" src='{{ url_img_perfil }}'>
+                          </div>
+                          <div class="col-md-6">
+                            <h2 class="text-start"><b>{{ nombre }}</b></h2>
+                            {% with valor=200 %}
+                            {% if comentario.comentario|length > valor %}
+                            <p id="texto_comentario">{{ comentario.comentario|truncatechars:valor }}</p>
+                            <button id="boton_text_coment" onclick="mostrarTexto(this)">Mostrar más</button>
+                            {% else %}
+                            <p>{{ comentario.comentario }}</p>
+                            {% endif %}
+                            {% endwith %}
+                          </div>
+                          <div class="col-md-2 d-flex align-items-center justify-content-end">
+                            <!-- Espacio entre los botones -->
+                            <form method="POST" action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
+                              {% csrf_token %}
+                              <div class="container" id="container_like">
+                                <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="color: red;" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                  </svg>
+                                </button>
+                                <p>{{ comentario.likes|length }}</p>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="col-md-1">
+                            <div class="btn-group dropup d-flex align-items-center" style="height: 100%;">
+                              <button id="btn_dropdown_foro" type="button" class="btn-svg" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="color:black; width: 25px; height: 25px;" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                </svg>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <!-- Enlaces del menú desplegable -->
+                                <li>
+                                  <a class="dropdown-item" onclick="abrirModalAgregarReplica('modalAgregarReplica{{ id_comentario }}')">Responder</a>
+                                </li>
+                                {% if usuario_id == comentario.id_reda_Comet %}
+                                <li>
+                                  <a class="dropdown-item" onclick="abrirModalComentario('modalEditarComentario{{ id_comentario }}')">Editar</a>
+                                </li>
+                                <li>
+                                  <form method="POST" action="{% url 'borrar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                    {% csrf_token %}
+                                    <a class="dropdown-item">
+                                      <button type="submit" class="btn btn-sm p-0">Eliminar</button>
+                                    </a>
+                                  </form>
+                                </li>
+                                {% endif %}
+                              </ul>
                             </div>
-                            <div class="col-md-7" id="cont_respuesta" >
-                                <p id="milly_nombre_respuesta">Milly:<p>
-                                <p id="milly_respuesta">{{ respuesta }}</p>
-                            </div>
-                            
-
+                          </div>
                         </div>
-
+                      </div>
                     </div>
-                    
+                  </div>
+                  <br>
+                  <div id="replicas_realizadas">
+                    {% for replica in comentario.id_replicas %}
+                    <div id="replica" class="container">
+                      <div class="row">
+                        <div class="col-md-2 d-flex align-items-center">
+                          <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%; width: 50%; height: auto;" src="{{ replica.url_imagen_perfil }}">
+                        </div>
+                        <div class="col-md-6">
+                          <h7 style="margin-top: 10%; margin-left: 4%;"><b>{{ replica.nombreRedactor }}</b></h7>
+                          {% with valor=200 %}
+                          {% if replica.contenidoReplica|length > valor %}
+                          <p id="texto_comentario_replica">{{ replica.contenidoReplica|truncatechars:valor }}</p>
+                          <button id="boton_text_coment_replica" onclick="mostrarTextoReplica(this)">Mostrar más</button>
+                          {% else %}
+                          <p>{{ replica.contenidoReplica }}</p>
+                          {% endif %}
+                          {% endwith %}
+                        </div>
+                        <div class="col-md-2 d-flex align-items-center justify-content-center ">
+                          <form method="POST" action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
+                            {% csrf_token %}
+                            <div class="container" id="container_like">
+                              <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="color: red;" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                </svg>
+                              </button>
+                              <p>{{ replica.likes|length }}</p>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="col-md-1">
+                          <div class="btn-group dropup d-flex align-items-center" style="height: 100%;">
+                            <button id="btn_dropdown_foro" type="button" class="btn-svg" data-bs-toggle="dropdown" aria-expanded="false">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="color:black; width: 25px; height: 25px;" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                              </svg>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <!-- Enlaces del menú desplegable -->
+                              <li>
+                                <a class="dropdown-item" onclick="abrirModalAgregarReplica('modalAgregarReplica{{ id_comentario }}')">Responder</a>
+                              </li>
+                              {% if usuario_id == replica.idRedactorReplica %}
+                              <li>
+                                <a class="dropdown-item" onclick="cerrarAgregarReplica('modalEditarReplica{{ id_comentario }}')">Editar</a>
+                              </li>
+                              <li>
+                                <form method="POST" action="{% url 'borrar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                  {% csrf_token %}
+                                  <a class="dropdown-item">
+                                    <button type="submit" class="btn btn-sm p-0">Eliminar</button>
+                                  </a>
+                                </form>
+                              </li>
+                              {% endif %}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br><br>
+                    {% endfor %}
+                  </div>
                 </div>
-                {% endif %}
-                -->
-                
-            </main>
-            <footer id="footer">
-                <form  method="post" action="{% url 'pantalla_chatbot' usuario_id=usuario_id %}">
-                    {% csrf_token %}
-                    <div style="background-color: transparent; height: 15%;"class="fixed-input">
-                        <div class="container"  style=" height: 100%; margin-top: 1%; margin-bottom: 1%;">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <button name="boton_limpiar_chat"  type="submit" id="boton_limpiar_chat" value="borrar">
-                                        
-                                        <svg  style="color: white;"xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                                        </svg>
-                                    </button>
-                                    
-                                </div>
-                                <div class="col-md-9">
-                                    <input id ="input_pregunta" type="text" name="pregunta"   class="form-control">
-                                </div>
-                                <div class="col-md-1">
-                                    <button type="submit" id="btn-enviar">
-                                        <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
-                                            <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
-                                          </svg>
-                                    </button>
-                                    <script>
-                                        var input = document.getElementById("input_pregunta");
-                                        input.addEventListener("keypress", function(event) {
-                                          if (event.key === "Enter") {
-                                            event.preventDefault();
-                                            document.getElementById("btn-enviar").click();
-                                          }
-                                        });
-                                        </script>
-                                </div>
+                <br>
+                {% endfor %}
+              </div>
+              
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+              
+              
+            
+            <br>
+
+
+        </div>
+        <div id="column_chat">
+            {% if conversaciones|length > 0 %}
+            {% if conversacion|length > 0 %}
+            {% for item in conversacion %}
+            <div class="pregunta">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div id="cont_pregunta">
+                                <p id="user_nombre_pregunta"><b>Usuario:</b></p>
+                                <p id="user_pregunta">{{ item.pregunta }}</p>
                             </div>
                         </div>
+                        <div class="col-md-2">
+                            <img id="img" class="border rounded-circle border-1 border-dark"
+                                style="border-radius: 50%; width: 80%; height: auto; float: left;"
+                                src="{{url_imagen_perfil}}">
+                        </div>
                     </div>
-                </form>
-            </footer>
-        </div>
 
-    
-        <!-- Scripts de Bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    </html>
+                </div>
+
+            </div>
+            <br>
+            <div class="respuesta">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img id="img" class="border rounded-circle border-1 border-dark"
+                                style="border-radius: 50%; width: 80%; height: auto; float: right;"
+                                src="{% static '/images/mily.png' %}">
+
+                        </div>
+                        <div class="col-md-7" id="cont_respuesta">
+                            <p id="milly_nombre_respuesta"><b>Milly:</b>
+                                <p>
+                                    <p id="milly_respuesta">{{ item.respuesta }}</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <br>
+            {% endfor %}
+            {% else %}
+            <p> no hay conversaciones</p>
+            {% endif %}
+            {% else %}
+            <div id="contendor_no_hay_chat">
+                <p> No hay conversaciones {{usuario_id}}</p>
+
+                <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Nueva conversación</button>
+                </form>
+
+
+            </div>
+
+            {% endif %}
+            <br><br>
+            <div>
+                <div class="container" id="cont_footer">
+                    <div class="row">
+                        <div class="col-1">
+
+                            <div class="dropdown">
+                                <button id="btn_dropdown" type="button" class="btn-svg" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                    </svg>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <!-- Enlaces del menú desplegable -->
+                                    <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id %}">
+                                        {% csrf_token %}
+                                        <li>
+                                            <button id="btn_nuevo_chat" class="dropdown-item" type="submit"
+                                                class="btn btn-sm p-0">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-plus-circle-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                                </svg>
+                                            </button>
+                                            <span class="mensaje">Nuevo chat</span>
+                                        </li>
+                                    </form>
+                                    <li>
+                                        <a class="dropdown-item" id="boton_limpiar_chat">
+                                            <button type="submit" name="boton_limpiar_chat" value="borrar"
+                                                class="btn btn-sm p-0">
+                                                <svg style="color: black;" xmlns="http://www.w3.org/2000/svg"
+                                                    width="25%" height="25%" fill="white" class="bi bi-trash-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                                </svg>
+                                            </button>
+                                            <span class="mensaje">Vaciar chat</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="col-6">
+                            <form method="POST"
+                                action="{% url 'enviarMensajeChatBot' usuario_id=usuario_id posicion=posicion %}">
+                                {% csrf_token %}
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-10" s>
+
+                                            <input id="input_pregunta" type="text" name="pregunta" class="form-control"
+                                                placeholder="Ingresa tu pregunta">
+                                        </div>
+                                        <div class="col-2">
+
+                                            <button type="submit" id="btn-enviar">
+                                                <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                    height="16" fill="currentColor" class="bi bi-send-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z" />
+                                                </svg>
+                                            </button>
+                                            <script>
+                                                var input = document.getElementById("input_pregunta");
+                                                input.addEventListener("keypress", function (event) {
+                                                    if (event.key === "Enter") {
+                                                        event.preventDefault();
+                                                        document.getElementById("btn-enviar")
+                                                            .click();
+                                                    }
+                                                });
+                                            </script>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+
+</body>
+
+</html>

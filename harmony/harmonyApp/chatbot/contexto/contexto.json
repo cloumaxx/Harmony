@@ -1,63 +1,116 @@
 {
-   "informacion":[
-      {
-         "tag":"saludos",
-         "entradas":["Hola, ¿como estas?", "¡Buenos dias!", "¡Hola, que tal!"],
-         "respuestas":"Saludos Mi nombre es Milly, una inteligencia artificial diseñada específicamente para brindarte información valiosa y precisa sobre el desarrollo hormonal en adolescentes. Con mi capacidad de aprendizaje y mi vasta base de conocimientos, estoy aquí para responder tus preguntas y proporcionarte orientación confiable en este importante tema. El período de la adolescencia es una etapa de transformación física y emocional, y entender los cambios hormonales que ocurren durante este tiempo puede resultar confuso y abrumador. Pero no te preocupes, Milly está aquí para ayudarte a navegar por este viaje. Desde la pubertad hasta la madurez, el cuerpo experimenta una serie de cambios hormonales que afectan el crecimiento, la madurez sexual y el desarrollo físico. Puedes contar conmigo para explicarte cómo se producen estos cambios, cómo influyen en el cuerpo y cómo manejarlos de manera saludable."
+   "informacion": [{
+         "tag": "saludos",
+         "entradas": [
+            "Hola, ¿cómo estás?",
+            "¡Buenos días!",
+            "¡Hola, qué tal!",
+            "Hola, ¿qué haces?",
+            "¡Buenas tardes!",
+            "¡Hola, buen día!",
+            "¿Cómo estás?",
+            "¡Hola, encantado de conocerte!",
+            "¡Buenas noches!",
+            "Hola, ¿cómo va todo?",
+            "¡Hola! ¿En qué puedo ayudarte?",
+            "¡Hola, bienvenido!",
+            "¡Hola!",
+            "Hola",
+            "¿Qué tal?",
+            "¿Cómo estás?",
+            "Hola, ¿qué onda?",
+            "¡Hey!",
+            "¿Qué pasa?",
+            "¿Cómo va?",
+            "¿Qué hay de nuevo?",
+            "¡Ey, qué tal!",
+            "Hola, ¿me echas una mano?",
+            "¡Saludos!",
+            "¡Hola, amigo!"
+         ],
+         "respuestas": "¡Saludos Mi nombre es Milly!, una inteligencia artificial diseñada específicamente para brindarte información valiosa y precisa sobre el desarrollo hormonal en adolescentes. Con mi capacidad de aprendizaje y mi vasta base de conocimientos, estoy aquí para responder tus preguntas y proporcionarte orientación confiable en este importante tema. El período de la adolescencia es una etapa de transformación física y emocional, y entender los cambios hormonales que ocurren durante este tiempo puede resultar confuso y abrumador. Pero no te preocupes, Milly está aquí para ayudarte a navegar por este viaje. Desde la pubertad hasta la madurez, el cuerpo experimenta una serie de cambios hormonales que afectan el crecimiento, la madurez sexual y el desarrollo físico. Puedes contar conmigo para explicarte cómo se producen estos cambios, cómo influyen en el cuerpo y cómo manejarlos de manera saludable."
       },
       {
-         "tag":"despedidas",
-         "entradas":["Adios, que tengas un buen día.", "Hasta luego.", "Nos vemos pronto.","Chao"],
-         "respuestas": "Adios ¡Gracias por interactuar con Milly! Siempre estoy aquí para ayudarte con tus consultas sobre el desarrollo hormonal en adolescentes. No dudes en volver en cualquier momento. ¡Que tengas un día maravilloso!"
+         "tag": "despedidas",
+         "entradas": ["Adiós", "Chao", "Hasta luego", "Nos vemos", "Hasta la próxima", "Cuídate", "Hasta pronto", "Que te vaya bien", "Nos vemos en un rato", "Hasta la vista", "Ciao", "Bye", "Saludos", "Hasta mañana", "Que tengas suerte", "Adiós y hasta luego", "Nos vemos pronto", "Chau", "Que tengas un buen día", "Hasta la próxima vez"],
+         "respuestas": "¡Gracias por interactuar con Milly! Siempre estoy aquí para ayudarte con tus consultas sobre el desarrollo hormonal en adolescentes. No dudes en volver en cualquier momento. ¡Que tengas un día maravilloso!"
       },
       {
-         "tag":"ansiedad",
-         "entradas":[
-         "que es la ansiedad",
-         "Preocupación",
-         "Miedo",
-         "Estrés",
-         "Inquietud",
-         "Tensión",
-         "Nerviosismo",
-         "Angustia",
-         "Ansiedad"],
+         "tag": "ansiedad",
+         "entradas": [
+            "que es la ansiedad?",
+            "Preocupación",
+            "Miedo",
+            "Estrés",
+            "Inquietud",
+            "Tensión",
+            "Nerviosismo",
+            "Angustia",
+            "Ansiedad"
+         ],
          "respuestas": "La ansiedad es una respuesta natural del cuerpo ante situaciones de estrés o peligro percibido. Sin embargo, cuando se vuelve excesiva y persistente, puede convertirse en un trastorno que interfiere con la vida diaria. Se caracteriza por sentimientos intensos de preocupación, miedo y tensión, y puede manifestarse a través de síntomas físicos y mentales. Los trastornos de ansiedad pueden ser causados por factores genéticos, químicos, traumáticos o ambientales. El tratamiento incluye terapia psicológica, medicación y adoptar hábitos saludables de estilo de vida. Buscar ayuda profesional es fundamental para su diagnóstico y manejo adecuados"
       },
       {
-         "tag":"estres",
-         "entradas":[
-         "que es el estres?",
-         "Preocupación",
-         "Miedo",
-         "Estrés",
-         "Inquietud",
-         "Tensión",
-         "Nerviosismo",
-         "Angustia"],
+         "tag": "estres",
+         "entradas": [
+            "que es el estres?",
+            "Preocupación",
+            "Miedo",
+            "Estrés",
+            "Inquietud",
+            "Tensión",
+            "Nerviosismo",
+            "Angustia",
+            "Ansiedad"
+         ],
          "respuestas": "El estres es un sentimiento de tensión física o emocional. Puede provenir de cualquier situación o pensamiento que lo haga sentir a uno frustrado, furioso o nervioso."
       },
       {
-         "tag":"depresion",
-         "entradas":[
-         "que es la depresion?",
-         "que es la depresión?",
-         "Depresión"],
-         "respuestas": "La depresion es una enfermedad grave que interfiere con la vida diaria de las personas"
+         "tag": "depresion",
+         "entradas": [
+            "que es la depresion?",
+            "que es la depresión?",
+            "Depresión",
+            "Miedo",
+            "Estrés",
+            "Inquietud",
+            "Tensión",
+            "Nerviosismo",
+            "Angustia",
+            "Ansiedad"
+         ],
+         "respuestas": "La depresion es una enfermedad grave que interfiere con la vida diariade las personas"
       },
       {
-         "tag":"sentimientoMal",
-         "entradas":[
-         "Me siento mal",
-         "No estoy bien",
-         "Tengo mucha tristeza",
-         "Triste",
-         "Depresion",
-         "Decaimiento",
-         "Ansiedad",
-         "Angustia"],
-         "respuestas":"Triste"
+         "tag": "depresion",
+         "entradas": [
+            "que es la depresion?",
+            "que es la depresión?",
+            "Depresión",
+            "Miedo",
+            "Estrés",
+            "Inquietud",
+            "Tensión",
+            "Nerviosismo",
+            "Angustia",
+            "Ansiedad"
+         ],
+         "respuestas": "La depresion es una enfermedad común pero grave que interfiere con la vida diaria, con la capacidad para trabajar, dormir, estudiar, comer y disfrutar de la vida"
+      },
+      {
+         "tag": "sentimientoMal",
+         "entradas": [
+            "Me siento mal",
+            "No estoy bien",
+            "Tengo mucha tristeza",
+            "Triste",
+            "Depresion",
+            "Decaimiento",
+            "Ansiedad",
+            "Angustia"
+         ],
+         "respuestas": "Triste"
       }
    ]
-   
+
 }
