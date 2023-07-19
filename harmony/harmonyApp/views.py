@@ -429,7 +429,13 @@ def pantalla_chatbot(request, usuario_id):
     usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
     url_imagen_perfil = usuario_dict['url_imagen_perfil']
     conversaciones = usuario_dict['conversaciones']
-    posicion = len(conversaciones) - 1
+    if len(conversaciones) > 0:
+        posicion = len(conversaciones) - 1
+    else:
+        conversaciones.append([])
+        posicion =0
+    print(conversaciones) 
+    print(len(conversaciones))
     if len(conversaciones) > 0:
         conversacion = conversaciones[posicion]
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion,"comentarios_con_nombre_id":page_obj})
@@ -456,14 +462,17 @@ def crearNuevoChat(request, usuario_id):
             db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
         return redirect('pantalla_chatbot', usuario_id=usuario_id)
 
-def enviarMensajeChatBot(request,usuario_id,posicion):
+def enviarMensajeChatBot(request,usuario_id,posicion=0):
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
         
         if usuario:
             conversaciones = usuario.get('conversaciones', [])
-            conversacion = conversaciones[posicion]
+            try:
+                conversacion = conversaciones[posicion]
+            except:
+                conversacion = []
             print("conversacion",conversacion)
             pregunta = request.POST.get('pregunta')
             print("pregunta",pregunta)
