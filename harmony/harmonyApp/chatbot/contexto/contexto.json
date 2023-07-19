@@ -32,20 +32,37 @@
       },
       {
          "tag": "despedidas",
-         "entradas": ["Adiós", "Chao", "Hasta luego", "Nos vemos", "Hasta la próxima", "Cuídate", "Hasta pronto", "Que te vaya bien", "Nos vemos en un rato", "Hasta la vista", "Ciao", "Bye", "Saludos", "Hasta mañana", "Que tengas suerte", "Adiós y hasta luego", "Nos vemos pronto", "Chau", "Que tengas un buen día", "Hasta la próxima vez"],
+         "entradas": [
+            "Adiós", 
+            "Chao", 
+            "Hasta luego", 
+            "Nos vemos", 
+            "Hasta la próxima",
+            "Hablamos despues", 
+            "Cuídate", 
+            "Hasta pronto", 
+            "Que te vaya bien", 
+            "Nos vemos en un rato", 
+            "Hasta la vista", 
+            "Ciao", 
+            "Bye", 
+            "Saludos", 
+            "Hasta mañana", 
+            "Que tengas suerte", 
+            "Adiós y hasta luego", 
+            "Nos vemos pronto", 
+            "Chau", 
+            "Que tengas un buen día", 
+            "Hasta la próxima vez",
+            "Hablamos mañana",
+            "Te vere despues"
+         ],
          "respuestas": "¡Gracias por interactuar con Milly! Siempre estoy aquí para ayudarte con tus consultas sobre el desarrollo hormonal en adolescentes. No dudes en volver en cualquier momento. ¡Que tengas un día maravilloso!"
       },
       {
          "tag": "ansiedad",
          "entradas": [
             "que es la ansiedad?",
-            "Preocupación",
-            "Miedo",
-            "Estrés",
-            "Inquietud",
-            "Tensión",
-            "Nerviosismo",
-            "Angustia",
             "Ansiedad"
          ],
          "respuestas": "La ansiedad es una respuesta natural del cuerpo ante situaciones de estrés o peligro percibido. Sin embargo, cuando se vuelve excesiva y persistente, puede convertirse en un trastorno que interfiere con la vida diaria. Se caracteriza por sentimientos intensos de preocupación, miedo y tensión, y puede manifestarse a través de síntomas físicos y mentales. Los trastornos de ansiedad pueden ser causados por factores genéticos, químicos, traumáticos o ambientales. El tratamiento incluye terapia psicológica, medicación y adoptar hábitos saludables de estilo de vida. Buscar ayuda profesional es fundamental para su diagnóstico y manejo adecuados"
@@ -54,14 +71,7 @@
          "tag": "estres",
          "entradas": [
             "que es el estres?",
-            "Preocupación",
-            "Miedo",
-            "Estrés",
-            "Inquietud",
-            "Tensión",
-            "Nerviosismo",
-            "Angustia",
-            "Ansiedad"
+            "Estres"
          ],
          "respuestas": "El estres es un sentimiento de tensión física o emocional. Puede provenir de cualquier situación o pensamiento que lo haga sentir a uno frustrado, furioso o nervioso."
       },
@@ -70,32 +80,9 @@
          "entradas": [
             "que es la depresion?",
             "que es la depresión?",
-            "Depresión",
-            "Miedo",
-            "Estrés",
-            "Inquietud",
-            "Tensión",
-            "Nerviosismo",
-            "Angustia",
-            "Ansiedad"
+            "Depresión"
          ],
          "respuestas": "La depresion es una enfermedad grave que interfiere con la vida diariade las personas"
-      },
-      {
-         "tag": "depresion",
-         "entradas": [
-            "que es la depresion?",
-            "que es la depresión?",
-            "Depresión",
-            "Miedo",
-            "Estrés",
-            "Inquietud",
-            "Tensión",
-            "Nerviosismo",
-            "Angustia",
-            "Ansiedad"
-         ],
-         "respuestas": "La depresion es una enfermedad común pero grave que interfiere con la vida diaria, con la capacidad para trabajar, dormir, estudiar, comer y disfrutar de la vida"
       },
       {
          "tag": "sentimientoMal",
@@ -108,6 +95,21 @@
             "Decaimiento",
             "Ansiedad",
             "Angustia"
+         ],
+         "respuestas": "Triste"
+      },
+      {
+         "tag": "sentimientoBien",
+         "entradas": [
+            "Me siento bien",
+            "Estoy bien",
+            "Tengo mucha alegria",
+            "Feliz",
+            "Animos",
+            "Alegre",
+            "Alegria",
+            "Felicidad",
+            "Euforia"
          ],
          "respuestas": "Triste"
       }
