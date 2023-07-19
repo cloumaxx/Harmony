@@ -15,7 +15,6 @@ urlpatterns = [
     path('pantalla_chatbot/<str:usuario_id>/', views.pantalla_chatbot, name='pantalla_chatbot'),
     path('pantalla_chatbot/<str:usuario_id>/crearNuevoChat/', views.crearNuevoChat, name='crearNuevoChat'),
     path('pantalla_chatbot/<str:usuario_id>/enviarMensajeChatBot/<int:posicion>/', views.enviarMensajeChatBot, name='enviarMensajeChatBot'),
-    path('pantalla_chatbot/<str:usuario_id>/busqueda_foro_chatbot/', views.busqueda_foro_chatbot, name='busqueda_foro_chatbot'),
     
 
 
