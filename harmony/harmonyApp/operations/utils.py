@@ -28,16 +28,18 @@ def get_img_perfil(comentario, db_connection):
 def get_comentariosVer(comentarios,db_connection):
     comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), get_img_perfil(comentario,db_connection),str(
         comentario['_id'])) for comentario in comentarios]
-    
-    for comentario_tuple in comentarios_con_nombre_id:
-        comentario2 = comentario_tuple[0]
-        replicasComentario=comentario_tuple[0]['replicas']
-        
+    for comentario in comentarios_con_nombre_id:
+        comentario2 = comentario[0]
+        replicasComentario=comentario[0]['replicas']
+       
         if len(replicasComentario)>0:
             new_id_replicas = []
             for replica in replicasComentario:
+                
                 new_id_replicas.append(get_inforeplicas(replica,db_connection))
-            comentario2['id_replicas'] = new_id_replicas  
+                
+            comentario2['replicas'] = new_id_replicas
+    
     return comentarios_con_nombre_id
 def get_inforeplicas(replica, db_connection):    
     try:
