@@ -22,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-#r@#9%2sgux!q%#!n^+qk#4ysm2hakjvzuo6pbd7!9)e!ly9c1'
-
+# OPEN AI KEY 
+OPENAI_API_KEY  = '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'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -34,12 +35,14 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'djongo',
     'harmonyApp',
+    'millyApp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
