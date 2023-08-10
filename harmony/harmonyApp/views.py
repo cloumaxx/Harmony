@@ -390,14 +390,9 @@ def pantalla_chatbot(request, usuario_id):
     palabraBuscar = request.GET.get('palabraBuscar')
     if request.method == 'GET':
         if palabraBuscar != None and palabraBuscar != "":
-            print("entro")
             comentarios = db_connection.db.Comentarios.find({ 'comentario': { '$regex': str(palabraBuscar), '$options': 'i' } })
-
-            print(comentarios)
         else:
-            print("no entro")
             comentarios = db_connection.db.Comentarios.find()
-            print(comentarios)
     # Crear el objeto Paginator
     
     items_por_pagina = 2
@@ -458,18 +453,17 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 response = requests.get(url_generar_respuesta)
                 salida = response.json()
                 salida = salida.get('data') 
-                score = salida.get('score', 0.0)
+                """score = salida.get('score', 0.0)
                 if (score > 1 or score < 0.01):
                     respuesta='Lo siento, no puedo entenderte. Intentalo de nuevo'
                 else:
-                    respuesta = salida.get('answer', '')   
-               
+                    respuesta = salida.get('answer', '')"""   
+                print("salida:", salida)
                 nuevo_mensaje ={
                     'pregunta': pregunta,
-                    'respuesta': respuesta}
+                    'respuesta': salida}
 
                 conversacion.append(nuevo_mensaje)
-                print("conversacion",conversacion)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
 
         return redirect('pantalla_chatbot', usuario_id=usuario_id)

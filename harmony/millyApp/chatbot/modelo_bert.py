@@ -27,6 +27,7 @@ def definir_pregunta(pregunta):
     key_max_similarity = max(similarity_scores, key=similarity_scores.get)
 
     return key_max_similarity
+
 def respuesta_modelo_bert_contexto(pregunta):
     tipo_pregunta = definir_pregunta(pregunta)
     #print("tipo_pregunta", tipo_pregunta, type(tipo_pregunta))
