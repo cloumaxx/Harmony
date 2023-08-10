@@ -6,7 +6,7 @@ import spacy
 modelo_importado = 'mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es'
 tokenizer = AutoTokenizer.from_pretrained(modelo_importado, do_lower_case=False)
 modelo = AutoModelForQuestionAnswering.from_pretrained(modelo_importado)
-ruta = "harmonyApp/chatbot/contexto/contexto.json"
+ruta = "millyApp/chatbot/contexto/contexto.json"
 
 def definir_pregunta(pregunta):
     # Cargar el modelo de procesamiento de lenguaje de spaCy
@@ -27,6 +27,7 @@ def definir_pregunta(pregunta):
     key_max_similarity = max(similarity_scores, key=similarity_scores.get)
 
     return key_max_similarity
+
 def respuesta_modelo_bert_contexto(pregunta):
     tipo_pregunta = definir_pregunta(pregunta)
     #print("tipo_pregunta", tipo_pregunta, type(tipo_pregunta))
@@ -42,7 +43,8 @@ def respuesta_modelo_bert_contexto(pregunta):
     nlp = pipeline('question-answering', model=modelo, tokenizer=tokenizer)
 
     salida = nlp({'question': pregunta, 'context': contexto})
-    print(salida)    
+    
+     
     return salida
 
 
