@@ -4,9 +4,8 @@ import os
 from bson import ObjectId
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse
 from pymongo import MongoClient
-import requests
+from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
@@ -20,8 +19,6 @@ from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
 from textwrap import wrap
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage
-
-from millyApp.views import generar_respuesta_openai
 
 
 # Create your views here.
@@ -388,11 +385,17 @@ def editar_usuario(request, usuario_id):
 """
 def pantalla_chatbot(request, usuario_id):
     palabraBuscar = request.GET.get('palabraBuscar')
+    print("-->",palabraBuscar)
     if request.method == 'GET':
         if palabraBuscar != None and palabraBuscar != "":
+            print("entro")
             comentarios = db_connection.db.Comentarios.find({ 'comentario': { '$regex': str(palabraBuscar), '$options': 'i' } })
+
+            print(comentarios)
         else:
+            print("no entro")
             comentarios = db_connection.db.Comentarios.find()
+            print(comentarios)
     # Crear el objeto Paginator
     
     items_por_pagina = 2
@@ -433,7 +436,6 @@ def crearNuevoChat(request, usuario_id):
         return redirect('pantalla_chatbot', usuario_id=usuario_id)
 
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
-    
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
@@ -444,26 +446,27 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 conversacion = conversaciones[posicion]
             except:
                 conversacion = []
+            print("conversacion",conversacion)
             pregunta = request.POST.get('pregunta')
+            print("pregunta",pregunta)
             if pregunta == "" or pregunta == None or len(pregunta)==0:
                 pass
+                #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
-            else:                
-                url_generar_respuesta = request.build_absolute_uri(reverse('generar_respuesta_openai', args=[pregunta]))
-                response = requests.get(url_generar_respuesta)
-                salida = response.json()
-                salida = salida.get('data') 
-                """score = salida.get('score', 0.0)
+            else:
+                salida = respuesta_modelo_bert_contexto(pregunta)
+                score = salida['score']
                 if (score > 1 or score < 0.01):
                     respuesta='Lo siento, no puedo entenderte. Intentalo de nuevo'
                 else:
-                    respuesta = salida.get('answer', '')"""   
-                print("salida:", salida)
+                    respuesta = salida['answer']
+
                 nuevo_mensaje ={
                     'pregunta': pregunta,
-                    'respuesta': salida}
+                    'respuesta': respuesta}
 
                 conversacion.append(nuevo_mensaje)
+                print("conversacion",conversacion)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
 
         return redirect('pantalla_chatbot', usuario_id=usuario_id)

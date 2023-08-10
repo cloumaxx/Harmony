@@ -5,7 +5,7 @@ ubicarnos en la carpeta del ambiente
 cd..
 cd enviroments\envharmony
 Scripts\activate 
-.\venv\Scripts\Activate 
+
 
 ///////////////////////////////
 ////// Scripts librerias     ////////
