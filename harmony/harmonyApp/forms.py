@@ -9,4 +9,4 @@ class LoginForm(forms.Form):
 class ComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentarios
-        fields = ['id_reda_Comet', 'comentario', 'likes', 'id_replicas']
+        fields = ['id_reda_Comet', 'comentario', 'likes', 'replicas']
