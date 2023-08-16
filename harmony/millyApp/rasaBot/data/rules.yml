@@ -16,3 +16,8 @@ rules:
   steps:
   - intent: ansiedad_challenge
   - action: utter_ansiedad
+
+- rule: Pregunta sobre la depresion
+  steps:
+  - intent: depresion_challenge
+  - action: utter_depresion

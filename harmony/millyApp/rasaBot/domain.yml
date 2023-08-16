@@ -31,6 +31,8 @@ responses:
   - text: "I am a bot, powered by Rasa."
   utter_ansiedad:
   - text: "Es una enfermedad mental que se caracteriza por un estado de tensión, miedo y preocupación excesivos, que puede ser tanto leve como grave. La ansiedad leve puede ser vagamente incómoda, mientras que la ansiedad grave puede afectar seriamente la vida diaria."
+  utter_depresion:
+  - text: 'La depresión es un trastorno mental caracterizado fundamentalmente por un bajo estado de ánimo y sentimientos de tristeza, asociados a alteraciones del comportamiento, del grado de actividad y del pensamiento. Supone una de las patologías más frecuentes en Atención Primaria y es la primera causa de atención psiquiátrica y de discapacidad derivada de problemas mentales.'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
