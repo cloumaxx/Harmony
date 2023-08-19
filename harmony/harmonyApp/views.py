@@ -407,6 +407,8 @@ def pantalla_chatbot(request, usuario_id):
     
     usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
     url_imagen_perfil = usuario_dict['url_imagen_perfil']
+    nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
+    print("usuario_dict",nombre_usuario)
     conversaciones = usuario_dict['conversaciones']
     if len(conversaciones) > 0:
         posicion = len(conversaciones) - 1
@@ -416,8 +418,7 @@ def pantalla_chatbot(request, usuario_id):
   
     if len(conversaciones) > 0:
         conversacion = conversaciones[posicion]
-    
-    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
+    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': nombre_usuario,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
 
 
 def crearNuevoChat(request, usuario_id):
