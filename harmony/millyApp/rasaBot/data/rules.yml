@@ -21,3 +21,13 @@ rules:
   steps:
   - intent: depresion_challenge
   - action: utter_depresion
+
+- rule: Pregunta sobre el estres
+  steps:
+  - intent: stress_challenge
+  - action: utter_stress
+
+- rule: Excepcion cuando el usuario pregunta cosas no relacionadas
+  steps:
+  - intent: exception
+  - action: utter_exception

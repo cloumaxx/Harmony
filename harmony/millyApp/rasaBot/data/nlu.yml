@@ -18,6 +18,106 @@ nlu:
     - good afternoon
     - sup
     - what's up
+    - Hola
+    - Buenos dias
+    - Hola, como estas
+    - Saludos
+    - Que tal
+    - Hey
+    - Como va
+    - Hola
+    - Hola, amigo
+    - Como te va
+    - Buenas
+    - Hola, que tal
+    - Hola, buen dia
+    - Saludos cordiales
+    - Hola, que pasa
+    - Como andas
+    - Hola, como estas
+    - Hola, mi gente
+    - Hola a todos
+    - Hola, que haces
+    - Saludos
+    - Buenas tardes
+    - Hola, como va todo
+    - Hola, compañero
+    - Como te encuentras
+    - Hola, como va
+    - Hola, querido
+    - Como estas hoy
+    - Buen dia
+    - Saludos y bendiciones
+    - Hola, como te encuentras
+    - Que cuentas de nuevo
+    - Hey, que hay
+    - Que hay de nuevo
+    - Hola a todos ustedes
+    - Hola, mi amigo
+    - Saludos a ti
+    - Como te sientes hoy
+    - Buenas y santas
+    - Hola, como te ha ido
+    - Hola a la gente bella
+    - Como va la vida
+    - Saludos, estimado
+    - Hola, como estuvo tu dia
+    - Como va todo por aqui
+    - Hola, queridos amigos
+    - Saludos desde lejos
+    - Como marcha todo
+    - Hola a todos, jovenes
+    - Hola, como va eso
+    - Que tal la jornada
+    - Hola, gente amable
+    - Como te trata el dia
+    - Hola, amiguitos
+    - Buenas tardes a todos
+    - Como estuvo la noche
+    - Hola, como anda todo
+    - Hola, querida familia
+    - Como va el trajin
+    - Hola a todos, queridos
+    - Saludos, mis amigos
+    - Como van las cosas
+    - Hola, gente hermosa
+    - Hola, como va la vida
+    - Como ha ido todo por aqui
+    - Hola, compañeros
+    - Saludos a todos, jovenes
+    - Como te trata la jornada
+    - Hola, querida gente
+    - Hola, como andan las cosas
+    - Que tal el dia
+    - Hola, mis queridos amigos
+    - Saludos, estimados todos
+    - Como va la semana
+    - Hola, amados
+    - Hola, como ha sido tu dia
+    - Que tal por estos lares
+    - Hola, queridos compañeros
+    - Saludos, mis queridos amigos
+    - Como va la rutina
+    - Hola, apreciados
+    - Hola, como ha transcurrido tu dia
+    - Como va la vida por aqui
+    - Hola, amigables
+    - Hola, como estuvo tu dia
+    - Como va todo por estos rumbos
+    - Hola, apreciados compañeros
+    - Saludos, queridos
+    - Como ha ido la jornada
+    - Hola, seres queridos
+    - Hola, como has pasado el dia
+    - Como anda todo por este lado
+    - Hola, amables
+    - Hola, como te encuentras
+    - Que tal la vida ultimamente
+    - Hola, buenos amigos
+    - Saludos, queridos compañeros
+    - Como estas pasando el dia
+    - Hola, amiguitos queridos
+    - Hola a todos, como han estado
 
 - intent: goodbye
   examples: |
@@ -33,6 +133,107 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - Adios
+    - Hasta luego
+    - Nos vemos
+    - Hasta pronto
+    - Chao
+    - Hasta la proxima
+    - Bueno, me voy
+    - Cuidate
+    - Que tengas un buen dia
+    - Hasta mañana
+    - Hasta luego, amigo
+    - Adios, que estes bien
+    - Hasta luego, cuidate mucho
+    - Me retiro
+    - Hasta la vista
+    - Que tengas un buen dia
+    - Nos vemos pronto
+    - Hasta el proximo encuentro
+    - Hasta pronto, cuidate
+    - Bueno, me retiro entonces
+    - Te dejo por ahora
+    - Adios, hasta luego
+    - Que todo te vaya bien
+    - Hasta la proxima vez
+    - Hasta luego, que estes bien
+    - Me despido
+    - Que tengas un buen dia
+    - Hasta la proxima ocasion
+    - Bueno, me voy ya
+    - Nos encontramos despues
+    - Hasta pronto, que estes bien
+    - Que todo te salga bien
+    - Hasta luego, nos vemos
+    - Me retiro por ahora
+    - Cuidate mucho
+    - Que tengas un buen dia
+    - Hasta la proxima oportunidad
+    - Hasta luego, cuidate
+    - Adios, que estes bien
+    - Nos vemos en otro momento
+    - Hasta luego, nos vemos pronto
+    - Hasta la proxima vez que nos veamos
+    - Hasta luego, que tengas un buen dia
+    - Me retiro por ahora, cuidate
+    - Nos vemos en breve
+    - Que estes bien y nos vemos pronto
+    - Adios, hasta la proxima
+    - Que tengas un buen dia, cuidate
+    - Hasta luego, que todo te vaya bien
+    - Hasta pronto, nos encontramos despues
+    - Hasta la proxima vez, cuidate mucho
+    - Adios por ahora
+    - Que estes bien y hasta pronto
+    - Hasta luego, que tengas un buen dia
+    - Hasta la proxima ocasion, cuidate
+    - Hasta luego, que todo te salga bien
+    - Me retiro por ahora, nos vemos
+    - Que estes bien y hasta la proxima
+    - Adios, nos vemos en otro momento
+    - Hasta luego, nos vemos en breve
+    - Hasta la proxima vez que nos veamos, cuidate
+    - Que tengas un buen dia y adios por ahora
+    - Hasta luego, que estes bien y nos vemos pronto
+    - Hasta la proxima, que tengas un buen dia
+    - Nos vemos en otro momento, cuidate mucho
+    - Hasta luego, que todo te vaya bien y adios por ahora
+    - Hasta pronto, que estes bien y nos encontramos despues
+    - Hasta la proxima vez, cuidate mucho y hasta luego
+    - Que tengas un buen dia y hasta la proxima ocasion
+    - Hasta luego, que todo te salga bien y nos vemos
+    - Hasta la proxima, nos vemos en breve
+    - Nos vemos en otro momento, que estes bien
+    - Hasta luego, cuidate mucho y que tengas un buen dia
+    - Hasta la proxima vez, nos encontramos despues y adios por ahora
+    - Hasta luego, que estes bien y hasta pronto
+    - Hasta la proxima ocasion, que tengas un buen dia
+    - Nos vemos en otro momento, cuidate mucho y nos vemos
+    - Hasta luego, que todo te salga bien y cuidate
+    - Hasta la proxima, nos vemos en breve y adios por ahora
+    - Nos vemos en otro momento, que estes bien y hasta la proxima
+    - Hasta luego, cuidate mucho y que tengas un buen dia
+    - Hasta la proxima vez, que todo te vaya bien y nos vemos
+    - Hasta luego, que estes bien y nos encontramos despues
+    - Hasta la proxima ocasion, cuidate mucho y hasta luego
+    - Nos vemos en otro momento, que tengas un buen dia y adios por ahora
+    - Hasta la proxima, que estes bien y hasta pronto
+    - Hasta luego, cuidate mucho y que todo te salga bien
+    - Hasta la proxima vez, nos vemos en breve y cuidate
+    - Nos vemos en otro momento, que estes bien y cuidate
+    - Hasta luego, que tengas un buen dia y nos vemos
+    - Hasta la proxima, cuidate mucho y nos encontramos despues
+    - Nos vemos en otro momento, que todo te vaya bien y hasta luego
+    - Hasta luego, que estes bien y adios por ahora
+    - Hasta la proxima, cuidate mucho y que tengas un buen dia
+    - Nos vemos en otro momento, que estes bien y nos vemos
+    - Hasta luego, que todo te salga bien y hasta la proxima
+    - Hasta la proxima, que tengas un buen dia y cuidate
+    - Nos vemos en otro momento, cuidate mucho y adios por ahora
+    - Hasta luego, que estes bien y hasta pronto
+    - Hasta la proxima, que todo te vaya bien y nos encontramos despues
+    - Nos vemos en otro momento, cuidate mucho y hasta luego
 
 - intent: affirm
   examples: |
@@ -44,6 +245,45 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - Si
+    - Claro
+    - Por supuesto
+    - Afirmativo
+    - Asi es
+    - Desde luego
+    - Sin duda
+    - Estoy de acuerdo
+    - Correcto
+    - Indudablemente
+    - Por cierto
+    - Vale
+    - Si, estoy de acuerdo
+    - Asi es, correcto
+    - Si, claro
+    - Si, por supuesto
+    - Por supuesto que si
+    - Si, indudablemente
+    - Asi es, estoy de acuerdo
+    - Si, vale
+    - Of course
+    - Certainly
+    - Affirmative
+    - That's right
+    - Absolutely
+    - Without a doubt
+    - I agree
+    - Correct
+    - Undoubtedly
+    - Sure thing
+    - Okay
+    - Yes, I agree
+    - That's right, correct
+    - Yes, of course
+    - Yes, certainly
+    - Of course, yes
+    - Yes, undoubtedly
+    - That's right, I agree
+    - Yes, okay
 
 - intent: deny
   examples: |
@@ -56,6 +296,45 @@ nlu:
     - don't like that
     - no way
     - not really
+    - No
+    - De ninguna manera
+    - Ni hablar
+    - Jamas
+    - Imposible
+    - No puedo
+    - No lo creo
+    - Para nada
+    - Nada de eso
+    - No estoy de acuerdo
+    - No es posible
+    - No me parece
+    - No lo acepto
+    - No way
+    - No estoy seguro
+    - Ni por asomo
+    - No me convence
+    - No es cierto
+    - No me interesa
+    - No veo como
+    - No way
+    - Absolutely not
+    - Never
+    - Impossible
+    - I can't
+    - I don't believe so
+    - Not at all
+    - None of that
+    - I disagree
+    - Not possible
+    - I don't think so
+    - I refuse
+    - No chance
+    - No doubt
+    - Not a chance
+    - No, thank you
+    - No, I don't think so
+    - No, I'm not interested
+    - No, I can't see how
 
 - intent: mood_great
   examples: |
@@ -73,6 +352,49 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - I'm feeling fantastic
+    - Today is a great day
+    - I can't stop smiling
+    - I'm on cloud nine
+    - Everything is going perfectly
+    - I'm so happy I could dance
+    - Life is wonderful
+    - I'm bursting with joy
+    - This moment couldn't be better
+    - I'm in high spirits
+    - Happiness is all around me
+    - I'm thrilled beyond words
+    - I'm beaming with happiness
+    - My heart is full of joy
+    - I'm enjoying every moment
+    - I'm loving life right now
+    - This happiness is contagious
+    - I'm walking on sunshine
+    - I'm so grateful for this happiness
+    - Today is a celebration of joy
+    - Me siento fantastico
+    - Me siento fantastica
+    - Hoy es un dia genial
+    - No puedo dejar de sonreir
+    - Estoy en las nubes
+    - Todo esta saliendo perfectamente
+    - Estoy tan feliz que podria bailar
+    - La vida es maravillosa
+    - Estoy rebosante de alegria
+    - Este momento no podria ser mejor
+    - Estoy de muy buen animo
+    - La felicidad me rodea
+    - Estoy emocionado mas alla de las palabras
+    - Estoy emocionada mas alla de las palabras
+    - Estoy radiante de felicidad
+    - Mi corazon rebosa de alegria
+    - Estoy disfrutando cada momento
+    - Estoy amando la vida en este momento
+    - Esta felicidad es contagiosa
+    - Estoy caminando sobre nubes
+    - Estoy muy agradecido por esta felicidad
+    - Estoy muy agradecida por esta felicidad
+    - Hoy es una celebracion de la alegria
 
 - intent: mood_unhappy
   examples: |
@@ -90,6 +412,69 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - Me siento muy triste en este momento
+    - Estoy pasando por un momento dificil y me siento abatido/a
+    - La tristeza me ha invadido y no puedo evitarlo
+    - Siento un profundo pesar en mi corazon
+    - Mi animo esta por el suelo y no encuentro consuelo
+    - Estoy atravesando una etapa de melancolia
+    - Las lagrimas no dejan de caer y no se como detenerlas
+    - Me siento desanimado/a y sin energias
+    - Mi corazon esta roto y la tristeza me consume
+    - La tristeza se refleja en mi mirada y en mis gestos
+    - Siento un nudo en la garganta cada vez que intento hablar
+    - El dolor que siento es casi insoportable
+    - Me invade un sentimiento de soledad y desamparo
+    - La tristeza me abruma y no se como enfrentarla
+    - Mi mente esta llena de pensamientos sombrios
+    - Siento una profunda añoranza por tiempos mejores
+    - La tristeza parece no tener fin y me consume por dentro
+    - Mi corazon se siente vacio y en pedazos
+    - Las lagrimas son mi unica forma de liberar la tristeza
+    - La tristeza es como una sombra que me sigue a todas partes
+    - I'm feeling very sad right now
+    - I'm going through a tough time and I feel down
+    - Sadness has taken over me and I can't shake it off
+    - I feel a deep sorrow in my heart
+    - My spirits are low, and I can't find any comfort
+    - I'm going through a phase of melancholy
+    - Tears keep falling, and I don't know how to stop them
+    - I feel discouraged and lacking energy
+    - My heart is shattered, and sadness consumes me
+    - Sadness is evident in my gaze and gestures
+    - I get a lump in my throat every time I try to speak
+    - The pain I feel is almost unbearable
+    - A sense of loneliness and helplessness overwhelms me
+    - Sadness overwhelms me, and I don't know how to face it
+    - My mind is filled with gloomy thoughts
+    - I feel a deep longing for better times
+    - Sadness seems never-ending and eats away at me
+    - My heart feels empty and shattered
+    - Tears are my only way to release the sadness
+    - Sadness is like a shadow that follows me everywhere
+
+- intent: mood_loneliness
+  examples: |
+    - Me siento solo/a en este momento
+    - La soledad es mi compañera constante
+    - Siento un profundo vacio en mi corazon
+    - La ausencia de compañia me hace sentir solitario/a
+    - Estoy rodeado/a de silencio y soledad
+    - Mis pensamientos parecen ser mi unica compañia
+    - Me encuentro en un lugar solitario en mi mente
+    - A veces, la soledad es mas abrumadora que nunca
+    - Me siento desconectado/a del mundo a mi alrededor
+    - Aunque este rodeado/a de gente, siento una profunda soledad
+    - La soledad es como una sombra que me sigue a todas partes
+    - No tengo a nadie con quien compartir mis pensamientos y emociones
+    - Mi corazon anhela la compañia de alguien en este momento
+    - La soledad se siente como un peso en mi pecho
+    - Cada rincon de mi ser esta lleno de silencio y soledad
+    - Extraño la conexion con otros que solia tener
+    - A veces, la soledad es la unica que me escucha
+    - Me siento aislado/a de todo y de todos
+    - A pesar de estar rodeado/a de actividad, la soledad persiste
+    - Anhelo la presencia de alguien para romper esta soledad
 
 - intent: bot_challenge
   examples: |
@@ -97,6 +482,14 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - who are you?
+    - what are you?
+    - eres un robot?
+    - eres un humano?
+    - estoy hablando con un robot?
+    - estoy hablando con un humano?
+    - que eres?
+    - quien eres?
 
 - intent: ansiedad_challenge
   examples: |
@@ -105,6 +498,84 @@ nlu:
     - como se manifiesta la ansiedad?
     - algunos sintomas de la ansiedad?
     - como se si tengo ansiedad?
+    - Que es la ansiedad y como se manifiesta?
+    - Cuales son los sintomas fisicos comunes de la ansiedad?
+    - Puede la ansiedad manifestarse tanto a nivel emocional como fisico?
+    - Como se diferencia la ansiedad de otros estados emocionales?
+    - Cuales son los posibles desencadenantes de la ansiedad?
+    - Que papel desempeñan los pensamientos negativos en la ansiedad?
+    - Como se diagnostica un trastorno de ansiedad?
+    - Que tipos de trastornos de ansiedad existen y como se distinguen?
+    - Que factores geneticos y ambientales pueden contribuir a la ansiedad?
+    - Cuando la ansiedad se considera un problema que requiere tratamiento?
+    - Como afecta la ansiedad a las relaciones personales y sociales?
+    - Existen estrategias de manejo para reducir la ansiedad en el dia a dia?
+    - Que tecnicas de relajacion son eficaces para calmar la ansiedad?
+    - Como influye el estilo de vida, como el sueño y la dieta, en la ansiedad?
+    - Cual es el papel de la terapia cognitivo-conductual en el tratamiento de la ansiedad?
+    - Existen opciones de tratamiento farmacologico para la ansiedad?
+    - Puede el ejercicio fisico ayudar a reducir los sintomas de ansiedad?
+    - Como se relaciona la ansiedad con la depresion y otros trastornos?
+    - Que medidas preventivas se pueden tomar para reducir la ansiedad?
+    - Que es el trastorno de ansiedad generalizada y cuales son sus caracteristicas?
+    - Cual es el trastorno de panico y como se manifiestan sus ataques?
+    - Que es el trastorno de ansiedad social y como afecta a las interacciones sociales?
+    - Que es el trastorno de ansiedad por separacion y cuales son sus sintomas?
+    - Como se trata el trastorno obsesivo-compulsivo, que esta relacionado con la ansiedad?
+    - Que es el trastorno de estres postraumatico y como puede desencadenar ansiedad?
+    - Existen enfoques de medicina alternativa que pueden ayudar a tratar la ansiedad?
+    - Como se puede apoyar a alguien que esta luchando contra la ansiedad?
+    - Cual es el papel de la respiracion profunda en la reduccion de la ansiedad?
+    - Que es la exposicion gradual y como se utiliza en la terapia de la ansiedad?
+    - Como puede el mindfulness ayudar en el manejo de la ansiedad?
+    - Que es el trastorno de ansiedad por enfermedad y como se aborda?
+    - La ansiedad puede ser una respuesta normal a situaciones estresantes?
+    - Cual es la relacion entre la ansiedad y los ataques de ansiedad?
+    - Como influye la genetica en la predisposicion a la ansiedad?
+    - Existen recursos en linea para obtener informacion y apoyo sobre la ansiedad?
+    - Como puede el estres cronico contribuir al desarrollo de la ansiedad?
+    - Como se puede distinguir entre la ansiedad situacional y un trastorno de ansiedad?
+    - Cual es el papel de la autocompasion en el manejo de la ansiedad?
+    - Como puede la musica, el arte u otras actividades creativas ayudar a reducir la ansiedad?
+    - Que consejos puedes proporcionar para mantener un estado mental positivo y reducir la ansiedad?
+    - Alguna vez has sentido que tu cabeza es como un torbellino de pensamientos ansiosos
+    - Te pasa a veces que simplemente no puedes dejar de preocuparte por cosas
+    - Que trucos conoces para relajarte cuando sientes esa tension ansiosa
+    - Has notado que la ansiedad puede hacer que te sientas como si estuvieras en una montaña rusa emocional
+    - Que haces cuando los nervios parecen querer tomar el control
+    - Sabes como la ansiedad puede afectar tu cuerpo y energia
+    - Has probado tecnicas como la respiracion profunda para calmar esos nervios
+    - Alguna vez has sentido que el estres y la ansiedad se unen para una fiesta no invitada
+    - Has oido hablar de formas creativas de lidiar con la ansiedad, como el dibujo o la escritura
+    - Que pensamientos rondan tu mente cuando te encuentras en una situacion ansiosa
+    - Alguna vez te ha golpeado un ataque de ansiedad y te has sentido totalmente desbordado
+    - Tienes un plan de respaldo para esos dias en los que la ansiedad quiere tomar el mando
+    - Has notado que algunas comidas o bebidas pueden agravar la sensacion de nerviosismo
+    - Alguna vez te has sentido como si estuvieras solo en una isla de ansiedad
+    - Como desconectas cuando la mente esta en modo ansioso
+    - Has probado alguna vez ejercicios o yoga para ayudar a reducir la ansiedad
+    - Que pasa cuando sientes esa presion en el pecho que a menudo viene con la ansiedad
+    - Has encontrado formas de manejar esos pensamientos preocupantes que parecen no detenerse
+    - Como puedes decirle a tus amigos o familiares que estas lidiando con la ansiedad
+    - Has sentido tu cabeza como un torbellino de pensamientos ansiosos.
+    - Sientes que no puedes dejar de preocuparte por cosas
+    - Trucos para relajarte cuando sientes tension ansiosa
+    - La ansiedad te hace sentir como en una montaña rusa emocional
+    - Como enfrentas los nervios cuando aparecen
+    - Sabes como la ansiedad afecta tu cuerpo y energia
+    - Pruebas tecnicas como la respiracion profunda para calmar nervios
+    - El estres y la ansiedad unidos en una fiesta no invitada?
+    - Has oido de formas creativas de lidiar con ansiedad, como dibujar o escribir
+    - Que piensas en situaciones ansiosas
+    - Alguna vez te ha golpeado un ataque de ansiedad y te sientes desbordado
+    - Tienes un plan para dias de ansiedad intensa
+    - Notas que algunas comidas empeoran el nerviosismo
+    - Te has sentido solo en una isla de ansiedad
+    - Como te desconectas en momentos de ansiedad
+    - Pruebas ejercicios o yoga para reducir la ansiedad
+    - Sientes la presion en el pecho que viene con ansiedad
+    - Manejas pensamientos preocupantes que no paran
+    - Como dices a otros que estas lidiando con ansiedad
 
 - intent: depresion_challenge
   examples: |
@@ -113,3 +584,248 @@ nlu:
     - como se manifiesta la depresion?
     - algunos sintomas de la depresion?
     - como se si tengo depresion?
+    - Has experimentado esa sensacion de "nubes negras" que viene con la depresion
+    - La tristeza profunda y persistente, ¿te resulta familiar?
+    - Notas como la depresion puede robar la energia y la motivacion
+    - Como se diferencia la depresion de simplemente estar triste
+    - Has enfrentado momentos en los que la depresion te hace sentir atrapado
+    - Sientes esa sensacion de vacio en el pecho cuando la depresion aparece
+    - Conoces estrategias para lidiar con los dias de depresion intensa
+    - La depresion afecta tanto emocional como fisicamente, ¿verdad?
+    - Has notado como la depresion puede hacer que las cosas cotidianas parezcan inmensas
+    - Puedes explicar como los pensamientos negativos juegan un papel en la depresion
+    - Tienes formas de enfrentar esos momentos de autocritica que vienen con la depresion
+    - Notas que la depresion puede hacer que te sientas desconectado del mundo
+    - Como mantienes el equilibrio cuando la depresion quiere dominar
+    - Has buscado formas creativas de lidiar con la depresion, como el arte o la musica
+    - La depresion puede afectar el sueño y el apetito, ¿cierto?
+    - Como se relaciona la depresion con la perdida de interes en las cosas que solias disfrutar
+    - Has experimentado la lucha entre la depresion y las actividades diarias
+    - Notas como la depresion puede hacer que te sientas emocionalmente adormecido
+    - Como explicas a otros lo que estas pasando cuando enfrentas la depresion
+    - Puedes decirme que es el trastorno depresivo mayor y cuales son sus sintomas
+    - Que piensas sobre la conexion entre la depresion y la falta de energia
+    - La depresion puede afectar las relaciones personales, ¿verdad?
+    - Como se aborda el trastorno depresivo persistente y sus sintomas
+    - Has considerado como la terapia puede ser util en el tratamiento de la depresion
+    - Notas que algunos alimentos y habitos pueden influir en la depresion
+    - Has explorado la importancia de la actividad fisica en el manejo de la depresion
+    - Que piensas sobre la relacion entre la depresion y la autoestima
+    - La depresion puede variar en intensidad, ¿como manejas los momentos dificiles?
+    - Has investigado como el apoyo de amigos y familiares puede marcar la diferencia
+    - Notas que la depresion puede afectar la concentracion y la toma de decisiones
+    - Como se diferencia la depresion de otros trastornos de salud mental
+    - Que opinas sobre la relacion entre el sueño y los sintomas de la depresion
+    - Has probado practicas como el mindfulness para manejar la depresion
+    - Como describirias la relacion entre la depresion y los cambios de peso
+    - Notas que la depresion puede distorsionar la percepcion de uno mismo
+    - Has explorado como el estres y la depresion pueden estar conectados
+    - Que piensas sobre la relacion entre la depresion y la falta de interes en actividades
+    - Has considerado como la depresion puede impactar en la vida laboral y academica
+    - Como afrontas esos momentos en los que la depresion te hace sentir atrapado
+    - What is depression and how does it affect lives
+    - Have you ever felt that heavy darkness that comes with depression
+    - Do you know the weight of persistent sadness
+    - How does depression drain energy and motivation
+    - Is there a difference between feeling down and being depressed
+    - Ever been trapped in moments by the grip of depression
+    - That emptiness in the chest, is that when depression arrives
+    - Ways to cope on intense days of depression
+    - Does depression infiltrate both emotions and body
+    - Everyday things feeling monumental due to depression
+    - Are negative thoughts a key player in depression
+    - Strategies for dealing with self-criticism during depression
+    - Ever feel disconnected from the world due to depression
+    - How do you stay balanced when depression strikes
+    - Have you explored art or music to battle depression
+    - Does depression influence sleep and appetite
+    - Does it feel like interests vanish with depression
+    - Managing daily life while wrestling with depression
+    - Does emotional numbness relate to depression
+    - How do you describe depression to others
+    - Could you define major depressive disorder and its symptoms
+    - How does energy loss link with depression
+    - Does depression affect personal relationships
+    - Strategies for handling persistent depressive disorder
+    - Can therapy make a difference in depression treatment
+    - Are there foods or habits that worsen depression
+    - The role of physical activity in managing depression
+    - Thoughts on self-esteem and its connection to depression
+    - Navigating through depression's varying intensity
+    - The impact of friends and family support on depression
+    - How does depression hinder focus and decision-making
+    - Differences between depression and other mental conditions
+    - How does sleep tie into symptoms of depression
+    - Have mindfulness techniques helped you manage depression
+    - Is there a link between weight changes and depression
+    - Does depression distort how you perceive yourself
+    - How does stress intertwine with depression
+    - Do interests fade away in the grip of depression
+    - How might depression influence work and academics
+    - How do you break free from feeling trapped by depression
+
+- intent: stress_challenge
+  examples: |
+  - Que es el estres y como afecta a tu cuerpo y mente
+  - Cuales son algunas situaciones comunes que te generan estres
+  - Como reconoces los signos fisicos de estar estresado
+  - Que impacto tiene el estres en tus emociones y estado de animo
+  - Has experimentado el estres a corto plazo, como el estres agudo
+  - En que formas el estres puede afectar tu rendimiento laboral o academico
+  - Como manejas el estres en situaciones desafiantes
+  - Que estrategias utilizas para relajarte cuando te sientes estresado
+  - Que papel juega la respiracion profunda en la reduccion del estres
+  - Como puede el ejercicio fisico ayudar a gestionar el estres
+  - Cuales son los efectos del estres cronico a largo plazo
+  - Como influye el estilo de vida en tu capacidad para lidiar con el estres
+  - Has notado si el estres afecta tus patrones de sueño
+  - Que relacion hay entre el estres y la alimentacion
+  - Como puedes identificar los factores estresantes en tu vida diaria
+  - Que estrategias empleas para establecer limites y evitar el exceso de estres
+  - Has probado tecnicas de relajacion, como la meditacion, para combatir el estres
+  - Como se puede mantener un equilibrio entre el trabajo y la vida personal para reducir el estres
+  - El estres ha afectado tus relaciones interpersonales
+  - Como comunicas a los demas que estas experimentando estres
+  - Que piensas sobre la relacion entre el estres y la salud fisica
+  - Has buscado apoyo profesional para manejar el estres
+  - Como te recuperas despues de periodos intensos de estres
+  - El estres puede tener un impacto en tu creatividad y capacidad para tomar decisiones
+  - Como se diferencia el estres positivo del estres negativo
+  - Que consejos tienes para mantener una mentalidad tranquila en momentos estresantes
+  - Has notado si el estres afecta tu sistema inmunologico
+  - Cual es la conexion entre el estres y la salud mental
+  - Que estrategias utilizas para organizarte y reducir el estres laboral
+  - Has probado actividades como el yoga o el ejercicio para aliviar el estres
+  - El estres puede influir en tus habitos de consumo, como el tabaco o el alcohol
+  - Como se puede lidiar con el estres en entornos familiares o domesticos
+  - Has experimentado el "burnout" o agotamiento relacionado con el estres
+  - Como el estres puede afectar tu productividad y concentracion
+  - Que papel juega el apoyo social en la gestion del estres
+  - Cual es la diferencia entre el estres mental y el estres emocional
+  - Como puede el estres afectar tu calidad de sueño
+  - Has notado si el estres tiene efectos a largo plazo en tu salud
+  - Que haces para desconectar y cuidar de ti mismo cuando estas estresado
+  - Cual es tu enfoque para manejar el estres de manera efectiva en el dia a dia
+
+- intent: exception
+  examples: |
+  - Cuales son tus pasatiempos favoritos
+  - Tienes alguna pelicula que puedas ver una y otra vez
+  - Que tipo de musica sueles escuchar para relajarte
+  - Has tenido la oportunidad de viajar recientemente
+  - Que te motiva a levantarte por las mañanas
+  - Tienes algun platillo que sepas cocinar realmente bien
+  - Que libro has leido recientemente y te ha gustado
+  - Has tenido alguna experiencia interesante al hacer ejercicio
+  - Cual es el lugar mas hermoso en el que has estado
+  - Tienes alguna meta personal que quieras compartir
+  - Que te hace reir sin importar cuantas veces lo veas
+  - Has participado en algun voluntariado o trabajo comunitario
+  - Que actividad te relaja despues de un dia agotador
+  - Hay algun deporte que disfrutes ver en la television
+  - Cual es tu lugar ideal para pasar unas vacaciones
+  - Tienes una anecdota divertida que puedas compartir
+  - Que te gusta hacer para sentirte conectado con la naturaleza
+  - Has tenido la oportunidad de conocer a alguien famoso
+  - Tienes alguna habilidad o talento poco comun
+  - Cual es tu recuerdo favorito de la infancia
+  - Como te describirias en tres palabras
+  - Tienes algun lugar al que siempre quisieras regresar
+  - Cual es tu estacion del año favorita
+  - Tienes alguna tradicion familiar especial
+  - Prefieres el cafe o el te
+  - Cual es el ultimo libro que has leido
+  - Tienes alguna meta de viaje que quieras cumplir
+  - Que actividad te hace sentir en paz
+  - Tienes alguna cancion que siempre te ponga de buen humor
+  - Que te gustaba hacer de niño
+  - Cual es tu aroma favorito
+  - Tienes alguna habilidad artistica o manual
+  - Cual es tu recuerdo mas preciado
+  - Tienes algun lugar secreto donde te gusta escapar
+  - Que te hace sentir agradecido en la vida
+  - Tienes algun objeto que guardas con cariño
+  - Cual es tu pelicula favorita de la infancia
+  - Tienes alguna historia de viaje que siempre cuentas
+  - Que te gustaria aprender en un futuro cercano
+  - Cual es tu dia de la semana favorito
+  - Tienes alguna coleccion interesante
+  - Cual es tu comida reconfortante favorita
+  - Tienes algun lugar en tu ciudad que adoras
+  - Que te hace sentir inspirado
+  - Tienes algun proyecto creativo en mente
+  - Cual es tu estilo musical preferido
+  - Tienes alguna frase o cita que te motive
+  - Que te ayuda a despejar la mente
+  - Tienes alguna meta fitness que quieras lograr
+  - Cual es tu paisaje natural favorito
+  - Tienes algun lugar que siempre quisieras explorar
+  - Que te gusta hacer en dias lluviosos
+  - Tienes alguna historia de aventura que contar
+  - Cual es tu animal favorito y por que
+  - Tienes algun talento oculto que nadie sabe
+  - Que te hace sentir emocionado por la vida
+  - Tienes algun deporte que disfrutas practicar
+  - Cual es tu pelicula clasica favorita
+  - Tienes alguna actividad que te haga sentir vivo
+  - Que te ayuda a relajarte despues de un dia agitado
+  - Tienes alguna cancion que te recuerde a tu infancia
+  - Cual es tu plato gourmet favorito
+  - Tienes algun consejo que siempre sigues
+  - Que te motiva a superar los desafios
+  - Tienes algun proyecto de hogar que quieras realizar
+  - Cual es tu rutina de cuidado personal preferida
+  - Tienes alguna meta de lectura que deseas alcanzar
+  - Que te hace sentir en sintonia con la naturaleza
+  - Tienes algun hobby que te gustaria retomar
+  - Cual es tu lugar ideal para relajarte
+  - Tienes algun objetivo de carrera que persigues
+  - Que te ayuda a mantener la calma en situaciones dificiles
+  - Tienes alguna cancion que te haga sentir nostalgico
+  - Cual es tu comida internacional favorita
+  - Tienes algun recuerdo de un dia perfecto
+  - Que te inspira a cuidar del medio ambiente
+  - Tienes alguna tradicion de fin de semana que sigas
+  - Cual es tu forma preferida de pasar las vacaciones
+  - Tienes algun lugar donde te gusta escapar virtualmente
+  - Que te hace sentir agradecido por tus amigos
+  - Tienes alguna meta de aprendizaje que quieras alcanzar
+  - Cual es tu actividad de ejercicio favorita
+  - Tienes alguna historia divertida que siempre cuentas
+  - Que te ayuda a desconectar de la tecnologia
+  - Tienes alguna pelicula que te hace sentir bien sin importar que
+  - Cual es tu plato casero preferido
+  - Tienes alguna frase que te inspira cada dia
+  - Que te hace sentir orgulloso de ti mismo
+  - Tienes algun sueño recurrente interesante
+  - Cual es tu manera de darle un giro positivo a un mal dia
+  - Tienes alguna actividad al aire libre que amas hacer
+  - Que te hace sentir conectado con diferentes culturas
+  - Tienes algun lugar que consideras tu santuario
+  - Cual es tu postre favorito de todos los tiempos
+  - Tienes alguna experiencia que te cambio la perspectiva
+  - Que te hace sentir agradecido por tu familia
+  - Tienes alguna forma de arte que disfrutas contemplando
+  - Cual es tu plato para el desayuno preferido
+  - Tienes alguna cancion que te motive a enfrentar retos
+  - Que te ayuda a mantenerte energico durante el dia
+  - Tienes alguna pelicula que te hizo reflexionar profundamente
+  - Cual es tu comida reconfortante de la infancia
+  - Tienes algun consejo que quisieras dar a tu yo mas joven
+  - Que te hace sentir entusiasmado por el futuro
+  - Tienes alguna actividad que te ayuda a liberar el estres
+  - Cual es tu destino de viaje ideal
+  - Tienes alguna tradicion de celebracion que te guste
+  - Que te ayuda a mantener un estado mental positivo
+  - Tienes alguna historia de amistad que quieras compartir
+  - Cual es tu plato saludable preferido
+  - Tienes alguna frase que te ha hecho cambiar tu enfoque
+  - Que te hace sentir agradecido por tu trabajo
+  - Tienes alguna experiencia culinaria memorable
+  - Cual es tu recuerdo mas grato de un dia ordinario
+  - Tienes algun objeto que atesores desde hace mucho
+  - Que te hace sentir conectado con tu comunidad
+  - Tienes alguna cancion que te relaje instantaneamente
+  - Cual es tu actividad creativa preferida
+  - Tienes alguna anecdota que te haga reir cada vez
+  - Que te hace sentir feliz de estar vivo
