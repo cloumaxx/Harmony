@@ -226,6 +226,37 @@
 
         #openNav {
             position: fixed;
+            width: 50px;
+            height: 75px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-top-right-radius: 75px;
+            border-bottom-right-radius: 75px;
+            cursor: pointer;
+        }
+
+        #openNav::before {
+            content: "foro";
+            position: absolute;
+            top: -30px;
+            /* Ajusta la posición vertical del mensaje */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        #openNav:hover::before {
+            opacity: 1;
+            visibility: visible;
+            padding-left: 100px;
         }
 
         #mySidebar {
@@ -341,7 +372,7 @@
 
     <div style="display:none; width: 50%;height: 100vh; overflow-y: scroll; z-index: 9999; background-color: #9FC5EB;"
         id="mySidebar">
-        <button onclick="w3_close()">Close &times;</button><br>
+        <button onclick="w3_close()">Close &times;</button><br><br>
         <form method="GET" action="{% url 'pantalla_chatbot' usuario_id=usuario_id %}">
             {% csrf_token %}
             <div id="container_pregunta_foro" class="container">
@@ -370,7 +401,11 @@
         <br>
     </div>
     <main id="fondomain">
-        <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+        <button id="openNav" onclick="w3_open()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                <path
+                    d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+            </svg></button>
         <div id="main">
             {% if conversaciones|length > 0 %}
             {% if conversacion|length > 0 %}
