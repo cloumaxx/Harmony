@@ -27,7 +27,7 @@ def generar_respuesta_openai(request, entrada):
     """
     response= send_to_rasa(entrada)
     salida = response[0]
-    #print("response: ", response)
+    print(">>response: ", response)
     return JsonResponse({'data': salida['text']})
 
 @csrf_exempt
