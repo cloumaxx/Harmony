@@ -8,6 +8,14 @@ Scripts\activate
 
 
 ///////////////////////////////
+////// Uso de rasa  //////
+//////////////////////////////
+ubicar carpeta rasaBot:
+para entrenar el modelo : rasa train
+
+para correr el modelo : rasa shell
+
+///////////////////////////////
 ////// Scripts librerias     ////////
 //////////////////////////////
 Guardar las librerias en un archivo txt
