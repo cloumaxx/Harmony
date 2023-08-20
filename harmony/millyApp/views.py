@@ -10,8 +10,6 @@ import spacy
 from harmonyProject import settings
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
-from nltk.translate.bleu_score import sentence_bleu
-from google.cloud import translate_v2 as translate
 
 from millyApp.chatbot.process import cargar_datos
 

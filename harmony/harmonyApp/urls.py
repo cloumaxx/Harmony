@@ -12,7 +12,7 @@ urlpatterns = [
     path("pantalla_perfil_usuario/<str:usuario_id>/", views.pantalla_perfil_usuario, name="pantalla_perfil_usuario"),
     path('editar_usuario/<str:usuario_id>/', views.editar_usuario, name='editar_usuario'),
     
-    path('pantalla_chatbot/<str:usuario_id>/', views.pantalla_chatbot, name='pantalla_chatbot'),
+    path('pantalla_chatbot/<str:usuario_id>/posicion/<int:posicion>/', views.pantalla_chatbot, name='pantalla_chatbot'),
     path('pantalla_chatbot/<str:usuario_id>/crearNuevoChat/', views.crearNuevoChat, name='crearNuevoChat'),
     path('pantalla_chatbot/<str:usuario_id>/enviarMensajeChatBot/<int:posicion>/', views.enviarMensajeChatBot, name='enviarMensajeChatBot'),
     
