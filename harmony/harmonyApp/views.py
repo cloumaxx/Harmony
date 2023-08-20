@@ -383,19 +383,13 @@ def editar_usuario(request, usuario_id):
 //////   Funciones enfocadas en el chatbot  /////////
 /////////////////////////////////////////////////////
 """
-def pantalla_chatbot(request, usuario_id):
+def pantalla_chatbot(request, usuario_id,posicion=0):
     palabraBuscar = request.GET.get('palabraBuscar')
-    print("-->",palabraBuscar)
     if request.method == 'GET':
         if palabraBuscar != None and palabraBuscar != "":
-            print("entro")
             comentarios = db_connection.db.Comentarios.find({ 'comentario': { '$regex': str(palabraBuscar), '$options': 'i' } })
-
-            print(comentarios)
         else:
-            print("no entro")
             comentarios = db_connection.db.Comentarios.find()
-            print(comentarios)
     # Crear el objeto Paginator
     
     items_por_pagina = 2
@@ -408,16 +402,18 @@ def pantalla_chatbot(request, usuario_id):
     usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
     url_imagen_perfil = usuario_dict['url_imagen_perfil']
     nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
-    print("usuario_dict",nombre_usuario)
     conversaciones = usuario_dict['conversaciones']
-    if len(conversaciones) > 0:
-        posicion = len(conversaciones) - 1
-    else:
+    if len(conversaciones) <= 0:
+        print('entro2')
         conversaciones.append([])
         posicion =0
+    else:
+        if posicion != 0:
+            posicion = posicion-1
   
     if len(conversaciones) > 0:
         conversacion = conversaciones[posicion]
+    print('posicion: ',posicion)
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': nombre_usuario,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
 
 
@@ -447,9 +443,7 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 conversacion = conversaciones[posicion]
             except:
                 conversacion = []
-            print("conversacion",conversacion)
             pregunta = request.POST.get('pregunta')
-            print("pregunta",pregunta)
             if pregunta == "" or pregunta == None or len(pregunta)==0:
                 pass
                 #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
@@ -467,7 +461,6 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                     'respuesta': respuesta}
 
                 conversacion.append(nuevo_mensaje)
-                print("conversacion",conversacion)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
 
         return redirect('pantalla_chatbot', usuario_id=usuario_id)
