@@ -21,3 +21,8 @@ rules:
   steps:
   - intent: depresion_challenge
   - action: utter_depresion
+  
+- rule: Excepcion cuando el usuario pregunta cosas no relacionadas
+  steps:
+  - intent: exception
+  - action: utter_exception

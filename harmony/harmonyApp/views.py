@@ -1,6 +1,7 @@
 from datetime import datetime
 from imaplib import _Authenticator
 import os
+from django.contrib.auth import logout
 from bson import ObjectId
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
@@ -19,24 +20,39 @@ from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
 from textwrap import wrap
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 db_connection = MongoDBConnection()
 chat = []
 
+
 def pantalla_inicial(request):
+    print("-->",request.session.get('id_user', None))
+
     return render(request,"pantalla_inicial\pantalla_incial.html")
 
+#http://127.0.0.1:8000/pantalla_menu_inicial/6485fbd70dd698d4a39a97e2/
+def login_required(view_func):
+    def wrapper(request, *args, **kwargs):
+        if 'id_user' in request.session:
+            return view_func(request, *args, **kwargs)
+        else:
+            return redirect('pantalla_inicial')  # Redirigir a la página de inicio de sesión
+    return wrapper
 
+@login_required
 def pantalla_menu_inicial(request,usuario_id ):
-    
+    username = request.session.get('id_user', None)
+    print("username: ",username)
     return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id })
 """
 ////////////////////////////////////////////////////////
 ////// Funciones enfocadas en los comentarios  /////////
 ////////////////////////////////////////////////////////
 """
+@login_required
 def pantalla_foro(request,usuario_id):
     if request.method == 'POST':
         id_reda_Comet = usuario_id
@@ -72,6 +88,7 @@ def pantalla_foro(request,usuario_id):
     # ['id_replicas']
     return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
 
+@login_required
 def agregar_replica(request, usuario_id, comentario_id):
     if request.method == 'POST':
         replica_comentario = request.POST['replica']
@@ -105,6 +122,7 @@ def agregar_replica(request, usuario_id, comentario_id):
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
+@login_required
 def incrementar_likes_replica(request, usuario_id, replica):
     replica_id = replica.idReplica
     if request.method == 'POST':
@@ -124,6 +142,7 @@ def incrementar_likes_replica(request, usuario_id, replica):
      # Redirigir al perfil del usuario actualizado
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
+@login_required
 def incrementar_likes(request, usuario_id, comentario_id):
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
@@ -141,6 +160,7 @@ def incrementar_likes(request, usuario_id, comentario_id):
             db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
+@login_required
 def pantalla_nuevo_comentario(request, usuario_id):
     if request.method == 'POST':
         id_reda_Comet = usuario_id
@@ -163,6 +183,7 @@ def pantalla_nuevo_comentario(request, usuario_id):
 
     return render(request, 'pantalla_foro/pantalla_nuevo_comentario.html', {'usuario_id': usuario_id})
 
+@login_required
 def editar_comentario(request, usuario_id, comentario_id):
     if request.method == 'POST':
         nuevo_comentario = request.POST['comentario']
@@ -178,6 +199,7 @@ def editar_comentario(request, usuario_id, comentario_id):
     
     return HttpResponseBadRequest("Bad Request")
 
+@login_required
 def borrar_comentario(request, usuario_id, comentario_id):
     if request.method == 'POST':
         # Eliminar el comentario de la base de datos
@@ -196,8 +218,6 @@ def borrar_comentario(request, usuario_id, comentario_id):
 """
 
 def pantalla_login(request):
-      # Crear una instancia de la clase MongoDBConnection
-
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -206,17 +226,26 @@ def pantalla_login(request):
             
             
             credenciales = db_connection.db.Credenciales
+            
             user = credenciales.find_one({'correo': correo, 'clave': clave})
             
-            if user is not None:
+            if user:
                 user_id = str(user['_id'])
-                
+                request.session['id_user'] = user_id
+              
                 return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
             else:
                 form.add_error(None, 'Credenciales inválidas')
     else:
         form = LoginForm()
     return render(request, 'pantalla_login/pantalla_login.html', {'form': form})
+
+def logout_view(request):
+    # Eliminar el nombre de usuario de la sesión
+    if 'id_user' in request.session:
+        del request.session['id_user']
+    
+    return redirect('pantalla_inicial')
 
 def pantalla_registro(request):
     if request.method == 'POST':
@@ -295,6 +324,7 @@ def pantalla_registro(request):
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
+@login_required
 def pantalla_perfil_usuario(request,usuario_id):
   
     # Obtener el ID específico del usuario que deseas consultar
@@ -323,7 +353,8 @@ def pantalla_perfil_usuario(request,usuario_id):
         return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": page_obj})
     
     return HttpResponseBadRequest("Bad Request")
-    
+
+@login_required    
 def editar_usuario(request, usuario_id):
     # Obtener el usuario específico que se desea actualizar
     
@@ -383,6 +414,7 @@ def editar_usuario(request, usuario_id):
 //////   Funciones enfocadas en el chatbot  /////////
 /////////////////////////////////////////////////////
 """
+@login_required
 def pantalla_chatbot(request, usuario_id,posicion=0):
     palabraBuscar = request.GET.get('palabraBuscar')
     if request.method == 'GET':
@@ -404,7 +436,6 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
     nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
     conversaciones = usuario_dict['conversaciones']
     if len(conversaciones) <= 0:
-        print('entro2')
         conversaciones.append([])
         posicion =0
     else:
@@ -413,10 +444,9 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
   
     if len(conversaciones) > 0:
         conversacion = conversaciones[posicion]
-    print('posicion: ',posicion)
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': nombre_usuario,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
 
-
+@login_required
 def crearNuevoChat(request, usuario_id):
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
@@ -432,6 +462,7 @@ def crearNuevoChat(request, usuario_id):
             db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
         return redirect('pantalla_chatbot', usuario_id=usuario_id)
 
+@login_required
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
@@ -463,33 +494,4 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
 
-        return redirect('pantalla_chatbot', usuario_id=usuario_id)
-"""
-print("chat", chat)
-    if request.method == 'POST':    
-        boton_limpiar_chat_value = request.POST.get('boton_limpiar_chat')
-        if boton_limpiar_chat_value == "borrar":
-            chat.clear()
-            return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "chat": chat})
-
-        else:
-            pregunta = request.POST.get('pregunta')
-            if pregunta == "" or pregunta == None or len(pregunta)==0:
-                return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
-
-            else:
-                salida = respuesta_modelo_bert_contexto(pregunta)
-                score = salida['score']
-                if (score > 1 or score < 0.01):
-                    respuesta='Lo siento, no puedo entenderte. Intentalo de nuevo'
-                else:
-                    respuesta = salida['answer']
-
-                nuevo_mensaje ={
-                    'pregunta': pregunta,
-                    'respuesta': respuesta}
-
-                chat.append(nuevo_mensaje)
-                return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id, "chat": chat})
-        
-"""
+        return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion-1)
