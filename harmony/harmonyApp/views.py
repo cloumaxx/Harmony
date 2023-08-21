@@ -29,11 +29,9 @@ chat = []
 
 
 def pantalla_inicial(request):
-    print("-->",request.session.get('id_user', None))
 
     return render(request,"pantalla_inicial\pantalla_incial.html")
 
-#http://127.0.0.1:8000/pantalla_menu_inicial/6485fbd70dd698d4a39a97e2/
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
         if 'id_user' in request.session:
@@ -223,14 +221,16 @@ def pantalla_login(request):
         if form.is_valid():
             correo = form.cleaned_data['correo']
             clave = form.cleaned_data['clave']
-            
-            
+
             credenciales = db_connection.db.Credenciales
             
             user = credenciales.find_one({'correo': correo, 'clave': clave})
             
             if user:
                 user_id = str(user['_id'])
+                nombre = db_connection.db.Usuario.find_one({'_id': ObjectId(user_id)})
+                
+                request.session['nombre'] = nombre['nombre']
                 request.session['id_user'] = user_id
               
                 return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
@@ -244,6 +244,7 @@ def logout_view(request):
     # Eliminar el nombre de usuario de la sesión
     if 'id_user' in request.session:
         del request.session['id_user']
+        del request.session['nombre']
     
     return redirect('pantalla_inicial')
 
