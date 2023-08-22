@@ -27,7 +27,7 @@ rules:
   - intent: stress_challenge
   - action: utter_stress
 
-- rule: Excepcion cuando el usuario pregunta cosas no relacionadas
+- rule: Excepcion
   steps:
   - intent: exception
   - action: utter_exception
