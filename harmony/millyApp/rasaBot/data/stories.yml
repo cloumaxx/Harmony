@@ -242,3 +242,12 @@ stories:
   . intent: deny
   - intent: exception
   - action: utter_exception
+
+- story: exception path 8
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: pregunta
+  - action: utter_question
+  - intent: exception
+  - action: utter_exception
