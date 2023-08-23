@@ -491,6 +491,29 @@ nlu:
     - que eres?
     - quien eres?
 
+- intent: pregunta
+  examples: |
+    - Podria hacer una pregunta.
+    - Tengo permiso para hacer una pregunta.
+    - Seria posible formular una pregunta.
+    - Puedo plantear una duda.
+    - Esta bien si hago una pregunta.
+    - Me permitiria hacer una consulta.
+    - Podria compartir una inquietud.
+    - Tengo su autorizacion para hacer una pregunta.
+    - Seria aceptable que plantee una pregunta.
+    - Esta disponible para responder una pregunta mia.
+    - Puedo presentar una pregunta en este momento.
+    - Le importaria si hago una pregunta.
+    - Tengo su beneplacito para formular una pregunta.
+    - Podria solicitar su atencion para una pregunta.
+    - Puedo tener un momento para preguntar algo.
+    - Esta dispuesto a escuchar una pregunta mia.
+    - Seria correcto hacer una pregunta en este momento.
+    - Puedo obtener su permiso para hacer una pregunta.
+    - Tengo el espacio para plantear una pregunta.
+    - Puedo interrumpir por un momento para preguntar algo.
+
 - intent: ansiedad_challenge
   examples: |
     - que es la ansiedad?

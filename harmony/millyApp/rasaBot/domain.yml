@@ -9,6 +9,9 @@ intents:
   - mood_unhappy
   - bot_challenge
   - ansiedad_challenge
+  - depresion_challenge
+  - stress_challenge
+  - exception
 
 responses:
   utter_greet:
@@ -27,6 +30,9 @@ responses:
   utter_goodbye:
   - text: "Chao"
 
+  utter_question:
+  - text: "Puedes preguntarme lo que quieras, y si no se sobre algo te haré saber"
+
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
   utter_ansiedad:
@@ -35,6 +41,8 @@ responses:
   - text: 'La depresión es un trastorno mental caracterizado fundamentalmente por un bajo estado de ánimo y sentimientos de tristeza, asociados a alteraciones del comportamiento, del grado de actividad y del pensamiento. Supone una de las patologías más frecuentes en Atención Primaria y es la primera causa de atención psiquiátrica y de discapacidad derivada de problemas mentales.'
   utter_stress:
   - text: 'El estres es un estado de preocupación o tensión mental generado por una situación difícil. Todas las personas tenemos un cierto grado de estrés, ya que se trata de una respuesta natural a las amenazas y a otros estímulos'
+  utter_loneliness:
+  - text: 'Conmigo aqui, nunca estarás solo'
   utter_exception:
   - text: 'Lo siento, pero no puedo responder a eso. Intentalo otra vez'
 session_config:
