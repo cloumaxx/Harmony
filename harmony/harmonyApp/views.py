@@ -483,7 +483,7 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
             else:
                 salida = respuesta_modelo_bert_contexto(pregunta)
                 score = salida['score']
-                if (score > 1 or score < 0.01):
+                if (score > 1 or score < 0.07):
                     respuesta='Lo siento, no puedo entenderte. Intentalo de nuevo'
                 else:
                     respuesta = salida['answer']

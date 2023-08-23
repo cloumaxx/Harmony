@@ -491,6 +491,29 @@ nlu:
     - que eres?
     - quien eres?
 
+- intent: pregunta
+  examples: |
+    - Podria hacer una pregunta.
+    - Tengo permiso para hacer una pregunta.
+    - Seria posible formular una pregunta.
+    - Puedo plantear una duda.
+    - Esta bien si hago una pregunta.
+    - Me permitiria hacer una consulta.
+    - Podria compartir una inquietud.
+    - Tengo su autorizacion para hacer una pregunta.
+    - Seria aceptable que plantee una pregunta.
+    - Esta disponible para responder una pregunta mia.
+    - Puedo presentar una pregunta en este momento.
+    - Le importaria si hago una pregunta.
+    - Tengo su beneplacito para formular una pregunta.
+    - Podria solicitar su atencion para una pregunta.
+    - Puedo tener un momento para preguntar algo.
+    - Esta dispuesto a escuchar una pregunta mia.
+    - Seria correcto hacer una pregunta en este momento.
+    - Puedo obtener su permiso para hacer una pregunta.
+    - Tengo el espacio para plantear una pregunta.
+    - Puedo interrumpir por un momento para preguntar algo.
+
 - intent: ansiedad_challenge
   examples: |
     - que es la ansiedad?
@@ -666,166 +689,166 @@ nlu:
 
 - intent: stress_challenge
   examples: |
-    - Que es el estres y como afecta a tu cuerpo y mente
-    - Cuales son algunas situaciones comunes que te generan estres
-    - Como reconoces los signos fisicos de estar estresado
-    - Que impacto tiene el estres en tus emociones y estado de animo
-    - Has experimentado el estres a corto plazo, como el estres agudo
-    - En que formas el estres puede afectar tu rendimiento laboral o academico
-    - Como manejas el estres en situaciones desafiantes
-    - Que estrategias utilizas para relajarte cuando te sientes estresado
-    - Que papel juega la respiracion profunda en la reduccion del estres
-    - Como puede el ejercicio fisico ayudar a gestionar el estres
-    - Cuales son los efectos del estres cronico a largo plazo
-    - Como influye el estilo de vida en tu capacidad para lidiar con el estres
-    - Has notado si el estres afecta tus patrones de sueño
-    - Que relacion hay entre el estres y la alimentacion
-    - Como puedes identificar los factores estresantes en tu vida diaria
-    - Que estrategias empleas para establecer limites y evitar el exceso de estres
-    - Has probado tecnicas de relajacion, como la meditacion, para combatir el estres
-    - Como se puede mantener un equilibrio entre el trabajo y la vida personal para reducir el estres
-    - El estres ha afectado tus relaciones interpersonales
-    - Como comunicas a los demas que estas experimentando estres
-    - Que piensas sobre la relacion entre el estres y la salud fisica
-    - Has buscado apoyo profesional para manejar el estres
-    - Como te recuperas despues de periodos intensos de estres
-    - El estres puede tener un impacto en tu creatividad y capacidad para tomar decisiones
-    - Como se diferencia el estres positivo del estres negativo
-    - Que consejos tienes para mantener una mentalidad tranquila en momentos estresantes
-    - Has notado si el estres afecta tu sistema inmunologico
-    - Cual es la conexion entre el estres y la salud mental
-    - Que estrategias utilizas para organizarte y reducir el estres laboral
-    - Has probado actividades como el yoga o el ejercicio para aliviar el estres
-    - El estres puede influir en tus habitos de consumo, como el tabaco o el alcohol
-    - Como se puede lidiar con el estres en entornos familiares o domesticos
-    - Has experimentado el "burnout" o agotamiento relacionado con el estres
-    - Como el estres puede afectar tu productividad y concentracion
-    - Que papel juega el apoyo social en la gestion del estres
-    - Cual es la diferencia entre el estres mental y el estres emocional
-    - Como puede el estres afectar tu calidad de sueño
-    - Has notado si el estres tiene efectos a largo plazo en tu salud
-    - Que haces para desconectar y cuidar de ti mismo cuando estas estresado
-    - Cual es tu enfoque para manejar el estres de manera efectiva en el dia a dia
+  - Que es el estres y como afecta a tu cuerpo y mente
+  - Cuales son algunas situaciones comunes que te generan estres
+  - Como reconoces los signos fisicos de estar estresado
+  - Que impacto tiene el estres en tus emociones y estado de animo
+  - Has experimentado el estres a corto plazo, como el estres agudo
+  - En que formas el estres puede afectar tu rendimiento laboral o academico
+  - Como manejas el estres en situaciones desafiantes
+  - Que estrategias utilizas para relajarte cuando te sientes estresado
+  - Que papel juega la respiracion profunda en la reduccion del estres
+  - Como puede el ejercicio fisico ayudar a gestionar el estres
+  - Cuales son los efectos del estres cronico a largo plazo
+  - Como influye el estilo de vida en tu capacidad para lidiar con el estres
+  - Has notado si el estres afecta tus patrones de sueño
+  - Que relacion hay entre el estres y la alimentacion
+  - Como puedes identificar los factores estresantes en tu vida diaria
+  - Que estrategias empleas para establecer limites y evitar el exceso de estres
+  - Has probado tecnicas de relajacion, como la meditacion, para combatir el estres
+  - Como se puede mantener un equilibrio entre el trabajo y la vida personal para reducir el estres
+  - El estres ha afectado tus relaciones interpersonales
+  - Como comunicas a los demas que estas experimentando estres
+  - Que piensas sobre la relacion entre el estres y la salud fisica
+  - Has buscado apoyo profesional para manejar el estres
+  - Como te recuperas despues de periodos intensos de estres
+  - El estres puede tener un impacto en tu creatividad y capacidad para tomar decisiones
+  - Como se diferencia el estres positivo del estres negativo
+  - Que consejos tienes para mantener una mentalidad tranquila en momentos estresantes
+  - Has notado si el estres afecta tu sistema inmunologico
+  - Cual es la conexion entre el estres y la salud mental
+  - Que estrategias utilizas para organizarte y reducir el estres laboral
+  - Has probado actividades como el yoga o el ejercicio para aliviar el estres
+  - El estres puede influir en tus habitos de consumo, como el tabaco o el alcohol
+  - Como se puede lidiar con el estres en entornos familiares o domesticos
+  - Has experimentado el "burnout" o agotamiento relacionado con el estres
+  - Como el estres puede afectar tu productividad y concentracion
+  - Que papel juega el apoyo social en la gestion del estres
+  - Cual es la diferencia entre el estres mental y el estres emocional
+  - Como puede el estres afectar tu calidad de sueño
+  - Has notado si el estres tiene efectos a largo plazo en tu salud
+  - Que haces para desconectar y cuidar de ti mismo cuando estas estresado
+  - Cual es tu enfoque para manejar el estres de manera efectiva en el dia a dia
 
 - intent: exception
   examples: |
-    - Cuales son tus pasatiempos favoritos
-    - Tienes alguna pelicula que puedas ver una y otra vez
-    - Que tipo de musica sueles escuchar para relajarte
-    - Has tenido la oportunidad de viajar recientemente
-    - Que te motiva a levantarte por las mañanas
-    - Tienes algun platillo que sepas cocinar realmente bien
-    - Que libro has leido recientemente y te ha gustado
-    - Has tenido alguna experiencia interesante al hacer ejercicio
-    - Cual es el lugar mas hermoso en el que has estado
-    - Tienes alguna meta personal que quieras compartir
-    - Que te hace reir sin importar cuantas veces lo veas
-    - Has participado en algun voluntariado o trabajo comunitario
-    - Que actividad te relaja despues de un dia agotador
-    - Hay algun deporte que disfrutes ver en la television
-    - Cual es tu lugar ideal para pasar unas vacaciones
-    - Tienes una anecdota divertida que puedas compartir
-    - Que te gusta hacer para sentirte conectado con la naturaleza
-    - Has tenido la oportunidad de conocer a alguien famoso
-    - Tienes alguna habilidad o talento poco comun
-    - Cual es tu recuerdo favorito de la infancia
-    - Como te describirias en tres palabras
-    - Tienes algun lugar al que siempre quisieras regresar
-    - Cual es tu estacion del año favorita
-    - Tienes alguna tradicion familiar especial
-    - Prefieres el cafe o el te
-    - Cual es el ultimo libro que has leido
-    - Tienes alguna meta de viaje que quieras cumplir
-    - Que actividad te hace sentir en paz
-    - Tienes alguna cancion que siempre te ponga de buen humor
-    - Que te gustaba hacer de niño
-    - Cual es tu aroma favorito
-    - Tienes alguna habilidad artistica o manual
-    - Cual es tu recuerdo mas preciado
-    - Tienes algun lugar secreto donde te gusta escapar
-    - Que te hace sentir agradecido en la vida
-    - Tienes algun objeto que guardas con cariño
-    - Cual es tu pelicula favorita de la infancia
-    - Tienes alguna historia de viaje que siempre cuentas
-    - Que te gustaria aprender en un futuro cercano
-    - Cual es tu dia de la semana favorito
-    - Tienes alguna coleccion interesante
-    - Cual es tu comida reconfortante favorita
-    - Tienes algun lugar en tu ciudad que adoras
-    - Que te hace sentir inspirado
-    - Tienes algun proyecto creativo en mente
-    - Cual es tu estilo musical preferido
-    - Tienes alguna frase o cita que te motive
-    - Que te ayuda a despejar la mente
-    - Tienes alguna meta fitness que quieras lograr
-    - Cual es tu paisaje natural favorito
-    - Tienes algun lugar que siempre quisieras explorar
-    - Que te gusta hacer en dias lluviosos
-    - Tienes alguna historia de aventura que contar
-    - Cual es tu animal favorito y por que
-    - Tienes algun talento oculto que nadie sabe
-    - Que te hace sentir emocionado por la vida
-    - Tienes algun deporte que disfrutas practicar
-    - Cual es tu pelicula clasica favorita
-    - Tienes alguna actividad que te haga sentir vivo
-    - Que te ayuda a relajarte despues de un dia agitado
-    - Tienes alguna cancion que te recuerde a tu infancia
-    - Cual es tu plato gourmet favorito
-    - Tienes algun consejo que siempre sigues
-    - Que te motiva a superar los desafios
-    - Tienes algun proyecto de hogar que quieras realizar
-    - Cual es tu rutina de cuidado personal preferida
-    - Tienes alguna meta de lectura que deseas alcanzar
-    - Que te hace sentir en sintonia con la naturaleza
-    - Tienes algun hobby que te gustaria retomar
-    - Cual es tu lugar ideal para relajarte
-    - Tienes algun objetivo de carrera que persigues
-    - Que te ayuda a mantener la calma en situaciones dificiles
-    - Tienes alguna cancion que te haga sentir nostalgico
-    - Cual es tu comida internacional favorita
-    - Tienes algun recuerdo de un dia perfecto
-    - Que te inspira a cuidar del medio ambiente
-    - Tienes alguna tradicion de fin de semana que sigas
-    - Cual es tu forma preferida de pasar las vacaciones
-    - Tienes algun lugar donde te gusta escapar virtualmente
-    - Que te hace sentir agradecido por tus amigos
-    - Tienes alguna meta de aprendizaje que quieras alcanzar
-    - Cual es tu actividad de ejercicio favorita
-    - Tienes alguna historia divertida que siempre cuentas
-    - Que te ayuda a desconectar de la tecnologia
-    - Tienes alguna pelicula que te hace sentir bien sin importar que
-    - Cual es tu plato casero preferido
-    - Tienes alguna frase que te inspira cada dia
-    - Que te hace sentir orgulloso de ti mismo
-    - Tienes algun sueño recurrente interesante
-    - Cual es tu manera de darle un giro positivo a un mal dia
-    - Tienes alguna actividad al aire libre que amas hacer
-    - Que te hace sentir conectado con diferentes culturas
-    - Tienes algun lugar que consideras tu santuario
-    - Cual es tu postre favorito de todos los tiempos
-    - Tienes alguna experiencia que te cambio la perspectiva
-    - Que te hace sentir agradecido por tu familia
-    - Tienes alguna forma de arte que disfrutas contemplando
-    - Cual es tu plato para el desayuno preferido
-    - Tienes alguna cancion que te motive a enfrentar retos
-    - Que te ayuda a mantenerte energico durante el dia
-    - Tienes alguna pelicula que te hizo reflexionar profundamente
-    - Cual es tu comida reconfortante de la infancia
-    - Tienes algun consejo que quisieras dar a tu yo mas joven
-    - Que te hace sentir entusiasmado por el futuro
-    - Tienes alguna actividad que te ayuda a liberar el estres
-    - Cual es tu destino de viaje ideal
-    - Tienes alguna tradicion de celebracion que te guste
-    - Que te ayuda a mantener un estado mental positivo
-    - Tienes alguna historia de amistad que quieras compartir
-    - Cual es tu plato saludable preferido
-    - Tienes alguna frase que te ha hecho cambiar tu enfoque
-    - Que te hace sentir agradecido por tu trabajo
-    - Tienes alguna experiencia culinaria memorable
-    - Cual es tu recuerdo mas grato de un dia ordinario
-    - Tienes algun objeto que atesores desde hace mucho
-    - Que te hace sentir conectado con tu comunidad
-    - Tienes alguna cancion que te relaje instantaneamente
-    - Cual es tu actividad creativa preferida
-    - Tienes alguna anecdota que te haga reir cada vez
-    - Que te hace sentir feliz de estar vivo
+  - Cuales son tus pasatiempos favoritos
+  - Tienes alguna pelicula que puedas ver una y otra vez
+  - Que tipo de musica sueles escuchar para relajarte
+  - Has tenido la oportunidad de viajar recientemente
+  - Que te motiva a levantarte por las mañanas
+  - Tienes algun platillo que sepas cocinar realmente bien
+  - Que libro has leido recientemente y te ha gustado
+  - Has tenido alguna experiencia interesante al hacer ejercicio
+  - Cual es el lugar mas hermoso en el que has estado
+  - Tienes alguna meta personal que quieras compartir
+  - Que te hace reir sin importar cuantas veces lo veas
+  - Has participado en algun voluntariado o trabajo comunitario
+  - Que actividad te relaja despues de un dia agotador
+  - Hay algun deporte que disfrutes ver en la television
+  - Cual es tu lugar ideal para pasar unas vacaciones
+  - Tienes una anecdota divertida que puedas compartir
+  - Que te gusta hacer para sentirte conectado con la naturaleza
+  - Has tenido la oportunidad de conocer a alguien famoso
+  - Tienes alguna habilidad o talento poco comun
+  - Cual es tu recuerdo favorito de la infancia
+  - Como te describirias en tres palabras
+  - Tienes algun lugar al que siempre quisieras regresar
+  - Cual es tu estacion del año favorita
+  - Tienes alguna tradicion familiar especial
+  - Prefieres el cafe o el te
+  - Cual es el ultimo libro que has leido
+  - Tienes alguna meta de viaje que quieras cumplir
+  - Que actividad te hace sentir en paz
+  - Tienes alguna cancion que siempre te ponga de buen humor
+  - Que te gustaba hacer de niño
+  - Cual es tu aroma favorito
+  - Tienes alguna habilidad artistica o manual
+  - Cual es tu recuerdo mas preciado
+  - Tienes algun lugar secreto donde te gusta escapar
+  - Que te hace sentir agradecido en la vida
+  - Tienes algun objeto que guardas con cariño
+  - Cual es tu pelicula favorita de la infancia
+  - Tienes alguna historia de viaje que siempre cuentas
+  - Que te gustaria aprender en un futuro cercano
+  - Cual es tu dia de la semana favorito
+  - Tienes alguna coleccion interesante
+  - Cual es tu comida reconfortante favorita
+  - Tienes algun lugar en tu ciudad que adoras
+  - Que te hace sentir inspirado
+  - Tienes algun proyecto creativo en mente
+  - Cual es tu estilo musical preferido
+  - Tienes alguna frase o cita que te motive
+  - Que te ayuda a despejar la mente
+  - Tienes alguna meta fitness que quieras lograr
+  - Cual es tu paisaje natural favorito
+  - Tienes algun lugar que siempre quisieras explorar
+  - Que te gusta hacer en dias lluviosos
+  - Tienes alguna historia de aventura que contar
+  - Cual es tu animal favorito y por que
+  - Tienes algun talento oculto que nadie sabe
+  - Que te hace sentir emocionado por la vida
+  - Tienes algun deporte que disfrutas practicar
+  - Cual es tu pelicula clasica favorita
+  - Tienes alguna actividad que te haga sentir vivo
+  - Que te ayuda a relajarte despues de un dia agitado
+  - Tienes alguna cancion que te recuerde a tu infancia
+  - Cual es tu plato gourmet favorito
+  - Tienes algun consejo que siempre sigues
+  - Que te motiva a superar los desafios
+  - Tienes algun proyecto de hogar que quieras realizar
+  - Cual es tu rutina de cuidado personal preferida
+  - Tienes alguna meta de lectura que deseas alcanzar
+  - Que te hace sentir en sintonia con la naturaleza
+  - Tienes algun hobby que te gustaria retomar
+  - Cual es tu lugar ideal para relajarte
+  - Tienes algun objetivo de carrera que persigues
+  - Que te ayuda a mantener la calma en situaciones dificiles
+  - Tienes alguna cancion que te haga sentir nostalgico
+  - Cual es tu comida internacional favorita
+  - Tienes algun recuerdo de un dia perfecto
+  - Que te inspira a cuidar del medio ambiente
+  - Tienes alguna tradicion de fin de semana que sigas
+  - Cual es tu forma preferida de pasar las vacaciones
+  - Tienes algun lugar donde te gusta escapar virtualmente
+  - Que te hace sentir agradecido por tus amigos
+  - Tienes alguna meta de aprendizaje que quieras alcanzar
+  - Cual es tu actividad de ejercicio favorita
+  - Tienes alguna historia divertida que siempre cuentas
+  - Que te ayuda a desconectar de la tecnologia
+  - Tienes alguna pelicula que te hace sentir bien sin importar que
+  - Cual es tu plato casero preferido
+  - Tienes alguna frase que te inspira cada dia
+  - Que te hace sentir orgulloso de ti mismo
+  - Tienes algun sueño recurrente interesante
+  - Cual es tu manera de darle un giro positivo a un mal dia
+  - Tienes alguna actividad al aire libre que amas hacer
+  - Que te hace sentir conectado con diferentes culturas
+  - Tienes algun lugar que consideras tu santuario
+  - Cual es tu postre favorito de todos los tiempos
+  - Tienes alguna experiencia que te cambio la perspectiva
+  - Que te hace sentir agradecido por tu familia
+  - Tienes alguna forma de arte que disfrutas contemplando
+  - Cual es tu plato para el desayuno preferido
+  - Tienes alguna cancion que te motive a enfrentar retos
+  - Que te ayuda a mantenerte energico durante el dia
+  - Tienes alguna pelicula que te hizo reflexionar profundamente
+  - Cual es tu comida reconfortante de la infancia
+  - Tienes algun consejo que quisieras dar a tu yo mas joven
+  - Que te hace sentir entusiasmado por el futuro
+  - Tienes alguna actividad que te ayuda a liberar el estres
+  - Cual es tu destino de viaje ideal
+  - Tienes alguna tradicion de celebracion que te guste
+  - Que te ayuda a mantener un estado mental positivo
+  - Tienes alguna historia de amistad que quieras compartir
+  - Cual es tu plato saludable preferido
+  - Tienes alguna frase que te ha hecho cambiar tu enfoque
+  - Que te hace sentir agradecido por tu trabajo
+  - Tienes alguna experiencia culinaria memorable
+  - Cual es tu recuerdo mas grato de un dia ordinario
+  - Tienes algun objeto que atesores desde hace mucho
+  - Que te hace sentir conectado con tu comunidad
+  - Tienes alguna cancion que te relaje instantaneamente
+  - Cual es tu actividad creativa preferida
+  - Tienes alguna anecdota que te haga reir cada vez
+  - Que te hace sentir feliz de estar vivo
