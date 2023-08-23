@@ -4,7 +4,7 @@ rules:
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
-  - intent: despedidas
+  - intent: goodbye
   - action: utter_goodbye
 
 - rule: Say 'I am a bot' anytime the user challenges
@@ -21,8 +21,13 @@ rules:
   steps:
   - intent: depresion_challenge
   - action: utter_depresion
-  
-- rule: Excepcion cuando el usuario pregunta cosas no relacionadas
+
+- rule: Pregunta sobre el estres
+  steps:
+  - intent: stress_challenge
+  - action: utter_stress
+
+- rule: Excepcion
   steps:
   - intent: exception
   - action: utter_exception

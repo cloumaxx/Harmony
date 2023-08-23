@@ -93,16 +93,7 @@
         </div>
         {% include 'pantalla_foro/comentarios.html' %}
         <br>
-        <!-- Botones de navegación -->
-        {% if comentarios.has_previous %}
-        <a href="?page={{ comentarios.previous_page_number }}">Anterior</a>
-        {% endif %}
-
-        <span>{{ comentarios.number }}</span>
-
-        {% if comentarios.has_next %}
-        <a href="?page={{ comentarios.next_page_number }}">Siguiente</a>
-        {% endif %}
+        
         <br><br><br><br><br>
     </main>
     <footer>

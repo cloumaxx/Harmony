@@ -494,5 +494,7 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
 
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
-
-        return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion-1)
+        if posicion != 0:
+            posicion = posicion-1
+        print('->',posicion)
+        return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
