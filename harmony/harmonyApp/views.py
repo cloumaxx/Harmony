@@ -21,6 +21,10 @@ from textwrap import wrap
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
+
+from millyApp.views import send_to_rasa
 
 
 # Create your views here.
@@ -51,7 +55,8 @@ def pantalla_menu_inicial(request,usuario_id ):
 ////////////////////////////////////////////////////////
 """
 @login_required
-def pantalla_foro(request,usuario_id):
+
+def pantalla_foro(request, usuario_id):
     if request.method == 'POST':
         id_reda_Comet = usuario_id
         comentario_data = request.POST['comentario']
@@ -76,15 +81,29 @@ def pantalla_foro(request,usuario_id):
     comentarios = db_connection.db.Comentarios.find()
 
     # Crear el objeto Paginator
-    items_por_pagina = 2
-    paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
-    # Obtener el número de página a mostrar
-    numero_pagina = request.GET.get('page')
-    page_obj = paginator.get_page(numero_pagina)
+    items_por_pagina = 10
+    paginator = Paginator(get_comentariosVer(comentarios, db_connection), items_por_pagina)
     
+    numero_pagina = request.GET.get('page')
+    
+    if request.is_ajax():
+        page_obj = paginator.get_page(numero_pagina)
+        comentarios_data = []
+        for comentario in page_obj:
+            comentarios_data.append({
+                'id_reda_Comet': comentario.id_reda_Comet,
+                'comentario': comentario.comentario,
+                'likes': comentario.likes,
+                'replicas': comentario.replicas
+            })
+        return JsonResponse({'comentarios': comentarios_data})
 
-    # ['id_replicas']
+    page_obj = paginator.get_page(numero_pagina)
+
     return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
+
+
+
 
 @login_required
 def agregar_replica(request, usuario_id, comentario_id):
@@ -448,7 +467,7 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': nombre_usuario,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
 
 @login_required
-def crearNuevoChat(request, usuario_id):
+def crearNuevoChat(request, usuario_id,posicion=0):
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
@@ -457,11 +476,11 @@ def crearNuevoChat(request, usuario_id):
             # Obtener las conversaciones actuales del usuario
             conversaciones = usuario.get('conversaciones', [])
             
-                # Agregar una nueva conversación vacía
+            # Agregar una nueva conversación vacía
             conversaciones.append([])
             # Actualizar las conversaciones en la base de datos
             db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
-        return redirect('pantalla_chatbot', usuario_id=usuario_id)
+        return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=len(conversaciones)-1)
 
 @login_required
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
@@ -481,20 +500,17 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
             else:
-                salida = respuesta_modelo_bert_contexto(pregunta)
-                score = salida['score']
-                if (score > 1 or score < 0.07):
-                    respuesta='Lo siento, no puedo entenderte. Intentalo de nuevo'
-                else:
-                    respuesta = salida['answer']
-
+                try:
+                    respuestaChat = send_to_rasa(pregunta)
+                    salida = respuestaChat[0]['text']
+                except:
+                    salida = "no entendi tu pregunta"
                 nuevo_mensaje ={
                     'pregunta': pregunta,
-                    'respuesta': respuesta}
+                    'respuesta': salida}
 
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
-        if posicion != 0:
-            posicion = posicion-1
+        
         print('->',posicion)
         return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
