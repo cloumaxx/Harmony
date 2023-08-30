@@ -7,7 +7,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
-  - action: utter_happy
+  - action: utter_great
 
 - story: sad path 1
   steps:
@@ -17,7 +17,7 @@ stories:
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: affirm
-  - action: utter_happy
+  - action: utter_great
 
 - story: sad path 2
   steps:
@@ -74,7 +74,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
-  - intent: utter_happy
+  - intent: utter_great
   - intent: ansiedad_challenge
   - action: utter_ansiedad
   - intent: ansiedad_challenge
@@ -114,7 +114,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
-  - intent: utter_happy
+  - intent: utter_great
   - intent: ansiedad_challenge
   - action: utter_ansiedad
   - intent: depresion_challenge
@@ -154,7 +154,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
-  - intent: utter_happy
+  - intent: utter_great
   - intent: ansiedad_challenge
   - action: utter_ansiedad
   - intent: stress_challenge
@@ -165,7 +165,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
-  - intent: utter_happy
+  - intent: utter_great
   - intent: depresion_challenge
   - action: utter_depresion
   - intent: stress_challenge
@@ -206,7 +206,7 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
-  - action: utter_happy
+  - action: utter_great
   - intent: exception
   - action: utter_exception
 

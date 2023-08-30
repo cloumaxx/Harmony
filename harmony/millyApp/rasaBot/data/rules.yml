@@ -2,15 +2,31 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Saluda siempre que el usuario diga Hola
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+- rule: Di adios siempre que el usuario diga Adios
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Di 'I am a bot' siempre que el usuario rete
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Di Me alegra oirlo siempre que el usuario diga que está feliz
+ steps:
+ - intent: mood_great
+ - action: utter_great
+
+- rule: Di No me gusta oirlo siempre que el usuario diga que está triste
+  steps:
+ - intent: mood_unhappy
+ - action: utter_unhappy
 
 - rule: Pregunta para preguntar
   steps: 
