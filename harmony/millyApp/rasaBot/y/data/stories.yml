@@ -1,0 +1,24 @@
+version: "3.1"
+
+stories:
+
+- story: saludando path
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+
+- story: presentandose path
+  steps:
+  - intent: presentarse
+  - action: utter_presentarse
+
+- story: definicion_ansiedad path
+  steps:
+    - intent: definicion_ansiedad
+    - action: utter_responder_definicion_ansiedad
+
+- story: sintomas_ansiedad path
+  steps:
+    - intent: sintomas_ansiedad
+    - action: utter_responder_sintomas_ansiedad
+

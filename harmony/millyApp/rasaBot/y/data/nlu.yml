@@ -1,0 +1,58 @@
+version: "3.1"
+
+nlu:
+#
+- intent: saludar
+  examples: |
+    - hola
+    - buenos días
+    - buenos dias
+    - buenas tardes
+    - qué tal
+    - que tal?
+    - cómo estás
+    - como estas
+    - saludos
+    - hey
+    - buenas noches
+    - cómo va
+    - ¡hola!
+    - ¡buen día!
+    - ¡buen dia!
+    - ¡qué pasa!
+    - ¡saludos!
+    - ¡buenas!
+
+- intent: presentarse
+  examples: |
+    - ¿quién eres?
+    - ¿quien eres?
+    - ¿cómo te llamas?
+    - ¿como te llamas?
+    - ¿cuál es tu nombre?
+    - ¿cual es tu nombre?
+    - ¿cuál es tu nombre completo?
+    - ¿cual es tu nombre completo?
+    - ¿quién sos?
+    - ¿quien sos?
+    - ¿que eres?
+    - ¿qué eres?
+    - ¿qué sos?
+    - ¿qué sos?
+
+- intent: definicion_ansiedad
+  examples: |
+    - ¿Qué es la ansiedad?
+    - Explícame sobre la ansiedad
+    - Dime acerca de la ansiedad
+    - ¿Puedes decirme qué es la ansiedad?
+    - ¿Cuál es la definición de ansiedad?
+    - ¿Qué significa ansiedad?
+
+- intent: sintomas_ansiedad
+  examples: |
+    - ¿Cuáles son los síntomas de la ansiedad?
+    - ¿Qué síntomas causa la ansiedad?
+    - ¿Puedes decirme los signos de la ansiedad?
+    - ¿Cuáles son las señales de la ansiedad?
+    - Explícame sobre los síntomas ansiosos
