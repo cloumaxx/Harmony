@@ -26,7 +26,7 @@ def eliminar_imagen(code):
     files={}
     headers = {
     'Authorization': 'Client-ID 7dd8521baa79ea0',
-    'Cookie': 'IMGURSESSION=793735e10fc5d27fee5104344e9744e3; _nc=1'
+    'Cookie': 'IMGURSESSION=5bd2d7600ce800af360b78cf2f348102; _nc=1'
     }
 
     response = requests.request("DELETE", url, headers=headers, data=payload, files=files)

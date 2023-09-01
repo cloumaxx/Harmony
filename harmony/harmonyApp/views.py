@@ -10,7 +10,7 @@ from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import get_Nombre, get_comentariosVer, get_img_perfil, get_inforeplicas
+from harmonyApp.operations.utils import enviar_correo, get_Nombre, get_comentariosVer, get_img_perfil, get_inforeplicas
 from harmonyProject import settings
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
@@ -234,10 +234,12 @@ def pantalla_login(request):
                 
                 request.session['nombre'] = nombre['nombre']
                 request.session['id_user'] = user_id
-              
                 return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
             else:
                 form.add_error(None, 'Credenciales inválidas')
+        else:
+            form.add_error(None, 'Credenciales inválidas')
+
     else:
         form = LoginForm()
     return render(request, 'pantalla_login/pantalla_login.html', {'form': form})
@@ -251,7 +253,10 @@ def logout_view(request):
     return redirect('pantalla_inicial')
 
 def pantalla_registro(request):
-    try:
+ 
+       
+
+    if request.method == 'POST':
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
         correo = request.POST.get('correo')
@@ -260,10 +265,6 @@ def pantalla_registro(request):
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
         # Convertir la cadena de fecha en un objeto de tipo datetime
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
-    except:
-        print('invalido')
-    if request.method == 'POST':
-       
 
         #archivo = request.FILES.get('imagen_perfil')
         try:
@@ -298,12 +299,13 @@ def pantalla_registro(request):
                     'clave': credenciales.clave,
                 }
                 db_connection.db.Credenciales.insert_one(usuario_cred)
-
+                seEnvio=enviar_correo(correo, 'Inicio de sesión exitoso', 'Hola, ' + nombre + ' ' + apellido + '.\n\nHas iniciado sesión exitosamente en HarmonyApp.')
+                print("-->",seEnvio)
                 return redirect('pantalla_login')
             else:
                 print('no se pudo subir la imagen')
-        except:
-                print('no se pudo subir la imagen')
+        except Exception as e:
+                print('Algo fallo: ',e)
         # Crear una instancia del modelo Usuario con los datos ingresados
                 usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil='https://i.imgur.com/0RW7b5J.jpg',code_delete_img='noHayFoto',conversaciones=[])
                 credenciales = Credenciales(correo=correo, clave=clave)
@@ -326,7 +328,8 @@ def pantalla_registro(request):
                     'clave': credenciales.clave,
                 }
                 db_connection.db.Credenciales.insert_one(usuario_cred)
-
+                seEnvio=enviar_correo(correo, 'Inicio de sesión exitoso', 'Hola, ' + nombre + ' ' + apellido + '.\n\nHas iniciado sesión exitosamente en HarmonyApp.')
+                print("-->",seEnvio)
                 return redirect('pantalla_login')
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
