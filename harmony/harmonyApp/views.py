@@ -46,8 +46,6 @@ def login_required(view_func):
 
 @login_required
 def pantalla_menu_inicial(request,usuario_id ):
-    username = request.session.get('id_user', None)
-    print("username: ",username)
     return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id })
 """
 ////////////////////////////////////////////////////////
@@ -55,8 +53,7 @@ def pantalla_menu_inicial(request,usuario_id ):
 ////////////////////////////////////////////////////////
 """
 @login_required
-
-def pantalla_foro(request, usuario_id):
+def pantalla_foro(request,usuario_id):
     if request.method == 'POST':
         id_reda_Comet = usuario_id
         comentario_data = request.POST['comentario']
@@ -81,29 +78,15 @@ def pantalla_foro(request, usuario_id):
     comentarios = db_connection.db.Comentarios.find()
 
     # Crear el objeto Paginator
-    items_por_pagina = 10
-    paginator = Paginator(get_comentariosVer(comentarios, db_connection), items_por_pagina)
-    
+    items_por_pagina = 2
+    paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
+    # Obtener el número de página a mostrar
     numero_pagina = request.GET.get('page')
-    
-    if request.is_ajax():
-        page_obj = paginator.get_page(numero_pagina)
-        comentarios_data = []
-        for comentario in page_obj:
-            comentarios_data.append({
-                'id_reda_Comet': comentario.id_reda_Comet,
-                'comentario': comentario.comentario,
-                'likes': comentario.likes,
-                'replicas': comentario.replicas
-            })
-        return JsonResponse({'comentarios': comentarios_data})
-
     page_obj = paginator.get_page(numero_pagina)
+    
 
+    # ['id_replicas']
     return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
-
-
-
 
 @login_required
 def agregar_replica(request, usuario_id, comentario_id):
@@ -268,7 +251,7 @@ def logout_view(request):
     return redirect('pantalla_inicial')
 
 def pantalla_registro(request):
-    if request.method == 'POST':
+    try:
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
         correo = request.POST.get('correo')
@@ -277,6 +260,10 @@ def pantalla_registro(request):
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
         # Convertir la cadena de fecha en un objeto de tipo datetime
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
+    except:
+        print('invalido')
+    if request.method == 'POST':
+       
 
         #archivo = request.FILES.get('imagen_perfil')
         try:
@@ -317,7 +304,7 @@ def pantalla_registro(request):
                 print('no se pudo subir la imagen')
         except:
                 print('no se pudo subir la imagen')
- # Crear una instancia del modelo Usuario con los datos ingresados
+        # Crear una instancia del modelo Usuario con los datos ingresados
                 usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil='https://i.imgur.com/0RW7b5J.jpg',code_delete_img='noHayFoto',conversaciones=[])
                 credenciales = Credenciales(correo=correo, clave=clave)
                 # Guardar el usuario en la base de datos MongoDB
@@ -455,15 +442,18 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
     url_imagen_perfil = usuario_dict['url_imagen_perfil']
     nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
     conversaciones = usuario_dict['conversaciones']
-    if len(conversaciones) <= 0:
-        conversaciones.append([])
-        posicion =0
-    else:
-        if posicion != 0:
-            posicion = posicion-1
-  
+    print(len(conversaciones))
     if len(conversaciones) > 0:
         conversacion = conversaciones[posicion]
+    else:
+        if len(conversaciones) <= 0:
+            conversaciones.append([])
+            posicion =0
+        else:
+            if posicion != 0:
+                posicion = posicion-1
+  
+    
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': nombre_usuario,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
 
 @login_required
@@ -501,14 +491,15 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
 
             else:
                 try:
-                    respuestaChat = send_to_rasa(pregunta)
+                    respuestaChat = send_to_rasa(pregunta.lower())
                     salida = respuestaChat[0]['text']
                 except:
                     salida = "no entendi tu pregunta"
+
                 nuevo_mensaje ={
                     'pregunta': pregunta,
                     'respuesta': salida}
-
+                
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
         

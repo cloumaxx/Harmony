@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <style>
         .form-control {
             border-radius: 17px;
@@ -81,6 +83,39 @@
             align-items: flex-start;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // Selecciona el formulario por su id
+          var formulario = document.getElementById("formulario");
+        
+          formulario.addEventListener("submit", function(event) {
+            // Agrega aquí tus validaciones para cada campo
+            var nombre = document.getElementById("id_nombre").value;
+            var apellido = document.getElementById("id_apellido").value;
+            var correo = document.getElementById("id_correo").value;
+            var clave = document.getElementById("id_clave").value;
+            var claveDoble = document.getElementById("id_clave_doble").value;
+            var genero = document.getElementById("id_genero").value;
+            var fechaNacimiento = document.getElementById("id_fecha_nacimiento").value;
+        
+            if (nombre === "" || apellido === "" || correo === "" || clave === "" || genero === "" || fechaNacimiento === "") {
+              // Si algún campo está vacío, muestra un mensaje de error y evita enviar el formulario
+              alert("Por favor, complete todos los campos.");
+              event.preventDefault();
+            } else if (clave !== claveDoble) {
+              // Si las contraseñas no son iguales, muestra un mensaje de error y evita enviar el formulario
+              alert("Las contraseñas no coinciden.");
+              event.preventDefault();
+            }
+        
+            // Agrega otras validaciones según tus requerimientos
+        
+            // Si todo está validado correctamente, el formulario se enviará al servidor
+          });
+        });
+        </script>
+        
+        
 </head>
 
 <body id="body">
@@ -120,6 +155,10 @@
                         <br>
                         <label for="id_clave" class="form-label">Contraseña</label>
                         <input type="password" class="form-control" id="id_clave" name="clave"
+                            aria-describedby="emailHelp">
+                        <br>
+                        <label for="id_clave_doble" class="form-label">Vuelve a escribir la contraseña</label>
+                        <input type="password" class="form-control" id="id_clave_doble" name="clave_doble"
                             aria-describedby="emailHelp">
                         <br>
                         <label for="id_genero" class="form-label">Género</label>
