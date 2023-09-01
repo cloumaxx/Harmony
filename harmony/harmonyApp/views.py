@@ -10,7 +10,7 @@ from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import get_Nombre, get_comentariosVer, get_img_perfil, get_inforeplicas
+from harmonyApp.operations.utils import enviar_correo, get_Nombre, get_comentariosVer, get_img_perfil, get_inforeplicas
 from harmonyProject import settings
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
@@ -21,6 +21,10 @@ from textwrap import wrap
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
+
+from millyApp.views import send_to_rasa
 
 
 # Create your views here.
@@ -42,8 +46,6 @@ def login_required(view_func):
 
 @login_required
 def pantalla_menu_inicial(request,usuario_id ):
-    username = request.session.get('id_user', None)
-    print("username: ",username)
     return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id })
 """
 ////////////////////////////////////////////////////////
@@ -232,10 +234,12 @@ def pantalla_login(request):
                 
                 request.session['nombre'] = nombre['nombre']
                 request.session['id_user'] = user_id
-              
                 return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
             else:
                 form.add_error(None, 'Credenciales inválidas')
+        else:
+            form.add_error(None, 'Credenciales inválidas')
+
     else:
         form = LoginForm()
     return render(request, 'pantalla_login/pantalla_login.html', {'form': form})
@@ -249,6 +253,9 @@ def logout_view(request):
     return redirect('pantalla_inicial')
 
 def pantalla_registro(request):
+ 
+       
+
     if request.method == 'POST':
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
@@ -292,13 +299,14 @@ def pantalla_registro(request):
                     'clave': credenciales.clave,
                 }
                 db_connection.db.Credenciales.insert_one(usuario_cred)
-
+                seEnvio=enviar_correo(correo, 'Inicio de sesión exitoso', 'Hola, ' + nombre + ' ' + apellido + '.\n\nHas iniciado sesión exitosamente en HarmonyApp.')
+                print("-->",seEnvio)
                 return redirect('pantalla_login')
             else:
                 print('no se pudo subir la imagen')
-        except:
-                print('no se pudo subir la imagen')
- # Crear una instancia del modelo Usuario con los datos ingresados
+        except Exception as e:
+                print('Algo fallo: ',e)
+        # Crear una instancia del modelo Usuario con los datos ingresados
                 usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil='https://i.imgur.com/0RW7b5J.jpg',code_delete_img='noHayFoto',conversaciones=[])
                 credenciales = Credenciales(correo=correo, clave=clave)
                 # Guardar el usuario en la base de datos MongoDB
@@ -320,7 +328,8 @@ def pantalla_registro(request):
                     'clave': credenciales.clave,
                 }
                 db_connection.db.Credenciales.insert_one(usuario_cred)
-
+                seEnvio=enviar_correo(correo, 'Inicio de sesión exitoso', 'Hola, ' + nombre + ' ' + apellido + '.\n\nHas iniciado sesión exitosamente en HarmonyApp.')
+                print("-->",seEnvio)
                 return redirect('pantalla_login')
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
@@ -436,19 +445,22 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
     url_imagen_perfil = usuario_dict['url_imagen_perfil']
     nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
     conversaciones = usuario_dict['conversaciones']
-    if len(conversaciones) <= 0:
-        conversaciones.append([])
-        posicion =0
-    else:
-        if posicion != 0:
-            posicion = posicion-1
-  
+    print(len(conversaciones))
     if len(conversaciones) > 0:
         conversacion = conversaciones[posicion]
+    else:
+        if len(conversaciones) <= 0:
+            conversaciones.append([])
+            posicion =0
+        else:
+            if posicion != 0:
+                posicion = posicion-1
+  
+    
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': nombre_usuario,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
 
 @login_required
-def crearNuevoChat(request, usuario_id):
+def crearNuevoChat(request, usuario_id,posicion=0):
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
@@ -457,11 +469,11 @@ def crearNuevoChat(request, usuario_id):
             # Obtener las conversaciones actuales del usuario
             conversaciones = usuario.get('conversaciones', [])
             
-                # Agregar una nueva conversación vacía
+            # Agregar una nueva conversación vacía
             conversaciones.append([])
             # Actualizar las conversaciones en la base de datos
             db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
-        return redirect('pantalla_chatbot', usuario_id=usuario_id)
+        return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=len(conversaciones)-1)
 
 @login_required
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
@@ -481,18 +493,18 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
             else:
-                salida = respuesta_modelo_bert_contexto(pregunta)
-                score = salida['score']
-                if (score > 1 or score < 0.01):
-                    respuesta='Lo siento, no puedo entenderte. Intentalo de nuevo'
-                else:
-                    respuesta = salida['answer']
+                try:
+                    respuestaChat = send_to_rasa(pregunta.lower())
+                    salida = respuestaChat[0]['text']
+                except:
+                    salida = "no entendi tu pregunta"
 
                 nuevo_mensaje ={
                     'pregunta': pregunta,
-                    'respuesta': respuesta}
-
+                    'respuesta': salida}
+                
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
-
-        return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion-1)
+        
+        print('->',posicion)
+        return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)

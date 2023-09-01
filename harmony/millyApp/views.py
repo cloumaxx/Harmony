@@ -1,5 +1,4 @@
 import json
-import chromadb
 from django.http import JsonResponse
 from django.shortcuts import render
 
@@ -11,7 +10,6 @@ from harmonyProject import settings
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-from millyApp.chatbot.process import cargar_datos
 
 #from rasa.core.agent import Agent
     

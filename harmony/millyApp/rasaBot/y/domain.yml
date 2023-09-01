@@ -1,0 +1,23 @@
+version: "3.1"
+
+intents:
+  - saludar
+  - presentarse
+  - definicion_ansiedad
+  - sintomas_ansiedad
+
+responses:
+  utter_saludar:
+  - text: "Hola,¿como estas?"
+
+  utter_presentarse:
+  - text: "Soy Milly, tu asistente virtual"
+  utter_responder_definicion_ansiedad :
+    - text: La ansiedad es una respuesta natural del cuerpo ante situaciones estresantes. Puede manifestarse como preocupación intensa, nerviosismo y tensión.
+
+  utter_responder_sintomas_ansiedad: 
+    - text: Los síntomas de la ansiedad pueden incluir palpitaciones, sudoración, dificultad para respirar, pensamientos intrusivos y evitación de situaciones temidas.
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

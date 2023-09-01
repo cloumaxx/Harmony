@@ -1,0 +1,13 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEoBqLMYyEgsKk6trY0FAJglHho=": "utter_presentarse",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEoBqLMYyEgsKk6tJWBSaUlJalE8sgb8psUCAFzAPFY=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhGMjIz00sjk/MK85MTUlMqa2NBQBUDiB0": "utter_responder_sintomas_ansiedad",
+    "eJyNjUEKgDAMBL/SB/iCfkUkBJtDwaYlSb2U/t2A3jzobQaW2XXMJYwmdALulivHMG4AxkIxPHJkNWLfdiXxTWZXi0EdakEFZM2UMM2PXjcjASFtlZPTO/DnY7sApt1HlQ==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohJTUtMy8zGaQkMa84MzUlMaW2NhYAkuUhHg==": "utter_responder_definicion_ansiedad",
+    "eJyNjUEKgDAMBL/SB/iCfkWkhDZCQNPSpF5K/25Ej4LeZmGYnfuYXC8VjwBRKbN3/YbAsKN3z9hIFNncJljNIbap3iVciSleCrAQJkjjo9hUsYaKUjIno7fEv5/lBEMISZM=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhODGnNCWxqLY2FgAiGxxa": "utter_saludar",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhODGnNCWxqJaAKaUlJalF8TDFuE2JBQCOKTcW": "action_listen"
+  }
+}

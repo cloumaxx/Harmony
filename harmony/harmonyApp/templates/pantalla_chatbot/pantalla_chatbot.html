@@ -36,16 +36,14 @@
             z-index: 999;
         }
 
-
-
         #main {
-            margin-top: 90px;
+            margin-top: 80px;
             margin-bottom: 100px;
             margin-left: 150px;
             padding-bottom: 80px;
         }
 
-        
+
         #body {
             height: 100%;
             margin: 0;
@@ -213,6 +211,7 @@
             display: flex;
             align-items: center;
         }
+
         #openNavChats,
         #openNav {
 
@@ -239,7 +238,8 @@
             position: relative;
 
         }
-        #openNavChats{
+
+        #openNavChats {
             position: fixed;
         }
 
@@ -252,6 +252,7 @@
             position: relative;
 
         }
+
         .mensajeAbrirForo {
             position: absolute;
             top: 0;
@@ -261,22 +262,53 @@
             margin-left: 10px;
             display: none;
             padding: 5px;
+            background-color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            padding-right: 20px;
+            padding-left: 20px;
         }
-        .mensajeAbrirChat{
+
+        .mensajeAbrirChat {
             position: absolute;
-            bottom:  0;
+            bottom: 0;
             left: 100%;
             white-space: nowrap;
             margin-bottom: 45%;
             margin-left: 10px;
             display: none;
             padding: 5px;
+            background-color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            padding-right: 20px;
+            padding-left: 20px;
         }
 
         #mySidebarChats,
         #mySidebar {
             position: fixed;
 
+        }
+
+        #mySidebarChats {
+            display: none;
+            width: 25%;
+            height: 100vh;
+            overflow-y: scroll;
+            z-index: 9999;
+            background-color: #4da2d3;
+        }
+
+        #mySidebar {
+            display: none;
+            width: 50%;
+            height: 100vh;
+            overflow-y: scroll;
+            z-index: 9999;
+            background-color: #4da2d3;
         }
 
         #replica {
@@ -344,16 +376,59 @@
             align-items: center;
             height: 100vh;
         }
+
+        #btnCloseSide {
+            border: none;
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            height: 10%;
+        }
+
+        #comentarios_foro {
+            padding-top: 50px;
+        }
+
+        #btn_chats {
+            background-color: transparent;
+            border: 1px solid #000;
+            border-radius: 30px;
+            padding: 10px 20px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        #btn_chats:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+
+       
+
+        #centered_list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav_link_chats {
+            text-align: center;
+            width: 80%;
+        }
     </style>
     <script>
         function mostrarCarga() {
             var carga = document.getElementById("carga");
             carga.classList.remove("oculto");
-            // Aquí podrías realizar alguna acción de envío o procesamiento
-            // Simularemos un retraso con setTimeout para demostrar la animación
+
             setTimeout(function () {
                 carga.classList.add("oculto");
-            }, 3000); // Cambia 3000 por el tiempo real de tu proceso
+            }, 8000); // Cambia 3000 por el tiempo real de tu proceso
         }
 
         $(document).ready(function () {
@@ -374,6 +449,7 @@
             document.getElementById("mySidebar").style.display = "none";
             document.getElementById("openNav").style.display = "inline-block";
         }
+
         function openSideChats() {
             //document.getElementById("main").style.marginLeft = "55%";
             //document.getElementById("mySidebar").style.width = "55%";
@@ -408,12 +484,19 @@
         Barra de foro
 
     -->
-    <div style="display:none; width: 50%;height: 100vh; overflow-y: scroll; z-index: 9999; background-color: #9FC5EB;"
-        id="mySidebar">
-        <button onclick="closeSideForo()">Close &times;</button><br><br>
+    <div id="mySidebar">
+
         <form method="GET" action="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=posicion %}">
             {% csrf_token %}
             <div id="container_pregunta_foro" class="container">
+                <button id="btnCloseSide" onclick="closeSideForo()">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 5vb;" width="16" height="16"
+                        fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                    </svg>
+
+                </button><br><br>
                 <div class="row">
                     <div class="col-9">
                         <input id="input_pregunta_foro" type="text" name="palabraBuscar" class="form-control"
@@ -441,51 +524,58 @@
     <!--
         Barra de chats 
     -->
-    <div style="display:none; width: 25%;height: 100vh; overflow-y: scroll; z-index: 9999; background-color: #9FC5EB;"
-        id="mySidebarChats">
-        <button onclick="closeSideChats()">Close &times;</button><br>
+    <div id="mySidebarChats">
+        <button id="btnCloseSide" onclick="closeSideChats()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="100%" fill="currentColor"
+                class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+            </svg>
+        </button>
+        <br>
         {% if conversaciones|length > 0 %}
         <br>
-        <ul>
+        <ul id="centered_list">
             {% for item in conversaciones %}
-            <a class="nav-link active"  href="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=forloop.counter %}" >
-                <button>
-                
+            <a id="nav_link_chats" class="nav-link active"
+                href="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=forloop.counter|add:"-1" %}">
+                <button id="btn_chats">
                     Chat #{{ forloop.counter }}
-                  </button>
+                </button>
             </a>
-            
-            <br><br>
+            <br>
             {% endfor %}
         </ul>
-        
+
         {% else %}
-            <p> no hay chats</p>
+        <p> no hay chats</p>
         {% endif %}
 
-        
+
 
         <br>
     </div>
     <main style="background-color: transparent;">
         <div id="openNav_div">
             <div>
-                <button id="openNav" onclick="openSideForo()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
-                    <path
-                        d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
-                </svg></button>
-            <span class="mensajeAbrirForo">Ver foro</span>
+                <button id="openNav" onclick="openSideForo()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                    </svg></button>
+                <span class="mensajeAbrirForo">Ver foro</span>
             </div>
             <br>
 
             <div>
                 <button id="openNavChats" onclick="openSideChats()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
-                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                      </svg>
-            </button>
-            <span class="mensajeAbrirChat">Nuevo chat</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                    </svg>
+                </button>
+                <span class="mensajeAbrirChat">Nuevo chat</span>
             </div>
 
         </div>
@@ -615,6 +705,7 @@
 
                 </div>
                 <div class=" col-md-10">
+
                     <form method="POST"
                         action="{% url 'enviarMensajeChatBot' usuario_id=usuario_id posicion=posicion %}">
                         {% csrf_token %}
