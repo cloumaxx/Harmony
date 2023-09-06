@@ -104,7 +104,6 @@ def enviar_correo_inicio_sesion(destinatario, nombre):
                 <div class="col-md-8">
                     <p>Hola, <b>{nombre}</b>.</p>
                     <p>Has iniciado sesión exitosamente en HarmonyApp.</p>
-                    <p>Aquí tienes la imagen adjunta:</p>
                 </div>
             </div>
 

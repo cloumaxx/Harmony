@@ -1,0 +1,36 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"despedirse\"}}]": "utter_despedirse",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"despedirse\"}}, {\"prev_action\": {\"action_name\": \"utter_despedirse\"}, \"user\": {\"intent\": \"despedirse\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"presentarse\"}}]": "utter_presentarse",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"presentarse\"}}, {\"prev_action\": {\"action_name\": \"utter_presentarse\"}, \"user\": {\"intent\": \"presentarse\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"sentir_bien\"}}]": "utter_sentir_bien",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"sentir_bien\"}}, {\"prev_action\": {\"action_name\": \"utter_sentir_bien\"}, \"user\": {\"intent\": \"sentir_bien\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"exception\"}}]": "utter_exception",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"exception\"}}, {\"prev_action\": {\"action_name\": \"utter_exception\"}, \"user\": {\"intent\": \"exception\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"sentir_ansiedad\"}}]": "utter_sentir_ansiedad",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"sentir_ansiedad\"}}, {\"prev_action\": {\"action_name\": \"utter_sentir_ansiedad\"}, \"user\": {\"intent\": \"sentir_ansiedad\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saludar\"}}]": "utter_saludar",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saludar\"}}, {\"prev_action\": {\"action_name\": \"utter_saludar\"}, \"user\": {\"intent\": \"saludar\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"sintomas_ansiedad\"}}]": "utter_sintomas_ansiedad",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"sintomas_ansiedad\"}}, {\"prev_action\": {\"action_name\": \"utter_sintomas_ansiedad\"}, \"user\": {\"intent\": \"sintomas_ansiedad\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"definicion_ansiedad\"}}]": "utter_definicion_ansiedad",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"definicion_ansiedad\"}}, {\"prev_action\": {\"action_name\": \"utter_definicion_ansiedad\"}, \"user\": {\"intent\": \"definicion_ansiedad\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"tratamiento_ansiedad\"}}]": "utter_tratamiento_ansiedad",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"tratamiento_ansiedad\"}}, {\"prev_action\": {\"action_name\": \"utter_tratamiento_ansiedad\"}, \"user\": {\"intent\": \"tratamiento_ansiedad\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"sentir_soledad\"}}]": "utter_sentir_soledad",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"sentir_soledad\"}}, {\"prev_action\": {\"action_name\": \"utter_sentir_soledad\"}, \"user\": {\"intent\": \"sentir_soledad\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"sentir_mal\"}}]": "utter_sentir_mal",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"sentir_mal\"}}, {\"prev_action\": {\"action_name\": \"utter_sentir_mal\"}, \"user\": {\"intent\": \"sentir_mal\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "predicting default action with intent restart",
+      "predicting default action with intent back"
+    ]
+  }
+}

@@ -302,7 +302,7 @@ def pantalla_registro(request):
                     'clave': credenciales.clave,
         }
         db_connection.db.Credenciales.insert_one(usuario_cred)
-        enviar_correo_inicio_sesion(correo,  nombre + ' ' + apellido)
+        enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.nombre)
         return redirect('pantalla_login')
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
@@ -418,11 +418,12 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
     url_imagen_perfil = usuario_dict['url_imagen_perfil']
     nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
     conversaciones = usuario_dict['conversaciones']
-    print(len(conversaciones))
     if len(conversaciones) == 0:
         conversaciones.append([])
         posicion = 0
         conversacion = conversaciones[posicion]
+        db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
+
     else:
         posicion = posicion
         conversacion = conversaciones[posicion]
@@ -462,12 +463,15 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
             else:
+                print(pregunta)
                 try:
                     respuestaChat = send_to_rasa(pregunta.lower())
                     salida = respuestaChat[0]['text']
+                    print(respuestaChat)
+                
                 except:
                     salida = "no entendi tu pregunta"
-
+                    
                 nuevo_mensaje ={
                     'pregunta': pregunta,
                     'respuesta': salida}
