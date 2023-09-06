@@ -2,21 +2,50 @@ version: "3.1"
 
 intents:
   - saludar
+  - despedirse
   - presentarse
+  - sentir_bien
+  - sentir_mal
+  - sentir_soledad
   - definicion_ansiedad
+  - sentir_ansiedad
   - sintomas_ansiedad
+  - tratamiento_ansiedad
+  - exception
 
 responses:
   utter_saludar:
   - text: "Hola,¿como estas?"
 
+  utter_despedirse:
+  - text: "Gracias por venir, vuelve pronto"
+
   utter_presentarse:
   - text: "Soy Milly, tu asistente virtual"
-  utter_responder_definicion_ansiedad :
+
+  utter_sentir_bien:
+  - text: "Me alegro mucho de escuchar que estes bien"
+
+  utter_sentir_mal:
+  - text: "Oh no, eso es terrible. ¿Que paso?"
+
+  utter_sentir_soledad:
+  - text: "Conmigo aqui, nunca estarás solo/a. ¿Como puedo ayudarte?"
+
+  utter_sentir_ansiedad:
+  - text: "¿Que te gustaría saber de la ansiedad?"
+
+  utter_definicion_ansiedad :
     - text: La ansiedad es una respuesta natural del cuerpo ante situaciones estresantes. Puede manifestarse como preocupación intensa, nerviosismo y tensión.
 
-  utter_responder_sintomas_ansiedad: 
+  utter_sintomas_ansiedad: 
     - text: Los síntomas de la ansiedad pueden incluir palpitaciones, sudoración, dificultad para respirar, pensamientos intrusivos y evitación de situaciones temidas.
+
+  utter_tratamiento_ansiedad: 
+    - text: Lo siento, no estoy en la capacidad para recomendar tratamientos para la ansiedad
+
+  utter_exception: 
+  - text: Lo siento, no entendí tu pregunta
 
 session_config:
   session_expiration_time: 60

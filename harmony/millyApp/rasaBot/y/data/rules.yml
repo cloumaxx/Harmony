@@ -7,3 +7,52 @@ rules:
   - intent: saludar
   - action: utter_saludar
 
+- rule: Despedir cuando se despidan de ti
+  steps:
+  - intent: despedirse
+  - action: utter_despedirse
+
+- rule: Presentate cuando te pregunten
+  steps:
+  - intent: presentarse
+  - action: utter_presentarse
+
+- rule: Responde bien cuando te dicen que esta bien
+  steps:
+  - intent: sentir_bien
+  - action: utter_sentir_bien
+
+- rule: Responde mal cuando te dicen que esta mal
+  steps:
+  - intent: sentir_mal
+  - action: utter_sentir_mal
+
+- rule: Responde soledad cuando te dicen que esta solo
+  steps:
+  - intent: sentir_soledad
+  - action: utter_sentir_soledad
+
+- rule: Responde sobre la ansiedad cuando te preguntan que es la ansiedad
+  steps:
+  - intent: definicion_ansiedad
+  - action: utter_definicion_ansiedad
+
+- rule: Responde cuando te dicen que tienen ansiedad
+  steps:
+  - intent: sentir_ansiedad
+  - action: utter_sentir_ansiedad
+
+- rule: Responde cuando te pregunten los sintomas de la ansiedad
+  steps:
+  - intent: sintomas_ansiedad
+  - action: utter_sintomas_ansiedad
+
+- rule: Responde cuando te pregunten tratamientos para la ansiedad
+  steps:
+  - intent: tratamiento_ansiedad
+  - action: utter_tratamiento_ansiedad
+
+- rule: Responde la excepcion cuando las preguntas no sean relacionadas con los temas anteriores
+  steps:
+  - intent: exception
+  - action: utter_exception
