@@ -1,6 +1,12 @@
 {% load static %}
 
 <style>
+    #header{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+    }
     #conText {
         border-top: 1px solid black;
         padding-top: 10px;
@@ -43,7 +49,9 @@
         line-height: normal;
     }
 
-    
+    #formOrden{
+        background-color: #F1F0EC;
+    }
     
 
     #input_comentario {
@@ -62,6 +70,15 @@
 
     #body {
         background: linear-gradient(180deg, #686381 0%, rgba(50, 16, 229, 0.40) 100%);
+    }
+    #main{
+        margin-top: 130px;
+    }
+    #botonOrdenar{
+        color: white;
+        margin-top: 5px;
+        border-radius: 10px;
+        background-color: rgba(137, 43, 226, 0.459);
     }
 </style>
 <html>
@@ -83,22 +100,40 @@
 
 <body id="body">
 
-    <header>
+    <header id="header">
         {% include 'navbar.html' %}
+        <form id="formOrden" method="get"> <!-- Changed method to 'get' -->
+            <label style="display: inline-block; margin-left: 20px; margin-right: 20px;">
+                <p>Ordenar por:</p>
+            </label>
+            <label style="display: inline-block; margin-right: 20px;">
+                <input type="radio" name="ordenar" value="likes" {% if ordenar == 'likes' %}checked{% endif %}> Likes
+            </label>
+        
+            <label style="display: inline-block; margin-right: 20px;">
+                <input type="radio" name="ordenar" value="mas reciente" {% if ordenar == 'mas reciente' %}checked{% endif %}> Mas reciente
+            </label>
+        
+            <label style="display: inline-block; margin-right: 20px;">
+                <input type="radio" name="ordenar" value="mas antiguo" {% if ordenar == 'mas antiguo' %}checked{% endif %}> Mas antiguo
+            </label>
+            <button type="submit" id="botonOrdenar">
+                Ordenar
+            </button>
+        </form>
+        
     </header>
 
-    <main>
+    <main id="main">
         <div>
             <h1 id="Foro_titulo">Foro</h1>
         </div>
         {% include 'pantalla_foro/comentarios.html' %}
         <br>
         
-        <br><br><br><br><br>
+        <br>
     </main>
     <footer>
-
-
         <form method="POST">
             {% csrf_token %}
             <div class="fixed-input">

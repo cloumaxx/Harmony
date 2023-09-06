@@ -39,19 +39,21 @@ class Comentarios(models.Model):
     id_reda_Comet = models.CharField(max_length=100) 
     comentario = models.CharField(max_length=500)
     likes = ArrayField(models.CharField(max_length=100)) 
+    fechaPublicacion = models.DateField()
     replicas = ArrayField(models.JSONField()) 
+
     class Meta:
         db_table = 'comentariosDB'
     
     def __str__(self):
-        return f"Comentarios ID: {self.id}, ID del redactor: {self.id_reda_Comet}, Comentario: {self.comentario}, Likes: {self.likes}, ID de replicas: {self.id_replicas}"
+        return f"Comentarios ID: {self.id}, ID del redactor: {self.id_reda_Comet}, Comentario: {self.comentario}, Likes: {self.likes}, Fecha de publicacion: {self.fechaPublicacion}"
     
 class Replicas(models.Model): 
 
     idRedactorReplica = models.CharField(max_length=100)
     contenidoReplica  =models.CharField(max_length=600)
     likes = ArrayField(models.CharField(max_length=100)) 
-    
+    fechaPublicacion = models.DateField()
     
     def __str__(self):
         return f" ID del redactor: {self.idRedactorReplica}, Contenido de la replica: {self.contenidoReplica}, Likes: {self.likes}"
