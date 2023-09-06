@@ -42,6 +42,13 @@ stories:
     - intent: definicion_ansiedad
     - action: utter_definicion_ansiedad
 
+- story: definicion_ansiedad path 2
+  steps: 
+    - intent: sentir_ansiedad
+    - action: utter_sentir_ansiedad
+    - intent: definicion_ansiedad
+    - action: utter_definicion_ansiedad
+
 - story: sintomas_ansiedad path
   steps:
     - intent: sintomas_ansiedad
@@ -56,4 +63,6 @@ stories:
   steps:
     - intent: exception
     - action: utter_exception
+
+
 
