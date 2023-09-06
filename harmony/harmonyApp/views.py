@@ -10,7 +10,7 @@ from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import enviar_correo, get_Nombre, get_comentariosVer, get_img_perfil, get_inforeplicas
+from harmonyApp.operations.utils import  enviar_correo_inicio_sesion, get_Nombre, get_comentariosVer, get_img_perfil, get_inforeplicas
 from harmonyProject import settings
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
@@ -53,20 +53,22 @@ def pantalla_menu_inicial(request,usuario_id ):
 ////////////////////////////////////////////////////////
 """
 @login_required
-def pantalla_foro(request,usuario_id):
+def pantalla_foro(request,usuario_id,ordenar="likes"):
+    ordenar = request.GET.get('ordenar', 'likes')  # Get the selected sorting option from the query parameters, defaulting to 'likes'
+
     if request.method == 'POST':
         id_reda_Comet = usuario_id
         comentario_data = request.POST['comentario']
         likes = request.POST.getlist('likes')
         replicas = []
-
+        fechaPublicacion = datetime.now()
         comentario = Comentarios(
-            id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, replicas=replicas)
-
+            id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes,fechaPublicacion = fechaPublicacion, replicas=replicas)
         comentario_dict = {
             'id_reda_Comet': comentario.id_reda_Comet,
             'comentario': comentario.comentario,
             'likes': comentario.likes,
+            'fechaPublicacion' : fechaPublicacion,
             'replicas': comentario.replicas
         }
 
@@ -74,16 +76,19 @@ def pantalla_foro(request,usuario_id):
 
         return redirect('pantalla_foro', usuario_id=usuario_id)
 
-    # Obtener todos los comentarios de la base de datos
-    comentarios = db_connection.db.Comentarios.find()
+    if ordenar == 'mas reciente':
+        comentarios = db_connection.db.Comentarios.find().sort([("fechaPublicacion", -1)])
+    elif ordenar == 'mas antiguo':
+        comentarios = db_connection.db.Comentarios.find().sort([("fechaPublicacion", 1)])
+    else:
+        comentarios = db_connection.db.Comentarios.find().sort([("likes", -1)])
 
     # Crear el objeto Paginator
-    items_por_pagina = 2
+    items_por_pagina = 100
     paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
     # Obtener el número de página a mostrar
     numero_pagina = request.GET.get('page')
     page_obj = paginator.get_page(numero_pagina)
-    
 
     # ['id_replicas']
     return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
@@ -98,16 +103,13 @@ def agregar_replica(request, usuario_id, comentario_id):
                 {'_id': ObjectId(comentario_id)})
             
             if comentario:
-                print(comentario)
                 replicas = comentario.get('replicas', [])
-                print(replicas)
                 replica_dict = {
                     
                     'idRedactorReplica': usuario_id,
                     'contenidoReplica': replica_comentario,
                     'likes': []
                 }
-                print(replica_dict)
                 replicas.append(replica_dict)
                 # Obtener el ID asignado a la réplica
                 #id_replicas.append(replica_id)
@@ -253,9 +255,6 @@ def logout_view(request):
     return redirect('pantalla_inicial')
 
 def pantalla_registro(request):
- 
-       
-
     if request.method == 'POST':
         nombre = request.POST.get('nombre')
         apellido = request.POST.get('apellido')
@@ -268,49 +267,24 @@ def pantalla_registro(request):
 
         #archivo = request.FILES.get('imagen_perfil')
         try:
-            image = request.FILES['imagen_perfil']
-            
+            image = request.FILES['imagen_perfil']           
             val=subir_imagen(image.name, image.file)
-
             if val.status_code == 200:
                 json_img=val.json()
                 url_imagen_perfil = str(json_img['data']['link'])
                 code_delete_img = json_img['data']['deletehash']
                 
-                # Crear una instancia del modelo Usuario con los datos ingresados
-                usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img,conversaciones=[[]])
-                credenciales = Credenciales(correo=correo, clave=clave)
-                # Guardar el usuario en la base de datos MongoDB
-                usuario_dict = {
-                    'nombre': usuario.nombre,
-                    'apellido': usuario.apellido,
-                    'correo': usuario.correo,
-                    'genero': usuario.genero,
-                    'fecha_nacimiento': usuario.fecha_nacimiento,
-                    'url_imagen_perfil': usuario.url_imagen_perfil,
-                    'code_delete_img': usuario.code_delete_img,
-                    'conversaciones': usuario.conversaciones
-                }
-                
-                result = db_connection.db.Usuario.insert_one(usuario_dict)
-                usuario_cred ={
-                    '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
-                    'correo': credenciales.correo,
-                    'clave': credenciales.clave,
-                }
-                db_connection.db.Credenciales.insert_one(usuario_cred)
-                seEnvio=enviar_correo(correo, 'Inicio de sesión exitoso', 'Hola, ' + nombre + ' ' + apellido + '.\n\nHas iniciado sesión exitosamente en HarmonyApp.')
-                print("-->",seEnvio)
-                return redirect('pantalla_login')
             else:
-                print('no se pudo subir la imagen')
+                url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
+                code_delete_img = ""
         except Exception as e:
-                print('Algo fallo: ',e)
         # Crear una instancia del modelo Usuario con los datos ingresados
-                usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil='https://i.imgur.com/0RW7b5J.jpg',code_delete_img='noHayFoto',conversaciones=[])
-                credenciales = Credenciales(correo=correo, clave=clave)
-                # Guardar el usuario en la base de datos MongoDB
-                usuario_dict = {
+            url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
+            code_delete_img = ""
+        usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img,conversaciones=[])
+        credenciales = Credenciales(correo=correo, clave=clave)
+        # Guardar el usuario en la base de datos MongoDB
+        usuario_dict = {
                     'nombre': usuario.nombre,
                     'apellido': usuario.apellido,
                     'correo': usuario.correo,
@@ -319,18 +293,17 @@ def pantalla_registro(request):
                     'url_imagen_perfil': usuario.url_imagen_perfil,
                     'code_delete_img': usuario.code_delete_img,
                     'conversaciones': usuario.conversaciones
-                }
+        }
                 
-                result = db_connection.db.Usuario.insert_one(usuario_dict)
-                usuario_cred ={
+        result = db_connection.db.Usuario.insert_one(usuario_dict)
+        usuario_cred ={
                     '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
                     'correo': credenciales.correo,
                     'clave': credenciales.clave,
-                }
-                db_connection.db.Credenciales.insert_one(usuario_cred)
-                seEnvio=enviar_correo(correo, 'Inicio de sesión exitoso', 'Hola, ' + nombre + ' ' + apellido + '.\n\nHas iniciado sesión exitosamente en HarmonyApp.')
-                print("-->",seEnvio)
-                return redirect('pantalla_login')
+        }
+        db_connection.db.Credenciales.insert_one(usuario_cred)
+        enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.nombre)
+        return redirect('pantalla_login')
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
@@ -445,18 +418,15 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
     url_imagen_perfil = usuario_dict['url_imagen_perfil']
     nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
     conversaciones = usuario_dict['conversaciones']
-    print(len(conversaciones))
-    if len(conversaciones) > 0:
+    if len(conversaciones) == 0:
+        conversaciones.append([])
+        posicion = 0
         conversacion = conversaciones[posicion]
+        db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
+
     else:
-        if len(conversaciones) <= 0:
-            conversaciones.append([])
-            posicion =0
-        else:
-            if posicion != 0:
-                posicion = posicion-1
-  
-    
+        posicion = posicion
+        conversacion = conversaciones[posicion]
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': nombre_usuario,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
 
 @login_required
@@ -493,12 +463,15 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
             else:
+                print(pregunta)
                 try:
                     respuestaChat = send_to_rasa(pregunta.lower())
                     salida = respuestaChat[0]['text']
+                    print(respuestaChat)
+                
                 except:
                     salida = "no entendi tu pregunta"
-
+                    
                 nuevo_mensaje ={
                     'pregunta': pregunta,
                     'respuesta': salida}

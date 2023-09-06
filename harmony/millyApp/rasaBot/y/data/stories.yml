@@ -7,18 +7,62 @@ stories:
   - intent: saludar
   - action: utter_saludar
 
+- story: despidiendo path
+  steps:
+  - intent: despedirse
+  - action: utter_despedirse
+
 - story: presentandose path
   steps:
   - intent: presentarse
   - action: utter_presentarse
 
+- story: sentir_bien path
+  steps:
+  - intent: sentir_bien
+  - action: utter_sentir_bien
+
+- story: sentir_mal path
+  steps:
+  - intent: sentir_mal
+  - action: utter_sentir_mal
+
+- story: sentir_soledad path
+  steps:
+  - intent: sentir_soledad
+  - action: utter_sentir_soledad
+
+- story: sentir_ansiedad path
+  steps:
+  - intent: sentir_ansiedad
+  - action: utter_sentir_ansiedad
+
 - story: definicion_ansiedad path
   steps:
     - intent: definicion_ansiedad
-    - action: utter_responder_definicion_ansiedad
+    - action: utter_definicion_ansiedad
+
+- story: definicion_ansiedad path 2
+  steps: 
+    - intent: sentir_ansiedad
+    - action: utter_sentir_ansiedad
+    - intent: definicion_ansiedad
+    - action: utter_definicion_ansiedad
 
 - story: sintomas_ansiedad path
   steps:
     - intent: sintomas_ansiedad
-    - action: utter_responder_sintomas_ansiedad
+    - action: utter_sintomas_ansiedad
+
+- story: tratamiento_ansiedad path
+  steps:
+    - intent: tratamiento_ansiedad
+    - action: utter_tratamiento_ansiedad
+
+- story: exception path
+  steps:
+    - intent: exception
+    - action: utter_exception
+
+
 
