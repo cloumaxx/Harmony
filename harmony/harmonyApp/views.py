@@ -264,48 +264,63 @@ def pantalla_registro(request):
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
         # Convertir la cadena de fecha en un objeto de tipo datetime
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
-
-        #archivo = request.FILES.get('imagen_perfil')
-        try:
-            image = request.FILES['imagen_perfil']           
-            val=subir_imagen(image.name, image.file)
-            if val.status_code == 200:
-                json_img=val.json()
-                url_imagen_perfil = str(json_img['data']['link'])
-                code_delete_img = json_img['data']['deletehash']
-                
-            else:
+        existeCorreo = db_connection.db.Credenciales.find_one({'correo': correo})
+        if existeCorreo==None:
+            #archivo = request.FILES.get('imagen_perfil')
+            try:
+                image = request.FILES['imagen_perfil']           
+                val=subir_imagen(image.name, image.file)
+                if val.status_code == 200:
+                    json_img=val.json()
+                    url_imagen_perfil = str(json_img['data']['link'])
+                    code_delete_img = json_img['data']['deletehash']
+                    
+                else:
+                    url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
+                    code_delete_img = ""
+            except Exception as e:
+            # Crear una instancia del modelo Usuario con los datos ingresados
                 url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
                 code_delete_img = ""
-        except Exception as e:
-        # Crear una instancia del modelo Usuario con los datos ingresados
-            url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
-            code_delete_img = ""
-        usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img,conversaciones=[])
-        credenciales = Credenciales(correo=correo, clave=clave)
-        # Guardar el usuario en la base de datos MongoDB
-        usuario_dict = {
-                    'nombre': usuario.nombre,
-                    'apellido': usuario.apellido,
-                    'correo': usuario.correo,
-                    'genero': usuario.genero,
-                    'fecha_nacimiento': usuario.fecha_nacimiento,
-                    'url_imagen_perfil': usuario.url_imagen_perfil,
-                    'code_delete_img': usuario.code_delete_img,
-                    'conversaciones': usuario.conversaciones
-        }
-                
-        result = db_connection.db.Usuario.insert_one(usuario_dict)
-        usuario_cred ={
-                    '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
-                    'correo': credenciales.correo,
-                    'clave': credenciales.clave,
-        }
-        db_connection.db.Credenciales.insert_one(usuario_cred)
-        enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.nombre)
-        return redirect('pantalla_login')
+            usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img,conversaciones=[])
+            credenciales = Credenciales(correo=correo, clave=clave)
+            # Guardar el usuario en la base de datos MongoDB
+            usuario_dict = {
+                        'nombre': usuario.nombre,
+                        'apellido': usuario.apellido,
+                        'correo': usuario.correo,
+                        'genero': usuario.genero,
+                        'fecha_nacimiento': usuario.fecha_nacimiento,
+                        'url_imagen_perfil': usuario.url_imagen_perfil,
+                        'code_delete_img': usuario.code_delete_img,
+                        'conversaciones': usuario.conversaciones
+            }
+                    
+            result = db_connection.db.Usuario.insert_one(usuario_dict)
+            usuario_cred ={
+                        '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
+                        'correo': credenciales.correo,
+                        'clave': credenciales.clave,
+            }
+            db_connection.db.Credenciales.insert_one(usuario_cred)
+            enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.nombre)
+            return redirect('pantalla_login')
+        else:
+            error_message = "Correo ya existe"
+            context = {'error_message': error_message}
+            return render(request, 'pantalla_registro/pantalla_registro.html', context)
+
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
+def verificar_correo_existente(request):
+    correo = request.GET.get("correo")
+    existe_correo = False  # Aquí realiza la verificación en tu base de datos
+    # Puedes usar tu lógica para verificar si el correo ya existe
+    if db_connection.db.Credenciales.find_one({'correo': correo}):
+    # Simplemente para este ejemplo, asumimos que existe
+        return JsonResponse({"correo_existe": True})
+    else:
+        return JsonResponse({"correo_existe": False})
 
 @login_required
 def pantalla_perfil_usuario(request,usuario_id):

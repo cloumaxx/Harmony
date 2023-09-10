@@ -94,8 +94,8 @@
             
             <div class="col-md-10">
                 
-                <div id="contComentario" class="container">
-                    <div class="row">
+                <div  class="container">
+                    <div class="row" id="contComentario">
                         <div class="col-md-2 d-flex align-items-center">
     
                             <img class="border rounded-circle border-1 border-dark"
@@ -191,14 +191,14 @@
         </div>
         <br>
         
-        <div id="replicas_realizadas">
+        <div id="replicas_realizadas" >
             {% for replica in comentario.replicas %}
             <div id="replica" class="container">
                 
                 <div class="row">
                     <div class="col-md-2 d-flex align-items-center">
                         <img class="border rounded-circle border-1 border-dark"
-                            style="border-radius: 50%; width: 50%; height: 50%;" src="{{ replica.url_imagen_perfil }}">
+                            style="border-radius: 50%; width: 70px; height: 65px;" src="{{ replica.url_imagen_perfil }}">
                     </div>
                     <div class="col-md-6">
     
@@ -294,9 +294,9 @@
     </div>
     <br>
     <!-- Ventana Modal Agregar Replica -->
-    <div class="modal fade" id="modalAgregarReplica{{ id_comentario }}">
+    <div class="modal fade" id="modalAgregarReplica{{ id_comentario }}" >
         <!-- Contenido de la ventana modal -->
-        <div class="modal-dialog">
+        <div class="modal-dialog" style="height: 80px;">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalAgregarComentarioLabel">Agregar replica </h5>
