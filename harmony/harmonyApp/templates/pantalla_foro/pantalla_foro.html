@@ -106,8 +106,12 @@
             <label style="display: inline-block; margin-left: 20px; margin-right: 20px;">
                 <p>Ordenar por:</p>
             </label>
+
             <label style="display: inline-block; margin-right: 20px;">
-                <input type="radio" name="ordenar" value="likes" {% if ordenar == 'likes' %}checked{% endif %}> Likes
+                <input type="radio" name="ordenar" value="mas likes" {% if ordenar == 'mas likes' %}checked{% endif %}> Mas likes
+            </label>
+            <label style="display: inline-block; margin-right: 20px;">
+                <input type="radio" name="ordenar" value="likes" {% if ordenar == 'likes' %}checked{% endif %}>Menos likes
             </label>
         
             <label style="display: inline-block; margin-right: 20px;">
@@ -121,7 +125,6 @@
                 Ordenar
             </button>
         </form>
-        
     </header>
 
     <main id="main">

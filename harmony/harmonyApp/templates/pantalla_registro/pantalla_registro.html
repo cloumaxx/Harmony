@@ -85,34 +85,41 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-          // Selecciona el formulario por su id
-          var formulario = document.getElementById("formulario");
-        
-          formulario.addEventListener("submit", function(event) {
-            // Agrega aquí tus validaciones para cada campo
-            var nombre = document.getElementById("id_nombre").value;
-            var apellido = document.getElementById("id_apellido").value;
-            var correo = document.getElementById("id_correo").value;
-            var clave = document.getElementById("id_clave").value;
-            var claveDoble = document.getElementById("id_clave_doble").value;
-            var genero = document.getElementById("id_genero").value;
-            var fechaNacimiento = document.getElementById("id_fecha_nacimiento").value;
-        
-            if (nombre === "" || apellido === "" || correo === "" || clave === "" || genero === "" || fechaNacimiento === "") {
-              // Si algún campo está vacío, muestra un mensaje de error y evita enviar el formulario
-              alert("Por favor, complete todos los campos.");
-              event.preventDefault();
-            } else if (clave !== claveDoble) {
-              // Si las contraseñas no son iguales, muestra un mensaje de error y evita enviar el formulario
-              alert("Las contraseñas no coinciden.");
-              event.preventDefault();
-            }
-        
-            // Agrega otras validaciones según tus requerimientos
-        
-            // Si todo está validado correctamente, el formulario se enviará al servidor
-          });
-        });
+  // Selecciona el formulario por su id
+  var formulario = document.getElementById("formulario");
+
+  formulario.addEventListener("submit", function(event) {
+    // Agrega aquí tus validaciones para cada campo
+    var nombre = document.getElementById("id_nombre").value;
+    var apellido = document.getElementById("id_apellido").value;
+    var correo = document.getElementById("id_correo").value;
+    var clave = document.getElementById("id_clave").value;
+    var claveDoble = document.getElementById("id_clave_doble").value;
+    var genero = document.getElementById("id_genero").value;
+    var fechaNacimiento = document.getElementById("id_fecha_nacimiento").value;
+
+    if (nombre === "" || apellido === "" || correo === "" || clave === "" || genero === "" || fechaNacimiento === "") {
+      // Si algún campo está vacío, muestra un mensaje de error y evita enviar el formulario
+      alert("Por favor, complete todos los campos.");
+      event.preventDefault();
+    } else if (clave !== claveDoble) {
+      // Si las contraseñas no son iguales, muestra un mensaje de error y evita enviar el formulario
+      alert("Las contraseñas no coinciden.");
+      event.preventDefault();
+    } else {
+      var fechaActual = new Date();
+      var fechaNacimientoDate = new Date(fechaNacimiento);
+      var diferenciaTiempo = fechaActual - fechaNacimientoDate;
+      var edad = Math.floor(diferenciaTiempo / (365.25 * 24 * 60 * 60 * 1000));
+      
+      if (edad < 9) {
+        alert("Recuerda que la aplicación es para adolescentes de 9 años en adelante");
+        event.preventDefault();
+      }
+    }
+  });
+});
+
         </script>
         
         

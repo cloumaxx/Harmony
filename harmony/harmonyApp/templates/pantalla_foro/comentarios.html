@@ -39,8 +39,8 @@
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         padding-top: 10px;
         padding-bottom: 5px;
-        padding-left: 25px;
-        margin-left: 10%;
+        padding-left: 30px;
+        margin-left: 70px;
         
         width: 80%;
     }
@@ -87,8 +87,11 @@
 </script>
 <div id="">
     <br><br>
+
     {% for comentario, nombre,url_img_perfil, id_comentario in comentarios %}
     <div class="container">
+        
+
         <div style="height: 5%;"></div>
     
         <div class="row">
@@ -98,7 +101,7 @@
                 <div  class="container">
                     <div class="row" id="contComentario">
                         <div class="col-md-2 d-flex align-items-center">
-                            <img class="border rounded-circle border-1 border-dark" style="border-radius: 10px; max-width: 100%; max-height: 100%; width: auto; height: auto;" src="{{ url_img_perfil }}">
+                            <img class="border rounded-circle border-1 border-dark" style="border-radius: 10px; max-width: 90%; max-height: 90%; width: auto; height: auto;" src="{{ url_img_perfil }}">
                         </div>
                         <div class="col-md-6">
                             <h2 class="text-start"> <b>{{ nombre }}</b></h2>
@@ -197,7 +200,7 @@
                 <div class="row">
                     <div class="col-md-2 d-flex align-items-center">
                         <img class="border rounded-circle border-1 border-dark"
-                            style="border-radius: 50%; width: 70px; height: 65px;" src="{{ replica.url_imagen_perfil }}">
+                            style="border-radius: 10px; max-width: 70%; max-height: 70%; width: auto; height: auto;" src="{{ replica.url_imagen_perfil }}">
                     </div>
                     <div class="col-md-6">
     

@@ -42,13 +42,9 @@
             margin-left: 150px;
         }
 
-
         #body {
-
             background: linear-gradient(180deg, #686381 0%, rgba(50, 16, 229, 0.40) 100%);
-
         }
-
 
         #botn_dropdown,
         #btn-enviar {
@@ -63,11 +59,6 @@
             background: #424050;
             height: 100%;
             width: 70%;
-        }
-
-        .dropdown-item {
-            position: relative;
-            margin-top: 5px;
         }
 
         #container_like {
@@ -94,9 +85,13 @@
             border: 1px solid #ccc;
         }
 
+        .dropdown-item {
+            margin-top: 5px;
+            background-color: red;
+        }
+
         .dropdown-item:hover {
             cursor: pointer;
-
         }
 
         .dropdown-item:hover .mensaje {
@@ -104,7 +99,6 @@
         }
 
         #cont_buscador_foro {
-
             width: 100%;
             height: 100%;
         }
@@ -133,7 +127,6 @@
             background: #D9D9D9;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
             width: 60%;
-
         }
 
         #milly_nombre_respuesta {
@@ -153,35 +146,16 @@
             width: 100%;
             border-color: transparent;
             color: white;
-
         }
 
         #input_pregunta_foro::placeholder,
         #input_pregunta::placeholder {
-
             color: white;
         }
-
-
-
-
-
 
         #contendor_no_hay_chat {
             display: grid;
             place-items: center;
-
-        }
-
-        #btn_nuevo_chat:hover+.mensaje {
-            display: block;
-        }
-
-        #btn_nuevo_chat:hover {
-
-            position: relative;
-            margin-top: 5px;
-
         }
 
         #contenedor_footer {
@@ -190,17 +164,8 @@
             background-color: transparent;
             margin-top: 1%;
             margin-bottom: 1%;
-
         }
 
-        .dropdown-item {
-            margin-top: 5px;
-        }
-
-        .dropdown-item:hover {
-            cursor: pointer;
-
-        }
 
         #cont_agregar_replica {
 
@@ -301,7 +266,7 @@
 
         #mySidebar {
             display: none;
-            width: 50%;
+            width: 45%;
             height: 100vh;
             overflow-y: scroll;
             z-index: 9999;
@@ -379,7 +344,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%   ;
+            height: 100%;
         }
 
         #btnCloseSide {
@@ -394,6 +359,7 @@
 
         #comentarios_foro {
             padding-top: 50px;
+            width: 100%;
         }
 
         #btn_chats {
@@ -409,8 +375,6 @@
             background-color: rgba(0, 0, 0, 0.1);
         }
 
-
-       
         #centered_list {
             display: flex;
             flex-direction: column;
@@ -421,7 +385,7 @@
             padding: 0;
         }
 
-        #centered_list2{
+        #centered_list2 {
             position: fixed;
             bottom: 0;
             display: flex;
@@ -432,6 +396,7 @@
             padding: 0;
             padding-bottom: 50px;
         }
+
         #nav_link_chats {
             text-align: center;
             width: 80%;
@@ -446,7 +411,6 @@
                 carga.classList.add("oculto");
             }, 8000); // Cambia 3000 por el tiempo real de tu proceso
         }
-
         $(document).ready(function () {
 
             var columnChat = document.getElementById('main');
@@ -486,13 +450,10 @@
             location.href = "#final";
         };
     </script>
-
-
-
 </head>
 
 <body id="body">
-    <header class="navbar-fixed" >
+    <header class="navbar-fixed">
         {% include 'navbar.html' %}
     </header>
 
@@ -513,7 +474,8 @@
                             d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
                     </svg>
 
-                </button><br><br>
+                </button>
+                <br><br>
                 <div class="row">
                     <div class="col-9">
                         <input id="input_pregunta_foro" type="text" name="palabraBuscar" class="form-control"
@@ -543,11 +505,11 @@
     -->
     <div id="mySidebarChats">
         <button id="btnCloseSide" onclick="closeSideChats()">
-            <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 5vb;" width="16" height="16"
-                        fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
-                    </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 5vb;" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+            </svg>
         </button>
         <br>
         {% if conversaciones|length > 0 %}
@@ -574,27 +536,31 @@
                 <button id="btn_chats">
                     Crear nuevo Chat
                 </button>
-      
+
             </form>
-           
-                
+
+
         </div>
-        
+
 
         <br>
     </div>
     <main style="background-color: transparent; padding-top:85px ;">
         <div id="carga" class="oculto">
             <div class="spinner"></div>
-            
+
         </div>
         <div id="openNav_div">
             <div>
-                <button id="openNav" onclick="openSideForo()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                        height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                <button id="openNav" onclick="openSideForo()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-people-fill" viewBox="0 0 16 16">
                         <path
                             d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
-                    </svg></button>
+                    </svg>
+
+                </button>
+
                 <span class="mensajeAbrirForo">Ver foro</span>
             </div>
             <br>
@@ -614,6 +580,7 @@
 
 
         <div id="main">
+           
             {% if conversaciones|length > 0 %}
             {% if conversacion|length > 0 %}
             <br>
@@ -670,16 +637,19 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4" style="height: 100%;">
-                                <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%; height: 70%;width:70%;" src ="{% static '/images/mily.png'  %}" >
+                                <img class="border rounded-circle border-1 border-dark"
+                                    style="border-radius: 50%; height: 70%;width:70%;"
+                                    src="{% static '/images/mily.png'  %}">
 
                             </div>
                             <div class="col-md-5">
-                                <h1 style="color: white;">Parece que no hemos hablado en este chat <br> ¿Quieres hablar conmigo?</h1>
+                                <h1 style="color: white;">Parece que no hemos hablado en este chat <br> ¿Quieres hablar
+                                    conmigo?</h1>
                             </div>
                         </div>
 
                     </div>
-                    
+
 
                 </div>
             </div>
@@ -712,6 +682,7 @@
                                 <path
                                     d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
                             </svg>
+
                         </button>
                         <ul class="dropdown-menu">
                             <!-- Enlaces del menú desplegable -->
@@ -719,7 +690,7 @@
                                 {% csrf_token %}
                                 <li>
                                     <button id="btn_nuevo_chat" class="dropdown-item" type="submit"
-                                        class="btn btn-sm p-0">
+                                        class="btn btn-sm p-0" style="width: 25%;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                                             <path
@@ -730,17 +701,7 @@
                                 </li>
                             </form>
                             <li>
-                                <a class="dropdown-item" id="boton_limpiar_chat">
-                                    <button type="submit" name="boton_limpiar_chat" value="borrar"
-                                        class="btn btn-sm p-0">
-                                        <svg style="color: black;" xmlns="http://www.w3.org/2000/svg" width="25%"
-                                            height="25%" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                            <path
-                                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
-                                        </svg>
-                                    </button>
-                                    <span class="mensaje">Vaciar chat</span>
-                                </a>
+
                             </li>
                         </ul>
                     </div>
@@ -758,7 +719,7 @@
                                         placeholder="Ingresa tu pregunta">
                                 </div>
                                 <div class="col-md-2">
-                                    
+
                                     <button type="submit" id="btn-enviar" onclick="mostrarCarga()">
                                         <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16"
                                             height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
