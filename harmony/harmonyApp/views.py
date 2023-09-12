@@ -413,7 +413,7 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
             comentarios = db_connection.db.Comentarios.find()
     # Crear el objeto Paginator
     
-    items_por_pagina = 2
+    items_por_pagina = 50
     paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
     # Obtener el número de página a mostrar
     numero_pagina = request.GET.get('page')
