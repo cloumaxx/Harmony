@@ -215,7 +215,7 @@
             width: 50px;
             height: 75px;
             border: none;
-            background-color: #007bff;
+            background-color: #5900ff;
             color: white;
             border-top-right-radius: 75px;
             border-bottom-right-radius: 75px;
@@ -415,6 +415,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 1000px;
             width: 100%;
             margin: 0;
             padding: 0;
@@ -566,6 +567,7 @@
         {% else %}
         <p> no hay chats</p>
         {% endif %}
+        <br><br><br>
         <div id="centered_list2">
             <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id  %}">
                 {% csrf_token %}
