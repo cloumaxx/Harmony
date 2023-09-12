@@ -38,9 +38,8 @@
 
         #main {
             margin-top: 50px;
-            margin-bottom: 170px;
+            margin-bottom: 80px;
             margin-left: 150px;
-            padding-bottom: 80px;
         }
 
 
@@ -351,13 +350,19 @@
         }
 
         .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left: 4px solid #000000;
+            border: 9px solid rgba(0, 0, 0, 0.1);
+            border-left: 9px solid white;
             border-radius: 50%;
-            width: 20px;
-            height: 20px;
+            width: 65px;
+            height: 65px;
             animation: spin 1s linear infinite;
             margin: auto;
+            z-index: 9999;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
 
         @keyframes spin {
@@ -406,17 +411,26 @@
 
 
        
-
         #centered_list {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            height: 100%;
             margin: 0;
             padding: 0;
         }
 
+        #centered_list2{
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 25%;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 50px;
+        }
         #nav_link_chats {
             text-align: center;
             width: 80%;
@@ -552,12 +566,26 @@
         {% else %}
         <p> no hay chats</p>
         {% endif %}
-
-
+        <div id="centered_list2">
+            <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id  %}">
+                {% csrf_token %}
+                <button id="btn_chats">
+                    Crear nuevo Chat
+                </button>
+      
+            </form>
+           
+                
+        </div>
+        
 
         <br>
     </div>
     <main style="background-color: transparent; padding-top:85px ;">
+        <div id="carga" class="oculto">
+            <div class="spinner"></div>
+            
+        </div>
         <div id="openNav_div">
             <div>
                 <button id="openNav" onclick="openSideForo()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -728,9 +756,7 @@
                                         placeholder="Ingresa tu pregunta">
                                 </div>
                                 <div class="col-md-2">
-                                    <div id="carga" class="oculto">
-                                        <div class="spinner"></div>
-                                    </div>
+                                    
                                     <button type="submit" id="btn-enviar" onclick="mostrarCarga()">
                                         <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16"
                                             height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">

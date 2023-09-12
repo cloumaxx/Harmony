@@ -308,19 +308,10 @@ def pantalla_registro(request):
         else:
             error_message = "Correo ya existe"
             context = {'error_message': error_message}
-            return render(request, 'pantalla_registro/pantalla_registro.html', context)
+        return render(request, 'pantalla_registro/pantalla_registro.html', context)
 
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
-def verificar_correo_existente(request):
-    correo = request.GET.get("correo")
-    existe_correo = False  # Aquí realiza la verificación en tu base de datos
-    # Puedes usar tu lógica para verificar si el correo ya existe
-    if db_connection.db.Credenciales.find_one({'correo': correo}):
-    # Simplemente para este ejemplo, asumimos que existe
-        return JsonResponse({"correo_existe": True})
-    else:
-        return JsonResponse({"correo_existe": False})
 
 @login_required
 def pantalla_perfil_usuario(request,usuario_id):
@@ -474,11 +465,10 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 conversacion = []
             pregunta = request.POST.get('pregunta')
             if pregunta == "" or pregunta == None or len(pregunta)==0:
-                pass
+                salida = "no entendi tu pregunta"
                 #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
             else:
-                print(pregunta)
                 try:
                     respuestaChat = send_to_rasa(pregunta.lower())
                     salida = respuestaChat[0]['text']
@@ -493,6 +483,13 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
-        
+                mensaje_dict = {
+                    
+                    'mensaje' : pregunta,
+                    'fecha' : datetime.now()
+                }
+                
+
+                db_connection.db.Mensajes.insert_one(mensaje_dict)
         print('->',posicion)
         return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
