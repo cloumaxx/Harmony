@@ -2,6 +2,7 @@
 <style>
     
     #contComentario {
+        padding-top: 20px;
         border-radius: 17px;
         background: #E9DEB3;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -83,68 +84,21 @@
         // Ocultar la modal actual
         $("#" + replica).modal("hide");
     }
-    
-    var loading = false;
-    var nextPage = 2;  // La siguiente página a cargar
-
-    function loadMoreComments() {
-        if (loading) {
-            return;
-        }
-        
-        loading = true;
-        
-        $.ajax({
-            url: "{% url 'pantalla_foro' usuario_id=usuario_id %}",
-            data: {'page': nextPage},
-            dataType: 'json',
-            success: function(data) {
-                if (data.comentarios.length > 0) {
-                    var commentsContainer = $('#comments-container');
-                    
-                    data.comentarios.forEach(function(comment) {
-                        var comentarioHTML = '<div class="comentario">' +
-                                            '<p>' + comment.comentario + '</p>' +
-                                            '</div>';
-                        commentsContainer.append(comentarioHTML);
-                    });
-                    
-                    nextPage++;
-                    loading = false;
-                }
-            }
-        });
-    }
-
-    $(window).on('scroll', function() {
-        var scrollPosition = $(window).scrollTop();
-        var windowHeight = $(window).height();
-        var documentHeight = $(document).height();
-        
-        if (scrollPosition + windowHeight >= documentHeight - 200) {
-            loadMoreComments();
-        }
-    });
-
-    // Cargar más comentarios al cargar la página inicialmente
-    loadMoreComments();
-
 </script>
-<div id="comments-container">
+<div id="">
+    <br><br>
     {% for comentario, nombre,url_img_perfil, id_comentario in comentarios %}
     <div class="container">
         <div style="height: 5%;"></div>
     
         <div class="row">
-    
+            
             <div class="col-md-10">
-    
-                <div id="contComentario" class="container">
-                    <div class="row">
+                
+                <div  class="container">
+                    <div class="row" id="contComentario">
                         <div class="col-md-2 d-flex align-items-center">
-    
-                            <img class="border rounded-circle border-1 border-dark"
-                                style="border-radius: 50%; width: 50%; height: 70px;" src='{{ url_img_perfil }}'>
+                            <img class="border rounded-circle border-1 border-dark" style="border-radius: 10px; max-width: 100%; max-height: 100%; width: auto; height: auto;" src="{{ url_img_perfil }}">
                         </div>
                         <div class="col-md-6">
                             <h2 class="text-start"> <b>{{ nombre }}</b></h2>
@@ -227,8 +181,8 @@
                                     {% endif %}
                                 </ul>
                             </div>
-    
                         </div>
+                        <p style="text-align: right;padding-right: 50px;"><b>{{comentario.fechaPublicacion|date:"d/m/Y H:i" }}</b></p>
                     </div>
                 </div>
             </div>
@@ -236,14 +190,14 @@
         </div>
         <br>
         
-        <div id="replicas_realizadas">
+        <div id="replicas_realizadas" >
             {% for replica in comentario.replicas %}
             <div id="replica" class="container">
                 
                 <div class="row">
                     <div class="col-md-2 d-flex align-items-center">
                         <img class="border rounded-circle border-1 border-dark"
-                            style="border-radius: 50%; width: 50%; height: 50%;" src="{{ replica.url_imagen_perfil }}">
+                            style="border-radius: 50%; width: 70px; height: 65px;" src="{{ replica.url_imagen_perfil }}">
                     </div>
                     <div class="col-md-6">
     
@@ -339,9 +293,9 @@
     </div>
     <br>
     <!-- Ventana Modal Agregar Replica -->
-    <div class="modal fade" id="modalAgregarReplica{{ id_comentario }}">
+    <div class="modal fade" id="modalAgregarReplica{{ id_comentario }}" >
         <!-- Contenido de la ventana modal -->
-        <div class="modal-dialog">
+        <div class="modal-dialog" style="height: 80px;">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalAgregarComentarioLabel">Agregar replica </h5>
@@ -406,5 +360,4 @@
         </div>
     </div>
     {% endfor %}
-    
 </div>

@@ -132,7 +132,7 @@
                             </div>
                             <div id="conText">
                                 <h2>Fecha de nacimiento:</h2>
-                                <p>{{usuario_obj.fecha_nacimiento}}</p>
+                                <p>{{usuario_obj.fecha_nacimiento|date:"d/m/Y"}}</p>
                             </div>
                             <div id="conText">
                                 <h2>Genero:</h2>
@@ -273,14 +273,13 @@
                     </div>
                 </div>
         </main>
-
+        <br>
         <footer></footer>
     </div>
     <!-- Ventana Modal Editar Usuario-->
-    <div class="modal fade" id="modalEditarUsuario{{ usuario_id }}" >
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
+    <div class="modal fade" id="modalEditarUsuario{{ usuario_id }}"  >
+        <div class="modal-dialog"  >
+            <div class="modal-content">              <!-- Contenido de la ventana modal -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalAgregarComentarioLabel">Editar tu perfil</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -289,15 +288,37 @@
                     <!-- Formulario para editar el perfil -->
                     <form method="POST" action="{% url 'editar_usuario' usuario_id=usuario_id %}" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <input type="text" name="nombre" value="{{ usuario_obj.nombre }}" placeholder="Nombre"><br>
+                        <label id="id_nombre" class="form-label">Nombre: </label>
+                        <input style="width: 80%;" type="text" name="nombre" value="{{ usuario_obj.nombre }}" placeholder="Nombre"><br>
+                        
+                        <label id="id_apellido" class="form-label">Apellido: </label>
                         <input type="text" name="apellido" value="{{ usuario_obj.apellido }}" placeholder="Apellido"><br>
+                        
+                        <label id="id_correo" class="form-label">Correo:  </label>
                         <input type="email" name="correo" value="{{ usuario_obj.correo }}"
                             placeholder="Correo electrónico"><br>
-                        <input type="text" name="genero" value="{{ usuario_obj.genero }}" placeholder="Género"><br>
+                        
+                        <label id="id_genero" class="form-label">Genero:</label>
+                        <select class="form-control" id="id_genero" name="genero">
+                            {% if usuario_obj.genero == 'M' %}
+                                <option value="H">Hombre</option>
+                                <option value="M" selected>Mujer</option>
+                            {% else %}
+                                <option value="H" selected>Hombre</option>
+                                <option value="M">Mujer</option>
+                            {% endif %}
+                        </select>
+                        
+                        
+                        <br>
+                        <label id="id_fechaNacido" class="form-label">Fecha nacimiento:</label>
+
                         <input type="date" name="fecha_nacimiento"
                             value="{{ usuario_obj.fecha_nacimiento|date:'Y-m-d' }}" placeholder="Fecha de nacimiento"><br>
                         <!-- Agrega los demás campos del formulario -->
-                        <p>¿Deseas cambiar tú foto de perfil?</p>
+                        <p>¿Deseas cambiar tú foto de perfil?</p><br>
+                        <input type="file" id="nueva_imagen_perfil" name="nueva_imagen_perfil" onchange="previsualizarImagen(event) "accept="image/png, image/jpeg">
+
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
@@ -306,7 +327,6 @@
 
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="file" id="nueva_imagen_perfil" name="nueva_imagen_perfil" onchange="previsualizarImagen(event)">
                                     <br>
                                     <img id="imagen_previa" src="#" alt="Previsualización" style="display: none;"  width="100px" height="100px">
 

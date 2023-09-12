@@ -10,7 +10,7 @@ from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import get_Nombre, get_comentariosVer, get_img_perfil, get_inforeplicas
+from harmonyApp.operations.utils import  enviar_correo_inicio_sesion, get_Nombre, get_comentariosVer, get_img_perfil, get_inforeplicas
 from harmonyProject import settings
 from harmonyProject.database import MongoDBConnection
 from django.contrib.auth import authenticate, login
@@ -46,8 +46,6 @@ def login_required(view_func):
 
 @login_required
 def pantalla_menu_inicial(request,usuario_id ):
-    username = request.session.get('id_user', None)
-    print("username: ",username)
     return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id })
 """
 ////////////////////////////////////////////////////////
@@ -55,21 +53,22 @@ def pantalla_menu_inicial(request,usuario_id ):
 ////////////////////////////////////////////////////////
 """
 @login_required
+def pantalla_foro(request,usuario_id,ordenar="likes"):
+    ordenar = request.GET.get('ordenar', 'likes')  # Get the selected sorting option from the query parameters, defaulting to 'likes'
 
-def pantalla_foro(request, usuario_id):
     if request.method == 'POST':
         id_reda_Comet = usuario_id
         comentario_data = request.POST['comentario']
         likes = request.POST.getlist('likes')
         replicas = []
-
+        fechaPublicacion = datetime.now()
         comentario = Comentarios(
-            id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes, replicas=replicas)
-
+            id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes,fechaPublicacion = fechaPublicacion, replicas=replicas)
         comentario_dict = {
             'id_reda_Comet': comentario.id_reda_Comet,
             'comentario': comentario.comentario,
             'likes': comentario.likes,
+            'fechaPublicacion' : fechaPublicacion,
             'replicas': comentario.replicas
         }
 
@@ -77,33 +76,22 @@ def pantalla_foro(request, usuario_id):
 
         return redirect('pantalla_foro', usuario_id=usuario_id)
 
-    # Obtener todos los comentarios de la base de datos
-    comentarios = db_connection.db.Comentarios.find()
+    if ordenar == 'mas reciente':
+        comentarios = db_connection.db.Comentarios.find().sort([("fechaPublicacion", -1)])
+    elif ordenar == 'mas antiguo':
+        comentarios = db_connection.db.Comentarios.find().sort([("fechaPublicacion", 1)])
+    else:
+        comentarios = db_connection.db.Comentarios.find().sort([("likes", -1)])
 
     # Crear el objeto Paginator
-    items_por_pagina = 10
-    paginator = Paginator(get_comentariosVer(comentarios, db_connection), items_por_pagina)
-    
+    items_por_pagina = 100
+    paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
+    # Obtener el número de página a mostrar
     numero_pagina = request.GET.get('page')
-    
-    if request.is_ajax():
-        page_obj = paginator.get_page(numero_pagina)
-        comentarios_data = []
-        for comentario in page_obj:
-            comentarios_data.append({
-                'id_reda_Comet': comentario.id_reda_Comet,
-                'comentario': comentario.comentario,
-                'likes': comentario.likes,
-                'replicas': comentario.replicas
-            })
-        return JsonResponse({'comentarios': comentarios_data})
-
     page_obj = paginator.get_page(numero_pagina)
 
+    # ['id_replicas']
     return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
-
-
-
 
 @login_required
 def agregar_replica(request, usuario_id, comentario_id):
@@ -115,16 +103,13 @@ def agregar_replica(request, usuario_id, comentario_id):
                 {'_id': ObjectId(comentario_id)})
             
             if comentario:
-                print(comentario)
                 replicas = comentario.get('replicas', [])
-                print(replicas)
                 replica_dict = {
                     
                     'idRedactorReplica': usuario_id,
                     'contenidoReplica': replica_comentario,
                     'likes': []
                 }
-                print(replica_dict)
                 replicas.append(replica_dict)
                 # Obtener el ID asignado a la réplica
                 #id_replicas.append(replica_id)
@@ -251,10 +236,12 @@ def pantalla_login(request):
                 
                 request.session['nombre'] = nombre['nombre']
                 request.session['id_user'] = user_id
-              
                 return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
             else:
                 form.add_error(None, 'Credenciales inválidas')
+        else:
+            form.add_error(None, 'Credenciales inválidas')
+
     else:
         form = LoginForm()
     return render(request, 'pantalla_login/pantalla_login.html', {'form': form})
@@ -277,70 +264,52 @@ def pantalla_registro(request):
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
         # Convertir la cadena de fecha en un objeto de tipo datetime
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
+        existeCorreo = db_connection.db.Credenciales.find_one({'correo': correo})
+        if existeCorreo==None:
+            #archivo = request.FILES.get('imagen_perfil')
+            try:
+                image = request.FILES['imagen_perfil']           
+                val=subir_imagen(image.name, image.file)
+                if val.status_code == 200:
+                    json_img=val.json()
+                    url_imagen_perfil = str(json_img['data']['link'])
+                    code_delete_img = json_img['data']['deletehash']
+                    
+                else:
+                    url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
+                    code_delete_img = ""
+            except Exception as e:
+            # Crear una instancia del modelo Usuario con los datos ingresados
+                url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
+                code_delete_img = ""
+            usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img,conversaciones=[])
+            credenciales = Credenciales(correo=correo, clave=clave)
+            # Guardar el usuario en la base de datos MongoDB
+            usuario_dict = {
+                        'nombre': usuario.nombre,
+                        'apellido': usuario.apellido,
+                        'correo': usuario.correo,
+                        'genero': usuario.genero,
+                        'fecha_nacimiento': usuario.fecha_nacimiento,
+                        'url_imagen_perfil': usuario.url_imagen_perfil,
+                        'code_delete_img': usuario.code_delete_img,
+                        'conversaciones': usuario.conversaciones
+            }
+                    
+            result = db_connection.db.Usuario.insert_one(usuario_dict)
+            usuario_cred ={
+                        '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
+                        'correo': credenciales.correo,
+                        'clave': credenciales.clave,
+            }
+            db_connection.db.Credenciales.insert_one(usuario_cred)
+            enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.nombre)
+            return redirect('pantalla_login')
+        else:
+            error_message = "Correo ya existe"
+            context = {'error_message': error_message}
+        return render(request, 'pantalla_registro/pantalla_registro.html', context)
 
-        #archivo = request.FILES.get('imagen_perfil')
-        try:
-            image = request.FILES['imagen_perfil']
-            
-            val=subir_imagen(image.name, image.file)
-
-            if val.status_code == 200:
-                json_img=val.json()
-                url_imagen_perfil = str(json_img['data']['link'])
-                code_delete_img = json_img['data']['deletehash']
-                
-                # Crear una instancia del modelo Usuario con los datos ingresados
-                usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img,conversaciones=[[]])
-                credenciales = Credenciales(correo=correo, clave=clave)
-                # Guardar el usuario en la base de datos MongoDB
-                usuario_dict = {
-                    'nombre': usuario.nombre,
-                    'apellido': usuario.apellido,
-                    'correo': usuario.correo,
-                    'genero': usuario.genero,
-                    'fecha_nacimiento': usuario.fecha_nacimiento,
-                    'url_imagen_perfil': usuario.url_imagen_perfil,
-                    'code_delete_img': usuario.code_delete_img,
-                    'conversaciones': usuario.conversaciones
-                }
-                
-                result = db_connection.db.Usuario.insert_one(usuario_dict)
-                usuario_cred ={
-                    '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
-                    'correo': credenciales.correo,
-                    'clave': credenciales.clave,
-                }
-                db_connection.db.Credenciales.insert_one(usuario_cred)
-
-                return redirect('pantalla_login')
-            else:
-                print('no se pudo subir la imagen')
-        except:
-                print('no se pudo subir la imagen')
- # Crear una instancia del modelo Usuario con los datos ingresados
-                usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil='https://i.imgur.com/0RW7b5J.jpg',code_delete_img='noHayFoto',conversaciones=[])
-                credenciales = Credenciales(correo=correo, clave=clave)
-                # Guardar el usuario en la base de datos MongoDB
-                usuario_dict = {
-                    'nombre': usuario.nombre,
-                    'apellido': usuario.apellido,
-                    'correo': usuario.correo,
-                    'genero': usuario.genero,
-                    'fecha_nacimiento': usuario.fecha_nacimiento,
-                    'url_imagen_perfil': usuario.url_imagen_perfil,
-                    'code_delete_img': usuario.code_delete_img,
-                    'conversaciones': usuario.conversaciones
-                }
-                
-                result = db_connection.db.Usuario.insert_one(usuario_dict)
-                usuario_cred ={
-                    '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
-                    'correo': credenciales.correo,
-                    'clave': credenciales.clave,
-                }
-                db_connection.db.Credenciales.insert_one(usuario_cred)
-
-                return redirect('pantalla_login')
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
@@ -455,14 +424,14 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
     url_imagen_perfil = usuario_dict['url_imagen_perfil']
     nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
     conversaciones = usuario_dict['conversaciones']
-    if len(conversaciones) <= 0:
+    if len(conversaciones) == 0:
         conversaciones.append([])
-        posicion =0
+        posicion = 0
+        conversacion = conversaciones[posicion]
+        db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
+
     else:
-        if posicion != 0:
-            posicion = posicion-1
-  
-    if len(conversaciones) > 0:
+        posicion = posicion
         conversacion = conversaciones[posicion]
     return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': nombre_usuario,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
 
@@ -496,21 +465,31 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 conversacion = []
             pregunta = request.POST.get('pregunta')
             if pregunta == "" or pregunta == None or len(pregunta)==0:
-                pass
+                salida = "no entendi tu pregunta"
                 #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
             else:
                 try:
-                    respuestaChat = send_to_rasa(pregunta)
+                    respuestaChat = send_to_rasa(pregunta.lower())
                     salida = respuestaChat[0]['text']
+                    print(respuestaChat)
+                
                 except:
                     salida = "no entendi tu pregunta"
+                    
                 nuevo_mensaje ={
                     'pregunta': pregunta,
                     'respuesta': salida}
-
+                
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
-        
+                mensaje_dict = {
+                    
+                    'mensaje' : pregunta,
+                    'fecha' : datetime.now()
+                }
+                
+
+                db_connection.db.Mensajes.insert_one(mensaje_dict)
         print('->',posicion)
         return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
