@@ -57,3 +57,15 @@ class Replicas(models.Model):
     
     def __str__(self):
         return f" ID del redactor: {self.idRedactorReplica}, Contenido de la replica: {self.contenidoReplica}, Likes: {self.likes}"
+
+
+class Mensajes(models.Model):
+    id = models.AutoField(primary_key=True)
+    mensaje = models.CharField(max_length=1000)
+    fecha = models.DateField()
+
+    class Meta:
+        db_table = 'mensajesDB'
+
+    def __str__(self):
+        return f"Mensaje ID: {self.id}, Mensaje: {self.mensaje}, Fecha: {self.fecha}"

@@ -264,46 +264,52 @@ def pantalla_registro(request):
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
         # Convertir la cadena de fecha en un objeto de tipo datetime
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
-
-        #archivo = request.FILES.get('imagen_perfil')
-        try:
-            image = request.FILES['imagen_perfil']           
-            val=subir_imagen(image.name, image.file)
-            if val.status_code == 200:
-                json_img=val.json()
-                url_imagen_perfil = str(json_img['data']['link'])
-                code_delete_img = json_img['data']['deletehash']
-                
-            else:
+        existeCorreo = db_connection.db.Credenciales.find_one({'correo': correo})
+        if existeCorreo==None:
+            #archivo = request.FILES.get('imagen_perfil')
+            try:
+                image = request.FILES['imagen_perfil']           
+                val=subir_imagen(image.name, image.file)
+                if val.status_code == 200:
+                    json_img=val.json()
+                    url_imagen_perfil = str(json_img['data']['link'])
+                    code_delete_img = json_img['data']['deletehash']
+                    
+                else:
+                    url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
+                    code_delete_img = ""
+            except Exception as e:
+            # Crear una instancia del modelo Usuario con los datos ingresados
                 url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
                 code_delete_img = ""
-        except Exception as e:
-        # Crear una instancia del modelo Usuario con los datos ingresados
-            url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
-            code_delete_img = ""
-        usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img,conversaciones=[])
-        credenciales = Credenciales(correo=correo, clave=clave)
-        # Guardar el usuario en la base de datos MongoDB
-        usuario_dict = {
-                    'nombre': usuario.nombre,
-                    'apellido': usuario.apellido,
-                    'correo': usuario.correo,
-                    'genero': usuario.genero,
-                    'fecha_nacimiento': usuario.fecha_nacimiento,
-                    'url_imagen_perfil': usuario.url_imagen_perfil,
-                    'code_delete_img': usuario.code_delete_img,
-                    'conversaciones': usuario.conversaciones
-        }
-                
-        result = db_connection.db.Usuario.insert_one(usuario_dict)
-        usuario_cred ={
-                    '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
-                    'correo': credenciales.correo,
-                    'clave': credenciales.clave,
-        }
-        db_connection.db.Credenciales.insert_one(usuario_cred)
-        enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.nombre)
-        return redirect('pantalla_login')
+            usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img,conversaciones=[])
+            credenciales = Credenciales(correo=correo, clave=clave)
+            # Guardar el usuario en la base de datos MongoDB
+            usuario_dict = {
+                        'nombre': usuario.nombre,
+                        'apellido': usuario.apellido,
+                        'correo': usuario.correo,
+                        'genero': usuario.genero,
+                        'fecha_nacimiento': usuario.fecha_nacimiento,
+                        'url_imagen_perfil': usuario.url_imagen_perfil,
+                        'code_delete_img': usuario.code_delete_img,
+                        'conversaciones': usuario.conversaciones
+            }
+                    
+            result = db_connection.db.Usuario.insert_one(usuario_dict)
+            usuario_cred ={
+                        '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
+                        'correo': credenciales.correo,
+                        'clave': credenciales.clave,
+            }
+            db_connection.db.Credenciales.insert_one(usuario_cred)
+            enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.nombre)
+            return redirect('pantalla_login')
+        else:
+            error_message = "Correo ya existe"
+            context = {'error_message': error_message}
+        return render(request, 'pantalla_registro/pantalla_registro.html', context)
+
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
@@ -459,11 +465,10 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 conversacion = []
             pregunta = request.POST.get('pregunta')
             if pregunta == "" or pregunta == None or len(pregunta)==0:
-                pass
+                salida = "no entendi tu pregunta"
                 #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
             else:
-                print(pregunta)
                 try:
                     respuestaChat = send_to_rasa(pregunta.lower())
                     salida = respuestaChat[0]['text']
@@ -478,6 +483,13 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
-        
+                mensaje_dict = {
+                    
+                    'mensaje' : pregunta,
+                    'fecha' : datetime.now()
+                }
+                
+
+                db_connection.db.Mensajes.insert_one(mensaje_dict)
         print('->',posicion)
         return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
