@@ -53,8 +53,8 @@ def pantalla_menu_inicial(request,usuario_id ):
 ////////////////////////////////////////////////////////
 """
 @login_required
-def pantalla_foro(request,usuario_id,ordenar="likes"):
-    ordenar = request.GET.get('ordenar', 'likes')  # Get the selected sorting option from the query parameters, defaulting to 'likes'
+def pantalla_foro(request,usuario_id,ordenar="mas likes"):
+    ordenar = request.GET.get('ordenar', 'mas likes')  # Get the selected sorting option from the query parameters, defaulting to 'likes'
 
     if request.method == 'POST':
         id_reda_Comet = usuario_id
@@ -80,8 +80,11 @@ def pantalla_foro(request,usuario_id,ordenar="likes"):
         comentarios = db_connection.db.Comentarios.find().sort([("fechaPublicacion", -1)])
     elif ordenar == 'mas antiguo':
         comentarios = db_connection.db.Comentarios.find().sort([("fechaPublicacion", 1)])
-    else:
+    elif ordenar == 'mas likes':
         comentarios = db_connection.db.Comentarios.find().sort([("likes", -1)])
+
+    else:
+        comentarios = db_connection.db.Comentarios.find().sort([("likes", 1)])
 
     # Crear el objeto Paginator
     items_por_pagina = 100
@@ -91,7 +94,7 @@ def pantalla_foro(request,usuario_id,ordenar="likes"):
     page_obj = paginator.get_page(numero_pagina)
 
     # ['id_replicas']
-    return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj})
+    return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj,'ordenar': ordenar})
 
 @login_required
 def agregar_replica(request, usuario_id, comentario_id):
