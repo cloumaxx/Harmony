@@ -11,6 +11,7 @@ intents:
   - sentir_ansiedad
   - sintomas_ansiedad
   - tratamiento_ansiedad
+  - origen_ansiedad
   - exception
 
 responses:
@@ -46,6 +47,9 @@ responses:
 
   utter_exception: 
   - text: Lo siento, no entendí tu pregunta
+
+  utter_origen_ansiedad:
+  - text: Ciertas experiencias de vida, como acontecimientos traumáticos, parecen provocar los trastornos de ansiedad en personas que ya son propensas a la ansiedad. Los rasgos heredados también pueden ser un factor
 
 session_config:
   session_expiration_time: 60

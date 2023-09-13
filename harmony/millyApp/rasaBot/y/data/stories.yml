@@ -7,6 +7,20 @@ stories:
   - intent: saludar
   - action: utter_saludar
 
+- story: saludando path 2
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: sentir_bien
+  - action: utter_sentir_bien
+
+- story: saludando path 3
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: sentir_mal
+  - action: utter_sentir_mal
+
 - story: despidiendo path
   steps:
   - intent: despedirse
@@ -48,6 +62,15 @@ stories:
     - action: utter_sentir_ansiedad
     - intent: definicion_ansiedad
     - action: utter_definicion_ansiedad
+
+- story: definicion_ansiedad path 2
+  steps: 
+    - intent: sentir_ansiedad
+    - action: utter_sentir_ansiedad
+    - intent: definicion_ansiedad
+    - action: utter_definicion_ansiedad
+    - intent: origen_ansiedad
+    - action: utter_origen_ansiedad
 
 - story: sintomas_ansiedad path
   steps:

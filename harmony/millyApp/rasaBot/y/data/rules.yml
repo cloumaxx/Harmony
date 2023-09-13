@@ -52,7 +52,13 @@ rules:
   - intent: tratamiento_ansiedad
   - action: utter_tratamiento_ansiedad
 
+- rule: Responde cuando pregunten sobre el origen de la ansiedad
+  steps:
+  - intent: origen_ansiedad
+  - action: utter_origen_ansiedad
+
 - rule: Responde la excepcion cuando las preguntas no sean relacionadas con los temas anteriores
   steps:
   - intent: exception
   - action: utter_exception
+
