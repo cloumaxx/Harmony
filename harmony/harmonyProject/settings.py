@@ -125,7 +125,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-SESSION_COOKIE_AGE = 1800  # Tiempo de expiración de la sesión en segundos (media hora)
+SESSION_COOKIE_AGE = 30000  # Tiempo de expiración de la sesión en segundos (media hora)
 
 
 # Static files (CSS, JavaScript, Images)

@@ -28,380 +28,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <style>
-        .navbar-fixed {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999;
-        }
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pantalla_chatbot.css' %}">
 
-        #main {
-            margin-top: 50px;
-            margin-bottom: 80px;
-            margin-left: 150px;
-        }
-
-        #body {
-            background: linear-gradient(180deg, #686381 0%, rgba(50, 16, 229, 0.40) 100%);
-        }
-
-        #botn_dropdown,
-        #btn-enviar {
-            border-radius: 29px;
-            background: #424050;
-            height: 100%;
-            width: 100%;
-        }
-
-        #btn_enviar2 {
-            border-radius: 29px;
-            background: #424050;
-            height: 100%;
-            width: 70%;
-        }
-
-        #container_like {
-            margin-top: 5%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #container_like button,
-        #container_like p {
-            margin: 1px;
-        }
-
-        .mensaje {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            white-space: nowrap;
-            margin-left: 30px;
-            display: none;
-            background-color: #f9f9f9;
-            padding: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .dropdown-item {
-            margin-top: 5px;
-            background-color: red;
-        }
-
-        .dropdown-item:hover {
-            cursor: pointer;
-        }
-
-        .dropdown-item:hover .mensaje {
-            display: block;
-        }
-
-        #cont_buscador_foro {
-            width: 100%;
-            height: 100%;
-        }
-
-        #cont_pregunta {
-            border-radius: 17px;
-            background: #D9D9D9;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            width: 100%;
-            margin-left: auto;
-        }
-
-        #user_nombre_pregunta {
-            margin-top: 2%;
-            margin-left: 5%;
-            margin-bottom: 1%;
-        }
-
-        #user_pregunta {
-            margin-left: 5%;
-            margin-bottom: 2%;
-        }
-
-        #cont_respuesta {
-            border-radius: 17px;
-            background: #D9D9D9;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            width: 60%;
-        }
-
-        #milly_nombre_respuesta {
-            margin-top: 2%;
-            margin-left: 3%;
-        }
-
-        #milly_respuesta {
-            margin-left: 3%;
-            margin-bottom: 2%;
-        }
-
-        #input_pregunta_foro,
-        #input_pregunta {
-            border-radius: 15px;
-            background: #424050;
-            width: 100%;
-            border-color: transparent;
-            color: white;
-        }
-
-        #input_pregunta_foro::placeholder,
-        #input_pregunta::placeholder {
-            color: white;
-        }
-
-        #contendor_no_hay_chat {
-            display: grid;
-            place-items: center;
-        }
-
-        #contenedor_footer {
-            position: fixed;
-            bottom: 0;
-            background-color: transparent;
-            margin-top: 1%;
-            margin-bottom: 1%;
-        }
-
-
-        #cont_agregar_replica {
-
-            margin-left: 5%;
-            display: flex;
-            align-items: center;
-        }
-
-        #openNavChats,
-        #openNav {
-
-            width: 50px;
-            height: 75px;
-            border: none;
-            background-color: #5900ff;
-            color: white;
-            border-top-right-radius: 75px;
-            border-bottom-right-radius: 75px;
-            cursor: pointer;
-        }
-
-        #openNav_div {
-            position: fixed;
-        }
-
-        #openNav:hover+.mensajeAbrirForo {
-            display: block;
-        }
-
-        #openNav:hover {
-
-            position: relative;
-
-        }
-
-        #openNavChats {
-            position: fixed;
-        }
-
-        #openNavChats:hover+.mensajeAbrirChat {
-            display: block;
-        }
-
-        #openNavChats:hover {
-
-            position: relative;
-
-        }
-
-        .mensajeAbrirForo {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            white-space: nowrap;
-            margin-top: 45%;
-            margin-left: 10px;
-            display: none;
-            padding: 5px;
-            background-color: white;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            padding-right: 20px;
-            padding-left: 20px;
-        }
-
-        .mensajeAbrirChat {
-            position: absolute;
-            bottom: 0;
-            left: 100%;
-            white-space: nowrap;
-            margin-bottom: 45%;
-            margin-left: 10px;
-            display: none;
-            padding: 5px;
-            background-color: white;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            padding-right: 20px;
-            padding-left: 20px;
-        }
-
-        #mySidebarChats,
-        #mySidebar {
-            position: fixed;
-
-        }
-
-        #mySidebarChats {
-            display: none;
-            width: 25%;
-            height: 100vh;
-            overflow-y: scroll;
-            z-index: 9999;
-            background-color: #4da2d3;
-        }
-
-        #mySidebar {
-            display: none;
-            width: 45%;
-            height: 100vh;
-            overflow-y: scroll;
-            z-index: 9999;
-            background-color: #4da2d3;
-        }
-
-        #replica {
-            border-radius: 17px;
-            background: #9FC5EB;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            margin-left: 10%;
-            width: 80%;
-        }
-
-        #contComentario {
-            border-radius: 17px;
-            background: #E9DEB3;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        }
-
-        #container_pregunta_foro {
-            width: 50%;
-            position: fixed;
-            z-index: 999;
-        }
-
-        #ulti_footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            margin: 1%;
-            background-color: transparent;
-
-        }
-
-        #ulti_footer .container {
-            display: flex;
-            justify-content: center;
-            background-color: transparent;
-
-            /* Horizontally center the content */
-        }
-
-        .oculto {
-            display: none;
-        }
-
-        .spinner {
-            border: 9px solid rgba(0, 0, 0, 0.1);
-            border-left: 9px solid white;
-            border-radius: 50%;
-            width: 65px;
-            height: 65px;
-            animation: spin 1s linear infinite;
-            margin: auto;
-            z-index: 9999;
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        #contCentrarSinChat {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        #btnCloseSide {
-            border: none;
-            background-color: transparent;
-            color: white;
-            cursor: pointer;
-            width: 100%;
-            height: 10%;
-            align-self: start;
-        }
-
-        #comentarios_foro {
-            padding-top: 50px;
-            width: 100%;
-        }
-
-        #btn_chats {
-            background-color: transparent;
-            border: 1px solid #000;
-            border-radius: 30px;
-            padding: 10px 20px;
-            width: 100%;
-            cursor: pointer;
-        }
-
-        #btn_chats:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-
-        #centered_list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 1000px;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        #centered_list2 {
-            position: fixed;
-            bottom: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 25%;
-            margin: 0;
-            padding: 0;
-            padding-bottom: 50px;
-        }
-
-        #nav_link_chats {
-            text-align: center;
-            width: 80%;
-        }
-    </style>
     <script>
         function mostrarCarga() {
             var carga = document.getElementById("carga");
@@ -418,27 +46,23 @@
         });
 
         function openSideForo() {
-            //document.getElementById("main").style.marginLeft = "55%";
-            //document.getElementById("mySidebar").style.width = "55%";
             document.getElementById("mySidebar").style.display = "block";
             document.getElementById("openNav").style.display = 'none';
+            
+            
         }
 
         function closeSideForo() {
-            //document.getElementById("main").style.marginLeft = "0%";
             document.getElementById("mySidebar").style.display = "none";
             document.getElementById("openNav").style.display = "inline-block";
         }
 
         function openSideChats() {
-            //document.getElementById("main").style.marginLeft = "55%";
-            //document.getElementById("mySidebar").style.width = "55%";
             document.getElementById("mySidebarChats").style.display = "block";
             document.getElementById("openNavChats").style.display = 'none';
         }
 
         function closeSideChats() {
-            //document.getElementById("main").style.marginLeft = "0%";
             document.getElementById("mySidebarChats").style.display = "none";
             document.getElementById("openNavChats").style.display = "inline-block";
         }
@@ -686,24 +310,37 @@
                         </button>
                         <ul class="dropdown-menu">
                             <!-- Enlaces del menú desplegable -->
-                            <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id  %}">
-                                {% csrf_token %}
-                                <li>
-                                    <button id="btn_nuevo_chat" class="dropdown-item" type="submit"
-                                        class="btn btn-sm p-0" style="width: 25%;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                            <li >
+                                <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id %}">
+                                    {% csrf_token %}
+                                    <button  id="btn_nuevo_chat22" type="submit" class="btn btn-sm p-0" style="border-radius: 10px;
+                                    background: #BBB;margin-left: 10px; width: 90%;  ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" style="fill:black" width="16" height="16" fill="currentColor"
+                                            class="bi bi-plus-circle-fill" viewBox="0 0 16 16" style="vertical-align: middle;">
                                             <path
                                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
                                         </svg>
+                                        <p style="display: inline; vertical-align: middle;color: black; padding-right: 5px; font-size: 15px;">Crear nuevo chat</p>
                                     </button>
-                                    <span class="mensaje">Nuevo chat</span>
-                                </li>
-                            </form>
-                            <li>
-
+                                </form>
+                            </li>
+                            
+                            <li id="li_drop">
+                                <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id %}">
+                                    {% csrf_token %}
+                                    <button style="margin-left: 10px; width: 90%;border-radius: 10px;
+                                    background: #BBB;  " type="submit" class="btn btn-sm p-0">
+                                        <svg style="fill: black;"  xmlns="http://www.w3.org/2000/svg" width="25%"
+                                            height="25%" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                        </svg>
+                                        <p style="display: inline; vertical-align: middle;color: black; padding-right: 5px; font-size: 15px;">Vaciar chat</p>
+                                    </button>
+                                </form>
                             </li>
                         </ul>
+
                     </div>
 
                 </div>

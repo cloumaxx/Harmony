@@ -1,29 +1,17 @@
 from datetime import datetime
-from imaplib import _Authenticator
-import os
-from django.contrib.auth import logout
 from bson import ObjectId
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
-from django.shortcuts import get_object_or_404, redirect, render
-from pymongo import MongoClient
-from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
+from django.http import  HttpResponseBadRequest, HttpResponseRedirect
+from django.shortcuts import  redirect, render
 from harmonyApp.forms import LoginForm
-from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
+from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import  enviar_correo_inicio_sesion, get_Nombre, get_comentariosVer, get_img_perfil, get_inforeplicas
-from harmonyProject import settings
+from harmonyApp.operations.utils import  enviar_correo_inicio_sesion, get_Nombre, get_comentariosVer, get_img_perfil
 from harmonyProject.database import MongoDBConnection
-from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-from dateutil import parser
-from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
-from textwrap import wrap
 from django.contrib import messages
-from django.core.paginator import Paginator, EmptyPage
+from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
-
 from millyApp.views import send_to_rasa
 
 
@@ -31,9 +19,7 @@ from millyApp.views import send_to_rasa
 db_connection = MongoDBConnection()
 chat = []
 
-
 def pantalla_inicial(request):
-
     return render(request,"pantalla_inicial\pantalla_incial.html")
 
 def login_required(view_func):
