@@ -23,6 +23,17 @@ class Usuario(models.Model):
     def __str__(self):
         return f"Usuario ID: {self.id}, Nombre: {self.nombre}, Apellido: {self.apellido}, Correo: {self.correo},Genero: {self.genero}, Fecha de nacimiento: {self.fecha_nacimiento}, "
 
+class Calificacion(models.Model):
+    id = models.AutoField(primary_key=True)
+    id_usuario = models.CharField(max_length=100)
+    calificacion = models.IntegerField()
+    fecha = models.DateField()
+
+    class Meta:
+        db_table = 'calificacionDB'
+    
+    def __str__(self):
+        return f"Calificacion ID: {self.id}, ID del usuario: {self.id_usuario}, Calificacion: {self.Calificacion}, Fecha: {self.fecha}"
 class Credenciales(models.Model):
     id = models.AutoField(primary_key=True)
     correo = models.EmailField(max_length=100)

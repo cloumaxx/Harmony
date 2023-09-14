@@ -152,6 +152,31 @@ def incrementar_likes(request, usuario_id, comentario_id):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 @login_required
+def calificarApp(request, usuario_id):
+    if request.method == 'POST':
+        calificacion = request.POST.get('rating')
+        # Obtener el comentario de la base de datos
+        calificacionEntrante = db_connection.db.Calificacion.find_one({'id_usuario': usuario_id})
+        idCalificacion = calificacionEntrante.get('_id')
+        if calificacionEntrante:
+            db_connection.db.Calificacion.update_one(
+                {'_id': ObjectId(idCalificacion)},
+                {
+                    '$set': {
+                        'calificacion': int(calificacion),
+                        'fecha': datetime.now()
+                    }
+                }
+            )
+        else:
+            calificacion_dict = {
+                'id_usuario': usuario_id,
+                'calificacion': int(calificacion),
+                'fecha': datetime.now()
+            }
+            db_connection.db.Calificacion.insert_one(calificacion_dict)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+@login_required
 def pantalla_nuevo_comentario(request, usuario_id):
     if request.method == 'POST':
         id_reda_Comet = usuario_id

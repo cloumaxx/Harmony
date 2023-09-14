@@ -12,11 +12,11 @@ urlpatterns = [
     path("pantalla_registro", views.pantalla_registro, name="pantalla_registro"),
     path("pantalla_perfil_usuario/<str:usuario_id>/", views.pantalla_perfil_usuario, name="pantalla_perfil_usuario"),
     path('editar_usuario/<str:usuario_id>/', views.editar_usuario, name='editar_usuario'),
-    
+    path('calificar_app/<str:usuario_id>/', views.calificarApp, name='calificarApp'),
+
     path('pantalla_chatbot/<str:usuario_id>/posicion/<int:posicion>/', views.pantalla_chatbot, name='pantalla_chatbot'),
     path('pantalla_chatbot/<str:usuario_id>/crearNuevoChat/', views.crearNuevoChat, name='crearNuevoChat'),
     path('pantalla_chatbot/<str:usuario_id>/enviarMensajeChatBot/<int:posicion>/', views.enviarMensajeChatBot, name='enviarMensajeChatBot'),
-    
 
 
     path('pantalla_foro/<str:usuario_id>/', views.pantalla_foro, name='pantalla_foro'),
