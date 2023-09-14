@@ -114,9 +114,10 @@ def agregar_replica(request, usuario_id, comentario_id):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 @login_required
-def incrementar_likes_replica(request, usuario_id, replica):
-    replica_id = replica.idReplica
-    if request.method == 'POST':
+def incrementar_likes_replica(request, usuario_id, pos):
+    print(pos)
+    replica_id = ""
+    """if request.method == 'POST':
         # Obtener el comentario de la base de datos
         comentario = db_connection.db.Replicas.find_one({'_id': ObjectId(replica_id)})
         
@@ -131,6 +132,7 @@ def incrementar_likes_replica(request, usuario_id, replica):
             # Actualizar los likes en la base de datos
             db_connection.db.Replicas.update_one({'_id': ObjectId(replica_id)}, {'$set': {'likes': likes}})
      # Redirigir al perfil del usuario actualizado
+   """ 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 @login_required

@@ -207,14 +207,17 @@
         <br>
         
         <div id="replicas_realizadas" >
+            
             {% if comentario.replicas|length > 0 %}
                 <button onclick="toggleReplicas(this)" id="verReplica">Mostrar Réplicas</button>
-                {% endif %}
+            {% endif %}
             <div id="contReplica" style="display: none;">
                 {% for replica in comentario.replicas %}
+
                 
                 <div id="replica" class="container" >            
                     <div class="row">
+                        {{forloop.counter}}
                         <div class="col-md-2 d-flex align-items-center">
                             <img class="border rounded-circle border-1 border-dark"
                                 style="border-radius: 10px; max-width: 70%; max-height: 70%; width: auto; height: auto;" src="{{ replica.url_imagen_perfil }}">
@@ -249,7 +252,7 @@
                        </div>
                         <div class="col-md-2 d-flex align-items-center justify-content-center ">
                             <form method="POST"
-                                action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                action="{% url 'incrementar_likes_replica' usuario_id=usuario_id pos=forloop.counter %}">
                                 {% csrf_token %}
                                 <div class="container" id="container_like">
                                     <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
@@ -259,6 +262,7 @@
                                                 d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                                         </svg>
                                     </button>
+                                    
                                     <p>{{ replica.likes|length }}</p>
                                 </div>
                             </form>
@@ -325,12 +329,13 @@
                         onclick="cerrarAgregarReplica('modalAgregarReplica{{ id_comentario }}')"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <!-- Formulario para editar el comentario -->
+                <div class="modal-body" style="text-align: center;">
                     <form method="POST"
                         action="{% url 'agregar_replica' usuario_id=usuario_id comentario_id=id_comentario %}">
                         {% csrf_token %}
-                        <input name="replica" style="width: 90%;" placeholder="Escribe algo">
+                        <textarea name="replica" style="width: 90%; height: 150px; "
+                        placeholder="Escribe algo"></textarea>
+                        <br><br>    
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
@@ -349,13 +354,14 @@
                         onclick="cerrarModalComentario('modalEditarComentario{{ id_comentario }}')"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="text-align: center;">
                     <!-- Formulario para editar el comentario -->
                     <form method="POST"
                         action="{% url 'editar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
                         {% csrf_token %}
-                        <input type="text" name="comentario" value="{{ comentario.comentario }}"
-                            placeholder="Editar Comentario">
+                        
+                        <textarea name="comentario" value="{{ comentario.comentario }}" style="width: 90%; height: 150px; "
+                        placeholder="Editar Comentario"></textarea> <br><br>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
