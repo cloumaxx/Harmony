@@ -7,9 +7,14 @@ from django.views.decorators.http import require_GET
 import requests
 import json
 
+from millyApp.rasaBot.y.actions.actions import traducir
+
 
 
 def send_to_rasa(message):
+    message = message.lower()
+    message = traducir(message)
+    print("Enviando mensaje a Rasa:   ",message.lower())
     rasa_url = 'http://localhost:5005/webhooks/rest/webhook'
     payload = {
         'sender': 'user_id',

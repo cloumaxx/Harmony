@@ -180,6 +180,7 @@ def calificarApp(request, usuario_id):
             }
             db_connection.db.Calificacion.insert_one(calificacion_dict)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
 @login_required
 def pantalla_nuevo_comentario(request, usuario_id):
     if request.method == 'POST':
@@ -350,13 +351,16 @@ def pantalla_perfil_usuario(request,usuario_id):
             url_imagen_perfil=usuario_dict['url_imagen_perfil'],
         )
         comentarios =  db_connection.db.Comentarios.find({'id_reda_Comet': usuario_id}) # Obtener todos los comentarios de la base de datos
-        comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection),get_img_perfil(comentario,db_connection), str(comentario['_id'])) for comentario in comentarios]
-
-        items_por_pagina = 2
-        paginator = Paginator(comentarios_con_nombre_id, items_por_pagina)
+        # Crear el objeto Paginator
+        items_por_pagina = 100
+        paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
         # Obtener el número de página a mostrar
         numero_pagina = request.GET.get('page')
         page_obj = paginator.get_page(numero_pagina)
+
+        # ['id_replicas']
+        #return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj,'ordenar': ordenar})
+
         return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": page_obj})
     
     return HttpResponseBadRequest("Bad Request")

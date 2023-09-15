@@ -25,3 +25,14 @@
 #         dispatcher.utter_message(text="Hello World!")
 #
 #         return []
+from googletrans import Translator
+
+def traducir(texto_a_traducir):
+    # Crea una instancia del traductor
+    translator = Translator()
+
+    # Detecta automáticamente el idioma del texto de origen
+    idioma_origen = translator.detect(texto_a_traducir).lang
+
+    # Traduce el texto a español
+    return translator.translate(texto_a_traducir, src=idioma_origen, dest='es').text
