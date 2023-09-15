@@ -34,6 +34,7 @@ class Calificacion(models.Model):
     
     def __str__(self):
         return f"Calificacion ID: {self.id}, ID del usuario: {self.id_usuario}, Calificacion: {self.Calificacion}, Fecha: {self.fecha}"
+
 class Credenciales(models.Model):
     id = models.AutoField(primary_key=True)
     correo = models.EmailField(max_length=100)

@@ -45,8 +45,10 @@
         width: 80%;
     }
     #verReplica{
-        margin-left: 70px; 
-        margin-bottom: 10px;
+        border-radius: 15px;
+        padding: 10px;
+        margin: 10px;
+        background-color: #e5cadd;
     }
 </style>
 <script>
@@ -210,6 +212,7 @@
             
             {% if comentario.replicas|length > 0 %}
                 <button onclick="toggleReplicas(this)" id="verReplica">Mostrar Réplicas</button>
+            
             {% endif %}
             <div id="contReplica" style="display: none;">
                 {% for replica in comentario.replicas %}
@@ -217,7 +220,6 @@
                 
                 <div id="replica" class="container" >            
                     <div class="row">
-                        {{forloop.counter}}
                         <div class="col-md-2 d-flex align-items-center">
                             <img class="border rounded-circle border-1 border-dark"
                                 style="border-radius: 10px; max-width: 70%; max-height: 70%; width: auto; height: auto;" src="{{ replica.url_imagen_perfil }}">
@@ -252,7 +254,7 @@
                        </div>
                         <div class="col-md-2 d-flex align-items-center justify-content-center ">
                             <form method="POST"
-                                action="{% url 'incrementar_likes_replica' usuario_id=usuario_id pos=forloop.counter %}">
+                                action="{% url 'incrementar_likes_replica' usuario_id=usuario_id comentario_id=id_comentario pos=forloop.counter %}">
                                 {% csrf_token %}
                                 <div class="container" id="container_like">
                                     <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">

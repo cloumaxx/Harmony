@@ -114,25 +114,27 @@ def agregar_replica(request, usuario_id, comentario_id):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 @login_required
-def incrementar_likes_replica(request, usuario_id, pos):
-    print(pos)
-    replica_id = ""
-    """if request.method == 'POST':
+def incrementar_likes_replica(request,usuario_id, comentario_id, pos):
+    pos = int(pos) -1
+    print("pos: ",pos,"comentario_id: ",comentario_id,usuario_id)
+    
+    if request.method == 'POST':
         # Obtener el comentario de la base de datos
-        comentario = db_connection.db.Replicas.find_one({'_id': ObjectId(replica_id)})
-        
+        comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
         if comentario:
-            # Obtener los likes actuales del comentario
-            likes = comentario.get('likes', [])
-            if usuario_id not in likes:
-                # Agregar el usuario_id a los likes
-                likes.append(usuario_id)
-            elif usuario_id in likes:
-                likes.remove(usuario_id)
+            replicas = comentario.get('replicas', [])
+            replicaRevisar = replicas[pos]
+            likesActuales = replicaRevisar.get('likes', [])
+            print("->",likesActuales)
+            if usuario_id not in likesActuales:
+                likesActuales.append(usuario_id)
+            else:
+                likesActuales.remove(usuario_id)
+            replicas[pos]['likes'] = likesActuales
             # Actualizar los likes en la base de datos
-            db_connection.db.Replicas.update_one({'_id': ObjectId(replica_id)}, {'$set': {'likes': likes}})
-     # Redirigir al perfil del usuario actualizado
-   """ 
+            db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'replicas': replicas}})
+            
+       
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 @login_required
