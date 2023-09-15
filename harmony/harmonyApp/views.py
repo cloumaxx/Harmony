@@ -1,29 +1,17 @@
 from datetime import datetime
-from imaplib import _Authenticator
-import os
-from django.contrib.auth import logout
 from bson import ObjectId
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
-from django.shortcuts import get_object_or_404, redirect, render
-from pymongo import MongoClient
-from harmonyApp.chatbot.modelo.modelo_bert import respuesta_modelo_bert_contexto
+from django.http import  HttpResponseBadRequest, HttpResponseRedirect
+from django.shortcuts import  redirect, render
 from harmonyApp.forms import LoginForm
-from harmonyApp.models import Comentarios, Credenciales, Usuario, Replicas
+from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import  enviar_correo_inicio_sesion, get_Nombre, get_comentariosVer, get_img_perfil, get_inforeplicas
-from harmonyProject import settings
+from harmonyApp.operations.utils import  enviar_correo_inicio_sesion, get_Nombre, get_comentariosVer, get_img_perfil
 from harmonyProject.database import MongoDBConnection
-from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-from dateutil import parser
-from transformers import AutoTokenizer, AutoModelForQuestionAnswering, pipeline
-from textwrap import wrap
 from django.contrib import messages
-from django.core.paginator import Paginator, EmptyPage
+from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
-
 from millyApp.views import send_to_rasa
 
 
@@ -31,9 +19,7 @@ from millyApp.views import send_to_rasa
 db_connection = MongoDBConnection()
 chat = []
 
-
 def pantalla_inicial(request):
-
     return render(request,"pantalla_inicial\pantalla_incial.html")
 
 def login_required(view_func):
@@ -128,23 +114,27 @@ def agregar_replica(request, usuario_id, comentario_id):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 @login_required
-def incrementar_likes_replica(request, usuario_id, replica):
-    replica_id = replica.idReplica
+def incrementar_likes_replica(request,usuario_id, comentario_id, pos):
+    pos = int(pos) -1
+    print("pos: ",pos,"comentario_id: ",comentario_id,usuario_id)
+    
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
-        comentario = db_connection.db.Replicas.find_one({'_id': ObjectId(replica_id)})
-        
+        comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
         if comentario:
-            # Obtener los likes actuales del comentario
-            likes = comentario.get('likes', [])
-            if usuario_id not in likes:
-                # Agregar el usuario_id a los likes
-                likes.append(usuario_id)
-            elif usuario_id in likes:
-                likes.remove(usuario_id)
+            replicas = comentario.get('replicas', [])
+            replicaRevisar = replicas[pos]
+            likesActuales = replicaRevisar.get('likes', [])
+            print("->",likesActuales)
+            if usuario_id not in likesActuales:
+                likesActuales.append(usuario_id)
+            else:
+                likesActuales.remove(usuario_id)
+            replicas[pos]['likes'] = likesActuales
             # Actualizar los likes en la base de datos
-            db_connection.db.Replicas.update_one({'_id': ObjectId(replica_id)}, {'$set': {'likes': likes}})
-     # Redirigir al perfil del usuario actualizado
+            db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'replicas': replicas}})
+            
+       
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 @login_required
@@ -165,6 +155,31 @@ def incrementar_likes(request, usuario_id, comentario_id):
             db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
+@login_required
+def calificarApp(request, usuario_id):
+    if request.method == 'POST':
+        calificacion = request.POST.get('rating')
+        # Obtener el comentario de la base de datos
+        calificacionEntrante = db_connection.db.Calificacion.find_one({'id_usuario': usuario_id})
+        idCalificacion = calificacionEntrante.get('_id')
+        if calificacionEntrante:
+            db_connection.db.Calificacion.update_one(
+                {'_id': ObjectId(idCalificacion)},
+                {
+                    '$set': {
+                        'calificacion': int(calificacion),
+                        'fecha': datetime.now()
+                    }
+                }
+            )
+        else:
+            calificacion_dict = {
+                'id_usuario': usuario_id,
+                'calificacion': int(calificacion),
+                'fecha': datetime.now()
+            }
+            db_connection.db.Calificacion.insert_one(calificacion_dict)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 @login_required
 def pantalla_nuevo_comentario(request, usuario_id):
     if request.method == 'POST':

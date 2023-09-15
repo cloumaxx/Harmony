@@ -44,7 +44,12 @@
         
         width: 80%;
     }
-
+    #verReplica{
+        border-radius: 15px;
+        padding: 10px;
+        margin: 10px;
+        background-color: #e5cadd;
+    }
 </style>
 <script>
     function abrirModalComentario(idModal) {
@@ -84,7 +89,18 @@
         // Ocultar la modal actual
         $("#" + replica).modal("hide");
     }
+    function toggleReplicas(button) {
+            var replicaContainer = button.nextElementSibling;
+            if (replicaContainer.style.display === "none" || replicaContainer.style.display === "") {
+                replicaContainer.style.display = "block";
+                button.textContent = "Ocultar Réplicas";
+            } else {
+                replicaContainer.style.display = "none";
+                button.textContent = "Mostrar Réplicas";
+            }
+        }
 </script>
+
 <div id="">
     <br><br>
 
@@ -96,8 +112,7 @@
     
         <div class="row">
             
-            <div class="col-md-10">
-                
+            <div class="col-md-10">            
                 <div  class="container">
                     <div class="row" id="contComentario">
                         <div class="col-md-2 d-flex align-items-center">
@@ -194,104 +209,114 @@
         <br>
         
         <div id="replicas_realizadas" >
-            {% for replica in comentario.replicas %}
-            <div id="replica" class="container">
+            
+            {% if comentario.replicas|length > 0 %}
+                <button onclick="toggleReplicas(this)" id="verReplica">Mostrar Réplicas</button>
+            
+            {% endif %}
+            <div id="contReplica" style="display: none;">
+                {% for replica in comentario.replicas %}
+
                 
-                <div class="row">
-                    <div class="col-md-2 d-flex align-items-center">
-                        <img class="border rounded-circle border-1 border-dark"
-                            style="border-radius: 10px; max-width: 70%; max-height: 70%; width: auto; height: auto;" src="{{ replica.url_imagen_perfil }}">
-                    </div>
-                    <div class="col-md-6">
-    
-                        <h7 style="margin-top: 10%;margin-left: 4%; "><b>{{replica.nombreRedactor}}</b> </h7>
-    
-    
-                        {% with valor=200 %}
-                        {% if replica.contenidoReplica|length > valor %}
-                        <p id="texto_comentario_replica">{{ replica.contenidoReplica|truncatechars:valor }} </p>
-                        <button id="boton_text_coment_replica" onclick="mostrarTextoReplica()">Mostrar más</button>
-                        <script>
-                            function mostrarTextoReplica() {
-                                var textoComentario_replica = document.getElementById("texto_comentario_replica");
-                                var botonTextComent_replica = document.getElementById("boton_text_coment_replica");
-                                if (textoComentario_replica.innerHTML === "{{ replica.contenidoReplica }}") {
-                                    textoComentario_replica.innerHTML =
-                                        "{{ replica.contenidoReplica|truncatechars:valor }}";
-                                    botonTextComent_replica.innerHTML = "Mostrar más";
-                                } else {
-                                    textoComentario_replica.innerHTML = "{{ replica.contenidoReplica }}";
-                                    botonTextComent_replica.innerHTML = "Mostrar menos";
+                <div id="replica" class="container" >            
+                    <div class="row">
+                        <div class="col-md-2 d-flex align-items-center">
+                            <img class="border rounded-circle border-1 border-dark"
+                                style="border-radius: 10px; max-width: 70%; max-height: 70%; width: auto; height: auto;" src="{{ replica.url_imagen_perfil }}">
+                        </div>
+                        <div class="col-md-6">
+        
+                            <h7 style="margin-top: 10%;margin-left: 4%; "><b>{{replica.nombreRedactor}}</b> </h7>
+        
+        
+                            {% with valor=200 %}
+                            {% if replica.contenidoReplica|length > valor %}
+                            <p id="texto_comentario_replica">{{ replica.contenidoReplica|truncatechars:valor }} </p>
+                            <button id="boton_text_coment_replica" onclick="mostrarTextoReplica()">Mostrar más</button>
+                            <script>
+                                function mostrarTextoReplica() {
+                                    var textoComentario_replica = document.getElementById("texto_comentario_replica");
+                                    var botonTextComent_replica = document.getElementById("boton_text_coment_replica");
+                                    if (textoComentario_replica.innerHTML === "{{ replica.contenidoReplica }}") {
+                                        textoComentario_replica.innerHTML =
+                                            "{{ replica.contenidoReplica|truncatechars:valor }}";
+                                        botonTextComent_replica.innerHTML = "Mostrar más";
+                                    } else {
+                                        textoComentario_replica.innerHTML = "{{ replica.contenidoReplica }}";
+                                        botonTextComent_replica.innerHTML = "Mostrar menos";
+                                    }
                                 }
-                            }
-                        </script>
-                        {% else %}
-                        <p>{{ replica.contenidoReplica }}</p>
-                        {% endif %}
-                        {% endwith %}
-                   </div>
-                    <div class="col-md-2 d-flex align-items-center justify-content-center ">
-                        <form method="POST"
-                            action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
-                            {% csrf_token %}
-                            <div class="container" id="container_like">
-                                <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        style="color: red;" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                            </script>
+                            {% else %}
+                            <p>{{ replica.contenidoReplica }}</p>
+                            {% endif %}
+                            {% endwith %}
+                       </div>
+                        <div class="col-md-2 d-flex align-items-center justify-content-center ">
+                            <form method="POST"
+                                action="{% url 'incrementar_likes_replica' usuario_id=usuario_id comentario_id=id_comentario pos=forloop.counter %}">
+                                {% csrf_token %}
+                                <div class="container" id="container_like">
+                                    <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                            style="color: red;" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                        </svg>
+                                    </button>
+                                    
+                                    <p>{{ replica.likes|length }}</p>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="btn-group dropup d-flex align-items-center" style="height: 100%;">
+                                <button id="btn_dropdown" type="button" class="btn-svg" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                        style="color:black; width: 25px; height: 25px; " class="bi bi-three-dots-vertical"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
                                     </svg>
                                 </button>
-                                <p>{{ replica.likes|length }}</p>
+                                
+                                <ul class="dropdown-menu">
+                                    <!-- Enlaces del menú desplegable -->
+                                    <li>
+                                        <a class="dropdown-item"
+                                            onclick="abrirModalAgregarReplica('modalAgregarReplica{{ id_comentario }}')">Responder</a>
+        
+        
+                                    </li>
+        
+                                    {% if usuario_id == replica.idRedactorReplica %}
+                                    <li>
+        
+                                        <a class="dropdown-item" onclick="abrirModalReplica('{{ forloop.counter }}')">Editar</a>
+        
+        
+                                    </li>
+                                    <li>
+                                        <form method="POST"
+                                            action="{% url 'borrar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
+                                            {% csrf_token %}
+                                            <a class="dropdown-item">
+                                                <button type="submit" class="btn btn-sm p-0">Eliminar</button>
+                                            </a>
+                                        </form>
+                                    </li>
+                                    {% endif %}
+                                </ul>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="btn-group dropup d-flex align-items-center" style="height: 100%;">
-                            <button id="btn_dropdown" type="button" class="btn-svg" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                    style="color:black; width: 25px; height: 25px; " class="bi bi-three-dots-vertical"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                                </svg>
-                            </button>
-                            
-                            <ul class="dropdown-menu">
-                                <!-- Enlaces del menú desplegable -->
-                                <li>
-                                    <a class="dropdown-item"
-                                        onclick="abrirModalAgregarReplica('modalAgregarReplica{{ id_comentario }}')">Responder</a>
-    
-    
-                                </li>
-    
-                                {% if usuario_id == replica.idRedactorReplica %}
-                                <li>
-    
-                                    <a class="dropdown-item" onclick="abrirModalReplica('{{ forloop.counter }}')">Editar</a>
-    
-    
-                                </li>
-                                <li>
-                                    <form method="POST"
-                                        action="{% url 'borrar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
-                                        {% csrf_token %}
-                                        <a class="dropdown-item">
-                                            <button type="submit" class="btn btn-sm p-0">Eliminar</button>
-                                        </a>
-                                    </form>
-                                </li>
-                                {% endif %}
-                            </ul>
+        
                         </div>
-    
                     </div>
                 </div>
+                <br>
+                {% endfor %}
             </div>
-            <br>
-            {% endfor %}
+            
         </div>
     </div>
     <br>
@@ -306,12 +331,13 @@
                         onclick="cerrarAgregarReplica('modalAgregarReplica{{ id_comentario }}')"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <!-- Formulario para editar el comentario -->
+                <div class="modal-body" style="text-align: center;">
                     <form method="POST"
                         action="{% url 'agregar_replica' usuario_id=usuario_id comentario_id=id_comentario %}">
                         {% csrf_token %}
-                        <input name="replica" style="width: 90%;" placeholder="Escribe algo">
+                        <textarea name="replica" style="width: 90%; height: 150px; "
+                        placeholder="Escribe algo"></textarea>
+                        <br><br>    
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
@@ -330,13 +356,14 @@
                         onclick="cerrarModalComentario('modalEditarComentario{{ id_comentario }}')"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="text-align: center;">
                     <!-- Formulario para editar el comentario -->
                     <form method="POST"
                         action="{% url 'editar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
                         {% csrf_token %}
-                        <input type="text" name="comentario" value="{{ comentario.comentario }}"
-                            placeholder="Editar Comentario">
+                        <p>Comentario actual: {{comentario.comentario}}</p>
+                        <textarea name="comentario" value="{{ comentario.comentario }}" style="width: 90%; height: 150px; "
+                        placeholder="{{ comentario.comentario }}">{{comentario.comentario}}</textarea> <br><br>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
@@ -363,4 +390,6 @@
         </div>
     </div>
     {% endfor %}
+    <br>
+    <br>
 </div>
