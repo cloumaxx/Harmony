@@ -180,6 +180,7 @@ def calificarApp(request, usuario_id):
             }
             db_connection.db.Calificacion.insert_one(calificacion_dict)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
 @login_required
 def pantalla_nuevo_comentario(request, usuario_id):
     if request.method == 'POST':
@@ -352,7 +353,7 @@ def pantalla_perfil_usuario(request,usuario_id):
         comentarios =  db_connection.db.Comentarios.find({'id_reda_Comet': usuario_id}) # Obtener todos los comentarios de la base de datos
         comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection),get_img_perfil(comentario,db_connection), str(comentario['_id'])) for comentario in comentarios]
 
-        items_por_pagina = 2
+        items_por_pagina = 100
         paginator = Paginator(comentarios_con_nombre_id, items_por_pagina)
         # Obtener el número de página a mostrar
         numero_pagina = request.GET.get('page')
