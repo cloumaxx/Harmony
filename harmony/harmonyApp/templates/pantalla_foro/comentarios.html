@@ -359,9 +359,9 @@
                     <form method="POST"
                         action="{% url 'editar_comentario' usuario_id=usuario_id comentario_id=id_comentario %}">
                         {% csrf_token %}
-                        
+                        <p>Comentario actual: {{comentario.comentario}}</p>
                         <textarea name="comentario" value="{{ comentario.comentario }}" style="width: 90%; height: 150px; "
-                        placeholder="Editar Comentario"></textarea> <br><br>
+                        placeholder="{{ comentario.comentario }}">{{comentario.comentario}}</textarea> <br><br>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
