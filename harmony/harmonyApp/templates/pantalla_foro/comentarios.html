@@ -112,38 +112,6 @@
         }
     }
 
-    function ocultarBotonMas(idBoton, idBotonMenos, idTextoCompleto, idTextoResumido) {
-        // Obtén una referencia al botón "Mostrar más" por su ID
-        var botonMas = document.getElementById(idBoton);
-
-        // Obtén una referencia al botón "Mostrar menos" correspondiente
-        var botonMenos = document.getElementById(idBotonMenos);
-
-        // Oculta el botón "Mostrar más" y muestra el botón "Mostrar menos"
-        botonMas.style.display = "none";
-        botonMenos.style.display = "block";
-
-        // Muestra el texto completo y oculta el texto resumido
-        document.getElementById(idTextoCompleto).style.display = "block";
-        document.getElementById(idTextoResumido).style.display = "none";
-    }
-
-    function ocultarBotonMenos(idBoton, idBotonMas, idTextoCompleto, idTextoResumido) {
-        // Obtén una referencia al botón "Mostrar menos" por su ID
-        var botonMenos = document.getElementById(idBoton);
-
-        // Obtén una referencia al botón "Mostrar más" correspondiente
-        var botonMas = document.getElementById(idBotonMas);
-
-        // Oculta el botón "Mostrar menos" y muestra el botón "Mostrar más"
-        botonMenos.style.display = "none";
-        botonMas.style.display = "block";
-
-        // Oculta el texto completo y muestra el texto resumido
-        document.getElementById(idTextoCompleto).style.display = "none";
-        document.getElementById(idTextoResumido).style.display = "block";
-    }
-
 
     function ocultarBotonMasReplica(idBoton, idBotonMenos, idTextoCompleto, idTextoResumido) {
         // Obtén una referencia al botón "Mostrar más" por su ID
@@ -176,6 +144,39 @@
         document.getElementById(idTextoCompleto).style.display = "none";
         document.getElementById(idTextoResumido).style.display = "block";
     }
+
+    function toggleVerMensajeCompleto(button) {
+        var replicaContainer = button.previousElementSibling; // Obtén el elemento <p> con el comentario
+        var comentario = replicaContainer.getAttribute(
+        'data-comentario'); // Obtiene el comentario completo desde el atributo personalizado
+        var valor = parseInt(replicaContainer.getAttribute(
+        'data-truncate')); // Obtién el valor de truncatechars desde el atributo personalizado
+
+        if (replicaContainer.getAttribute('data-truncate')) {
+            // Si el atributo 'data-truncate' existe, significa que se está utilizando truncatechars
+            if (replicaContainer.classList.contains('completo')) {
+                // Si el comentario está completo, aplica truncatechars
+                replicaContainer.textContent = comentario.substring(0, valor) + '...';
+                replicaContainer.classList.remove('completo');
+                button.textContent = 'Mostrar más';
+            } else {
+                // Si el comentario está truncado, muestra el comentario completo
+                replicaContainer.textContent = comentario;
+                replicaContainer.classList.add('completo');
+                button.textContent = 'Mostrar menos';
+            }
+        } else {
+            // Si no existe el atributo 'data-truncate', no se está utilizando truncatechars
+            // En este caso, simplemente alternamos entre mostrar/ocultar el contenido completo
+            if (replicaContainer.classList.contains('completo')) {
+                replicaContainer.classList.remove('completo');
+                button.textContent = 'Mostrar más';
+            } else {
+                replicaContainer.classList.add('completo');
+                button.textContent = 'Mostrar menos';
+            }
+        }
+    }
 </script>
 
 <div id="">
@@ -202,30 +203,15 @@
                             {% with valor=200 %}
                             {% with contMensaje=comentario.comentario %}
                             {% if contMensaje|length > valor %}
-                            <p style="text-align: justify;display: block;" id="comentario_{{ comentario.id }}">
-                                <span id="textoCompleto{{ comentario.id }}"
-                                    style="display: none;">{{ contMensaje }}</span>
-                                <span id="textoResumido{{ comentario.id }}">{{ contMensaje|truncatechars:valor }}</span>
-                            </p>
-                            <div style="display: flex; justify-content: center;">
-                                <button class="controlVisual" id="mostrarMenosBoton{{ id_comentario }}"
-                                    style="display: none;"
-                                    onclick="ocultarBotonMenos('mostrarMenosBoton{{ id_comentario }}', 'mostrarMasBoton{{ id_comentario }}', 'textoCompleto{{ comentario.id }}', 'textoResumido{{ comentario.id }}')">
-                                    Mostrar menos
-                                </button>
-                                <button class="controlVisual" id="mostrarMasBoton{{ id_comentario }}"
-                                    style="display: block;"
-                                    onclick="ocultarBotonMas('mostrarMasBoton{{ id_comentario }}', 'mostrarMenosBoton{{ id_comentario }}', 'textoCompleto{{ comentario.id }}', 'textoResumido{{ comentario.id }}')">
-                                    Mostrar más
-                                </button>
-                            </div>
-
-
+                            <p id="texto_comentario" data-comentario="{{ contMensaje }}" data-truncate="{{ valor }}">
+                                {{ contMensaje|truncatechars:valor }}</p>
+                            <button id="boton_text_coment" onclick="toggleVerMensajeCompleto(this)">Mostrar más</button>
                             {% else %}
                             <p style="text-align: justify;">{{ contMensaje }}</p>
                             {% endif %}
                             {% endwith %}
                             {% endwith %}
+
 
                         </div>
                         <div class="col-md-2 d-flex align-items-center justify-content-end">
@@ -345,32 +331,37 @@
 
     
 -->
-{% with valor=200 %}
-{% with contMensaje=replica.contenidoReplica %}
-{% if contMensaje|length > valor %}
-<div style="display: flex; justify-content: space-between; align-items: center;">
-    <p style="text-align: justify; margin-right: 10px;" id="comentario_{{ comentario.id }}_{{ forloop.counter }}">
-        <span id="textoCompleto{{ comentario.id }}_{{ forloop.counter }}" style="display: none;">{{ contMensaje }}</span>
-        <span id="textoResumido{{ comentario.id }}_{{ forloop.counter }}">{{ contMensaje|truncatechars:valor }}</span>
-    </p>
-    <div style="display: flex; justify-content: center;">
-        <button class="controlVisual" id="mostrarMenosBoton{{ id_comentario }}_{{ forloop.counter }}"
-            style="display: none;"
-            onclick="ocultarBotonMenos('mostrarMenosBoton{{ id_comentario }}_{{ forloop.counter }}', 'mostrarMasBoton{{ id_comentario }}_{{ forloop.counter }}', 'textoCompleto{{ comentario.id }}_{{ forloop.counter }}', 'textoResumido{{ comentario.id }}_{{ forloop.counter }}')">
-            Mostrar menos
-        </button>
-        <button class="controlVisual" id="mostrarMasBoton{{ id_comentario }}_{{ forloop.counter }}"
-            style="display: block;"
-            onclick="ocultarBotonMas('mostrarMasBoton{{ id_comentario }}_{{ forloop.counter }}', 'mostrarMenosBoton{{ id_comentario }}_{{ forloop.counter }}', 'textoCompleto{{ comentario.id }}_{{ forloop.counter }}', 'textoResumido{{ comentario.id }}_{{ forloop.counter }}')">
-            Mostrar más
-        </button>
-    </div>
-</div>
-{% else %}
-<p style="text-align: justify;">{{ contMensaje }}</p>
-{% endif %}
-{% endwith %}
-{% endwith %}
+                            {% with valor=200 %}
+                            {% with contMensaje=replica.contenidoReplica %}
+                            {% if contMensaje|length > valor %}
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <p style="text-align: justify; margin-right: 10px;"
+                                    id="comentario_{{ comentario.id }}_{{ forloop.counter }}">
+                                    <span id="textoCompleto{{ comentario.id }}_{{ forloop.counter }}"
+                                        style="display: none;">{{ contMensaje }}</span>
+                                    <span
+                                        id="textoResumido{{ comentario.id }}_{{ forloop.counter }}">{{ contMensaje|truncatechars:valor }}</span>
+                                </p>
+                                <div style="display: flex; justify-content: center;">
+                                    <button class="controlVisual"
+                                        id="mostrarMenosBoton{{ id_comentario }}_{{ forloop.counter }}"
+                                        style="display: none;"
+                                        onclick="ocultarBotonMenos('mostrarMenosBoton{{ id_comentario }}_{{ forloop.counter }}', 'mostrarMasBoton{{ id_comentario }}_{{ forloop.counter }}', 'textoCompleto{{ comentario.id }}_{{ forloop.counter }}', 'textoResumido{{ comentario.id }}_{{ forloop.counter }}')">
+                                        Mostrar menos
+                                    </button>
+                                    <button class="controlVisual"
+                                        id="mostrarMasBoton{{ id_comentario }}_{{ forloop.counter }}"
+                                        style="display: block;"
+                                        onclick="ocultarBotonMas('mostrarMasBoton{{ id_comentario }}_{{ forloop.counter }}', 'mostrarMenosBoton{{ id_comentario }}_{{ forloop.counter }}', 'textoCompleto{{ comentario.id }}_{{ forloop.counter }}', 'textoResumido{{ comentario.id }}_{{ forloop.counter }}')">
+                                        Mostrar más
+                                    </button>
+                                </div>
+                            </div>
+                            {% else %}
+                            <p style="text-align: justify;">{{ contMensaje }}</p>
+                            {% endif %}
+                            {% endwith %}
+                            {% endwith %}
                             <!--
  {% with valor=200 %}
                             {% if replica.contenidoReplica|length > valor %}
