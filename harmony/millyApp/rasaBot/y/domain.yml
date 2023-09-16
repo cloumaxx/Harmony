@@ -12,6 +12,7 @@ intents:
   - sintomas_ansiedad
   - tratamiento_ansiedad
   - origen_ansiedad
+  - agradecimiento
   - exception
 
 responses:
@@ -37,13 +38,16 @@ responses:
   - text: "¿Que te gustaría saber de la ansiedad?"
 
   utter_definicion_ansiedad :
-    - text: La ansiedad es una respuesta natural del cuerpo ante situaciones estresantes. Puede manifestarse como preocupación intensa, nerviosismo y tensión.
+  - text: La ansiedad es una respuesta natural del cuerpo ante situaciones estresantes. Puede manifestarse como preocupación intensa, nerviosismo y tensión.
 
   utter_sintomas_ansiedad: 
-    - text: Los síntomas de la ansiedad pueden incluir palpitaciones, sudoración, dificultad para respirar, pensamientos intrusivos y evitación de situaciones temidas.
+  - text: Los síntomas de la ansiedad pueden incluir palpitaciones, sudoración, dificultad para respirar, pensamientos intrusivos y evitación de situaciones temidas.
 
   utter_tratamiento_ansiedad: 
-    - text: Lo siento, no estoy en la capacidad para recomendar tratamientos para la ansiedad
+  - text: Lo siento, no estoy en la capacidad para recomendar tratamientos para la ansiedad
+
+  utter_agradecimiento: 
+  - text: Es un placer ayudarte. Si necesitas algo mas, no dudes en preguntar
 
   utter_exception: 
   - text: Lo siento, no entendí tu pregunta

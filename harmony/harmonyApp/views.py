@@ -475,6 +475,7 @@ def crearNuevoChat(request, usuario_id,posicion=0):
 
 @login_required
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
+    print("Entro",posicion)
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})

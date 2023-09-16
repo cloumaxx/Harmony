@@ -57,6 +57,11 @@ rules:
   - intent: origen_ansiedad
   - action: utter_origen_ansiedad
 
+- rule: Responde cuando alguien te agradezca
+  steps:
+  - intent: agradecimiento
+  - action: utter_agradecimiento
+
 - rule: Responde la excepcion cuando las preguntas no sean relacionadas con los temas anteriores
   steps:
   - intent: exception
