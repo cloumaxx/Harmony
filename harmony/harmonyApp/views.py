@@ -97,6 +97,7 @@ def agregar_replica(request, usuario_id, comentario_id):
                     
                     'idRedactorReplica': usuario_id,
                     'contenidoReplica': replica_comentario,
+                    'fechaPublicacion': datetime.now(),
                     'likes': []
                 }
                 replicas.append(replica_dict)
