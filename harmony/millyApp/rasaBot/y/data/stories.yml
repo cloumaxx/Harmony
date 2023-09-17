@@ -63,7 +63,7 @@ stories:
     - intent: definicion_ansiedad
     - action: utter_definicion_ansiedad
 
-- story: definicion_ansiedad path 2
+- story: definicion_ansiedad path 3
   steps: 
     - intent: sentir_ansiedad
     - action: utter_sentir_ansiedad
@@ -71,6 +71,47 @@ stories:
     - action: utter_definicion_ansiedad
     - intent: origen_ansiedad
     - action: utter_origen_ansiedad
+
+- story: sentir_ansiedad path
+  steps: 
+    - intent: sentir_ansiedad
+    - action: utter_sentir_ansiedad
+    - intent: tratamiento_ansiedad
+    - action: utter_tratamiento_ansiedad
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
+- story: sentir_ansiedad path 2
+  steps: 
+    - intent: sentir_ansiedad
+    - action: utter_sentir_ansiedad
+    - intent: definicion_ansiedad
+    - action: utter_definicion_ansiedad
+    - intent: sintomas_ansiedad
+    - action: utter_sintomas_ansiedad
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
+- story: sentir_ansiedad path 3
+  steps: 
+    - intent: sentir_ansiedad
+    - action: utter_sentir_ansiedad
+    - intent: sintomas_ansiedad
+    - action: utter_sintomas_ansiedad
+    - intent: tratamiento_ansiedad
+    - action: utter_tratamiento_ansiedad
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
+- story: sentir_ansiedad path 4
+  steps: 
+    - intent: sentir_ansiedad
+    - action: utter_sentir_ansiedad
+    - intent: tratamiento_ansiedad
+    - action: utter_tratamiento_ansiedad
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
 
 - story: sintomas_ansiedad path
   steps:

@@ -58,6 +58,7 @@ def get_inforeplicas(replica, db_connection):
             "nombreRedactor": nombreRedactor,
             "url_imagen_perfil": url_imagen_perfil,
             "contenidoReplica": replica['contenidoReplica'],
+            "fechaPublicacion":replica['fechaPublicacion'],
             "likes": replica['likes']
         }
         return dic

@@ -1361,6 +1361,509 @@ nlu:
     - Cual es la relacion entre la ansiedad y la terapia de hipnosis
     - Que aplicaciones de seguimiento de sueño y bienestar general son utiles para la ansiedad
         
+- intent: agradecimiento
+  examples: |
+    - Gracias
+    - Muchas gracias
+    - Mil gracias
+    - Te agradezco
+    - Estoy agradecido/a
+    - Te estoy agradecido/a
+    - Aprecio tu amabilidad
+    - Eres muy amable
+    - Te lo agradezco mucho
+    - Gracias de corazón
+    - Te doy las gracias
+    - Agradecido/a eternamente
+    - No sé cómo agradecerte
+    - Te debo una
+    - Has hecho mi día
+    - Eres un/a salvavidas
+    - Estoy en deuda contigo
+    - Estoy agradecido/a hasta las lágrimas
+    - Eres un ángel
+    - No puedo agradecerte lo suficiente
+    - Me salvaste la vida
+    - Eres un gran apoyo
+    - Mi gratitud es infinita
+    - Te debo mucho
+    - No sé qué haría sin ti
+    - No puedo expresar lo agradecido/a que estoy
+    - Tú eres mi héroe/heroína
+    - Me haces sentir afortunado/a
+    - Has sido muy generoso/a
+    - Eres un tesoro
+    - No sé cómo agradecerte lo suficiente
+    - Te estoy inmensamente agradecido/a
+    - Eres un sol
+    - Mi más sincero agradecimiento
+    - Eres una bendición
+    - Eres un regalo
+    - Tengo mucho que agradecer
+    - Eres un ser especial
+    - Eres increíblemente amable
+    - Aprecio mucho tu ayuda
+    - Eres un verdadero amigo/amiga
+    - Me siento bendecido/a por tenerte
+    - Tu bondad no tiene precio
+    - Me haces sentir agradecido/a
+    - Tu generosidad no tiene límites
+    - Has hecho una gran diferencia
+    - Estoy en deuda contigo por siempre
+    - Mi gratitud es sincera
+    - No puedo agradecerte lo suficiente por esto
+    - Eres una persona excepcional
+    - Gracias a montones
+    - Eres un amor
+    - ¡Mil y una gracias!
+    - Me dejas sin palabras
+    - Eres un solazo
+    - ¡Qué detallazo!
+    - Tu gesto es oro molido
+    - Eres un amor con patas
+    - Me sacaste una sonrisa gigante
+    - ¡De perlas!
+    - Me caes de perlas
+    - Eres una joya
+    - Gracias por ser tú
+    - Eres un 10
+    - Eres un sol radiante
+    - Mi corazón te aplaude
+    - Gracias con todo mi ser
+    - Gracias hasta el infinito y más allá
+    - Eres un as
+    - Eres un sol brillante
+    - Estoy agradecido/a hasta las trancas
+    - Eres un ser excepcional
+    - Tienes un corazón de oro
+    - Tu ayuda vale su peso en oro
+    - Eres un ser humano maravilloso
+    - Eres un ángel caído del cielo
+    - Me haces sentir en las nubes
+    - Tienes un corazón enorme
+    - Eres un ejemplo a seguir
+    - Tu generosidad es digna de admiración
+    - Eres un tesoro invaluable
+    - Eres un ser lleno de luz
+    - Tienes un corazón gigante
+    - Tu amabilidad es insuperable
+    - Eres un ser único en un millón
+    - Tu ayuda es un regalo del cielo
+    - Me haces sentir como en un sueño
+    - Eres un ser lleno de amor
+    - Eres una bendición en mi vida
+    - Tu apoyo me hace sentir agradecido/a
+    - Tu generosidad es deslumbrante
+    - Eres un ser lleno de compasión
+    - Tu bondad es inspiradora
+    - Tu ayuda es como un rayo de sol
+    - Tienes un alma noble
+    - Eres un ser lleno de empatía
+    - Tu amabilidad es contagiosa
+    - Eres un faro de esperanza
+    - Tu apoyo es un verdadero regalo
+    - Eres una persona increíble
+    - Estoy en deuda contigo por siempre y un día.
+    - No puedo agradecerte lo suficiente por tu bondad.
+    - Tu acto de amabilidad ha dejado una huella en mi corazón.
+    - Eres un ser humano excepcional.
+    - Tu ayuda ha sido un verdadero regalo.
+    - Eres un ejemplo de generosidad.
+    - Mi corazón te aplaude de pie.
+    - Eres una persona admirable.
+    - Tienes un alma pura.
+    - Eres una persona de gran corazón.
+    - Tu amabilidad es un bálsamo para el alma.
+    - Eres un ser lleno de compasión y empatía.
+    - Tu generosidad es asombrosa.
+    - Tu apoyo me ha dado fuerzas.
+    - Eres un faro de luz en tiempos oscuros.
+    - Eres un rayo de sol en mi vida.
+    - Tu ayuda ha hecho una diferencia enorme.
+    - Eres un ser extraordinario.
+    - Tu amabilidad es como un oasis en el desierto.
+    - Eres un ser lleno de amor y luz.
+    - Tu apoyo es un regalo que atesoro.
+    - Eres una fuente de inspiración.
+    - Tu generosidad es incomparable.
+    - Mi gratitud hacia ti es inmensa.
+    - Eres un modelo a seguir.
+    - Tienes un corazón de oro puro.
+    - Eres un tesoro invaluado.
+    - Eres una persona excepcionalmente buena.
+    - Tu acto de bondad es inolvidable.
+    - Estoy profundamente agradecido/a contigo.
+    - Tu ayuda ha hecho mi vida mejor.
+    - Eres un ser humano verdaderamente generoso.
+    - Tu amabilidad es un regalo del cielo.
+    - Eres un ser lleno de gracia.
+    - Tu apoyo me ha conmovido profundamente.
+    - Eres un ser lleno de comprensión.
+    - Mi gratitud hacia ti es eterna.
+    - Tienes un corazón cálido y amable.
+    - Eres un ser lleno de empatía.
+    - Tu generosidad es deslumbrante.
+    - Estoy infinitamente agradecido/a contigo.
+    - Tu ayuda ha sido como un faro en la tormenta.
+    - Eres un ser excepcionalmente amable.
+    - Tu amabilidad es un regalo precioso.
+    - Tienes un corazón de oro.
+    - Eres un ser humano increíblemente bondadoso.
+    - Tu generosidad es incomparable.
+    - Mi gratitud hacia ti no tiene límites.
+    - Eres un ser lleno de compasión.
+    - Tu apoyo es un regalo que valoro profundamente.
+    - Eres un modelo de generosidad.
+    - Tienes un alma pura y noble.
+    - Eres un ser lleno de amor y luz.
+    - Tu ayuda ha sido un faro de esperanza.
+    - Eres una persona admirable.
+    - Tu amabilidad es un tesoro.
+    - Tienes un corazón cálido y acogedor.
+    - Eres un ser lleno de empatía y comprensión.
+    - Tu generosidad es inspiradora.
+    - Estoy profundamente agradecido/a por tu apoyo.
+    - Tu acto de bondad es un ejemplo para todos.
+    - Eres un ser excepcionalmente generoso.
+    - Tu amabilidad es un regalo invaluable.
+    - Tienes un corazón de oro puro y brillante.
+    - Eres un ser humano excepcional.
+    - Tu generosidad es digna de admiración.
+    - Mi gratitud hacia ti es sincera y profunda.
+    - Eres un ser lleno de compasión y amor.
+    - Tu ayuda ha marcado una diferencia significativa en mi vida.
+    - Eres un faro de luz en la oscuridad.
+    - Tu amabilidad es un rayo de sol.
+    - Tienes un alma pura y noble.
+    - Eres un ser lleno de amor y calidez.
+    - Tu apoyo es un tesoro que valoro enormemente.
+    - Eres un modelo a seguir en generosidad.
+    - Tienes un corazón de oro radiante.
+    - Eres un ser humano excepcionalmente amable.
+    - Tu generosidad es asombrosa y conmovedora.
+    - Mi gratitud hacia ti es inmensurable.
+    - Eres un ser lleno de compasión y empatía.
+    - Tu ayuda ha hecho que mi vida sea más fácil.
+    - Eres un faro de esperanza en tiempos difíciles.
+    - Tu amabilidad es un regalo invaluable.
+    - Tienes un corazón cálido y generoso.
+    - Eres un ser lleno de amor y luz.
+    - Tu apoyo es un regalo que atesoro profundamente.
+    - Eres una fuente de inspiración para todos.
+    - Tu generosidad es digna de elogio.
+    - Estoy profundamente agradecido/a por tu bondad.
+    - Tu acto de amabilidad ha tocado mi corazón.
+    - Eres un ser excepcionalmente generoso y amable.
+    - Tu amabilidad es un tesoro precioso.
+    - Tienes un corazón de oro puro y radiante.
+    - Eres un ser humano excepcional.
+    - Tu generosidad es incomparable y deslumbrante.
+    - Mi gratitud hacia ti no tiene fin.
+    - Eres un ser lleno de compasión y amor.
+    - Tu ayuda ha sido un faro de luz en mi vida.
+    - Eres una persona admirable y excepcional.
+    - Tu amabilidad es un regalo del cielo.
+    - Tienes un corazón cálido y acogedor.
+    - Eres un ser lleno de empatía y comprensión.
+    - Tu generosidad es inspiradora y conmovedora.
+    - Estoy profundamente agradecido/a por tu apoyo inquebrantable.
+    - Tu acto de bondad es un ejemplo para todos nosotros.
+    - Eres un ser excepcionalmente generoso y amable.
+    - Tu amabilidad es un tesoro invaluable.
+    - Tienes un corazón de oro puro y brillante.
+    - Eres un ser humano excepcionalmente amable y bondadoso.
+    - Tu generosidad es digna de admiración y respeto.
+    - Mi gratitud hacia ti es sincera y profunda como el océano.
+    - Eres un ser lleno de compasión y amor incondicional.
+    - Tu ayuda ha marcado una diferencia positiva en mi vida.
+    - Eres un faro de luz que ilumina mi camino.
+    - Tu amabilidad es un rayo de sol en mi día.
+    - Tienes un alma pura y noble que inspira a todos.
+    - Eres un ser lleno de amor y luz que irradia positividad.
+    - Tu apoyo es un tesoro que valoro más allá de las palabras.
+    - Eres una fuente constante de inspiración en mi vida.
+    - Tu generosidad es admirable y ejemplar.
+    - Estoy profundamente agradecido/a por tu bondad inquebrantable.
+    - Tu acto de amabilidad ha dejado una huella imborrable en mi corazón.
+    - Eres un ser excepcionalmente generoso y desinteresado.
+    - Tu amabilidad es un regalo invaluable que atesoro con gratitud.
+    - Tienes un corazón de oro puro y luminoso que ilumina vidas.
+    - Eres un ser humano excepcionalmente amable y compasivo.
+    - Tu generosidad es insuperable y admirable.
+    - Mi gratitud hacia ti es tan vasta como el universo.
+    - Eres un ser lleno de compasión y amor inquebrantable.
+    - Tu ayuda ha sido un faro de esperanza en mis momentos más oscuros.
+    - Eres una persona admirable y ejemplar.
+    - Tu amabilidad es como un oasis en el desierto de la vida.
+    - Tienes un corazón cálido y acogedor que reconforta el alma.
+    - Eres un ser lleno de empatía y comprensión que inspira a otros.
+    - Tu generosidad es inspiradora y transformadora.
+    - Estoy profundamente agradecido/a por tu apoyo constante.
+    - Tu acto de bondad es un faro que guía a aquellos en necesidad.
+    - Eres un ser excepcionalmente generoso y altruista.
+    - Tu amabilidad es un tesoro preciado que valoro profundamente.
+    - Tienes un corazón de oro puro y resplandeciente que irradia amor.
+    - Eres un ser humano excepcionalmente amable y comprensivo.
+    - Tu generosidad es digna de respeto y admiración.
+    - Mi gratitud hacia ti no tiene límites ni fronteras.
+    - Eres un ser lleno de compasión y amor incondicional.
+    - Tu ayuda ha sido un faro de luz en mi vida cuando más lo necesitaba.
+    - Eres una persona admirable y ejemplar en todos los sentidos.
+    - Tu amabilidad es un rayo de sol en los días grises.
+    - Tienes un alma pura y noble que ilumina el mundo.
+    - Eres un ser lleno de amor y luz que inspira a todos a tu alrededor.
+    - Tu apoyo es un tesoro invaluable que nunca dejaré de valorar.
+    - Eres una fuente constante de inspiración y motivación en mi vida.
+    - Tu generosidad es digna de elogio y reconocimiento.
+    - Estoy profundamente agradecido/a por tu bondad infinita.
+    - Tu acto de amabilidad ha tocado mi corazón de una manera especial.
+    - Eres un ser excepcionalmente generoso y desinteresado en tus acciones.
+    - Tu amabilidad es un regalo precioso que atesoro con gratitud.
+    - Tienes un corazón de oro puro y radiante que brilla en la oscuridad.
+    - Eres un ser humano excepcionalmente amable y compasivo en todo momento.
+    - Tu generosidad es insuperable y ejemplar para todos nosotros.
+    - Mi gratitud hacia ti es tan profunda como el océano y tan vasta como el cielo.
+    - Eres un ser lleno de compasión y amor inquebrantable hacia los demás.
+    - Tu ayuda ha sido un faro de esperanza que me ha guiado en momentos difíciles.
+    - Eres una persona admirable y ejemplar en todos los sentidos posibles.
+    - Tu amabilidad es como un oasis en el desierto de la vida cotidiana.
+    - Tienes un corazón cálido y acogedor que brinda consuelo y apoyo.
+    - Eres un ser lleno de empatía y comprensión que hace que los demás se sientan escuchados.
+    - Tu generosidad es inspiradora y transformadora para quienes te rodean.
+    - Estoy profundamente agradecido/a por tu apoyo constante y tu lealtad inquebrantable.
+    - Tu acto de bondad es un faro de luz que ilumina el camino de quienes te rodean.
+    - Eres un ser excepcionalmente generoso y altruista en cada acción que emprendes.
+    - Tu amabilidad es un tesoro invaluable que atesoro con gratitud y admiración.
+    - Tienes un corazón de oro puro y resplandeciente que emana amor y compasión.
+    - Eres un ser humano excepcionalmente amable y comprensivo en todas las circunstancias.
+    - Tu generosidad es digna de respeto y admiración por todos los que te conocen.
+    - Mi gratitud hacia ti es infinita y se expande como el universo mismo.
+    - Eres un ser lleno de compasión y amor incondicional por todos los seres vivos.
+    - Tu ayuda ha sido un faro de luz que ha iluminado mi camino en los momentos más oscuros.
+    - Eres una persona admirable y ejemplar en todos los aspectos de la vida.
+    - Tu amabilidad es como un oasis de serenidad en medio de la agitación del mundo.
+    - Tienes un corazón cálido y acogedor que brinda consuelo y alegría a quienes te rodean.
+    - Eres un ser lleno de empatía y comprensión que ofrece apoyo incondicional a los demás.
+    - Tu generosidad es inspiradora y conmovedora, y cambia vidas para mejor.
+    - Estoy profundamente agradecido/a por tu apoyo constante y tu amistad sincera.
+    - Tu acto de bondad es un faro de luz que guía a aquellos que están perdidos.
+    - Eres un ser excepcionalmente generoso y desinteresado, y tu ejemplo nos inspira a todos.
+    - Tu amabilidad es un regalo precioso que atesoro con gratitud y admiración eternas.
+    - Tienes un corazón de oro puro y radiante que ilumina la vida de quienes te rodean.
+    - Eres un ser humano excepcionalmente amable y compasivo que da esperanza a los demás.
+    - Tu generosidad es insuperable y ejemplar en cada acción que emprendes.
+    - Mi gratitud hacia ti es tan profunda como el océano y tan vasta como el cielo estrellado.
+    - Eres un ser lleno de compasión y amor inquebrantable hacia todos los seres vivos.
+    - Tu ayuda ha sido un faro de esperanza que me ha sostenido en los momentos más difíciles.
+    - Eres una persona admirable y ejemplar que impacta positivamente a todos los que te rodean.
+    - Tu amabilidad es como un oasis de tranquilidad en medio de la vorágine de la vida moderna.
+    - Tienes un corazón cálido y acogedor que brinda consuelo y apoyo a quienes te necesitan.
+    - Eres un ser lleno de empatía y comprensión que hace que los demás se sientan valorados.
+    - Tu generosidad es inspiradora y transformadora, y cambia vidas para mejor.
+    - Estoy profundamente agradecido/a por tu apoyo constante y tu presencia reconfortante.
+    - Tu acto de bondad es un faro de luz que ilumina el camino de aquellos que te necesitan.
+    - Eres un ser excepcionalmente generoso y altruista que brinda esperanza y alegría a todos los que te rodean.
+    - Toda mi gratitud es para ti.
+    - Tu ayuda ha sido invaluable.
+    - Eres un ser humano excepcionalmente amable.
+    - Tu amabilidad es un regalo que no tiene precio.
+    - Estoy eternamente agradecido/a.
+    - Eres un ser lleno de generosidad.
+    - Tu generosidad no tiene límites.
+    - No puedo agradecerte lo suficiente por tu apoyo.
+    - Eres un ejemplo de bondad.
+    - Mi corazón se desborda de gratitud.
+    - Eres un ser lleno de nobleza.
+    - Tu nobleza de espíritu me conmueve.
+    - Estoy agradecido/a hasta la médula.
+    - Eres un ser humano excepcionalmente solidario.
+    - Tu solidaridad es admirable.
+    - No tengo palabras para expresar mi agradecimiento.
+    - Tu ayuda ha sido un rayo de esperanza.
+    - Eres un faro de luz en la oscuridad.
+    - Tu luz ilumina mi vida.
+    - Eres un ser lleno de sabiduría.
+    - Tu sabiduría es un regalo para todos nosotros.
+    - Estoy profundamente agradecido/a por tu generosidad.
+    - Eres un ser lleno de compasión y entendimiento.
+    - Tu compasión es inspiradora.
+    - Mi gratitud hacia ti es sincera y profunda.
+    - Eres un ser humano excepcionalmente amigable.
+    - Tu amistad es un tesoro.
+    - No sé cómo agradecerte lo suficiente.
+    - Tu ayuda ha sido un bálsamo para el alma.
+    - Eres un bálsamo en tiempos difíciles.
+    - Tienes un corazón de oro puro.
+    - Eres un ser lleno de esperanza.
+    - Tu esperanza es contagiosa.
+    - Estoy agradecido/a más allá de las palabras.
+    - Eres un ser humano excepcionalmente amigable y amable.
+    - Tu amabilidad es un regalo para todos nosotros.
+    - No puedo expresar lo agradecido/a que estoy.
+    - Tu ayuda ha sido un regalo del cielo.
+    - Eres un ser lleno de gratitud.
+    - Tu gratitud es un ejemplo para todos nosotros.
+    - Estoy agradecido/a desde lo más profundo de mi corazón.
+    - Eres un ser humano excepcionalmente solidario y comprensivo.
+    - Tu solidaridad y comprensión son invaluables.
+    - No tengo palabras suficientes para agradecerte.
+    - Tu ayuda ha sido un faro de luz en mi vida.
+    - Eres un faro de luz en la tormenta.
+    - Tu luz brilla en todo momento.
+    - Eres un ser lleno de conocimiento.
+    - Tu conocimiento es una bendición.
+    - Estoy profundamente agradecido/a por tu generosidad sin límites.
+    - Eres un ser lleno de amor y compasión.
+    - Tu amor y compasión son inquebrantables.
+    - Mi gratitud hacia ti es eterna.
+    - Eres un ser humano excepcionalmente servicial.
+    - Tu servicio a los demás es admirable.
+    - No sé cómo agradecerte lo suficiente por tu apoyo.
+    - Tu ayuda ha sido un refugio en momentos difíciles.
+    - Eres un refugio de bondad en un mundo a menudo difícil.
+    - Tienes un corazón de oro puro y radiante.
+    - Eres un ser lleno de alegría.
+    - Tu alegría es contagiosa.
+    - Estoy agradecido/a hasta la médula de mis huesos.
+    - Eres un ser humano excepcionalmente empático.
+    - Tu empatía es un regalo que toca corazones.
+    - No tengo palabras suficientes para expresar mi agradecimiento.
+    - Tu ayuda ha sido un faro de esperanza en la oscuridad.
+    - Eres una fuente constante de esperanza.
+    - Tu esperanza es una inspiración para todos nosotros.
+    - Eres un ser lleno de humildad.
+    - Tu humildad es admirable.
+    - Estoy profundamente agradecido/a por tu generosidad desinteresada.
+    - Eres un ser lleno de amor y comprensión.
+    - Tu amor y comprensión son invaluables.
+    - Mi gratitud hacia ti es inmensurable.
+    - Eres un ser humano excepcionalmente generoso y valiente.
+    - Tu valentía es inspiradora.
+    - No sé cómo agradecerte lo suficiente por tu apoyo inquebrantable.
+    - Tu ayuda ha sido un faro de luz en mi vida.
+    - Eres un faro de luz que guía el camino.
+    - Tu luz brilla en todos nosotros.
+    - Eres un ser lleno de paciencia.
+    - Tu paciencia es una virtud.
+    - Estoy agradecido/a desde lo más profundo de mi ser.
+    - Eres un ser humano excepcionalmente amable y considerado.
+    - Tu consideración es un regalo que apreciamos.
+    - No puedo expresar lo agradecido/a que estoy.
+    - Tu ayuda ha sido un bálsamo para el alma.
+    - Eres un bálsamo en momentos difíciles.
+    - Tienes un corazón de oro puro y radiante.
+    - Eres un ser lleno de comprensión.
+    - Tu comprensión es un regalo que ilumina vidas.
+    - Mi gratitud hacia ti es eterna.
+    - Eres un ser humano excepcionalmente generoso y amable.
+    - Tu amabilidad es un regalo que nos enriquece.
+    - No tengo palabras suficientes para agradecerte.
+    - Tu ayuda ha sido un faro de luz en mi vida.
+    - Eres un faro de luz en la oscuridad.
+    - Tu luz ilumina cada rincón.
+    - Eres un ser lleno de respeto.
+    - Tu respeto es digno de admiración.
+    - Estoy profundamente agradecido/a por tu generosidad sin límites.
+    - Eres un ser lleno de amor y tolerancia.
+    - Tu amor y tolerancia son invaluables.
+    - Mi gratitud hacia ti no tiene fin.
+    - Eres un ser humano excepcionalmente servicial y comprensivo.
+    - Tu servicio y comprensión son ejemplares.
+    - No sé cómo agradecerte lo suficiente por tu apoyo.
+    - Tu ayuda ha sido un refugio en momentos difíciles.
+    - Eres un refugio de bondad en un mundo a menudo difícil.
+    - Tienes un corazón de oro puro y resplandeciente.
+    - Eres un ser lleno de alegría.
+    - Tu alegría es contagiosa.
+    - Estoy agradecido/a hasta la médula de mis huesos.
+    - Eres un ser humano excepcionalmente empático.
+    - Tu empatía es un regalo que toca corazones.
+    - No tengo palabras suficientes para expresar mi agradecimiento.
+    - Tu ayuda ha sido un faro de esperanza en la oscuridad.
+    - Eres una fuente constante de esperanza.
+    - Tu esperanza es una inspiración para todos nosotros.
+    - Eres un ser lleno de humildad.
+    - Tu humildad es admirable.
+    - Estoy profundamente agradecido/a por tu generosidad desinteresada.
+    - Eres un ser lleno de amor y comprensión.
+    - Tu amor y comprensión son invaluables.
+    - Mi gratitud hacia ti es inmensurable.
+    - Eres un ser humano excepcionalmente generoso y valiente.
+    - Tu valentía es inspiradora.
+    - No sé cómo agradecerte lo suficiente por tu apoyo inquebrantable.
+    - Tu ayuda ha sido un faro de luz en mi vida.
+    - Eres un faro de luz que guía el camino.
+    - Tu luz brilla en todos nosotros.
+    - Eres un ser lleno de paciencia.
+    - Tu paciencia es una virtud.
+    - Estoy agradecido/a desde lo más profundo de mi ser.
+    - Eres un ser humano excepcionalmente amable y considerado.
+    - Tu consideración es un regalo que apreciamos.
+    - No puedo expresar lo agradecido/a que estoy.
+    - Tu ayuda ha sido un bálsamo para el alma.
+    - Eres un bálsamo en momentos difíciles.
+    - Tienes un corazón de oro puro y radiante.
+    - Eres un ser lleno de comprensión.
+    - Tu comprensión es un regalo que ilumina vidas.
+    - Mi gratitud hacia ti es eterna.
+    - Eres un ser humano excepcionalmente generoso y amable.
+    - Tu amabilidad es un regalo que nos enriquece.
+    - No tengo palabras suficientes para agradecerte.
+    - Tu ayuda ha sido un faro de luz en mi vida.
+    - Eres un faro de luz en la oscuridad.
+    - Tu luz ilumina cada rincón.
+    - Eres un ser lleno de respeto.
+    - Tu respeto es digno de admiración.
+    - Estoy profundamente agradecido/a por tu generosidad sin límites.
+    - Eres un ser lleno de amor y tolerancia.
+    - Tu amor y tolerancia son invaluables.
+    - Mi gratitud hacia ti no tiene fin.
+    - Eres un ser humano excepcionalmente servicial y comprensivo.
+    - Tu servicio y comprensión son ejemplares.
+    - No sé cómo agradecerte lo suficiente por tu apoyo.
+    - Tu ayuda ha sido un refugio en momentos difíciles.
+    - Eres un refugio de bondad en un mundo a menudo difícil.
+    - Tienes un corazón de oro puro y resplandeciente.
+    - Eres un ser lleno de alegría.
+    - Tu alegría es contagiosa.
+    - Estoy agradecido/a hasta la médula de mis huesos.
+    - Eres un ser humano excepcionalmente empático.
+    - Tu empatía es un regalo que toca corazones.
+    - No tengo palabras suficientes para expresar mi agradecimiento.
+    - Tu ayuda ha sido un faro de esperanza en la oscuridad.
+    - Eres una fuente constante de esperanza.
+    - Tu esperanza es una inspiración para todos nosotros.
+    - Eres un ser lleno de humildad.
+    - Tu humildad es admirable.
+    - Estoy profundamente agradecido/a por tu generosidad desinteresada.
+    - Eres un ser lleno de amor y comprensión.
+    - Tu amor y comprensión son invaluables.
+    - Mi gratitud hacia ti es inmensurable.
+    - Eres un ser humano excepcionalmente generoso y valiente.
+    - Tu valentía es inspiradora.
+    - No sé cómo agradecerte lo suficiente por tu apoyo inquebrantable.
+    - Tu ayuda ha sido un faro de luz en mi vida.
+    - Eres un faro de luz que guía el camino.
+    - Tu luz brilla en todos nosotros.
+    - Eres un ser lleno de paciencia.
+    - Tu paciencia es una virtud.
+    - Estoy agradecido/a desde lo más profundo de mi ser.
+    - Eres un ser humano excepcionalmente amable y considerado.
+    - Tu consideración es un regalo que apreciamos.
+    - No puedo expresar lo agradecido/a que estoy.
+    - Tu ayuda ha sido un bálsamo para el alma.
+    - Eres un bálsamo en momentos difíciles.
+    - Tienes un corazón de oro puro y radiante.
+    - Eres un ser lleno de comprensión.
+    - Tu comprensión es un regalo que ilumina vidas.
+    - Mi gratitud hacia ti es eterna.
+    - Eres un ser humano excepcionalmente generoso y amable.
+    - Tu amabilidad es un regalo que nos enriquece.
+    - No tengo palabras suficientes para agradecerte.
+    - Tu ayuda ha sido un faro de luz en mi vida.
+    - Eres un faro de luz en la oscuridad.
+    - Tu luz ilumina cada rincón.
+
 - intent: exception
   examples: |
     - que dia es hoy
