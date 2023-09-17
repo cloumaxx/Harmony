@@ -475,6 +475,35 @@ def crearNuevoChat(request, usuario_id,posicion=0):
         return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=len(conversaciones)-1)
 
 @login_required
+def vaciarChat(request,usuario_id,posicion):
+    posicion=int(posicion)
+    if request.method == 'POST':
+        usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+        if usuario:
+            conversaciones = usuario.get('conversaciones', [])
+            chat = conversaciones[posicion]
+            if len(chat) > 0:
+                chat.clear()
+                conversaciones[posicion] = chat
+                db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
+                return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+@login_required
+def eliminarChat(request,usuario_id,posicion):
+    posicion=int(posicion)
+    if request.method == 'POST':
+        usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+        if usuario:
+            conversaciones = usuario.get('conversaciones', [])
+            if len(conversaciones) > 1:
+                conversaciones.pop(posicion)
+                db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
+                lugar = posicion - 1
+                if lugar < 0:
+                    lugar = 0
+                return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=lugar)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+@login_required
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
     print("Entro",posicion)
     if request.method == 'POST':
@@ -495,9 +524,7 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
             else:
                 try:
                     respuestaChat = send_to_rasa(pregunta.lower())
-                    salida = respuestaChat[0]['text']
-                    print(respuestaChat)
-                
+                    salida = respuestaChat[0]['text']                
                 except:
                     salida = "no entendi tu pregunta"
                     
@@ -507,13 +534,10 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
-                mensaje_dict = {
-                    
+                mensaje_dict = {                 
                     'mensaje' : pregunta,
                     'fecha' : datetime.now()
                 }
                 
-
                 db_connection.db.Mensajes.insert_one(mensaje_dict)
-        print('->',posicion)
         return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
