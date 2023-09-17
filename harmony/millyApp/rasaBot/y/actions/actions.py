@@ -27,12 +27,17 @@
 #         return []
 from googletrans import Translator
 
-def traducir(texto_a_traducir):
+def traducirAEspañol(texto_a_traducir):
     # Crea una instancia del traductor
     translator = Translator()
 
     # Detecta automáticamente el idioma del texto de origen
     idioma_origen = translator.detect(texto_a_traducir).lang
-
     # Traduce el texto a español
-    return translator.translate(texto_a_traducir, src=idioma_origen, dest='es').text
+    return translator.translate(texto_a_traducir, src=idioma_origen, dest='es')#.text
+
+def traducirMensajeSalida(texto_a_traducir, idioma_origen, idioma_destino):
+    # Crea una instancia del traductor
+    translator = Translator()    
+    # Traduce el texto al idioma de destino
+    return translator.translate(texto_a_traducir, src=idioma_origen, dest=idioma_destino).text
