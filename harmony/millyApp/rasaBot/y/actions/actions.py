@@ -27,32 +27,33 @@
 #         return []
 from googletrans import Translator
 import spacy
-import enchant
 
 def detectarStopWords(texto_a_analizar):
     # Carga el modelo de spaCy para español
     nlp = spacy.load('es_core_news_sm')
 
+    # Texto de ejemplo
+
+    # Procesa el texto
     doc = nlp(texto_a_analizar)
+
+    # Filtra las stop words
     palabras_filtradas = [token.text for token in doc if not token.is_stop]
-    if len(palabras_filtradas) > 0:
-
-        # Crea un objeto de diccionario para el español
-        diccionario_espanol = enchant.Dict("es_ES")
-
-
-        # Filtra palabras que no están en el diccionario en español
-        palabras_filtradasSalida = [palabra for palabra in palabras_filtradas if diccionario_espanol.check(palabra)]
-    return palabras_filtradasSalida
+    print("-->",palabras_filtradas)
+    return palabras_filtradas
 
 def traducirAEspañol(texto_a_traducir):
     # Crea una instancia del traductor
-    translator = Translator()
+    try:
+        translator = Translator()
 
-    # Detecta automáticamente el idioma del texto de origen
-    idioma_origen = translator.detect(texto_a_traducir).lang
-    # Traduce el texto a español
+        # Detecta automáticamente el idioma del texto de origen
+        idioma_origen = translator.detect(texto_a_traducir).lang
+        # Traduce el texto a español
+    except Exception as e: 
+        print(e)
     return translator.translate(texto_a_traducir, src=idioma_origen, dest='es')#.text
+
 
 def traducirMensajeSalida(texto_a_traducir, idioma_origen, idioma_destino):
     # Crea una instancia del traductor
