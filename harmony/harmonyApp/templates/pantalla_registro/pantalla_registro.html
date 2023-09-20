@@ -112,8 +112,8 @@
       var diferenciaTiempo = fechaActual - fechaNacimientoDate;
       var edad = Math.floor(diferenciaTiempo / (365.25 * 24 * 60 * 60 * 1000));
       
-      if (edad < 9) {
-        alert("Recuerda que la aplicación es para adolescentes de 9 años en adelante");
+      if (edad < 14) {
+        alert("Recuerda que la aplicación es para adolescentes de 14 años en adelante");
         event.preventDefault();
       }
     }

@@ -258,9 +258,10 @@ def pantalla_login(request):
                 request.session['id_user'] = user_id
                 return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
             else:
-                form.add_error(None, 'Credenciales inválidas')
+                messages.success(request, 'Credenciales inválidas')
+                
         else:
-            form.add_error(None, 'Credenciales inválidas')
+            messages.success(request, 'Credenciales inválidas')
 
     else:
         form = LoginForm()
@@ -505,7 +506,6 @@ def eliminarChat(request,usuario_id,posicion):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 @login_required
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
-    print("Entro",posicion)
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})

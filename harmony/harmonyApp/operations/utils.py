@@ -7,7 +7,9 @@ from django.conf import settings
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import bcrypt, requests
+
+import requests
+
 def get_Nombre(comentario, db_connection):
 
     user = db_connection.db.Usuario.find_one(
@@ -138,12 +140,3 @@ def enviar_correo_inicio_sesion(destinatario, nombre):
     except Exception as e:
         return "Error al enviar el correo electrónico: " + str(e)
     
-# Función para codificar una contraseña
-def hash_password(password):
-    salt = bcrypt.gensalt()
-    hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
-    return hashed_password
-
-# Función para verificar una contraseña
-def check_password(input_password, stored_password):
-    return bcrypt.checkpw(input_password.encode('utf-8'), stored_password)

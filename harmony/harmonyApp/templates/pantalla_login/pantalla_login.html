@@ -34,15 +34,17 @@
         }
 
         #btn_ini {
-            background: #3853FF;           
+            background: #3853FF;
         }
 
-        #btn_cancel {   
+        #btn_cancel {
             background: rgb(255, 83, 56);
         }
-        #btn_registrar{
+
+        #btn_registrar {
             background: rgb(56, 255, 116);
         }
+
         #btn_ini,
         #btn_cancel,
         #btn_registrar {
@@ -56,7 +58,7 @@
             display: flex;
             text-decoration: none;
         }
-        
+
         #text_button {
             margin: 4%;
             color: #FFF;
@@ -118,11 +120,38 @@
             /* Usa el color por defecto del texto */
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Selecciona el formulario por su id
+            var formulario = document.getElementById("formulario");
+
+            formulario.addEventListener("submit", function (event) {
+                // Agrega aquí tus validaciones para cada campo
+              
+                var correo = document.getElementById("id_correo").value;
+                var clave = document.getElementById("id_clave").value;
+              
+                if ( correo === "" || clave === "") {
+                    // Si algún campo está vacío, muestra un mensaje de error y evita enviar el formulario
+                    alert("Por favor, complete todos los campos.");
+                    event.preventDefault();
+                } 
+            });
+        });
+    </script>
 </head>
 
 <body id="body">
     <div>
-        <header></header>
+        <header style="text-align: center;margin-top: 20px; z-index: 999;">
+            {% for message in messages %}
+            <div style="width: 50%; margin: 0 auto;" class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        
+            {% endfor %}
+        </header>
+        
 
         <main id="container_main">
             <div class="centered_div">
@@ -131,7 +160,7 @@
                         <img id="img_logo" style="width: 80%;" src="{% static '/images/nuevo_logo.png' %}">
 
                     </div>
-                    <form method="post">
+                    <form  id="formulario" method="post">
                         {% csrf_token %}
                         <div>
                             <label id="label_correo" name="correo" for="correo">Correo electrónico:</label>
