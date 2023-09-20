@@ -503,6 +503,9 @@ def eliminarChat(request,usuario_id,posicion):
                 if lugar < 0:
                     lugar = 0
                 return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=lugar)
+            else:
+                vaciarChat(request,usuario_id,posicion)
+            
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 @login_required
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
