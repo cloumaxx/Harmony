@@ -1,8 +1,5 @@
 from django.urls import path
 from . import views
-from . import models
-from django.conf.urls.static import static
-from django.conf import settings
 
 urlpatterns = [
     path("", views.pantalla_inicial, name="pantalla_inicial"),
@@ -13,6 +10,7 @@ urlpatterns = [
     path("pantalla_perfil_usuario/<str:usuario_id>/", views.pantalla_perfil_usuario, name="pantalla_perfil_usuario"),
     path('editar_usuario/<str:usuario_id>/', views.editar_usuario, name='editar_usuario'),
     path('calificar_app/<str:usuario_id>/', views.calificarApp, name='calificarApp'),
+    path('pantalla_estadisticas/<str:usuario_id>/', views.pantalla_estadisticas, name='pantalla_estadisticas'),
 
     path('pantalla_chatbot/<str:usuario_id>/posicion/<int:posicion>/', views.pantalla_chatbot, name='pantalla_chatbot'),
     path('pantalla_chatbot/<str:usuario_id>/crearNuevoChat/', views.crearNuevoChat, name='crearNuevoChat'),

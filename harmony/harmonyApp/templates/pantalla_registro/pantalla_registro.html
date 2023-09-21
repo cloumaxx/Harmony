@@ -15,6 +15,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
+        #logoNavbar {
+            width: 250px;
+            height: 20%;
+        }
+
         .form-control {
             border-radius: 17px;
             background: #E9DEB3;
@@ -65,11 +70,14 @@
             background: #3853FF;
             width: 40%;
         }
-        #cont_img{
-            
-            margin-left: -14%; /* Espacio entre el formulario y la imagen */
+
+        #cont_img {
+
+            margin-left: -14%;
+            /* Espacio entre el formulario y la imagen */
             flex-shrink: 0;
         }
+
         #img {
             position: fixed;
             bottom: 0;
@@ -78,75 +86,86 @@
             max-width: 100%;
             height: 50%;
         }
-        #contendor{
+
+        #contendor {
+            padding-top: 30px;
             display: flex;
             align-items: flex-start;
         }
+        #navbar{
+            position: fixed;
+            background-color: #D9D9D9;
+            text-align: center;
+            width: 100%;
+        }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-  // Selecciona el formulario por su id
-  var formulario = document.getElementById("formulario");
+        document.addEventListener("DOMContentLoaded", function () {
+            // Selecciona el formulario por su id
+            var formulario = document.getElementById("formulario");
 
-  formulario.addEventListener("submit", function(event) {
-    // Agrega aquí tus validaciones para cada campo
-    var nombre = document.getElementById("id_nombre").value;
-    var apellido = document.getElementById("id_apellido").value;
-    var correo = document.getElementById("id_correo").value;
-    var clave = document.getElementById("id_clave").value;
-    var claveDoble = document.getElementById("id_clave_doble").value;
-    var genero = document.getElementById("id_genero").value;
-    var fechaNacimiento = document.getElementById("id_fecha_nacimiento").value;
+            formulario.addEventListener("submit", function (event) {
+                // Agrega aquí tus validaciones para cada campo
+                var nombre = document.getElementById("id_nombre").value;
+                var apellido = document.getElementById("id_apellido").value;
+                var correo = document.getElementById("id_correo").value;
+                var clave = document.getElementById("id_clave").value;
+                var claveDoble = document.getElementById("id_clave_doble").value;
+                var genero = document.getElementById("id_genero").value;
+                var fechaNacimiento = document.getElementById("id_fecha_nacimiento").value;
 
-    if (nombre === "" || apellido === "" || correo === "" || clave === "" || genero === "" || fechaNacimiento === "") {
-      // Si algún campo está vacío, muestra un mensaje de error y evita enviar el formulario
-      alert("Por favor, complete todos los campos.");
-      event.preventDefault();
-    } else if (clave !== claveDoble) {
-      // Si las contraseñas no son iguales, muestra un mensaje de error y evita enviar el formulario
-      alert("Las contraseñas no coinciden.");
-      event.preventDefault();
-    } else {
-      var fechaActual = new Date();
-      var fechaNacimientoDate = new Date(fechaNacimiento);
-      var diferenciaTiempo = fechaActual - fechaNacimientoDate;
-      var edad = Math.floor(diferenciaTiempo / (365.25 * 24 * 60 * 60 * 1000));
-      
-      if (edad < 14) {
-        alert("Recuerda que la aplicación es para adolescentes de 14 años en adelante");
-        event.preventDefault();
-      }
-    }
-  });
-});
+                if (nombre === "" || apellido === "" || correo === "" || clave === "" || genero ===
+                    "" || fechaNacimiento === "") {
+                    // Si algún campo está vacío, muestra un mensaje de error y evita enviar el formulario
+                    alert("Por favor, complete todos los campos.");
+                    event.preventDefault();
+                } else if (clave !== claveDoble) {
+                    // Si las contraseñas no son iguales, muestra un mensaje de error y evita enviar el formulario
+                    alert("Las contraseñas no coinciden.");
+                    event.preventDefault();
+                } else {
+                    var fechaActual = new Date();
+                    var fechaNacimientoDate = new Date(fechaNacimiento);
+                    var diferenciaTiempo = fechaActual - fechaNacimientoDate;
+                    var edad = Math.floor(diferenciaTiempo / (365.25 * 24 * 60 * 60 * 1000));
 
-        </script>
-        
-        
+                    if (edad < 14) {
+                        alert("Recuerda que la aplicación es para adolescentes de 14 años en adelante");
+                        event.preventDefault();
+                    }
+                }
+            });
+        });
+    </script>
+
+
 </head>
 
 <body id="body">
     <div>
-        <header>
-
+        <header id="navbar">
+            <img id="logoNavbar" src="{% static '/images/nuevo_logo.png'  %}">
         </header>
 
         <main>
-            
+
 
             <div id="contendor" class="container">
-                
+
                 <div class="centered-div">
-                    <form id="formulario" method="POST" action="{% url 'pantalla_registro' %}" enctype="multipart/form-data">
+
+                    <form id="formulario" method="POST" action="{% url 'pantalla_registro' %}"
+                        enctype="multipart/form-data">
                         <div id="titulo">
                             <br>
+
                             <h1>
                                 Crear una cuenta
                             </h1>
                             <br>
-                            
+
                         </div>
-                        
+
                         {% csrf_token %}
                         <label for="id_nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="id_nombre" name="nombre"
@@ -192,25 +211,26 @@
                             <div style="width: 10px;">
 
                             </div>
-                            <a id="boton1" href="{% url 'pantalla_login' %}" class="btn btn-primary" id="custom-cancel-button">
+                            <a id="boton1" href="{% url 'pantalla_login' %}" class="btn btn-primary"
+                                id="custom-cancel-button">
                                 <p id="text_button2">Cancelar</p>
                             </a>
                             <p id="saved"></p>
                         </div>
                     </form>
-                    
+
                 </div>
 
-                
+
                 <div id="cont_img">
-                    <img id="img" alt="Imagen" src="{% static '/images/Man_sends_message.png'  %}"> 
-                    
+                    <img id="img" alt="Imagen" src="{% static '/images/Man_sends_message.png'  %}">
+
                 </div>
             </div>
 
         </main>
     </div>
-    
+
 </body>
 
 </html>

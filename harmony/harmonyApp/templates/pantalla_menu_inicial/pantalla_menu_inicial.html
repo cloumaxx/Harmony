@@ -192,7 +192,7 @@
                         <div class="modal-body">
 
                             <form method="POST" action="{% url 'calificarApp' usuario_id=usuario_id  %}">
-                                {% csrf_token %}q
+                                {% csrf_token %}
                                 <fieldset class="rating">
                                     <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
                                     <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
