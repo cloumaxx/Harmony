@@ -205,8 +205,9 @@ def calificarApp(request, usuario_id):
         calificacion = request.POST.get('rating')
         # Obtener el comentario de la base de datos
         calificacionEntrante = db_connection.db.Calificacion.find_one({'id_usuario': usuario_id})
-        idCalificacion = calificacionEntrante.get('_id')
+        
         if calificacionEntrante:
+            idCalificacion = calificacionEntrante.get('_id')
             db_connection.db.Calificacion.update_one(
                 {'_id': ObjectId(idCalificacion)},
                 {
@@ -372,7 +373,7 @@ def pantalla_registro(request):
         else:
             error_message = "Correo ya existe"
             context = {'error_message': error_message}
-        return render(request, 'pantalla_registro/pantalla_registro.html', context)
+            return render(request, 'pantalla_registro/pantalla_registro.html', context)
 
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')

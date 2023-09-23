@@ -101,6 +101,9 @@
         .rating input:checked~label:before {
             color: yellow;
         }
+        #botones{
+            width: 250px;
+        }
     </style>
     <script>
         function abrirModalCalificarApp(usuario_id) {
@@ -138,14 +141,14 @@
                     </div>
                     <div class="col-md-6 text-center">
                         <div style="margin-top: 10%;">
-                            <h1 class="half-colored-heading">Harmony</h1>
-                            <br>
+                            <img id="logoNavbar2" src="{% static '/images/nuevo_logo.png'  %}">
+                            <br><br>
                             <h4 style="text-align: center;">Hola, soy Mily, tu chatbot de confianza. Estoy aqui para que
                                 hables conmigo todo lo que necesites </h4>
                             <br>
                             <div id="cont_btn" style="display: flex; justify-content: center; align-items: center;">
                                 <a href="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=0 %}">
-                                    <button class="btn btn-primary" id="boton_men">
+                                    <button class="btn btn-primary" id="botones">
                                         <p id="text_button">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="10%"
                                                 fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
@@ -163,7 +166,7 @@
                             <br><br>
                             <div id="cont_btn">
                                 <a href="#" onclick="abrirModalCalificarApp('{{ usuario_id }}')">
-                                    <button class="btn btn-primary">
+                                    <button class="btn btn-primary" id="botones">
                                         <p id="text_button">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="10%"
                                                 style="fill:yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
