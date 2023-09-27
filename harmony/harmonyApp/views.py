@@ -82,7 +82,7 @@ def pantalla_estadisticas(request,usuario_id):
     calificaciones_cursor = db_connection.db.Calificacion.find()
     dfCal['calificacion'] = [calificacion['calificacion'] for calificacion in calificaciones_cursor]
     # Crea un gráfico de barras
-    dfCal.plot.pie(y='calificacion', figsize=(3, 3), labels=dfCal['calificacion'])
+    dfCal.plot.pie(y='calificacion', figsize=(4, 4), labels=dfCal['calificacion'])
     img = BytesIO()
     plt.savefig(img, format='png')
     img.seek(0)
