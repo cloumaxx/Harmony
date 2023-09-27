@@ -21,6 +21,8 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <style>
         #body {
@@ -102,7 +104,7 @@
             color: yellow;
         }
         #botones{
-            width: 250px;
+            width: 350px;
         }
     </style>
     <script>
@@ -179,10 +181,13 @@
                                     </button>
                                 </a>
                             </div>
-
+                            
                         </div>
                     </div>
                 </div>
+            </div>
+            
+                
             </div>
             <!-- Ventana Modal Calificar app -->
             <div class="modal fade" id="modalCalificarApp{{ usuario_id }}">
@@ -220,5 +225,7 @@
         </footer>
     </div>
 </body>
-
+<script>
+    AOS.init();
+  </script>
 </html>

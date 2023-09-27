@@ -19,10 +19,20 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <style>
         .body {
             background-color: #F1F0EC;
+        }
+        h1{
+            text-align: center;
+        }
+        li{
+            font-weight: bolder;
+            text-align: left;
+            font-size: large;
         }
     </style>
     
@@ -32,19 +42,64 @@
             {% include 'navbar.html' %}
         </header>
         <main>
-           <h1>Estadisticas</h1>
-           <p>Cantidad de usuarios registrados: {{cantidad_usuarios}}</p>
-           <p>Promedio de calificaciones: {{promCalificacion}}</p>
-           <br>
-           <p> Preguntas mas repetidas:</p>
-           {% for pregunta in elementos_mas_repetidos %}
-                <p> *  {{pregunta}}</p>
-           {% endfor %}
-           <div id="grafico"></div>
-           {{ plot_div | safe }}
+            
+           <h1 data-aos="fade-up">Estadisticas</h1>
+           <div class="container text-center mt-5 mb-5">
+            <div class="row">
+              <div data-aos="fade-left" class="col-lg-4">
+                <h2>🧑‍🤝‍🧑​ Usuarios</h2>
+                <br>
+                <h1>{{cantidad_usuarios}}</h1>
+              </div>
+              <div data-aos="fade-up" class="col-lg-4">
+                <h2>💬​ Mensajes Totales</h2>
+                <br>
+                <h1>{{mensajes_enviados}}</h1>
+              </div>
+              <div data-aos="fade-right" class="col-lg-4">
+                <h2>💬​ Pregunta Top</h2>
+                <br>
+                {% for pregunta in elementos_mas_repetidos %}
+                    <h2>{{pregunta}}</h2>
+                {% endfor %}
+              </div>
+            <div class="container text-center mt-5">
+            <div class="row">
+              <div data-aos="fade-up" class="col-lg-2"> </div>
+              <div data-aos="fade-left" class="col-lg-8" style="text-align: left;">
+                <svg xmlns="http://www.w3.org/2000/svg" style="fill:yellow; width:60;height:60" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <h2>Calificacion: {{promCalificacion}}</h2>
+                <div>
+                    <img src="data:image/png;base64,{{ plot }}">
+                </div>
+                
+              </div>
+              <div data-aos="fade-up" class="col-lg-2"></div>
+              
+            </div>
+            </div>
+            </div>
+            </div>
+            <h1 data-aos="fade-up">Tu actividad</h1>
+            <div class="container text-center mt-5">
+            <div class="row">
+              <div data-aos="fade-up" class="col-lg-1"> </div>
+              <div data-aos="fade-up" class="col-lg-10">
+                <div id="grafico"></div>
+                {{ plot_div | safe }}
+              </div>
+              <div data-aos="fade-up" class="col-lg-1"></div>
+              
+            </div>
+            </div>
+          
         </main>
         
         <footer></footer> 
 </body>
-
+<script>
+    AOS.init();
+  </script>
 </html>

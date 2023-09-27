@@ -15,6 +15,9 @@ from millyApp.views import send_to_rasa
 import pandas as pd
 import plotly.express as px
 import plotly.offline as opy
+from io import BytesIO
+import base64
+import matplotlib.pyplot as plt
 
 
 # Create your views here.
@@ -34,7 +37,9 @@ def login_required(view_func):
 
 @login_required
 def pantalla_menu_inicial(request,usuario_id ):
-    return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id })
+
+
+    return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id})
 """
 ////////////////////////////////////////////////////////
 ////// Funciones enfocadas en las estadisticas  ////////
@@ -42,9 +47,9 @@ def pantalla_menu_inicial(request,usuario_id ):
 """
 @login_required
 def pantalla_estadisticas(request,usuario_id):
+
     usuarios_cursor = db_connection.db.Usuario.find()
     cantidad_usuarios = sum(1 for _ in usuarios_cursor)
-    
     # mensajes mas comunes
     mensajes_cursor = db_connection.db.Mensajes.find()
     # Crear un DataFrame vacío
@@ -57,25 +62,36 @@ def pantalla_estadisticas(request,usuario_id):
 
     # Agrupa los mensajes por día y cuenta la cantidad de mensajes en cada día
     mensajes_por_dia = df.groupby(df['fecha'].dt.date)['mensaje'].count()
-    # Crea un gráfico de barras
+    
      # Crea un gráfico de barras interactivo con Plotly
     fig = px.bar(mensajes_por_dia, x=mensajes_por_dia.index, y='mensaje', labels={'x': 'Fecha', 'y': 'Cantidad de Mensajes'})
     plot_div = opy.plot(fig, auto_open=False, output_type='div')
 
+    
+
     # Usa value_counts en la columna 'mensaje' para obtener las frecuencias de cada valor
     frecuencias = df['mensaje'].value_counts()
+    mensajes_enviados = df['mensaje'].count()
 
     # El resultado contendrá los elementos más repetidos en orden descendente
-    elementos_mas_repetidos = frecuencias.head(10).index.tolist()
+    elementos_mas_repetidos = frecuencias.head(1).index.tolist()
 
     #Promedio de calificacion 
      # Crear un DataFrame vacío
     dfCal = pd.DataFrame()
     calificaciones_cursor = db_connection.db.Calificacion.find()
     dfCal['calificacion'] = [calificacion['calificacion'] for calificacion in calificaciones_cursor]
+    # Crea un gráfico de barras
+    dfCal.plot.pie(y='calificacion', figsize=(3, 3), labels=dfCal['calificacion'])
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    plot = base64.b64encode(img.read()).decode()
+    
     promCalificacion= dfCal['calificacion'].mean()
+    promCalificacion = round(promCalificacion,2)
 
-    return render(request, "pantalla_estadisticas/pantalla_estadisticas.html",{"usuario_id": usuario_id,"cantidad_usuarios":cantidad_usuarios,"elementos_mas_repetidos":elementos_mas_repetidos,"promCalificacion":promCalificacion,"plot_div":plot_div })
+    return render(request, "pantalla_estadisticas/pantalla_estadisticas.html",{"plot":plot,"usuario_id": usuario_id,"cantidad_usuarios":cantidad_usuarios,"mensajes_enviados":mensajes_enviados,"elementos_mas_repetidos":elementos_mas_repetidos,"promCalificacion":promCalificacion,"plot_div":plot_div })
 """
 ////////////////////////////////////////////////////////
 ////// Funciones enfocadas en los comentarios  /////////
