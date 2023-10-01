@@ -80,15 +80,20 @@ def pantalla_estadisticas(request,usuario_id):
      # Crear un DataFrame vacío
     dfCal = pd.DataFrame()
     calificaciones_cursor = db_connection.db.Calificacion.find()
-    dfCal['calificacion'] = [calificacion['calificacion'] for calificacion in calificaciones_cursor]
+    print(calificaciones_cursor[0])
+    dfCal['calificacion'] = [1,2,3,4,5]
+    dfCal['contador'] = [0,0,0,0,0]
+    for calificacion in calificaciones_cursor:
+        dfCal.at[(calificacion['calificacion']-1),'contador'] += 1
     # Crea un gráfico de barras
-    dfCal.plot.pie(y='calificacion', figsize=(4, 4), labels=dfCal['calificacion'])
+    dfCal.plot.pie(y='contador', figsize=(4, 4), labels=dfCal['calificacion'])
     img = BytesIO()
     plt.savefig(img, format='png')
     img.seek(0)
     plot = base64.b64encode(img.read()).decode()
     
-    promCalificacion= dfCal['calificacion'].mean()
+    promCalificacion= ((dfCal['contador']*dfCal['calificacion']).sum()) / dfCal['contador'].sum()
+
     promCalificacion = round(promCalificacion,2)
 
     return render(request, "pantalla_estadisticas/pantalla_estadisticas.html",{"plot":plot,"usuario_id": usuario_id,"cantidad_usuarios":cantidad_usuarios,"mensajes_enviados":mensajes_enviados,"elementos_mas_repetidos":elementos_mas_repetidos,"promCalificacion":promCalificacion,"plot_div":plot_div })
