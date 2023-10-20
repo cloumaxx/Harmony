@@ -17,6 +17,7 @@
         }
 
         #container_main {
+            padding-top: 50px;
             justify-content: center;
             align-items: center;
         }
@@ -59,12 +60,17 @@
             margin: 4%;
             color: #FFF;
             font-size: 1.5vw;
-            /* Tamaño de letra relativo al ancho del botón */
             text-align: center;
             font-style: normal;
             line-height: normal;
         }
-
+        
+        #cont_button{
+            right: 0;
+            color: #6A44FF;  
+            text-align: right;
+            font-size: 20px;
+        }
         #id_correo {
             border-radius: 15px;
             background: #E9DEB3;
@@ -105,30 +111,31 @@
 
         a {
             text-decoration: none;
-            /* Elimina la línea subrayada */
             color: inherit;
-            /* Usa el color por defecto del texto */
         }
 
-        /* Estilo para los enlaces cuando están siendo visitados */
         a:visited {
             color: inherit;
-            /* Usa el color por defecto del texto */
+        }
+        #navbar{
+            position: fixed;
+            background-color: #D9D9D9;
+            text-align: center;
+            width: 100%;
+            height: 60px;
+            top:0;
         }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Selecciona el formulario por su id
             var formulario = document.getElementById("formulario");
 
             formulario.addEventListener("submit", function (event) {
-                // Agrega aquí tus validaciones para cada campo
 
                 var correo = document.getElementById("id_correo").value;
                 var clave = document.getElementById("id_clave").value;
 
                 if (correo === "" || clave === "") {
-                    // Si algún campo está vacío, muestra un mensaje de error y evita enviar el formulario
                     alert("Por favor, complete todos los campos.");
                     event.preventDefault();
                 }
@@ -138,14 +145,8 @@
 </head>
 
 <body id="body">
-    <div>
-        <header style="text-align: center;margin-top: 20px; z-index: 999;">
-            {% for message in messages %}
-            <div style="width: 50%; margin: 0 auto;" class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
-
-            {% endfor %}
+        <header id="navbar">
+            
         </header>
 
         <main id="container_main">
@@ -180,12 +181,12 @@
                     </a>
 
                     <br>
-                    <a id="cont-button" href="{% url 'pantalla_registro' %}">
-                        <button class="btn btn-success" id="btn_registrar">
-                            <p id="text_button">Crea tu cuenta</p>
-                        </button>
-
-                    </a>
+                    <div id="cont_button">
+                        <a  href="{% url 'pantalla_registro' %}">
+                            Crea tu cuenta
+                        </a>
+                    </div>
+                    
                     <br>
 
                 </div>
@@ -195,7 +196,6 @@
 
             <img id="img" alt="Imagen" src="{% static '/images/Man_studies_online.png' %}">
         </footer>
-    </div>
 </body>
 
 </html>

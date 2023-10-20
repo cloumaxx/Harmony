@@ -15,9 +15,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <style>
     .header {
         text-align: center;
@@ -37,7 +37,7 @@
         padding-bottom: 14%;
         text-align: center;
         font-style: normal;
-        font-size: 20px;
+        font-size: 30px;
 
     }
 
@@ -47,7 +47,8 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
-        text-decoration: none;
+        text-decoration: none; /* Elimina la decoración de texto (subrayado) */
+
     }
 
     #button {
@@ -65,18 +66,20 @@
         margin: 4%;
         color: #FFF;
         font-size: 1.5vw;
+        /* Tamaño de letra relativo al ancho del botón */
         text-align: center;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
     }
-    
     #cont_port_cont_img{
+        
         height: 111%;
         border-radius: 19px;
         background: rgba(198, 195, 195, 0.48);
-    }
     
+
+    }
     #port_cont_img {
         position: relative;
         z-index: -1;
@@ -101,7 +104,35 @@
         top: 0;
         right: 0;
     }
-
+    .svg-element4 {
+        position: absolute;
+        left: 0;
+    }
+    .svg-element5 {
+        position: absolute;
+        left: 0;
+        
+    }
+    .svg-element6 {
+        position: absolute;
+        right: 0;
+        
+    }
+    .svg-element7 {
+        position: absolute;
+        left: 0;
+    }
+    .svg-element8 {
+        position: absolute;
+        bottom:  0;
+    }
+    .svg-element9 {
+        position: absolute;
+        bottom:  0;
+        
+       
+    }
+  
     #titulo {
         text-align: center;
     }
@@ -125,8 +156,8 @@
             <div class="row" id="cont_grande">
                 <div class="col-md-7">
                     <div id="titulo">
-                        <h1>Bienvenido a Harmony</h1><br>
-                        <img src="{% static '/images/icono.png' %}" >
+                        <h1>Bienvenido a </h1><br>
+                        <img src="{% static '/images/nuevo_logo.png' %}" >
 
                     </div>
                     <div id="texto_incial">
@@ -159,7 +190,124 @@
                         <img id="logoNavbar" src="{% static '/images/woman_working_computer.png'  %}">
 
                         <div id="port_cont_img" >
-                            <!-- Aquí van las imágenes SVG, que se mantienen -->
+                            <svg class="svg-element1" xmlns="http://www.w3.org/2000/svg" width="100%" height="390"
+                                viewBox="0 0 370 390" fill="none">
+                                <g filter="url(#filter0_f_131_98)">
+                                    <path
+                                        d="M370 0H270.345C275.043 13.7308 277.492 55.6599 249.71 113.53C214.982 185.868 153.578 105.492 140.492 203.45C130.023 281.816 289.135 243.805 370 215.004V0Z"
+                                        fill="#0480F5" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_f_131_98" x="0" y="-140" width="510" height="530"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                        <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_131_98" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                            <svg class="svg-element2" xmlns="http://www.w3.org/2000/svg" width="100%" height="390" viewBox="0 0 433 443"
+                                fill="none">
+                                <g filter="url(#filter0_f_131_99)">
+                                    <path
+                                        d="M36 0H-1.29938e-05C-3.20001 32.4 31.6667 215.167 49.5 302.5C53.8333 254.5 93.3 159.9 216.5 165.5C370.5 172.5 340 0 333.5 0C327 0 263.5 10 187.5 55C126.7 91 61.1667 33.3333 36 0Z"
+                                        fill="#46A5FF" />
+                                </g>
+                                <defs>
+                                    <filter class="svg-element2" id="filter0_f_131_99" x="-140.206" y="-140" width="620.491"
+                                        height="582.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                        <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_131_99" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                            <svg class="svg-element3"  xmlns="http://www.w3.org/2000/svg" width="100%" height="226" viewBox="0 0 433 226" fill="none">
+                                <g filter="url(#filter0_f_131_100)">
+                                  <path d="M330.5 0H36C51.8333 20.5 93.5 65.8 133.5 83C173.5 100.2 281.5 34.8333 330.5 0Z" fill="#FF80BA"/>
+                                </g>
+                                <defs>
+                                  <filter id="filter0_f_131_100" x="-104" y="-140" width="574.5" height="365.831" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_131_100"/>
+                                  </filter>
+                                </defs>
+                              </svg>
+                              <svg class="svg-element4" xmlns="http://www.w3.org/2000/svg" width="100%" height="500" viewBox="0 0 309 643" fill="none">
+                                <g filter="url(#filter0_f_131_101)">
+                                  <path d="M127 223C117 165.4 38.5 69 0.5 28V643C79.5 551.833 219.7 371.9 148.5 381.5C59.5 393.5 139.5 295 127 223Z" fill="#0480F5"/>
+                                </g>
+                                <defs>
+                                  <filter id="filter0_f_131_101" x="-139.5" y="-112" width="447.562" height="895" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_131_101"/>
+                                  </filter>
+                                </defs>
+                              </svg>
+                              <svg  class="svg-element5" xmlns="http://www.w3.org/2000/svg" width="100%" height="575" viewBox="0 0 371 575" fill="none">
+                                <g filter="url(#filter0_f_131_102)">
+                                  <path d="M230.5 147.5C230.5 107.9 150.167 158 110 188C107 194.833 90.4 233.5 48 333.5C5.59999 433.5 83 440.5 127 431.5C167.167 387.167 241.4 289.9 217 255.5C186.5 212.5 230.5 197 230.5 147.5Z" fill="#9277FD"/>
+                                </g>
+                                <defs>
+                                  <filter id="filter0_f_131_102" x="-104.293" y="-7.12845" width="474.793" height="581.498" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_131_102"/>
+                                  </filter>
+                                </defs>
+                              </svg>
+                              <svg class="svg-element6" xmlns="http://www.w3.org/2000/svg" width="100%" height="577" viewBox="0 0 389 577" fill="none">
+                                <g filter="url(#filter0_f_131_103)">
+                                  <path d="M389 140C389 150.8 228.333 144.5 148 140C142.833 140 148.7 151.7 213.5 198.5C294.5 257 241.5 225.5 155 410.5C85.8 558.5 282.167 430.833 389 348.5V140Z" fill="#46A5FF"/>
+                                </g>
+                                <defs>
+                                  <filter id="filter0_f_131_103" x="0.565674" y="0" width="528.434" height="618.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_131_103"/>
+                                  </filter>
+                                </defs>
+                              </svg>
+                              <svg class="svg-element7" xmlns="http://www.w3.org/2000/svg" width="100%" height="566" viewBox="0 0 433 566" fill="none">
+                                <g filter="url(#filter0_f_131_104)">
+                                  <path d="M-0.5 566L193.5 141.5C215.667 138.167 271.2 139.6 316 172C372 212.5 301.5 262 267.5 268.5C233.5 275 207 368 244 462.5C273.6 538.1 272 563 267.5 566H-0.5Z" fill="#6A44FF"/>
+                                </g>
+                                <defs>
+                                  <filter id="filter0_f_131_104" x="-140.5" y="0.271027" width="617.405" height="705.729" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_131_104"/>
+                                  </filter>
+                                </defs>
+                              </svg>
+                              <svg class="svg-element8" xmlns="http://www.w3.org/2000/svg" width="100%" height="484" viewBox="0 0 393 484" fill="none">
+                                <g filter="url(#filter0_f_131_105)">
+                                  <path d="M251.5 329C282.7 273.4 249.5 199.833 229 170C211 123.2 186.833 143.167 177 159C187.5 193.333 200.5 269.4 168.5 299C128.5 336 135 363 168.5 411C202 459 212.5 398.5 251.5 329Z" fill="#FF9D78"/>
+                                </g>
+                                <defs>
+                                  <filter id="filter0_f_131_105" x="0.883789" y="0.895233" width="403.395" height="567.316" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_131_105"/>
+                                  </filter>
+                                </defs>
+                              </svg>
+                              <svg class="svg-element9" xmlns="http://www.w3.org/2000/svg" width="100%" height="375" viewBox="0 0 346 375" fill="none">
+                                <g filter="url(#filter0_f_131_106)">
+                                  <path d="M345.5 140.5L140 249.5V375H345.5V140.5Z" fill="#9277FD"/>
+                                </g>
+                                <defs>
+                                  <filter id="filter0_f_131_106" x="0" y="0.5" width="485.5" height="514.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_131_106"/>
+                                  </filter>
+                                </defs>
+                              </svg>
+                               <br>
+                          
                         </div>
                         <br>
                     </div>
