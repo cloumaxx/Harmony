@@ -7,6 +7,7 @@ intents:
   - sentir_bien
   - sentir_mal
   - sentir_soledad
+  - sensacion_rendirse
   - definicion_ansiedad
   - sentir_ansiedad
   - sintomas_ansiedad
@@ -54,6 +55,9 @@ responses:
 
   utter_sentir_soledad:
   - text: "Conmigo aqui, nunca estarás solo/a. ¿Como puedo ayudarte?"
+
+  utter_sensacion_rendirse:
+  - text: "Nunca te rindas, incluso cuando creas que no hay solucion siempre habrá un camino para encontrarla"
 
   utter_sentir_ansiedad:
   - text: "¿Que te gustaría saber de la ansiedad?"

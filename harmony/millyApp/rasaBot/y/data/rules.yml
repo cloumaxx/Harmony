@@ -62,6 +62,10 @@ rules:
   - intent: agradecimiento
   - action: utter_agradecimiento
   
+- rule: Responde cuando alguien se quiera rendir
+  steps:
+  - intent: sensacion_rendirse
+  - action: utter_sensacion_rendirse
 #------------------------------------------------------
 
 #HORMONAS

@@ -46,6 +46,18 @@ stories:
   - intent: sentir_soledad
   - action: utter_sentir_soledad
 
+- story: sensacion_rendirse path
+  steps:
+  - intent: sensacion_rendirse
+  - action: utter_sensacion_rendirse
+
+- story: sensacion_rendirse path 2
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: sensacion_rendirse
+  - action: utter_sensacion_rendirse
+
 - story: sentir_ansiedad path
   steps:
   - intent: sentir_ansiedad
