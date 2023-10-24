@@ -1,9 +1,6 @@
 
 from email.mime.image import MIMEImage
 from bson import ObjectId
-
-
-from django.conf import settings
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
