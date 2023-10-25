@@ -1,12 +1,10 @@
 
 from email.mime.image import MIMEImage
 from bson import ObjectId
-
-
-from django.conf import settings
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from googletrans import Translator
 
 import requests
 
@@ -140,3 +138,12 @@ def enviar_correo_inicio_sesion(destinatario, nombre):
     except Exception as e:
         return "Error al enviar el correo electrónico: " + str(e)
     
+def traducirAEspañol(texto_a_traducir,translator):
+    # Crea una instancia del traductor
+    try:
+       # Detecta automáticamente el idioma del texto de origen
+        idioma_origen = translator.detect(texto_a_traducir).lang
+        # Traduce el texto a español
+    except Exception as e: 
+        print(e)
+    return translator.translate(texto_a_traducir, src=idioma_origen, dest='es')

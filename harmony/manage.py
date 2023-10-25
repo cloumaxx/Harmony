@@ -5,8 +5,6 @@ import sys
 import spacy
 
 def main():
-    # descargar modelo de idioma ingles
-    #spacy.cli.download("es_core_news_lg")
 
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'harmonyProject.settings')

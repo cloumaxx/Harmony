@@ -12,6 +12,27 @@ intents:
   - sintomas_ansiedad
   - tratamiento_ansiedad
   - origen_ansiedad
+  - sintomas_relacionados_hormona_crecimiento
+  - sintomas_relacionados_insulina
+  - sintomas_relacionados_tiroxina_o_triyodotironina
+  - sintomas_relacionados_estimulante_tiroides
+  - sintomas_relacionados_antidiuretica
+  - sintomas_relacionados_oxitocina
+  - sintomas_relacionados_cortisol
+  - sintomas_relacionados_adrenalina
+  - sintomas_relacionados_noradrenalina
+  - sintomas_relacionados_estrogenos
+  - sintomas_relacionados_progesterona
+  - sintomas_relacionados_testosterona
+  - sintomas_relacionados_melatonina
+  - sintomas_relacionados_serotonina
+  - sintomas_relacionados_dopamina
+  - sintomas_relacionados_endorfinas
+  - sintomas_relacionados_prolactina
+  - sintomas_relacionados_foliculo-estimulante
+  - sintomas_relacionados_luteinizante
+  - sintomas_relacionados_colecistoquinina
+  - sintomas_relacionados_anti-Mulleriana
   - agradecimiento
   - exception
 
@@ -44,7 +65,7 @@ responses:
   - text: Los síntomas de la ansiedad pueden incluir palpitaciones, sudoración, dificultad para respirar, pensamientos intrusivos y evitación de situaciones temidas.
 
   utter_tratamiento_ansiedad: 
-  - text: Lo siento, no estoy en la capacidad para recomendar tratamientos para la ansiedad
+  - text: Lo siento, no estoy en la capacidad para recomendar tratamientos
 
   utter_agradecimiento: 
   - text: Es un placer ayudarte. Si necesitas algo mas, no dudes en preguntar
@@ -54,6 +75,74 @@ responses:
 
   utter_origen_ansiedad:
   - text: Ciertas experiencias de vida, como acontecimientos traumáticos, parecen provocar los trastornos de ansiedad en personas que ya son propensas a la ansiedad. Los rasgos heredados también pueden ser un factor
+
+  #------------------------------------------------------
+
+  #HORMONAS
+
+  #------------------------------------------------------
+  utter_sintomas_relacionados_hormona_crecimiento:
+  - text: El sintoma que me describes posiblemente esté relacionado con la hormona del crecimiento (GH), esta hormona.... 
+  
+  utter_sintomas_relacionados_insulina:
+  - text: El sintoma que me describes posiblemente esté relacionado con insulina, esta hormona.... 
+  
+  utter_sintomas_relacionados_tiroxina_o_triyodotironina:
+  - text: El sintoma que me describes posiblemente esté relacionado con la tiroxina o triyiditironina, esta hormona.... 
+  
+  utter_sintomas_relacionados_estimulante_tiroides:
+  - text: El sintoma que me describes posiblemente esté relacionado con la hormona estimulante de la tiroides, esta hormona.... 
+  
+  utter_sintomas_relacionados_antidiuretica:
+  - text: El sintoma que me describes posiblemente esté relacionado con la hormona antidiuretica, esta hormona.... 
+  
+  utter_sintomas_relacionados_oxitocina:
+  - text: utter_sintomas_relacionados_oxitocina
+  
+  utter_sintomas_relacionados_cortisol:
+  - text: utter_sintomas_relacionados_cortisol
+
+  utter_sintomas_relacionados_adrenalina:
+  - text: utter_sintomas_relacionados_adrenalina
+  
+  utter_sintomas_relacionados_noradrenalina:
+  - text: utter_sintomas_relacionados_noradrenalina
+  
+  utter_sintomas_relacionados_estrogenos:
+  - text: utter_sintomas_relacionados_estrogenos
+  
+  utter_sintomas_relacionados_progesterona:
+  - text: utter_sintomas_relacionados_progesterona
+  
+  utter_sintomas_relacionados_testosterona:
+  - text: utter_sintomas_relacionados_testosterona
+  
+  utter_sintomas_relacionados_melatonina:
+  - text: utter_sintomas_relacionados_melatonina
+  
+  utter_sintomas_relacionados_serotonina:
+  - text: utter_sintomas_relacionados_serotonina
+  
+  utter_sintomas_relacionados_dopamina:
+  - text: utter_sintomas_relacionados_dopamina
+  
+  utter_sintomas_relacionados_endorfinas:
+  - text: utter_sintomas_relacionados_endorfinas
+  
+  utter_sintomas_relacionados_prolactina:
+  - text: utter_sintomas_relacionados_prolactina
+  
+  utter_sintomas_relacionados_foliculo-estimulante:
+  - text: utter_sintomas_relacionados_foliculo-estimulante
+  
+  utter_sintomas_relacionados_luteinizante:
+  - text: utter_sintomas_relacionados_luteinizante
+  
+  utter_sintomas_relacionados_colecistoquinina:
+  - text: utter_sintomas_relacionados_colecistoquinina
+  
+  utter_sintomas_relacionados_anti-Mulleriana:
+  - text: utter_sintomas_relacionados_anti-Mulleriana
 
 session_config:
   session_expiration_time: 60

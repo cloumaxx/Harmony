@@ -13,7 +13,8 @@ Scripts\activate
 ubicar carpeta rasaBot:
 para entrenar el modelo : rasa train
 
-para correr el modelo : rasa shell
+para correr el modelo : rasa shell --port 5006
+para correr el codigo : python manage.py runserver  5006 
 
 ///////////////////////////////
 ////// Scripts librerias     ////////

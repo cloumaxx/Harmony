@@ -5,14 +5,19 @@ from django.shortcuts import  redirect, render
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import  enviar_correo_inicio_sesion, get_Nombre, get_comentariosVer, get_img_perfil
+from harmonyApp.operations.utils import  enviar_correo_inicio_sesion, get_comentariosVer
 from harmonyProject.database import MongoDBConnection
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
 from millyApp.views import send_to_rasa
+import pandas as pd
+import plotly.express as px
+import plotly.offline as opy
+from io import BytesIO
+import base64
+import matplotlib.pyplot as plt
 
 
 # Create your views here.
@@ -32,7 +37,66 @@ def login_required(view_func):
 
 @login_required
 def pantalla_menu_inicial(request,usuario_id ):
-    return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id })
+
+
+    return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id})
+"""
+////////////////////////////////////////////////////////
+////// Funciones enfocadas en las estadisticas  ////////
+////////////////////////////////////////////////////////
+"""
+@login_required
+def pantalla_estadisticas(request,usuario_id):
+
+    usuarios_cursor = db_connection.db.Usuario.find()
+    cantidad_usuarios = sum(1 for _ in usuarios_cursor)
+    # mensajes mas comunes
+    mensajes_cursor = db_connection.db.Mensajes.find()
+    # Crear un DataFrame vacío
+    df = pd.DataFrame()
+
+    # Agregar la columna 'mensaje' al DataFrame
+    df = pd.DataFrame(mensajes_cursor)
+    # Convierte la columna 'fecha' a tipo datetime
+    df['fecha'] = pd.to_datetime(df['fecha'])
+
+    # Agrupa los mensajes por día y cuenta la cantidad de mensajes en cada día
+    mensajes_por_dia = df.groupby(df['fecha'].dt.date)['mensaje'].count()
+    
+     # Crea un gráfico de barras interactivo con Plotly
+    fig = px.bar(mensajes_por_dia, x=mensajes_por_dia.index, y='mensaje', labels={'x': 'Fecha', 'y': 'Cantidad de Mensajes'})
+    plot_div = opy.plot(fig, auto_open=False, output_type='div')
+
+    
+
+    # Usa value_counts en la columna 'mensaje' para obtener las frecuencias de cada valor
+    frecuencias = df['mensaje'].value_counts()
+    mensajes_enviados = df['mensaje'].count()
+
+    # El resultado contendrá los elementos más repetidos en orden descendente
+    elementos_mas_repetidos = frecuencias.head(1).index.tolist()
+
+    #Promedio de calificacion 
+     # Crear un DataFrame vacío
+    dfCal = pd.DataFrame()
+    calificaciones_cursor = db_connection.db.Calificacion.find()
+    print(calificaciones_cursor[0])
+    dfCal['calificacion'] = [1,2,3,4,5]
+    dfCal['contador'] = [0,0,0,0,0]
+    for calificacion in calificaciones_cursor:
+        dfCal.at[(calificacion['calificacion']-1),'contador'] += 1
+    # Crea un gráfico de barras
+    dfCal.plot.pie(y='contador', figsize=(4, 4), labels=dfCal['calificacion'])
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    plot = base64.b64encode(img.read()).decode()
+    
+    promCalificacion= ((dfCal['contador']*dfCal['calificacion']).sum()) / dfCal['contador'].sum()
+
+    promCalificacion = round(promCalificacion,2)
+
+    return render(request, "pantalla_estadisticas/pantalla_estadisticas.html",{"plot":plot,"usuario_id": usuario_id,"cantidad_usuarios":cantidad_usuarios,"mensajes_enviados":mensajes_enviados,"elementos_mas_repetidos":elementos_mas_repetidos,"promCalificacion":promCalificacion,"plot_div":plot_div })
 """
 ////////////////////////////////////////////////////////
 ////// Funciones enfocadas en los comentarios  /////////
@@ -162,8 +226,9 @@ def calificarApp(request, usuario_id):
         calificacion = request.POST.get('rating')
         # Obtener el comentario de la base de datos
         calificacionEntrante = db_connection.db.Calificacion.find_one({'id_usuario': usuario_id})
-        idCalificacion = calificacionEntrante.get('_id')
+        
         if calificacionEntrante:
+            idCalificacion = calificacionEntrante.get('_id')
             db_connection.db.Calificacion.update_one(
                 {'_id': ObjectId(idCalificacion)},
                 {
@@ -258,9 +323,10 @@ def pantalla_login(request):
                 request.session['id_user'] = user_id
                 return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
             else:
-                form.add_error(None, 'Credenciales inválidas')
+                messages.success(request, 'Credenciales inválidas')
+                
         else:
-            form.add_error(None, 'Credenciales inválidas')
+            messages.success(request, 'Credenciales inválidas')
 
     else:
         form = LoginForm()
@@ -328,7 +394,7 @@ def pantalla_registro(request):
         else:
             error_message = "Correo ya existe"
             context = {'error_message': error_message}
-        return render(request, 'pantalla_registro/pantalla_registro.html', context)
+            return render(request, 'pantalla_registro/pantalla_registro.html', context)
 
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
@@ -488,6 +554,7 @@ def vaciarChat(request,usuario_id,posicion):
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
                 return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
 @login_required
 def eliminarChat(request,usuario_id,posicion):
     posicion=int(posicion)
@@ -502,10 +569,13 @@ def eliminarChat(request,usuario_id,posicion):
                 if lugar < 0:
                     lugar = 0
                 return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=lugar)
+            else:
+                vaciarChat(request,usuario_id,posicion)
+            
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
 @login_required
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
-    print("Entro",posicion)
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
