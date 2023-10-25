@@ -29,12 +29,22 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
-        #body {
+        .navbar-fixed{
+            position: fixed;
+            width: 100%;
+        }
+        body {
             background: linear-gradient(180deg, #686381 0%, rgba(50, 16, 229, 0.40) 100%);
             margin: 0;
-            height: 100vh;
+            height: 100%;
+            background-attachment: fixed;
+           
         }
-
+        main{
+            height: 100%;
+            padding-bottom: 100px;
+            padding-top: 50px;
+        }
         #ulti_footer {
             position: fixed;
             bottom: 0;
@@ -88,15 +98,14 @@
 
         #mySidebarChats,
         #mySidebar {
-            position: relative;
-            height: 90vh;
+            position: fixed;
             overflow-y: scroll;
             z-index: 9999;
             background-color: #1E1E1E;
             scrollbar-width: thin;
             scrollbar-color: #ffffff #1E1E1E;
             display: none;
-
+            height: 100%;
         }
 
         #mySidebarChats {
@@ -125,6 +134,7 @@
         }
 
         #openNav_div {
+            padding-top: 70px;
             position: fixed;
         }
 
@@ -227,10 +237,10 @@
             top: 0;
             height: 17%;    
             max-width: 100%;
-            padding-top: 100px;
             z-index: 9999;
             position: fixed;
             padding-left: 30px;
+            padding-top: 100px;
         }
         #btn_chats_nuevo {
             
@@ -257,6 +267,75 @@
         #btnEliminar{
             width: 30%;
         }
+        .oculto {
+            display: none;
+        }
+        
+        .spinner {
+            border: 9px solid rgba(0, 0, 0, 0.1);
+            border-left: 9px solid white;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            animation: spin 1s linear infinite;
+            margin: auto;
+            z-index: 9999;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        #div_grande_pregunta{
+            padding-top: 60px;
+            display: grid;
+            place-items: center;
+        
+        }
+        #cont_respuesta,
+        #cont_pregunta{
+            background-color: #D9D9D9;
+            border: 1px solid #000;
+            width: auto;
+            display: inline-block;
+            
+        }
+        #cont_respuesta{
+            
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border-top-right-radius: 30px;
+            
+        }
+        #cont_pregunta{
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border-top-left-radius: 30px;
+        }
+        #milly_respuesta,
+        #user_nombre_pregunta{
+            padding: 20px;
+            color: #000;
+            text-align: center;
+            font-family: Inder;
+            font-size: 18px;
+            font-style: normal;
+            line-height: normal;
+            width: auto;
+            max-width: 100%;
+            min-width: 20px;
+            min-height: 8%;
+        }        
     </style>
     <script>
         function mostrarCarga() {
@@ -308,39 +387,8 @@
     <header class="navbar-fixed">
         {% include 'navbar.html' %}
     </header>
-
-    <main>
-
-        <div id="openNav_div">
-            <div>
-                <button id="openNav" onclick="openSideForo()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        style="font-size: 25px;" class="bi bi-people-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
-                    </svg>
-
-                </button>
-
-                <span class="mensajeAbrirForo">Ver foro</span>
-            </div>
-            <br>
-
-            <div>
-                <button id="openNavChats" onclick="openSideChats()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16" style="font-size: 25px;">
-                        <path
-                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                    </svg>
-                </button>
-                <span class="mensajeAbrirChat">Nuevo chat</span>
-            </div>
-
-        </div>
         <!--
-        Barra de foro
-
+            Barra de foro
         -->
         <div id="mySidebar">
 
@@ -391,7 +439,7 @@
 
         </div>
         <!--
-        Barra de chats 
+            Barra de chats 
         -->
         <div id="mySidebarChats">
             <div id="centered_list2">
@@ -475,11 +523,118 @@
 
                 </button>
             </div>
-            
-
-
             <br>
         </div>
+    <main>
+        <div id="carga" class="oculto">
+            <div class="spinner"></div>
+
+        </div>
+        <div id="openNav_div">
+            <div>
+                <button id="openNav" onclick="openSideForo()">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="30" height="30" fill="url(#pattern5)"/>
+                        <defs>
+                        <pattern id="pattern5" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_479_350" transform="scale(0.0111111)"/>
+                        </pattern>
+                        <image id="image0_479_350" width="90" height="90" xlink:href="data:image/png;base64,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"/>
+                        </defs>
+                        </svg>
+                        
+
+                </button>
+
+                <span class="mensajeAbrirForo">Ver foro</span>
+            </div>
+            <br>
+
+            <div>
+                <button id="openNavChats" onclick="openSideChats()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16" style="font-size: 25px;">
+                        <path
+                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                    </svg>
+                </button>
+                <span class="mensajeAbrirChat">Nuevo chat</span>
+            </div>
+
+        </div>
+        
+        <!--
+            Mensajes del chat bot
+        -->
+        {% if conversaciones|length > 0 %}
+            {% if conversacion|length > 0 %}
+         
+            {% for item in conversacion %}
+            <div id="div_grande_pregunta">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7" style="text-align: right;">
+                            <div id="cont_pregunta">
+                                <p id="user_nombre_pregunta">{{ item.pregunta }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <img id="img" class="border rounded-circle border-1 border-dark"
+                                style="border-radius: 50%; width: 100px; height: 80px; float: left;"
+                                src="{{url_imagen_perfil}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+            <div class="respuesta">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img id="img" class="border rounded-circle border-1 border-dark"
+                                style="border-radius: 50%; width: 100px; height: 80px; float: right;"
+                                src="{% static '/images/mily.png' %}">
+
+                        </div>
+                        <div class="col-md-7" id="cont_respuesta">
+                           
+                            <p id="milly_respuesta">{{ item.respuesta }}</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <br>
+            {% endfor %}
+            <a id="final"></a>
+
+            {% else %}
+            <div id="contCentrarSinChat" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+                <div class="container" id="contIntCentrarSinChat">
+                    <div class="row">
+                        <div class="col-md-4" style="height: 100%;">
+                            <img class="border rounded-circle border-1 border-dark"
+                                style="border-radius: 50%; height: 70%; width: 70%;"
+                                src="{% static '/images/mily.png'  %}">
+                        </div>
+                        <div class="col-md-5">
+                            <h1 style="color: white; text-align: center;">
+                                Hola, soy Mily, tu chatbot de confianza. Estoy aquí para que hables conmigo todo lo que necesites.
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% else %}
+            
+
+            {% endif %}
+        
     </main>
     <footer id="ulti_footer">
 
@@ -489,11 +644,16 @@
                     <div class="dropdown">
                         <button id="botn_dropdown" type="button" class="btn-svg" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
-                            </svg>
+                            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="38" height="38" fill="url(#pattern7)"/>
+                                <defs>
+                                <pattern id="pattern7" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_470_302" transform="scale(0.0111111)"/>
+                                </pattern>
+                                <image id="image0_470_302" width="90" height="90" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                                </svg>
+                                
 
                         </button>
                         <ul class="dropdown-menu">
@@ -570,11 +730,16 @@
                                 <div class="col-md-2">
 
                                     <button type="submit" id="btn-enviar" onclick="mostrarCarga()">
-                                        <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16"
-                                            height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
-                                            <path
-                                                d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z" />
-                                        </svg>
+                                        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <rect width="38" height="38" fill="url(#pattern6)"/>
+                                            <defs>
+                                            <pattern id="pattern6" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                            <use xlink:href="#image0_470_260" transform="matrix(0.0111111 0 0 0.00864198 0 0.111111)"/>
+                                            </pattern>
+                                            <image id="image0_470_260" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACyklEQVR4nO2dMYgTQRiFF0RBrBQstNBCrWwECxtLK8HSShErS+2tbIQTBLFSK+GwshUrS22EgCFkb9/bJU3gLBStbG4VfllIQAMxySX+OzvzPpg6yZe3k7dkZjbLhBBCCCGEECIWhsPhIZKPSH5uBoDno9HoVNvvKzpIbpG0mbEn4RtmkmSbM2qS22VZntn06yYHyW//EP1XwvM8P932++0sAD4uIVoJXxeSr1YQLeH7heSDfYg2zeErAuDmGqJNwpdP9KUNiDYJX8BwODy2QdEm4etXPAl3rnimhPtWPJNw34pnEu5b8UzCfSueSbhvxTMJ9614JuG+Fc8k3LfiWdLCW6h4lqTwFiueJSU8gIpnSQgPqOJZtMLLsjxO8nUAwixa4QCuA/gSgCSLUnhEKbZghUeaYgtGeCIptlaFJ5hia0X4eDw+XBTFyaIoLpZleY3kneZuEMDTSco/ABiR/BmACOu88GUYDAZHq6o6D+BycyUURXFvsup0G8A7APmCxZFdG+G0lESukjpo4YswswM7OzsnSF4geZXkbZL3//hC3pMsSf4IQHYz9kg+6fV6B7NY6ff7R/I8PzedtkjeBfAQwEsAbwF8muxM+PW/hQN4nKWO+VwlX7PUMQfRTR3OYqUf0NTRbKLKuoR18MewmZ+D+TEcz693LwC86Wq9q6rqrOsNC8krJG/NuWH5HoCY8ARHmD4LSvCUidyYbpstKMGzU0KT4AA+qEUpeJYE0127Ck4w3XVrghNJdx2M4EjTXQcpOLYFNFXIgmNYElZ1QfAULXJ0Qst2ndBCdCe0tcIJbRZy6tEhtYiyq3/3d6Da1VELnqItyk5o070TOkbCCR2M4oSO+ulutauTaBGroOPYnCiK4oYS7ICOzHRCh8A6oWONndBB3U6Q3FVNa/lhCjpqfvOPB9maJHsXwDM9HkQIIYQQQgghsu7yG0wGZxPtJ9zVAAAAAElFTkSuQmCC"/>
+                                            </defs>
+                                            </svg>
+                                            
                                     </button>
 
                                     <script>
