@@ -28,414 +28,236 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<style>
-    .navbar-fixed {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-}
-
-#main {
-    margin-top: 50px;
-    margin-bottom: 80px;
-    margin-left: 150px;
-}
-
-#body {
-    background: linear-gradient(180deg, #686381 0%, rgba(50, 16, 229, 0.40) 100%);
-}
-
-#botn_dropdown,
-#btn-enviar {
-    border-radius: 29px;
-    background: #424050;
-    height: 100%;
-    width: 100%;
-}
-
-#btn_enviar2 {
-    border-radius: 29px;
-    background: #424050;
-    height: 100%;
-    width: 70%;
-}
-
-#container_like {
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#container_like button,
-#container_like p {
-    margin: 1px;
-}
-
-.mensaje {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    white-space: nowrap;
-    margin-left: 30px;
-    display: none;
-    background-color: #f9f9f9;
-    padding: 5px;
-    border: 1px solid #ccc;
-}
-
-.dropdown-item {
-    margin-top: 5px;
-}
-
-.dropdown-item:hover {
-    cursor: pointer;
-}
-
-.dropdown-item:hover .mensaje {
-    display: block;
-}
-
-#cont_buscador_foro {
-    width: 100%;
-    height: 100%;
-}
-
-#cont_pregunta {
-    border-radius: 17px;
-    background: #D9D9D9;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 100%;
-    margin-left: auto;
-}
-
-#user_nombre_pregunta {
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-bottom: 1%;
-}
-
-#user_pregunta {
-    margin-left: 5%;
-    margin-bottom: 2%;
-}
-
-#cont_respuesta {
-    border-radius: 17px;
-    background: #D9D9D9;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 60%;
-}
-
-#milly_nombre_respuesta {
-    margin-top: 2%;
-    margin-left: 3%;
-}
-
-#milly_respuesta {
-    margin-left: 3%;
-    margin-bottom: 2%;
-}
-
-#input_pregunta_foro,
-#input_pregunta {
-    border-radius: 15px;
-    background: #424050;
-    width: 100%;
-    border-color: transparent;
-    color: white;
-}
-
-#input_pregunta_foro::placeholder,
-#input_pregunta::placeholder {
-    color: white;
-}
-
-#contendor_no_hay_chat {
-    display: grid;
-    place-items: center;
-}
-
-#contenedor_footer {
-    position: fixed;
-    bottom: 0;
-    background-color: transparent;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-
-#cont_agregar_replica {
-
-    margin-left: 5%;
-    display: flex;
-    align-items: center;
-}
-
-#openNavChats,
-#openNav {
-
-    width: 50px;
-    height: 75px;
-    border: none;
-    background-color: #5900ff;
-    color: white;
-    border-top-right-radius: 75px;
-    border-bottom-right-radius: 75px;
-    cursor: pointer;
-}
-
-#openNav_div {
-    position: fixed;
-}
-
-#openNav:hover+.mensajeAbrirForo {
-    display: block;
-}
-
-#openNav:hover {
-
-    position: relative;
-
-}
-
-#openNavChats {
-    position: fixed;
-}
-
-#openNavChats:hover+.mensajeAbrirChat {
-    display: block;
-}
-
-#openNavChats:hover {
-
-    position: relative;
-
-}
-
-.mensajeAbrirForo {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    white-space: nowrap;
-    margin-top: 45%;
-    margin-left: 10px;
-    display: none;
-    padding: 5px;
-    background-color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-
-.mensajeAbrirChat {
-    position: absolute;
-    bottom: 0;
-    left: 100%;
-    white-space: nowrap;
-    margin-bottom: 45%;
-    margin-left: 10px;
-    display: none;
-    padding: 5px;
-    background-color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-
-#mySidebarChats,
-#mySidebar {
-    position: fixed;
-
-}
-
-#mySidebarChats {
-    margin-top: 80px;
-    border-top-right-radius: 20%;
-    display: none;
-    width: 25%;
-    height: 100vh;
-    overflow-y: scroll;
-    z-index: 9999;
-    background-color: #4da2d3;
-}
-
-#mySidebar {
-    margin-top: 80px;
-    border-top-right-radius: 25%;
-    display: none;
-    width: 45%;
-    height: 100vh;
-    overflow-y: scroll;
-    z-index: 9999;
-    background-color: #4da2d3;
-    scrollbar-width: thin; /* Ancho del scroll */
-    scrollbar-color: #ffffff #4da2d3; /* Color del scroll */
-}
-
-/* Personalización del scroll */
-#mySidebarChats::-webkit-scrollbar, #mySidebar::-webkit-scrollbar {
-    width: 8px;
-}
-
-#mySidebarChats::-webkit-scrollbar-thumb, #mySidebar::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
-}
-
-#mySidebarChats::-webkit-scrollbar-track, #mySidebar::-webkit-scrollbar-track {
-    margin-top: 140px;
-    background-color: transparent;
-}
-#replica {
-    border-radius: 17px;
-    background: #9FC5EB;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-left: 10%;
-    width: 80%;
-}
-
-#contComentario {
-    border-radius: 17px;
-    background: #E9DEB3;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-#container_pregunta_foro {
-    width: 50%;
-    position: fixed;
-    z-index: 999;
-}
-
-#ulti_footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    margin: 1%;
-    background-color: transparent;
-
-}
-
-#ulti_footer .container {
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-
-    /* Horizontally center the content */
-}
-
-.oculto {
-    display: none;
-}
-
-.spinner {
-    border: 9px solid rgba(0, 0, 0, 0.1);
-    border-left: 9px solid white;
-    border-radius: 50%;
-    width: 65px;
-    height: 65px;
-    animation: spin 1s linear infinite;
-    margin: auto;
-    z-index: 9999;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-#contCentrarSinChat {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-#btnCloseSide {
-    border: none;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    width: 100%;
-    height: 10%;
-    align-self: start;
-    z-index: 9999;
-    
-}
-
-#comentarios_foro {
-    padding-top: 50px;
-    width: 100%;
-}
-
-#btn_chats {
-    background-color: #BBB;
-    border: 1px solid #000;
-    border-radius: 30px;
-    padding: 10px 20px;
-    width: 100%;
-    cursor: pointer;
-}
-
-#btn_chats:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-#centered_list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1000px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-#centered_list2 {
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 25%;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 50px;
-}
-
-#nav_link_chats {
-    text-align: center;
-    width: 80%;
-}
-
-#li_drop{
-    padding-top: 8px;
-}
-
-#btn_nuevo_chat22{
-    background-color: blue;
+    <style>
+        #body {
+            background: linear-gradient(180deg, #686381 0%, rgba(50, 16, 229, 0.40) 100%);
+            margin: 0;
+            height: 100vh;
+        }
+
+        #ulti_footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin: 1%;
+            background-color: transparent;
+
+        }
+
+        #ulti_footer .container {
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+        }
+
+        #botn_dropdown,
+        #btn-enviar {
+            border-radius: 29px;
+            background: #424050;
+            height: 50px;
+            width: 80px;
+            padding-right: 10px;
+        }
+
+        #li_drop {
+            padding-top: 8px;
+        }
+
+        #input_pregunta_foro,
+        #input_pregunta {
+
+            width: 100%;
+            height: 50px;
+            color: white;
+            border-radius: 17px;
+            border: 1px solid #D9D9D9;
+
+            background: #313131;
+        }
+
+        #input_pregunta_foro::placeholder,
+        #input_pregunta::placeholder {
+            color: white;
+            text-align: center;
+            font-family: Open Sans;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        #mySidebarChats,
+        #mySidebar {
+            position: relative;
+            height: 90vh;
+            overflow-y: scroll;
+            z-index: 9999;
+            background-color: #1E1E1E;
+            scrollbar-width: thin;
+            scrollbar-color: #ffffff #1E1E1E;
+            display: none;
+
+        }
+
+        #mySidebarChats {
+            width: 25%;
+        }
+
+        #mySidebar {
+            width: 45%;
+
+        }
+
+        #mySidebarChats::-webkit-scrollbar,
+        #mySidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #mySidebarChats::-webkit-scrollbar-thumb,
+        #mySidebar::-webkit-scrollbar-thumb {
+            background-color: #ffffff;
+        }
+
+        #mySidebarChats::-webkit-scrollbar-track,
+        #mySidebar::-webkit-scrollbar-track {
+            margin-top: 140px;
+            background-color: transparent;
+        }
+
+        #openNav_div {
+            position: fixed;
+        }
+
+        #openNav:hover+.mensajeAbrirForo {
+            display: block;
+        }
+
+        #openNav:hover {
+            position: relative;
+        }
+
+        #openNavChats {
+            position: fixed;
+        }
+
+        #openNavChats:hover+.mensajeAbrirChat {
+            display: block;
+        }
+
+        #openNavChats:hover {
+            position: relative;
+
+        }
+
+        .mensajeAbrirChat,
+        .mensajeAbrirForo {
+            position: absolute;
+            left: 100%;
+            white-space: nowrap;
+            margin-top: 45%;
+            margin-left: 10px;
+            display: none;
+            padding: 5px;
+            background-color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        .mensajeAbrirForo {
+            top: 0;
+        }
+
+        .mensajeAbrirChat {
+            bottom: 0;
+            margin-bottom: 45%;
+
+        }
+
+        #openNavChats,
+        #openNav {
+            margin-top: 10px;
+            width: 50px;
+            height: 75px;
+            border: none;
+            background-color: #5900ff;
+            color: white;
+            border-top-right-radius: 21px;
+            border-bottom-right-radius: 21px;
+            cursor: pointer;
+        }
+
      
-}
 
-#btn_nuevo_chat:hover {
-    cursor: pointer;
-}
+        #btnCloseSide {
+            margin-left: 50px;
+            margin-bottom: 20px;
+            width: 13vh;
+            height: 9vh;
+            z-index: 9999;
+            left: 0;
+            bottom: 0;
+            position: fixed;
+            border-radius: 29px;
+            border: 1px solid #D9D9D9;
+            background: #313131;
+        }
 
-</style>
+        #btn_enviar2 {
+            border-radius: 22px;
+            border: 1px solid #D9D9D9;
+            background: #313131;
+            height: 100%;
+            width: 70%;
+        }
+        
+        #centered_list2 {
+            top: 0;
+            height: 17%;
+            display: grid;
+            place-items: center;
+            padding-top: 100px;
+            z-index: 9999;
+            position: fixed;
+            padding-left: 30px;
+        }
+        #container_pregunta_foro{
+            top: 0;
+            height: 17%;    
+            max-width: 100%;
+            padding-top: 100px;
+            z-index: 9999;
+            position: fixed;
+            padding-left: 30px;
+        }
+        #btn_chats_nuevo {
+            
+            border-radius: 10px;
+            border: 1px solid #D9D9D9;
+            background: #313131;
+            color: white;
+            height: 8vh;
+            width: 250px;
+            
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin: 25px;
+        }
+        #btn_chats{
+            background-color: transparent;
+            color: white;
+            width: 80%;
+            border: none;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        #btnEliminar{
+            width: 30%;
+        }
+    </style>
     <script>
         function mostrarCarga() {
             var carga = document.getElementById("carga");
@@ -454,8 +276,8 @@
         function openSideForo() {
             document.getElementById("mySidebar").style.display = "block";
             document.getElementById("openNav").style.display = 'none';
-            
-            
+
+
         }
 
         function closeSideForo() {
@@ -487,117 +309,13 @@
         {% include 'navbar.html' %}
     </header>
 
-    <!--
-        Barra de foro
+    <main>
 
-    -->
-    <div id="mySidebar">
-
-        <form method="GET" action="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=posicion %}">
-            {% csrf_token %}
-            <div id="container_pregunta_foro" class="container">
-                <br>
-                <button id="btnCloseSide" onclick="closeSideForo()">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 5vb;" width="16" height="16"
-                        fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
-                    </svg>
-
-                </button>
-                <br><br>
-                <div class="row">
-                    <div class="col-9">
-                        <input id="input_pregunta_foro" type="text" name="palabraBuscar" class="form-control"
-                            placeholder="Buscar en el foro">
-                    </div>
-                    <div class="col-2">
-                        <button id="btn_enviar2" type="submit">
-                            <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <br><br><br>
-        <div id="comentarios_foro">
-            {% include 'pantalla_foro/comentarios.html' %}
-        </div>
-
-        <br>
-    </div>
-    <!--
-        Barra de chats 
-    -->
-    <div id="mySidebarChats">
-        <button id="btnCloseSide" onclick="closeSideChats()">
-            <svg xmlns="http://www.w3.org/2000/svg" style="font-size: 5vb;" width="16" height="16" fill="currentColor"
-                class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                <path
-                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
-            </svg>
-        </button>
-        <br>
-        {% if conversaciones|length > 0 %}
-        <br>
-        <ul id="centered_list">
-            {% for item in conversaciones %}
-            <a id="nav_link_chats" class="nav-link active"
-                href="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=forloop.counter|add:"-1" %}">
-                <button id="btn_chats">
-                    Chat #{{ forloop.counter }}
-                    <form method="POST" action="{% url 'eliminarChat' usuario_id=usuario_id posicion=forloop.counter|add:"-1" %}">
-                        {% csrf_token %}
-                        <button style="margin-left: 10px; width: 30px;border-radius: 10px;
-                        background: red;  align-items: center;" type="submit" class="btn btn-sm p-0">
-                            <svg style="fill: white;"  xmlns="http://www.w3.org/2000/svg" width="25%"
-                                height="25%" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
-                            </svg>
-    
-                        
-                        </button>
-                    </form>
-                </button>
-            </a>
-            <br>
-            {% endfor %}
-        </ul>
-
-        {% else %}
-        <p> no hay chats</p>
-        {% endif %}
-        <br><br><br>
-        <div id="centered_list2">
-            <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id  %}">
-                {% csrf_token %}
-                <button id="btn_chats">
-                    Crear nuevo Chat
-                </button>
-
-            </form>
-
-
-        </div>
-
-
-        <br>
-    </div>
-    <main style="background-color: transparent; padding-top:85px ;">
-        <div id="carga" class="oculto">
-            <div class="spinner"></div>
-
-        </div>
         <div id="openNav_div">
             <div>
                 <button id="openNav" onclick="openSideForo()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-people-fill" viewBox="0 0 16 16">
+                        style="font-size: 25px;" class="bi bi-people-fill" viewBox="0 0 16 16">
                         <path
                             d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
                     </svg>
@@ -611,7 +329,7 @@
             <div>
                 <button id="openNavChats" onclick="openSideChats()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
+                        class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16" style="font-size: 25px;">
                         <path
                             d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                     </svg>
@@ -620,96 +338,147 @@
             </div>
 
         </div>
+        <!--
+        Barra de foro
+
+        -->
+        <div id="mySidebar">
+
+            <form method="GET" action="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=posicion %}">
+                {% csrf_token %}
+                <div id="container_pregunta_foro" class="container">
+                    <br>
+
+                    <div class="row" >
+                        <div class="col-4">
+                            <input id="input_pregunta_foro" type="text" name="palabraBuscar" class="form-control"
+                                placeholder="Buscar en el foro">
+                        </div>
+                        <div class="col-1">
+                            <button id="btn_enviar2" type="submit">
+                                <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br><br><br>
+            <div id="comentarios_foro">
+                {% include 'pantalla_foro/comentarios.html' %}
+            </div>
+
+            <br>
+            <div id="divBotonSalir">
+                <button id="btnCloseSide" onclick="closeSideForo()">
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="38" height="38" fill="url(#pattern0)" />
+                        <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_470_226" transform="scale(0.0111111)" />
+                            </pattern>
+                            <image id="image0_470_226" width="90" height="90"
+                                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJklEQVR4nO3dvW4TQRTF8ROKABIvQHjD8FGSNwCJhoKKinegQDxBIAWEl0BCogIHRVR/tNJECijYa2dnfXxyf/2O5x6tZm3P1axUSimllFJKKQmA28AT4CNwxu44a3N+BOzLGfAA+MLuOx1qkfGdnBDyhc+Wd3ZbLtI8lBvghDwf5AZYkGchN4SSG0LJDaHkhlByQyi5IZTcEEpuCCU3hJIbQskNoeSGUHJDKLkhlNwQSm4IpXG13wVetw3e78CLYWuvgp4+6CHkf73rEjahtLruvSW7S9OHTSiNq/3nkiGmDZtQGlf7yxXDTBc2oTS+p2UIs3/YhNL4+veBtyuGew/cqaCvsObN1j9sQmn9HPqGTShtlkW/sAmlDXULm1C6hi5hM6/fwFPg4DpBGNU1/qsf8zrqHfAW6nruNqHB/e4Jz1/XN7cJMceSsYW6vrpNKHXpeOY2oYuH4VE9DIPohn+9m41VyBX03+on+Aa0pvpTaUNWIbcPiSSnkG960NRW1mxBv1oxTG3OrjIi5FvAryVDVLvBhEGf/+fyaqCZeOl4c8Wl1RLWIeh7Lezz1h42NNRUk+PUQV8KfE+9EUpuCCU3hJIbQskNoeSGUHJDKLkhlNwQSm4IJTeEkhtCyQ2h5IZQchN6COwPuWnHtqc5lhvgMXkO5ab1Ngxn46f4ZHn0/KWXKZyGhHwgZ601anjFxvGOPSAXbc6HtndyKaWUUkoppWhL/gA8W92XIF47ywAAAABJRU5ErkJggg==" />
+                        </defs>
+                    </svg>
+
+                </button>
+            </div>
+
+        </div>
+        <!--
+        Barra de chats 
+        -->
+        <div id="mySidebarChats">
+            <div id="centered_list2">
+                <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id  %}">
+                    {% csrf_token %}
+                    <div style="padding-right: 100px;">
+
+                    </div>
+                    <button id="btn_chats_nuevo">
+                         nuevo Chat
+                    </button>
+
+                </form>
 
 
-        <div id="main">
-           
+            </div>
+
+            <br>
             {% if conversaciones|length > 0 %}
-            {% if conversacion|length > 0 %}
             <br>
-            {% for item in conversacion %}
-
-            <div class="pregunta">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div id="cont_pregunta">
-                                <p id="user_nombre_pregunta"><b>{{nombre_usuario}}</b></p>
-                                <p id="user_pregunta">{{ item.pregunta }}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <img id="img" class="border rounded-circle border-1 border-dark"
-                                style="border-radius: 50%; width: 100px; height: 80px; float: left;"
-                                src="{{url_imagen_perfil}}">
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-            <br>
-            <div class="respuesta">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img id="img" class="border rounded-circle border-1 border-dark"
-                                style="border-radius: 50%; width: 100px; height: 80px; float: right;"
-                                src="{% static '/images/mily.png' %}">
-
-                        </div>
-                        <div class="col-md-7" id="cont_respuesta">
-                            <p id="milly_nombre_respuesta"><b>Milly:</b>
-                                <p>
-                                    <p id="milly_respuesta">{{ item.respuesta }}</p>
-                        </div>
+            <ul id="centered_list" style="padding-top: 100px;">
+                {% for item in conversaciones %}
+                <a id="nav_link_chats" class="nav-link active"
+                    href="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=forloop.counter|add:"-1" %}">
+                    <button id="btn_chats">
+                        
+                            <p>
+                                <svg style="padding-right: 10px; fill:white" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect width="45" height="45" fill="url(#pattern2)"/>
+                                    <defs>
+                                    <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_469_125" transform="scale(0.0111111)"/>
+                                    </pattern>
+                                    <image id="image0_469_125" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAABlUlEQVR4nO3cz00CURRGcVZobEErsCixANE2XFiBUcvxz0pNbMGlCwP7YyZhIWZAhMf3GOf8GuBy8nJJWNzBQJIkSZIkSZK0KmAfuACegCn9MwUegXNgbysvBzgCXmt/0x3y0jTZxks2cnvsci97ti7UblwydLOT1e6hZOjJgg8RTEqG1hKGDjF0iKFDDB1i6BBDhxg6xNAhhg4xdIihQwwdYugQQ4cYOsTQIYYOMXSIoUMMHWLoEEOHGDrE0CGGDjF0iKFDDB1i6BBDhxg6xNAhhg4xdIihQwwdYugQQ4cYOsTQIYYOMXSIoUMM3cHQXjdY7LNkaO91hO51NMea1O6sZOi92f0gzXsGhsVCf7sSZuz5yIdFI/942eNmL/X0B3IC3DfrovhLLonNnNaevzNY313t2TuF9bwBB7Vn7xTWuwV6XHvuPoQe1Z65k/ib29rzdharcy8HQk/dy5kXPdr0c3qP3930PlIJLOdeLgX3cgbwvqD1SWiEfgAuWyJf157r3wGGs9jNy/4Arnb670ZJGlT1BS6cHFRMwgpGAAAAAElFTkSuQmCC"/>
+                                    </defs>
+                                    </svg>
+                                Chat #{{ forloop.counter }}
+                            </p>
+                        
+                        <form method="POST"
+                            action="{% url 'eliminarChat' usuario_id=usuario_id posicion=forloop.counter|add:"-1" %}">
+                            {% csrf_token %}
+                            <button id="btnEliminar" type="submit" class="btn btn-sm p-0">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect width="35" height="35" fill="url(#pattern4)"/>
+                                    <defs>
+                                    <pattern id="pattern4" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_470_252" transform="scale(0.0111111)"/>
+                                    </pattern>
+                                    <image id="image0_470_252" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYElEQVR4nO3WTS5EURTE8WJAswWWiKVIfEWviBi1XTDSpMP0Ly95C2jR8Uq9+s3vvTmVm3OOVFVVVVVVVdsBFsAl8MrPvYxnF1s+N1/ANb93NXUd1oA9YL2DoN+Hu5QCOAbuxsJSrYFb4GjKoJfMx3KqkPeBL+bjc6i5QacGPcPWcT9JyGPQR8DNjjYFV2/jyjndMKyqqqr6e4SSG0LJDaHkhlByQyi5IZTcEEpuCCU3hJIbQskNoeSGUHJDKLkhlNwQSm4IJTeEkhtCyQ2h5IZQckMouSGU3BBKbgglN4SSG0LJDaHkhlByQyi5IZTcEEpuCCU3hJIbQskNoeSGUHJDKLkhlNwQSm4IJTeEkhtCyQ2h5IZQckMouSGU3BBKbgglN8CGPB9yAzyR51FugAvynMkNcAg8k2MFHMgRcBoS9go4kbPxZ58P/e2fDcgN8DC0C9ufXFVVVVVVVVUlD9+GFrvEn8LlcgAAAABJRU5ErkJggg=="/>
+                                    </defs>
+                                    </svg>
+                                    
 
 
-                    </div>
-
-                </div>
-
-            </div>
-            <br>
-            {% endfor %}
-            <a id="final"></a>
+                            </button>
+                        </form>
+                    </button>
+                </a>
+                <br>
+                {% endfor %}
+            </ul>
 
             {% else %}
-            <div id="contCentrarSinChat">
-                <div id="contIntCentrarSinChat">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4" style="height: 100%;">
-                                <img class="border rounded-circle border-1 border-dark"
-                                    style="border-radius: 50%; height: 70%;width:70%;"
-                                    src="{% static '/images/mily.png'  %}">
-
-                            </div>
-                            <div class="col-md-5">
-                                <h1 style="color: white;">Parece que no hemos hablado en este chat <br> ¿Quieres hablar
-                                    conmigo?</h1>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </div>
+            <p> no hay chats</p>
             {% endif %}
-            {% else %}
-            <div id="contendor_no_hay_chat">
-                <div>
-                    <p> No hay conversaciones {{usuario_id}} ls </p>
+            
+            <div id="divBotonSalir" >
+                <button id="btnCloseSide" onclick="closeSideChats()" >
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="38" height="38" fill="url(#pattern1)" />
+                        <defs>
+                            <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_470_226" transform="scale(0.0111111)" />
+                            </pattern>
+                            <image id="image0_470_226" width="90" height="90"
+                                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJklEQVR4nO3dvW4TQRTF8ROKABIvQHjD8FGSNwCJhoKKinegQDxBIAWEl0BCogIHRVR/tNJECijYa2dnfXxyf/2O5x6tZm3P1axUSimllFJKKQmA28AT4CNwxu44a3N+BOzLGfAA+MLuOx1qkfGdnBDyhc+Wd3ZbLtI8lBvghDwf5AZYkGchN4SSG0LJDaHkhlByQyi5IZTcEEpuCCU3hJIbQskNoeSGUHJDKLkhlNwQSm4IpXG13wVetw3e78CLYWuvgp4+6CHkf73rEjahtLruvSW7S9OHTSiNq/3nkiGmDZtQGlf7yxXDTBc2oTS+p2UIs3/YhNL4+veBtyuGew/cqaCvsObN1j9sQmn9HPqGTShtlkW/sAmlDXULm1C6hi5hM6/fwFPg4DpBGNU1/qsf8zrqHfAW6nruNqHB/e4Jz1/XN7cJMceSsYW6vrpNKHXpeOY2oYuH4VE9DIPohn+9m41VyBX03+on+Aa0pvpTaUNWIbcPiSSnkG960NRW1mxBv1oxTG3OrjIi5FvAryVDVLvBhEGf/+fyaqCZeOl4c8Wl1RLWIeh7Lezz1h42NNRUk+PUQV8KfE+9EUpuCCU3hJIbQskNoeSGUHJDKLkhlNwQSm4IJTeEkhtCyQ2h5IZQchN6COwPuWnHtqc5lhvgMXkO5ab1Ngxn46f4ZHn0/KWXKZyGhHwgZ601anjFxvGOPSAXbc6HtndyKaWUUkoppWhL/gA8W92XIF47ywAAAABJRU5ErkJggg==" />
+                        </defs>
+                    </svg>
 
-                    <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id  %}">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-danger">Nueva conversación</button>
-                    </form>
-                </div>
+                </button>
             </div>
+            
 
-            {% endif %}
+
+            <br>
         </div>
     </main>
     <footer id="ulti_footer">
@@ -729,46 +498,57 @@
                         </button>
                         <ul class="dropdown-menu">
                             <!-- Enlaces del menú desplegable -->
-                            <li >
+                            <li>
                                 <form method="POST" action="{% url 'crearNuevoChat' usuario_id=usuario_id %}">
                                     {% csrf_token %}
-                                    <button  id="btn_nuevo_chat22" type="submit" class="btn btn-sm p-0" style="border-radius: 10px;
+                                    <button id="btn_nuevo_chat22" type="submit" class="btn btn-sm p-0" style="border-radius: 10px;
                                     background: #BBB;margin-left: 10px; width: 90%;  ">
-                                        <svg xmlns="http://www.w3.org/2000/svg" style="fill:black" width="16" height="16" fill="currentColor"
-                                            class="bi bi-plus-circle-fill" viewBox="0 0 16 16" style="vertical-align: middle;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" style="fill:black" width="16"
+                                            height="16" fill="currentColor" class="bi bi-plus-circle-fill"
+                                            viewBox="0 0 16 16" style="vertical-align: middle;">
                                             <path
                                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
                                         </svg>
-                                        <p style="display: inline; vertical-align: middle;color: black; padding-right: 5px; font-size: 15px;">Crear nuevo chat</p>
+                                        <p
+                                            style="display: inline; vertical-align: middle;color: black; padding-right: 5px; font-size: 15px;">
+                                            Crear nuevo chat</p>
                                     </button>
                                 </form>
                             </li>
-                            
+
                             <li id="li_drop">
-                                <form method="POST" action="{% url 'vaciarChat' usuario_id=usuario_id posicion=posicion %}">
+                                <form method="POST"
+                                    action="{% url 'vaciarChat' usuario_id=usuario_id posicion=posicion %}">
                                     {% csrf_token %}
                                     <button style="margin-left: 10px; width: 90%;border-radius: 10px;
                                     background: #BBB;  " type="submit" class="btn btn-sm p-0">
-                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser-fill" viewBox="0 0 16 16">
-                                            <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
-                                          </svg>
-                                        <p style="display: inline; vertical-align: middle;color: black; padding-right: 5px; font-size: 15px;">Vaciar chat</p>
-                                    
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-eraser-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z" />
+                                        </svg>
+                                        <p
+                                            style="display: inline; vertical-align: middle;color: black; padding-right: 5px; font-size: 15px;">
+                                            Vaciar chat</p>
+
                                     </button>
                                 </form>
                             </li>
                             <li id="li_drop">
-                                <form method="POST" action="{% url 'eliminarChat' usuario_id=usuario_id posicion=posicion %}">
+                                <form method="POST"
+                                    action="{% url 'eliminarChat' usuario_id=usuario_id posicion=posicion %}">
                                     {% csrf_token %}
                                     <button style="margin-left: 10px; width: 90%;border-radius: 10px;
                                     background: #BBB;  " type="submit" class="btn btn-sm p-0">
-                                        <svg style="fill: black;"  xmlns="http://www.w3.org/2000/svg" width="25%"
+                                        <svg style="fill: black;" xmlns="http://www.w3.org/2000/svg" width="25%"
                                             height="25%" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                             <path
                                                 d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
                                         </svg>
-                                        <p style="display: inline; vertical-align: middle;color: black; padding-right: 5px; font-size: 15px;">Eliminar chat</p>
-                                    
+                                        <p
+                                            style="display: inline; vertical-align: middle;color: black; padding-right: 5px; font-size: 15px;">
+                                            Eliminar chat</p>
+
                                     </button>
                                 </form>
                             </li>

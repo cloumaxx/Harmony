@@ -49,7 +49,6 @@
             margin: 2%;
             color: #FFF;
             font-size: 1.5vw;
-            /* Tamaño de letra relativo al ancho del botón */
             text-align: center;
             font-style: normal;
             font-weight: 400;
@@ -66,7 +65,6 @@
             direction: rtl;
             text-align: center;
         }
-
         .star {
             display: inline-block;
             font-size: 30px;
@@ -75,16 +73,12 @@
             transition: color 0.2s;
             margin: 5px;
         }
-
         .star:hover {
             color: #ffcc00;
         }
-
-        /* Estilos para los radio botones en forma de estrella */
         .rating {
             display: inline-block;
         }
-
         .rating input {
             display: none;
         }
@@ -97,7 +91,6 @@
 
         .rating label:before {
             content: "\2605";
-            /* Código Unicode para una estrella rellena */
         }
 
         .rating input:checked~label:before {
@@ -105,6 +98,42 @@
         }
         #botones{
             width: 350px;
+            
+        }
+        #img_milly{
+            
+            border-radius: 50%; 
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+        #nombMilly{
+            margin-top: 30px;
+            width: 50%;
+            height: 60px;
+            border-radius: 19px;
+            background: linear-gradient(180deg, #596BF9 0%, #2E42FB 100%);
+            margin: 30 auto; text-align: center;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+        #txtMilly{
+            color: #FFF;
+            font-family: Inter;
+            font-size: 35px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+            padding-top: 10px;
+            cursor: pointer;
+        }
+        #txt_largo{
+            color: #000;
+
+            text-align: center;
+            font-family: Inder;
+            font-size: 45px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
         }
     </style>
     <script>
@@ -134,19 +163,21 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center">
-                        <div>
-                            <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%;"
+                        <div style="text-align: center;">
+                            <img  id="img_milly"
                                 src="{% static '/images/mily.png'  %}" height="400">
                             <br>
-                            <h1 class="half-colored-heading">Milly</h1>
+                            <div id="nombMilly">
+                                <p id="txtMilly">Milly</p>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="col-md-6 text-center">
                         <div style="margin-top: 10%;">
-                            <img id="logoNavbar2" src="{% static '/images/nuevo_logo.png'  %}">
                             <br><br>
-                            <h4 style="text-align: center;">Hola, soy Mily, tu chatbot de confianza. Estoy aqui para que
-                                hables conmigo todo lo que necesites </h4>
+                            <p id="txt_largo">Hola, soy Mily, tu chatbot de confianza. Estoy aqui para que
+                                hables conmigo todo lo que necesites </p>
                             <br>
                             <div id="cont_btn" style="display: flex; justify-content: center; align-items: center;">
                                 <a href="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=0 %}">
