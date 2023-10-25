@@ -106,6 +106,7 @@
             scrollbar-color: #ffffff #1E1E1E;
             display: none;
             height: 100%;
+            margin-top: 80px;
         }
 
         #mySidebarChats {
@@ -355,8 +356,6 @@
         function openSideForo() {
             document.getElementById("mySidebar").style.display = "block";
             document.getElementById("openNav").style.display = 'none';
-
-
         }
 
         function closeSideForo() {
@@ -415,7 +414,7 @@
                 </div>
             </form>
             <br><br><br>
-            <div id="comentarios_foro">
+            <div id="comentarios_foro" style="padding-bottom: 110px;padding-left: 50px;">
                 {% include 'pantalla_foro/comentarios.html' %}
             </div>
 
@@ -460,7 +459,7 @@
             <br>
             {% if conversaciones|length > 0 %}
             <br>
-            <ul id="centered_list" style="padding-top: 100px;">
+            <ul id="centered_list" style="padding-top: 100px;padding-bottom: 110px;">
                 {% for item in conversaciones %}
                 <a id="nav_link_chats" class="nav-link active"
                     href="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=forloop.counter|add:"-1" %}">
