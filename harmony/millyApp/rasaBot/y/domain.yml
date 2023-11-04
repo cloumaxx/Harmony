@@ -104,7 +104,7 @@ responses:
   - text: utter_sintomas_relacionados_oxitocina
   
   utter_sintomas_relacionados_cortisol:
-  - text: utter_sintomas_relacionados_cortisol
+  - text: El sintoma que me describes posiblemente esté relacionado con la hormona Cortisol, esta hormona.... 
 
   utter_sintomas_relacionados_adrenalina:
   - text: utter_sintomas_relacionados_adrenalina

@@ -184,6 +184,15 @@ stories:
     - intent: tratamiento_ansiedad
     - action: utter_tratamiento_ansiedad
 
+- story: sintomas_relacionados_cortisol path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_cortisol
+    - action: utter_sintomas_relacionados_cortisol
+    - intent: tratamiento_ansiedad
+    - action: utter_tratamiento_ansiedad
+
 #----------------------------------------------
 # EXCEPCIÓN
 #----------------------------------------------
