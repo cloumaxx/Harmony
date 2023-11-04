@@ -4244,6 +4244,9 @@ nlu:
 #- intent: estornudo
 #  examples: |
 
+#- intent: dolor_menstrual
+#  examples: |
+
 #------------------------------------------------------
 
 #AGRADECIMIENTO
