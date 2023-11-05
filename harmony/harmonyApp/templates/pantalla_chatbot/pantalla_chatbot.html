@@ -297,13 +297,18 @@
                 transform: rotate(360deg);
             }
         }
+        #div_grande_respuesta,
         #div_grande_pregunta{
             padding-top: 60px;
             display: grid;
             place-items: center;
         
         }
-        #cont_respuesta,
+        #cont_respuesta{
+            background-color: #D9D9D9;
+            border: 1px solid #000;
+            display: inline-block;
+        }
         #cont_pregunta{
             background-color: #D9D9D9;
             border: 1px solid #000;
@@ -587,9 +592,9 @@
             </div>
             
             <br>
-            <div class="respuesta">
+            <div class="div_grande_respuesta">
                 <div class="container">
-                    <div class="row">
+                    <div class="row"  >
                         <div class="col-md-2">
                             <img id="img" class="border rounded-circle border-1 border-dark"
                                 style="border-radius: 50%; width: 100px; height: 80px; float: right;"
