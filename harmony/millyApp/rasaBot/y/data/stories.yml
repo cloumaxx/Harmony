@@ -194,6 +194,20 @@ stories:
     - action: utter_tratamiento_ansiedad
 
 #----------------------------------------------
+# SINTOMAS DE COMUN
+#----------------------------------------------
+
+- story: dolor_de_cabeza path
+  steps:
+    - intent: dolor_de_cabeza
+    - action: utter_dolor_de_cabeza
+
+- story: reflujo_o_dolor_estomacal path
+  steps:
+    - intent: reflujo_o_dolor_estomacal
+    - action: utter_reflujo_o_dolor_estomacal
+
+#----------------------------------------------
 # EXCEPCIÓN
 #----------------------------------------------
 

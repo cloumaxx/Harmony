@@ -148,6 +148,20 @@ responses:
   utter_sintomas_relacionados_anti-Mulleriana:
   - text: utter_sintomas_relacionados_anti-Mulleriana
 
+ #------------------------------------------------------
+
+  #SINTOMAS COMUNES
+
+  #------------------------------------------------------
+  
+  utter_dolor_de_cabeza:
+  - text: El dolor de cabeza es un sintoma que se relaciona con diferentes factores
+  
+  utter_reflujo_o_dolor_estomacal:
+  - text: El dolor estomacal es un sintoma que se relaciona con diferentes factores
+
+
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

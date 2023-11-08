@@ -177,6 +177,28 @@ rules:
   - intent: sintomas_relacionados_anti-Mulleriana
   - action: utter_sintomas_relacionados_anti-Mulleriana
 
+#------------------------------------------------------
+
+#SINTOMAS COMUNES
+
+#------------------------------------------------------
+
+- rule: Responde la excepcion cuando te digan que tiene dolor de cabeza
+  steps:
+  - intent: dolor_de_cabeza
+  - action: utter_dolor_de_cabeza
+
+- rule: Responde la excepcion cuando te digan que tiene reflujo o dolor estomacal
+  steps:
+  - intent: reflujo_o_dolor_estomacal
+  - action: utter_reflujo_o_dolor_estomacal
+
+#------------------------------------------------------
+
+#EXCEPCION
+
+#------------------------------------------------------
+
 - rule: Responde la excepcion cuando las preguntas no sean relacionadas con los temas anteriores
   steps:
   - intent: exception

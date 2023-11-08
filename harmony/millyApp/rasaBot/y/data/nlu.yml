@@ -2495,7 +2495,6 @@ nlu:
     - Mis manos y pies estan frios con frecuencia
     - Tengo problemas para mantener el equilibrio
     - Siento picazon constante en la piel
-    - Tengo dolores de cabeza frecuentes
     - Me cuesta trabajo hacer ejercicio
     - Siento que mis musculos son rigidos
     - Tengo problemas con la concentracion
@@ -2526,7 +2525,6 @@ nlu:
     - Me siento inestable o tambaleante
     - Estoy irritable
     - Siento hormigueo en los labios y la lengua
-    - Tengo un fuerte dolor de cabeza
     - Estoy confundido y desorientado
     - Me siento debil en las piernas
     - Tengo dificultades para tragar
@@ -2709,7 +2707,6 @@ nlu:
     - Tengo dificultades para respirar con regularidad
     - Siento un ardor en el estomago despues de comer
     - Tengo dificultades para moverme
-    - Tengo un fuerte dolor de cabeza despues de comer
     - Siento que siempre estoy inflamado
     - Tengo niveles elevados de insulina en sangre
 
@@ -3585,7 +3582,6 @@ nlu:
     - Estoy experimentando irritabilidad y cambios de animo
     - Siento una fatiga extrema
     - Estoy lidiando con nauseas y vomitos
-    - Tengo dolor de cabeza intenso
     - Estoy experimentando cambios en mi ritmo cardiaco
     - Siento que mi piel esta caliente y seca al tacto
     - Tengo dificultades para concentrarme y pensar con claridad
@@ -3599,7 +3595,6 @@ nlu:
     - Estoy experimentando cambios en la frecuencia cardiaca
     - Siento un aumento en la sed y la necesidad de beber constantemente
     - Estoy notando un aumento en la presion arterial
-    - Tengo dolor de cabeza pulsante e intenso
     - Estoy experimentando problemas de concentracion y memoria
     - Siento confusion y desorientacion
     - Tengo dificultades para moverme y realizar tareas fisicas
@@ -3614,7 +3609,6 @@ nlu:
     - Tengo calambres musculares intensos y persistentes
     - Estoy experimentando debilidad en las piernas y brazos
     - Siento una sed incontrolable
-    - Tengo dolor de cabeza constante y punzante
     - Estoy experimentando irritabilidad y cambios de humor frecuentes
     - Siento sequedad extrema en la boca y garganta
     - Tengo nauseas y vomitos recurrentes
@@ -3635,7 +3629,6 @@ nlu:
     - Estoy experimentando irritabilidad y cambios de animo
     - Siento fatiga extrema
     - Tengo nauseas y vomitos
-    - Tengo dolor de cabeza intenso
     - Estoy experimentando cambios en mi ritmo cardiaco
     - Siento que mi piel esta caliente y seca al tacto
     - Tengo dificultades para concentrarme y pensar con claridad
@@ -3649,7 +3642,6 @@ nlu:
     - Estoy experimentando cambios en la frecuencia cardiaca
     - Siento un aumento en la sed y la necesidad de beber constantemente
     - Estoy notando un aumento en la presion arterial
-    - Tengo dolor de cabeza pulsante e intenso
     - Estoy experimentando problemas de concentracion y memoria
     - Siento confusion y desorientacion
     - Tengo dificultades para moverme y realizar tareas fisicas
@@ -3664,7 +3656,6 @@ nlu:
     - Tengo calambres musculares intensos y persistentes
     - Estoy experimentando debilidad en las piernas y brazos
     - Siento sed incontrolable
-    - Tengo dolor de cabeza constante y punzante
     - Estoy experimentando irritabilidad y cambios de humor frecuentes
     - Siento sequedad extrema en la boca y garganta
     - Tengo nauseas y vomitos recurrentes
@@ -4182,6 +4173,606 @@ nlu:
 
 - intent: sintomas_relacionados_adrenalina
   examples: |
+    - Mi corazón late más rápido de lo normal.
+    - Estoy sintiendo un aumento en mi ritmo cardíaco.
+    - Mi pulso está acelerado.
+    - Estoy experimentando taquicardia.
+    - Mi frecuencia cardíaca está por encima de lo habitual.
+    - Siento palpitaciones más intensas.
+    - Mi corazón late con mayor rapidez de lo esperado.
+    - Estoy padeciendo un incremento en la velocidad de mi pulso.
+    - Mi ritmo cardíaco se ha acelerado de manera repentina.
+    - Estoy enfrentando una frecuencia cardíaca elevada.
+    - Mi corazón late más rápido de lo que es normal para mí.
+    - Estoy experimentando taquicardia repentina.
+    - Mi pulso está más rápido de lo que debería.
+    - Siento palpitaciones intensas y persistentes.
+    - Mi frecuencia cardíaca está elevada de manera inusual.
+    - Estoy lidiando con un aumento en mi ritmo cardíaco.
+    - Mi corazón late con mayor rapidez de lo que solía hacerlo.
+    - Estoy enfrentando un incremento incontrolable en la velocidad de mi pulso.
+    - Mi ritmo cardíaco se ha disparado de repente.
+    - Estoy experimentando una frecuencia cardíaca elevada de forma abrupta.
+    - Mi corazón late más rápido de lo que es cómodo.
+    - Estoy sintiendo un aumento en mi frecuencia cardíaca.
+    - Mi pulso está acelerado de manera significativa.
+    - Estoy padeciendo una taquicardia repentina.
+    - Mi frecuencia cardíaca está por encima de lo que consideraría normal.
+    - Estoy enfrentando palpitaciones intensas e incontrolables.
+    - Mi corazón late con una rapidez sorprendente.
+    - Estoy experimentando una aceleración en mi ritmo cardíaco.
+    - Mi frecuencia cardíaca está más elevada de lo que solía ser.
+    - Estoy sintiendo un aumento en mi pulso cardíaco.
+    - Mi corazón late más rápido de lo que debería.
+    - Estoy padeciendo taquicardia súbita.
+    - Mi ritmo cardíaco se ha incrementado de forma sorprendente.
+    - Estoy enfrentando una frecuencia cardíaca elevada de manera inesperada.
+    - Mi pulso está acelerado de manera sorpresiva.
+    - Estoy lidiando con palpitaciones más intensas de lo común.
+    - Mi corazón late con mayor rapidez de lo que es típico.
+    - Estoy experimentando una aceleración en mi frecuencia cardíaca.
+    - Mi frecuencia cardíaca está más alta de lo que me siento cómodo.
+    - Estoy sintiendo un aumento en mi ritmo cardíaco de forma inusual.
+    - Mi corazón late más rápido de lo que es saludable.
+    - Estoy padeciendo una taquicardia inesperada.
+    - Mi ritmo cardíaco se ha disparado de manera sorpresiva.
+    - Estoy enfrentando una frecuencia cardíaca elevada de forma abrupta.
+    - Mi pulso está acelerado más de lo que consideraría normal.
+    - Estoy experimentando palpitaciones intensas e incontrolables.
+    - Mi corazón late con mayor rapidez de lo que me resulta seguro.
+    - Estoy sintiendo un aumento en mi pulso cardíaco de forma repentina.
+    - Mi frecuencia cardíaca está más alta de lo que me siento cómodo.
+    - Estoy padeciendo una taquicardia súbita e incontrolable.
+    - Mi corazón late más rápido de lo que debería.
+    - Estoy enfrentando una aceleración en mi ritmo cardíaco.
+    - Mi frecuencia cardíaca está por las nubes.
+    - Estoy experimentando una taquicardia extrema.
+    - Mi pulso está corriendo descontrolado.
+    - Siento un aumento desmesurado en mi ritmo cardíaco.
+    - Mi corazón late con una velocidad inusual.
+    - Estoy padeciendo una frecuencia cardíaca elevada de forma intensa.
+    - Mi ritmo cardíaco se ha disparado de manera extrema.
+    - Estoy enfrentando una taquicardia incontrolable y peligrosa.
+    - Mi frecuencia cardíaca está en niveles alarmantes.
+    - Estoy experimentando palpitaciones descontroladas.
+    - Mi corazón late a un ritmo frenético.
+    - Estoy sintiendo un aumento drástico en mi frecuencia cardíaca.
+    - Mi pulso está acelerado en exceso.
+    - Estoy padeciendo una taquicardia intensa y peligrosa.
+    - Mi ritmo cardíaco se ha disparado de forma alarmante.
+    - Estoy enfrentando una frecuencia cardíaca elevada de manera preocupante.
+    - Mi corazón late con una velocidad alarmante.
+    - Estoy experimentando una aceleración en mi ritmo cardíaco que me preocupa.
+    - Mi frecuencia cardíaca está en niveles peligrosos.
+    - Estoy sintiendo un aumento drástico en mi pulso cardíaco.
+    - Mi corazón late a un ritmo que me preocupa por mi salud.
+    - Estoy padeciendo una taquicardia intensa y alarmante.
+    - Mi ritmo cardíaco se ha disparado de forma preocupante.
+    - Estoy enfrentando una taquicardia peligrosa y constante.
+    - Mi frecuencia cardíaca está en niveles que me generan inquietud.
+    - Estoy experimentando palpitaciones que me preocupan profundamente.
+    - Mi corazón late de forma que me inquieta.
+    - Estoy sintiendo un aumento en mi ritmo cardíaco que me causa preocupación.
+    - Mi pulso está acelerado a un nivel que me inquieta.
+    - Estoy padeciendo una taquicardia que me genera preocupación por mi bienestar.
+    - Mi ritmo cardíaco se ha disparado de manera que me preocupa.
+    - Estoy enfrentando una frecuencia cardíaca que me preocupa por mi salud.
+    - Mi corazón late con una rapidez que me inquieta.
+    - Estoy experimentando una aceleración en mi ritmo cardíaco que me preocupa profundamente.
+    - Mi frecuencia cardíaca está en niveles que me generan inquietud por mi bienestar.
+    - Estoy sintiendo un aumento drástico en mi pulso cardíaco que me inquieta.
+    - Mi corazón late a un ritmo que me causa preocupación por mi salud.
+    - Estoy padeciendo una taquicardia que me preocupa profundamente por mi bienestar.
+    - Mi ritmo cardíaco se ha disparado de manera que me inquieta por mi salud.
+    - Estoy enfrentando una taquicardia que me preocupa profundamente y necesito atención médica.
+    - Mi frecuencia cardíaca está en niveles que son peligrosos para mi salud y requiero ayuda.
+    - Estoy experimentando palpitaciones extremas que me preocupan por mi bienestar.
+    - Mi corazón late con una rapidez extrema que me inquieta profundamente.
+    - Estoy sintiendo un aumento drástico en mi ritmo cardíaco que es peligroso para mi salud.
+    - Mi pulso está acelerado a un nivel que me preocupa gravemente.
+    - Estoy padeciendo una taquicardia que es peligrosa para mi salud y necesito atención urgente.
+    - Mi ritmo cardíaco se ha disparado de manera extrema y peligrosa, y necesito asistencia médica inmediata.
+    - Estoy enfrentando una taquicardia extrema que representa un riesgo para mi salud y requiere atención médica de emergencia.
+    - Mi presión arterial está alta.
+    - Tengo la presión arterial elevada.
+    - Mi tensión está por las nubes.
+    - Mi presión está muy alta.
+    - Estoy experimentando hipertensión.
+    - Mi tensión arterial está aumentada.
+    - Tengo la presión muy alta.
+    - Mi presión subió mucho.
+    - Estoy padeciendo hipertensión.
+    - Mi tensión está elevada.
+    - Mi presión arterial se disparó.
+    - Tengo la presión por las nubes.
+    - Mi tensión está fuera de control.
+    - Estoy enfrentando hipertensión arterial.
+    - Mi presión subió considerablemente.
+    - Tengo la tensión muy alta.
+    - Mi presión está en niveles peligrosos.
+    - Estoy experimentando un aumento en mi presión arterial.
+    - Mi tensión se encuentra elevada.
+    - Tengo la presión arterial elevada de manera preocupante.
+    - Mi presión está descontrolada.
+    - Estoy padeciendo una hipertensión severa.
+    - Mi tensión arterial se disparó de manera significativa.
+    - Tengo la presión por las nubes y necesito ayuda.
+    - Mi presión subió a niveles peligrosos.
+    - Estoy enfrentando un aumento preocupante en mi tensión arterial.
+    - Mi presión está en niveles críticos.
+    - Tengo la presión arterial elevada y necesito atención médica.
+    - Mi tensión está descontrolada y me preocupa.
+    - Estoy experimentando hipertensión arterial severa.
+    - Mi presión subió de forma crítica.
+    - Tengo la tensión muy alta y necesito asistencia médica.
+    - Mi presión está en niveles alarmantes.
+    - Estoy padeciendo un aumento grave en mi presión arterial.
+    - Mi tensión se encuentra en niveles críticos.
+    - Tengo la presión por las nubes y es preocupante.
+    - Mi presión arterial está elevada y necesito atención urgente.
+    - Estoy enfrentando hipertensión grave.
+    - Mi tensión se disparó de forma alarmante.
+    - Tengo la presión muy alta y es crítica.
+    - Mi presión está en niveles que me generan inquietud.
+    - Estoy experimentando un aumento en mi tensión arterial que me preocupa.
+    - Mi presión subió de forma alarmante y necesito ayuda.
+    - Tengo la presión arterial elevada de manera alarmante.
+    - Mi tensión está descontrolada y necesito atención médica urgente.
+    - Estoy padeciendo hipertensión arterial grave.
+    - Mi presión subió a niveles alarmantes.
+    - Tengo la tensión muy alta y es preocupante.
+    - Mi presión está en niveles críticos y me preocupa.
+    - Estoy enfrentando un aumento grave en mi presión arterial que me inquieta.
+    - Mi presión arterial está elevada y necesito atención médica urgente.
+    - Tengo la presión por las nubes y es crítica.
+    - Mi tensión se disparó de manera crítica y necesito asistencia médica.
+    - Estoy experimentando hipertensión arterial severa que me preocupa profundamente.
+    - Mi presión subió de forma crítica y es alarmante.
+    - Tengo la presión muy alta y es crítica.
+    - Mi tensión está descontrolada y me inquieta profundamente.
+    - Estoy padeciendo un aumento grave en mi presión arterial que me preocupa seriamente.
+    - Mi presión está en niveles que son peligrosos para mi salud.
+    - Tengo la presión arterial elevada de manera crítica y necesito atención médica urgente.
+    - Mi presión subió a niveles alarmantes que me generan inquietud.
+    - Estoy enfrentando hipertensión grave y es alarmante.
+    - Mi tensión arterial se disparó de forma alarmante y necesito asistencia médica.
+    - Tengo la presión por las nubes y es preocupante.
+    - Mi presión arterial está elevada de manera alarmante y necesito atención médica urgente.
+    - Estoy experimentando un aumento preocupante en mi tensión arterial que me preocupa profundamente.
+    - Mi presión está en niveles críticos y es alarmante.
+    - Tengo la tensión muy alta y necesito atención médica urgente.
+    - Mi presión está descontrolada y es alarmante.
+    - Estoy padeciendo hipertensión arterial grave y necesito asistencia médica urgente.
+    - Mi presión subió de forma crítica y es preocupante.
+    - Tengo la presión muy alta y es alarmante.
+    - Mi tensión se disparó de manera crítica y me preocupa profundamente.
+    - Estoy enfrentando un aumento grave en mi presión arterial que me preocupa seriamente.
+    - Mi presión arterial está elevada y necesito atención médica urgente.
+    - Tengo la presión por las nubes y es preocupante.
+    - Mi tensión arterial se encuentra en niveles alarmantes y necesito asistencia médica urgente.
+    - Estoy experimentando hipertensión arterial severa que me preocupa profundamente.
+    - Mi presión subió a niveles alarmantes que me generan inquietud.
+    - Tengo la presión arterial elevada de manera crítica y necesito atención médica urgente.
+    - Mi presión está en niveles críticos y es alarmante.
+    - Estoy padeciendo un aumento grave en mi presión arterial que me preocupa seriamente.
+    - Mi tensión está descontrolada y necesito asistencia médica urgente.
+    - Estoy enfrentando hipertensión grave que es alarmante.
+    - Mi presión subió de forma crítica y es preocupante.
+    - Tengo la presión muy alta y es alarmante.
+    - Mi tensión se disparó de manera crítica y me preocupa profundamente.
+    - Estoy experimentando un aumento grave en mi presión arterial que me preocupa seriamente.
+    - Mi presión arterial está elevada de manera alarmante y necesito atención médica urgente.
+    - Tengo la presión por las nubes y es preocupante.
+    - Mi tensión arterial se encuentra en niveles alarmantes y necesito asistencia médica urgente.
+    - Estoy padeciendo hipertensión arterial grave que me preocupa profundamente.
+    - Mi presión subió a niveles alarmantes que me generan inquietud.
+    - Tengo la presión arterial elevada de manera crítica y necesito atención médica urgente.
+    - Mi presión está en niveles críticos y es alarmante.
+    - Estoy enfrentando un aumento grave en mi presión arterial que me preocupa seriamente.
+    - Mi tensión está descontrolada y necesito asistencia médica urgente.
+    - Estoy experimentando hipertensión grave que es alarmante.
+    - Mi presión subió de forma crítica y es preocupante.
+    - Tengo la presión muy alta y es alarmante.
+    - Mis vías respiratorias están más abiertas.
+    - Siento una expansión en mis vías respiratorias.
+    - Mis bronquios se han ensanchado.
+    - Estoy experimentando una apertura de las vías respiratorias.
+    - Mi capacidad respiratoria se ha ampliado.
+    - Tengo una dilatación de las vías respiratorias.
+    - Mis conductos de aire están más amplios.
+    - Estoy padeciendo una expansión de las vías respiratorias.
+    - Mi capacidad pulmonar se ha incrementado.
+    - Estoy enfrentando una apertura de los bronquios.
+    - Siento un ensanchamiento de mis vías respiratorias.
+    - Estoy experimentando una ampliación de los conductos de aire.
+    - Tengo una dilatación de los bronquios.
+    - Mis vías respiratorias se han vuelto más anchas.
+    - Estoy padeciendo una expansión en mis conductos de aire.
+    - Mi capacidad respiratoria se ha ensanchado.
+    - Estoy enfrentando una apertura de las vías de aire.
+    - Siento una ampliación en mis bronquios.
+    - Tengo una dilatación de las vías de aire.
+    - Mis conductos de aire están más abiertos.
+    - Estoy experimentando una apertura de los bronquios.
+    - Mi capacidad pulmonar se ha ampliado de forma natural.
+    - Estoy padeciendo una expansión de las vías de aire.
+    - Mis vías respiratorias se han ensanchado de manera natural.
+    - Estoy enfrentando una apertura de los conductos de aire.
+    - Siento un ensanchamiento de mis bronquios de forma natural.
+    - Tengo una dilatación de las vías de aire de forma natural.
+    - Mis vías respiratorias se han vuelto más anchas de forma natural.
+    - Estoy experimentando una ampliación de los conductos de aire de forma natural.
+    - Mi capacidad respiratoria se ha ensanchado de forma natural.
+    - Estoy enfrentando una apertura de las vías de aire de manera fisiológica.
+    - Siento una ampliación en mis bronquios de forma natural.
+    - Tengo una dilatación de las vías de aire de forma fisiológica.
+    - Mis conductos de aire están más abiertos de forma natural.
+    - Estoy padeciendo una expansión de las vías de aire de forma natural.
+    - Mi capacidad pulmonar se ha ampliado de forma natural.
+    - Estoy enfrentando una apertura de los bronquios de manera fisiológica.
+    - Siento un ensanchamiento de mis vías respiratorias de forma natural.
+    - Tengo una dilatación de las vías de aire de forma fisiológica.
+    - Mis vías respiratorias se han vuelto más anchas de forma natural.
+    - Estoy experimentando una ampliación de los conductos de aire de forma fisiológica.
+    - Mi capacidad respiratoria se ha ensanchado de forma natural.
+    - Estoy enfrentando una apertura de las vías de aire de manera natural.
+    - Siento una ampliación en mis bronquios de forma fisiológica.
+    - Tengo una dilatación de las vías de aire de forma natural y necesito atención médica.
+    - Mis conductos de aire están más abiertos de forma natural y necesito asistencia médica.
+    - Estoy padeciendo una expansión de las vías de aire de forma natural y necesito ayuda médica.
+    - Mi capacidad pulmonar se ha ampliado de forma natural y necesito atención médica.
+    - Estoy enfrentando una apertura de los bronquios de manera fisiológica y necesito asistencia médica.
+    - Siento un ensanchamiento de mis vías respiratorias de forma natural y necesito atención médica.
+    - Tengo una dilatación de las vías de aire de forma fisiológica y necesito ayuda médica.
+    - Mis vías respiratorias se han vuelto más anchas de forma natural y necesito atención médica.
+    - Estoy experimentando una ampliación de los conductos de aire de forma fisiológica y necesito asistencia médica.
+    - Mi capacidad respiratoria se ha ensanchado de forma natural y necesito atención médica.
+    - Estoy enfrentando una apertura de las vías de aire de manera natural y necesito ayuda médica.
+    - Siento una ampliación en mis bronquios de forma fisiológica y necesito atención médica.
+    - Tengo una dilatación de las vías de aire de forma natural y necesito atención médica urgente.
+    - Mis conductos de aire están más abiertos de forma natural y necesito asistencia médica urgente.
+    - Estoy padeciendo una expansión de las vías de aire de forma natural y necesito ayuda médica urgente.
+    - Mi capacidad pulmonar se ha ampliado de forma natural y necesito atención médica urgente.
+    - Estoy enfrentando una apertura de los bronquios de manera fisiológica y necesito asistencia médica urgente.
+    - Siento un ensanchamiento de mis vías respiratorias de forma natural y necesito atención médica urgente.
+    - Tengo una dilatación de las vías de aire de forma fisiológica y necesito ayuda médica urgente.
+    - Mis vías respiratorias se han vuelto más anchas de forma natural y necesito atención médica urgente.
+    - Estoy experimentando una ampliación de los conductos de aire de forma fisiológica y necesito asistencia médica urgente.
+    - Mi capacidad respiratoria se ha ensanchado de forma natural y necesito atención médica urgente.
+    - Estoy enfrentando una apertura de las vías de aire de manera fisiológica y necesito ayuda médica urgente.
+    - Siento una ampliación en mis bronquios de forma fisiológica y necesito atención médica urgente.
+    - Tengo una dilatación de las vías de aire de forma natural y necesito atención médica de emergencia.
+    - Mis conductos de aire están más abiertos de forma natural y necesito asistencia médica de emergencia.
+    - Estoy padeciendo una expansión de las vías de aire de forma natural y necesito ayuda médica de emergencia.
+    - Mi capacidad pulmonar se ha ampliado de forma natural y necesito atención médica de emergencia.
+    - Estoy enfrentando una apertura de los bronquios de manera fisiológica y necesito asistencia médica de emergencia.
+    - Siento un ensanchamiento de mis vías respiratorias de forma natural y necesito atención médica de emergencia.
+    - Tengo una dilatación de las vías de aire de forma fisiológica y necesito ayuda médica de emergencia.
+    - Mis vías respiratorias se han vuelto más anchas de forma natural y necesito atención médica de emergencia.
+    - Estoy experimentando una ampliación de los conductos de aire de forma fisiológica y necesito asistencia médica de emergencia.
+    - Mi capacidad respiratoria se ha ensanchado de forma natural y necesito atención médica de emergencia.
+    - Estoy enfrentando una apertura de las vías de aire de manera fisiológica y necesito ayuda médica de emergencia.
+    - Siento una ampliación en mis bronquios de forma fisiológica y necesito atención médica de emergencia.
+    - Tengo una dilatación de las vías de aire de forma natural y necesito atención médica de emergencia de inmediato.
+    - Mis conductos de aire están más abiertos de forma natural y necesito asistencia médica de emergencia de inmediato.
+    - Estoy padeciendo una expansión de las vías de aire de forma natural y necesito ayuda médica de emergencia de inmediato.
+    - Mi capacidad pulmonar se ha ampliado de forma natural y necesito atención médica de emergencia de inmediato.
+    - Estoy enfrentando una apertura de los bronquios de manera fisiológica y necesito asistencia médica de emergencia de inmediato.
+    - Siento un ensanchamiento de mis vías respiratorias de forma natural y necesito atención médica de emergencia de inmediato.
+    - Tengo una dilatación de las vías de aire de forma fisiológica y necesito ayuda médica de emergencia de inmediato.
+    - Mis vías respiratorias se han vuelto más anchas de forma natural y necesito atención médica de emergencia de inmediato.
+    - Estoy experimentando una ampliación de los conductos de aire de forma fisiológica y necesito asistencia médica de emergencia de inmediato.
+    - Mi capacidad respiratoria se ha ensanchado de forma natural y necesito atención médica de emergencia de inmediato.
+    - Estoy enfrentando una apertura de las vías de aire de manera fisiológica y necesito ayuda médica de emergencia de inmediato.
+    - Siento una ampliación en mis bronquios de forma fisiológica y necesito atención médica de emergencia de inmediato.
+    - Tengo una dilatación de las vías de aire de forma fisiológica y requiero atención médica inmediata.
+    - Mis conductos de aire están más abiertos de forma natural y requiero asistencia médica inmediata.
+    - Estoy padeciendo una expansión de las vías de aire de forma fisiológica y necesito ayuda médica de emergencia de inmediato.
+    - Mi capacidad pulmonar se ha ampliado de forma natural y necesito atención médica de emergencia de inmediato.
+    - Estoy enfrentando una apertura de los bronquios de manera fisiológica y necesito asistencia médica de emergencia de inmediato.
+    - Siento un ensanchamiento de mis vías respiratorias de forma fisiológica y necesito atención médica de emergencia de inmediato.
+    - Tengo una dilatación de las vías de aire de forma fisiológica y requiero atención médica inmediata.
+    - Mis conductos de aire están más abiertos de forma natural y requiero asistencia médica inmediata.
+    - Mis pupilas están más grandes de lo normal.
+    - Tengo las pupilas dilatadas.
+    - Mis ojos están con las pupilas muy abiertas.
+    - Estoy experimentando una expansión de las pupilas.
+    - Mis iris se han ensanchado.
+    - Tengo una dilatación de las pupilas.
+    - Mis ojos muestran las pupilas muy abiertas.
+    - Estoy padeciendo una ampliación de las pupilas.
+    - Mis iris están más grandes.
+    - Estoy enfrentando un agrandamiento de las pupilas.
+    - Siento que mis ojos tienen las pupilas muy abiertas.
+    - Estoy experimentando una dilatación de las pupilas.
+    - Tengo las pupilas dilatadas en este momento.
+    - Mis ojos están con las pupilas muy amplias.
+    - Estoy padeciendo una expansión de las pupilas.
+    - Siento que mis iris se han ensanchado.
+    - Tengo una dilatación de las pupilas en este momento.
+    - Mis ojos muestran las pupilas muy amplias.
+    - Estoy experimentando un agrandamiento de las pupilas.
+    - Tengo las pupilas dilatadas en este instante.
+    - Mis ojos están con las pupilas muy grandes.
+    - Estoy padeciendo una ampliación de las pupilas en este instante.
+    - Siento que mis iris están más grandes.
+    - Tengo una dilatación de las pupilas en este instante.
+    - Estoy enfrentando un aumento en el tamaño de las pupilas.
+    - Siento que mis ojos tienen las pupilas muy grandes.
+    - Tengo las pupilas dilatadas ahora.
+    - Mis ojos están con las pupilas muy amplias en este momento.
+    - Estoy experimentando una dilatación de las pupilas en este instante.
+    - Tengo las pupilas muy abiertas ahora.
+    - Mis ojos están con las pupilas muy grandes en este momento.
+    - Estoy padeciendo una expansión de las pupilas en este instante.
+    - Siento que mis iris se han ensanchado ahora.
+    - Tengo una dilatación de las pupilas en este instante.
+    - Estoy enfrentando un agrandamiento de las pupilas en este momento.
+    - Tengo las pupilas dilatadas en este momento y necesito ayuda.
+    - Mis ojos están con las pupilas muy abiertas en este momento y necesito asistencia médica.
+    - Estoy experimentando una expansión de las pupilas en este instante y necesito atención médica.
+    - Tengo las pupilas muy grandes ahora y necesito ayuda.
+    - Mis ojos muestran las pupilas muy amplias en este momento y necesito asistencia médica.
+    - Estoy padeciendo una ampliación de las pupilas en este momento y necesito atención médica.
+    - Siento que mis iris están más grandes ahora y necesito ayuda.
+    - Tengo una dilatación de las pupilas en este momento y necesito asistencia médica.
+    - Mis ojos están con las pupilas muy amplias en este momento y necesito atención médica.
+    - Estoy experimentando un agrandamiento de las pupilas en este momento y necesito ayuda.
+    - Tengo las pupilas dilatadas ahora y necesito atención médica.
+    - Mis ojos están con las pupilas muy grandes en este momento y necesito asistencia médica.
+    - Estoy padeciendo una expansión de las pupilas en este momento y necesito atención médica.
+    - Siento que mis iris se han ensanchado ahora y necesito ayuda.
+    - Tengo una dilatación de las pupilas en este momento y necesito asistencia médica.
+    - Estoy enfrentando un aumento en el tamaño de las pupilas y necesito ayuda.
+    - Siento que mis ojos tienen las pupilas muy grandes en este momento y necesito atención médica.
+    - Tengo las pupilas dilatadas ahora y necesito atención médica urgente.
+    - Mis ojos están con las pupilas muy amplias en este momento y necesito asistencia médica urgente.
+    - Estoy experimentando una dilatación de las pupilas en este instante y necesito atención médica urgente.
+    - Tengo las pupilas muy abiertas ahora y necesito ayuda médica urgente.
+    - Mis ojos muestran las pupilas muy amplias en este momento y necesito asistencia médica urgente.
+    - Estoy padeciendo una expansión de las pupilas en este instante y necesito atención médica urgente.
+    - Siento que mis iris están más grandes ahora y necesito ayuda médica urgente.
+    - Tengo una dilatación de las pupilas en este momento y necesito asistencia médica urgente.
+    - Mis ojos están con las pupilas muy amplias en este momento y necesito atención médica urgente.
+    - Estoy experimentando un agrandamiento de las pupilas en este momento y necesito ayuda médica urgente.
+    - Tengo las pupilas dilatadas ahora y necesito atención médica urgente.
+    - Mis ojos están con las pupilas muy grandes en este momento y necesito asistencia médica urgente.
+    - Estoy padeciendo una ampliación de las pupilas en este instante y necesito atención médica urgente.
+    - Siento que mis iris se han ensanchado ahora y necesito ayuda médica urgente.
+    - Tengo una dilatación de las pupilas en este momento y necesito asistencia médica urgente.
+    - Estoy enfrentando un aumento en el tamaño de las pupilas y necesito ayuda médica urgente.
+    - Siento que mis ojos tienen las pupilas muy grandes en este momento y necesito atención médica urgente.
+    - Tengo las pupilas dilatadas ahora y requiero atención médica inmediata.
+    - Mis ojos están con las pupilas muy abiertas en este momento y requiero asistencia médica inmediata.
+    - Estoy experimentando una expansión de las pupilas en este instante y requiero atención médica inmediata.
+    - Tengo las pupilas muy grandes ahora y requiero ayuda médica inmediata.
+    - Mis ojos muestran las pupilas muy amplias en este momento y requiero asistencia médica inmediata.
+    - Estoy padeciendo una ampliación de las pupilas en este instante y requiero atención médica inmediata.
+    - Siento que mis iris están más grandes ahora y requiero ayuda médica inmediata.
+    - Tengo una dilatación de las pupilas en este momento y requiero asistencia médica inmediata.
+    - Mis ojos están con las pupilas muy amplias en este momento y requiero atención médica inmediata.
+    - Estoy experimentando un agrandamiento de las pupilas en este momento y requiero ayuda médica inmediata.
+    - Tengo las pupilas dilatadas ahora y requiero atención médica de emergencia.
+    - Mis ojos están con las pupilas muy grandes en este momento y requiero asistencia médica de emergencia.
+    - Estoy padeciendo una expansión de las pupilas en este instante y requiero ayuda médica de emergencia.
+    - Siento que mis iris se han ensanchado ahora y requiero atención médica de emergencia.
+    - Tengo una dilatación de las pupilas en este momento y requiero asistencia médica de emergencia.
+    - Estoy enfrentando un aumento en el tamaño de las pupilas y requiero ayuda médica de emergencia.
+    - Siento que mis ojos tienen las pupilas muy grandes en este momento y requiero atención médica de emergencia.
+    - Tengo las pupilas dilatadas ahora y requiero atención médica de emergencia de inmediato.
+    - Mis ojos están con las pupilas muy amplias en este momento y requiero asistencia médica de emergencia de inmediato.
+    - Estoy experimentando una dilatación de las pupilas en este instante y requiero atención médica de emergencia de inmediato.
+    - Tengo las pupilas muy abiertas ahora y requiero ayuda médica de emergencia de inmediato.
+    - Mis ojos muestran las pupilas muy amplias en este momento y requiero asistencia médica de emergencia de inmediato.
+    - Estoy padeciendo una ampliación de las pupilas en este instante y requiero atención médica de emergencia de inmediato.
+    - Siento que mis iris están más grandes ahora y requiero ayuda médica de emergencia de inmediato.
+    - Tengo una dilatación de las pupilas en este momento y requiero asistencia médica de emergencia de inmediato.
+    - Estoy enfrentando un aumento en el tamaño de las pupilas y requiero ayuda médica de emergencia de inmediato.
+    - Siento que mis ojos tienen las pupilas muy grandes en este momento y requiero atención médica de emergencia de inmediato.
+    - Tengo las pupilas dilatadas ahora y necesito atención médica de inmediato.
+    - Mis ojos están con las pupilas muy amplias en este momento y necesito asistencia médica de inmediato.
+    - Estoy experimentando una dilatación de las pupilas en este instante y necesito atención médica de inmediato.
+    - Tengo las pupilas muy abiertas ahora y necesito ayuda médica de inmediato.
+    - Mis músculos están más fuertes.
+    - Siento un aumento en mi fuerza muscular.
+    - Mi resistencia muscular ha mejorado.
+    - Estoy experimentando un fortalecimiento de mis músculos.
+    - Mis tejidos musculares se han vuelto más resistentes.
+    - Tengo un aumento en la fuerza de mis músculos.
+    - Mis músculos están más poderosos.
+    - Estoy padeciendo un incremento en la resistencia muscular.
+    - Mi capacidad muscular se ha ampliado.
+    - Estoy enfrentando un aumento en la resistencia física.
+    - Siento que mis músculos están más robustos.
+    - Estoy experimentando un fortalecimiento de mi fuerza muscular.
+    - Tengo un incremento en la resistencia de mis músculos.
+    - Mis tejidos musculares se han vuelto más duraderos.
+    - Estoy padeciendo un aumento en la capacidad muscular.
+    - Mi resistencia muscular ha mejorado significativamente.
+    - Estoy enfrentando un aumento en la fuerza física.
+    - Siento que mis músculos están más en forma.
+    - Tengo un aumento en la resistencia de mis tejidos musculares.
+    - Mis músculos están más tonificados.
+    - Estoy experimentando un fortalecimiento de mi capacidad muscular.
+    - Mi capacidad física se ha incrementado.
+    - Estoy padeciendo un aumento en la resistencia física.
+    - Mis músculos están más robustos y tonificados.
+    - Estoy enfrentando un incremento en la resistencia de mis músculos.
+    - Siento que mis músculos están más resistentes y tonificados.
+    - Tengo un aumento en la capacidad muscular y física.
+    - Mis tejidos musculares se han vuelto más fuertes y resistentes.
+    - Estoy experimentando un fortalecimiento de mi fuerza física.
+    - Mi resistencia muscular ha mejorado considerablemente.
+    - Estoy enfrentando un aumento en la fuerza y resistencia física.
+    - Siento que mis músculos están más poderosos y resistentes.
+    - Tengo un incremento en la resistencia muscular y física.
+    - Mis músculos están más en forma y tonificados.
+    - Estoy padeciendo un aumento en la capacidad muscular y física.
+    - Mi capacidad muscular se ha ampliado significativamente.
+    - Estoy experimentando un fortalecimiento de mi resistencia muscular y física.
+    - Tengo un aumento en la fuerza de mis músculos.
+    - Mis tejidos musculares se han vuelto más duraderos y en forma.
+    - Estoy enfrentando un incremento en la resistencia y fuerza física.
+    - Siento que mis músculos están más resistentes y en forma.
+    - Tengo un aumento en la capacidad muscular y física de manera notoria.
+    - Mis músculos están más fuertes y en forma.
+    - Estoy padeciendo un aumento en la resistencia muscular y física.
+    - Mi resistencia muscular ha mejorado significativamente y necesito atención médica.
+    - Estoy enfrentando un aumento en la fuerza y resistencia física que requiere atención médica.
+    - Siento que mis músculos están más poderosos y en forma, y necesito asistencia médica.
+    - Tengo un incremento en la resistencia muscular y física que requiere atención médica.
+    - Mis tejidos musculares se han vuelto más duraderos y en forma, y necesito atención médica.
+    - Estoy experimentando un fortalecimiento de mi resistencia muscular y física que requiere atención médica.
+    - Tengo un aumento en la capacidad muscular y física de manera notoria y necesito asistencia médica.
+    - Mis músculos están más fuertes y en forma, y necesito atención médica.
+    - Estoy padeciendo un aumento en la resistencia muscular y física que requiere atención médica urgente.
+    - Mi resistencia muscular ha mejorado significativamente y necesito atención médica urgente.
+    - Estoy enfrentando un aumento en la fuerza y resistencia física que requiere atención médica urgente.
+    - Siento que mis músculos están más poderosos y en forma, y necesito asistencia médica urgente.
+    - Tengo un incremento en la resistencia muscular y física que requiere atención médica urgente.
+    - Mis tejidos musculares se han vuelto más duraderos y en forma, y necesito atención médica urgente.
+    - Estoy experimentando un fortalecimiento de mi resistencia muscular y física que requiere atención médica urgente.
+    - Tengo un aumento en la capacidad muscular y física de manera notoria y necesito asistencia médica urgente.
+    - Mis músculos están más fuertes y en forma, y necesito atención médica urgente.
+    - Estoy padeciendo un aumento en la resistencia muscular y física que requiere atención médica de emergencia.
+    - Mi resistencia muscular ha mejorado significativamente y necesito atención médica de emergencia.
+    - Estoy enfrentando un aumento en la fuerza y resistencia física que requiere atención médica de emergencia.
+    - Siento que mis músculos están más poderosos y en forma, y necesito asistencia médica de emergencia.
+    - Tengo un incremento en la resistencia muscular y física que requiere atención médica de emergencia.
+    - Mis tejidos musculares se han vuelto más duraderos y en forma, y necesito atención médica de emergencia.
+    - Estoy experimentando un fortalecimiento de mi resistencia muscular y física que requiere atención médica de emergencia.
+    - Tengo un aumento en la capacidad muscular y física de manera notoria y necesito asistencia médica de emergencia.
+    - Mis músculos están más fuertes y en forma, y necesito atención médica de emergencia.
+    - Estoy padeciendo un aumento en la resistencia muscular y física que requiere atención médica de emergencia de inmediato.
+    - Mi resistencia muscular ha mejorado significativamente y necesito atención médica de emergencia de inmediato.
+    - Estoy enfrentando un aumento en la fuerza y resistencia física que requiere atención médica de emergencia de inmediato.
+    - Siento que mis músculos están más poderosos y en forma, y necesito asistencia médica de emergencia de inmediato.
+    - Tengo un incremento en la resistencia muscular y física que requiere atención médica de emergencia de inmediato.
+    - Mis tejidos musculares se han vuelto más duraderos y en forma, y necesito atención médica de emergencia de inmediato.
+    - Estoy experimentando un fortalecimiento de mi resistencia muscular y física que requiere atención médica de emergencia de inmediato.
+    - Tengo un aumento en la capacidad muscular y física de manera notoria y necesito asistencia médica de emergencia de inmediato.
+    - Mis músculos están más fuertes y en forma, y necesito atención médica de emergencia de inmediato.
+    - Estoy padeciendo un aumento en la resistencia muscular y física que requiere atención médica de emergencia de inmediato.
+    - Mi resistencia muscular ha mejorado significativamente y necesito atención médica de emergencia de inmediato.
+    - Estoy enfrentando un aumento en la fuerza y resistencia física que requiere atención médica de emergencia de inmediato.
+    - Siento que mis músculos están más poderosos y en forma, y necesito asistencia médica de emergencia de inmediato.
+    - Tengo un incremento en la resistencia muscular y física que requiere atención médica de emergencia de inmediato.
+    - Mis tejidos musculares se han vuelto más duraderos y en forma, y necesito atención médica de emergencia de inmediato.
+    - Estoy experimentando un fortalecimiento de mi resistencia muscular y física que requiere atención médica de emergencia de inmediato.
+    - Tengo un aumento en la capacidad muscular y física de manera notoria y necesito asistencia médica de emergencia de inmediato.
+    - Mis músculos están más fuertes y en forma, y necesito atención médica de emergencia de inmediato.
+    - Estoy padeciendo un aumento en la resistencia muscular y física que requiere atención médica de emergencia de inmediato.
+    - Mi resistencia muscular ha mejorado significativamente y necesito atención médica de emergencia de inmediato.
+    - Estoy enfrentando un aumento en la fuerza y resistencia física que requiere atención médica de emergencia de inmediato.
+    - Siento que mis músculos están más poderosos y en forma, y necesito asistencia médica de emergencia de inmediato.
+    - Tengo un incremento en la resistencia muscular y física que requiere atención médica de emergencia de inmediato.
+    - Mis tejidos musculares se han vuelto más duraderos y en forma, y necesito atención médica de emergencia de inmediato.
+    - Estoy experimentando un fortalecimiento de mi resistencia muscular y física que requiere atención médica de emergencia de inmediato.
+    - Tengo un aumento en la capacidad muscular y física de manera notoria y necesito asistencia médica de emergencia de inmediato.
+    - Mis músculos están más fuertes y en forma, y necesito atención médica de emergencia de inmediato.
+    - Estoy padeciendo un aumento en la resistencia muscular y física que requiere atención médica de emergencia de inmediato.
+    - Mi resistencia muscular ha mejorado significativamente y necesito atención médica de emergencia de inmediato.
+    - Estoy enfrentando un aumento en la fuerza y resistencia física que requiere atención médica de emergencia de inmediato.
+    - Me siento alerta y atento.
+    - Estoy en estado de alerta.
+    - Mi mente está en modo vigilante.
+    - Tengo una sensación de alerta.
+    - Estoy completamente despierto y alerta.
+    - Me encuentro en un estado de alerta constante.
+    - Mi atención está completamente enfocada.
+    - Estoy alerta y consciente de mi entorno.
+    - Siento una aguda vigilancia en este momento.
+    - Estoy en modo de alta alerta.
+    - Mi mente está alerta y lista para responder.
+    - Tengo una sensación de vigilancia extrema.
+    - Estoy en estado de alerta máxima.
+    - Me siento muy vigilante en este momento.
+    - Mi atención está al máximo nivel.
+    - Estoy alerta y preparado para cualquier cosa.
+    - Tengo una sensación de alerta intensa.
+    - Estoy en un estado de vigilancia constante.
+    - Mi mente está completamente enfocada en la situación.
+    - Estoy alerta y listo para actuar.
+    - Siento una aguda vigilancia en esta situación.
+    - Estoy en modo de alerta extrema.
+    - Mi mente está alerta y en guardia.
+    - Tengo una sensación de alerta total.
+    - Estoy en estado de alerta inquebrantable.
+    - Me siento muy vigilante y en guardia.
+    - Mi atención está en un estado de alerta constante.
+    - Estoy alerta y consciente de los detalles.
+    - Tengo una sensación de alerta aguda.
+    - Estoy en un estado de alerta máxima y necesito ayuda.
+    - Mi mente está alerta y lista para responder de inmediato.
+    - Estoy en modo de alta alerta y necesito asistencia.
+    - Siento una aguda vigilancia en este momento y necesito atención.
+    - Estoy alerta y preparado para cualquier cosa que ocurra de inmediato.
+    - Tengo una sensación de vigilancia extrema y necesito ayuda.
+    - Estoy en estado de alerta máxima y necesito asistencia urgente.
+    - Mi mente está completamente enfocada en la situación y requiere atención urgente.
+    - Estoy alerta y listo para actuar de inmediato.
+    - Siento una aguda vigilancia en esta situación y necesito ayuda urgente.
+    - Estoy en modo de alerta extrema y necesito asistencia urgente.
+    - Mi mente está alerta y en guardia, y requiere atención urgente.
+    - Tengo una sensación de alerta total y necesito ayuda de inmediato.
+    - Estoy en un estado de alerta inquebrantable y necesito asistencia urgente.
+    - Me siento muy vigilante y en guardia, y necesito ayuda urgente.
+    - Mi atención está en un estado de alerta constante y requiere atención urgente.
+    - Estoy alerta y consciente de los detalles y necesito ayuda de inmediato.
+    - Tengo una sensación de alerta aguda y necesito asistencia urgente.
+    - Estoy en un estado de alerta máxima y necesito atención médica de emergencia.
+    - Mi mente está alerta y lista para responder de inmediato y necesita atención médica de emergencia.
+    - Estoy en modo de alta alerta y necesito asistencia médica de emergencia.
+    - Siento una aguda vigilancia en este momento y necesito atención médica de emergencia.
+    - Estoy alerta y preparado para cualquier cosa que ocurra de inmediato y necesito ayuda médica de emergencia.
+    - Tengo una sensación de vigilancia extrema y necesito asistencia médica de emergencia.
+    - Estoy en estado de alerta máxima y necesito atención médica de emergencia de inmediato.
+    - Me siento muy vigilante y en guardia, y necesito atención médica de emergencia de inmediato.
+    - Mi atención está en un estado de alerta constante y requiere atención médica de emergencia de inmediato.
+    - Estoy alerta y consciente de los detalles y necesito ayuda médica de emergencia de inmediato.
+    - Tengo una sensación de alerta aguda y necesito asistencia médica de emergencia de inmediato.
+    - Estoy en un estado de alerta inquebrantable y necesito atención médica de emergencia de inmediato.
+    - Siento una aguda vigilancia en esta situación y necesito asistencia médica de emergencia de inmediato.
+    - Estoy en modo de alerta extrema y necesito ayuda médica de emergencia de inmediato.
+    - Mi mente está alerta y en guardia, y requiere atención médica de emergencia de inmediato.
+    - Tengo una sensación de alerta total y necesito ayuda médica de emergencia de inmediato.
+    - Estoy en un estado de alerta constante y necesito atención médica de emergencia de inmediato.
+    - Estoy alerta y listo para actuar de inmediato y necesito asistencia médica de emergencia de inmediato.
+    - Siento una aguda vigilancia en esta situación y necesito ayuda médica de emergencia de inmediato.
+    - Estoy en modo de alerta extrema y necesito asistencia médica de emergencia de inmediato.
+    - Mi mente está alerta y en guardia, y requiere atención médica de emergencia de inmediato.
+    - Tengo una sensación de alerta aguda y necesito ayuda médica de emergencia de inmediato.
+    - Estoy en un estado de alerta inquebrantable y necesito asistencia médica de emergencia de inmediato.
+    - Me siento muy vigilante y en guardia, y necesito atención médica de emergencia de inmediato.
+    - Mi atención está en un estado de alerta constante y requiere atención médica de emergencia de inmediato.
+    - Estoy alerta y consciente de los detalles y necesito ayuda médica de emergencia de inmediato.
+    - Tengo una sensación de alerta aguda y necesito asistencia médica de emergencia de inmediato.
+    - Estoy en un estado de alerta máxima y necesito atención médica de emergencia de inmediato.
+    - Siento una aguda vigilancia en esta situación y necesito ayuda médica de emergencia de inmediato.
+    - Estoy en modo de alerta extrema y necesito asistencia médica de emergencia de inmediato.
+    - Mi mente está alerta y en guardia, y requiere atención médica de emergencia de inmediato.
+    - Tengo una sensación de alerta total y necesito ayuda médica de emergencia de inmediato.
+    - Estoy en un estado de alerta constante y necesito atención médica de emergencia de inmediato.
+    - Estoy alerta y listo para actuar de inmediato y necesito asistencia médica de emergencia de inmediato.
+    - Siento una aguda vigilancia en esta situación y necesito ayuda médica de emergencia de inmediato.
+    - Estoy en modo de alerta extrema y necesito asistencia médica de emergencia de inmediato.
+    - Mi mente está alerta y en guardia, y requiere atención médica de emergencia de inmediato.
+    - Tengo una sensación de alerta aguda y necesito ayuda médica de emergencia de inmediato.
+    - Estoy en un estado de alerta inquebrantable y necesito asistencia médica de emergencia de inmediato.
+    - Me siento muy vigilante y en guardia, y necesito atención médica de emergencia de inmediato.
+    - Mi atención está en un estado de alerta constante y requiere atención médica de emergencia de inmediato.
+    - Estoy alerta y consciente de los detalles y necesito ayuda médica de emergencia de inmediato.
+    - Tengo una sensación de alerta aguda y necesito asistencia médica de emergencia de inmediato.
+    - Estoy en un estado de alerta máxima y necesito atención médica de emergencia de inmediato.
+    - Siento una aguda vigilancia en esta situación y necesito ayuda médica de emergencia de inmediato.
+    - Estoy en modo de alerta extrema y necesito asistencia médica de emergencia de inmediato.
+    - Mi mente está alerta y en guardia, y requiere atención médica de emergencia de inmediato.
+    - Tengo una sensación de alerta total y necesito ayuda médica de emergencia de inmediato.
+    - Estoy en un estado de alerta constante y necesito atención médica de emergencia de inmediato.
+    - Estoy alerta y listo para actuar de inmediato y necesito asistencia médica de emergencia de inmediato.
+    - Siento una aguda vigilancia en esta situación y necesito ayuda médica de emergencia de inmediato.
+    - Estoy en modo de alerta extrema y necesito asistencia médica de emergencia de inmediato.
+    - Mi mente está alerta y en guardia, y requiere atención médica de emergencia de inmediato.
 
 
 #- intent: sintomas_relacionados_noradrenalina
@@ -4223,16 +4814,593 @@ nlu:
 #- intent: sintomas_relacionados_anti-Mulleriana
 #  examples: |
 
-#- intent: dolor_de_cabeza
-#  examples: |
+- intent: dolor_de_cabeza
+  examples: |
+    - Tengo un fuerte dolor de cabeza
+    - Tengo dolor de cabeza constante y punzante
+    - Tengo dolor de cabeza pulsante e intenso
+    - Tengo un fuerte dolor de cabeza despues de comer
+    - Tengo dolor de cabeza intenso
+    - Tengo dolor de cabeza pulsante e intenso
+    - Tengo dolores de cabeza frecuentes
+    - Tengo dolor de cabeza intenso
+    - Tengo dolor de cabeza constante y punzante
+    - Tengo dolor de cabeza
+    - Me duele la cabeza
+    - Siento un fuerte dolor en la cabeza
+    - Tengo un mal de cabeza
+    - Mi cabeza está matándome
+    - Estoy con dolor de cabeza
+    - Mi cabeza me está molestando
+    - Tengo una jaqueca
+    - Me está latiendo la cabeza
+    - Estoy sufriendo de migraña
+    - Estoy con una molestia en la cabeza
+    - Me duele la frente
+    - Tengo un dolor pulsante en la cabeza
+    - Mi cabeza me está punzando
+    - Me está palpitando la cabeza
+    - Tengo un dolor agudo en la cabeza
+    - Estoy experimentando un malestar en la cabeza
+    - Tengo un fuerte dolor en la sien
+    - Sufro de cefalea
+    - Mi cabeza está muy pesada
+    - Tengo un dolor insoportable en la cabeza
+    - Mi cabeza está martillando
+    - Estoy con una fuerte cefalea
+    - Tengo un dolor constante en la cabeza
+    - Estoy lidiando con un dolor de cabeza intenso
+    - Me está punzando la cabeza constantemente
+    - Tengo un dolor de cabeza crónico
+    - Mi cabeza está palpitando sin parar
+    - Estoy sufriendo de dolor de cabeza persistente
+    - Me duele la nuca
+    - Tengo una molestia persistente en la cabeza
+    - Mi cabeza está lateando sin descanso
+    - Tengo un dolor de cabeza continuo
+    - Estoy con un dolor de cabeza que no cesa
+    - Mi cabeza me está doliendo constantemente
+    - Tengo una cefalea crónica
+    - Estoy con dolor de cabeza todo el tiempo
+    - Mi cabeza está punzando incesantemente
+    - Tengo un dolor de cabeza que no desaparece
+    - Estoy sufriendo de un dolor de cabeza persistente
+    - Mi cabeza está palpitando sin tregua
+    - Tengo una jaqueca constante
+    - Estoy con un dolor de cabeza crónico
+    - Me duele la cabeza desde hace horas
+    - Tengo un dolor de cabeza que no se va
+    - Estoy lidiando con un dolor de cabeza persistente
+    - Mi cabeza está martillando sin parar
+    - Tengo una cefalea constante
+    - Estoy con dolor de cabeza sin descanso
+    - Mi cabeza me está molestando sin cesar
+    - Tengo un dolor punzante en la cabeza
+    - Estoy con una fuerte jaqueca
+    - Me está latiendo la cabeza sin parar
+    - Tengo un dolor agudo en la cabeza desde hace horas
+    - Estoy sufriendo de migraña constante
+    - Tengo un dolor pulsante en la cabeza que no se va
+    - Mi cabeza está pesada desde hace tiempo
+    - Estoy con un malestar en la cabeza que no desaparece
+    - Tengo un dolor insoportable en la cabeza desde hace horas
+    - Mi cabeza está martillando todo el tiempo
+    - Estoy con una fuerte cefalea persistente
+    - Tengo un dolor constante en la cabeza que no cesa
+    - Estoy lidiando con un dolor de cabeza intenso
+    - Me está punzando la cabeza sin tregua
+    - Tengo un dolor de cabeza crónico que no se va
+    - Mi cabeza está palpitando incesantemente
+    - Estoy sufriendo de dolor de cabeza persistente desde hace horas
+    - Tengo un dolor en la sien que no desaparece
+    - Estoy con una molestia en la cabeza que no cesa
+    - Tengo un dolor pulsante en la cabeza que persiste
+    - Mi cabeza me está punzando sin tregua
+    - Me está latiendo la cabeza incesantemente
+    - Tengo un dolor agudo en la cabeza que no se va
+    - Mi cabeza está palpitando sin cesar
+    - Estoy con una fuerte cefalea que persiste
+    - Tengo un dolor constante en la cabeza que no cesa
+    - Mi cabeza está pesada sin tregua
+    - Estoy sufriendo de un dolor de cabeza persistente que no se va
+    - Tengo un dolor de cabeza continuo que persiste
+    - Estoy con un dolor de cabeza que no cesa desde hace horas
+    - Mi cabeza me está doliendo constantemente sin tregua
+    - Tengo una cefalea crónica persistente
+    - Estoy con dolor de cabeza todo el tiempo que no desaparece
+    - Mi cabeza está punzando incesantemente sin tregua
+    - Tengo un dolor de cabeza que no desaparece que persiste
+    - Estoy lidiando con un dolor de cabeza persistente que no se va
+    - Mi cabeza está martillando sin tregua sin cesar
+    - Tengo una jaqueca constante que persiste
+    - Estoy con un dolor de cabeza crónico que no cesa
+    - Me duele la cabeza desde hace horas sin tregua
+    - Tengo un dolor de cabeza que no se va sin cesar
+    - Estoy sufriendo de un dolor de cabeza persistente que persiste
+    - Mi cabeza está palpitando sin tregua sin cesar
+    - Tengo una cefalea constante que persiste
+    - Estoy con dolor de cabeza sin descanso que no desaparece
+    - Mi cabeza me está molestando sin cesar sin tregua
+    - Tengo un dolor punzante en la cabeza que persiste
+    - Estoy con una fuerte jaqueca que no cesa sin tregua
+    - Me está latiendo la cabeza sin tregua sin cesar
+    - Tengo un dolor agudo en la cabeza desde hace horas sin tregua
+    - Estoy sufriendo de migraña constante que persiste
+    - Tengo un dolor pulsante en la cabeza que no se va sin cesar
+    - Mi cabeza está pesada desde hace tiempo sin tregua
+    - Estoy con un malestar en la cabeza que no desaparece sin cesar
+    - Tengo un dolor insoportable en la cabeza desde hace horas sin tregua
+    - Mi cabeza está martillando todo el tiempo sin cesar
+    - Estoy con una fuerte cefalea persistente que persiste
+    - Tengo un dolor constante en la cabeza que no cesa sin tregua
+    - Estoy lidiando con un dolor de cabeza intenso sin cesar
+    - Me está punzando la cabeza sin tregua sin cesar
+    - Tengo un dolor de cabeza crónico que no se va sin cesar
+    - Mi cabeza está palpitando incesantemente sin tregua
+    - Estoy sufriendo de dolor de cabeza persistente desde hace horas sin tregua
+    - Tengo un dolor en la sien que no desaparece sin cesar
+    - Estoy con una molestia en la cabeza que no cesa sin tregua
+    - Tengo un dolor pulsante en la cabeza que persiste sin cesar
+    - Mi cabeza me está punzando sin tregua sin cesar
+    - Me está latiendo la cabeza incesantemente sin tregua
+    - Tengo un dolor agudo en la cabeza que no se va sin cesar
+    - Mi cabeza está palpitando sin cesar sin tregua
+    - Estoy con una fuerte cefalea persistente sin cesar
+    - Tengo un dolor constante en la cabeza que no cesa sin tregua
+    - Mi cabeza está pesada sin tregua sin cesar
+    - Estoy sufriendo de un dolor de cabeza persistente que no se va sin cesar
+    - Tengo un dolor de cabeza continuo que persiste sin cesar
+    - Estoy con un dolor de cabeza que no cesa desde hace horas sin tregua
+    - Mi cabeza me está doliendo constantemente sin tregua
+    - Tengo una cefalea crónica persistente
+    - Estoy con dolor de cabeza todo el tiempo que no desaparece sin tregua
+    - Mi cabeza está punzando incesantemente sin tregua
+    - Tengo un dolor de cabeza que no desaparece que persiste sin cesar
+    - Estoy lidiando con un dolor de cabeza persistente que no se va sin cesar
+    - Mi cabeza está martillando sin tregua sin cesar
+    - Tengo una jaqueca constante que persiste sin cesar
+    - Estoy con un dolor de cabeza crónico que no cesa sin tregua
+    - Me duele la cabeza desde hace horas sin tregua
+    - Tengo un dolor de cabeza que no se va sin cesar
+    - Estoy sufriendo de un dolor de cabeza persistente que persiste sin cesar
+    - Mi cabeza está palpitando sin tregua sin cesar
+    - Tengo una cefalea constante que persiste sin cesar
+    - Estoy con dolor de cabeza sin descanso que no desaparece sin cesar
+    - Mi cabeza me está molestando sin cesar sin tregua
+    - Tengo un dolor punzante en la cabeza que persiste sin cesar
+    - Estoy con una fuerte jaqueca que no cesa sin tregua sin cesar
+    - Me está latiendo la cabeza sin tregua sin cesar
+    - Tengo un dolor agudo en la cabeza desde hace horas sin tregua
+    - Estoy sufriendo de migraña constante que persiste sin cesar
+    - Tengo un dolor pulsante en la cabeza que no se va sin cesar
+    - Mi cabeza está pesada desde hace tiempo sin tregua
+    - Estoy con un malestar en la cabeza que no desaparece sin cesar
+    - Tengo un dolor insoportable en la cabeza desde hace horas sin tregua
+    - Mi cabeza está martillando todo el tiempo sin cesar
+    - Estoy con una fuerte cefalea persistente que persiste
+    - Tengo un dolor constante en la cabeza que no cesa sin tregua
+    - Estoy lidiando con un dolor de cabeza intenso sin cesar
+    - Me está punzando la cabeza sin tregua sin cesar
+    - Tengo un dolor de cabeza crónico que no se va sin cesar
+    - Mi cabeza está palpitando incesantemente sin tregua
+    - Estoy sufriendo de dolor de cabeza persistente desde hace horas sin tregua
+    - Tengo un dolor en la sien que no desaparece sin cesar
+    - Estoy con una molestia en la cabeza que no cesa sin tregua
+    - Tengo un dolor pulsante en la cabeza que persiste sin cesar
+    - Mi cabeza me está punzando sin tregua sin cesar
+    - Me está latiendo la cabeza incesantemente sin tregua
+    - Tengo un dolor agudo en la cabeza que no se va sin cesar
+    - Mi cabeza está palpitando sin cesar sin tregua
+    - Estoy con una fuerte cefalea persistente sin cesar
+    - Tengo un dolor constante en la cabeza que no cesa sin tregua
+    - Mi cabeza está pesada sin tregua sin cesar
+    - Estoy sufriendo de un dolor de cabeza persistente que no se va sin cesar
+    - Tengo un dolor de cabeza continuo que persiste sin cesar
+    - Estoy con un dolor de cabeza que no cesa desde hace horas sin tregua
+    - Mi cabeza me está doliendo constantemente sin tregua
+    - Tengo una cefalea crónica persistente
+    - Estoy con dolor de cabeza todo el tiempo que no desaparece sin tregua
+    - Mi cabeza está punzando incesantemente sin tregua
+    - Tengo un dolor de cabeza que no desaparece que persiste sin cesar
+    - Estoy lidiando con un dolor de cabeza persistente que no se va sin cesar
+    - Mi cabeza está martillando sin tregua sin cesar
+    - Tengo una jaqueca constante que persiste sin cesar
+    - Estoy con un dolor de cabeza crónico que no cesa sin tregua
+    - Me duele la cabeza desde hace horas sin tregua
+    - Tengo un dolor de cabeza que no se va sin cesar
+    - Estoy sufriendo de un dolor de cabeza persistente que persiste sin cesar
+    - Mi cabeza está palpitando sin tregua sin cesar
+    - Tengo una cefalea constante que persiste sin cesar
+    - Estoy con dolor de cabeza sin descanso que no desaparece sin cesar
+    - Mi cabeza me está molestando sin cesar sin tregua
+    - Tengo un dolor punzante en la cabeza que persiste sin cesar
+    - Estoy con una fuerte jaqueca que no cesa sin tregua sin cesar
+    - Me está latiendo la cabeza sin tregua sin cesar
+    - Tengo un dolor agudo en la cabeza desde hace horas sin tregua
 
-#- intent: reflujo_o_dolor_estomacal
-#  examples: |
+- intent: reflujo_o_dolor_estomacal
+  examples: |
+    - Tengo acidez estomacal
+    - Me duele el estómago
+    - Siento ardor en el estómago
+    - Tengo malestar en la barriga
+    - Tengo dolor de estómago
+    - Estoy con molestias estomacales
+    - Siento una sensación de quemazón en el estómago
+    - Tengo una sensación incómoda en el abdomen
+    - Me está dando acidez
+    - Tengo dolor en la zona abdominal
+    - Estoy experimentando dolor en el vientre
+    - Me duele la panza
+    - Tengo una sensación de pesadez en el estómago
+    - Estoy con molestias gástricas
+    - Me duele la parte baja del abdomen
+    - Siento malestar en la región del estómago
+    - Estoy con acidez en el pecho
+    - Tengo una sensación de ardor en el pecho
+    - Me está quemando el pecho
+    - Estoy con dolor en la parte superior del abdomen
+    - Tengo un dolor punzante en la zona del estómago
+    - Me está doliendo la parte baja del vientre
+    - Estoy con molestias en la zona del ombligo
+    - Tengo una molestia incómoda en la región gástrica
+    - Estoy experimentando una sensación de quemazón en el pecho
+    - Tengo malestar en la parte superior del abdomen
+    - Me duele en el área del estómago
+    - Siento una sensación de pesadez en la zona abdominal
+    - Estoy con malestar en el área del abdomen
+    - Me está dando ardor en el pecho
+    - Tengo una sensación de quemazón en la región abdominal
+    - Estoy con dolor en la parte baja del pecho
+    - Tengo una molestia punzante en el abdomen
+    - Me está quemando en la región gástrica
+    - Estoy con molestias en el área del pecho
+    - Tengo malestar en la parte superior del pecho
+    - Me duele en la zona del vientre
+    - Siento una sensación incómoda en la región del estómago
+    - Tengo una sensación de ardor en la región del pecho
+    - Estoy con dolor en el área abdominal
+    - Tengo dolor en el área del ombligo
+    - Me está dando acidez en el pecho
+    - Tengo una sensación de pesadez en la región del pecho
+    - Estoy con malestar en la zona del vientre
+    - Tengo molestias gástricas
+    - Me duele en la parte baja del pecho
+    - Siento una sensación de quemazón en la zona abdominal
+    - Tengo una molestia incómoda en la región del ombligo
+    - Estoy experimentando una sensación de ardor en la zona gástrica
+    - Tengo dolor en el área del pecho
+    - Me está quemando en la región abdominal
+    - Estoy con malestar en la parte superior del ombligo
+    - Tengo malestar en la zona del pecho
+    - Me duele en la zona del ombligo
+    - Siento ardor en la región gástrica
+    - Tengo una sensación de pesadez en el área del ombligo
+    - Estoy con acidez en la región del pecho
+    - Tengo una molestia punzante en la zona abdominal
+    - Me está dando ardor en la zona del pecho
+    - Tengo dolor en el área gástrica
+    - Tengo una sensación de quemazón en el área del ombligo
+    - Estoy con dolor en la parte baja del ombligo
+    - Tengo malestar en la región gástrica
+    - Me duele en la zona gástrica
+    - Siento una sensación incómoda en el área del pecho
+    - Tengo una sensación de ardor en la zona gástrica
+    - Estoy con molestias en la zona del ombligo
+    - Me está quemando en la parte superior del abdomen
+    - Tengo dolor en la región abdominal
+    - Tengo acidez en la región del ombligo
+    - Tengo una molestia punzante en el área gástrica
+    - Me está dando ardor en la parte baja del ombligo
+    - Tengo dolor en la parte superior del ombligo
+    - Estoy con malestar en la zona gástrica
+    - Tengo malestar en la región del ombligo
+    - Me duele en la parte baja del abdomen
+    - Siento una sensación de pesadez en el área gástrica
+    - Tengo una sensación de quemazón en la parte superior del ombligo
+    - Estoy experimentando dolor en la región del abdomen
+    - Tengo una sensación de ardor en la parte superior del ombligo
+    - Me está quemando en el área gástrica
+    - Estoy con acidez en la parte superior del abdomen
+    - Tengo dolor en la parte baja del ombligo
+    - Tengo una molestia incómoda en la región gástrica
+    - Tengo dolor en la parte superior del abdomen
+    - Me está dando ardor en la parte baja del ombligo
+    - Tengo una sensación de pesadez en la región del abdomen
+    - Estoy con malestar en el área gástrica
+    - Tengo malestar en la parte superior del ombligo
+    - Me duele en la región del ombligo
+    - Siento una sensación de ardor en la parte superior del abdomen
+    - Tengo una molestia punzante en la zona del ombligo
+    - Me está quemando en la región del abdomen
+    - Estoy con acidez en la parte superior del ombligo
+    - Tengo dolor en la parte baja del abdomen
+    - Tengo una sensación de quemazón en la parte superior del abdomen
+    - Estoy experimentando una sensación de ardor en la parte baja del ombligo
+    - Tengo dolor en la región gástrica
+    - Tengo malestar en la zona del ombligo
+    - Me está dando ardor en la parte superior del abdomen
+    - Tengo una molestia incómoda en la parte baja del ombligo
+    - Tengo dolor en la parte superior del abdomen
+    - Estoy con acidez en la parte superior del ombligo
+    - Tengo malestar en la región del ombligo
+    - Me duele en la parte baja del ombligo
+    - Siento una sensación de pesadez en la parte superior del abdomen
+    - Tengo una sensación de quemazón en la parte baja del ombligo
+    - Estoy experimentando dolor en la parte superior del ombligo
+    - Tengo una molestia punzante en la región gástrica
+    - Me está quemando en la parte superior del ombligo
+    - Tengo dolor en la parte baja del abdomen
+    - Tengo malestar en la zona del ombligo
+    - Me está dando ardor en la parte superior del ombligo
+    - Tengo una sensación incómoda en la región del ombligo
+    - Tengo dolor en la parte superior del ombligo
+    - Estoy con acidez en la parte superior del abdomen
+    - Tengo malestar en la parte baja del ombligo
+    - Siento ardor en la región del ombligo
+    - Tengo una sensación de pesadez en la parte superior del ombligo
+    - Tengo dolor en la parte superior del ombligo
+    - Tengo una molestia punzante en la parte baja del abdomen
+    - Me está quemando en la región del ombligo
+    - Tengo dolor en la parte superior del abdomen
+    - Tengo malestar en la región del ombligo
+    - Me duele en la parte baja del ombligo
+    - Siento una sensación de quemazón en la parte superior del ombligo
+    - Tengo una sensación de ardor en la parte superior del ombligo
+    - Estoy experimentando una sensación de pesadez en la parte baja del abdomen
+    - Tengo malestar en la parte superior del abdomen
+    - Tengo dolor en la parte baja del abdomen
+    - Me está dando acidez en la parte superior del ombligo
+    - Tengo una molestia incómoda en la región del ombligo
+    - Tengo dolor en la parte superior del ombligo
+    - Me está quemando en la parte superior del abdomen
+    - Estoy con acidez en la parte baja del ombligo
+    - Tengo malestar en la parte baja del ombligo
+    - Tengo dolor en la parte baja del abdomen
+    - Siento una sensación de quemazón en la parte superior del abdomen
+    - Tengo una sensación de ardor en la región del ombligo
+    - Tengo una molestia punzante en la parte superior del ombligo
+    - Estoy experimentando dolor en la parte superior del ombligo
+    - Tengo dolor en la parte baja del ombligo
+    - Me está dando ardor en la parte superior del ombligo
+    - Tengo una sensación incómoda en la parte baja del abdomen
+    - Tengo malestar en la parte superior del ombligo
+    - Tengo dolor en la parte superior del ombligo
+    - Tengo malestar en la parte baja del ombligo
+    - Me duele en la parte baja del abdomen
+    - Tengo una sensación de quemazón en la región del ombligo
+    - Tengo una molestia incómoda en la parte superior del abdomen
+    - Tengo dolor en la parte superior del ombligo
+    - Estoy con acidez en la parte baja del abdomen
+    - Me está quemando en la parte superior del ombligo
+    - Tengo malestar en la parte baja del abdomen
+    - Tengo dolor en la parte baja del ombligo
+    - Siento ardor en la parte superior del ombligo
+    - Tengo una sensación de ardor en la parte superior del ombligo
+    - Estoy experimentando una sensación de pesadez en la parte baja del abdomen
+    - Tengo malestar en la parte superior del abdomen
+    - Tengo dolor en la parte superior del ombligo
+    - Tengo una molestia punzante en la parte baja del ombligo
+    - Me está quemando en la parte superior del abdomen
+    - Tengo acidez en la parte baja del abdomen
+    - Tengo malestar en la parte baja del abdomen
+    - Tengo dolor en la parte baja del ombligo
+    - Tengo una sensación de quemazón en la parte superior del ombligo
+    - Tengo una molestia incómoda en la parte baja del abdomen
+    - Tengo dolor en la parte superior del ombligo
+    - Tengo malestar en la parte superior del ombligo
+    - Me duele en la parte baja del abdomen
+    - Siento ardor en la parte superior del ombligo
+    - Tengo una sensación de ardor en la parte superior del ombligo
+    - Estoy experimentando una sensación de quemazón en la parte baja del abdomen
+    - Tengo malestar en la parte superior del abdomen
+    - Tengo dolor en la parte superior del ombligo
+    - Tengo una molestia punzante en la parte baja del abdomen
+    - Me está quemando en la parte superior del abdomen
+    - Tengo acidez en la parte baja del ombligo
+    - Tengo malestar en la parte baja del ombligo
+    - Tengo dolor en la parte baja del ombligo
+    - Tengo una sensación de pesadez en la parte superior del ombligo
+    - Tengo dolor en la parte superior del ombligo
+    - Tengo malestar en la parte superior del abdomen
+    - Me duele en la parte baja del ombligo
+    - Siento ardor en la parte superior del ombligo
+    - Tengo una sensación de ardor en la parte superior del ombligo
+    - Estoy experimentando una sensación de quemazón en la parte baja del ombligo
+    - Tengo malestar en la parte superior del abdomen
+    - Tengo dolor en la parte superior del ombligo
+    - Tengo una molestia punzante en la parte baja del ombligo
+    - Me está quemando en la parte superior del abdomen
+    - Tengo acidez en la parte baja del ombligo
+    - Tengo malestar en la parte baja del ombligo
+    - Tengo dolor en la parte baja del ombligo
+    - Tengo una sensación de pesadez en la parte superior del ombligo
+    - Tengo dolor en la parte superior del ombligo
+    - Tengo malestar en la parte superior del abdomen
+    - Me duele en la parte baja del ombligo
+    - Siento ardor en la parte superior del ombligo
+    - Tengo una sensación de ardor en la parte superior del ombligo
+    - Tengo acidez estomacal
+    - Siento ardor en el estómago
+    - Tengo una sensación de quemazón en el pecho
+    - Estoy experimentando acidez
+    - Tengo malestar en el estómago
+    - Mi estómago me duele
+    - Siento un dolor en la parte superior del abdomen
+    - Tengo un dolor incómodo en el vientre
+    - Estoy con molestias estomacales
+    - Tengo una sensación desagradable en el abdomen
+    - Me duele en la parte de arriba del estómago
+    - Estoy con una sensación de ardor en la garganta
+    - Tengo reflujo ácido
+    - Siento que el ácido sube por mi garganta
+    - Tengo un regusto amargo en la boca
+    - Me está ardiendo la garganta
+    - Tengo dolor en el esófago
+    - Estoy con una sensación de opresión en el pecho
+    - Tengo malestar en el área del pecho
+    - Siento incomodidad en la parte central del cuerpo
+    - Me duele en la zona del esternón
+    - Tengo una sensación de quemazón en la parte superior del abdomen
+    - Estoy con ardor en la boca del estómago
+    - Siento un dolor agudo en la región abdominal
+    - Tengo un malestar persistente en el vientre
+    - Estoy experimentando dolor en la zona del estómago
+    - Tengo molestias gastrointestinales
+    - Siento una sensación de ardor en la parte superior del cuerpo
+    - Tengo una sensación de acidez en la garganta
+    - Me duele la parte superior del abdomen
+    - Estoy con un ardor desagradable en el pecho
+    - Tengo una molestia en el esófago
+    - Siento un regusto ácido en la boca
+    - Me está ardiendo la garganta debido al reflujo
+    - Tengo una sensación incómoda en el estómago
+    - Estoy con una sensación de opresión en el pecho debido al reflujo
+    - Tengo un malestar en el área del pecho
+    - Siento incomodidad en el abdomen superior
+    - Me duele en la zona del esternón debido al reflujo
+    - Tengo una sensación de quemazón en la garganta debido al reflujo ácido
+    - Siento una sensación desagradable en el área abdominal
+    - Tengo un dolor agudo en el área del estómago
+    - Estoy con malestar en el vientre
+    - Tengo dolor en la parte central del cuerpo
+    - Siento molestias en el abdomen
+    - Me duele el vientre superior
+    - Estoy con una sensación de ardor en el pecho
+    - Tengo un malestar en la parte superior del abdomen
+    - Siento incomodidad en la región abdominal
+    - Tengo una sensación de quemazón en el área del estómago
+    - Me duele en la zona del esternón debido al reflujo ácido
+    - Estoy con una sensación de ardor en la boca del estómago
+    - Tengo molestias en la garganta
+    - Siento un regusto amargo en la boca debido al reflujo
+    - Tengo una sensación de acidez en el pecho
+    - Me está ardiendo la garganta por el reflujo
+    - Tengo un dolor en el esófago
+    - Siento una sensación de opresión en el pecho debido al reflujo
+    - Tengo malestar en el área del pecho
+    - Estoy con una sensación incómoda en la parte central del cuerpo debido al reflujo
+    - Me duele en la zona del esternón
+    - Tengo una sensación de quemazón en la parte superior del abdomen debido al reflujo
+    - Estoy con ardor en la boca del estómago debido al reflujo
+    - Siento un dolor agudo en la región abdominal
+    - Tengo un malestar persistente en el área del estómago
+    - Estoy experimentando dolor en la zona del estómago
+    - Tengo molestias gastrointestinales debido al reflujo
+    - Siento una sensación de ardor en la parte superior del cuerpo
+    - Tengo una sensación de acidez en la garganta debido al reflujo
+    - Me duele la parte superior del abdomen
+    - Estoy con un ardor desagradable en el pecho debido al reflujo
+    - Tengo una molestia en el esófago
+    - Siento un regusto ácido en la boca debido al reflujo
+    - Me está ardiendo la garganta debido al reflujo
+    - Tengo una sensación incómoda en el estómago debido al reflujo
+    - Estoy con una sensación de opresión en el pecho debido al reflujo
+    - Tengo un malestar en el área del pecho debido al reflujo
+    - Siento incomodidad en el abdomen superior debido al reflujo
+    - Me duele en la zona del esternón debido al reflujo
+    - Tengo una sensación de quemazón en la garganta debido al reflujo ácido
+    - Siento una sensación desagradable en el área abdominal debido al reflujo
+    - Tengo un dolor agudo en el área del estómago debido al reflujo
+    - Estoy con malestar en el vientre debido al reflujo
+    - Tengo dolor en la parte central del cuerpo debido al reflujo
+    - Siento molestias en el abdomen debido al reflujo
+    - Me duele el vientre superior debido al reflujo
+    - Estoy con una sensación de ardor en el pecho debido al reflujo
+    - Tengo un malestar en la parte superior del abdomen debido al reflujo
+    - Siento incomodidad en la región abdominal debido al reflujo
+    - Tengo una sensación de quemazón en el área del estómago debido al reflujo
+    - Me duele en la zona del esternón debido al reflujo ácido
+    - Estoy con una sensación de ardor en la boca del estómago debido al reflujo
+    - Tengo molestias en la garganta debido al reflujo
+    - Siento un regusto amargo en la boca debido al reflujo
+    - Tengo una sensación de acidez en el pecho debido al reflujo
+    - Me está ardiendo la garganta debido al reflujo
+    - Tengo un dolor en el esófago debido al reflujo
+    - Siento una sensación de opresión en el pecho debido al reflujo
+    - Tengo malestar en el área del pecho debido al reflujo
+    - Estoy con una sensación incómoda en la parte central del cuerpo debido al reflujo
+    - Me duele en la zona del esternón debido al reflujo
+    - Tengo una sensación de quemazón en la parte superior del abdomen debido al reflujo
+    - Estoy con ardor en la boca del estómago debido al reflujo
+    - Siento un dolor agudo en la región abdominal debido al reflujo
+    - Tengo un malestar persistente en el área del estómago debido al reflujo
+    - Estoy experimentando dolor en la zona del estómago debido al reflujo
+    - Tengo molestias gastrointestinales debido al reflujo
+    - Siento una sensación de ardor en la parte superior del cuerpo debido al reflujo
+    - Tengo una sensación de acidez en la garganta debido al reflujo
+    - Me duele la parte superior del abdomen debido al reflujo
+    - Estoy con un ardor desagradable en el pecho debido al reflujo
+    - Tengo una molestia en el esófago debido al reflujo
+    - Siento un regusto ácido en la boca debido al reflujo
+    - Me está ardiendo la garganta debido al reflujo
+    - Tengo una sensación incómoda en el estómago debido al reflujo
+    - Estoy con una sensación de opresión en el pecho debido al reflujo
+    - Tengo un malestar en el área del pecho debido al reflujo
+    - Siento incomodidad en el abdomen superior debido al reflujo
+    - Me duele en la zona del esternón debido al reflujo
+    - Tengo una sensación de quemazón en la garganta debido al reflujo ácido
+    - Siento una sensación desagradable en el área abdominal debido al reflujo
+    - Tengo un dolor agudo en el área del estómago debido al reflujo
+    - Estoy con malestar en el vientre debido al reflujo
+    - Tengo dolor en la parte central del cuerpo debido al reflujo
+    - Siento molestias en el abdomen debido al reflujo
+    - Me duele el vientre superior debido al reflujo
+    - Estoy con una sensación de ardor en el pecho debido al reflujo
+    - Tengo un malestar en la parte superior del abdomen debido al reflujo
+    - Siento incomodidad en la región abdominal debido al reflujo
+    - Tengo una sensación de quemazón en el área del estómago debido al reflujo
+    - Me duele en la zona del esternón debido al reflujo ácido
+    - Estoy con una sensación de ardor en la boca del estómago debido al reflujo
+    - Tengo molestias en la garganta debido al reflujo
+    - Siento un regusto amargo en la boca debido al reflujo
+    - Tengo una sensación de acidez en el pecho debido al reflujo
+    - Me está ardiendo la garganta debido al reflujo
+    - Tengo un dolor en el esófago debido al reflujo
+    - Siento una sensación de opresión en el pecho debido al reflujo
+    - Tengo malestar en el área del pecho debido al reflujo
+    - Estoy con una sensación incómoda en la parte central del cuerpo debido al reflujo
+    - Me duele en la zona del esternón debido al reflujo
+    - Tengo una sensación de quemazón en la garganta debido al reflujo ácido
+    - Siento una sensación desagradable en el área abdominal debido al reflujo
+    - Tengo un dolor agudo en el área del estómago debido al reflujo
+    - Estoy con malestar en el vientre debido al reflujo
+    - Tengo dolor en la parte central del cuerpo debido al reflujo
+    - Siento molestias en el abdomen debido al reflujo
+    - Me duele el vientre superior debido al reflujo
+    - Estoy con una sensación de ardor en el pecho debido al reflujo
+    - Tengo un malestar en la parte superior del abdomen debido al reflujo
+    - Siento incomodidad en la región abdominal debido al reflujo
+    - Tengo una sensación de quemazón en el área del estómago debido al reflujo
+    - Me duele en la zona del esternón debido al reflujo ácido
+    - Estoy con una sensación de ardor en la boca del estómago debido al reflujo
+    - Tengo molestias en la garganta debido al reflujo
+    - Siento un regusto amargo en la boca debido al reflujo
+    - Tengo una sensación de acidez en el pecho debido al reflujo
+    - Me está ardiendo la garganta debido al reflujo
+    - Tengo un dolor en el esófago debido al reflujo
+    - Siento una sensación de opresión en el pecho debido al reflujo
+    - Tengo malestar en el área del pecho debido al reflujo
+    - Estoy con una sensación incómoda en la parte central del cuerpo debido al reflujo
+    - Me duele en la zona del esternón debido al reflujo
+    - Tengo una sensación de quemazón en la garganta debido al reflujo ácido
+    - Siento una sensación desagradable en el área abdominal debido al reflujo
+    - Tengo un dolor agudo en el área del estómago debido al reflujo
+    - Estoy con malestar en el vientre debido al reflujo
+    - Tengo dolor en la parte central del cuerpo debido al reflujo
+    - Siento molestias en el abdomen debido al reflujo
+    - Me duele el vientre superior debido al reflujo
+    - Estoy con una sensación de ardor en el pecho debido al reflujo
+    - Tengo un malestar en la parte superior del abdomen debido al reflujo
+    - Siento incomodidad en la región abdominal debido al reflujo
 
 #- intent: diarrea
 #  examples: |
 
 #- intent: fiebre
+#  examples: |
+
+#- intent: sudoracion
 #  examples: |
 
 #- intent: nauseas_y_vomito
@@ -4242,6 +5410,9 @@ nlu:
 #  examples: |
 
 #- intent: estornudo
+#  examples: |
+
+#- intent: temblores
 #  examples: |
 
 #- intent: dolor_menstrual
