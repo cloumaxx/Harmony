@@ -160,6 +160,12 @@ responses:
   utter_reflujo_o_dolor_estomacal:
   - text: El dolor estomacal es un sintoma que se relaciona con diferentes factores
 
+  utter_fiebre:
+  - text: La fiebre es un sintoma que se relaciona con diferentes factores
+
+  utter_sudoracion:
+  - text: La sudoracion es un sintoma que se relaciona con diferentes factores
+
 
 
 session_config:

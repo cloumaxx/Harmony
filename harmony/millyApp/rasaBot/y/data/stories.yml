@@ -207,6 +207,17 @@ stories:
     - intent: reflujo_o_dolor_estomacal
     - action: utter_reflujo_o_dolor_estomacal
 
+- story: fiebre path
+  steps:
+    - intent: fiebre
+    - action: utter_fiebre
+  
+- story: sudoracion path
+  steps:
+    - intent: sudoracion
+    - action: utter_sudoracion
+
+
 #----------------------------------------------
 # EXCEPCIÓN
 #----------------------------------------------

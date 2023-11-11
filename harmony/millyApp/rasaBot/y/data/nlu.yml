@@ -5394,14 +5394,697 @@ nlu:
     - Tengo un malestar en la parte superior del abdomen debido al reflujo
     - Siento incomodidad en la región abdominal debido al reflujo
 
-#- intent: diarrea
-#  examples: |
+- intent: fiebre
+  examples: |
+    - Mi termómetro señala que mi temperatura es superior a lo normal.
+    - Estoy con fiebre, mi termómetro muestra un aumento de grados.
+    - Experimento un aumento de temperatura corporal, indicando fiebre.
+    - Mi cuerpo está más cálido de lo habitual, probablemente tengo fiebre.
+    - Tengo fiebre, la temperatura en mi termómetro ha subido a grados Celsius.
+    - Me siento caliente y mi termómetro confirma que tengo fiebre.
+    - Estoy con fiebre, mi temperatura ha subido significativamente.
+    - Mi termómetro indica que estoy experimentando fiebre, la temperatura es de grados.
+    - Siento un aumento en mi temperatura corporal, lo que sugiere fiebre.
+    - Tengo fiebre, mi termómetro marca grados Celsius.
+    - Mi temperatura está por encima de lo normal, lo que podría indicar fiebre.
+    - Estoy con fiebre, mi termómetro registra grados de temperatura.
+    - Mi termómetro señala que tengo fiebre, la temperatura es de grados.
+    - Experimento un aumento de temperatura corporal, probablemente debido a fiebre.
+    - Mi cuerpo está más caliente al tacto, lo que sugiere fiebre.
+    - Tengo fiebre, mi termómetro muestra un aumento de grados Celsius.
+    - Mi temperatura está elevada, indicando la presencia de fiebre.
+    - Estoy con fiebre, mi termómetro marca grados.
+    - Mi termómetro indica que tengo fiebre, con una temperatura de grados.
+    - Experimento un aumento en mi temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más cálido de lo normal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Mi temperatura ha subido, indicando que estoy con fiebre.
+    - Estoy con fiebre, mi termómetro muestra una lectura de grados.
+    - Mi termómetro indica que tengo fiebre, la temperatura es de grados.
+    - Experimento un aumento de temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más caliente al tacto, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro marca un aumento de grados Celsius.
+    - Mi temperatura está elevada, indicando la presencia de fiebre.
+    - Estoy con fiebre, mi termómetro registra una temperatura de grados.
+    - Mi termómetro indica que tengo fiebre, con una lectura de grados.
+    - Experimento un aumento en mi temperatura corporal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro muestra que la temperatura ha subido a grados Celsius.
+    - Mi cuerpo está más cálido de lo normal, lo que podría ser indicativo de fiebre.
+    - Estoy con fiebre, mi termómetro registra una lectura de grados.
+    - Mi temperatura está elevada, indicando que estoy experimentando fiebre.
+    - Siento un aumento en mi temperatura corporal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro muestra que la temperatura ha subido a grados.
+    - Mi termómetro indica que tengo fiebre, con una lectura de grados Celsius.
+    - Experimento un aumento de temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más caliente al tacto, sugiriendo que estoy con fiebre.
+    - Tengo fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando la presencia de fiebre.
+    - Estoy con fiebre, mi termómetro muestra un aumento de grados Celsius.
+    - Mi termómetro indica que tengo fiebre, la temperatura es de grados.
+    - Experimento un aumento en mi temperatura corporal, lo que podría ser fiebre.
+    - Tengo fiebre, mi termómetro marca una lectura de grados Celsius.
+    - Mi cuerpo está más cálido de lo normal, sugiriendo fiebre.
+    - Estoy con fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando que estoy experimentando fiebre.
+    - Siento un aumento en mi temperatura corporal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro muestra que la temperatura ha subido a grados.
+    - Mi termómetro indica que tengo fiebre, con una lectura de grados Celsius.
+    - Experimento un aumento de temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más caliente al tacto, sugiriendo que estoy con fiebre.
+    - Tengo fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando la presencia de fiebre.
+    - Estoy con fiebre, mi termómetro muestra un aumento de grados Celsius.
+    - Mi termómetro indica que tengo fiebre, la temperatura es de grados.
+    - Experimento un aumento en mi temperatura corporal, lo que podría ser fiebre.
+    - Tengo fiebre, mi termómetro marca una lectura de grados Celsius.
+    - Mi cuerpo está más cálido de lo normal, sugiriendo fiebre.
+    - Estoy con fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando que estoy experimentando fiebre.
+    - Siento un aumento en mi temperatura corporal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro muestra que la temperatura ha subido a grados.
+    - Mi termómetro indica que tengo fiebre, con una lectura de grados Celsius.
+    - Experimento un aumento de temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más caliente al tacto, sugiriendo que estoy con fiebre.
+    - Tengo fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando la presencia de fiebre.
+    - Estoy con fiebre, mi termómetro muestra un aumento de grados Celsius.
+    - Mi termómetro indica que tengo fiebre, la temperatura es de grados.
+    - Experimento un aumento en mi temperatura corporal, lo que podría ser fiebre.
+    - Tengo fiebre, mi termómetro marca una lectura de grados Celsius.
+    - Mi cuerpo está más cálido de lo normal, sugiriendo fiebre.
+    - Estoy con fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando que estoy experimentando fiebre.
+    - Siento un aumento en mi temperatura corporal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro muestra que la temperatura ha subido a grados.
+    - Mi termómetro indica que tengo fiebre, con una lectura de grados Celsius.
+    - Experimento un aumento de temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más caliente al tacto, sugiriendo que estoy con fiebre.
+    - Tengo fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando la presencia de fiebre.
+    - Estoy con fiebre, mi termómetro muestra un aumento de grados Celsius.
+    - Mi termómetro indica que tengo fiebre, la temperatura es de grados.
+    - Experimento un aumento en mi temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más cálido de lo normal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro marca una lectura de grados Celsius.
+    - Mi temperatura está elevada, indicando que estoy experimentando fiebre.
+    - Estoy con fiebre, mi termómetro muestra que la temperatura ha subido a grados.
+    - Mi termómetro indica que tengo fiebre, con una lectura de grados Celsius.
+    - Experimento un aumento de temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más caliente al tacto, sugiriendo que estoy con fiebre.
+    - Tengo fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando la presencia de fiebre.
+    - Estoy con fiebre, mi termómetro muestra un aumento de grados Celsius.
+    - Mi termómetro indica que tengo fiebre, la temperatura es de grados.
+    - Experimento un aumento en mi temperatura corporal, lo que podría ser fiebre.
+    - Tengo fiebre, mi termómetro marca una lectura de grados Celsius.
+    - Mi cuerpo está más cálido de lo normal, sugiriendo fiebre.
+    - Estoy con fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando que estoy experimentando fiebre.
+    - Siento un aumento en mi temperatura corporal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro muestra que la temperatura ha subido a grados.
+    - Mi termómetro indica que tengo fiebre, con una lectura de grados Celsius.
+    - Experimento un aumento de temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más caliente al tacto, sugiriendo que estoy con fiebre.
+    - Tengo fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando la presencia de fiebre.
+    - Estoy con fiebre, mi termómetro muestra un aumento de grados Celsius.
+    - Mi termómetro indica que tengo fiebre, la temperatura es de grados.
+    - Experimento un aumento en mi temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más cálido de lo normal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro marca una lectura de grados Celsius.
+    - Mi temperatura está elevada, indicando que estoy experimentando fiebre.
+    - Estoy con fiebre, mi termómetro muestra que la temperatura ha subido a grados.
+    - Mi termómetro indica que tengo fiebre, con una lectura de grados Celsius.
+    - Experimento un aumento de temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más caliente al tacto, sugiriendo que estoy con fiebre.
+    - Tengo fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando la presencia de fiebre.
+    - Estoy con fiebre, mi termómetro muestra un aumento de grados Celsius.
+    - Mi termómetro indica que tengo fiebre, la temperatura es de grados.
+    - Experimento un aumento en mi temperatura corporal, lo que podría ser fiebre.
+    - Tengo fiebre, mi termómetro marca una lectura de grados Celsius.
+    - Mi cuerpo está más cálido de lo normal, sugiriendo fiebre.
+    - Estoy con fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando que estoy experimentando fiebre.
+    - Siento un aumento en mi temperatura corporal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro muestra que la temperatura ha subido a grados.
+    - Mi termómetro indica que tengo fiebre, con una lectura de grados Celsius.
+    - Experimento un aumento de temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más caliente al tacto, sugiriendo que estoy con fiebre.
+    - Tengo fiebre, mi termómetro registra una temperatura de grados.
+    - Mi temperatura está elevada, indicando la presencia de fiebre.
+    - Estoy con fiebre, mi termómetro muestra un aumento de grados Celsius.
+    - Mi termómetro indica que tengo fiebre, la temperatura es de grados.
+    - Experimento un aumento en mi temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más cálido de lo normal, sugiriendo fiebre.
+    - Tengo fiebre, mi termómetro marca una lectura de grados Celsius.
+    - Mi temperatura está elevada, indicando que estoy experimentando fiebre.
+    - Estoy con fiebre, mi termómetro muestra que la temperatura ha subido a grados.
+    - Mi termómetro indica que tengo fiebre, con una lectura de grados Celsius.
+    - Experimento un aumento de temperatura corporal, lo que podría ser fiebre.
+    - Mi cuerpo está más caliente al tacto, sugiriendo que estoy con fiebre.
+    - Tengo fiebre.
+    - Me siento caliente.
+    - Estoy con fiebre.
+    - Mi temperatura está alta.
+    - Estoy ardiente.
+    - Siento calor.
+    - Tengo temperatura.
+    - Mi cuerpo está caliente.
+    - Estoy febril.
+    - Me duele el cuerpo y tengo fiebre.
+    - Estoy experimentando fiebre.
+    - Tengo una temperatura elevada.
+    - Me siento calenturiento.
+    - Mi cuerpo está más caliente de lo normal.
+    - Tengo escalofríos y fiebre.
+    - Estoy con calor y tengo fiebre.
+    - Mi temperatura corporal está subiendo.
+    - Me siento febril y cansado.
+    - Tengo fiebre y dolor de cabeza.
+    - Estoy experimentando síntomas febriles.
+    - Mi cuerpo está experimentando un aumento de temperatura.
+    - Me siento caliente y débil.
+    - Tengo fiebre y escalofríos.
+    - Mi temperatura está por encima de lo normal.
+    - Estoy experimentando un aumento de la temperatura corporal.
+    - Siento fiebre y dolor en el cuerpo.
+    - Mi cuerpo está caliente al tacto.
+    - Estoy con fiebre y sudando.
+    - Tengo fiebre y me siento fatigado.
+    - Mi temperatura está elevada y me siento mal.
+    - Estoy con fiebre y tengo dolores musculares.
+    - Siento calor y tengo fiebre.
+    - Mi cuerpo está caliente al tacto.
+    - Estoy experimentando fiebre y malestar general.
+    - Tengo fiebre y me duele el cuerpo.
+    - Mi temperatura está por las nubes.
+    - Estoy con fiebre y tengo escalofríos.
+    - Siento calor y mi cuerpo está caliente.
+    - Tengo fiebre y me siento débil.
+    - Mi temperatura está elevada y me duele todo el cuerpo.
+    - Estoy experimentando fiebre y dolor de garganta.
+    - Tengo fiebre y dolor en las articulaciones.
+    - Mi cuerpo está caliente y estoy con fiebre.
+    - Estoy con fiebre y tengo sudores fríos.
+    - Tengo fiebre y me siento fatigado.
+    - Mi temperatura está más alta de lo normal.
+    - Estoy con fiebre y tengo la piel caliente.
+    - Tengo fiebre y me duele la cabeza.
+    - Mi cuerpo está experimentando un aumento de temperatura.
+    - Estoy con fiebre y tengo escalofríos
+    - Mi temperatura está por encima de los 38 grados.
+    - Estoy con fiebre, marcando más de 39 grados Celsius.
+    - Tengo fiebre, mi termómetro indica una lectura elevada.
+    - Mi cuerpo está experimentando una elevación de la temperatura.
+    - Estoy registrando fiebre, mi termómetro muestra grados.
+    - Me siento caliente, creo que tengo fiebre.
+    - Tengo una temperatura corporal elevada, indicando fiebre.
+    - Mi termómetro marca que estoy con fiebre.
+    - Estoy con fiebre, mi temperatura es de grados Celsius.
+    - Siento un aumento significativo en mi temperatura corporal.
+    - Tengo fiebre, mi termómetro muestra una lectura por encima de lo normal.
+    - Estoy experimentando una elevación de temperatura, probablemente fiebre.
+    - Mi temperatura corporal está por encima del rango saludable.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy registrando fiebre, mi termómetro indica una lectura elevada.
+    - Tengo una temperatura elevada, probablemente fiebre.
+    - Mi termómetro muestra una lectura que indica fiebre.
+    - Estoy con fiebre, mi temperatura es de grados Celsius.
+    - Siento un aumento significativo en mi temperatura corporal.
+    - Tengo fiebre, mi termómetro muestra una lectura elevada.
+    - Mi temperatura corporal está por encima del rango saludable.
+    - Estoy experimentando una elevación de temperatura, probablemente fiebre.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy con fiebre, mi temperatura es de grados Celsius.
+    - Mi termómetro muestra una lectura que indica fiebre.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy experimentando una elevación de la temperatura, probablemente fiebre.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy registrando fiebre, mi termómetro muestra una lectura elevada.
+    - Tengo una temperatura elevada, indicando fiebre.
+    - Estoy con fiebre, mi termómetro indica una lectura elevada.
+    - Mi temperatura corporal está por encima del rango saludable.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy experimentando una elevación de la temperatura, probablemente fiebre.
+    - Tengo fiebre, mi termómetro muestra una lectura elevada.
+    - Mi temperatura corporal está por encima del rango saludable.
+    - Estoy con fiebre, mi temperatura es de grados Celsius.
+    - Siento un aumento significativo en mi temperatura corporal.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy registrando fiebre, mi termómetro indica una lectura elevada.
+    - Tengo una temperatura elevada, probablemente fiebre.
+    - Estoy con fiebre, mi termómetro muestra grados Celsius.
+    - Siento un aumento significativo en mi temperatura corporal.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy experimentando una elevación de la temperatura, probablemente fiebre.
+    - Tengo fiebre, mi termómetro muestra una lectura elevada.
+    - Mi temperatura corporal está por encima del rango saludable.
+    - Estoy con fiebre, mi temperatura es de grados Celsius.
+    - Estoy registrando fiebre, mi termómetro indica una lectura elevada.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy experimentando una elevación de la temperatura, probablemente fiebre.
+    - Tengo fiebre, mi termómetro muestra grados Celsius.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Mi temperatura corporal está por encima del rango saludable.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy con fiebre, mi temperatura es de grados Celsius.
+    - Siento un aumento significativo en mi temperatura corporal.
+    - Tengo fiebre, mi termómetro muestra una lectura elevada.
+    - Estoy registrando fiebre, mi termómetro indica una lectura elevada.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy experimentando una elevación de la temperatura, probablemente fiebre.
+    - Tengo una temperatura elevada, indicando fiebre.
+    - Estoy con fiebre, mi termómetro indica una lectura elevada.
+    - Mi temperatura corporal está por encima del rango saludable.
+    - Tengo fiebre, mi termómetro muestra grados Celsius.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy registrando fiebre, mi termómetro indica una lectura elevada.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy experimentando una elevación de la temperatura, probablemente fiebre.
+    - Estoy con fiebre, mi temperatura es de grados Celsius.
+    - Siento un aumento significativo en mi temperatura corporal.
+    - Tengo fiebre, mi termómetro muestra una lectura elevada.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy registrando fiebre, mi termómetro indica una lectura elevada.
+    - Tengo fiebre, mi termómetro registra grados Celsius.
+    - Estoy con fiebre, marcando una temperatura elevada.
+    - Mi temperatura corporal está por encima del rango saludable.
+    - Tengo fiebre, mi termómetro indica una lectura elevada.
+    - Estoy experimentando una elevación de la temperatura, probablemente fiebre.
+    - Tengo una temperatura elevada, indicando fiebre.
+    - Estoy con fiebre, mi termómetro registra grados Celsius.
+    - Mi cuerpo está más caliente de lo habitual, tengo fiebre.
+    - Estoy con fiebre, marcando una temperatura elevada.
 
-#- intent: fiebre
-#  examples: |
-
-#- intent: sudoracion
-#  examples: |
+- intent: sudoracion
+  examples: |
+    - Estoy empapado/a en sudor.
+    - Mi cuerpo está sudando abundantemente.
+    - Estoy transpirando profusamente.
+    - Tengo sudoración excesiva.
+    - Mi ropa está completamente mojada de sudor.
+    - Estoy sudando de manera intensa.
+    - Mi cuerpo está cubierto de sudor.
+    - Me encuentro en una sudoración copiosa.
+    - Estoy liberando una gran cantidad de sudor.
+    - Mi sudoración es notable.
+    - Mis glándulas sudoríparas están trabajando a toda marcha.
+    - Estoy experimentando una sudoración extrema.
+    - Mi cuerpo está completamente cubierto en sudor.
+    - Tengo una sudoración profunda.
+    - Estoy sudando abundantemente.
+    - Mi ropa está empapada.
+    - Estoy liberando grandes cantidades de sudor.
+    - Mi cuerpo está en modo sudoración máxima.
+    - Estoy empapado/a de sudor de arriba a abajo.
+    - Estoy sudando a chorros.
+    - Mi sudor está fluyendo sin cesar.
+    - Me encuentro en una sudoración intensa.
+    - Estoy goteando sudor.
+    - Mi cuerpo está completamente mojado por el sudor.
+    - Estoy en medio de una sudoración profusa.
+    - Tengo una sudoración notable.
+    - Mi ropa está impregnada de sudor.
+    - Estoy sudando de manera abundante.
+    - Mi cuerpo está liberando sudor constantemente.
+    - Estoy en plena sudoración.
+    - Mi sudor está saliendo a borbotones.
+    - Estoy completamente empapado/a en sudor.
+    - Mi cuerpo está produciendo sudor en exceso.
+    - Estoy en una situación de sudoración extrema.
+    - Mi ropa está completamente encharcada de sudor.
+    - Estoy experimentando una sudoración profunda.
+    - Mi cuerpo está sudando a raudales.
+    - Estoy transpirando a chorros.
+    - Mi sudor está fluyendo sin parar.
+    - Estoy en medio de una sudoración intensa.
+    - Mi ropa está empapada hasta los huesos.
+    - Estoy en plena sudoración.
+    - Mi cuerpo está completamente cubierto en sudor.
+    - Tengo sudoración profusa.
+    - Estoy liberando una gran cantidad de sudor.
+    - Mi sudor está goteando.
+    - Estoy empapado/a de sudor de pies a cabeza.
+    - Mi cuerpo está en modo sudoración máxima.
+    - Estoy sudando de manera intensiva.
+    - Mi ropa está completamente mojada de sudor.
+    - Estoy en medio de una sudoración profunda.
+    - Mi cuerpo está sudando a raudales.
+    - Tengo sudoración abundante.
+    - Mi sudor está fluyendo continuamente.
+    - Estoy en una situación de sudoración extrema.
+    - Mi ropa está impregnada de sudor.
+    - Estoy sudando a borbotones.
+    - Mi cuerpo está liberando sudor constantemente.
+    - Estoy experimentando una sudoración intensa.
+    - Mi sudor está saliendo a chorros.
+    - Estoy completamente empapado/a en sudor.
+    - Mi cuerpo está produciendo sudor en exceso.
+    - Estoy en plena sudoración.
+    - Mi ropa está completamente encharcada de sudor.
+    - Estoy sudando de manera abundante.
+    - Mi cuerpo está sudando a raudales.
+    - Estoy transpirando a chorros.
+    - Mi sudor está fluyendo sin parar.
+    - Estoy en medio de una sudoración intensa.
+    - Mi ropa está empapada hasta los huesos.
+    - Estoy en plena sudoración.
+    - Mi cuerpo está completamente cubierto en sudor.
+    - Tengo sudoración profusa.
+    - Estoy liberando una gran cantidad de sudor.
+    - Mi sudor está goteando.
+    - Estoy empapado/a de sudor de pies a cabeza.
+    - Mi cuerpo está en modo sudoración máxima.
+    - Estoy sudando de manera intensiva.
+    - Mi ropa está completamente mojada de sudor.
+    - Estoy en medio de una sudoración profunda.
+    - Mi cuerpo está sudando a raudales.
+    - Tengo sudoración abundante.
+    - Mi sudor está fluyendo continuamente.
+    - Estoy en una situación de sudoración extrema.
+    - Mi ropa está impregnada de sudor.
+    - Estoy sudando a borbotones.
+    - Mi cuerpo está liberando sudor constantemente.
+    - Estoy experimentando una sudoración intensa.
+    - Mi sudor está saliendo a chorros.
+    - Estoy completamente empapado/a en sudor.
+    - Mi cuerpo está produciendo sudor en exceso.
+    - Estoy en plena sudoración.
+    - Mi ropa está completamente encharcada de sudor.
+    - Estoy sudando de manera abundante.
+    - Mi cuerpo está sudando a raudales.
+    - Estoy transpirando a chorros.
+    - Mi sudor está fluyendo sin parar.
+    - Estoy en medio de una sudoración intensa.
+    - Mi ropa está empapada hasta los huesos.
+    - Estoy en plena sudoración.
+    - Mi cuerpo está completamente cubierto en sudor.
+    - Tengo sudoración profusa.
+    - Estoy liberando una gran cantidad de sudor.
+    - Mi sudor está goteando.
+    - Estoy empapado/a de sudor de pies a cabeza.
+    - Mi cuerpo está en modo sudoración máxima.
+    - Estoy sudando de manera intensiva.
+    - Mi ropa está completamente mojada de sudor.
+    - Estoy en medio de una sudoración profunda.
+    - Mi cuerpo está sudando a raudales.
+    - Tengo sudoración abundante.
+    - Mi sudor está fluyendo continuamente.
+    - Estoy en una situación de sudoración extrema.
+    - Mi ropa está impregnada de sudor.
+    - Estoy sudando a borbotones.
+    - Mi cuerpo está liberando sudor constantemente.
+    - Estoy experimentando una sudoración intensa.
+    - Mi sudor está saliendo a chorros.
+    - Estoy completamente empapado/a en sudor.
+    - Mi cuerpo está produciendo sudor en exceso.
+    - Estoy en plena sudoración.
+    - Mi ropa está completamente encharcada de sudor.
+    - Estoy sudando de manera abundante.
+    - Mi cuerpo está sudando a raudales.
+    - Estoy transpirando a chorros.
+    - Mi sudor está fluyendo sin parar.
+    - Estoy en medio de una sudoración intensa.
+    - Mi ropa está empapada hasta los huesos.
+    - Estoy en plena sudoración.
+    - Mi cuerpo está completamente cubierto en sudor.
+    - Tengo sudoración profusa.
+    - Estoy liberando una gran cantidad de sudor.
+    - Mi sudor está goteando.
+    - Estoy empapado/a de sudor de pies a cabeza.
+    - Mi cuerpo está en modo sudoración máxima.
+    - Estoy sudando de manera intensiva.
+    - Mi ropa está completamente mojada de sudor.
+    - Estoy en medio de una sudoración profunda.
+    - Mi cuerpo está sudando a raudales.
+    - Tengo sudoración abundante.
+    - Mi sudor está fluyendo continuamente.
+    - Estoy en una situación de sudoración extrema.
+    - Mi ropa está impregnada de sudor.
+    - Estoy sudando a borbotones.
+    - Mi cuerpo está liberando sudor constantemente.
+    - Estoy experimentando una sudoración intensa.
+    - Mi sudor está saliendo a chorros.
+    - Estoy completamente empapado/a en sudor.
+    - Mi cuerpo está produciendo sudor en exceso.
+    - Estoy en plena sudoración.
+    - Mi ropa está completamente encharcada de sudor.
+    - Estoy sudando de manera abundante.
+    - Mi cuerpo está sudando a raudales.
+    - Estoy transpirando a chorros.
+    - Mi sudor está fluyendo sin parar.
+    - Estoy en medio de una sudoración intensa.
+    - Mi ropa está empapada hasta los huesos.
+    - Estoy en plena sudoración.
+    - Mi cuerpo está completamente cubierto en sudor.
+    - Tengo sudoración profusa.
+    - Estoy liberando una gran cantidad de sudor.
+    - Mi sudor está goteando.
+    - Estoy empapado/a de sudor de pies a cabeza.
+    - Mi cuerpo está en modo sudoración máxima.
+    - Estoy sudando de manera intensiva.
+    - Mi ropa está completamente mojada de sudor.
+    - Estoy en medio de una sudoración profunda.
+    - Mi cuerpo está sudando a raudales.
+    - Tengo sudoración abundante.
+    - Mi sudor está fluyendo continuamente.
+    - Estoy en una situación de sudoración extrema.
+    - Mi ropa está impregnada de sudor.
+    - Estoy sudando a borbotones.
+    - Mi cuerpo está liberando sudor constantemente.
+    - Estoy experimentando una sudoración intensa.
+    - Mi sudor está saliendo a chorros.
+    - Estoy completamente empapado/a en sudor.
+    - Mi cuerpo está produciendo sudor en exceso.
+    - Estoy en plena sudoración.
+    - Mi ropa está completamente encharcada de sudor.
+    - Estoy sudando de manera abundante.
+    - Mi cuerpo está sudando a raudales.
+    - Estoy transpirando a chorros.
+    - Mi sudor está fluyendo sin parar.
+    - Estoy en medio de una sudoración intensa.
+    - Mi ropa está empapada hasta los huesos.
+    - Estoy en plena sudoración.
+    - Mi cuerpo está completamente cubierto en sudor.
+    - Tengo sudoración profusa.
+    - Estoy liberando una gran cantidad de sudor.
+    - Mi sudor está goteando.
+    - Estoy empapado/a de sudor de pies a cabeza.
+    - Mi cuerpo está en modo sudoración máxima.
+    - Estoy sudando de manera intensiva.
+    - Mi ropa está completamente mojada de sudor.
+    - Estoy en medio de una sudoración profunda.
+    - Mi cuerpo está sudando a raudales.
+    - Tengo sudoración abundante.
+    - Mi sudor está fluyendo continuamente.
+    - Estoy en una situación de sudoración extrema
+    - Mi cuerpo está soltando sudor en exceso.
+    - Estoy en una sudoración constante.
+    - Mi ropa está completamente empapada de sudor.
+    - Estoy transpirando de forma exagerada.
+    - Mi sudoración es notablemente intensa.
+    - Estoy liberando grandes cantidades de sudor.
+    - Mi cuerpo está completamente impregnado de sudor.
+    - Estoy sudando profusamente.
+    - Mi sudor está saliendo a chorros.
+    - Estoy empapado/a hasta los huesos en sudor.
+    - Mi cuerpo está experimentando una sudoración copiosa.
+    - Estoy en una intensa sudoración.
+    - Mi ropa está empapada por completo.
+    - Estoy sudando a raudales.
+    - Mi cuerpo está soltando sudor de manera exorbitante.
+    - Estoy en pleno proceso de sudoración.
+    - Mi sudor está fluyendo sin cesar.
+    - Estoy goteando sudor constantemente.
+    - Mi cuerpo está saturado de sudor.
+    - Estoy en medio de una sudoración profunda.
+    - Mi sudoración es exagerada.
+    - Estoy transpirando de forma abrumadora.
+    - Mi cuerpo está liberando sudor de manera desmesurada.
+    - Estoy empapado/a de sudor en abundancia.
+    - Mi ropa está completamente mojada de sudor.
+    - Estoy experimentando una sudoración intensiva.
+    - Mi sudor está saliendo de manera incontrolable.
+    - Estoy en una sudoración exorbitante.
+    - Mi cuerpo está soltando sudor sin parar.
+    - Estoy en plena sudoración extrema.
+    - Mi sudoración es profunda y constante.
+    - Estoy sudando a torrentes.
+    - Mi cuerpo está liberando sudor de manera desbordante.
+    - Estoy empapado/a en sudor de pies a cabeza.
+    - Mi ropa está completamente impregnada de sudor.
+    - Estoy en medio de una sudoración intensa.
+    - Mi sudor está saliendo de manera incesante.
+    - Estoy en una situación de sudoración extrema.
+    - Mi cuerpo está soltando sudor sin control.
+    - Estoy en pleno proceso de sudoración.
+    - Mi sudoración es intensa y persistente.
+    - Estoy transpirando profusamente.
+    - Mi cuerpo está liberando sudor de manera desmedida.
+    - Estoy empapado/a de sudor en gran medida.
+    - Mi ropa está completamente saturada de sudor.
+    - Estoy experimentando una sudoración abrumadora.
+    - Mi sudor está saliendo sin cesar.
+    - Estoy en una sudoración desmesurada.
+    - Mi cuerpo está soltando sudor de forma descontrolada.
+    - Estoy en plena sudoración continua.
+    - Mi sudoración es profusa y constante.
+    - Estoy sudando a chorros.
+    - Mi cuerpo está liberando sudor de manera descontrolada.
+    - Estoy empapado/a en sudor de pies a cabeza.
+    - Mi ropa está completamente impregnada de sudor.
+    - Estoy en medio de una sudoración intensiva.
+    - Mi sudor está saliendo de manera incesante.
+    - Estoy en una situación de sudoración extrema.
+    - Mi cuerpo está soltando sudor sin control.
+    - Estoy en pleno proceso de sudoración.
+    - Mi sudoración es intensa y persistente.
+    - Estoy transpirando profusamente.
+    - Mi cuerpo está liberando sudor de manera desmedida.
+    - Estoy empapado/a de sudor en gran medida.
+    - Mi ropa está completamente saturada de sudor.
+    - Estoy experimentando una sudoración abrumadora.
+    - Mi sudor está saliendo sin cesar.
+    - Estoy en una sudoración desmesurada.
+    - Mi cuerpo está soltando sudor de forma descontrolada.
+    - Estoy en plena sudoración continua.
+    - Mi sudoración es profusa y constante.
+    - Estoy sudando a chorros.
+    - Mi cuerpo está liberando sudor de manera descontrolada.
+    - Estoy empapado/a en sudor de pies a cabeza.
+    - Mi ropa está completamente impregnada de sudor.
+    - Estoy en medio de una sudoración intensiva.
+    - Mi sudor está saliendo de manera incesante.
+    - Estoy en una situación de sudoración extrema.
+    - Mi cuerpo está soltando sudor sin control.
+    - Estoy en pleno proceso de sudoración.
+    - Mi sudoración es intensa y persistente.
+    - Estoy transpirando profusamente.
+    - Mi cuerpo está liberando sudor de manera desmedida.
+    - Estoy empapado/a de sudor en gran medida.
+    - Mi ropa está completamente saturada de sudor.
+    - Estoy experimentando una sudoración abrumadora.
+    - Mi sudor está saliendo sin cesar.
+    - Estoy en una sudoración desmesurada.
+    - Mi cuerpo está soltando sudor de forma descontrolada.
+    - Estoy en plena sudoración continua.
+    - Mi sudoración es profusa y constante.
+    - Estoy sudando a chorros.
+    - Mi cuerpo está liberando sudor de manera descontrolada.
+    - Estoy empapado/a en sudor de pies a cabeza.
+    - Mi ropa está completamente impregnada de sudor.
+    - Estoy en medio de una sudoración intensiva.
+    - Mi sudor está saliendo de manera incesante.
+    - Estoy en una situación de sudoración extrema.
+    - Mi cuerpo está soltando sudor sin control.
+    - Estoy en pleno proceso de sudoración.
+    - Mi sudoración es intensa y persistente.
+    - Estoy transpirando profusamente.
+    - Mi cuerpo está liberando sudor de manera desmedida.
+    - Estoy empapado/a de sudor en gran medida.
+    - Mi ropa está completamente saturada de sudor.
+    - Estoy experimentando una sudoración abrumadora.
+    - Mi sudor está saliendo sin cesar.
+    - Estoy en una sudoración desmesurada.
+    - Mi cuerpo está soltando sudor de forma descontrolada.
+    - Estoy en plena sudoración continua.
+    - Mi sudoración es profusa y constante.
+    - Estoy sudando a chorros.
+    - Mi cuerpo está liberando sudor de manera descontrolada.
+    - Estoy empapado/a en sudor de pies a cabeza.
+    - Mi ropa está completamente impregnada de sudor.
+    - Estoy en medio de una sudoración intensiva.
+    - Mi sudor está saliendo de manera incesante.
+    - Estoy en una situación de sudoración extrema.
+    - Mi cuerpo está soltando sudor sin control.
+    - Estoy en pleno proceso de sudoración.
+    - Mi sudoración es intensa y persistente.
+    - Estoy transpirando profusamente.
+    - Mi cuerpo está liberando sudor de manera desmedida.
+    - Estoy empapado/a de sudor en gran medida.
+    - Mi ropa está completamente saturada de sudor.
+    - Estoy experimentando una sudoración abrumadora.
+    - Mi sudor está saliendo sin cesar.
+    - Estoy en una sudoración desmesurada.
+    - Mi cuerpo está soltando sudor de forma descontrolada.
+    - Estoy en plena sudoración continua.
+    - Mi sudoración es profusa y constante.
+    - Estoy sudando a chorros.
+    - Mi cuerpo está liberando sudor de manera descontrolada.
+    - Estoy empapado/a en sudor de pies a cabeza.
+    - Mi ropa está completamente impregnada de sudor.
+    - Estoy en medio de una sudoración intensiva.
+    - Mi sudor está saliendo de manera incesante.
+    - Estoy en una situación de sudoración extrema.
+    - Mi cuerpo está soltando sudor sin control.
+    - Estoy en pleno proceso de sudoración.
+    - Mi sudoración es intensa y persistente.
+    - Estoy transpirando profusamente.
+    - Mi cuerpo está liberando sudor de manera desmedida.
+    - Estoy empapado/a de sudor en gran medida.
+    - Mi ropa está completamente saturada de sudor.
+    - Estoy experimentando una sudoración abrumadora.
+    - Mi sudor está saliendo sin cesar.
+    - Estoy en una sudoración desmesurada.
+    - Mi cuerpo está soltando sudor de forma descontrolada.
+    - Estoy en plena sudoración continua.
+    - Mi sudoración es profusa y constante.
+    - Estoy sudando a chorros.
+    - Mi cuerpo está liberando sudor de manera descontrolada.
+    - Estoy empapado/a en sudor de pies a cabeza.
+    - Mi ropa está completamente impregnada de sudor.
+    - Estoy en medio de una sudoración intensiva.
+    - Mi sudor está saliendo de manera incesante.
+    - Estoy en una situación de sudoración extrema.
+    - Mi cuerpo está soltando sudor sin control.
+    - Estoy en pleno proceso de sudoración.
+    - Mi sudoración es intensa y persistente.
+    - Estoy transpirando profusamente.
+    - Mi cuerpo está liberando sudor de manera desmedida.
+    - Estoy empapado/a de sudor en gran medida.
+    - Mi ropa está completamente saturada de sudor.
+    - Estoy experimentando una sudoración abrumadora.
+    - Mi sudor está saliendo sin cesar.
+    - Estoy en una sudoración desmesurada.
+    - Mi cuerpo está soltando sudor de forma descontrolada.
+    - Estoy en plena sudoración continua.
+    - Mi sudoración es profusa y constante.
+    - Estoy sudando a chorros.
+    - Mi cuerpo está liberando sudor de manera descontrolada.
+    - Estoy empapado/a en sudor de pies a cabeza.
+    - Mi ropa está completamente impregnada de sudor.
+    - Estoy en medio de una sudoración intensiva.
+    - Mi sudor está saliendo de manera incesante.
+    - Estoy en una situación de sudoración extrema.
+    - Mi cuerpo está soltando sudor sin control.
+    - Estoy en pleno proceso de sudoración.
+    - Mi sudoración es intensa y persistente.
+    - Estoy transpirando profusamente.
+    - Mi cuerpo está liberando sudor de manera desmedida.
+    - Estoy empapado/a de sudor en gran medida.
+    - Mi ropa está completamente saturada de sudor.
+    - Estoy experimentando una sudoración abrumadora.
+    - Mi sudor está saliendo sin cesar.
+    - Estoy en una sudoración desmesurada.
+    - Mi cuerpo está soltando sudor de forma descontrolada
 
 #- intent: nauseas_y_vomito
 #  examples: |

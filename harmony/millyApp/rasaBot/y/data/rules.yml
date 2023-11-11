@@ -183,15 +183,25 @@ rules:
 
 #------------------------------------------------------
 
-- rule: Responde la excepcion cuando te digan que tiene dolor de cabeza
+- rule: Responde cuando te digan que tiene dolor de cabeza
   steps:
   - intent: dolor_de_cabeza
   - action: utter_dolor_de_cabeza
 
-- rule: Responde la excepcion cuando te digan que tiene reflujo o dolor estomacal
+- rule: Responde cuando te digan que tiene reflujo o dolor estomacal
   steps:
   - intent: reflujo_o_dolor_estomacal
   - action: utter_reflujo_o_dolor_estomacal
+
+- rule: Responde cuando te digan que tienen fiebre
+  steps:
+  - intent: fiebre
+  - action: utter_fiebre
+
+- rule: Responde cuando te digan que sudan mucho
+  steps:
+  - intent: sudoracion
+  - action: utter_sudoracion
 
 #------------------------------------------------------
 
