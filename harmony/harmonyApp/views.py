@@ -5,7 +5,7 @@ from django.shortcuts import  redirect, render
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import  enviar_correo_inicio_sesion, get_comentariosVer
+from harmonyApp.operations.utils import  cifrarClaves, decifrarClaves, enviar_correo_inicio_sesion, get_comentariosVer
 from harmonyProject.database import MongoDBConnection
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -80,7 +80,6 @@ def pantalla_estadisticas(request,usuario_id):
      # Crear un DataFrame vacío
     dfCal = pd.DataFrame()
     calificaciones_cursor = db_connection.db.Calificacion.find()
-    print(calificaciones_cursor[0])
     dfCal['calificacion'] = [1,2,3,4,5]
     dfCal['contador'] = [0,0,0,0,0]
     for calificacion in calificaciones_cursor:
@@ -307,28 +306,32 @@ def borrar_comentario(request, usuario_id, comentario_id):
 def pantalla_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
+        
         if form.is_valid():
             correo = form.cleaned_data['correo']
             clave = form.cleaned_data['clave']
-
             credenciales = db_connection.db.Credenciales
-            
-            user = credenciales.find_one({'correo': correo, 'clave': clave})
-            
-            if user:
-                user_id = str(user['_id'])
-                nombre = db_connection.db.Usuario.find_one({'_id': ObjectId(user_id)})
+            CorreoExiste = credenciales.find_one({'correo': correo})
+            if CorreoExiste:
                 
-                request.session['nombre'] = nombre['nombre']
-                request.session['id_user'] = user_id
-                return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
+                if decifrarClaves(CorreoExiste['clave']) == clave:
+                    user_id = str(CorreoExiste['_id'])
+                    nombre = db_connection.db.Usuario.find_one({'_id': ObjectId(user_id)})
+                    
+                    request.session['nombre'] = nombre['nombre']
+                    request.session['id_user'] = user_id
+                    messages.success(request, 'Credenciales inválidas')
+                    return redirect('pantalla_menu_inicial',usuario_id=user_id)  
+                else:
+                    print("no existe")
+                    messages.success(request, 'Credenciales inválidas')
+                  
             else:
                 messages.success(request, 'Credenciales inválidas')
-                
-        else:
-            messages.success(request, 'Credenciales inválidas')
+
 
     else:
+        print("no es post")
         form = LoginForm()
     return render(request, 'pantalla_login/pantalla_login.html', {'form': form})
 
@@ -351,6 +354,7 @@ def pantalla_registro(request):
         # Convertir la cadena de fecha en un objeto de tipo datetime
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
         existeCorreo = db_connection.db.Credenciales.find_one({'correo': correo})
+        print(existeCorreo)
         if existeCorreo==None:
             #archivo = request.FILES.get('imagen_perfil')
             try:
@@ -383,13 +387,14 @@ def pantalla_registro(request):
             }
                     
             result = db_connection.db.Usuario.insert_one(usuario_dict)
+            cifrarClave = cifrarClaves(credenciales.clave)
             usuario_cred ={
-                        '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
+                        '_id': str(result.inserted_id), 
                         'correo': credenciales.correo,
-                        'clave': credenciales.clave,
+                        'clave': cifrarClave,
             }
             db_connection.db.Credenciales.insert_one(usuario_cred)
-            enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.nombre)
+            enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.apellido)
             return redirect('pantalla_login')
         else:
             error_message = "Correo ya existe"
