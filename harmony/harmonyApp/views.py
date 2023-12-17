@@ -37,8 +37,6 @@ def login_required(view_func):
 
 @login_required
 def pantalla_menu_inicial(request,usuario_id ):
-
-
     return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id})
 """
 ////////////////////////////////////////////////////////
@@ -47,55 +45,58 @@ def pantalla_menu_inicial(request,usuario_id ):
 """
 @login_required
 def pantalla_estadisticas(request,usuario_id):
+    try:
+        usuarios_cursor = db_connection.db.Usuario.find()
+        cantidad_usuarios = sum(1 for _ in usuarios_cursor)
+        # mensajes mas comunes
+        mensajes_cursor = db_connection.db.Mensajes.find()
+        # Crear un DataFrame vacío
+        df = pd.DataFrame()
 
-    usuarios_cursor = db_connection.db.Usuario.find()
-    cantidad_usuarios = sum(1 for _ in usuarios_cursor)
-    # mensajes mas comunes
-    mensajes_cursor = db_connection.db.Mensajes.find()
-    # Crear un DataFrame vacío
-    df = pd.DataFrame()
+        # Agregar la columna 'mensaje' al DataFrame
+        df = pd.DataFrame(mensajes_cursor)
+        # Convierte la columna 'fecha' a tipo datetime
+        df['fecha'] = pd.to_datetime(df['fecha'])
 
-    # Agregar la columna 'mensaje' al DataFrame
-    df = pd.DataFrame(mensajes_cursor)
-    # Convierte la columna 'fecha' a tipo datetime
-    df['fecha'] = pd.to_datetime(df['fecha'])
+        # Agrupa los mensajes por día y cuenta la cantidad de mensajes en cada día
+        mensajes_por_dia = df.groupby(df['fecha'].dt.date)['mensaje'].count()
+        
+        # Crea un gráfico de barras interactivo con Plotly
+        fig = px.bar(mensajes_por_dia, x=mensajes_por_dia.index, y='mensaje', labels={'x': 'Fecha', 'y': 'Cantidad de Mensajes'})
+        plot_div = opy.plot(fig, auto_open=False, output_type='div')       
 
-    # Agrupa los mensajes por día y cuenta la cantidad de mensajes en cada día
-    mensajes_por_dia = df.groupby(df['fecha'].dt.date)['mensaje'].count()
-    
-     # Crea un gráfico de barras interactivo con Plotly
-    fig = px.bar(mensajes_por_dia, x=mensajes_por_dia.index, y='mensaje', labels={'x': 'Fecha', 'y': 'Cantidad de Mensajes'})
-    plot_div = opy.plot(fig, auto_open=False, output_type='div')
+        # Usa value_counts en la columna 'mensaje' para obtener las frecuencias de cada valor
+        frecuencias = df['mensaje'].value_counts()
+        mensajes_enviados = df['mensaje'].count()
 
-    
+        # El resultado contendrá los elementos más repetidos en orden descendente
+        elementos_mas_repetidos = frecuencias.head(1).index.tolist()
 
-    # Usa value_counts en la columna 'mensaje' para obtener las frecuencias de cada valor
-    frecuencias = df['mensaje'].value_counts()
-    mensajes_enviados = df['mensaje'].count()
+        #Promedio de calificacion 
+        # Crear un DataFrame vacío
+        dfCal = pd.DataFrame()
+        calificaciones_cursor = db_connection.db.Calificacion.find()
+        dfCal['calificacion'] = [1,2,3,4,5]
+        dfCal['contador'] = [0,0,0,0,0]
+        for calificacion in calificaciones_cursor:
+            dfCal.at[(calificacion['calificacion']-1),'contador'] += 1
+        # Crea un gráfico de barras
+        dfCal.plot.pie(y='contador', figsize=(4, 4), labels=dfCal['calificacion'])
+        img = BytesIO()
+        plt.savefig(img, format='png')
+        img.seek(0)
+        plot = base64.b64encode(img.read()).decode()
+        
+        promCalificacion= ((dfCal['contador']*dfCal['calificacion']).sum()) / dfCal['contador'].sum()
 
-    # El resultado contendrá los elementos más repetidos en orden descendente
-    elementos_mas_repetidos = frecuencias.head(1).index.tolist()
+        promCalificacion = round(promCalificacion,2)
 
-    #Promedio de calificacion 
-     # Crear un DataFrame vacío
-    dfCal = pd.DataFrame()
-    calificaciones_cursor = db_connection.db.Calificacion.find()
-    dfCal['calificacion'] = [1,2,3,4,5]
-    dfCal['contador'] = [0,0,0,0,0]
-    for calificacion in calificaciones_cursor:
-        dfCal.at[(calificacion['calificacion']-1),'contador'] += 1
-    # Crea un gráfico de barras
-    dfCal.plot.pie(y='contador', figsize=(4, 4), labels=dfCal['calificacion'])
-    img = BytesIO()
-    plt.savefig(img, format='png')
-    img.seek(0)
-    plot = base64.b64encode(img.read()).decode()
-    
-    promCalificacion= ((dfCal['contador']*dfCal['calificacion']).sum()) / dfCal['contador'].sum()
+        return render(request, "pantalla_estadisticas/pantalla_estadisticas.html",{"plot":plot,"usuario_id": usuario_id,"cantidad_usuarios":cantidad_usuarios,"mensajes_enviados":mensajes_enviados,"elementos_mas_repetidos":elementos_mas_repetidos,"promCalificacion":promCalificacion,"plot_div":plot_div })
 
-    promCalificacion = round(promCalificacion,2)
+    except Exception as e:
+        print(e)
+        return render(request, "pantalla_estadisticas/pantalla_estadisticas.html", {"usuario_id": usuario_id})
 
-    return render(request, "pantalla_estadisticas/pantalla_estadisticas.html",{"plot":plot,"usuario_id": usuario_id,"cantidad_usuarios":cantidad_usuarios,"mensajes_enviados":mensajes_enviados,"elementos_mas_repetidos":elementos_mas_repetidos,"promCalificacion":promCalificacion,"plot_div":plot_div })
 """
 ////////////////////////////////////////////////////////
 ////// Funciones enfocadas en los comentarios  /////////
@@ -180,7 +181,6 @@ def agregar_replica(request, usuario_id, comentario_id):
 @login_required
 def incrementar_likes_replica(request,usuario_id, comentario_id, pos):
     pos = int(pos) -1
-    print("pos: ",pos,"comentario_id: ",comentario_id,usuario_id)
     
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
@@ -189,7 +189,6 @@ def incrementar_likes_replica(request,usuario_id, comentario_id, pos):
             replicas = comentario.get('replicas', [])
             replicaRevisar = replicas[pos]
             likesActuales = replicaRevisar.get('likes', [])
-            print("->",likesActuales)
             if usuario_id not in likesActuales:
                 likesActuales.append(usuario_id)
             else:
@@ -197,7 +196,6 @@ def incrementar_likes_replica(request,usuario_id, comentario_id, pos):
             replicas[pos]['likes'] = likesActuales
             # Actualizar los likes en la base de datos
             db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'replicas': replicas}})
-            
        
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
@@ -215,7 +213,6 @@ def incrementar_likes(request, usuario_id, comentario_id):
                 likes.append(usuario_id)
             elif usuario_id in likes:
                 likes.remove(usuario_id)
-            # Actualizar los likes en la base de datos
             db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
@@ -320,18 +317,15 @@ def pantalla_login(request):
                     
                     request.session['nombre'] = nombre['nombre']
                     request.session['id_user'] = user_id
-                    messages.success(request, 'Credenciales inválidas')
                     return redirect('pantalla_menu_inicial',usuario_id=user_id)  
                 else:
-                    print("no existe")
-                    messages.success(request, 'Credenciales inválidas')
+                    messages.error(request, 'Credenciales inválidas')
                   
             else:
-                messages.success(request, 'Credenciales inválidas')
+                messages.error(request, 'Credenciales inválidas')
 
 
     else:
-        print("no es post")
         form = LoginForm()
     return render(request, 'pantalla_login/pantalla_login.html', {'form': form})
 
@@ -429,10 +423,6 @@ def pantalla_perfil_usuario(request,usuario_id):
         # Obtener el número de página a mostrar
         numero_pagina = request.GET.get('page')
         page_obj = paginator.get_page(numero_pagina)
-
-        # ['id_replicas']
-        #return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj,'ordenar': ordenar})
-
         return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": page_obj})
     
     return HttpResponseBadRequest("Bad Request")
