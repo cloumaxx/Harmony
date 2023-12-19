@@ -4,7 +4,6 @@ from bson import ObjectId
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from googletrans import Translator
 from cryptography.fernet import Fernet
 
 import requests
