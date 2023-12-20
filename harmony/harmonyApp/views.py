@@ -24,7 +24,7 @@ db_connection = MongoDBConnection()
 chat = []
 
 def pantalla_inicial(request):
-    return render(request,"pantalla_inicial\pantalla_incial.html")
+    return render(request,"pantalla_inicial/pantalla_incial.html")
 
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
