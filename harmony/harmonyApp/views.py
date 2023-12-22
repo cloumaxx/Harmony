@@ -316,7 +316,7 @@ def pantalla_login(request):
                     
                     request.session['nombre'] = nombre['nombre']
                     request.session['id_user'] = user_id
-                    return redirect('pantalla_menu_inicial',usuario_id=user_id)  
+                    return redirect('pantalla_menu_inicial/pantalla_menu_inicial.html',usuario_id=user_id)  
                 else:
                     messages.error(request, 'Credenciales inválidas')
                   
@@ -388,7 +388,7 @@ def pantalla_registro(request):
             }
             db_connection.db.Credenciales.insert_one(usuario_cred)
             enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.apellido)
-            return redirect('pantalla_login')
+            return redirect('pantalla_login/pantalla_login.html')
         else:
             error_message = "Correo ya existe"
             context = {'error_message': error_message}

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,14 +22,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
+
 SECRET_KEY = 'django-insecure-#r@#9%2sgux!q%#!n^+qk#4ysm2hakjvzuo6pbd7!9)e!ly9c1'
 
 KEY_Contraseñas = 'WiipCpeDmLgFqKyrPVO8WUmobJTWG6kaKx2EysWyiHM='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['tesiswebharmony.azurewebsites.net']
+CSRF_COOKIE_SECURE = True
+ALLOWED_HOSTS = ['harmonytesis.azurewebsites.net','localhost']
 
 
 # Application definition

@@ -2,10 +2,10 @@
 FROM python:3.10
 
 # Establece el directorio de trabajo en la imagen
-WORKDIR /harmonyApp/templates/
+WORKDIR /harmonyApp
 
 # Copia los archivos de requerimientos e instala dependencias
-COPY requirements.txt ./ 
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia el resto de la aplicación
