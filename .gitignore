@@ -1,2 +1,8 @@
-harmony/harmonyApp/migrations/__pycache__
+harmony/harmonyApp/migrations/__pycache__/
 
+harmony/harmonyApp/__pycache__/__init__.cpython-310.pyc
+*.pyc
+*.db
+*.pkl
+*.json
+millyAppApi/.rasa/cache/tmpbvaycody/
