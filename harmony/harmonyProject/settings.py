@@ -32,13 +32,18 @@ KEY_Contraseñas = 'WiipCpeDmLgFqKyrPVO8WUmobJTWG6kaKx2EysWyiHM='
 DEBUG = True
 CSRF_COOKIE_SECURE = True
 ALLOWED_HOSTS = ['harmonytesis.azurewebsites.net','localhost']
+CSRF_COOKIE_SAMESITE = 'None'
 
+CORS_ALLOWED_ORIGINS = [
+    'harmonytesis.azurewebsites.net',
+]
 
 # Application definition
 
 INSTALLED_APPS = [
     'djongo',
     'harmonyApp',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,6 +53,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,7 +87,7 @@ WSGI_APPLICATION = 'harmonyProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -90,7 +96,8 @@ DATABASES = {
 }
 
 
-"""DATABASES = {
+"""
+DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'HarmonyDB',
@@ -100,7 +107,7 @@ DATABASES = {
     }
     
 }
-"""
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

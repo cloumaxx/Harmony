@@ -308,6 +308,7 @@ def pantalla_login(request):
             clave = form.cleaned_data['clave']
             credenciales = db_connection.db.Credenciales
             CorreoExiste = credenciales.find_one({'correo': correo})
+            print("Entro",CorreoExiste)
             if CorreoExiste:
                 
                 if decifrarClaves(CorreoExiste['clave']) == clave:
