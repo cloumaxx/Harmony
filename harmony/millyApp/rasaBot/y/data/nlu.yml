@@ -3113,7 +3113,7 @@ nlu:
     - Tengo una mayor necesidad de moverme
     - Siento que siempre estoy nervioso
 
-- intent: sintomas_relacionados_estimulante_tiroides
+- intent: sintomas_relacionados_tirotropina
   examples: |
     - Mi tiroides no produce suficiente hormona tiroidea
     - Tengo una disminucion en los niveles de hormonas tiroideas

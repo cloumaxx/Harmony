@@ -16,7 +16,7 @@ intents:
   - sintomas_relacionados_hormona_crecimiento
   - sintomas_relacionados_insulina
   - sintomas_relacionados_tiroxina_o_triyodotironina
-  - sintomas_relacionados_estimulante_tiroides
+  - sintomas_relacionados_tirotropina
   - sintomas_relacionados_antidiuretica
   - sintomas_relacionados_oxitocina
   - sintomas_relacionados_cortisol
@@ -94,8 +94,8 @@ responses:
   utter_sintomas_relacionados_tiroxina_o_triyodotironina:
   - text: El sintoma que me describes posiblemente esté relacionado con la tiroxina o triyiditironina, esta hormona.... 
   
-  utter_sintomas_relacionados_estimulante_tiroides:
-  - text: El sintoma que me describes posiblemente esté relacionado con la hormona estimulante de la tiroides, esta hormona.... 
+  utter_sintomas_relacionados_tirotropina:
+  - text: El sintoma que me describes posiblemente esté relacionado con la tirotropina, esta hormona.... 
   
   utter_sintomas_relacionados_antidiuretica:
   - text: El sintoma que me describes posiblemente esté relacionado con la hormona antidiuretica, esta hormona.... 

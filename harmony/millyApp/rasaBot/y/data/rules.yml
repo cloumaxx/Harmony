@@ -89,8 +89,8 @@ rules:
 
 - rule: Responde cuando alguien te escriba sintomas relacionados con la estimulante tiroides
   steps:
-  - intent: sintomas_relacionados_estimulante_tiroides
-  - action: utter_sintomas_relacionados_estimulante_tiroides
+  - intent: sintomas_relacionados_tirotropina
+  - action: utter_sintomas_relacionados_tirotropina
 
 - rule: Responde cuando alguien te escriba sintomas relacionados con la antidiuretica
   steps:

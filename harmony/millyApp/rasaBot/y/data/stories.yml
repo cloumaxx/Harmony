@@ -166,12 +166,12 @@ stories:
     - action: utter_tratamiento_ansiedad
 
 
-- story: sintomas_relacionados_estimulante_tiroides path
+- story: sintomas_relacionados_tirotropina path
   steps:
     - intent: saludar
     - action: utter_saludar
-    - intent: sintomas_relacionados_estimulante_tiroides
-    - action: utter_sintomas_relacionados_estimulante_tiroides
+    - intent: sintomas_relacionados_tirotropina
+    - action: utter_sintomas_relacionados_tirotropina
     - intent: tratamiento_ansiedad
     - action: utter_tratamiento_ansiedad
 
