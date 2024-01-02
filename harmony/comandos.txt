@@ -13,7 +13,7 @@ Scripts\activate
 ubicar carpeta rasaBot:
 para entrenar el modelo : rasa train
 
-para correr el modelo : rasa shell --port 5006
+para correr el modelo : rasa shell --port 5007
 para correr el codigo : python manage.py runserver  5006 
 
 ///////////////////////////////
@@ -26,3 +26,25 @@ instalar las librerias
 pip install -r requirements.txt
 
 
+/////////////////////
+////// Docker //////
+////////////////////
+
+||| Para subir a la nube: 
+construir imagen: docker build --rm -t tesis_web_harmony .
+
+crear el Registro de contenedores :
+az acr create --resource-group group-harmony --name harmonyregcontents --sku Basic --admin-enabled true
+obtener las credenciales del grupo: 
+az acr credential show --resource-group group-harmony --name harmonyregcontents
+docker build --rm -t tesis_web_harmony .
+ingresar al contendor:
+docker login harmonyregcontents.azurecr.io -u harmonyregcontents -p oA6eHVqdZ3bCcSozHpf0VJ8vVRxIstZSLSQgGq+POJ+ACRDNmVZC
+
+etiquetar:
+docker tag tesis_web_harmony:latest harmonyregcontents.azurecr.io/tesis_web_harmony:latest
+
+subir la imagen:
+docker push harmonyregcontents.azurecr.io/tesis_web_harmony:latest
+
+reiniciar el servidor

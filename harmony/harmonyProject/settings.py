@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,19 +22,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
+
 SECRET_KEY = 'django-insecure-#r@#9%2sgux!q%#!n^+qk#4ysm2hakjvzuo6pbd7!9)e!ly9c1'
+
+KEY_Contraseñas = 'WiipCpeDmLgFqKyrPVO8WUmobJTWG6kaKx2EysWyiHM='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+CSRF_COOKIE_SECURE = True
+ALLOWED_HOSTS = ['harmonytesis.azurewebsites.net','localhost']
+CSRF_COOKIE_SAMESITE = 'None'
 
-ALLOWED_HOSTS = []
-
+CORS_ALLOWED_ORIGINS = [
+    'harmonytesis.azurewebsites.net',
+]
 
 # Application definition
 
 INSTALLED_APPS = [
     'djongo',
     'harmonyApp',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +53,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,7 +87,7 @@ WSGI_APPLICATION = 'harmonyProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -85,7 +96,8 @@ DATABASES = {
 }
 
 
-"""DATABASES = {
+"""
+DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'HarmonyDB',
@@ -95,7 +107,7 @@ DATABASES = {
     }
     
 }
-"""
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -135,6 +147,7 @@ STATIC_URL = '/staticfiles/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

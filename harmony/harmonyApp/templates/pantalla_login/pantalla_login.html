@@ -125,6 +125,7 @@
             height: 60px;
             top:0;
         }
+        
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -142,16 +143,25 @@
             });
         });
     </script>
+    
 </head>
 
 <body id="body">
+    
         <header id="navbar">
             
         </header>
-
+        
         <main id="container_main">
             <div class="centered_div">
                 <div id="content_main" class="container">
+                   <div id="respuesta">
+                    
+                        {% include 'messageResponse.html' %}
+                    
+                   </div>
+
+                   <h1> hola1</h1>
                     <div class="container" id="cont_img">
                         <img id="img_logo" style="width: 80%;" src="{% static '/images/nuevo_logo.png' %}">
 

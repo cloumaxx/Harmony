@@ -5,13 +5,12 @@ from django.shortcuts import  redirect, render
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import  enviar_correo_inicio_sesion, get_comentariosVer
+from harmonyApp.operations.utils import  cifrarClaves, decifrarClaves, enviar_correo_inicio_sesion, get_comentariosVer
 from harmonyProject.database import MongoDBConnection
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
-from millyApp.views import send_to_rasa
 import pandas as pd
 import plotly.express as px
 import plotly.offline as opy
@@ -25,7 +24,7 @@ db_connection = MongoDBConnection()
 chat = []
 
 def pantalla_inicial(request):
-    return render(request,"pantalla_inicial\pantalla_incial.html")
+    return render(request,"pantalla_inicial/pantalla_incial.html")
 
 def login_required(view_func):
     def wrapper(request, *args, **kwargs):
@@ -37,8 +36,6 @@ def login_required(view_func):
 
 @login_required
 def pantalla_menu_inicial(request,usuario_id ):
-
-
     return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id})
 """
 ////////////////////////////////////////////////////////
@@ -47,56 +44,58 @@ def pantalla_menu_inicial(request,usuario_id ):
 """
 @login_required
 def pantalla_estadisticas(request,usuario_id):
+    try:
+        usuarios_cursor = db_connection.db.Usuario.find()
+        cantidad_usuarios = sum(1 for _ in usuarios_cursor)
+        # mensajes mas comunes
+        mensajes_cursor = db_connection.db.Mensajes.find()
+        # Crear un DataFrame vacío
+        df = pd.DataFrame()
 
-    usuarios_cursor = db_connection.db.Usuario.find()
-    cantidad_usuarios = sum(1 for _ in usuarios_cursor)
-    # mensajes mas comunes
-    mensajes_cursor = db_connection.db.Mensajes.find()
-    # Crear un DataFrame vacío
-    df = pd.DataFrame()
+        # Agregar la columna 'mensaje' al DataFrame
+        df = pd.DataFrame(mensajes_cursor)
+        # Convierte la columna 'fecha' a tipo datetime
+        df['fecha'] = pd.to_datetime(df['fecha'])
 
-    # Agregar la columna 'mensaje' al DataFrame
-    df = pd.DataFrame(mensajes_cursor)
-    # Convierte la columna 'fecha' a tipo datetime
-    df['fecha'] = pd.to_datetime(df['fecha'])
+        # Agrupa los mensajes por día y cuenta la cantidad de mensajes en cada día
+        mensajes_por_dia = df.groupby(df['fecha'].dt.date)['mensaje'].count()
+        
+        # Crea un gráfico de barras interactivo con Plotly
+        fig = px.bar(mensajes_por_dia, x=mensajes_por_dia.index, y='mensaje', labels={'x': 'Fecha', 'y': 'Cantidad de Mensajes'})
+        plot_div = opy.plot(fig, auto_open=False, output_type='div')       
 
-    # Agrupa los mensajes por día y cuenta la cantidad de mensajes en cada día
-    mensajes_por_dia = df.groupby(df['fecha'].dt.date)['mensaje'].count()
-    
-     # Crea un gráfico de barras interactivo con Plotly
-    fig = px.bar(mensajes_por_dia, x=mensajes_por_dia.index, y='mensaje', labels={'x': 'Fecha', 'y': 'Cantidad de Mensajes'})
-    plot_div = opy.plot(fig, auto_open=False, output_type='div')
+        # Usa value_counts en la columna 'mensaje' para obtener las frecuencias de cada valor
+        frecuencias = df['mensaje'].value_counts()
+        mensajes_enviados = df['mensaje'].count()
 
-    
+        # El resultado contendrá los elementos más repetidos en orden descendente
+        elementos_mas_repetidos = frecuencias.head(1).index.tolist()
 
-    # Usa value_counts en la columna 'mensaje' para obtener las frecuencias de cada valor
-    frecuencias = df['mensaje'].value_counts()
-    mensajes_enviados = df['mensaje'].count()
+        #Promedio de calificacion 
+        # Crear un DataFrame vacío
+        dfCal = pd.DataFrame()
+        calificaciones_cursor = db_connection.db.Calificacion.find()
+        dfCal['calificacion'] = [1,2,3,4,5]
+        dfCal['contador'] = [0,0,0,0,0]
+        for calificacion in calificaciones_cursor:
+            dfCal.at[(calificacion['calificacion']-1),'contador'] += 1
+        # Crea un gráfico de barras
+        dfCal.plot.pie(y='contador', figsize=(4, 4), labels=dfCal['calificacion'])
+        img = BytesIO()
+        plt.savefig(img, format='png')
+        img.seek(0)
+        plot = base64.b64encode(img.read()).decode()
+        
+        promCalificacion= ((dfCal['contador']*dfCal['calificacion']).sum()) / dfCal['contador'].sum()
 
-    # El resultado contendrá los elementos más repetidos en orden descendente
-    elementos_mas_repetidos = frecuencias.head(1).index.tolist()
+        promCalificacion = round(promCalificacion,2)
 
-    #Promedio de calificacion 
-     # Crear un DataFrame vacío
-    dfCal = pd.DataFrame()
-    calificaciones_cursor = db_connection.db.Calificacion.find()
-    print(calificaciones_cursor[0])
-    dfCal['calificacion'] = [1,2,3,4,5]
-    dfCal['contador'] = [0,0,0,0,0]
-    for calificacion in calificaciones_cursor:
-        dfCal.at[(calificacion['calificacion']-1),'contador'] += 1
-    # Crea un gráfico de barras
-    dfCal.plot.pie(y='contador', figsize=(4, 4), labels=dfCal['calificacion'])
-    img = BytesIO()
-    plt.savefig(img, format='png')
-    img.seek(0)
-    plot = base64.b64encode(img.read()).decode()
-    
-    promCalificacion= ((dfCal['contador']*dfCal['calificacion']).sum()) / dfCal['contador'].sum()
+        return render(request, "pantalla_estadisticas/pantalla_estadisticas.html",{"plot":plot,"usuario_id": usuario_id,"cantidad_usuarios":cantidad_usuarios,"mensajes_enviados":mensajes_enviados,"elementos_mas_repetidos":elementos_mas_repetidos,"promCalificacion":promCalificacion,"plot_div":plot_div })
 
-    promCalificacion = round(promCalificacion,2)
+    except Exception as e:
+        print(e)
+        return render(request, "pantalla_estadisticas/pantalla_estadisticas.html", {"usuario_id": usuario_id})
 
-    return render(request, "pantalla_estadisticas/pantalla_estadisticas.html",{"plot":plot,"usuario_id": usuario_id,"cantidad_usuarios":cantidad_usuarios,"mensajes_enviados":mensajes_enviados,"elementos_mas_repetidos":elementos_mas_repetidos,"promCalificacion":promCalificacion,"plot_div":plot_div })
 """
 ////////////////////////////////////////////////////////
 ////// Funciones enfocadas en los comentarios  /////////
@@ -181,7 +180,6 @@ def agregar_replica(request, usuario_id, comentario_id):
 @login_required
 def incrementar_likes_replica(request,usuario_id, comentario_id, pos):
     pos = int(pos) -1
-    print("pos: ",pos,"comentario_id: ",comentario_id,usuario_id)
     
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
@@ -190,7 +188,6 @@ def incrementar_likes_replica(request,usuario_id, comentario_id, pos):
             replicas = comentario.get('replicas', [])
             replicaRevisar = replicas[pos]
             likesActuales = replicaRevisar.get('likes', [])
-            print("->",likesActuales)
             if usuario_id not in likesActuales:
                 likesActuales.append(usuario_id)
             else:
@@ -198,7 +195,6 @@ def incrementar_likes_replica(request,usuario_id, comentario_id, pos):
             replicas[pos]['likes'] = likesActuales
             # Actualizar los likes en la base de datos
             db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'replicas': replicas}})
-            
        
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
@@ -216,7 +212,6 @@ def incrementar_likes(request, usuario_id, comentario_id):
                 likes.append(usuario_id)
             elif usuario_id in likes:
                 likes.remove(usuario_id)
-            # Actualizar los likes en la base de datos
             db_connection.db.Comentarios.update_one({'_id': ObjectId(comentario_id)}, {'$set': {'likes': likes}})
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
@@ -307,26 +302,28 @@ def borrar_comentario(request, usuario_id, comentario_id):
 def pantalla_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
+        
         if form.is_valid():
             correo = form.cleaned_data['correo']
             clave = form.cleaned_data['clave']
-
             credenciales = db_connection.db.Credenciales
-            
-            user = credenciales.find_one({'correo': correo, 'clave': clave})
-            
-            if user:
-                user_id = str(user['_id'])
-                nombre = db_connection.db.Usuario.find_one({'_id': ObjectId(user_id)})
+            CorreoExiste = credenciales.find_one({'correo': correo})
+            print("Entro",CorreoExiste)
+            if CorreoExiste:
                 
-                request.session['nombre'] = nombre['nombre']
-                request.session['id_user'] = user_id
-                return redirect('pantalla_menu_inicial',usuario_id=user_id)  # Cambia 'inicio' por la URL a la que deseas redirigir después del inicio de sesión
+                if decifrarClaves(CorreoExiste['clave']) == clave:
+                    user_id = str(CorreoExiste['_id'])
+                    nombre = db_connection.db.Usuario.find_one({'_id': ObjectId(user_id)})
+                    
+                    request.session['nombre'] = nombre['nombre']
+                    request.session['id_user'] = user_id
+                    return redirect('pantalla_menu_inicial/pantalla_menu_inicial.html',usuario_id=user_id)  
+                else:
+                    messages.error(request, 'Credenciales inválidas')
+                  
             else:
-                messages.success(request, 'Credenciales inválidas')
-                
-        else:
-            messages.success(request, 'Credenciales inválidas')
+                messages.error(request, 'Credenciales inválidas')
+
 
     else:
         form = LoginForm()
@@ -351,6 +348,7 @@ def pantalla_registro(request):
         # Convertir la cadena de fecha en un objeto de tipo datetime
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
         existeCorreo = db_connection.db.Credenciales.find_one({'correo': correo})
+        print(existeCorreo)
         if existeCorreo==None:
             #archivo = request.FILES.get('imagen_perfil')
             try:
@@ -383,14 +381,15 @@ def pantalla_registro(request):
             }
                     
             result = db_connection.db.Usuario.insert_one(usuario_dict)
+            cifrarClave = cifrarClaves(credenciales.clave)
             usuario_cred ={
-                        '_id': str(result.inserted_id),  # Convertir el ObjectId a una cadena de texto
+                        '_id': str(result.inserted_id), 
                         'correo': credenciales.correo,
-                        'clave': credenciales.clave,
+                        'clave': cifrarClave,
             }
             db_connection.db.Credenciales.insert_one(usuario_cred)
-            enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.nombre)
-            return redirect('pantalla_login')
+            enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.apellido)
+            return redirect('pantalla_login/pantalla_login.html')
         else:
             error_message = "Correo ya existe"
             context = {'error_message': error_message}
@@ -424,10 +423,6 @@ def pantalla_perfil_usuario(request,usuario_id):
         # Obtener el número de página a mostrar
         numero_pagina = request.GET.get('page')
         page_obj = paginator.get_page(numero_pagina)
-
-        # ['id_replicas']
-        #return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj,'ordenar': ordenar})
-
         return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": page_obj})
     
     return HttpResponseBadRequest("Bad Request")

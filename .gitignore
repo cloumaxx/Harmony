@@ -1,8 +1,8 @@
+harmony/harmonyApp/migrations/__pycache__/
 
+harmony/harmonyApp/__pycache__/__init__.cpython-310.pyc
 *.pyc
-harmony/harmonyApp/__pycache__/views.cpython-311.pyc
-harmony/harmonyApp/__pycache__/urls.cpython-311.pyc
-harmony/harmonyApp/__pycache__/
-harmony/.idea/harmony.iml
-env/
-harmony/db.sqlite3
+*.db
+*.pkl
+*.json
+millyAppApi/.rasa/cache/tmpbvaycody/

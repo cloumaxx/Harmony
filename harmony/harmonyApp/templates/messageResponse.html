@@ -1,0 +1,62 @@
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+    .messages {
+        list-style: none;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .message {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+    .error {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        // Muestra los mensajes como ventanas emergentes
+        $('.message').each(function () {
+            var message = $(this).text();
+            var messageType = $(this).attr('class').split(' ')[1];
+            showMessage(message, messageType);
+        });
+    });
+
+    function showMessage(message, messageType) {
+        Swal.fire({
+            icon: messageType === 'success' ? 'success' : 'error',
+            title: message,
+            showConfirmButton: false,
+            timer: 1000, // 15 segundos
+            position: 'top-end',
+            toast: true,
+            background: messageType === 'success' ? '#d4edda' : '#f8d7da',
+        });
+    }
+</script>
+
+<div>
+    {% if messages %}
+    <div id="messages-container">
+        {% for message in messages %}
+        <div class="message {{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>

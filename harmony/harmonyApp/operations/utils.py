@@ -4,9 +4,11 @@ from bson import ObjectId
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from googletrans import Translator
+from cryptography.fernet import Fernet
 
 import requests
+
+from harmonyProject.settings import KEY_Contraseñas
 
 def get_Nombre(comentario, db_connection):
 
@@ -147,3 +149,15 @@ def traducirAEspañol(texto_a_traducir,translator):
     except Exception as e: 
         print(e)
     return translator.translate(texto_a_traducir, src=idioma_origen, dest='es')
+
+def cifrarClaves(clave):
+    print(KEY_Contraseñas)
+    cipher = Fernet(KEY_Contraseñas)
+    texto_cifrado = cipher.encrypt(clave.encode())
+    return texto_cifrado
+
+def decifrarClaves(clave):
+    cipher = Fernet(KEY_Contraseñas)
+    texto_descifrado = cipher.decrypt(clave).decode()
+    return texto_descifrado
+    
