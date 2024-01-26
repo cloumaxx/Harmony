@@ -31,22 +31,25 @@ def get_img_perfil(comentario, db_connection):
         return None
 
 def get_comentariosVer(comentarios,db_connection):
-    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), get_img_perfil(comentario,db_connection),str(
-        comentario['_id'])) for comentario in comentarios]
+    try:
     
-    for comentario in comentarios_con_nombre_id:
-        comentario2 = comentario[0]
-        replicasComentario=comentario[0]['replicas']
-       
-        if len(replicasComentario)>0:
-            new_id_replicas = []
-            for replica in replicasComentario:
-                
-                new_id_replicas.append(get_inforeplicas(replica,db_connection))
-                
-            comentario2['replicas'] = new_id_replicas
-    return comentarios_con_nombre_id
-
+        comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), get_img_perfil(comentario,db_connection),str(
+            comentario['_id'])) for comentario in comentarios]
+        
+        for comentario in comentarios_con_nombre_id:
+            comentario2 = comentario[0]
+            replicasComentario=comentario[0]['replicas']
+        
+            if len(replicasComentario)>0:
+                new_id_replicas = []
+                for replica in replicasComentario:
+                    
+                    new_id_replicas.append(get_inforeplicas(replica,db_connection))
+                    
+                comentario2['replicas'] = new_id_replicas
+        return comentarios_con_nombre_id
+    except:
+        return comentarios
 def get_inforeplicas(replica, db_connection):    
     try:
         usuario= db_connection.db.Usuario.find_one(

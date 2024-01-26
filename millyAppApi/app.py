@@ -9,15 +9,15 @@ from actions.actions import detectar_stop_words, traducir_a_espanol, traducir_me
 app = Flask(__name__)
 
 # Cargar el modelo de Rasa
-modeloActual = "models/20231220-170647-rosy-moscato.tar.gz"
+modeloActual = "models/20231220-170647-rosy-moscato.tar.gz"#"models/20231220-170647-rosy-moscato.tar.gz"
 agent = Agent.load(modeloActual)
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
     if request.method == 'GET':
-        return 'La aplicacion Flask esta en ejecucion !!!'
+        return 'La aplicacion Flask esta en ejecucion  GET !!!'
     elif request.method == 'POST':
-        return 'Componente de soenac. !!!'
+        return 'La aplicacion Flask esta en ejecucion POST !!!'
     else:
         return 'Metodo no permitido', 405
     
@@ -25,12 +25,12 @@ async def handle_message(user_message):
     # Maneja el mensaje de manera asíncrona utilizando asyncio
     return await agent.handle_text(user_message)
 
-@app.route('/webhook', methods=['POST'])
-def webhook():
+@app.route('/PreguntaMilly', methods=['POST'])
+def millyResponde():
     try:
         # Obtén el mensaje del cliente
         user_message = request.json.get('message', '').lower()
-        print("user_message  ",user_message)
+        print("-->",user_message)
         if not user_message:
             return jsonify({'response': [{'text': 'Mensaje vacío'}]})
 
@@ -44,7 +44,7 @@ def webhook():
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             rasa_response = loop.run_until_complete(handle_message(message_espanol))
-            print("rasa_response  ",rasa_response)
+            print(rasa_response)
             if idioma != 'es':
                 traducir = traducir_mensaje_salida(rasa_response[0]['text'], 'es', idioma)
                 rasa_response[0]['text'] = traducir
@@ -57,5 +57,13 @@ def webhook():
     except Exception as e:
         # Manejo de excepciones
         return jsonify({'error': str(e)}), 500
+    
 if __name__ == '__main__':
-    app.run(port=5000)
+    import os
+
+    host = '0.0.0.0'
+    port = int(os.environ.get('PORT', 5100))
+
+    # Utiliza Gunicorn para ejecutar la aplicación Flask sin especificar el número de workers
+    cmd = f'gunicorn -b {host}:{port} app:app'
+    os.system(cmd)

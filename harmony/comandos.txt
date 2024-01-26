@@ -48,3 +48,15 @@ subir la imagen:
 docker push harmonyregcontents.azurecr.io/tesis_web_harmony:latest
 
 reiniciar el servidor
+
+
+
+
+////////////////////////
+////// Azure //////
+//////////////////////
+docker build -t rasa_img .
+docker run -p 5000:5000 rasa_img
+
+docker tag rasa_img:latest harmonyregcontents.azurecr.io/rasa_img:latest
+docker push harmonyregcontents.azurecr.io/rasa_img:latest
