@@ -5,7 +5,7 @@ from django.shortcuts import  redirect, render
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import  cifrarClaves, decifrarClaves, enviar_correo_inicio_sesion, get_comentariosVer
+from harmonyApp.operations.utils import  cifrarClaves, comunicacionMillyApi, decifrarClaves, enviar_correo_inicio_sesion, get_comentariosVer
 from harmonyProject.database import MongoDBConnection
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -107,7 +107,7 @@ def pantalla_estadisticas(request,usuario_id):
 """
 @login_required
 def pantalla_foro(request,usuario_id,ordenar="mas likes"):
-    
+    usuario_id = str(request.session['id_user'])
     ordenar = request.GET.get('ordenar', 'mas likes')  # Get the selected sorting option from the query parameters, defaulting to 'likes'
     if request.method == 'POST':
         id_reda_Comet = usuario_id
@@ -364,7 +364,6 @@ def pantalla_registro(request):
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
         existeCorreo = db_connection.db.Credenciales.find_one({'correo': correo})
         if existeCorreo==None:
-            #archivo = request.FILES.get('imagen_perfil')
             try:
                 image = request.FILES['imagen_perfil']           
                 val=subir_imagen(image.name, image.file)
@@ -403,7 +402,7 @@ def pantalla_registro(request):
             }
             db_connection.db.Credenciales.insert_one(usuario_cred)
             enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.apellido)
-            return redirect('pantalla_login/pantalla_login.html')
+            return render(request,'pantalla_login/pantalla_login.html')
         else:
             error_message = "Correo ya existe"
             context = {'error_message': error_message}
@@ -436,23 +435,25 @@ def pantalla_perfil_usuario(request, usuario_id):
                 url_imagen_perfil=usuario_dict['url_imagen_perfil'],
             )
             
-            comentarios = db_connection.db.Comentarios.find({'id_reda_Comet': usuario_id})
-            
+            comentarios = db_connection.db.Comentarios.find({'id_reda_Comet': str(usuario_id)})
+
+          
             # Crear el objeto Paginator
-            items_por_pagina = 100
+            items_por_pagina = 10
             paginator = Paginator(get_comentariosVer(comentarios, db_connection), items_por_pagina)
             
             # Obtener el número de página a mostrar
             numero_pagina = request.GET.get('page')
             page_obj = paginator.get_page(numero_pagina)
             
-            return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id, 'usuario_obj': usuario_obj, "comentarios": page_obj})
-        
-        return HttpResponseBadRequest("Usuario no encontrado")
+            return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": page_obj})
+        else:
+            return HttpResponseBadRequest("Usuario no encontrado")
     
     except errors.InvalidId:
         # Manejar el error si el ObjectId no es válido
         return HttpResponseBadRequest(f"Usuario no válido: {usuario_id} - Tipo: {type(usuario_id)}\nError: {str(errors.InvalidId)}\n cuenta_ {str(request.session['id_user'])}")
+
 @login_required    
 def editar_usuario(request, usuario_id):
     usuario_id = ObjectId(str(request.session['id_user']))
@@ -518,6 +519,7 @@ def editar_usuario(request, usuario_id):
 def pantalla_chatbot(request, usuario_id,posicion=0):
     usuario_id =str(request.session['id_user'])
     palabraBuscar = request.GET.get('palabraBuscar')
+    
     if request.method == 'GET':
         if palabraBuscar != None and palabraBuscar != "":
             comentarios = db_connection.db.Comentarios.find({ 'comentario': { '$regex': str(palabraBuscar), '$options': 'i' } })
@@ -527,8 +529,9 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
     
     # Obtener el número de página a mostrar
     
-    try:
-        paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
+   
+    paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
+    try: 
         numero_pagina = request.GET.get('page')
         page_obj = paginator.get_page(numero_pagina)
         usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
@@ -549,8 +552,9 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
             posicion = posicion
             conversacion = conversaciones[posicion]
         return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': url_imagen_perfil,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
-    except errors.InvalidId:
+    except :
         # Manejar el error si el ObjectId no es válido
+        #return render(request,"pantalla_chatbot/pantalla_chatbot.html")
         return HttpResponseBadRequest(f"Usuario no válido: {usuario_id}<br> posicion: {posicion} <br> palabraBuscar: {palabraBuscar} <br> comentarios: {comentarios}   ")
 
 @login_required
@@ -609,6 +613,7 @@ def eliminarChat(request,usuario_id,posicion):
 @login_required
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
     usuario_id = ObjectId(str(request.session['id_user']))
+
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
@@ -626,14 +631,16 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
 
             else:
                 try:
-                    respuestaChat = send_to_rasa(pregunta.lower())
-                    salida = respuestaChat[0]['text']                
+                    
+                    salida = comunicacionMillyApi(pregunta)
+                                  
                 except:
-                    salida = "no entendi tu pregunta"
+                    salida = "No entendi tu pregunta"
                     
                 nuevo_mensaje ={
                     'pregunta': pregunta,
-                    'respuesta': salida}
+                    'respuesta': salida
+                }
                 
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
@@ -644,3 +651,4 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 
                 db_connection.db.Mensajes.insert_one(mensaje_dict)
         return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
+

@@ -1,5 +1,6 @@
 
 from email.mime.image import MIMEImage
+import json
 from bson import ObjectId
 import smtplib
 from email.mime.text import MIMEText
@@ -11,31 +12,26 @@ import requests
 from harmonyProject.settings import KEY_Contraseñas
 
 def get_Nombre(comentario, db_connection):
-
-    user = db_connection.db.Usuario.find_one(
-        {'_id': ObjectId(comentario['id_reda_Comet'])})
     try:
+        user = db_connection.db.Usuario.find_one({'_id': ObjectId(comentario['id_reda_Comet'])})
         return user['nombre']
-    except user.DoesNotExist:
+    except Exception:
         return None
 
 
-def get_img_perfil(comentario, db_connection):
-   
-    user = db_connection.db.Usuario.find_one(
-        {'_id': ObjectId(comentario['id_reda_Comet'])})
+def get_img_perfil(comentario, db_connection):  
     try:
-        
+        user = db_connection.db.Usuario.find_one(
+        {'_id': ObjectId(comentario['id_reda_Comet'])})
         return user['url_imagen_perfil']
-    except user.DoesNotExist:
+    except Exception:
         return None
 
 def get_comentariosVer(comentarios,db_connection):
-    try:
     
-        comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), get_img_perfil(comentario,db_connection),str(
+    comentarios_con_nombre_id = [(comentario, get_Nombre(comentario,db_connection), get_img_perfil(comentario,db_connection),str(
             comentario['_id'])) for comentario in comentarios]
-        
+    try:    
         for comentario in comentarios_con_nombre_id:
             comentario2 = comentario[0]
             replicasComentario=comentario[0]['replicas']
@@ -48,8 +44,8 @@ def get_comentariosVer(comentarios,db_connection):
                     
                 comentario2['replicas'] = new_id_replicas
         return comentarios_con_nombre_id
-    except:
-        return comentarios
+    except Exception as e:
+        return None
 def get_inforeplicas(replica, db_connection):    
     try:
         usuario= db_connection.db.Usuario.find_one(
@@ -154,7 +150,6 @@ def traducirAEspañol(texto_a_traducir,translator):
     return translator.translate(texto_a_traducir, src=idioma_origen, dest='es')
 
 def cifrarClaves(clave):
-    print(KEY_Contraseñas)
     cipher = Fernet(KEY_Contraseñas)
     texto_cifrado = cipher.encrypt(clave.encode())
     return texto_cifrado
@@ -163,4 +158,22 @@ def decifrarClaves(clave):
     cipher = Fernet(KEY_Contraseñas)
     texto_descifrado = cipher.decrypt(clave).decode()
     return texto_descifrado
-    
+
+def comunicacionMillyApi(pregunta ):
+    print("--->",pregunta)
+    webhook_url = 'https://rasaharmonysc.azurewebsites.net/webhooks/rest/webhook'
+
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    data = {
+        "sender": "user1",
+        "message": pregunta
+    }
+    response = requests.post(webhook_url, data=json.dumps(data), headers=headers)
+    if response.status_code == 200:
+        response_data = response.json()
+        print(response_data[0]['text'])
+        return response_data[0]['text']
+    else:
+        return 'No entendi tu pregunta'

@@ -15,7 +15,7 @@ COPY ./endpoints.yml /app
 COPY ./config.yml /app
 
 # Instala las dependencias
-RUN pip install  rasa # Si tienes un archivo de requerimientos
+RUN pip install  rasa 
 
 # Expone el puerto necesario (por ejemplo, si estás usando un servidor Rasa HTTP)
 EXPOSE 5005
