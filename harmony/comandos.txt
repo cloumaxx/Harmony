@@ -34,17 +34,29 @@ pip install -r requirements.txt
 construir imagen: docker build --rm -t tesis_web_harmony .
 
 crear el Registro de contenedores :
-az acr create --resource-group group-harmony --name harmonyregcontents --sku Basic --admin-enabled true
+az acr create --resource-group group-harmony --name harmonyregicontents --sku Basic --admin-enabled true
 obtener las credenciales del grupo: 
-az acr credential show --resource-group group-harmony --name harmonyregcontents
+az acr credential show --resource-group group-harmony --name harmonyregicontents
 docker build --rm -t tesis_web_harmony .
 ingresar al contendor:
-docker login harmonyregcontents.azurecr.io -u harmonyregcontents -p oA6eHVqdZ3bCcSozHpf0VJ8vVRxIstZSLSQgGq+POJ+ACRDNmVZC
+docker login harmonyregicontents.azurecr.io -u harmonyregicontents -p /TIsSj96yNh5fnjIJt7cmi3JK4kAcsHfQFkfF1IBH8+ACRC+mcU8
 
 etiquetar:
-docker tag tesis_web_harmony:latest harmonyregcontents.azurecr.io/tesis_web_harmony:latest
+docker tag tesis_web_harmony:latest harmonyregicontents.azurecr.io/tesis_web_harmony:latest
 
 subir la imagen:
-docker push harmonyregcontents.azurecr.io/tesis_web_harmony:latest
+docker push harmonyregicontents.azurecr.io/tesis_web_harmony:latest
 
 reiniciar el servidor
+
+
+
+
+////////////////////////
+////// Azure //////
+//////////////////////
+docker build --rm -t rasa_img .
+docker run -p 5000:5000 rasa_img
+
+docker tag rasa_img:latest harmonyregicontents.azurecr.io/rasa_img:latest
+docker push harmonyregicontents.azurecr.io/rasa_img:latest

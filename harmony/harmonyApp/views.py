@@ -5,7 +5,7 @@ from django.shortcuts import  redirect, render
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import  cifrarClaves, decifrarClaves, enviar_correo_inicio_sesion, get_comentariosVer
+from harmonyApp.operations.utils import  cifrarClaves, comunicacionMillyApi, decifrarClaves, enviar_correo_inicio_sesion, get_comentariosVer
 from harmonyProject.database import MongoDBConnection
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -17,6 +17,7 @@ import plotly.offline as opy
 from io import BytesIO
 import base64
 import matplotlib.pyplot as plt
+from bson import ObjectId, errors
 
 
 # Create your views here.
@@ -24,6 +25,7 @@ db_connection = MongoDBConnection()
 chat = []
 
 def pantalla_inicial(request):
+    logout_view(request)
     return render(request,"pantalla_inicial/pantalla_incial.html")
 
 def login_required(view_func):
@@ -36,6 +38,7 @@ def login_required(view_func):
 
 @login_required
 def pantalla_menu_inicial(request,usuario_id ):
+
     return render(request, "pantalla_menu_inicial/pantalla_menu_inicial.html",{"usuario_id": usuario_id})
 """
 ////////////////////////////////////////////////////////
@@ -45,6 +48,7 @@ def pantalla_menu_inicial(request,usuario_id ):
 @login_required
 def pantalla_estadisticas(request,usuario_id):
     try:
+        usuario_id = ObjectId(str(request.session['id_user']))
         usuarios_cursor = db_connection.db.Usuario.find()
         cantidad_usuarios = sum(1 for _ in usuarios_cursor)
         # mensajes mas comunes
@@ -103,8 +107,8 @@ def pantalla_estadisticas(request,usuario_id):
 """
 @login_required
 def pantalla_foro(request,usuario_id,ordenar="mas likes"):
+    usuario_id = str(request.session['id_user'])
     ordenar = request.GET.get('ordenar', 'mas likes')  # Get the selected sorting option from the query parameters, defaulting to 'likes'
-
     if request.method == 'POST':
         id_reda_Comet = usuario_id
         comentario_data = request.POST['comentario']
@@ -112,7 +116,7 @@ def pantalla_foro(request,usuario_id,ordenar="mas likes"):
         replicas = []
         fechaPublicacion = datetime.now()
         comentario = Comentarios(
-            id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes,fechaPublicacion = fechaPublicacion, replicas=replicas)
+        id_reda_Comet=id_reda_Comet, comentario=comentario_data, likes=likes,fechaPublicacion = fechaPublicacion, replicas=replicas)
         comentario_dict = {
             'id_reda_Comet': comentario.id_reda_Comet,
             'comentario': comentario.comentario,
@@ -124,7 +128,6 @@ def pantalla_foro(request,usuario_id,ordenar="mas likes"):
         db_connection.db.Comentarios.insert_one(comentario_dict)
 
         return redirect('pantalla_foro', usuario_id=usuario_id)
-
     if ordenar == 'mas reciente':
         comentarios = db_connection.db.Comentarios.find().sort([("fechaPublicacion", -1)])
     elif ordenar == 'mas antiguo':
@@ -135,18 +138,23 @@ def pantalla_foro(request,usuario_id,ordenar="mas likes"):
     else:
         comentarios = db_connection.db.Comentarios.find().sort([("likes", 1)])
 
-    # Crear el objeto Paginator
-    items_por_pagina = 100
-    paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
-    # Obtener el número de página a mostrar
-    numero_pagina = request.GET.get('page')
-    page_obj = paginator.get_page(numero_pagina)
+    try:         
+        
+        # Crear el objeto Paginator
+        items_por_pagina = 100
+        paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
+        # Obtener el número de página a mostrar
+        numero_pagina = request.GET.get('page')
+        page_obj = paginator.get_page(numero_pagina)
 
-    # ['id_replicas']
-    return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj,'ordenar': ordenar})
+        # ['id_replicas']
+        return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj,'ordenar': ordenar})
+    except Exception as e:
+        return HttpResponseBadRequest(f"Usuario no válido: {usuario_id}<br> ordenar: {ordenar}<br> comentarios: {comentarios }<br> error: {e}   ")
 
 @login_required
 def agregar_replica(request, usuario_id, comentario_id):
+    usuario_id = ObjectId(str(request.session['id_user']))
     if request.method == 'POST':
         replica_comentario = request.POST['replica']
         if len(replica_comentario) > 0:
@@ -180,7 +188,7 @@ def agregar_replica(request, usuario_id, comentario_id):
 @login_required
 def incrementar_likes_replica(request,usuario_id, comentario_id, pos):
     pos = int(pos) -1
-    
+    usuario_id = ObjectId(str(request.session['id_user']))
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
         comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
@@ -200,6 +208,7 @@ def incrementar_likes_replica(request,usuario_id, comentario_id, pos):
 
 @login_required
 def incrementar_likes(request, usuario_id, comentario_id):
+    usuario_id = ObjectId(str(request.session['id_user']))
     if request.method == 'POST':
         # Obtener el comentario de la base de datos
         comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
@@ -217,6 +226,7 @@ def incrementar_likes(request, usuario_id, comentario_id):
 
 @login_required
 def calificarApp(request, usuario_id):
+    usuario_id = ObjectId(str(request.session['id_user']))
     if request.method == 'POST':
         calificacion = request.POST.get('rating')
         # Obtener el comentario de la base de datos
@@ -244,6 +254,7 @@ def calificarApp(request, usuario_id):
 
 @login_required
 def pantalla_nuevo_comentario(request, usuario_id):
+    usuario_id = ObjectId(str(request.session['id_user']))
     if request.method == 'POST':
         id_reda_Comet = usuario_id
         comentario_data = request.POST['comentario']
@@ -267,6 +278,7 @@ def pantalla_nuevo_comentario(request, usuario_id):
 
 @login_required
 def editar_comentario(request, usuario_id, comentario_id):
+    
     if request.method == 'POST':
         nuevo_comentario = request.POST['comentario']
         
@@ -300,15 +312,17 @@ def borrar_comentario(request, usuario_id, comentario_id):
 """
 
 def pantalla_login(request):
+
     if request.method == 'POST':
         form = LoginForm(request.POST)
         
         if form.is_valid():
+            logout_view(request)
             correo = form.cleaned_data['correo']
             clave = form.cleaned_data['clave']
             credenciales = db_connection.db.Credenciales
             CorreoExiste = credenciales.find_one({'correo': correo})
-            print("Entro",CorreoExiste)
+            
             if CorreoExiste:
                 
                 if decifrarClaves(CorreoExiste['clave']) == clave:
@@ -317,6 +331,7 @@ def pantalla_login(request):
                     
                     request.session['nombre'] = nombre['nombre']
                     request.session['id_user'] = user_id
+                    
                     return redirect('pantalla_menu_inicial/pantalla_menu_inicial.html',usuario_id=user_id)  
                 else:
                     messages.error(request, 'Credenciales inválidas')
@@ -348,9 +363,7 @@ def pantalla_registro(request):
         # Convertir la cadena de fecha en un objeto de tipo datetime
         fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
         existeCorreo = db_connection.db.Credenciales.find_one({'correo': correo})
-        print(existeCorreo)
         if existeCorreo==None:
-            #archivo = request.FILES.get('imagen_perfil')
             try:
                 image = request.FILES['imagen_perfil']           
                 val=subir_imagen(image.name, image.file)
@@ -389,7 +402,7 @@ def pantalla_registro(request):
             }
             db_connection.db.Credenciales.insert_one(usuario_cred)
             enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.apellido)
-            return redirect('pantalla_login/pantalla_login.html')
+            return render(request,'pantalla_login/pantalla_login.html')
         else:
             error_message = "Correo ya existe"
             context = {'error_message': error_message}
@@ -399,36 +412,51 @@ def pantalla_registro(request):
         return render(request, 'pantalla_registro/pantalla_registro.html')
 
 @login_required
-def pantalla_perfil_usuario(request,usuario_id):
-  
-    # Obtener el ID específico del usuario que deseas consultar
-    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+def pantalla_perfil_usuario(request, usuario_id):
+    usuario_id = ObjectId(str(request.session['id_user']))
 
-    # Verificar si se encontró un usuario con el ID especificado
-    if usuario_dict:
-        # Crear una instancia del modelo Usuario con los datos obtenidos
-        usuario_obj = Usuario(
-            id=usuario_dict['_id'],
-            nombre=usuario_dict['nombre'],
-            apellido=usuario_dict['apellido'],
-            correo=usuario_dict['correo'],
-            genero=usuario_dict['genero'],
-            fecha_nacimiento=usuario_dict['fecha_nacimiento'],
-            url_imagen_perfil=usuario_dict['url_imagen_perfil'],
-        )
-        comentarios =  db_connection.db.Comentarios.find({'id_reda_Comet': usuario_id}) # Obtener todos los comentarios de la base de datos
-        # Crear el objeto Paginator
-        items_por_pagina = 100
-        paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
-        # Obtener el número de página a mostrar
-        numero_pagina = request.GET.get('page')
-        page_obj = paginator.get_page(numero_pagina)
-        return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": page_obj})
+    try:
+        # Intentar convertir usuario_id a ObjectId
+        usuario_object_id = ObjectId(str(request.session['id_user']))
+        
+        # Realizar la búsqueda en la base de datos usando el ObjectId
+        usuario_dict = db_connection.db.Usuario.find_one({'_id': usuario_object_id})
+        
+        # Verificar si se encontró un usuario con el ID especificado
+        if usuario_dict:
+            # Crear una instancia del modelo Usuario con los datos obtenidos
+            usuario_obj = Usuario(
+                id=usuario_dict['_id'],
+                nombre=usuario_dict['nombre'],
+                apellido=usuario_dict['apellido'],
+                correo=usuario_dict['correo'],
+                genero=usuario_dict['genero'],
+                fecha_nacimiento=usuario_dict['fecha_nacimiento'],
+                url_imagen_perfil=usuario_dict['url_imagen_perfil'],
+            )
+            
+            comentarios = db_connection.db.Comentarios.find({'id_reda_Comet': str(usuario_id)})
+
+          
+            # Crear el objeto Paginator
+            items_por_pagina = 10
+            paginator = Paginator(get_comentariosVer(comentarios, db_connection), items_por_pagina)
+            
+            # Obtener el número de página a mostrar
+            numero_pagina = request.GET.get('page')
+            page_obj = paginator.get_page(numero_pagina)
+            
+            return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": page_obj})
+        else:
+            return HttpResponseBadRequest("Usuario no encontrado")
     
-    return HttpResponseBadRequest("Bad Request")
+    except errors.InvalidId:
+        # Manejar el error si el ObjectId no es válido
+        return HttpResponseBadRequest(f"Usuario no válido: {usuario_id} - Tipo: {type(usuario_id)}\nError: {str(errors.InvalidId)}\n cuenta_ {str(request.session['id_user'])}")
 
 @login_required    
 def editar_usuario(request, usuario_id):
+    usuario_id = ObjectId(str(request.session['id_user']))
     # Obtener el usuario específico que se desea actualizar
     
     if request.method == 'POST':
@@ -489,38 +517,49 @@ def editar_usuario(request, usuario_id):
 """
 @login_required
 def pantalla_chatbot(request, usuario_id,posicion=0):
+    usuario_id =str(request.session['id_user'])
     palabraBuscar = request.GET.get('palabraBuscar')
+    
     if request.method == 'GET':
         if palabraBuscar != None and palabraBuscar != "":
             comentarios = db_connection.db.Comentarios.find({ 'comentario': { '$regex': str(palabraBuscar), '$options': 'i' } })
         else:
             comentarios = db_connection.db.Comentarios.find()
-    # Crear el objeto Paginator
-    
     items_por_pagina = 50
-    paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
-    # Obtener el número de página a mostrar
-    numero_pagina = request.GET.get('page')
-    page_obj = paginator.get_page(numero_pagina)
-
     
-    usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
-    url_imagen_perfil = usuario_dict['url_imagen_perfil']
-    nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
-    conversaciones = usuario_dict['conversaciones']
-    if len(conversaciones) == 0:
-        conversaciones.append([])
-        posicion = 0
-        conversacion = conversaciones[posicion]
-        db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
+    # Obtener el número de página a mostrar
+    
+   
+    paginator = Paginator(get_comentariosVer(comentarios,db_connection), items_por_pagina)
+    try: 
+        numero_pagina = request.GET.get('page')
+        page_obj = paginator.get_page(numero_pagina)
+        usuario_dict = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+        url_imagen_perfil = usuario_dict['url_imagen_perfil']
+        nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
+        conversaciones = usuario_dict['conversaciones']
+        
+        # Crear el objeto Paginator
+        
+       
+        if len(conversaciones) == 0:
+            conversaciones.append([])
+            posicion = 0
+            conversacion = conversaciones[posicion]
+            db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
 
-    else:
-        posicion = posicion
-        conversacion = conversaciones[posicion]
-    return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': nombre_usuario,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
+        else:
+            posicion = posicion
+            conversacion = conversaciones[posicion]
+        return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': url_imagen_perfil,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
+    except :
+        # Manejar el error si el ObjectId no es válido
+        #return render(request,"pantalla_chatbot/pantalla_chatbot.html")
+        return HttpResponseBadRequest(f"Usuario no válido: {usuario_id}<br> posicion: {posicion} <br> palabraBuscar: {palabraBuscar} <br> comentarios: {comentarios}   ")
 
 @login_required
 def crearNuevoChat(request, usuario_id,posicion=0):
+    usuario_id = ObjectId(str(request.session['id_user']))
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
@@ -537,6 +576,7 @@ def crearNuevoChat(request, usuario_id,posicion=0):
 
 @login_required
 def vaciarChat(request,usuario_id,posicion):
+    usuario_id = ObjectId(str(request.session['id_user']))
     posicion=int(posicion)
     if request.method == 'POST':
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
@@ -552,6 +592,7 @@ def vaciarChat(request,usuario_id,posicion):
 
 @login_required
 def eliminarChat(request,usuario_id,posicion):
+    usuario_id = ObjectId(str(request.session['id_user']))
     posicion=int(posicion)
     if request.method == 'POST':
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
@@ -571,6 +612,8 @@ def eliminarChat(request,usuario_id,posicion):
 
 @login_required
 def enviarMensajeChatBot(request,usuario_id,posicion=0):
+    usuario_id = ObjectId(str(request.session['id_user']))
+
     if request.method == 'POST':
         # Obtener el usuario de la base de datos
         usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
@@ -588,14 +631,16 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
 
             else:
                 try:
-                    respuestaChat = send_to_rasa(pregunta.lower())
-                    salida = respuestaChat[0]['text']                
+                    
+                    salida = comunicacionMillyApi(pregunta)
+                                  
                 except:
-                    salida = "no entendi tu pregunta"
+                    salida = "No entendi tu pregunta"
                     
                 nuevo_mensaje ={
                     'pregunta': pregunta,
-                    'respuesta': salida}
+                    'respuesta': salida
+                }
                 
                 conversacion.append(nuevo_mensaje)
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
@@ -606,3 +651,4 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 
                 db_connection.db.Mensajes.insert_one(mensaje_dict)
         return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
+
