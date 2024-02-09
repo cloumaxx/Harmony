@@ -35,11 +35,11 @@ construir imagen: docker build --rm -t tesis_web_harmony .
 
 crear el Registro de contenedores :
 az acr create --resource-group group-harmony --name harmonyregicontents --sku Basic --admin-enabled true
+
 obtener las credenciales del grupo: 
 az acr credential show --resource-group group-harmony --name harmonyregicontents
 docker build --rm -t tesis_web_harmony .
 ingresar al contendor:
-docker login harmonyregicontents.azurecr.io -u harmonyregicontents -p /TIsSj96yNh5fnjIJt7cmi3JK4kAcsHfQFkfF1IBH8+ACRC+mcU8
 
 etiquetar:
 docker tag tesis_web_harmony:latest harmonyregicontents.azurecr.io/tesis_web_harmony:latest

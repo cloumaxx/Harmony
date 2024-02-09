@@ -160,7 +160,6 @@ def decifrarClaves(clave):
     return texto_descifrado
 
 def comunicacionMillyApi(pregunta ):
-    print("--->",pregunta)
     webhook_url = 'https://rasaharmonysc.azurewebsites.net/webhooks/rest/webhook'
 
     headers = {

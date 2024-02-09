@@ -352,6 +352,7 @@ def logout_view(request):
     
     return redirect('pantalla_inicial')
 
+
 def pantalla_registro(request):
     if request.method == 'POST':
         nombre = request.POST.get('nombre')
@@ -360,57 +361,61 @@ def pantalla_registro(request):
         clave = request.POST.get('clave')
         genero = request.POST.get('genero')
         fecha_nacimiento_str = request.POST.get('fecha_nacimiento')
+
         # Convertir la cadena de fecha en un objeto de tipo datetime
-        fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
+        try:
+            fecha_nacimiento = datetime.strptime(fecha_nacimiento_str, '%Y-%m-%d')
+        except (ValueError, TypeError):
+            # Si la fecha no se puede convertir o es None, se establece la fecha actual
+            fecha_nacimiento = datetime.now()
+
         existeCorreo = db_connection.db.Credenciales.find_one({'correo': correo})
-        if existeCorreo==None:
+        if existeCorreo is None:
             try:
-                image = request.FILES['imagen_perfil']           
-                val=subir_imagen(image.name, image.file)
+                image = request.FILES['imagen_perfil']
+                val = subir_imagen(image.name, image.file)
                 if val.status_code == 200:
-                    json_img=val.json()
+                    json_img = val.json()
                     url_imagen_perfil = str(json_img['data']['link'])
                     code_delete_img = json_img['data']['deletehash']
-                    
                 else:
                     url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
                     code_delete_img = ""
             except Exception as e:
-            # Crear una instancia del modelo Usuario con los datos ingresados
                 url_imagen_perfil = "https://i.imgur.com/0RW7b5J.jpg"
                 code_delete_img = ""
-            usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil,code_delete_img=code_delete_img,conversaciones=[])
+
+            usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, genero=genero, fecha_nacimiento=fecha_nacimiento, url_imagen_perfil=url_imagen_perfil, code_delete_img=code_delete_img, conversaciones=[])
             credenciales = Credenciales(correo=correo, clave=clave)
-            # Guardar el usuario en la base de datos MongoDB
+
             usuario_dict = {
-                        'nombre': usuario.nombre,
-                        'apellido': usuario.apellido,
-                        'correo': usuario.correo,
-                        'genero': usuario.genero,
-                        'fecha_nacimiento': usuario.fecha_nacimiento,
-                        'url_imagen_perfil': usuario.url_imagen_perfil,
-                        'code_delete_img': usuario.code_delete_img,
-                        'conversaciones': usuario.conversaciones
+                'nombre': usuario.nombre,
+                'apellido': usuario.apellido,
+                'correo': usuario.correo,
+                'genero': usuario.genero,
+                'fecha_nacimiento': usuario.fecha_nacimiento,
+                'url_imagen_perfil': usuario.url_imagen_perfil,
+                'code_delete_img': usuario.code_delete_img,
+                'conversaciones': usuario.conversaciones
             }
-                    
+
             result = db_connection.db.Usuario.insert_one(usuario_dict)
             cifrarClave = cifrarClaves(credenciales.clave)
-            usuario_cred ={
-                        '_id': str(result.inserted_id), 
-                        'correo': credenciales.correo,
-                        'clave': cifrarClave,
+            usuario_cred = {
+                '_id': str(result.inserted_id),
+                'correo': credenciales.correo,
+                'clave': cifrarClave,
             }
+
             db_connection.db.Credenciales.insert_one(usuario_cred)
             enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.apellido)
-            return render(request,'pantalla_login/pantalla_login.html')
+            return redirect('pantalla_login')    
         else:
             error_message = "Correo ya existe"
             context = {'error_message': error_message}
             return render(request, 'pantalla_registro/pantalla_registro.html', context)
-
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
-
 @login_required
 def pantalla_perfil_usuario(request, usuario_id):
     usuario_id = ObjectId(str(request.session['id_user']))
@@ -627,7 +632,6 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
             pregunta = request.POST.get('pregunta')
             if pregunta == "" or pregunta == None or len(pregunta)==0:
                 salida = "no entendi tu pregunta"
-                #return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id})
 
             else:
                 try:
