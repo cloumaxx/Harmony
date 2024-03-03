@@ -177,6 +177,9 @@ def comunicacionMillyApi(pregunta ):
     response = requests.post(webhook_url, data=json.dumps(data), headers=headers)
     if response.status_code == 200:
         response_data = response.json()
+        print(response_data)
         return response_data[0]['text']
     else:
+        response_data = response.json()
+
         return 'No entendi tu pregunta'
