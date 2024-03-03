@@ -6,3 +6,4 @@ harmony/harmonyApp/__pycache__/__init__.cpython-310.pyc
 *.pkl
 *.json
 millyAppApi/.rasa/cache/tmpbvaycody/
+harmony/db.sqlite3

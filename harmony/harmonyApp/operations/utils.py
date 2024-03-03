@@ -6,6 +6,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from cryptography.fernet import Fernet
+import spacy
 
 import requests
 
@@ -17,7 +18,6 @@ def get_Nombre(comentario, db_connection):
         return user['nombre']
     except Exception:
         return None
-
 
 def get_img_perfil(comentario, db_connection):  
     try:
@@ -138,16 +138,21 @@ def enviar_correo_inicio_sesion(destinatario, nombre):
         return "Correo electrónico enviado con éxito."
     except Exception as e:
         return "Error al enviar el correo electrónico: " + str(e)
-    
-def traducirAEspañol(texto_a_traducir,translator):
-    # Crea una instancia del traductor
-    try:
-       # Detecta automáticamente el idioma del texto de origen
-        idioma_origen = translator.detect(texto_a_traducir).lang
-        # Traduce el texto a español
-    except Exception as e: 
-        print(e)
-    return translator.translate(texto_a_traducir, src=idioma_origen, dest='es')
+
+
+def detectarStopWords(texto_a_analizar):
+    # Carga el modelo de spaCy para español
+    nlp = spacy.load('es_core_news_sm')
+
+    # Texto de ejemplo
+
+    # Procesa el texto
+    doc = nlp(texto_a_analizar)
+
+    # Filtra las stop words
+    palabras_filtradas = [token.text for token in doc if not token.is_stop]
+    print("-->",palabras_filtradas)
+    return palabras_filtradas
 
 def cifrarClaves(clave):
     cipher = Fernet(KEY_Contraseñas)
@@ -160,7 +165,7 @@ def decifrarClaves(clave):
     return texto_descifrado
 
 def comunicacionMillyApi(pregunta ):
-    webhook_url = 'https://rasaharmonysc.azurewebsites.net/webhooks/rest/webhook'
+    webhook_url = 'https://rasaharmony.azurewebsites.net/webhooks/rest/webhook'
 
     headers = {
         'Content-Type': 'application/json'
@@ -172,7 +177,6 @@ def comunicacionMillyApi(pregunta ):
     response = requests.post(webhook_url, data=json.dumps(data), headers=headers)
     if response.status_code == 200:
         response_data = response.json()
-        print(response_data[0]['text'])
         return response_data[0]['text']
     else:
         return 'No entendi tu pregunta'

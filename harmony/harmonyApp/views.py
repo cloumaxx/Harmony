@@ -5,7 +5,7 @@ from django.shortcuts import  redirect, render
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import  cifrarClaves, comunicacionMillyApi, decifrarClaves, enviar_correo_inicio_sesion, get_comentariosVer
+from harmonyApp.operations.utils import  cifrarClaves, comunicacionMillyApi, decifrarClaves, detectarStopWords, enviar_correo_inicio_sesion, get_comentariosVer
 from harmonyProject.database import MongoDBConnection
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -631,15 +631,19 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 conversacion = []
             pregunta = request.POST.get('pregunta')
             if pregunta == "" or pregunta == None or len(pregunta)==0:
-                salida = "no entendi tu pregunta"
+                salida = "No entendí tu pregunta"
 
             else:
+                pregunta = pregunta.lower()
+                pregunta = pregunta.replace("  ", "")
+
                 try:
                     
+
                     salida = comunicacionMillyApi(pregunta)
                                   
                 except:
-                    salida = "No entendi tu pregunta"
+                    salida = "No entendí tu pregunta"
                     
                 nuevo_mensaje ={
                     'pregunta': pregunta,

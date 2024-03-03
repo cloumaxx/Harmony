@@ -7,6 +7,8 @@ WORKDIR /harmonyApp
 # Copia los archivos de requerimientos e instala dependencias
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m spacy download es_core_news_sm
+
 
 # Copia el resto de la aplicación
 COPY . .

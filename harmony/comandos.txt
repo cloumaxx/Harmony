@@ -58,5 +58,8 @@ reiniciar el servidor
 docker build --rm -t rasa_img .
 docker run -p 5000:5000 rasa_img
 
+docker run -p 5000:5000 tesis_web_harmony
+
+
 docker tag rasa_img:latest harmonyregicontents.azurecr.io/rasa_img:latest
 docker push harmonyregicontents.azurecr.io/rasa_img:latest
