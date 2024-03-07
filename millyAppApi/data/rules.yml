@@ -57,6 +57,77 @@ rules:
   - intent: origen_ansiedad
   - action: utter_origen_ansiedad
 
+- rule: Responde sobre la ansiedad cuando te preguntan que es el estres
+  steps:
+  - intent: definicion_estres
+  - action: utter_definicion_estres
+
+- rule: Responde cuando te dicen que tienen estres
+  steps:
+  - intent: sentir_estres
+  - action: utter_sentir_estres
+
+- rule: Responde cuando te pregunten los sintomas del estres
+  steps:
+  - intent: sintomas_estres
+  - action: utter_sintomas_estres
+
+- rule: Responde cuando te pregunten tratamientos para el estres
+  steps:
+  - intent: tratamiento_estres
+  - action: utter_tratamiento_estres
+
+- rule: Responde cuando pregunten sobre el origen del estres
+  steps:
+  - intent: origen_estres
+  - action: utter_origen_estres
+
+- rule: Responde cuando alguien te hable sobre el sintoma comun dolor de cabeza
+  steps:
+  - intent: sintoma_comun_dolor_cabeza
+  - action: utter_sintoma_comun_dolor_cabeza
+
+- rule: Responde cuando alguien te hable sobre el sintoma comun mareos
+  steps:
+  - intent: sintoma_comun_mareos
+  - action: utter_sintoma_comun_mareos
+
+- rule: Responde cuando alguien te hable sobre el sintoma comun nauseas o vomito
+  steps:
+  - intent: sintoma_comun_nauseas_vomito
+  - action: utter_sintoma_comun_nauseas_vomito
+
+- rule: Responde cuando alguien te hable sobre el sintoma comun diarrea o indigestion
+  steps:
+  - intent: sintoma_comun_diarrea_indigestion
+  - action: utter_sintoma_comun_diarrea_indigestion
+
+- rule: Responde cuando alguien te hable sobre el sintoma comun fiebre
+  steps:
+  - intent: sintoma_comun_fiebre
+  - action: utter_sintoma_comun_fiebre
+
+- rule: Responde cuando alguien te hable sobre el sintoma comun gripe y estornudos
+  steps:
+  - intent: sintoma_comun_gripe_y_estornudos
+  - action: utter_sintoma_comun_gripe_y_estornudos
+
+- rule: Responde cuando alguien te hable sobre el sintoma comun insomnio
+  steps:
+  - intent: sintoma_comun_insomnio
+  - action: utter_sintoma_comun_insomnio
+
+- rule: Responde cuando alguien te hable sobre el sintoma comun falta de apetito
+  steps:
+  - intent: sintoma_comun_falta_apetito
+  - action: utter_sintoma_comun_falta_apetito
+
+#------------------------------------------------------
+
+#AGRADECIMIENTO
+
+#------------------------------------------------------
+
 - rule: Responde cuando alguien te agradezca
   steps:
   - intent: agradecimiento
@@ -172,6 +243,23 @@ rules:
   steps:
   - intent: sintomas_relacionados_anti-Mulleriana
   - action: utter_sintomas_relacionados_anti-Mulleriana
+
+#------------------------------------------------------
+
+#TRATAMIENTO HORMONAS
+
+#------------------------------------------------------
+
+- rule: Responde cuando te pregunten tratamientos para las hormonas
+  steps:
+  - intent: tratamiento_hormonas
+  - action: utter_tratamiento_hormonas
+
+#------------------------------------------------------
+
+#EXCEPCION
+
+#------------------------------------------------------
 
 - rule: Responde la excepcion cuando las preguntas no sean relacionadas con los temas anteriores
   steps:

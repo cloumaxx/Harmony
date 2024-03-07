@@ -51,6 +51,10 @@ stories:
   - intent: sentir_ansiedad
   - action: utter_sentir_ansiedad
 
+#----------------------------------------------
+# ANSIEDAD
+#----------------------------------------------
+
 - story: definicion_ansiedad path
   steps:
     - intent: definicion_ansiedad
@@ -112,7 +116,6 @@ stories:
     - intent: agradecimiento
     - action: utter_agradecimiento
 
-
 - story: sintomas_ansiedad path
   steps:
     - intent: sintomas_ansiedad
@@ -124,6 +127,130 @@ stories:
     - action: utter_tratamiento_ansiedad
 
 #----------------------------------------------
+# ESTRES
+#----------------------------------------------
+
+- story: sentir_estres path
+  steps:
+  - intent: sentir_estres
+  - action: utter_sentir_estres
+
+- story: definicion_estres path
+  steps:
+    - intent: definicion_estres
+    - action: utter_definicion_estres
+
+- story: definicion_estres path 2
+  steps: 
+    - intent: sentir_estres
+    - action: utter_sentir_estres
+    - intent: definicion_estres
+    - action: utter_definicion_estres
+
+- story: definicion_estres path 3
+  steps: 
+    - intent: sentir_estres
+    - action: utter_sentir_estres
+    - intent: definicion_estres
+    - action: utter_definicion_estres
+    - intent: origen_estres
+    - action: utter_origen_estres
+
+- story: sentir_estres path
+  steps: 
+    - intent: sentir_estres
+    - action: utter_sentir_estres
+    - intent: tratamiento_estres
+    - action: utter_tratamiento_estres
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
+- story: sentir_estres path 2
+  steps: 
+    - intent: sentir_estres
+    - action: utter_sentir_estres
+    - intent: definicion_estres
+    - action: utter_definicion_estres
+    - intent: sintomas_estres
+    - action: utter_sintomas_estres
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
+- story: sentir_estres path 3
+  steps: 
+    - intent: sentir_estres
+    - action: utter_sentir_estres
+    - intent: sintomas_estres
+    - action: utter_sintomas_estres
+    - intent: tratamiento_estres
+    - action: utter_tratamiento_estres
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
+- story: sentir_estres path 4
+  steps: 
+    - intent: sentir_estres
+    - action: utter_sentir_estres
+    - intent: tratamiento_estres
+    - action: utter_tratamiento_estres
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
+- story: sintomas_estres path
+  steps:
+    - intent: sintomas_estres
+    - action: utter_sintomas_estres
+
+- story: tratamiento_estres path
+  steps:
+    - intent: tratamiento_estres
+    - action: utter_tratamiento_estres
+
+#----------------------------------------------
+# SINTOMAS COMUNES
+#----------------------------------------------
+
+- story: sintoma_comun_dolor_cabeza path
+  steps:
+    - intent: sintoma_comun_dolor_cabeza
+    - action: utter_sintoma_comun_dolor_cabeza
+
+- story: sintoma_comun_mareos path
+  steps:
+    - intent: sintoma_comun_mareos
+    - action: utter_sintoma_comun_mareos
+
+- story: sintoma_comun_nauseas_vomito path
+  steps:
+    - intent: sintoma_comun_nauseas_vomito
+    - action: utter_sintoma_comun_nauseas_vomito
+
+- story: sintoma_comun_diarrea_indigestion path
+  steps:
+    - intent: sintoma_comun_diarrea_indigestion
+    - action: utter_sintoma_comun_diarrea_indigestion
+
+- story: sintoma_comun_fiebre path
+  steps:
+    - intent: sintoma_comun_fiebre
+    - action: utter_sintoma_comun_fiebre
+
+- story: sintoma_comun_gripe_y_estornudos path
+  steps:
+    - intent: sintoma_comun_gripe_y_estornudos
+    - action: utter_sintoma_comun_gripe_y_estornudos
+
+- story: sintoma_comun_insomnio path
+  steps:
+    - intent: sintoma_comun_insomnio
+    - action: utter_sintoma_comun_insomnio
+
+- story: sintoma_comun_falta_apetito path
+  steps:
+    - intent: sintoma_comun_falta_apetito
+    - action: utter_sintoma_comun_falta_apetito
+
+#----------------------------------------------
 # HORMONAS
 #----------------------------------------------
 - story: sintomas_relacionados_hormona_crecimiento path
@@ -132,8 +259,8 @@ stories:
     - action: utter_saludar
     - intent: sintomas_relacionados_hormona_crecimiento
     - action: utter_sintomas_relacionados_hormona_crecimiento
-    - intent: tratamiento_ansiedad
-    - action: utter_tratamiento_ansiedad
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
 
 - story: sintomas_relacionados_insulina path
   steps:
@@ -141,8 +268,8 @@ stories:
     - action: utter_saludar
     - intent: sintomas_relacionados_insulina
     - action: utter_sintomas_relacionados_insulina
-    - intent: tratamiento_ansiedad
-    - action: utter_tratamiento_ansiedad
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
 
 - story: sintomas_relacionados_tiroxina_o_triyodotironina path
   steps:
@@ -150,8 +277,8 @@ stories:
     - action: utter_saludar
     - intent: sintomas_relacionados_tiroxina_o_triyodotironina
     - action: utter_sintomas_relacionados_tiroxina_o_triyodotironina
-    - intent: tratamiento_ansiedad
-    - action: utter_tratamiento_ansiedad
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
 
 
 - story: sintomas_relacionados_estimulante_tiroides path
@@ -160,8 +287,8 @@ stories:
     - action: utter_saludar
     - intent: sintomas_relacionados_estimulante_tiroides
     - action: utter_sintomas_relacionados_estimulante_tiroides
-    - intent: tratamiento_ansiedad
-    - action: utter_tratamiento_ansiedad
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
 
 - story: sintomas_relacionados_antidiuretica path
   steps:
@@ -169,8 +296,35 @@ stories:
     - action: utter_saludar
     - intent: sintomas_relacionados_antidiuretica
     - action: utter_sintomas_relacionados_antidiuretica
-    - intent: tratamiento_ansiedad
-    - action: utter_tratamiento_ansiedad
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_oxitocina path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_oxitocina
+    - action: utter_sintomas_relacionados_oxitocina
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_cortisol path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_cortisol
+    - action: utter_sintomas_relacionados_cortisol
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_adrenalina path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_adrenalina
+    - action: utter_sintomas_relacionados_adrenalina
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
 
 #----------------------------------------------
 # EXCEPCIÓN
