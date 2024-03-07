@@ -63,3 +63,11 @@ docker run -p 5000:5000 tesis_web_harmony
 
 docker tag rasa_img:latest harmonyregicontents.azurecr.io/rasa_img:latest
 docker push harmonyregicontents.azurecr.io/rasa_img:latest
+
+
+////////////////////////////////////////////////////////
+////// Para ver el funcionamiento del modelo rasa //////
+////////////////////////////////////////////////////////
+
+rasa test --model models/your_model --stories data/test_stories.md > evaluation_metrics.txt
+rasa test --model models/20231220-170647-rosy-moscato.tar.gz --stories data/test_stories.md > evaluation_metrics.txt
