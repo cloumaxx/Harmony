@@ -2812,6 +2812,109 @@ nlu:
 
 - intent: tratamiento_estres
   examples: |
+    - Como lo trato
+    - como lo puedo tratar
+    - como tratarlo
+    - ¿Como puedo manejar mejor mi estres?
+    - ¿Hay algo que hago mal cuando me siento estresado?
+    - ¿Algun consejo para aliviar mi propio estres?
+    - ¿Como me relajo cuando me siento tenso?
+    - ¿Hay trucos que pueda usar para calmarme?
+    - ¿Cual es mi forma preferida de combatir el estres?
+    - ¿Algun tip para relajarme rapidamente a mi mismo?
+    - ¿Como lido con mi estres diario?
+    - ¿Conozco maneras simples de reducir mi propio estres?
+    - ¿Cual es mi secreto para mantener la calma?
+    - ¿Recomiendo alguna actividad para liberar mi estres?
+    - ¿Hay alguna tecnica facil para manejar mi estres?
+    - ¿Que hago para despejar mi mente cuando estoy estresado?
+    - ¿Como trato con mi estres en el dia a dia?
+    - ¿Hay algo que funcione bien para mi cuando estoy estresado?
+    - ¿Cual es mi enfoque para aliviar mi propio estres rapidamente?
+    - ¿Me relajo de alguna manera especifica cuando estoy estresado?
+    - ¿Puedo sugerirme a mi mismo alguna estrategia para reducir el estres?
+    - ¿Tengo algun ritual diario que me ayude a manejar mi estres?
+    - ¿Como puedo aliviar mi estres de manera efectiva?
+    - ¿Hay algo que hago automaticamente para reducir mi estres?
+    - ¿Tengo habitos que me ayudan a manejar mi estres?
+    - ¿Conozco algunos ejercicios simples para calmar mi estres?
+    - ¿Puedo recomendarme a mi mismo alguna actividad para reducir el estres?
+    - ¿Que hago cuando me siento abrumado por el estres?
+    - ¿Como controlo mi estres en situaciones dificiles?
+    - ¿Cual es mi manera rapida de aliviar el estres?
+    - ¿Tengo algun alimento o bebida que me ayude a reducir el estres?
+    - ¿Me beneficia la meditacion para controlar mi estres?
+    - ¿Tengo algunas tecnicas favoritas para relajarme en momentos estresantes?
+    - ¿Puedo sugerirme a mi mismo algunos ejercicios de respiracion para aliviar el estres?
+    - ¿Como mantengo la calma en situaciones estresantes?
+    - ¿Hay alguna musica que encuentre util para reducir mi estres?
+    - ¿Conozco maneras simples de mejorar mi bienestar emocional?
+    - ¿Que puedo hacer para sentirme mas relajado en mi dia a dia?
+    - ¿Tengo alguna rutina diaria que me ayude a liberar el estres?
+    - ¿Hay algo que haga automaticamente para mantener mi tranquilidad?
+    - ¿Cual es mi enfoque para aliviar el estres sin esfuerzo?
+    - ¿Como me aseguro de no dejarme llevar por la presion y el estres?
+    - ¿Hay algun habito que tenga que contribuya a mi bienestar emocional?
+    - ¿Cual es mi manera de despejar mi mente cuando estoy abrumado?
+    - ¿Que hago para enfrentar el estres en mi vida cotidiana?
+    - ¿Como me relajo despues de un dia estresante?
+    - ¿Tengo algun recurso o actividad que me ayude a mantener la calma?
+    - ¿Que hago para cuidar mi bienestar emocional durante la semana?
+    - ¿Cual es mi enfoque para reducir el estres de manera practica?
+    - ¿Hay algun consejo simple que me funcione para manejar mi estres?
+    - ¿Como me apoyo a mi mismo cuando estoy atrapado en situaciones estresantes?
+    - ¿Tengo alguna estrategia que use sin darme cuenta para reducir el estres?
+    - ¿Que hago para mantener una perspectiva positiva cuando estoy bajo presion?
+    - ¿Cual es mi manera de enfrentar el estres sin complicarme demasiado?
+    - ¿Tengo algun habito relajante que me ayude a manejar mi estres?
+    - ¿Como me aseguro de cuidar de mi bienestar emocional en el dia a dia?
+    - ¿Que hago para relajarme cuando me encuentro en medio de un dia agitado?
+    - ¿Tengo alguna tecnica rapida que use para aliviar mi estres?
+    - ¿Como me aseguro de no dejar que el estres afecte negativamente mi bienestar?
+    - ¿Cual es mi manera preferida de liberar tensiones cuando me siento estresado?
+    - ¿Que actividades automaticas realizo para mantener la calma durante el estres?
+    - ¿Como me trato a mi mismo cuando estoy lidiando con el estres?
+    - ¿Cual es mi ritual diario para cuidar de mi bienestar emocional?
+    - ¿Que hago para asegurarme de mantener la calma en momentos dificiles?
+    - ¿Como enfrento el estres de manera natural y sin complicaciones?
+    - ¿Tengo algun habito diario que contribuya a mi tranquilidad?
+    - ¿Como me relajo cuando siento que la presion esta aumentando?
+    - ¿Que acciones automaticas realizo para mantener la serenidad?
+    - ¿Cual es mi enfoque instintivo para aliviar el estres?
+    - ¿Tengo algun consejo sencillo que me funcione para manejar el estres?
+    - ¿Como me aseguro de cuidar de mi bienestar emocional sin esfuerzo?
+    - ¿Que hago para despejar mi mente cuando me siento abrumado por el estres?
+    - ¿Tengo algun recurso interno que utilice para mantener la calma?
+    - ¿Cual es mi enfoque para reducir el estres de manera practica y facil?
+    - ¿Como me trato a mi mismo cuando me enfrento a situaciones estresantes?
+    - ¿Tengo alguna estrategia simple que utilice para mantener la paz interior?
+    - ¿Que hago para cuidar de mi bienestar emocional de forma natural?
+    - ¿Cual es mi enfoque automatico para aliviar el estres?
+    - ¿Tengo algun habito relajante que me ayude a mantener la tranquilidad?
+    - ¿Como me relajo despues de un dia agitado sin complicarme demasiado?
+    - ¿Que hago para asegurarme de cuidar de mi bienestar emocional diario?
+    - ¿Cual es mi manera preferida de enfrentar el estres sin esfuerzo?
+    - ¿Como enfrento el estres de manera instintiva y sencilla?
+    - ¿Tengo algun consejo simple que me funcione para liberar tensiones?
+    - ¿Como me aseguro de no dejarme llevar por la presion y el estres de manera natural?
+    - ¿Que acciones automaticas realizo para cuidar de mi bienestar emocional?
+    - ¿Cual es mi enfoque para aliviar el estres sin complicaciones?
+    - ¿Como me relajo cuando me siento abrumado por situaciones estresantes?
+    - ¿Tengo algun habito diario que utilice para mantener mi paz interior?
+    - ¿Que hago para asegurarme de enfrentar el estres de manera sencilla?
+    - ¿Cual es mi manera preferida de liberar tensiones de forma natural?
+    - ¿Como me aseguro de cuidar de mi bienestar emocional sin complicarme?
+    - ¿Tengo alguna estrategia sencilla que me funcione para manejar el estres?
+    - ¿Que hago automaticamente para mantener la serenidad durante el estres?
+    - ¿Cual es mi enfoque diario para aliviar el estres sin esfuerzo?
+    - ¿Como enfrento el estres de manera natural y facil?
+    - ¿Tengo algun recurso interno que utilice para mantener la calma?
+    - ¿Que acciones automaticas realizo para cuidar de mi bienestar emocional?
+    - ¿Cual es mi manera preferida de enfrentar el estres sin esfuerzo?
+    - ¿Como me relajo cuando me siento abrumado por situaciones estresantes?
+    - ¿Tengo algun habito diario que utilice para mantener mi paz interior?
+    - ¿Que hago para asegurarme de enfrentar el estres de manera sencilla?
+    - ¿Cual es mi manera preferida de liberar tensiones de forma natural?
     - que me recomiendas para el estres
     - Cuales son las opciones de tratamiento para el estres
     - Puedes recomendarme algun enfoque terapeutico para gestionar el estres
@@ -3521,6 +3624,113 @@ nlu:
 - intent: sentir_ganas_rendirse
   examples: |
     - Estoy pensando en rendirme
+    - Quiero rendirme
+    - Me quiero rendir
+    - Quisiera rendirme
+    -Me siento tentado a rendirme
+    - Estoy a punto de rendirme
+    - La idea de rendirme me acecha constantemente
+    - La posibilidad de rendirme se vuelve mas fuerte
+    - Estoy al borde de rendirme por completo
+    - Cada desafio me empuja mas cerca de rendirme
+    - La opcion de rendirme parece cada vez mas atractiva
+    - La idea de rendicion me ronda constantemente
+    - Estoy considerando seriamente rendirme
+    - La tentacion de rendirme es abrumadora
+    - Siento la presion de rendirme
+    - La idea de rendicion me persigue
+    - Estoy luchando contra la decision de rendirme
+    - La posibilidad de rendirme parece mas facil
+    - La idea de rendirme se presenta con frecuencia
+    - Me siento agotado, a punto de rendirme
+    - La rendicion parece ser la unica opcion
+    - Cada obstaculo me acerca mas a la rendicion
+    - La idea de rendirme me atormenta
+    - Me encuentro contemplando la rendicion
+    - La rendicion se siente como una salida facil
+    - La idea de rendirme ronda mi mente
+    - Estoy tentado a rendirme ante la adversidad
+    - La rendicion se asoma en cada esquina
+    - Estoy cerca de aceptar la rendicion
+    - Me siento presionado a rendirme
+    - La opcion de rendicion esta presente
+    - Estoy lidiando con la tentacion de rendirme
+    - La rendicion parece ser la respuesta
+    - Estoy en la encrucijada de la rendicion
+    - La rendicion se presenta como una opcion viable
+    - Me siento tentado a rendirme ante los desafios
+    - La idea de rendirme se intensifica
+    - Estoy contemplando la posibilidad de rendicion
+    - La rendicion se vuelve cada vez mas atractiva
+    - Me encuentro al borde de la rendicion
+    - La opcion de rendirme esta ganando fuerza
+    - La idea de rendirme se cierne sobre mi
+    - Estoy resistiendo la tentacion de rendirme
+    - La rendicion se presenta como una solucion
+    - Me siento abrumado por la posibilidad de rendirme
+    - Estoy debatiendome entre seguir adelante y rendirme
+    - La rendicion parece ser una salida facil
+    - La idea de rendirme me persigue
+    - Estoy contemplando la opcion de rendirme
+    - La rendicion se presenta como una liberacion
+    - Me siento inclinado a rendirme
+    - La tentacion de rendicion es fuerte
+    - Estoy a punto de aceptar la rendicion
+    - La posibilidad de rendirme me ronda constantemente
+    - La rendicion se asoma en mis pensamientos
+    - Estoy lidiando con la opcion de rendirme
+    - La idea de rendirme me seduce
+    - Estoy cerca de ceder ante la rendicion
+    - La rendicion se presenta como una via de escape
+    - Me encuentro en la encrucijada de la rendicion
+    - La idea de rendirme se cierne sobre mi
+    - Estoy tentado a rendirme ante la presion
+    - La rendicion parece ser la salida mas facil
+    - Estoy considerando seriamente la opcion de rendicion
+    - La posibilidad de rendirme se hace mas evidente
+    - Estoy resistiendo la tentacion de rendirme por completo
+    - La rendicion se presenta como una alternativa viable
+    - Me siento a punto de aceptar la rendicion
+    - La idea de rendirme se intensifica con cada obstaculo
+    - Estoy al borde de ceder ante la rendicion
+    - La opcion de rendicion esta constantemente presente
+    - La rendicion parece ser la respuesta a mis problemas
+    - Estoy luchando contra la posibilidad de rendirme
+    - La idea de rendirme se afianza en mi mente
+    - Estoy tentado a aceptar la rendicion como solucion
+    - La rendicion se asoma en mis pensamientos con frecuencia
+    - Me siento agobiado por la presion de rendirme
+    - La idea de rendirme parece ser cada vez mas razonable
+    - Estoy al limite, considerando seriamente la rendicion
+    - La rendicion se presenta como una opcion tentadora
+    - Me encuentro debatiendome entre seguir luchando y rendirme
+    - La idea de rendirme se cierne sobre mi como una sombra
+    - Estoy tentado a rendirme ante la dificultad
+    - La posibilidad de rendirme me ronda constantemente
+    - La rendicion se presenta como una salida facil
+    - Estoy al borde de aceptar la opcion de rendicion
+    - La idea de rendirme se intensifica con cada reves
+    - Estoy lidiando con la tentacion de rendirme
+    - La rendicion parece ser la respuesta mas sencilla
+    - Me siento cerca de aceptar la rendicion
+    - La idea de rendirme se afianza cada vez mas en mi mente
+    - Estoy a punto de ceder ante la opcion de rendicion
+    - La rendicion se asoma en cada desafio
+    - Me encuentro resistiendo la tentacion de rendirme por completo
+    - La posibilidad de rendirme se hace mas evidente
+    - Estoy al limite, considerando la rendicion como una salida
+    - La idea de rendirme se intensifica ante la adversidad
+    - Estoy tentado a aceptar la rendicion como la respuesta
+    - La rendicion parece ser la solucion mas facil
+    - Me siento agobiado por la posibilidad de rendirme
+    - La idea de rendirme se afianza con cada tropiezo
+    - Estoy al borde de ceder ante la rendicion
+    - La rendicion se presenta como una opcion liberadora
+    - Me encuentro debatiendome entre seguir luchando y aceptar la rendicion
+    - Debo renunciar
+    - Debo dejar todo de lado
+    - Debo dejar todo atras
+    - Quiero renunciar
     - Siento la tentacion de abandonar
     - Me estoy planteando dejarlo todo
     - Las ganas de rendirme son fuertes
