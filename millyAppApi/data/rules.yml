@@ -2,6 +2,11 @@ version: "3.1"
 
 rules:
 
+- rule: Di tu version cuando te pregunten por ella
+  steps:
+  - intent: preguntar_version
+  - action: utter_preguntar_version
+
 - rule: Saludar cuando te saludan
   steps:
   - intent: saludar
@@ -82,6 +87,16 @@ rules:
   - intent: origen_estres
   - action: utter_origen_estres
 
+- rule: Responde cuando alguien te diga que siente desanimo
+  steps:
+  - intent: sentir_desanimo
+  - action: utter_sentir_desanimo
+
+- rule: Responde cuando alguien te diga que siente ganas de rendirse
+  steps:
+  - intent: sentir_ganas_rendirse
+  - action: utter_sentir_ganas_rendirse
+
 - rule: Responde cuando alguien te hable sobre el sintoma comun dolor de cabeza
   steps:
   - intent: sintoma_comun_dolor_cabeza
@@ -154,20 +169,10 @@ rules:
   - intent: sintomas_relacionados_tiroxina_o_triyodotironina
   - action: utter_sintomas_relacionados_tiroxina_o_triyodotironina
 
-- rule: Responde cuando alguien te te escriba sintomas relacionados con la estimulante tiroides
-  steps:
-  - intent: sintomas_relacionados_estimulante_tiroides
-  - action: utter_sintomas_relacionados_estimulante_tiroides
-
 - rule: Responde cuando alguien te te escriba sintomas relacionados con la antidiuretica
   steps:
   - intent: sintomas_relacionados_antidiuretica
   - action: utter_sintomas_relacionados_antidiuretica
-
-- rule: Responde cuando alguien te te escriba sintomas relacionados con la oxitocina
-  steps:
-  - intent: sintomas_relacionados_oxitocina
-  - action: utter_sintomas_relacionados_oxitocina
 
 - rule: Responde cuando alguien te te escriba sintomas relacionados con la cortisol
   steps:

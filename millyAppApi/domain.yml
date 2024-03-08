@@ -1,6 +1,7 @@
 version: "3.1"
 
 intents:
+  - preguntar_version
   - saludar
   - despedirse
   - presentarse
@@ -12,12 +13,25 @@ intents:
   - sintomas_ansiedad
   - tratamiento_ansiedad
   - origen_ansiedad
+  - definicion_estres
+  - sentir_estres
+  - sintomas_estres
+  - tratamiento_estres
+  - origen_estres
+  - sentir_desanimo
+  - sentir_ganas_rendirse
+  - sintoma_comun_dolor_cabeza
+  - sintoma_comun_mareos 
+  - sintoma_comun_nauseas_vomito 
+  - sintoma_comun_diarrea_indigestion 
+  - sintoma_comun_fiebre
+  - sintoma_comun_gripe_y_estornudos
+  - sintoma_comun_insomnio
+  - sintoma_comun_falta_apetito
   - sintomas_relacionados_hormona_crecimiento
   - sintomas_relacionados_insulina
   - sintomas_relacionados_tiroxina_o_triyodotironina
-  - sintomas_relacionados_estimulante_tiroides
   - sintomas_relacionados_antidiuretica
-  - sintomas_relacionados_oxitocina
   - sintomas_relacionados_cortisol
   - sintomas_relacionados_adrenalina
   - sintomas_relacionados_noradrenalina
@@ -33,27 +47,31 @@ intents:
   - sintomas_relacionados_luteinizante
   - sintomas_relacionados_colecistoquinina
   - sintomas_relacionados_anti-Mulleriana
+  - tratamiento_hormonas
   - agradecimiento
   - exception
 
 responses:
+  utter_preguntar_version:
+  - text: "Estas en la versión 1 actualizado a dia 7 de Marzo de 2024"
+
   utter_saludar:
-  - text: "Hola,¿como estas?"
+  - text: "Hola!!! Es un placer saludarte. ¿Como estas hoy?"
 
   utter_despedirse:
-  - text: "Gracias por venir, vuelve pronto"
+  - text: "Gracias por venir, fue un placer tenerte por aqui. Vuelve pronto"
 
   utter_presentarse:
-  - text: "Soy Milly, tu asistente virtual"
+  - text: "Mi nombre es Milly, sere tu asistente virtual"
 
   utter_sentir_bien:
   - text: "Me alegro mucho de escuchar que estes bien"
 
   utter_sentir_mal:
-  - text: "Oh no, eso es terrible. ¿Que paso?"
+  - text: "No me gusta escuchar que estes o te sientas mal. ¿Que paso?"
 
   utter_sentir_soledad:
-  - text: "Conmigo aqui, nunca estarás solo/a. ¿Como puedo ayudarte?"
+  - text: "Mientras yo este aqui, tu nunca estaras solo/a. ¿Cuentame como puedo ayudarte?"
 
   #------------------------------------------------------
 
@@ -65,7 +83,7 @@ responses:
   - text: "¿Que te gustaría saber de la ansiedad?"
 
   utter_origen_ansiedad:
-  - text: Ciertas experiencias de vida, como acontecimientos traumáticos, parecen provocar los trastornos de ansiedad en personas que ya son propensas a la ansiedad. Los rasgos heredados también pueden ser un factor
+  - text: Ciertas experiencias de vida, como acontecimientos traumaticos, parecen provocar los trastornos de ansiedad en personas que ya son propensas a la ansiedad. Los rasgos heredados tambien pueden ser un factor
 
   utter_definicion_ansiedad :
   - text: La ansiedad es una respuesta natural del cuerpo ante situaciones estresantes. Puede manifestarse como preocupación intensa, nerviosismo y tensión.
@@ -74,7 +92,7 @@ responses:
   - text: Los síntomas de la ansiedad pueden incluir palpitaciones, sudoración, dificultad para respirar, pensamientos intrusivos y evitación de situaciones temidas.
 
   utter_tratamiento_ansiedad: 
-  - text: Lo siento, no estoy en la capacidad para recomendar tratamientos
+  - text: Como modelo de procesamiento de lenguaje natural no estoy en la capacidad para recomendar medicamentos o remedios para tratar la ansiedad. Sin embargo algunos ejercicios que pueden ayudar a regularla incluyendo leer un libro, escuchar musica y tomarte un respiro y relajarte con actividades que te gusten. Si el sentimiento de ansiedad persiste o empeora se recomienda solicitar atencion medica inmediata
 
   #------------------------------------------------------
 
@@ -86,16 +104,16 @@ responses:
   - text: "¿Que te gustaría saber sobre el estres?"
 
   utter_origen_estres:
-  - text: "El estres puede tener muchos origenes..."
+  - text: "El estres puede tener muchos origenes, entre ellos una acumulacion de situaciones o sentimientos negativos que afecten tu equilibrio mental"
 
   utter_definicion_estres:
-  - text: El estres es una respuesta natural del cuerpo ante situaciones estresantes. Puede manifestarse como preocupación intensa, nerviosismo y tensión.
+  - text: El estres es una respuesta natural y automatica del cuerpo ante situaciones que percibe como desafiantes o amenazadoras. Puede manifestarse en aspectos tanto físicos como emocionales, siendo la manera en que el cuerpo se ajusta y se organiza para hacer frente o escapar de una situación que genera estres.
 
   utter_sintomas_estres: 
-  - text: Los síntomas de la ansiedad pueden incluir palpitaciones, sudoración, dificultad para respirar, pensamientos intrusivos y evitación de situaciones temidas.
+  - text: Los síntomas del estres pueden incluir dolores de cabeza, mareos constantes o vomito. Emocionalmente puedes sentir frustración, ira, tristeza, entre muchas otras
 
   utter_tratamiento_estres: 
-  - text: Lo siento, no estoy en la capacidad para recomendar tratamientos
+  - text: Como modelo de procesamiento de lenguaje natural no estoy en la capacidad para recomendar medicamentos o remedios para tratar el estres. Sin embargo algunos ejercicios que pueden ayudar a regular el estres incluyendo tomar una bebida caliente, tomarte un descanso y relajarte. Si el sentimiento de estres persiste o empeora se recomienda solicitar atencion medica inmediata
 
  #------------------------------------------------------
 
@@ -104,29 +122,34 @@ responses:
   #------------------------------------------------------
 
   utter_sintoma_comun_dolor_cabeza: 
-  - text: Los dolores de cabeza son ...
+  - text: Los dolores de cabeza pueden como pueden no estar relacionada con el desarrollo hormonal, pues es un sintoma muy general y es dificil determinar la causa principal. Para tratar el dolor de cabeza lo mas recomendable es descansar o tomar una pastilla para aliviar
 
   utter_sintoma_comun_mareos: 
-  - text: Los mareos constantes son causa de...
+  - text: Los mareos constantemente dependen de muchos factores como el vertigo, la deshidratación, la falta de alimento e incluso con el ejercicio. Algo que puede ayudarte con los mareos es inhalar un poco de alcohol etilico, tener una buena alimentación y no sobreexigir tu cuerpo a ejercicio excesivo
 
   utter_sintoma_comun_nauseas_vomito: 
-  - text: Las nauseas y vomito son ...
+  - text: Las nauseas y el vomito son un mecanismo de defensa del cuerpo cuando este siente sensación de rechazo. Pueden estar relacionados con ingerir alimentos en exceso o en estado de putrefaccion asi como ingerir una sustancia que el cuerpo rechaze como el alcohol. Para estos casos es recomendable verificar el estado de la comida que desees ingerir y en las porciones correctas, asi como evitar ingerir sustancias que afecten tu salud
 
-  sintoma_comun_diarrea_indigestion: 
-  - text: La diarrea y la indigestion es ...
+  utter_sintoma_comun_diarrea_indigestion: 
+  - text: La diarrea y la indigestion es un sintoma que esta relacionado con la ingesta de comida. Cuando sientes diarrea o indigestión significa que tu cuerpo esta tratando de expulsar dichos alimentos que pudiesen ser pesados o en cantidades excesivas. Te recomiendo no ingerir comida tan pesada y en cantidades racionales que tu cuerpo pueda resistir
 
-  sintoma_comun_fiebre: 
-  - text: La fiebre tiene ...
+  utter_sintoma_comun_fiebre: 
+  - text: La fiebre puede aparecer por muchos factores, principalmente germenes o bacterias que rodean nuestro entorno. Esta es una forma que el cuerpo indica que este contiene alguna bacteria o componente que este afectando sus funciones o amenaze la salud de tu cuerpo. Si la fiebre es muy perjudicial y persiste, se recomienda consultar a tu medico
 
-  sintoma_comun_gripe_y_estornudos: 
-  - text: La gripe y los estornudos son originados por ...
+  utter_sintoma_comun_gripe_y_estornudos: 
+  - text: La gripe son bacterias que se acumulan en tus fosas nasales y afectan tu respiración. Los estornudos es la forma en que tu cuerpo trata de expulsar dichas bacterias para volver a respirar comun y corriente. Se recomienda mucho usar desinfectante nasal
 
-  sintoma_comun_insomnio: 
-  - text: El insomnio es algo que ...
+  utter_sintoma_comun_insomnio: 
+  - text: El insomnio y la falta de sueño pueden tener muchos factores y origenes, por lo que es incierto determinar una causa exacta. El sueño y el descanso son muy importantes para el cuerpo humano, pues este nos ayuda a recuperar energias y nos ayuda a ser mas productivos
 
-  sintoma_comun_falta_apetito: 
-  - text: La falta de apetito puede ser ...
+  utter_sintoma_comun_falta_apetito: 
+  - text: La falta de apetito puede estar ligada al estres o a la ansiedad, pues estas pueden llevar a perder interes en ingerir alimentos. Otro posible factor puede ser algun problema digestivo o estomacal que afecte tus ganas de comer. La alimentación es vital para tener energia en el cuerpo humano y nos ayuda a estar activos
+
+  utter_sentir_ganas_rendirse:
+  - text: Se que en este momento puedes estar pasando por una situación dificil y sientes que no puedes mas. Lo que yo puedo recomendarte es que luches por lo que deseas y por lo que quieres. Nunca perder el rumbo y siempre mirar hacia adelante y tomar todo como un aprendizaje y una experiencia que puedan ayudarte a superar tus metas
  
+  utter_sentir_desanimo:
+  - text: Se que hay situaciones que pueden desanimarte mucho y que te pueden poner triste. Lo mas importante es entender que esas situaciones nos ayudan a entender mejor nuestro entorno y a enfrentar las situaciones que se nos presenten de la mejor manera. Animo!!!
 
  #------------------------------------------------------
 
@@ -144,7 +167,7 @@ responses:
   #------------------------------------------------------
 
   utter_exception: 
-  - text: Lo siento, no entendí tu pregunta
+  - text: Lo siento, en este momento no se como responder a tu inquietud. Intenta de nuevo con otra pregunta
 
   #------------------------------------------------------
 
@@ -152,67 +175,64 @@ responses:
 
   #------------------------------------------------------
   utter_sintomas_relacionados_hormona_crecimiento:
-  - text: El sintoma que me describes posiblemente esté relacionado con la hormona del crecimiento (GH), esta hormona.... 
+  - text: El sintoma que me describes posiblemente este relacionado con la hormona del crecimiento (GH), esta hormona se encarga mayormente de estimular y controlar el crecimiento y desarrollo del cuerpo humano 
   
   utter_sintomas_relacionados_insulina:
-  - text: El sintoma que me describes posiblemente esté relacionado con insulina, esta hormona.... 
+  - text: El sintoma que me describes posiblemente este relacionado con insulina, esta hormona se encarga de la fomentación de captación celular de glucosa y azúcar en los músculos esqueletico y cardiaco, así como en el tejido adiposo
   
   utter_sintomas_relacionados_tiroxina_o_triyodotironina:
-  - text: El sintoma que me describes posiblemente esté relacionado con la tiroxina o triyiditironina, esta hormona.... 
-  
-  utter_sintomas_relacionados_estimulante_tiroides:
-  - text: El sintoma que me describes posiblemente esté relacionado con la hormona estimulante de la tiroides, esta hormona.... 
+  - text: El sintoma que me describes posiblemente este relacionado con la tiroxina o triyiditironina, esta hormona es esencial para el desarrollo normal de una persona y en la regulación del metabolismo corporal
   
   utter_sintomas_relacionados_antidiuretica:
-  - text: El sintoma que me describes posiblemente esté relacionado con la hormona antidiuretica, esta hormona.... 
-  
-  utter_sintomas_relacionados_oxitocina:
-  - text: utter_sintomas_relacionados_oxitocina
+  - text: El sintoma que me describes posiblemente este relacionado con la hormona antidiuretica, esta hormona se encarga de la regulación de la cantidad de agua expulsada por los riñones y con ello la concentración de la orina en el cuerpo
   
   utter_sintomas_relacionados_cortisol:
-  - text: utter_sintomas_relacionados_cortisol
+  - text: El sintoma que me describes posiblemente este relacionado con el cortisol, una hormona que puede manifestarse cuando una persona presenta o ha estado expuesta a muchas situaciones de estres o ansiedad
 
   utter_sintomas_relacionados_adrenalina:
-  - text: utter_sintomas_relacionados_adrenalina
+  - text: El sintoma que me describes posiblemente este relacionado con la adrenalina, una hormona que se encarga de preparar el cuerpo en situaciones que se consideren de peligro y responsables de la activación del organismo en cuanto se requiera causado por factores como el miedo, el ejercicio o situaciones que el cuerpo considere necesarias para la activación de este
   
   utter_sintomas_relacionados_noradrenalina:
-  - text: utter_sintomas_relacionados_noradrenalina
+  - text: El sintoma que me describes posiblemente este relacionado con la noradrenalina, una hormona que juega un papel crucial, junto con la adrenalina, a la respuesta y preparación del cuerpo en situaciones de peligro cuando se requiere 
   
   utter_sintomas_relacionados_estrogenos:
-  - text: utter_sintomas_relacionados_estrogenos
+  - text: El sintoma que me describes posiblemente este relacionado con los estrogenos, los estrogenos son hormonas necesarias para el desarrollo sexual, así como estimular la hipertrofia miometrial
   
   utter_sintomas_relacionados_progesterona:
-  - text: utter_sintomas_relacionados_progesterona
+  - text: El sintoma que me describes posiblemente este relacionado con la progesterona, una hormona esteroide que esta involucrada y relacionada con el ciclo menstrual de la mujer y el embarazo en la etapa de gestación
   
   utter_sintomas_relacionados_testosterona:
-  - text: utter_sintomas_relacionados_testosterona
+  - text: El sintoma que me describes posiblemente este relacionado con la testosterona, una hormona esteroide producida en los testículos y es necesaria para desarrollar las características fenotípicas de un hombre y sus efectos androgenicos
   
   utter_sintomas_relacionados_melatonina:
-  - text: utter_sintomas_relacionados_melatonina
+  - text: El sintoma que me describes posiblemente este relacionado con la melatonina, una hormona que se encarga de la regulación del ciclo de sueño y vigilia, proceso conocido como ritmo circadiano
   
   utter_sintomas_relacionados_serotonina:
-  - text: utter_sintomas_relacionados_serotonina
+  - text: El sintoma que me describes posiblemente este relacionado con la serotonina, una hormona que actúa como inhibidor y sus efectos mayormente actúan en la regulación del humor y el estado afectivo de una persona, así como posiblemente la producción del sueño
   
   utter_sintomas_relacionados_dopamina:
-  - text: utter_sintomas_relacionados_dopamina
+  - text: El sintoma que me describes posiblemente este relacionado con la dopamina, una hormona que interviene y cumple sus funciones en la regulación de la conducta motora, así como de la emotividad y afectividad y en la comunicación neuroendocrina
   
   utter_sintomas_relacionados_endorfinas:
-  - text: utter_sintomas_relacionados_endorfinas
+  - text: Es bueno que sientas ese alivio, eso puede ser causado gracias a las endorfinas. Las endorfinas son sustancias que pueden contrarrestas o reparar los daños que pudiesen ser producidos por situaciones de estrés y se consideran como drogas naturales que producen en el cuerpo humano una sensación de bienestar
   
   utter_sintomas_relacionados_prolactina:
-  - text: utter_sintomas_relacionados_prolactina
+  - text: El sintoma que me describes posiblemente este relacionado con la prolactina, una hormona que se encarga principalmente del desarrollo de las mamas en las mujeres y la inducción de la lactancia en las mujeres
   
   utter_sintomas_relacionados_foliculo-estimulante:
-  - text: utter_sintomas_relacionados_foliculo-estimulante
+  - text: El sintoma que me describes posiblemente este relacionado con la hormona foliculo-estimulante, una hormona que está relacionada con la regulación de los procesos reproductivos como el desarrollo de los folículos ováricos, así como de la gametogénesis testicular
   
   utter_sintomas_relacionados_luteinizante:
-  - text: utter_sintomas_relacionados_luteinizante
+  - text: El sintoma que me describes posiblemente este relacionado con la hormona luteinizante (LH), una hormona que cumple con diferentes funciones dependiendo del genero de la persona. Por un lado, en las mujeres regula la menstruación y la ovulación, mientras que en los hombres ayuda a estimular la producción de testosterona para la producción de espermatozoides
   
   utter_sintomas_relacionados_colecistoquinina:
-  - text: utter_sintomas_relacionados_colecistoquinina
+  - text: El sintoma que me describes posiblemente este relacionado con la colecistoquinina, una hormona cuya función principal es estimular y producir la saciedad y estar implicada en situaciones de ayuno del ser humano, así como en otras especies
   
   utter_sintomas_relacionados_anti-Mulleriana:
-  - text: utter_sintomas_relacionados_anti-Mulleriana
+  - text: El sintoma que me describes posiblemente este relacionado con la hormona anti-Mulleriana, una hormona que se encarga de regular el reclutamiento de folículos así como el tamaño de los mismos y el agotamiento folicular, estas funciones cumplen un papel importante en la inducción de la ovulación
+
+  utter_tratamiento_hormonas: 
+  - text: Como modelo de procesamiento de lenguaje natural no estoy en la capacidad para recomendar medicamentos o remedios para tratar las hormonas. Te recomiendo si el sintoma persiste consultar a tu medico o a un profesional
 
 session_config:
   session_expiration_time: 60

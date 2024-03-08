@@ -2,6 +2,11 @@ version: "3.1"
 
 stories:
 
+- story: preguntar_version path
+  steps:
+  - intent: preguntar_version
+  - action: utter_preguntar_version
+
 - story: saludando path
   steps:
   - intent: saludar
@@ -45,6 +50,16 @@ stories:
   steps:
   - intent: sentir_soledad
   - action: utter_sentir_soledad
+
+- story: sentir_desanimo path
+  steps:
+  - intent: sentir_desanimo
+  - action: utter_sentir_desanimo
+  
+- story: sentir_ganas_rendirse path
+  steps:
+  - intent: sentir_ganas_rendirse
+  - action: utter_sentir_ganas_rendirse
 
 - story: sentir_ansiedad path
   steps:
@@ -280,31 +295,12 @@ stories:
     - intent: tratamiento_hormonas
     - action: utter_tratamiento_hormonas
 
-
-- story: sintomas_relacionados_estimulante_tiroides path
-  steps:
-    - intent: saludar
-    - action: utter_saludar
-    - intent: sintomas_relacionados_estimulante_tiroides
-    - action: utter_sintomas_relacionados_estimulante_tiroides
-    - intent: tratamiento_hormonas
-    - action: utter_tratamiento_hormonas
-
 - story: sintomas_relacionados_antidiuretica path
   steps:
     - intent: saludar
     - action: utter_saludar
     - intent: sintomas_relacionados_antidiuretica
     - action: utter_sintomas_relacionados_antidiuretica
-    - intent: tratamiento_hormonas
-    - action: utter_tratamiento_hormonas
-
-- story: sintomas_relacionados_oxitocina path
-  steps:
-    - intent: saludar
-    - action: utter_saludar
-    - intent: sintomas_relacionados_oxitocina
-    - action: utter_sintomas_relacionados_oxitocina
     - intent: tratamiento_hormonas
     - action: utter_tratamiento_hormonas
 
@@ -323,6 +319,123 @@ stories:
     - action: utter_saludar
     - intent: sintomas_relacionados_adrenalina
     - action: utter_sintomas_relacionados_adrenalina
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_noradrenalina path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_noradrenalina
+    - action: utter_sintomas_relacionados_noradrenalina
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_estrogenos path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_estrogenos
+    - action: utter_sintomas_relacionados_estrogenos
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_progesterona path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_progesterona
+    - action: utter_sintomas_relacionados_progesterona
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_testosterona path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_testosterona
+    - action: utter_sintomas_relacionados_testosterona
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_melatonina path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_melatonina
+    - action: utter_sintomas_relacionados_melatonina
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_serotonina path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_serotonina
+    - action: utter_sintomas_relacionados_serotonina
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_dopamina path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_dopamina
+    - action: utter_sintomas_relacionados_dopamina
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_endorfinas path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_endorfinas
+    - action: utter_sintomas_relacionados_endorfinas
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_prolactina path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_prolactina
+    - action: utter_sintomas_relacionados_prolactina
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_foliculo-estimulante path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_foliculo-estimulante
+    - action: utter_sintomas_relacionados_foliculo-estimulante
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_luteinizante path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_luteinizante
+    - action: utter_sintomas_relacionados_luteinizante
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_colecistoquinina path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_colecistoquinina
+    - action: utter_sintomas_relacionados_colecistoquinina
+    - intent: tratamiento_hormonas
+    - action: utter_tratamiento_hormonas
+
+- story: sintomas_relacionados_anti-Mulleriana path
+  steps:
+    - intent: saludar
+    - action: utter_saludar
+    - intent: sintomas_relacionados_anti-Mulleriana
+    - action: utter_sintomas_relacionados_anti-Mulleriana
     - intent: tratamiento_hormonas
     - action: utter_tratamiento_hormonas
 
