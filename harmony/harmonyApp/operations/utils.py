@@ -7,6 +7,8 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from cryptography.fernet import Fernet
 import spacy
+import unicodedata
+import string
 
 import requests
 
@@ -65,6 +67,12 @@ def get_inforeplicas(replica, db_connection):
     except:
         return None
 
+def eliminar_tildes(texto):
+    return ''.join((c for c in unicodedata.normalize('NFD', texto) if unicodedata.category(c) != 'Mn'))
+def eliminar_puntuacion(texto):
+    # Crea una tabla de traducción que mapea cada signo de puntuación a None
+    tabla = {ord(caracter): None for caracter in string.punctuation + '¿¡'}
+    return texto.translate(tabla)
 def enviar_correo_inicio_sesion(destinatario, nombre):
     # Configura los parámetros del servidor SMTP de Outlook
     smtp_server = 'smtp.office365.com'

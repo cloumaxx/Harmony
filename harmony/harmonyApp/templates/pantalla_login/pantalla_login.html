@@ -12,8 +12,14 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
     <style>
+        html, body {
+            height: 100%;
+        }
+
         #body {
             background-color: #F1F0EC;
+            max-width: 100%;
+            max-height: 100%;
         }
 
         #container_main {
@@ -105,8 +111,8 @@
             bottom: 0;
             left: 0;
             right: 5;
-            max-width: 70%;
-            height: 50%;
+            max-width: 60%;
+            height: auto;
         }
 
         a {
@@ -170,7 +176,7 @@
                         <div>
                             <label id="label_correo" name="correo" for="correo">Correo electrónico:</label>
                             <input type="email" class="form-control" id="id_correo" name="correo"
-                                aria-describedby="emailHelp" placeholder="user@hotmail.com">
+                                aria-describedby="emailHelp" placeholder="usuario@hotmail.com">
                         </div>
                         <div>
                             <label id="label_clave" name="clave" for="clave">Contraseña:</label>
@@ -201,9 +207,9 @@
                 </div>
             </div>
         </main>
-        <footer>
-
-            <img id="img" alt="Imagen" src="{% static '/images/Man_studies_online.png' %}">
+        <footer style="background-color: red;">
+ 
+            <img id="img" class="img-fluid" alt="Imagen" src="https://i.imgur.com/Oa50mTe.png">
         </footer>
 </body>
 
