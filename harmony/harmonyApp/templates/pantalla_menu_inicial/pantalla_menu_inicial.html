@@ -65,6 +65,7 @@
             direction: rtl;
             text-align: center;
         }
+
         .star {
             display: inline-block;
             font-size: 30px;
@@ -73,12 +74,15 @@
             transition: color 0.2s;
             margin: 5px;
         }
+
         .star:hover {
             color: #ffcc00;
         }
+
         .rating {
             display: inline-block;
         }
+
         .rating input {
             display: none;
         }
@@ -96,25 +100,30 @@
         .rating input:checked~label:before {
             color: yellow;
         }
-        #botones{
+
+        #botones {
             width: 350px;
-            
+
         }
-        #img_milly{
-            
-            border-radius: 50%; 
+
+        #img_milly {
+
+            border-radius: 50%;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         }
-        #nombMilly{
+
+        #nombMilly {
             margin-top: 30px;
             width: 50%;
             height: 60px;
             border-radius: 19px;
             background: linear-gradient(180deg, #596BF9 0%, #2E42FB 100%);
-            margin: 30 auto; text-align: center;
+            margin: 30 auto;
+            text-align: center;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         }
-        #txtMilly{
+
+        #txtMilly {
             color: #FFF;
             font-family: Inter;
             font-size: 35px;
@@ -125,7 +134,8 @@
             padding-top: 10px;
             cursor: pointer;
         }
-        #txt_largo{
+
+        #txt_largo {
             color: #000;
 
             text-align: center;
@@ -134,6 +144,32 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+        }
+        #txt_ver_temas{
+            fill: rgb(0, 68, 255);
+
+        }
+        #txt_ver_temas:hover{
+            cursor: pointer;
+        }
+        #cuadroTexto {
+            display: none;
+            /* Por defecto, el cuadro de texto está oculto */
+            position: absolute;
+            /* Para posicionar el cuadro de texto */
+            background-color: #f9f9f9;
+            /* Color de fondo */
+            padding: 10px;
+            /* Espacio interno del cuadro de texto */
+            border: 1px solid #ccc;
+            /* Borde del cuadro de texto */
+        
+        }
+
+        #txt_ver_temas:hover+#cuadroTexto {
+            cursor: pointer;
+            display: block;
+            /* Mostrar el cuadro de texto cuando se pasa el ratón sobre el párrafo */
         }
     </style>
     <script>
@@ -164,20 +200,23 @@
                 <div class="row">
                     <div class="col-md-6 text-center">
                         <div style="text-align: center;">
-                            <img  id="img_milly"
-                                src="{% static '/images/mily.png'  %}" height="400">
+                            <img id="img_milly" src="{% static '/images/mily.png'  %}" height="400">
                             <br>
                             <div id="nombMilly">
                                 <p id="txtMilly">Milly</p>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="col-md-6 text-center">
                         <div style="margin-top: 10%;">
                             <br><br>
-                            <p id="txt_largo">Hola, soy Mily, tu chatbot de confianza. Estoy aqui para que
-                                hables conmigo todo lo que necesites </p>
+                            <p id="txt_largo">Hola, soy Milly, tu chatbot de confianza. Estoy aqui para que
+                                hables conmigo</p>
+                            <p id="txt_ver_temas"><u>Los temas que puedo hablar son:</u></p>
+                            <div id="cuadroTexto">Este es un cuadro de texto que se muestra al pasar el ratón sobre el
+                                párrafo.</div>
+
                             <br>
                             <div id="cont_btn" style="display: flex; justify-content: center; align-items: center;">
                                 <a href="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=0 %}">
@@ -212,51 +251,52 @@
                                     </button>
                                 </a>
                             </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-                
-            </div>
-            <!-- Ventana Modal Calificar app -->
-            <div class="modal fade" id="modalCalificarApp{{ usuario_id }}">
-                <div class="modal-dialog" style="height: auto;">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Calificar la app</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-
-                            <form method="POST" action="{% url 'calificarApp' usuario_id=usuario_id  %}">
-                                {% csrf_token %}
-                                <fieldset class="rating">
-                                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
-                                </fieldset>
-
-                                <button type="submit">Calificar</button>
-                            </form>
-
-
 
                         </div>
                     </div>
                 </div>
             </div>
 
-        </main>
-        <footer>
-            <!-- Tu código del pie de página aquí -->
-        </footer>
+
+    </div>
+    <!-- Ventana Modal Calificar app -->
+    <div class="modal fade" id="modalCalificarApp{{ usuario_id }}">
+        <div class="modal-dialog" style="height: auto;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Calificar la app</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" action="{% url 'calificarApp' usuario_id=usuario_id  %}">
+                        {% csrf_token %}
+                        <fieldset class="rating">
+                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                        </fieldset>
+
+                        <button type="submit">Calificar</button>
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+    <footer>
+        <!-- Tu código del pie de página aquí -->
+    </footer>
     </div>
 </body>
 <script>
     AOS.init();
-  </script>
+</script>
+
 </html>

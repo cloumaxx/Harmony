@@ -5,7 +5,7 @@ from django.shortcuts import  redirect, render
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import  cifrarClaves, comunicacionMillyApi, decifrarClaves, detectarStopWords, enviar_correo_inicio_sesion, get_comentariosVer
+from harmonyApp.operations.utils import  cifrarClaves, comunicacionMillyApi, decifrarClaves, detectarStopWords, eliminar_tildes, enviar_correo_inicio_sesion, get_comentariosVer
 from harmonyProject.database import MongoDBConnection
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -315,9 +315,9 @@ def pantalla_login(request):
 
     if request.method == 'POST':
         form = LoginForm(request.POST)
-        
+        logout_view(request)
+
         if form.is_valid():
-            logout_view(request)
             correo = form.cleaned_data['correo']
             clave = form.cleaned_data['clave']
             credenciales = db_connection.db.Credenciales
@@ -408,14 +408,15 @@ def pantalla_registro(request):
             }
 
             db_connection.db.Credenciales.insert_one(usuario_cred)
-            enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.apellido)
-            return redirect('pantalla_login')    
+            #enviar_correo_inicio_sesion(correo,  usuario.nombre + ' ' + usuario.apellido)
+            return render(request,"pantalla_inicial/pantalla_incial.html")
         else:
             error_message = "Correo ya existe"
             context = {'error_message': error_message}
             return render(request, 'pantalla_registro/pantalla_registro.html', context)
     else:
         return render(request, 'pantalla_registro/pantalla_registro.html')
+    
 @login_required
 def pantalla_perfil_usuario(request, usuario_id):
     usuario_id = ObjectId(str(request.session['id_user']))
@@ -636,7 +637,8 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
             else:
                 pregunta = pregunta.lower()
                 pregunta = pregunta.replace("  ", "")
-
+                pregunta = eliminar_tildes(pregunta)
+                
                 try:
                     
 
