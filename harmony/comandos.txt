@@ -13,7 +13,7 @@ Scripts\activate
 ubicar carpeta rasaBot:
 para entrenar el modelo : rasa train
 
-para correr el modelo : rasa shell --port 5006
+para correr el modelo : rasa shell --port 5007
 para correr el codigo : python manage.py runserver  5006 
 
 ///////////////////////////////
@@ -26,3 +26,48 @@ instalar las librerias
 pip install -r requirements.txt
 
 
+/////////////////////
+////// Docker //////
+////////////////////
+
+||| Para subir a la nube: 
+construir imagen: docker build --rm -t tesis_web_harmony .
+
+crear el Registro de contenedores :
+az acr create --resource-group group-harmony --name harmonyregicontents --sku Basic --admin-enabled true
+
+obtener las credenciales del grupo: 
+az acr credential show --resource-group group-harmony --name harmonyregicontents
+docker build --rm -t tesis_web_harmony .
+ingresar al contendor:
+
+etiquetar:
+docker tag tesis_web_harmony:latest harmonyregicontents.azurecr.io/tesis_web_harmony:latest
+
+subir la imagen:
+docker push harmonyregicontents.azurecr.io/tesis_web_harmony:latest
+
+reiniciar el servidor
+
+
+
+
+////////////////////////
+////// Azure //////
+//////////////////////
+docker build --rm -t rasa_img .
+docker run -p 5000:5000 rasa_img
+
+docker run -p 5000:5000 tesis_web_harmony
+
+
+docker tag rasa_img:latest harmonyregicontents.azurecr.io/rasa_img:latest
+docker push harmonyregicontents.azurecr.io/rasa_img:latest
+
+
+////////////////////////////////////////////////////////
+////// Para ver el funcionamiento del modelo rasa //////
+////////////////////////////////////////////////////////
+
+rasa test --model models/your_model --stories data/test_stories.md > evaluation_metrics.txt
+rasa test --model models/20231220-170647-rosy-moscato.tar.gz --stories data/test_stories.md > evaluation_metrics.txt
