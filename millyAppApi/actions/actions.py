@@ -65,12 +65,3 @@ def traducir_mensaje_salida(texto_a_traducir, idioma_origen, idioma_destino):
     return translator.translate(texto_a_traducir, src=idioma_origen, dest=idioma_destino).text
 
 
-# Ejemplos de uso:
-"""texto_ejemplo = "This is an example sentence."
-stop_words_filtradas = detectar_stop_words(texto_ejemplo)
-texto_traducido = traducir_a_espanol(texto_ejemplo)
-texto_traducido_destino = traducir_mensaje_salida(texto_ejemplo, 'en', 'es')
-
-print("Stop Words Filtradas:", stop_words_filtradas)
-print("Texto Traducido a Español:", texto_traducido)
-print("Texto Traducido al Idioma Destino:", texto_traducido_destino)"""
