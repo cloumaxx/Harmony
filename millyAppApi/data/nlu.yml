@@ -217,17 +217,12 @@ nlu:
   examples: |
     - hola
     - buenos dias
-    - buenos dias
     - buenas tardes
     - que tal
-    - que tal
     - como estas
-    - como estas
-    - saludos
     - hey
     - buenas noches
     - como va
-    - hola
     - buen dia
     - buen dia
     - que pasa
@@ -336,7 +331,23 @@ nlu:
     - como estas pasando el dia
     - hola amiguitos queridos
     - hola a todos como han estado
-  
+    - saludos
+    - buen dia
+    - good afternoon
+    - sup
+    - whats up
+    - saludos cordiales
+    - saludos y bendiciones
+    - saludos desde lejos
+    - saludos estimado
+    - buenas y santas
+    - saludos mis amigos
+    - saludos a todos jovenes
+    - saludos queridos
+    - saludos mis queridos amigos
+    - saludos estimados todos
+    - saludos a todos como han estado
+
 - intent: despedirse
   examples: |
     - see you around
