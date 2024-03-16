@@ -689,6 +689,7 @@ nlu:
     - experimento una profunda conexion con mi ser interior y la sabiduria divina
     - mi corazon esta lleno de amor y compasion por todos los seres vivos
     - estoy en sintonia con el ritmo y el ritmo del universo
+
 - intent: sentir_mal
   examples: |
     - me siento muy triste en este momento
@@ -3570,6 +3571,204 @@ nlu:
     - tienes informacion sobre la definicion medica de estres que pueda ser util
     - podrias proporcionar una explicacion clara y detallada de lo que es el estres
     - podrias darme una definicion clara y facil de entender de estres
+    - cual es la esencia del estres
+    - me podrias esclarecer que significa el estres
+    - podrias darme una definicion precisa de estres
+    - tienes alguna nocion sobre lo que implica el estres
+    - podrias aclararme que se entiende por estres
+    - que representa el estres en tus propias palabras
+    - necesito comprender mejor el concepto de estres puedes ayudarme
+    - podrias proporcionar una descripcion concisa de lo que es el estres
+    - cual es tu comprension del termino estres
+    - estoy buscando una definicion clara de estres puedes proporcionarla
+    - podrias explicarme en que consiste exactamente el estres
+    - me podrias decir que significa exactamente la palabra estres
+    - estoy interesado en entender el estres podrias darme una definicion basica
+    - cual es tu interpretacion de la palabra estres
+    - podrias esbozar una definicion de estres para mi
+    - podrias proporcionar la definicion tecnica de estres
+    - estoy un poco confundido sobre lo que significa el estres puedes aclararmelo
+    - tienes informacion precisa sobre el significado de estres
+    - podrias resumir el concepto de estres de manera sencilla
+    - podrias ofrecer una vision general de lo que se entiende por estres
+    - cual es tu comprension de la palabra estres en terminos simples
+    - estoy buscando una definicion clara y concisa de estres puedes ayudarme
+    - podrias darme una idea de lo que se considera estres
+    - podrias proporcionar una descripcion detallada del termino estres
+    - que significa para ti la palabra estres
+    - tienes alguna definicion precisa de estres que puedas compartir
+    - podrias explicar el concepto de estres de una manera facil de entender
+    - cual es tu interpretacion personal de la palabra estres
+    - estoy interesado en obtener una explicacion clara sobre el estres puedes proporcionarla
+    - me podrias decir que implica exactamente el termino estres
+    - cual es tu comprension de la palabra estres en el contexto humano
+    - podrias darme una definicion completa de estres
+    - podrias ofrecer una definicion clara y precisa de estres
+    - estoy tratando de entender el estres puedes proporcionar alguna informacion
+    - tienes algun conocimiento especifico sobre la definicion de estres
+    - podrias darme una idea general de lo que significa estres
+    - cual es tu percepcion del termino estres
+    - podrias proporcionar una explicacion concisa de lo que es el estres
+    - me podrias decir cual es tu comprension del concepto de estres
+    - estoy buscando una definicion precisa de estres puedes ayudarme con eso
+    - podrias describir de manera clara y simple el significado de estres
+    - cual es tu definicion personal de la palabra estres
+    - tienes algun conocimiento sobre la definicion medica de estres
+    - me podrias proporcionar informacion sobre la definicion de estres
+    - cual es tu comprension del termino estres en la vida cotidiana
+    - podrias darme una definicion breve pero completa de estres
+    - que sabes sobre el concepto de estres
+    - me puedes dar una definicion detallada y precisa de estres
+    - cual es tu interpretacion del estres en el contexto psicologico
+    - podrias ofrecer una definicion tecnica de estres
+    - estoy buscando una definicion clara y facil de entender de estres puedes ayudarme
+    - me podrias explicar que significa el termino estres
+    - tienes informacion sobre la definicion de estres que puedas compartir
+    - podrias proporcionar una descripcion completa de lo que implica el estres
+    - cual es tu percepcion del termino estres en la vida cotidiana
+    - podrias darme una definicion basica y general de estres
+    - tienes alguna definicion especifica de estres que puedas compartir
+    - estoy interesado en conocer la definicion precisa de estres puedes ayudarme
+    - cual es tu interpretacion personal del concepto de estres
+    - podrias darme una definicion tecnica y especializada de estres
+    - tienes informacion sobre la definicion medica de estres que pueda ser util
+    - podrias proporcionar una explicacion clara y detallada de lo que es el estres
+    - podrias darme una definicion clara y facil de entender de estres
+    - que significa para ti la palabra estres en el contexto diario
+    - podrias darme una descripcion clara y detallada de lo que es el estres
+    - cual es tu interpretacion del termino estres en el ambito psicologico
+    - podrias proporcionar una definicion completa y precisa de estres
+    - estoy buscando informacion sobre la definicion de estres puedes ayudarme
+    - podrias explicarme en que consiste el estres de manera simple
+    - tienes conocimientos sobre la definicion medica de estres que puedas compartir
+    - podrias darme una definicion clara y facil de entender de estres
+    - cual es tu comprension del estres en terminos fisiologicos
+    - podrias ofrecer una definicion tecnica y cientifica de lo que es el estres
+    - me podrias dar una explicacion detallada de lo que implica el estres
+    - que sabes sobre el concepto de estres en el contexto laboral
+    - podrias proporcionar una descripcion completa y precisa del estres
+    - cual es tu percepcion del termino estres en la vida cotidiana
+    - podrias darme una definicion basica y general de estres
+    - tienes alguna definicion especifica de estres que puedas compartir
+    - estoy interesado en conocer la definicion precisa de estres puedes ayudarme
+    - cual es tu interpretacion personal del concepto de estres
+    - podrias darme una definicion tecnica y especializada de estres
+    - tienes informacion sobre la definicion medica de estres que pueda ser util
+    - podrias proporcionar una explicacion clara y detallada de lo que es el estres
+    - podrias darme una definicion clara y facil de entender de estres
+    - que significa para ti la palabra estres en el contexto diario
+    - podrias darme una descripcion clara y detallada de lo que es el estres
+    - cual es tu interpretacion del termino estres en el ambito psicologico
+    - podrias proporcionar una definicion completa y precisa de estres
+    - estoy buscando informacion sobre la definicion de estres puedes ayudarme
+    - podrias explicarme en que consiste el estres de manera simple
+    - tienes conocimientos sobre la definicion medica de estres que puedas compartir
+    - podrias darme una definicion clara y facil de entender de estres
+    - cual es tu comprension del estres en terminos fisiologicos
+    - podrias ofrecer una definicion tecnica y cientifica de lo que es el estres
+    - me podrias dar una explicacion detallada de lo que implica el estres
+    - que sabes sobre el concepto de estres en el contexto laboral
+    - podrias proporcionar una descripcion completa y precisa del estres
+    - cual es tu percepcion del termino estres en la vida cotidiana
+    - podrias darme una definicion basica y general de estres
+    - tienes alguna definicion especifica de estres que puedas compartir
+    - estoy interesado en conocer la definicion precisa de estres puedes ayudarme
+    - cual es tu interpretacion personal del concepto de estres
+    - podrias darme una definicion tecnica y especializada de estres
+    - tienes informacion sobre la definicion medica de estres que pueda ser util
+    - podrias proporcionar una explicacion clara y detallada de lo que es el estres
+    - podrias darme una definicion clara y facil de entender de estres
+    - que significa para ti la palabra estres en el contexto diario
+    - podrias darme una descripcion clara y detallada de lo que es el estres
+    - cual es tu interpretacion del termino estres en el ambito psicologico
+    - podrias proporcionar una definicion completa y precisa de estres
+    - estoy buscando informacion sobre la definicion de estres puedes ayudarme
+    - podrias explicarme en que consiste el estres de manera simple
+    - tienes conocimientos sobre la definicion medica de estres que puedas compartir
+    - podrias darme una definicion clara y facil de entender de estres
+    - cual es tu comprension del estres en terminos fisiologicos
+    - podrias ofrecer una definicion tecnica y cientifica de lo que es el estres
+    - me podrias dar una explicacion detallada de lo que implica el estres
+    - que sabes sobre el concepto de estres en el contexto laboral
+    - podrias proporcionar una descripcion completa y precisa del estres
+    - cual es tu percepcion del termino estres en la vida cotidiana
+    - podrias darme una definicion basica y general de estres
+    - tienes alguna definicion especifica de estres que puedas compartir
+    - estoy interesado en conocer la definicion precisa de estres puedes ayudarme
+    - cual es tu interpretacion personal del concepto de estres
+    - podrias darme una definicion tecnica y especializada de estres
+    - tienes informacion sobre la definicion medica de estres que pueda ser util
+    - podrias proporcionar una explicacion clara y detallada de lo que es el estres
+    - podrias darme una definicion clara y facil de entender de estres
+    - que significa para ti la palabra estres en el contexto diario
+    - podrias darme una descripcion clara y detallada de lo que es el estres
+    - cual es tu interpretacion del termino estres en el ambito psicologico
+    - podrias proporcionar una definicion completa y precisa de estres
+    - estoy buscando informacion sobre la definicion de estres puedes ayudarme
+    - podrias explicarme en que consiste el estres de manera simple
+    - tienes conocimientos sobre la definicion medica de estres que puedas compartir
+    - podrias darme una definicion clara y facil de entender de estres
+    - cual es tu comprension del estres en terminos fisiologicos
+    - podrias ofrecer una definicion tecnica y cientifica de lo que es el estres
+    - me podrias dar una explicacion detallada de lo que implica el estres
+    - que sabes sobre el concepto de estres en el contexto laboral
+    - podrias proporcionar una descripcion completa y precisa del estres
+    - cual es tu percepcion del termino estres en la vida cotidiana
+    - podrias darme una definicion basica y general de estres
+    - tienes alguna definicion especifica de estres que puedas compartir
+    - estoy interesado en conocer la definicion precisa de estres puedes ayudarme
+    - cual es tu interpretacion personal del concepto de estres
+    - podrias darme una definicion tecnica y especializada de estres
+    - tienes informacion sobre la definicion medica de estres que pueda ser util
+    - podrias proporcionar una explicacion clara y detallada de lo que es el estres
+    - podrias darme una definicion clara y facil de entender de estres
+    - que significa para ti la palabra estres en el contexto diario
+    - podrias darme una descripcion clara y detallada de lo que es el estres
+    - cual es tu interpretacion del termino estres en el ambito psicologico
+    - podrias proporcionar una definicion completa y precisa de estres
+    - estoy buscando informacion sobre la definicion de estres puedes ayudarme
+    - podrias explicarme en que consiste el estres de manera simple
+    - tienes conocimientos sobre la definicion medica de estres que puedas compartir
+    - podrias darme una definicion clara y facil de entender de estres
+    - cual es tu comprension del estres en terminos fisiologicos
+    - podrias ofrecer una definicion tecnica y cientifica de lo que es el estres
+    - me podrias dar una explicacion detallada de lo que implica el estres
+    - que sabes sobre el concepto de estres en el contexto laboral
+    - podrias proporcionar una descripcion completa y precisa del estres
+    - cual es tu percepcion del termino estres en la vida cotidiana
+    - podrias darme una definicion basica y general de estres
+    - tienes alguna definicion especifica de estres que puedas compartir
+    - estoy interesado en conocer la definicion precisa de estres puedes ayudarme
+    - cual es tu interpretacion personal del concepto de estres
+    - podrias darme una definicion tecnica y especializada de estres
+    - tienes informacion sobre la definicion medica de estres que pueda ser util
+    - podrias proporcionar una explicacion clara y detallada de lo que es el estres
+    - podrias darme una definicion clara y facil de entender de estres
+    - que significa para ti la palabra estres en el contexto diario
+    - podrias darme una descripcion clara y detallada de lo que es el estres
+    - cual es tu interpretacion del termino estres en el ambito psicologico
+    - podrias proporcionar una definicion completa y precisa de estres
+    - estoy buscando informacion sobre la definicion de estres puedes ayudarme
+    - podrias explicarme en que consiste el estres de manera simple
+    - tienes conocimientos sobre la definicion medica de estres que puedas compartir
+    - podrias darme una definicion clara y facil de entender de estres
+    - cual es tu comprension del estres en terminos fisiologicos
+    - podrias ofrecer una definicion tecnica y cientifica de lo que es el estres
+    - me podrias dar una explicacion detallada de lo que implica el estres
+    - que sabes sobre el concepto de estres en el contexto laboral
+    - podrias proporcionar una descripcion completa y precisa del estres
+    - cual es tu percepcion del termino estres en la vida cotidiana
+    - podrias darme una definicion basica y general de estres
+    - tienes alguna definicion especifica de estres que puedas compartir
+    - estoy interesado en conocer la definicion precisa de estres puedes ayudarme
+    - cual es tu interpretacion personal del concepto de estres
+    - podrias darme una definicion tecnica y especializada de estres
+    - tienes informacion sobre la definicion medica de estres que pueda ser util
+    - podrias proporcionar una explicacion clara y detallada de lo que es el estres
+    - podrias darme una definicion clara y facil de entender de estres
+    - que significa para ti la palabra estres en el contexto diario
+    - podrias darme una descripcion clara y detallada de lo que es el estres
+    - cual es tu interpretacion del termino estres en el ambito psicologico
 
 - intent: sentir_estres
   examples: |
@@ -3730,6 +3929,306 @@ nlu:
     - estoy enfrentando una situacion estresante
     - mi energia esta siendo drenada por el estres
     - mi capacidad para enfrentar el estres esta llegando a su limite
+    - me siento agobiado por la presion
+    - estoy bajo una carga emocional intensa
+    - mi mente esta abarrotada de preocupaciones
+    - siento que estoy perdiendo el control
+    - estoy en un estado de ansiedad constante
+    - mi tolerancia al estres esta siendo desafiada
+    - me siento atrapado en un ciclo de preocupacion
+    - estoy experimentando una sobrecarga emocional
+    - mi capacidad para concentrarme esta gravemente afectada
+    - me siento como si estuviera en una montaña rusa emocional
+    - estoy en una lucha constante contra el estres
+    - mi energia esta siendo agotada por la tension
+    - me siento como si estuviera caminando sobre una cuerda floja emocional
+    - estoy sintiendo una presion insoportable en mi pecho
+    - mi mente esta inundada de pensamientos negativos
+    - siento que estoy perdiendo la calma
+    - estoy en un estado de alerta constante
+    - mi capacidad para relajarme esta seriamente comprometida
+    - me encuentro en una batalla interna
+    - estoy en una situacion abrumadora
+    - mi capacidad para tomar decisiones esta afectada por el estres
+    - me siento como si estuviera en un campo de minas emocional
+    - estoy luchando contra una tormenta interna
+    - mi estado de animo esta siendo afectado por el estres
+    - me siento como si estuviera atrapado en un laberinto de preocupaciones
+    - estoy experimentando una carga emocional abrumadora
+    - mi cuerpo esta tenso y rigido debido al estres
+    - siento que estoy en una batalla constante con mi mente
+    - estoy en un estado de agitacion constante
+    - mi capacidad para manejar las situaciones esta siendo desafiada
+    - me siento como si estuviera en una montaña rusa de emociones
+    - estoy en un constante estado de inquietud
+    - mi paz interior esta siendo perturbada
+    - estoy luchando contra una tormenta de pensamientos
+    - mi mente esta llena de nubarrones negros
+    - siento que estoy perdiendo el equilibrio emocional
+    - estoy en un campo de batalla emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un barco a la deriva en una tormenta
+    - estoy en una espiral descendente de estres
+    - mi cuerpo esta tenso y dolorido debido a la tension
+    - siento que estoy en una carrera de obstaculos emocionales
+    - estoy en un estado de constante agotamiento emocional
+    - mi mente esta abrumada por la presion
+    - estoy en un estado de confusion mental
+    - mi capacidad para disfrutar de la vida esta gravemente comprometida
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy nadando en un mar de preocupaciones
+    - mi estado de animo esta en un constante vaiven
+    - siento que estoy en un callejon sin salida emocional
+    - estoy luchando contra una marea de estres
+    - mi cuerpo esta mostrando signos fisicos de estres
+    - me siento como si estuviera en una carrera contra el tiempo
+    - estoy en un estado de desgaste emocional
+    - mi mente esta en un estado de confusion constante
+    - siento que estoy en un campo de batalla mental
+    - estoy en una constante lucha interna
+    - mi capacidad para enfrentar desafios esta disminuyendo
+    - me siento como si estuviera en un campo minado emocional
+    - estoy en un estado de turbulencia emocional
+    - mi mente esta en una tormenta de preocupaciones
+    - siento que estoy en una montaña rusa de emociones negativas
+    - estoy en una batalla constante con mis propios pensamientos
+    - mi cuerpo esta sufriendo las consecuencias del estres
+    - estoy en un estado de estres cronico
+    - mi capacidad para descansar esta gravemente comprometida
+    - me siento como si estuviera en una batalla contra el tiempo
+    - estoy en un constante estado de tension muscular
+    - mi mente esta en un torbellino de preocupaciones
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el estres
+    - mi capacidad para enfrentar la vida diaria esta disminuyendo
+    - me siento como si estuviera en un laberinto emocional
+    - estoy en un estado de constante agotamiento
+    - mi cuerpo esta mostrando signos evidentes de estres
+    - siento que estoy en una montaña rusa emocional sin fin
+    - estoy en una lucha constante contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
+    - siento que estoy en una batalla constante conmigo mismo
+    - estoy en una lucha constante contra mis propios pensamientos
+    - mi capacidad para manejar el estres esta disminuyendo
+    - me siento como si estuviera en una batalla sin fin
+    - estoy en un constante estado de preocupacion
+    - mi cuerpo esta en un estado de alerta constante
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
+    - siento que estoy en una batalla constante conmigo mismo
+    - estoy en una lucha constante contra mis propios pensamientos
+    - mi capacidad para manejar el estres esta disminuyendo
+    - me siento como si estuviera en una batalla sin fin
+    - estoy en un constante estado de preocupacion
+    - mi cuerpo esta en un estado de alerta constante
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
+    - siento que estoy en una batalla constante conmigo mismo
+    - estoy en una lucha constante contra mis propios pensamientos
+    - mi capacidad para manejar el estres esta disminuyendo
+    - me siento como si estuviera en una batalla sin fin
+    - estoy en un constante estado de preocupacion
+    - mi cuerpo esta en un estado de alerta constante
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
+    - siento que estoy en una batalla constante conmigo mismo
+    - estoy en una lucha constante contra mis propios pensamientos
+    - mi capacidad para manejar el estres esta disminuyendo
+    - me siento como si estuviera en una batalla sin fin
+    - estoy en un constante estado de preocupacion
+    - mi cuerpo esta en un estado de alerta constante
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
+    - siento que estoy en una batalla constante conmigo mismo
+    - estoy en una lucha constante contra mis propios pensamientos
+    - mi capacidad para manejar el estres esta disminuyendo
+    - me siento como si estuviera en una batalla sin fin
+    - estoy en un constante estado de preocupacion
+    - mi cuerpo esta en un estado de alerta constante
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
+    - siento que estoy en una batalla constante conmigo mismo
+    - estoy en una lucha constante contra mis propios pensamientos
+    - mi capacidad para manejar el estres esta disminuyendo
+    - me siento como si estuviera en una batalla sin fin
+    - estoy en un constante estado de preocupacion
+    - mi cuerpo esta en un estado de alerta constante
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
+    - siento que estoy en una batalla constante conmigo mismo
+    - estoy en una lucha constante contra mis propios pensamientos
+    - mi capacidad para manejar el estres esta disminuyendo
+    - me siento como si estuviera en una batalla sin fin
+    - estoy en un constante estado de preocupacion
+    - mi cuerpo esta en un estado de alerta constante
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
+    - siento que estoy en una batalla constante conmigo mismo
+    - estoy en una lucha constante contra mis propios pensamientos
+    - mi capacidad para manejar el estres esta disminuyendo
+    - me siento como si estuviera en una batalla sin fin
+    - estoy en un constante estado de preocupacion
+    - mi cuerpo esta en un estado de alerta constante
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
+    - siento que estoy en una batalla constante conmigo mismo
+    - estoy en una lucha constante contra mis propios pensamientos
+    - mi capacidad para manejar el estres esta disminuyendo
+    - me siento como si estuviera en una batalla sin fin
+    - estoy en un constante estado de preocupacion
+    - mi cuerpo esta en un estado de alerta constante
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
+    - siento que estoy en una batalla constante conmigo mismo
+    - estoy en una lucha constante contra mis propios pensamientos
+    - mi capacidad para manejar el estres esta disminuyendo
+    - me siento como si estuviera en una batalla sin fin
+    - estoy en un constante estado de preocupacion
+    - mi cuerpo esta en un estado de alerta constante
+    - siento que estoy en un campo de batalla emocional
+    - estoy en una constante lucha contra el agotamiento emocional
+    - mi capacidad para encontrar soluciones esta disminuyendo
+    - me siento como si estuviera en un campo de batalla interno
+    - estoy en una batalla constante contra la ansiedad
+    - mi mente esta en un estado de caos constante
+    - siento que estoy en una carrera contra el tiempo emocional
+    - estoy en un constante estado de tension emocional
+    - mi capacidad para mantener la calma esta disminuyendo
+    - me siento como si estuviera en una montaña rusa de estres
+    - estoy en una lucha constante contra la presion
+    - mi cuerpo esta en un estado de agotamiento fisico y mental
+    - siento que estoy en un callejon sin salida emocional
+    - estoy en un constante estado de lucha y resistencia
+    - mi mente esta en un estado de agitacion constante
 
 - intent: origen_estres
   examples: |
@@ -3886,6 +4385,206 @@ nlu:
     - crees que la falta de tiempo para actividades recreativas puede ser la causa de mi estres
     - te preocupa como las expectativas externas afectan mi estado de animo
     - consideras que la falta de tiempo para cuidar de ti mismo contribuye a mi nivel de estres
+    - cual es la fuente principal de tu malestar emocional
+    - de donde crees que proviene tu sensacion de tension
+    - que eventos especificos desencadenan tu estres
+    - por que te sientes estresado ultimamente
+    - cual es la causa de tu agotamiento emocional
+    - de donde se origina tu estres diario
+    - que genera tu preocupacion constante
+    - por que sientes presion todos los dias
+    - cual es la razon de tu malestar emocional actual
+    - de donde procede tu carga emocional
+    - que desencadena tu sentir estresado
+    - por que te sientes tenso ultimamente
+    - cual es la causa de tu agotamiento emocional constante
+    - de donde proviene tu estres a lo largo del tiempo
+    - que contribuye a tu sensacion de agobio
+    - por que experimentas estres cotidiano
+    - cual es la fuente de tu tension constante
+    - de donde proviene tu sentir estresado diario
+    - que elementos componen tu estres actual
+    - por que sientes presion de manera persistente
+    - cual es la causa de tus preocupaciones persistentes
+    - de donde procede tu sensacion de agotamiento constante
+    - que genera tu estres diariamente
+    - por que experimentas tension constantemente
+    - cual es la razon de tu agotamiento emocional persistente
+    - de donde proviene tu estres persistente
+    - que genera tu sensacion de agotamiento persistente
+    - por que experimentas estres de manera continua
+    - cual es la fuente de tu tension persistente
+    - de donde viene tu sentir estresado de manera persistente
+    - que elementos componen tu estres persistente
+    - por que sientes presion de manera continua
+    - cual es la causa de tus preocupaciones persistentes
+    - de donde procede tu sensacion de agotamiento constante
+    - que desencadena tu estres de manera persistente
+    - por que experimentas tension de manera persistente
+    - que contribuye a tu sensacion de agobio persistente
+    - cual es la razon de tu agotamiento emocional persistente
+    - de donde proviene tu estres persistente
+    - que genera tu sensacion de agotamiento persistente
+    - por que experimentas estres de manera persistente
+    - de donde viene tu sentir estresado de manera persistente
+    - que elementos componen tu estres persistente
+    - de donde surge tu sentir estresado
+    - como surge tu sentir estresado
+    - de donde sale tu sentir estresado
+    - como sale tu sentir estresado
+    - como se manifiesta tu sentir estresado
+    - de donde puede salir tu sentir estresado
+    - puedes identificar la raiz de tu estres
+    - puedes señalar el origen de tus niveles de estres
+    - de donde crees que proviene tu estres actualmente
+    - tienes claridad sobre la genesis de tu estres
+    - que eventos o situaciones dan inicio a tu estres
+    - puedes rastrear el comienzo de tu sentir estresado
+    - de donde emana la presion que sientes
+    - puedes ubicar el punto de origen de tu estres cotidiano
+    - cuales son los antecedentes de tu nivel de estres actual
+    - cual es la base de tu sensacion de agobio
+    - de que manera se construye tu nivel de estres
+    - puedes identificar el punto de partida de tu estres emocional
+    - cuales son los origenes fundamentales de tu estres
+    - como se origina la presion en tu vida cotidiana
+    - cual es la genesis de tu carga emocional
+    - de donde provienen las tensiones que experimentas
+    - puedes rastrear el origen de tus preocupaciones
+    - cual es la raiz de tu sensacion de agotamiento emocional
+    - cuales son los elementos que componen tu estres
+    - puedes señalar el inicio de tu experiencia de estres
+    - como se origina la presion que experimentas
+    - puedes identificar el punto de inicio de tu estres emocional
+    - de que manera se inicia la carga emocional que llevas
+    - de donde proceden las ansiedades que experimentas
+    - puedes rastrear el origen de tu sensacion de agotamiento
+    - cual es la genesis de tu carga emocional actual
+    - puedes identificar algun cambio en tu entorno que haya desencadenado tu estres
+    - crees que eventos pasados podrian estar influyendo en tu nivel actual de estres
+    - la falta de apoyo emocional podria ser una razon para tu nivel de estres
+    - consideras que la falta de limites en tu vida laboral contribuye a tu estres
+    - sientes que la falta de equilibrio entre trabajo y vida personal afecta tu bienestar
+    - crees que la falta de tiempo para actividades recreativas puede ser la causa de tu estres
+    - te preocupa como las expectativas externas afectan tu estado de animo
+    - consideras que la falta de tiempo para cuidar de ti mismo contribuye a tu nivel de estres
+    - cual es la causa principal de tu sentir estresado
+    - que factores contribuyen a tu sensacion de tension
+    - puedes identificar las circunstancias que desencadenan tu estres
+    - por que experimentas una sensacion de estres ultimamente
+    - cual es el motivo de tu cansancio emocional
+    - de donde surge tu sensacion de estres diario
+    - que te preocupa constantemente
+    - por que sientes presion cada dia
+    - cual es la razon de tu malestar emocional actualmente
+    - de donde proviene la carga emocional que llevas
+    - que desencadena tu sentir estresado
+    - por que te sientes tenso ultimamente
+    - cual es la causa principal de tu agotamiento emocional constante
+    - de donde procede tu estres a lo largo del tiempo
+    - que contribuye a tu sensacion de agobio
+    - por que experimentas estres en tu vida cotidiana
+    - cual es la fuente de tu tension constante
+    - de donde emana tu sentir estresado diariamente
+    - que elementos componen tu estres actualmente
+    - por que sientes presion de manera persistente
+    - cual es la razon de tus preocupaciones persistentes
+    - de donde procede tu sensacion de agotamiento constante
+    - que desencadena tu estres de manera persistente
+    - por que experimentas tension de forma continua
+    - que contribuye a tu sensacion de agobio persistente
+    - cual es la razon de tu agotamiento emocional persistente
+    - de donde proviene tu estres persistente
+    - que genera tu sensacion de agotamiento persistente
+    - por que experimentas estres de forma continua
+    - de donde surge tu sentir estresado de forma persistente
+    - que elementos componen tu estres persistente
+    - por que sientes presion de manera continua
+    - cual es la causa de tus preocupaciones persistentes
+    - de donde procede tu sensacion de agotamiento constante
+    - que desencadena tu estres de forma persistente
+    - por que experimentas tension de manera persistente
+    - que contribuye a tu sensacion de agobio persistente
+    - cual es la razon de tu agotamiento emocional persistente
+    - de donde proviene tu estres persistente
+    - que genera tu sensacion de agotamiento persistente
+    - por que experimentas estres de forma persistente
+    - de donde proviene tu sentir estresado de forma persistente
+    - que elementos componen tu estres persistente
+    - cual es la causa de tus preocupaciones persistentes
+    - de donde procede tu sensacion de agotamiento constante
+    - que desencadena tu estres de forma persistente
+    - por que experimentas tension de forma persistente
+    - que contribuye a tu sensacion de agobio persistente
+    - cual es la razon de tu agotamiento emocional persistente
+    - de donde proviene tu estres persistente
+    - que genera tu sensacion de agotamiento persistente
+    - por que experimentas estres de forma persistente
+    - de donde surge tu sentir estresado
+    - como surge tu sentir estresado
+    - de donde sale tu sentir estresado
+    - como sale tu sentir estresado
+    - como se manifiesta tu sentir estresado
+    - de donde puede salir tu sentir estresado
+    - puedes identificar la raiz de tu estres
+    - puedes señalar el origen de tus niveles de estres
+    - de donde crees que proviene tu estres actualmente
+    - tienes claridad sobre la genesis de tu estres
+    - que eventos o situaciones dan inicio a tu estres
+    - puedes rastrear el comienzo de tu sentir estresado
+    - de donde emana la presion que sientes
+    - puedes ubicar el punto de origen de tu estres cotidiano
+    - cuales son los antecedentes de tu nivel de estres actual
+    - cual es la base de tu sensacion de agobio
+    - de que manera se construye tu nivel de estres
+    - puedes identificar el punto de partida de tu estres emocional
+    - cuales son los origenes fundamentales de tu estres
+    - como se origina la presion en tu vida cotidiana
+    - cual es la genesis de tu carga emocional
+    - de donde provienen las tensiones que experimentas
+    - puedes rastrear el origen de tus preocupaciones
+    - cual es la raiz de tu sensacion de agotamiento emocional
+    - cuales son los elementos que componen tu estres
+    - puedes señalar el inicio de tu experiencia de estres
+    - como se origina la presion que experimentas
+    - puedes identificar el punto de inicio de tu estres emocional
+    - de que manera se inicia la carga emocional que llevas
+    - de donde proceden las ansiedades que experimentas
+    - puedes rastrear el origen de tu sensacion de agotamiento
+    - cual es la genesis de tu carga emocional actual
+    - puedes identificar algun cambio en tu entorno que haya desencadenado tu estres
+    - crees que eventos pasados podrian estar influyendo en tu nivel actual de estres
+    - la falta de apoyo emocional podria ser una razon para tu nivel de estres
+    - consideras que la falta de limites en tu vida laboral contribuye a tu estres
+    - sientes que la falta de equilibrio entre trabajo y vida personal afecta tu bienestar
+    - crees que la falta de tiempo para actividades recreativas puede ser la causa de tu estres
+    - te preocupa como las expectativas externas afectan tu estado de animo
+    - consideras que la falta de tiempo para cuidar de ti mismo contribuye a tu nivel de estres
+    - por que sientes que estas bajo presion
+    - cual es la causa principal de tu malestar emocional
+    - de donde crees que proviene tu sensacion de tension
+    - que eventos especificos desencadenan tu estres
+    - por que te sientes estresado ultimamente
+    - cual es el motivo de tu cansancio emocional
+    - de donde surge tu sensacion de estres diario
+    - que te preocupa constantemente
+    - por que sientes presion cada dia
+    - cual es la razon de tu malestar emocional actualmente
+    - de donde proviene la carga emocional que llevas
+    - que desencadena tu sentir estresado
+    - por que te sientes tenso ultimamente
+    - cual es la causa principal de tu agotamiento emocional constante
+    - de donde procede tu estres a lo largo del tiempo
+    - que contribuye a tu sensacion de agobio
+    - por que experimentas estres en tu vida cotidiana
+    - cual es la fuente de tu tension constante
+    - de donde emana tu sentir estresado diariamente
+    - que elementos componen tu estres actualmente
+    - por que sientes presion de manera persistente
+    - cual es la razon de tus preocupaciones persistentes
+    - de donde procede tu sensacion de agotamiento constante
+    - que desencadena tu estres de manera persistente
+    - por que experimentas tension de forma continua
 
 - intent: sintomas_estres
   examples: |
@@ -4050,6 +4749,186 @@ nlu:
     - cuales son los sintomas conductuales mas comunes que podrian indicar que estoy experimentando estres en mi vida social
     - que cambios en mi comportamiento podrian ser consecuencia del estres en mis relaciones personales
     - que alteraciones en mi capacidad para experimentar alegria y satisfaccion podrian ser consecuencia del estres
+    - cuales son los signos fisicos mas evidentes de la ansiedad
+    - como se manifiesta la ansiedad en el cuerpo
+    - que cambios fisicos pueden indicar que estoy experimentando ansiedad
+    - existen sintomas fisicos especificos que suelen estar asociados con la ansiedad
+    - como puedo identificar los indicadores fisicos de la ansiedad en mi cuerpo
+    - que manifestaciones fisicas podrian sugerir que estoy bajo estres
+    - existen sintomas fisicos menos conocidos que podrian estar relacionados con la ansiedad
+    - como afecta la ansiedad mi bienestar fisico en general
+    - cuales son los efectos del estres cronico en mi cuerpo
+    - que cambios en mi sueño podrian indicar ansiedad
+    - como se refleja la ansiedad en mi sistema digestivo
+    - cuales son los sintomas fisicos mas comunes de la ansiedad que debo tener en cuenta
+    - existen indicadores especificos en mi piel que podrian ser causados por la ansiedad
+    - como puedo saber si mi sistema inmunologico se ve afectado por la ansiedad
+    - cuales son los sintomas fisicos que podrian ser consecuencia del estres prolongado
+    - que efectos tiene la ansiedad en mi frecuencia cardiaca y presion arterial
+    - como se manifiesta la ansiedad en mis musculos y articulaciones
+    - cuales son los cambios en mi respiracion que podrian ser indicativos de ansiedad
+    - existen sintomas fisicos menos conocidos que podrian estar relacionados con la ansiedad
+    - como afecta la ansiedad mi capacidad para relajarme fisicamente
+    - cuales son las señales emocionales mas comunes asociadas a la ansiedad
+    - que cambios en mi estado de animo podrian indicar que estoy experimentando ansiedad
+    - existen manifestaciones emocionales especificas que podrian ser consecuencia de la ansiedad
+    - como se manifiesta la ansiedad en mis relaciones personales y emociones
+    - cuales son las señales de alerta emocionales que podrian indicar ansiedad
+    - existen sintomas emocionales que a menudo se pasan por alto
+    - como afecta la ansiedad mi capacidad para lidiar con las emociones
+    - cuales son los indicadores de ansiedad en el ambito laboral y social
+    - que cambios en mi comportamiento social podrian ser consecuencia de la ansiedad
+    - existen sintomas emocionales especificos que deberia prestar atencion
+    - como se manifiesta la ansiedad en mi autoestima y confianza
+    - cuales son los efectos de la ansiedad en mi bienestar emocional general
+    - existen manifestaciones emocionales menos conocidas relacionadas con la ansiedad
+    - como afecta la ansiedad mi capacidad para disfrutar de las actividades diarias
+    - cuales son los signos conductuales mas evidentes de la ansiedad
+    - que cambios en mi comportamiento cotidiano podrian indicar que estoy ansioso
+    - existen indicadores de ansiedad en mi rendimiento laboral o academico
+    - como se manifiesta la ansiedad en mis habitos y rutinas diarias
+    - cuales son las señales conductuales que a menudo se asocian con la ansiedad
+    - existen cambios en mi comportamiento que podrian ser consecuencia de la ansiedad
+    - como afecta la ansiedad mi capacidad para cumplir con mis responsabilidades diarias
+    - cuales son los indicadores conductuales que podrian sugerir ansiedad cronica
+    - que efectos tiene la ansiedad en mi capacidad para mantener relaciones saludables
+    - como se manifiesta la ansiedad en mi comunicacion y expresion emocional
+    - cuales son las señales conductuales especificas que podrian indicar ansiedad
+    - existen manifestaciones conductuales menos conocidas relacionadas con la ansiedad
+    - como afecta la ansiedad mi toma de decisiones en situaciones cotidianas
+    - cuales son los cambios en mi comportamiento social que podrian ser indicativos de ansiedad
+    - que efectos tiene la ansiedad en mi capacidad para relajarme y disfrutar de la vida
+    - cuales son los indicadores de ansiedad que podrian afectar mi calidad de vida
+    - existen sintomas cognitivos que podrian afectar mi desempeño intelectual
+    - como se manifiesta la ansiedad en mi capacidad para concentrarme y recordar
+    - cuales son los cambios en mi pensamiento que podrian ser indicativos de ansiedad
+    - que impacto tiene la ansiedad en mi capacidad para tomar decisiones
+    - existen sintomas cognitivos especificos que podrian indicar ansiedad
+    - como afecta la ansiedad mi capacidad para procesar la informacion
+    - cuales son las señales cognitivas que podrian indicar un aumento del estres
+    - existen indicadores cognitivos menos conocidos que podrian estar relacionados con la ansiedad
+    - como afecta la ansiedad mi capacidad para adaptarme a nuevas situaciones
+    - cuales son los cambios en mi pensamiento que podrian afectar mi bienestar general
+    - existen indicadores cognitivos que podrian afectar mi rendimiento academico o laboral
+    - como se manifiesta la ansiedad en mi capacidad para planificar y organizar tareas
+    - cuales son los sintomas cognitivos especificos que podrian indicar ansiedad cronica
+    - existen cambios en mi percepcion y sentido de la realidad que podrian indicar ansiedad
+    - como afecta la ansiedad mi capacidad para recordar informacion importante
+    - cuales son las señales cognitivas que podrian indicar un aumento significativo de la ansiedad
+    - existen indicadores cognitivos menos conocidos que podrian afectar mi toma de decisiones
+    - como se manifiesta la ansiedad en mi capacidad para mantener la concentracion a largo plazo
+    - cuales son los cambios en mi pensamiento que podrian indicar un aumento de la ansiedad
+    - existen indicadores cognitivos que podrian afectar mi bienestar psicologico general
+    - como afecta la ansiedad mi capacidad para procesar la informacion de manera eficaz
+    - cuales son las señales cognitivas especificas que podrian indicar una respuesta extrema a la ansiedad
+    - existen cambios en mi percepcion de la realidad que podrian estar relacionados con la ansiedad
+    - como se manifiesta la ansiedad en mi capacidad para tomar decisiones importantes
+    - como puedo reconocer los efectos fisicos de la ansiedad en mi cuerpo
+    - cuales son las señales fisicas mas evidentes de que estoy bajo ansiedad
+    - que sintomas fisicos suelen estar asociados con la ansiedad en las personas
+    - como se manifiesta la ansiedad en mi bienestar emocional y mental
+    - cuales son los signos emocionales que podrian indicar que estoy experimentando ansiedad
+    - que cambios en mi estado de animo podrian ser sintomas de ansiedad
+    - como afecta la ansiedad mi comportamiento diario y mis relaciones sociales
+    - cuales son los sintomas conductuales comunes que podrian estar relacionados con la ansiedad
+    - que manifestaciones conductuales especificas podrian indicar ansiedad
+    - como puedo identificar los indicadores cognitivos de la ansiedad en mi pensamiento y concentracion
+    - cuales son los sintomas cognitivos mas evidentes que podrian estar relacionados con la ansiedad
+    - que cambios en mi capacidad de pensamiento podrian indicar ansiedad
+    - como se manifiesta la ansiedad en mi cuerpo en terminos de sueño y descanso
+    - cuales son los efectos de la ansiedad en mi patron de sueño y descanso nocturno
+    - que alteraciones en mi sueño podrian ser sintomas de ansiedad
+    - como puedo reconocer los indicadores emocionales de la ansiedad en mi vida diaria
+    - cuales son las señales emocionales mas comunes que podrian indicar que estoy bajo ansiedad
+    - que cambios en mis emociones podrian ser consecuencia de la ansiedad
+    - como afecta la ansiedad mi capacidad para tomar decisiones y resolver problemas
+    - cuales son los sintomas cognitivos especificos que podrian indicar ansiedad en situaciones desafiantes
+    - que efectos tiene la ansiedad en mi capacidad para concentrarme y recordar informacion importante
+    - como se manifiesta la ansiedad en mi bienestar emocional general y autoestima
+    - cuales son los signos emocionales mas evidentes de que estoy experimentando ansiedad
+    - que cambios en mi autoestima y confianza podrian indicar ansiedad
+    - como puedo reconocer los indicadores conductuales de la ansiedad en mi rutina diaria
+    - cuales son los sintomas conductuales mas comunes que podrian indicar que estoy experimentando ansiedad
+    - que cambios en mi comportamiento podrian ser consecuencia de la ansiedad
+    - como afecta la ansiedad mi capacidad para cumplir con mis responsabilidades diarias en el trabajo o estudio
+    - cuales son los efectos de la ansiedad en mi desempeño laboral o academico
+    - que alteraciones en mi capacidad para enfrentar nuevas situaciones podrian indicar ansiedad
+    - como se manifiesta la ansiedad en mi habilidad para adaptarme a cambios en mi entorno
+    - cuales son los signos emocionales mas evidentes de que estoy experimentando ansiedad en mi autoconcepto
+    - que cambios en mi autoimagen y percepcion de mi mismo podrian indicar ansiedad
+    - como puedo identificar los indicadores cognitivos de la ansiedad en mi capacidad para tomar decisiones importantes
+    - cuales son los sintomas cognitivos mas evidentes que podrian indicar ansiedad en mi toma de decisiones
+    - que alteraciones en mi pensamiento podrian ser sintomas de ansiedad durante situaciones cruciales
+    - como afecta la ansiedad mi capacidad para procesar la informacion de manera eficiente
+    - cuales son los efectos de la ansiedad en mi concentracion y atencion
+    - que cambios en mi capacidad para resolver problemas podrian indicar ansiedad
+    - como se manifiesta la ansiedad en mi percepcion y sentido de la realidad
+    - cuales son los signos emocionales mas evidentes de que estoy experimentando ansiedad en mi percepcion del entorno
+    - que alteraciones en mi percepcion de la realidad podrian indicar ansiedad
+    - como puedo reconocer los indicadores conductuales de la ansiedad en mi comportamiento social y relaciones interpersonales
+    - cuales son los sintomas conductuales mas comunes que podrian indicar que estoy experimentando ansiedad en mi vida social
+    - que cambios en mi comportamiento podrian ser consecuencia de la ansiedad en mis relaciones personales
+    - que alteraciones en mi capacidad para experimentar alegria y satisfaccion podrian ser consecuencia de la ansiedad
+    - como puedo identificar los indicadores cognitivos del estres en mi capacidad para pensar con claridad
+    - cuales son los sintomas cognitivos mas evidentes que podrian indicar estres en mi rendimiento intelectual
+    - que cambios en mi pensamiento podrian ser sintomas de estres durante situaciones de presion
+    - como afecta el estres mi capacidad para procesar la informacion de manera eficiente
+    - cuales son los efectos del estres en mi concentracion y atencion
+    - que cambios en mi capacidad para resolver problemas podrian indicar estres
+    - como se manifiesta el estres en mi percepcion y sentido de la realidad
+    - cuales son los signos emocionales mas evidentes de que estoy experimentando estres en mi percepcion del entorno
+    - que alteraciones en mi percepcion de la realidad podrian indicar estres
+    - como puedo reconocer los indicadores conductuales del estres en mi comportamiento social y relaciones interpersonales
+    - cuales son los sintomas conductuales mas comunes que podrian indicar que estoy experimentando estres en mi vida social
+    - que cambios en mi comportamiento podrian ser consecuencia del estres en mis relaciones personales
+    - que alteraciones en mi capacidad para experimentar alegria y satisfaccion podrian ser consecuencia del estres
+    - como afecta el estres mi capacidad para adaptarme a nuevas situaciones de manera efectiva
+    - cuales son los cambios en mi pensamiento que podrian indicar un aumento significativo del estres
+    - existen indicadores cognitivos que podrian afectar mi bienestar psicologico general de manera extrema
+    - como se manifiesta el estres en mi capacidad para tomar decisiones importantes bajo condiciones de estres persistente
+    - como puedo reconocer los efectos fisicos del estres en mi cuerpo
+    - cuales son las señales fisicas mas evidentes de que estoy bajo estres
+    - que sintomas fisicos suelen estar asociados al estres en las personas
+    - como se manifiesta el estres en mi bienestar emocional y mental
+    - cuales son los signos emocionales que podrian indicar que estoy experimentando estres
+    - que cambios en mi estado de animo podrian ser sintomas de estres
+    - como afecta el estres mi comportamiento diario y mis relaciones sociales
+    - cuales son los sintomas conductuales comunes que podrian estar relacionados con el estres
+    - que manifestaciones conductuales especificas podrian indicar estres
+    - como puedo identificar los indicadores cognitivos del estres en mi pensamiento y concentracion
+    - cuales son los sintomas cognitivos mas evidentes que podrian estar relacionados con el estres
+    - que cambios en mi capacidad de pensamiento podrian indicar estres
+    - como se manifiesta el estres en mi cuerpo en terminos de sueño y descanso
+    - cuales son los efectos del estres en mi patron de sueño y descanso nocturno
+    - que alteraciones en mi sueño podrian ser sintomas de estres
+    - como puedo reconocer los indicadores emocionales del estres en mi vida diaria
+    - cuales son las señales emocionales mas comunes que podrian indicar que estoy bajo estres
+    - que cambios en mis emociones podrian ser consecuencia del estres
+    - como afecta el estres mi capacidad para tomar decisiones y resolver problemas
+    - cuales son los sintomas cognitivos especificos que podrian indicar estres en situaciones desafiantes
+    - que efectos tiene el estres en mi capacidad para concentrarme y recordar informacion importante
+    - como se manifiesta el estres en mi bienestar emocional general y autoestima
+    - cuales son los signos emocionales mas evidentes de que estoy experimentando estres
+    - que cambios en mi autoestima y confianza podrian indicar estres
+    - como puedo reconocer los indicadores conductuales del estres en mi rutina diaria
+    - cuales son los sintomas conductuales mas comunes que podrian indicar que estoy experimentando estres
+    - que cambios en mi comportamiento podrian ser consecuencia del estres
+    - como afecta el estres mi capacidad para cumplir con mis responsabilidades diarias en el trabajo o estudio
+    - cuales son los efectos del estres en mi desempeño laboral o academico
+    - que alteraciones en mi capacidad para enfrentar nuevas situaciones podrian indicar estres
+    - como se manifiesta el estres en mi habilidad para adaptarme a cambios en mi entorno
+    - cuales son los signos emocionales mas evidentes de que estoy experimentando estres en mi autoconcepto
+    - que cambios en mi autoimagen y percepcion de mi mismo podrian indicar estres
+    - como puedo identificar los indicadores cognitivos del estres en mi capacidad para tomar decisiones importantes
+    - cuales son los sintomas cognitivos mas evidentes que podrian indicar estres en mi toma de decisiones
+    - que alteraciones en mi pensamiento podrian ser sintomas de estres durante situaciones cruciales
+    - como afecta el estres mi capacidad para procesar la informacion de manera eficiente
+    - cuales son los efectos del estres en mi concentracion y atencion
+    - que cambios en mi capacidad para resolver problemas podrian indicar estres
+    - como se manifiesta el estres en mi percepcion y sentido de la realidad
+    - cuales son los signos emocionales mas evidentes de que estoy experimentando estres en mi percepcion del entorno
+    - que alteraciones en mi percepcion de la realidad podrian indicar estres
+    - como puedo reconocer los indicadores conductuales del estres en mi comportamiento social y relaciones interpersonales
 
 - intent: tratamiento_estres
   examples: |
@@ -4336,7 +5215,413 @@ nlu:
     - puedo aplicar algo sencillo y rapido para calmar mi estres
     - que acciones simples rapidas y efectivas son recomendadas contra el estres
     - cual es el tratamiento mas simple rapido y efectivo para el estres
+    - cual es la mejor manera de abordar el estres
+    - como puedo manejar eficazmente el estres
+    - que puedo hacer para controlar mi estres
+    - cuales son algunos metodos efectivos para tratar el estres
+    - hay alguna tecnica especifica que recomiendes para aliviar el estres
+    - como puedo aliviar el estres de forma natural
+    - cual es tu consejo para enfrentar el estres
+    - existe algun tratamiento natural para el estres que funcione bien
+    - que acciones recomiendas tomar para reducir el estres
+    - puedes sugerirme algunas estrategias simples para manejar el estres
+    - cual es la forma mas efectiva de tratar el estres a largo plazo
+    - hay algun remedio casero que pueda ayudar con el estres
+    - como puedo aliviar el estres rapidamente en situaciones dificiles
+    - conoces alguna tecnica de relajacion que sea efectiva para el estres
+    - que ejercicios recomiendas para reducir el estres
+    - hay algun suplemento dietetico que pueda ayudar a reducir el estres
+    - cual es la terapia mas efectiva para el manejo del estres
+    - puedes sugerirme actividades especificas que ayuden a aliviar el estres
+    - como puedo mantener la calma en medio del estres
+    - existen programas de gestion del estres que puedan ser utiles
+    - que papel juega la meditacion en el tratamiento del estres
+    - cuales son algunos consejos practicos para manejar el estres diario
+    - hay algun libro o recurso que recomiendes para aprender a manejar el estres
+    - que tecnicas de respiracion son efectivas para aliviar el estres
+    - como puedo evitar que el estres afecte negativamente mi bienestar emocional
+    - existen ejercicios mentales que puedan ayudar a reducir el estres
+    - que actividades recreativas recomiendas para reducir el estres
+    - cual es la mejor manera de relajarse despues de un dia estresante
+    - puedes sugerirme formas de evitar sentirme abrumado por el estres
+    - hay alguna forma de tratar el estres que sea particularmente efectiva para ti
+    - como puedo integrar tecnicas de relajacion en mi rutina diaria para manejar el estres
+    - existen recursos en linea que puedan ayudarme a gestionar el estres
+    - cual es la importancia de la actividad fisica en la reduccion del estres
+    - que papel juegan los habitos saludables en la gestion del estres
+    - puedes recomendarme alguna actividad creativa como tratamiento para el estres
+    - cuales son los efectos del estres en el cuerpo y la mente
+    - como puedo identificar y abordar las fuentes principales de estres en mi vida
+    - existen tecnicas de visualizacion que puedan ayudar a reducir el estres
+    - que importancia tiene el sueño en el manejo del estres
+    - cuales son algunas estrategias efectivas para el autocuidado durante periodos estresantes
+    - hay alguna actividad al aire libre que recomiendes para reducir el estres
+    - como puedo establecer limites saludables para evitar el exceso de estres
+    - que rol juega el apoyo social en la gestion del estres
+    - puedes sugerirme formas de manejar el estres relacionado con el trabajo
+    - cual es la relacion entre la alimentacion y el estres
+    - existen aplicaciones moviles que puedan ayudar en la gestion del estres
+    - que importancia tiene la terapia cognitivo-conductual en el tratamiento del estres
+    - como puedo cultivar la gratitud como herramienta para reducir el estres
+    - que actividades de autocuidado recomiendas para aliviar el estres
+    - cual es la efectividad de la aromaterapia en el manejo del estres
+    - puedes sugerirme formas de establecer una rutina de relajacion antes de dormir para combatir el estres
+    - que tecnicas de gestion del tiempo son efectivas para reducir el estres
+    - como puedo incorporar la atencion plena en mi vida diaria para manejar el estres
+    - existen metodos de organizacion que puedan ayudar a reducir el estres
+    - que efecto tiene el estres en la salud mental a largo plazo
+    - cuales son algunos signos de que mi nivel de estres es demasiado alto
+    - puedes sugerirme formas de establecer limites saludables en mis relaciones para reducir el estres
+    - como puedo mejorar mi resiliencia frente al estres
+    - que efecto tiene el estres en el sistema inmunologico
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de crisis
+    - como puedo practicar la autocompasion como medio para aliviar el estres
+    - que rol juega el ejercicio aerobico en la reduccion del estres
+    - puedes sugerirme formas de manejar el estres relacionado con las finanzas
+    - cual es la relacion entre el estres y los trastornos del sueño
+    - como puedo identificar mis principales desencadenantes de estres
+    - que actividades recreativas recomiendas para aliviar el estres en familia
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de ansiedad
+    - como puedo aprender a delegar tareas para reducir el estres
+    - cual es la relacion entre la respiracion y el estres
+    - puedes sugerirme formas de establecer limites saludables en el uso de la tecnologia para reducir el estres
+    - que papel juegan los pasatiempos en la gestion del estres
+    - como puedo mantener una mentalidad positiva durante periodos estresantes
+    - existen tecnicas de mindfulness que puedan ayudar a reducir el estres laboral
+    - cual es la importancia de establecer rutinas regulares para reducir el estres
+    - puedes sugerirme formas de establecer limites saludables en el trabajo para reducir el estres
+    - que actividades de conexion social recomiendas para aliviar el estres
+    - como puedo incorporar la gratitud en mi vida diaria como herramienta para reducir el estres
+    - cual es la relacion entre la musica y el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de ira
+    - como puedo mejorar mi capacidad para manejar el estres a traves de la comunicacion efectiva
+    - puedes sugerirme formas de establecer limites saludables en las relaciones interpersonales para reducir el estres
+    - que rol juega la organizacion del espacio fisico en la reduccion del estres
+    - cual es la relacion entre el estres y la actividad fisica
+    - como puedo aprender a decir no para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de tristeza
+    - como puedo mejorar mi capacidad para manejar el estres a traves de la gestion del tiempo
+    - puedes sugerirme formas de establecer limites saludables en la alimentacion para reducir el estres
+    - que rol juega la meditacion en la reduccion del estres
+    - cual es la relacion entre el estres y la planificacion del tiempo
+    - como puedo aprender a delegar responsabilidades para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de agobio
+    - como puedo mejorar mi capacidad para manejar el estres a traves del autocuidado emocional
+    - puedes sugerirme formas de establecer limites saludables en el uso de las redes sociales para reducir el estres
+    - que rol juega la naturaleza en la reduccion del estres
+    - cual es la relacion entre el estres y la atencion plena
+    - como puedo aprender a aceptar la incertidumbre para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de preocupacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves de la resolucion de problemas
+    - puedes sugerirme formas de establecer limites saludables en las actividades recreativas para reducir el estres
+    - que rol juega la respiracion consciente en la reduccion del estres
+    - 
+    - cual es la relacion entre el estres y la practica de la atencion plena
+    - como puedo aprender a manejar el estres a traves del establecimiento de limites saludables en el trabajo
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de tension muscular
+    - como puedo mejorar mi capacidad para manejar el estres a traves de la autorreflexion
+    - puedes sugerirme formas de establecer limites saludables en la participacion en actividades sociales para reducir el estres
+    - que rol juega la conexion con la naturaleza en la reduccion del estres
+    - cual es la relacion entre el estres y la practica regular de la gratitud
+    - como puedo aprender a establecer limites saludables en el uso de la tecnologia para reducir el estres digital
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de insomnio
+    - como puedo mejorar mi capacidad para manejar el estres a traves del cultivo de relaciones positivas
+    - puedes sugerirme formas de establecer limites saludables en el consumo de noticias para reducir el estres
+    - que rol juega la musica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la respiracion consciente
+    - como puedo aprender a establecer limites saludables en las expectativas para reducir el estres por perfeccionismo
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de dificultad para concentrarse
+    - como puedo mejorar mi capacidad para manejar el estres a traves del desarrollo de habilidades de afrontamiento
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a situaciones estresantes para reducir la ansiedad
+    - que rol juega la practica de la compasion en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio fisico regular
+    - como puedo aprender a establecer limites saludables en el consumo de cafeina para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de falta de motivacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de metas realistas
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a redes sociales para reducir el estres
+    - que rol juega la terapia de arte en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del perdon
+    - como puedo aprender a establecer limites saludables en el tiempo dedicado a preocupaciones para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de falta de energia
+    - como puedo mejorar mi capacidad para manejar el estres a traves del desarrollo de la resiliencia
+    - puedes sugerirme formas de establecer limites saludables en la busqueda de aprobacion externa para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la reflexion diaria
+    - como puedo aprender a establecer limites saludables en la exposicion a ambientes ruidosos para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de confusion mental
+    - como puedo mejorar mi capacidad para manejar el estres a traves de la practica del autocuidado
+    - puedes sugerirme formas de establecer limites saludables en el uso de dispositivos electronicos antes de dormir para reducir el estres
+    - que rol juega la aromaterapia en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la generosidad
+    - como puedo aprender a establecer limites saludables en el tiempo dedicado a las preocupaciones para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sensacion de abrumamiento
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el trabajo
+    - puedes sugerirme formas de establecer limites saludables en la participacion en debates acalorados para reducir el estres
+    - que rol juega la practica de la atencion plena en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la meditacion
+    - como puedo aprender a establecer limites saludables en las interacciones sociales para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de dolor fisico
+    - como puedo mejorar mi capacidad para manejar el estres a traves del desarrollo de habilidades sociales
+    - puedes sugerirme formas de establecer limites saludables en el tiempo dedicado a las redes sociales para reducir el estres
+    - que rol juega la practica del yoga en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la escritura de diarios
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de falta de claridad mental
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las relaciones personales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a noticias negativas para reducir el estres
+    - que rol juega la practica del tai chi en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la gratitud diaria
+    - como puedo aprender a establecer limites saludables en la autocritica para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de inquietud
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la comunicacion
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas toxicas para reducir el estres
+    - que rol juega la practica de la jardineria en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la respiracion profunda
+    - como puedo aprender a establecer limites saludables en las actividades extracurriculares para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de exceso de responsabilidades
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la autocritica
+    - puedes sugerirme formas de establecer limites saludables en el tiempo dedicado a la autocritica para reducir el estres
+    - que rol juega la practica de la danza en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la risa como terapia
+    - como puedo aprender a establecer limites saludables en la exposicion a situaciones estresantes para reducir la ansiedad
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de inseguridad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso del tiempo libre
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas que provocan estres para reducir la ansiedad
+    - que rol juega la practica de la visualizacion creativa en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la respiracion diafragmatica
+    - como puedo aprender a establecer limites saludables en las preocupaciones por el futuro para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de rumiacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el consumo de noticias
+    - puedes sugerirme formas de establecer limites saludables en la participacion en discusiones negativas para reducir el estres
+    - que rol juega la practica de la escritura de cartas de agradecimiento en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la creatividad
+    - como puedo aprender a establecer limites saludables en el tiempo dedicado a la autocritica para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sensacion de abandono
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la comunicacion con colegas
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a situaciones estresantes en el trabajo para reducir la ansiedad
+    - que rol juega la practica del mindfulness en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la gratitud en el trabajo
+    - como puedo aprender a establecer limites saludables en la exposicion a personas negativas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de fatiga mental
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de las redes sociales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a ambientes caoticos para reducir el estres
+    - que rol juega la practica de la respiracion consciente en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la autoaceptacion
+    - como puedo aprender a establecer limites saludables en las expectativas personales para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de frustracion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de dispositivos electronicos
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio regular
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir la ansiedad
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de desmotivacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la autocritica
+    - cual es la relacion entre el estres y la practica del ejercicio al aire libre
+    - como puedo aprender a establecer limites saludables en la exposicion a relaciones toxicas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de irritabilidad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el consumo de alcohol
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a entornos laborales estresantes
+    - que rol juega la practica del ejercicio cardiovascular en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del mindfulness en la naturaleza
+    - como puedo aprender a establecer limites saludables en las preocupaciones por el pasado para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sentimientos de soledad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las responsabilidades familiares
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas criticas para reducir el estres
+    - que rol juega la practica de la pintura en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la respiracion profunda en entornos urbanos
+    - como puedo aprender a establecer limites saludables en el tiempo dedicado a preocuparse por cosas fuera de mi control para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sentimientos de culpa
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las expectativas laborales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la fotografia en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la escritura de objetivos
+    - como puedo aprender a establecer limites saludables en la preocupacion por el bienestar de los demas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sensacion de agobio
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de las redes sociales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a ambientes caoticos para reducir el estres
+    - que rol juega la practica de la respiracion consciente en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la autoaceptacion
+    - como puedo aprender a establecer limites saludables en las expectativas personales para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de frustracion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de dispositivos electronicos
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio regular
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir la ansiedad
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de desmotivacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la autocritica
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas negativas para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la meditacion guiada
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir la ansiedad
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de desmotivacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la autocritica
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas negativas para reducir el estres
+    - que rol juega la practica de la respiracion profunda en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio al aire libre
+    - como puedo aprender a establecer limites saludables en la exposicion a relaciones toxicas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de irritabilidad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el consumo de alcohol
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a entornos laborales estresantes
+    - que rol juega la practica del ejercicio cardiovascular en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del mindfulness en la naturaleza
+    - como puedo aprender a establecer limites saludables en las preocupaciones por el pasado para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sentimientos de soledad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las responsabilidades familiares
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas criticas para reducir el estres
+    - que rol juega la practica de la pintura en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la respiracion profunda en entornos urbanos
+    - como puedo aprender a establecer limites saludables en el tiempo dedicado a preocuparse por cosas fuera de mi control para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sentimientos de culpa
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las expectativas laborales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la fotografia en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la escritura de objetivos
+    - como puedo aprender a establecer limites saludables en la preocupacion por el bienestar de los demas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sensacion de agobio
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de las redes sociales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a ambientes caoticos para reducir el estres
+    - que rol juega la practica de la respiracion consciente en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la autoaceptacion
+    - como puedo aprender a establecer limites saludables en las expectativas personales para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de frustracion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de dispositivos electronicos
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio regular
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir la ansiedad
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de desmotivacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la autocritica
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas negativas para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la meditacion guiada
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir la ansiedad
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de desmotivacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la autocritica
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas negativas para reducir el estres
+    - que rol juega la practica de la respiracion profunda en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio al aire libre
+    - como puedo aprender a establecer limites saludables en la exposicion a relaciones toxicas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de irritabilidad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el consumo de alcohol
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a entornos laborales estresantes
+    - que rol juega la practica del ejercicio cardiovascular en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del mindfulness en la naturaleza
+    - como puedo aprender a establecer limites saludables en las preocupaciones por el pasado para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sentimientos de soledad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las responsabilidades familiares
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas criticas para reducir el estres
+    - que rol juega la practica de la pintura en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la respiracion profunda en entornos urbanos
+    - como puedo aprender a establecer limites saludables en el tiempo dedicado a preocuparse por cosas fuera de mi control para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sentimientos de culpa
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las expectativas laborales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la fotografia en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la escritura de objetivos
+    - como puedo aprender a establecer limites saludables en la preocupacion por el bienestar de los demas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sensacion de agobio
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de las redes sociales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a ambientes caoticos para reducir el estres
+    - que rol juega la practica de la respiracion consciente en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la autoaceptacion
+    - como puedo aprender a establecer limites saludables en las expectativas personales para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de frustracion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de dispositivos electronicos
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio regular
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir la ansiedad
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de desmotivacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la autocritica
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas negativas para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la meditacion guiada
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir la ansiedad
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de desmotivacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la autocritica
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas negativas para reducir el estres
+    - que rol juega la practica de la respiracion profunda en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio al aire libre
+    - como puedo aprender a establecer limites saludables en la exposicion a relaciones toxicas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de irritabilidad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el consumo de alcohol
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a entornos laborales estresantes
+    - que rol juega la practica del ejercicio cardiovascular en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del mindfulness en la naturaleza
+    - como puedo aprender a establecer limites saludables en las preocupaciones por el pasado para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sentimientos de soledad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las responsabilidades familiares
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas criticas para reducir el estres
+    - que rol juega la practica de la pintura en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la respiracion profunda en entornos urbanos
+    - como puedo aprender a establecer limites saludables en el tiempo dedicado a preocuparse por cosas fuera de mi control para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sentimientos de culpa
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las expectativas laborales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la fotografia en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la escritura de objetivos
+    - como puedo aprender a establecer limites saludables en la preocupacion por el bienestar de los demas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sensacion de agobio
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de las redes sociales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a ambientes caoticos para reducir el estres
+    - que rol juega la practica de la respiracion consciente en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la autoaceptacion
+    - como puedo aprender a establecer limites saludables en las expectativas personales para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de frustracion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de dispositivos electronicos
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio regular
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir la ansiedad
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de desmotivacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la autocritica
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas negativas para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la meditacion guiada
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir la ansiedad
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de desmotivacion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en la autocritica
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas negativas para reducir el estres
+    - que rol juega la practica de la respiracion profunda en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio al aire libre
+    - como puedo aprender a establecer limites saludables en la exposicion a relaciones toxicas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de irritabilidad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el consumo de alcohol
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a entornos laborales estresantes
+    - que rol juega la practica del ejercicio cardiovascular en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del mindfulness en la naturaleza
+    - como puedo aprender a establecer limites saludables en las preocupaciones por el pasado para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sentimientos de soledad
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las responsabilidades familiares
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas criticas para reducir el estres
+    - que rol juega la practica de la pintura en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la respiracion profunda en entornos urbanos
+    - como puedo aprender a establecer limites saludables en el tiempo dedicado a preocuparse por cosas fuera de mi control para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sentimientos de culpa
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en las expectativas laborales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la fotografia en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la escritura de objetivos
+    - como puedo aprender a establecer limites saludables en la preocupacion por el bienestar de los demas para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de sensacion de agobio
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de las redes sociales
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a ambientes caoticos para reducir el estres
+    - que rol juega la practica de la respiracion consciente en la reduccion del estres
+    - cual es la relacion entre el estres y la practica de la autoaceptacion
+    - como puedo aprender a establecer limites saludables en las expectativas personales para reducir el estres
+    - existen tecnicas de relajacion especificas que puedan ayudar durante momentos de frustracion
+    - como puedo mejorar mi capacidad para manejar el estres a traves del establecimiento de limites saludables en el uso de dispositivos electronicos
+    - puedes sugerirme formas de establecer limites saludables en la exposicion a personas manipuladoras para reducir el estres
+    - que rol juega la practica de la escritura terapeutica en la reduccion del estres
+    - cual es la relacion entre el estres y la practica del ejercicio regular
+    - como puedo aprender a establecer limites saludables en la preocupacion por el futuro para reducir la ansiedad
 
+#------------------------------------------------------
+
+#sintomas desanimo
+
+#------------------------------------------------------
 - intent: sentir_desanimo
   examples: |
     - no me encuentro muy animado hoy
