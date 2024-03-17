@@ -4325,6 +4325,113 @@ nlu:
     - estoy en un constante estado de lucha y resistencia
     - mi mente esta en un estado de agitacion constante
 
+- intent: sentir_estres_allegados
+  examples: |
+    - mi amigo esta estresado
+    - mi hermana esta pasando por un momento dificil
+    - mi compañero de trabajo esta bajo mucha presion
+    - mi pareja esta lidiando con una carga emocional intensa
+    - mi hijo esta experimentando un agotamiento emocional
+    - mi jefe esta bajo una gran presion
+    - mi vecino esta enfrentando una tormenta de inquietudes
+    - mi amiga esta en un estado de constante preocupacion
+    - mi hermano esta en un constante estado de tension
+    - mi compañera de trabajo esta lidiando con una carga emocional abrumadora
+    - mi pareja esta enfrentando una avalancha de problemas
+    - mi hijo esta experimentando una sobrecarga de responsabilidades
+    - mi jefe esta enfrentando una tormenta de problemas
+    - mi vecina esta en un estado de constante agotamiento emocional
+    - mi amiga esta lidiando con una carga emocional intensa
+    - mi hermano esta en un constante estado de tension
+    - mi compañera de trabajo esta enfrentando una avalancha de problemas
+    - mi pareja esta experimentando una sobrecarga de responsabilidades
+    - mi hijo esta enfrentando una tormenta de problemas
+    - mi jefe esta en un estado de constante agotamiento emocional
+    - mi vecina esta lidiando con una carga emocional intensa
+    - mi amiga esta en un constante estado de tension
+    - mi hermano esta enfrentando una avalancha de problemas
+    - mi compañera de trabajo esta experimentando una sobrecarga de responsabilidades
+    - mi pareja esta enfrentando una tormenta de problemas
+    - mi hijo esta en un estado de constante agotamiento emocional
+    - mi jefe esta lidiando con una carga emocional intensa
+    - mi vecina esta en un constante estado de tension
+    - mi amiga esta enfrentando una avalancha de problemas
+    - mi hermano esta experimentando una sobrecarga de responsabilidades
+    - mi compañera de trabajo esta enfrentando una tormenta de problemas
+    - mi pareja esta en un estado de constante agotamiento emocional
+    - Me parece que mi mamá está estresada.
+    - Tengo la impresión de que mi mamá está sufriendo de estrés.
+    - Estoy convencido/a de que mi mamá está experimentando estrés.
+    - Creo que mi mamá está pasando por un período estresante.
+    - Siento que mi mamá está bajo mucho estrés.
+    - Tengo la sospecha de que mi mamá está estresada.
+    - Me da la impresión de que mi mamá está abrumada por el estrés.
+    - Pienso que mi mamá está lidiando con el estrés.
+    - Estoy seguro/a de que mi mamá está sintiendo estrés.
+    - Tengo la corazonada de que mi mamá está estresada.
+    - Creo que mi mamá está experimentando niveles altos de estrés.
+    - Me parece que mi mamá está afectada por el estrés.
+    - Tengo la certeza de que mi mamá está sufriendo de estrés.
+    - Siento que mi mamá está bajo presión y estrés.
+    - Creo que mi mamá está agobiada por el estrés.
+    - Tengo la sensación de que mi mamá está estresada.
+    - Me da la impresión de que mi mamá está luchando contra el estrés.
+    - Creo que mi mamá está atravesando una etapa estresante.
+    - Pienso que mi papá está experimentando estrés.
+    - Tengo la impresión de que mi papá está estresado.
+    - Estoy convencido/a de que mi papá está bajo estrés.
+    - Creo que mi papá está sufriendo de estrés.
+    - Me parece que mi papá está pasando por un período estresante.
+    - Siento que mi papá está lidiando con el estrés.
+    - Estoy seguro/a de que mi papá está sintiendo estrés.
+    - Tengo la corazonada de que mi papá está estresado.
+    - Creo que mi papá está experimentando niveles altos de estrés.
+    - Me parece que mi papá está afectado por el estrés.
+    - Tengo la certeza de que mi papá está estresado.
+    - Siento que mi papá está bajo presión y estrés.
+    - Creo que mi papá está abrumado por el estrés.
+    - Tengo la sensación de que mi papá está estresado.
+    - Me da la impresión de que mi papá está luchando contra el estrés.
+    - Creo que mi papá está atravesando una etapa estresante.
+    - Tengo la sensación de que mi papá está agobiado por el estrés.
+    - Estoy convencido/a de que mi papá está experimentando estrés crónico.
+    - Pienso que mi hermano/a está experimentando estrés.
+    - Tengo la impresión de que mi hermano/a está estresado.
+    - Estoy convencido/a de que mi hermano/a está bajo estrés.
+    - Creo que mi hermano/a está sufriendo de estrés.
+    - Me parece que mi hermano/a está pasando por un período estresante.
+    - Siento que mi hermano/a está lidiando con el estrés.
+    - Estoy seguro/a de que mi hermano/a está sintiendo estrés.
+    - Tengo la corazonada de que mi hermano/a está estresado.
+    - Creo que mi hermano/a está experimentando niveles altos de estrés.
+    - Me parece que mi hermano/a está afectado por el estrés.
+    - Tengo la certeza de que mi hermano/a está estresado.
+    - Siento que mi hermano/a está bajo presión y estrés.
+    - Creo que mi hermano/a está abrumado por el estrés.
+    - Tengo la sensación de que mi hermano/a está estresado.
+    - Me da la impresión de que mi hermano/a está luchando contra el estrés.
+    - Creo que mi hermano/a está atravesando una etapa estresante.
+    - Tengo la sensación de que mi hermano/a está agobiado por el estrés.
+    - Estoy convencido/a de que mi hermano/a está experimentando estrés crónico.
+    - Pienso que mi amigo/a está experimentando estrés.
+    - Tengo la impresión de que mi amigo/a está estresado.
+    - Estoy convencido/a de que mi amigo/a está bajo estrés.
+    - Creo que mi amigo/a está sufriendo de estrés.
+    - Me parece que mi amigo/a está pasando por un período estresante.
+    - Siento que mi amigo/a está lidiando con el estrés.
+    - Estoy seguro/a de que mi amigo/a está sintiendo estrés.
+    - Tengo la corazonada de que mi amigo/a está estresado.
+    - Creo que mi amigo/a está experimentando niveles altos de estrés.
+    - Me parece que mi amigo/a está afectado por el estrés.
+    - Tengo la certeza de que mi amigo/a está estresado.
+    - Siento que mi amigo/a está bajo presión y estrés.
+    - Creo que mi amigo/a está abrumado por el estrés.
+    - Tengo la sensación de que mi amigo/a está estresado.
+    - Me da la impresión de que mi amigo/a está luchando contra el estrés.
+    - Creo que mi amigo/a está atravesando una etapa estresante.
+    - Tengo la sensación de que mi amigo/a está agobiado por el estrés.
+    - Estoy convencido/a de que mi amigo/a está experimentando estrés crónico.
+
 - intent: origen_estres
   examples: |
     - cuales son los posibles desencadenantes de ansiedad
@@ -5764,7 +5871,7 @@ nlu:
     - quiero rendirme
     - me quiero rendir
     - quisiera rendirme
-    -me siento tentado a rendirme
+    - me siento tentado a rendirme
     - estoy a punto de rendirme
     - la idea de rendirme me acecha constantemente
     - la posibilidad de rendirme se vuelve mas fuerte
