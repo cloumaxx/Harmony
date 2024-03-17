@@ -97,10 +97,77 @@ rules:
   - intent: sentir_ganas_rendirse
   - action: utter_sentir_ganas_rendirse
 
-- rule: Responde cuando alguien te hable sobre el sintoma comun dolor de cabeza
+#------------------------------------------------------
+
+#SINTOMAS COMUNES
+
+#------------------------------------------------------
+#------------------------------------------------------
+
+#SINTOMAS DOLOR DE CABEZA
+
+#------------------------------------------------------
+
+- rule: Responde cuando alguien diga que tiene dolor de cabeza
   steps:
   - intent: sintoma_comun_dolor_cabeza
   - action: utter_sintoma_comun_dolor_cabeza
+
+- rule: Responde cuando alguien te diga que tiene migraña
+  steps:
+  - intent: sentir_migraña
+  - action: utter_sentir_migraña
+
+- rule: Responde cuando alguien te diga tener cefalea de racimos
+  steps:
+  - intent: sentir_cefalea_de_racimos
+  - action: utter_sentir_cefalea_de_racimos
+
+- rule: Responde cuando alguien te diga que tiene cefalea por consumo excesivo de medicamentos
+  steps:
+  - intent: sentir_cefalea_consumo_medicamentos
+  - action: utter_sentir_cefalea_consumo_medicamentos
+
+- rule: Responde cuando alguien te diga que tienen cefalia sinusal
+  steps:
+  - intent: sentir_cefalea_sinusal
+  - action: utter_sentir_cefalea_sinusal
+
+- rule: Responde cuando alguien te diga que tienen cefalia cervical
+  steps:
+  - intent: sentir_cefalea_cervical
+  - action: utter_sentir_cefalea_cervical
+
+- rule: Responde cuando alguien te pregunte el origen del dolor de cabeza
+  steps:
+  - intent: origen_dolor_cabeza
+  - action: utter_origen_dolor_cabeza
+
+- rule: Responde cuando alguien te diga que un familiar o allegado tiene dolor de cabeza
+  steps:
+  - intent: dolor_cabeza_allegados
+  - action: utter_dolor_cabeza_allegados
+
+- rule: Responde cuando alguien pregunte que es el dolor de cabeza
+  steps:
+  - intent: definicion_dolor_cabeza
+  - action: utter_definicion_dolor_cabeza
+
+- rule: Responde cuando alguien pregunte los tipos de dolor de cabeza
+  steps:
+  - intent: tipos_dolor_cabeza
+  - action: utter_tipos_dolor_cabeza
+
+- rule: Responde cuando alguien pregunte recomendaciones para el dolor de cabeza
+  steps:
+  - intent: recomendacion_dolor_cabeza
+  - action: utter_recomendacion_dolor_cabeza
+
+#------------------------------------------------------
+
+#SINTOMAS DOLOR DE CABEZA
+
+#------------------------------------------------------
 
 - rule: Responde cuando alguien te hable sobre el sintoma comun mareos
   steps:

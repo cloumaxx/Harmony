@@ -154,63 +154,61 @@
 
 <body id="body">
     
-        <header id="navbar">
-            
-        </header>
-        
-        <main id="container_main">
-            <div class="centered_div">
-                <div id="content_main" class="container">
-                   <div id="respuesta">
-                    
-                        {% include 'messageResponse.html' %}
-                    
-                   </div>
-
-                    <div class="container" id="cont_img">
-                        <img id="img_logo" style="width: 80%;" src="{% static '/images/nuevo_logo.png' %}">
-
+    <section class="vh-70">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="{%static 'images/Man_studies_online.png'%}"
+                class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                  <img src="{% static '/images/nuevo_logo.png' %}" style="width: 100%;">
+                </div>
+                <form id="formulario" method="post">
+                    {% csrf_token %}
+                <div class="form-outline mb-7">
+                    <div>
+                        <label id="label_correo" name="correo" for="correo">Correo electrónico:</label>
+                        <input type="email" class="form-control" id="id_correo" name="correo"
+                            aria-describedby="emailHelp" placeholder="usuario@hotmail.com">
                     </div>
-                    <form id="formulario" method="post">
-                        {% csrf_token %}
-                        <div>
-                            <label id="label_correo" name="correo" for="correo">Correo electrónico:</label>
-                            <input type="email" class="form-control" id="id_correo" name="correo"
-                                aria-describedby="emailHelp" placeholder="usuario@hotmail.com">
-                        </div>
-                        <div>
-                            <label id="label_clave" name="clave" for="clave">Contraseña:</label>
-                            <input type="password" class="form-control" id="id_clave" name="clave"
-                                aria-describedby="emailHelp" placeholder="contraseña usuario ">
-                        </div>
-                        <br>
+                </div>
+                <div class="form-outline mb-6">
+                    <div>
+                        <label id="label_clave" name="clave" for="clave">Contraseña:</label>
+                        <input type="password" class="form-control" id="id_clave" name="clave"
+                            aria-describedby="emailHelp" placeholder="contraseña usuario ">
+                    </div>
+                </div>
+                <br><br>
 
-                        <button class="btn btn-primary" id="btn_ini">
-                            <p id="text_button">Iniciar sesión</p>
-                        </button>
-                    </form>
+                <div class="form-outline mb-4">
+                    <button class="btn btn-primary" id="btn_ini">
+                        <p id="text_button">Iniciar sesión</p>
+                    </button>
+                </div>
+            </form>
+                <div class="form-outline mb-4">
                     <a href="{% url 'pantalla_inicial' %}">
                         <button class="btn btn-danger" id="btn_cancel">
                             <p id="text_button">Cancelar</p>
                         </button>
                     </a>
-
-                    <br>
+                    <br><br>
                     <div id="cont_button">
                         <a  href="{% url 'pantalla_registro' %}">
-                            Crea tu cuenta
+                            No tienes una cuenta? Crea tu cuenta hoy
                         </a>
-                    </div>
-                    
-                    <br>
-
+                     </div>
                 </div>
+                
+
+
             </div>
-        </main>
-        <footer style="background-color: red;">
- 
-            <img id="img" class="img-fluid" alt="Imagen" src="https://i.imgur.com/Oa50mTe.png">
-        </footer>
+          </div>
+        </div>
+      </section>
 </body>
 
 </html>

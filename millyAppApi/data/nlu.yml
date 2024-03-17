@@ -5978,6 +5978,11 @@ nlu:
 #sintomas comunes
 
 #------------------------------------------------------
+#------------------------------------------------------
+
+#DOLOR DE CABEZA
+
+#------------------------------------------------------
 
 - intent: sintoma_comun_dolor_cabeza
   examples: |
@@ -5997,7 +6002,6 @@ nlu:
     - estoy sufriendo de dolor en la cabeza
     - mi cabeza me esta matando
     - siento una presion en la cabeza
-    - tengo una migraña
     - me duele la cabeza desde hace rato
     - estoy agobiado por el dolor de cabeza
     - mi cabeza late con fuerza
@@ -6013,7 +6017,6 @@ nlu:
     - me duele la cabeza de manera constante
     - mi cabeza me esta haciendo daño
     - estoy con un fuerte dolor de cabeza desde esta mañana
-    - tengo una migraña fuerte
     - estoy lidiando con un dolor punzante en la cabeza
     - mi cabeza esta palpitando con intensidad
     - estoy con dolor de cabeza desde ayer
@@ -6022,7 +6025,6 @@ nlu:
     - mi cabeza late de forma insoportable
     - tengo un dolor agudo en la cabeza
     - me esta molestando el dolor de cabeza
-    - estoy sufriendo de una migraña intensa
     - mi cabeza me duele tanto que no puedo concentrarme
     - estoy con una jaqueca agobiante
     - tengo un dolor de cabeza que no me deja en paz
@@ -6033,7 +6035,6 @@ nlu:
     - mi cabeza esta latiendo con fuerza desde esta mañana
     - estoy con un dolor agudo y constante en la cabeza
     - me duele la cabeza como si alguien estuviera apretandola
-    - estoy sufriendo una migraña que no se va
     - mi cabeza me esta martillando de dolor
     - tengo una jaqueca que me esta afectando
     - estoy con dolor de cabeza desde hace dias
@@ -6047,7 +6048,6 @@ nlu:
     - estoy con una jaqueca intensa y duradera
     - tengo un dolor de cabeza que me esta afectando mucho
     - me duele la cabeza como si tuviera un peso encima
-    - estoy padeciendo de una migraña persistente
     - mi cabeza esta latiendo de dolor de manera constante
     - estoy con un dolor agudo en la cabeza que no se va
     - me duele la cabeza como si estuviera siendo apretada
@@ -6059,7 +6059,6 @@ nlu:
     - mi cabeza esta latiendo de dolor sin parar
     - estoy con un dolor agudo e incesante en la cabeza
     - me duele la cabeza como si estuviera siendo golpeada
-    - estoy sufriendo de migraña de forma persistente
     - mi cabeza esta palpitando con intensidad y no cesa
     - estoy con un dolor punzante que me esta afectando mucho
     - me duele la cabeza como si estuviera siendo apretada por un torniquete
@@ -6067,7 +6066,6 @@ nlu:
     - mi cabeza esta latiendo tan fuerte que apenas puedo soportarlo
     - estoy con un dolor agudo e incesante en la cabeza que no me deja tranquilo
     - me duele la cabeza como si estuviera siendo apuñalado repetidamente
-    - estoy sufriendo de migraña de forma aguda y duradera
     - mi cabeza esta palpitando con intensidad y no encuentro alivio
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente
     - me duele la cabeza como si estuviera siendo golpeada constantemente
@@ -6075,7 +6073,6 @@ nlu:
     - mi cabeza esta latiendo tan fuerte que apenas puedo concentrarme
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado
     - me duele la cabeza como si estuviera siendo apretada por un torniquete implacable
-    - estoy sufriendo de migraña de forma aguda y duradera que afecta mi calidad de vida
     - mi cabeza esta palpitando con intensidad y no encuentro alivio a pesar de intentarlo
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera constante
     - me duele la cabeza como si estuviera siendo golpeada constantemente lo cual me resulta muy molesto
@@ -6113,7 +6110,6 @@ nlu:
     - mi cabeza late tan fuerte que apenas puedo pensar con claridad
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado
     - me duele la cabeza como si estuviera siendo apretada por un torniquete implacable
-    - estoy sufriendo con una migraña aguda y duradera que me afecta dia a dia
     - mi cabeza esta palpitando con intensidad y no encuentro alivio a pesar de intentarlo
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera constante
     - me duele la cabeza como si estuviera siendo golpeada constantemente lo cual me resulta muy molesto
@@ -6121,7 +6117,6 @@ nlu:
     - mi cabeza late tan fuerte que apenas puedo concentrarme en cualquier cosa que haga
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado y sin energia
     - me duele la cabeza como si estuviera siendo apretada por un torniquete implacable que no afloja
-    - estoy sufriendo con una migraña aguda y duradera que afecta mi calidad de vida significativamente
     - mi cabeza esta palpitando con intensidad y no encuentro alivio a pesar de intentar diferentes metodos
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera constante y desgarradora
     - me duele la cabeza como si estuviera siendo golpeada constantemente lo cual me resulta extremadamente incomodo
@@ -6129,7 +6124,6 @@ nlu:
     - mi cabeza late tan fuerte que apenas puedo concentrarme en cualquier tarea que requiera atencion y enfoque
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado y sin capacidad para realizar actividades fisicas
     - me duele la cabeza como si estuviera siendo apretada por un torniquete implacable que no da tregua ni alivio
-    - estoy sufriendo con una migraña aguda y duradera que afecta mi calidad de vida y mi bienestar emocional
     - mi cabeza esta palpitando con intensidad y no encuentro alivio a pesar de intentar diferentes metodos y tratamientos
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera constante y desgarradora
     - me duele la cabeza como si estuviera siendo golpeada constantemente lo cual me resulta extremadamente incomodo y molesto
@@ -6137,7 +6131,6 @@ nlu:
     - mi cabeza late tan fuerte que apenas puedo concentrarme en cualquier tarea que requiera atencion y enfoque
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado y sin capacidad para realizar actividades fisicas
     - me duele la cabeza como si estuviera siendo apretada por un torniquete implacable que no da tregua ni alivio
-    - estoy sufriendo con una migraña aguda y duradera que afecta mi calidad de vida y mi bienestar emocional
     - mi cabeza esta palpitando con intensidad y no encuentro alivio a pesar de intentar diferentes metodos y tratamientos
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera constante y desgarradora
     - me duele la cabeza como si estuviera siendo golpeada constantemente lo cual me resulta extremadamente incomodo y molesto
@@ -6145,7 +6138,6 @@ nlu:
     - mi cabeza late tan fuerte que apenas puedo concentrarme en cualquier tarea que requiera atencion y enfoque
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado y sin capacidad para realizar actividades fisicas
     - me duele la cabeza como si estuviera siendo apretada por un torniquete implacable que no da tregua ni alivio
-    - estoy sufriendo con una migraña aguda y duradera que afecta mi calidad de vida y mi bienestar emocional
     - mi cabeza esta palpitando con intensidad y no encuentro alivio a pesar de intentar diferentes metodos y tratamientos
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera constante y desgarradora
     - me duele la cabeza como si estuviera siendo golpeada constantemente lo cual me resulta extremadamente incomodo y molesto
@@ -6153,7 +6145,6 @@ nlu:
     - mi cabeza late tan fuerte que apenas puedo concentrarme en cualquier tarea que requiera atencion y enfoque
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado y sin capacidad para realizar actividades fisicas
     - me duele la cabeza como si estuviera siendo apretada por un torniquete implacable que no da tregua ni alivio
-    - estoy sufriendo con una migraña aguda y duradera que afecta mi calidad de vida y mi bienestar emocional
     - mi cabeza esta palpitando con intensidad y no encuentro alivio a pesar de intentar diferentes metodos y tratamientos
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera constante y desgarradora
     - me duele la cabeza como si estuviera siendo golpeada constantemente lo cual me resulta extremadamente incomodo y molesto
@@ -6161,7 +6152,6 @@ nlu:
     - mi cabeza late tan fuerte que apenas puedo concentrarme en cualquier tarea que requiera atencion y enfoque
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado y sin capacidad para realizar actividades fisicas
     - me duele la cabeza como si estuviera siendo apretada por un torniquete implacable que no da tregua ni alivio
-    - estoy sufriendo con una migraña aguda y duradera que afecta mi calidad de vida y mi bienestar emocional
     - mi cabeza esta palpitando con intensidad y no encuentro alivio a pesar de intentar diferentes metodos y tratamientos
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera constante y desgarradora
     - me duele la cabeza como si estuviera siendo golpeada constantemente lo cual me resulta extremadamente incomodo y molesto
@@ -6169,7 +6159,6 @@ nlu:
     - mi cabeza late tan fuerte que apenas puedo concentrarme en cualquier tarea que requiera atencion y enfoque
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado y sin capacidad para realizar actividades fisicas
     - me duele la cabeza como si estuviera siendo apretada por un torniquete implacable que no da tregua ni alivio
-    - estoy sufriendo con una migraña aguda y duradera que afecta mi calidad de vida y mi bienestar emocional
     - mi cabeza esta palpitando con intensidad y no encuentro alivio a pesar de intentar diferentes metodos y tratamientos
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera constante y desgarradora
     - me duele la cabeza como si estuviera siendo golpeada constantemente lo cual me resulta extremadamente incomodo y molesto
@@ -6177,7 +6166,6 @@ nlu:
     - mi cabeza late tan fuerte que apenas puedo concentrarme en cualquier tarea que requiera atencion y enfoque
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado y sin capacidad para realizar actividades fisicas
     - me duele la cabeza como si estuviera siendo apretada por un torniquete implacable que no da tregua ni alivio
-    - estoy sufriendo con una migraña aguda y duradera que afecta mi calidad de vida y mi bienestar emocional
     - mi cabeza esta palpitando con intensidad y no encuentro alivio a pesar de intentar diferentes metodos y tratamientos
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera constante y desgarradora
     - me duele la cabeza como si estuviera siendo golpeada constantemente lo cual me resulta extremadamente incomodo y molesto
@@ -6193,7 +6181,6 @@ nlu:
     - mi cabeza esta palpitando con una intensidad que no encuentro como aliviar
     - estoy con un dolor agudo e incesante en la cabeza que me tiene agotado
     - me duele la cabeza como si estuviera siendo golpeada sin piedad
-    - estoy padeciendo de migraña de forma aguda y constante
     - mi cabeza late con una intensidad que apenas puedo soportar
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente
     - me duele la cabeza como si estuviera siendo apretada por una prensa
@@ -6205,7 +6192,6 @@ nlu:
     - mi cabeza late con una intensidad que apenas puedo mantenerme en pie
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera continua
     - me duele la cabeza como si estuviera siendo apretada por un torniquete que no cede
-    - estoy lidiando con una migraña que me esta afectando el estado de animo
     - mi cabeza esta palpitando con una intensidad que no encuentro como manejar
     - estoy con un dolor agudo e incesante en la cabeza que me tiene exhausto
     - me duele la cabeza como si estuviera siendo golpeada sin descanso
@@ -6217,7 +6203,6 @@ nlu:
     - mi cabeza esta palpitando con una intensidad que no encuentro como aliviar
     - estoy con un dolor agudo e incesante en la cabeza que me tiene abrumado
     - me duele la cabeza como si estuviera siendo golpeada constantemente
-    - estoy padeciendo de migraña persistente que me esta afectando la concentracion
     - mi cabeza late con una intensidad que apenas puedo mantenerme despierto
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera continua
     - me duele la cabeza como si estuviera siendo apretada por un torniquete que no cede
@@ -6229,11 +6214,9 @@ nlu:
     - mi cabeza late con una intensidad que apenas puedo concentrarme
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera persistente
     - me duele la cabeza como si estuviera siendo apretada por una fuerza incontrolable
-    - estoy sufriendo con una migraña que me esta afectando la calidad de vida
     - mi cabeza esta palpitando con una intensidad que no encuentro como aliviar
     - estoy con un dolor agudo e incesante en la cabeza que me tiene abrumado
     - me duele la cabeza como si estuviera siendo golpeada constantemente
-    - estoy padeciendo de migraña persistente que me esta afectando la concentracion
     - mi cabeza late con una intensidad que apenas puedo mantenerme despierto
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera continua
     - me duele la cabeza como si estuviera siendo apretada por un torniquete que no cede
@@ -6245,11 +6228,9 @@ nlu:
     - mi cabeza late con una intensidad que apenas puedo concentrarme
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera persistente
     - me duele la cabeza como si estuviera siendo apretada por una fuerza incontrolable
-    - estoy sufriendo con una migraña que me esta afectando la calidad de vida
     - mi cabeza esta palpitando con una intensidad que no encuentro como aliviar
     - estoy con un dolor agudo e incesante en la cabeza que me tiene abrumado
     - me duele la cabeza como si estuviera siendo golpeada constantemente
-    - estoy padeciendo de migraña persistente que me esta afectando la concentracion
     - mi cabeza late con una intensidad que apenas puedo mantenerme despierto
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera continua
     - me duele la cabeza como si estuviera siendo apretada por un torniquete que no cede
@@ -6261,11 +6242,9 @@ nlu:
     - mi cabeza late con una intensidad que apenas puedo concentrarme
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera persistente
     - me duele la cabeza como si estuviera siendo apretada por una fuerza incontrolable
-    - estoy sufriendo con una migraña que me esta afectando la calidad de vida
     - mi cabeza esta palpitando con una intensidad que no encuentro como aliviar
     - estoy con un dolor agudo e incesante en la cabeza que me tiene abrumado
     - me duele la cabeza como si estuviera siendo golpeada constantemente
-    - estoy padeciendo de migraña persistente que me esta afectando la concentracion
     - mi cabeza late con una intensidad que apenas puedo mantenerme despierto
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera continua
     - me duele la cabeza como si estuviera siendo apretada por un torniquete que no cede
@@ -6277,10 +6256,2331 @@ nlu:
     - mi cabeza late con una intensidad que apenas puedo concentrarme
     - estoy con un dolor punzante que me esta afectando fisica y emocionalmente de manera persistente
     - me duele la cabeza como si estuviera siendo apretada por una fuerza incontrolable
-    - estoy sufriendo con una migraña que me esta afectando la calidad de vida
     - mi cabeza esta palpitando con una intensidad que no encuentro como aliviar
     - estoy con un dolor agudo e incesante en la cabeza que me tiene abrumado
     - me duele la cabeza como si estuviera siendo golpeada constantemente
+
+- intent: origen_dolor_cabeza
+  examples: |
+    - de donde puede surge 
+    - de donde viene
+    - de donde pudo venir
+    - como identifico de donde vino
+    - como se de donde vino
+    - por que vino
+    - por que tengo dolor
+    - ¿Cuál podría ser la causa de este dolor de cabeza?
+    - ¿De dónde crees que proviene este dolor?
+    - ¿Qué podría haber desencadenado este malestar en la cabeza?
+    - ¿Qué factores podrían estar contribuyendo a este dolor de cabeza?
+    - ¿Hay algún motivo particular detrás de este dolor de cabeza?
+    - ¿Cuál podría ser el origen subyacente de este dolor en la cabeza?
+    - ¿Desde dónde podría estar originándose este dolor en la cabeza?
+    - ¿Qué situaciones o condiciones podrían haber desencadenado este dolor de cabeza?
+    - ¿Hay algo en específico que pueda estar causando este dolor de cabeza?
+    - ¿Qué podría haber desencadenado este repentino dolor en la cabeza?
+    - ¿De qué manera podría estar relacionado este dolor de cabeza con mi estado de salud general?
+    - ¿Cuáles son los posibles orígenes de este dolor de cabeza?
+    - ¿Qué eventos recientes podrían estar asociados con este dolor de cabeza?
+    - ¿Existen factores externos que podrían estar influyendo en este dolor de cabeza?
+    - ¿Podría este dolor de cabeza estar relacionado con algún problema subyacente?
+    - ¿Qué aspectos de mi estilo de vida podrían estar contribuyendo a este dolor de cabeza?
+    - ¿Cuál podría ser la razón detrás de este persistente dolor en la cabeza?
+    - ¿Qué podría estar desencadenando esta sensación de malestar en la cabeza?
+    - ¿Hay algún patrón en particular que pueda explicar este dolor de cabeza recurrente?
+    - ¿Qué actividades o hábitos podrían estar relacionados con este dolor de cabeza?
+    - ¿Podría haber algún desencadenante específico que esté causando este dolor en la cabeza?
+    - ¿Existen condiciones médicas que podrían estar asociadas con este tipo de dolor de cabeza?
+    - ¿Cómo puedo identificar la fuente exacta de este dolor en la cabeza?
+    - ¿Qué métodos puedo utilizar para determinar el origen de este dolor de cabeza?
+    - ¿Existen pruebas específicas que puedan ayudar a identificar la causa de este dolor de cabeza?
+    - ¿Qué señales debo buscar para entender de dónde viene este dolor en la cabeza?
+    - ¿Cómo puedo distinguir entre los diferentes tipos de dolor de cabeza para entender su origen?
+    - ¿Qué información debería recopilar para entender mejor el origen de este dolor en la cabeza?
+    - ¿Hay algún método de diagnóstico que pueda ayudar a identificar la causa de este dolor de cabeza?
+    - ¿Cómo puedo descartar posibles causas para llegar a la raíz de este dolor en la cabeza?
+    - ¿Qué profesionales de la salud debería consultar para determinar la causa de este dolor en la cabeza?
+    - ¿Existen pruebas específicas que puedan ayudar a descartar ciertas causas de este dolor de cabeza?
+    - ¿Qué medidas puedo tomar para investigar el origen de este dolor en la cabeza por mi cuenta?
+    - ¿Existen historiales médicos o antecedentes familiares que podrían ser relevantes para entender este dolor de cabeza?
+    - ¿Cuál es el primer paso que debo tomar para identificar la causa de este dolor en la cabeza?
+    - ¿Qué síntomas adicionales debería observar para entender mejor este dolor de cabeza?
+    - ¿Existen cambios en mi entorno que podrían haber contribuido a este dolor de cabeza?
+    - ¿Qué información puedo obtener de mi propia experiencia para entender mejor este dolor en la cabeza?
+    - ¿Qué medicamentos o sustancias he estado utilizando que podrían estar relacionados con este dolor de cabeza?
+    - ¿Qué impacto podrían tener mis niveles de estrés en este dolor en la cabeza?
+    - ¿Cómo puedo determinar si este dolor en la cabeza está relacionado con mi estado emocional?
+    - ¿Hay alguna relación entre mis hábitos alimenticios y este dolor de cabeza?
+    - ¿Qué actividades físicas o deportivas podrían estar vinculadas con este dolor en la cabeza?
+    - ¿Podría haber alguna relación entre mi postura y este dolor de cabeza?
+    - ¿Qué influencia podrían tener mis patrones de sueño en este dolor de cabeza?
+    - ¿Existen alergias o sensibilidades que podrían estar contribuyendo a este dolor de cabeza?
+    - ¿Qué efecto podrían tener los cambios climáticos en este dolor de cabeza?
+    - ¿Podría haber alguna relación entre mi exposición a la luz y este dolor en la cabeza?
+    - ¿Qué papel podría desempeñar la presión atmosférica en este dolor de cabeza?
+    - ¿Hay algún evento traumático reciente que pueda estar relacionado con este dolor de cabeza?
+    - ¿Qué papel podría tener mi historial médico en la comprensión de este dolor en la cabeza?
+    - ¿Podrían mis hábitos de consumo de cafeína estar contribuyendo a este dolor de cabeza?
+    - ¿Qué efecto podrían tener los cambios hormonales en este dolor de cabeza?
+    - ¿Podrían mis hábitos de trabajo o estudio estar relacionados con este dolor de cabeza?
+    - ¿Cómo puedo determinar si este dolor de cabeza es el resultado de una lesión física?
+    - ¿Qué impacto podrían tener los cambios en mi rutina diaria en este dolor de cabeza?
+    - ¿Podría este dolor en la cabeza estar relacionado con mi sistema inmunológico?
+    - ¿Qué influencia podrían tener los factores genéticos en este dolor de cabeza?
+    - ¿Podría este dolor de cabeza estar relacionado con una enfermedad subyacente?
+    - ¿Qué efecto podrían tener los cambios en mi medicación habitual en este dolor de cabeza?
+    - ¿Hay alguna relación entre mi edad y la frecuencia de este dolor de cabeza?
+    - ¿Podría este dolor de cabeza estar relacionado con la tensión muscular?
+    - ¿Qué impacto podrían tener los problemas de salud dental en este dolor de cabeza?
+    - ¿Podrían mis hábitos de consumo de alcohol estar contribuyendo a este dolor de cabeza?
+    - ¿Cómo puedo determinar si este dolor de cabeza está relacionado con mi sistema nervioso?
+    - ¿Qué papel podría desempeñar la deshidratación en este dolor de cabeza?
+    - ¿Podrían las condiciones de mi ambiente de trabajo estar relacionadas con este dolor de cabeza?
+    - ¿Qué efecto podrían tener los cambios en mi rutina de ejercicios en este dolor de cabeza?
+    - ¿Podrían mis hábitos de tabaquismo estar contribuyendo a este dolor de cabeza?
+    - ¿Cómo puedo determinar si este dolor de cabeza está relacionado con mi alimentación?
+    - ¿Qué influencia podrían tener los cambios en mi vida personal en este dolor de cabeza?
+    - ¿Podría este dolor de cabeza estar relacionado con mi sistema cardiovascular?
+    - ¿Qué impacto podrían tener los cambios en mi entorno laboral en este dolor de cabeza?
+    - ¿Podrían mis antecedentes de lesiones pasadas estar relacionados con este dolor de cabeza?
+    - ¿Cómo puedo determinar si este dolor de cabeza está relacionado con mis niveles de azúcar en la sangre?
+    - ¿Qué papel podría desempeñar la fatiga en este dolor de cabeza?
+    - ¿Podría este dolor de cabeza estar relacionado con problemas de la columna vertebral?
+    - ¿Qué efecto podrían tener los cambios en mi estado de ánimo en este dolor de cabeza?
+    - ¿Podrían mis hábitos de uso de dispositivos electrónicos estar contribuyendo a este dolor de cabeza?
+    - ¿Cómo puedo determinar si este dolor de cabeza está relacionado con problemas de visión?
+    - ¿Qué influencia podrían tener los cambios en mi dieta en este dolor de cabeza?
+    - ¿Podrían mis antecedentes de trauma craneal estar relacionados con este dolor de cabeza?
+    - ¿Qué impacto podrían tener los cambios en mi situación laboral en este dolor de cabeza?
+    - ¿Podría este dolor de cabeza estar relacionado con problemas de la glándula tiroides?
+    - ¿Cómo puedo determinar si este dolor de cabeza está relacionado con problemas de sinusitis?
+    - ¿Qué papel podría desempeñar la falta de ejercicio en este dolor de cabeza?
+    - ¿Podrían mis hábitos de sueño irregulares estar contribuyendo a este dolor de cabeza?
+    - ¿Qué influencia podrían tener los cambios en mi nivel de actividad en este dolor de cabeza?
+    - ¿Podrían mis antecedentes de problemas neurológicos estar relacionados con este dolor de cabeza?
+    - ¿Qué impacto podrían tener los cambios en mi estado emocional en este dolor de cabeza?
+    - ¿Podría este dolor de cabeza estar relacionado con problemas de la mandíbula?
+    - ¿Cómo puedo determinar si este dolor de cabeza está relacionado con problemas de presión arterial?
+    - ¿Qué papel podría desempeñar la exposición a toxinas en este dolor de cabeza?
+    - ¿Podrían mis hábitos de higiene postural estar contribuyendo a este dolor de cabeza?
+    - ¿Cómo puedo determinar si este dolor de cabeza está relacionado con problemas de la médula espinal?
+    - ¿Qué influencia podrían tener los cambios en mi entorno familiar en este dolor de cabeza?
+    - ¿Podrían mis antecedentes de problemas psicológicos estar relacionados con este dolor de cabeza?
+    - ¿Qué impacto podrían tener los cambios en mi situación financiera en este dolor de cabeza?
+    - ¿Podría este dolor de cabeza estar relacionado con problemas de la glándula pituitaria?
+    - ¿Por qué me duele la cabeza?
+    - ¿De dónde viene este dolor de cabeza?
+    - ¿Qué lo está causando?
+    - ¿Cómo empezó este dolor de cabeza?
+    - ¿Qué lo provocó?
+    - ¿Cuál es la razón de mi dolor de cabeza?
+    - ¿Cómo puedo saber qué lo causó?
+    - ¿Qué me está causando este dolor?
+    - ¿Por qué tengo este dolor de cabeza?
+    - ¿De dónde surgió este dolor de cabeza?
+    - ¿Cómo puedo identificar la causa?
+    - ¿Qué lo desencadenó?
+    - ¿Qué lo originó?
+    - ¿Por qué surgió de repente?
+    - ¿Qué lo está generando?
+    - ¿Cuál es la causa raíz?
+    - ¿Qué lo desató?
+    - ¿Qué lo hizo empezar?
+    - ¿Por qué estoy sintiendo este dolor de cabeza?
+    - ¿De dónde vino este dolor?
+    - ¿Qué lo activó?
+    - ¿Qué lo inició?
+    - ¿Por qué comenzó?
+    - ¿Qué lo causó esta vez?
+    - ¿De qué proviene este dolor?
+    - ¿Qué lo encendió?
+    - ¿Qué lo desencadenó esta vez?
+    - ¿Por qué empezó ahora?
+    - ¿Cuál es el motivo de este dolor?
+    - ¿Cómo puedo saber qué lo causó esta vez?
+    - ¿Por qué me está doliendo la cabeza?
+    - ¿Qué lo provocó esta vez?
+    - ¿De dónde viene este malestar?
+    - ¿Qué lo activó en este momento?
+    - ¿Por qué está presente este dolor?
+    - ¿Cuál es la causa esta vez?
+    - ¿Por qué me ataca este dolor ahora?
+    - ¿Qué lo desencadenó de nuevo?
+    - ¿De dónde viene esta incomodidad?
+    - ¿Qué lo disparó?
+    - ¿Por qué comenzó otra vez?
+    - ¿Cuál es la causa de este dolor ahora?
+    - ¿Por qué está presente este malestar?
+    - ¿Qué lo provocó en esta ocasión?
+    - ¿De dónde viene este dolor molesto?
+    - ¿Qué lo desencadenó nuevamente?
+    - ¿Por qué está presente este malestar ahora mismo?
+    - ¿Qué lo causó esta vez?
+    - ¿Por qué empezó de nuevo?
+    - ¿Cuál es la causa esta vez?
+    - ¿De dónde proviene esta molestia?
+    - ¿Qué lo activó de repente?
+    - ¿Por qué comenzó en este momento?
+    - ¿Cuál es la razón de este malestar?
+    - ¿Por qué me duele la cabeza en este momento?
+    - ¿Qué lo provocó de manera reciente?
+    - ¿De dónde viene este dolor ahora mismo?
+    - ¿Qué lo desencadenó esta vez?
+    - ¿Por qué está presente este malestar ahora?
+    - ¿Cuál es la causa de este dolor en este instante?
+    - ¿De dónde surge esta incomodidad?
+    - ¿Qué lo activó esta vez?
+    - ¿Por qué empezó en este momento?
+    - ¿Cuál es la razón detrás de este dolor ahora?
+    - ¿Por qué estoy experimentando este malestar ahora mismo?
+    - ¿Qué lo provocó en este momento?
+    - ¿De dónde viene este dolor ahora?
+    - ¿Qué lo desencadenó nuevamente?
+    - ¿Por qué está presente este dolor de cabeza en este instante?
+    - ¿Cuál es la causa de este malestar ahora mismo?
+    - ¿Por qué me duele ahora?
+    - ¿Qué lo provocó esta vez?
+    - ¿De dónde viene este malestar de repente?
+    - ¿Qué lo activó recientemente?
+    - ¿Por qué comenzó ahora este dolor?
+    - ¿Cuál es la razón detrás de este malestar en este momento?
+    - ¿Por qué estoy sufriendo este dolor en este momento?
+    - ¿Qué lo desencadenó en esta ocasión?
+    - ¿De dónde viene este dolor esta vez?
+    - ¿Qué lo causó repentinamente?
+    - ¿Por qué empezó ahora este malestar?
+    - ¿Cuál es la causa de este dolor de cabeza hoy?
+    - ¿Por qué me duele hoy?
+    - ¿Qué lo provocó hoy?
+    - ¿De dónde vino este dolor hoy?
+    - ¿Qué lo activó hoy?
+    - ¿Por qué comenzó hoy este dolor?
+    - ¿Cuál es la razón de este dolor de cabeza hoy?
+    - ¿Por qué estoy experimentando este malestar hoy?
+    - ¿Qué lo desencadenó hoy?
+    - ¿De dónde viene este dolor hoy?
+    - ¿Qué lo causó hoy?
+    - ¿Por qué empezó hoy este dolor?
+    - ¿Cuál es la causa de este malestar hoy?
+    - ¿Por qué me duele la cabeza hoy?
+    - ¿Qué lo provocó esta vez hoy?
+    - ¿De dónde viene este malestar hoy?
+    - ¿Qué lo activó hoy?
+    - ¿Por qué comenzó hoy este dolor de cabeza?
+    - ¿Cuál es la razón detrás de este malestar hoy?
+
+- intent: dolor_cabeza_allegados
+  examples: |
+    - Mi mamá está con dolor de cabeza.
+    - Mi amigo tiene dolor de cabeza.
+    - Mi papá se queja de dolor de cabeza.
+    - Un familiar está sufriendo de dolor de cabeza.
+    - Mi mamá tiene una fuerte jaqueca.
+    - Mi amigo tiene un terrible dolor de cabeza.
+    - Un familiar tiene una molestia en la cabeza.
+    - Mi mamá está sintiendo dolor en la cabeza.
+    - Mi amigo tiene una punzada en la cabeza.
+    - Mi papá está experimentando un fuerte dolor de cabeza.
+    - Un familiar está sufriendo de una fuerte jaqueca.
+    - Mi amigo parece tener dolor en la frente.
+    - Mi papá está pasando por un doloroso episodio de dolor de cabeza.
+    - Un familiar está lidiando con una molestia en la cabeza.
+    - Mi mamá está experimentando incomodidad en la cabeza.
+    - Mi amigo tiene malestar en la cabeza.
+    - Mi papá parece estar afectado por un dolor de cabeza.
+    - Un familiar está sintiendo un fuerte dolor en la cabeza.
+    - Mi mamá tiene un persistente dolor de cabeza.
+    - Mi amigo está sufriendo de dolor de cabeza intenso.
+    - Mi papá está luchando contra una jaqueca persistente.
+    - Mi mamá está sintiendo un dolor de cabeza recurrente.
+    - Mi amigo tiene una jaqueca incapacitante.
+    - Mi papá está sufriendo un dolor de cabeza palpitante.
+    - Un familiar parece estar afectado por un dolor en la sien.
+    - Mi mamá está lidiando con un dolor de cabeza agudo.
+    - Mi amigo está pasando por un intenso dolor de cabeza.
+    - Mi papá tiene una jaqueca que le está molestando.
+    - Mi mamá parece estar afectada por un dolor de cabeza constante.
+    - Mi amigo está lidiando con un dolor en la cabeza.
+    - Mi papá está experimentando una jaqueca debilitante.
+    - Un familiar tiene un dolor de cabeza constante.
+    - Mi mamá está sufriendo de un fuerte dolor en la cabeza.
+    - Mi amigo parece estar afectado por un dolor de cabeza recurrente.
+    - Un familiar está pasando por un dolor de cabeza que le está afectando.
+    - Mi mamá tiene una jaqueca que no puede soportar.
+    - Mi amigo está sufriendo de un dolor de cabeza punzante.
+    - Mi papá parece estar afectado por un dolor de cabeza constante.
+    - Un familiar está lidiando con un dolor en la cabeza.
+    - Mi mamá está experimentando una jaqueca agobiante.
+    - Mi amigo tiene un dolor de cabeza que le está afectando.
+    - Un familiar parece estar afectado por un dolor de cabeza molesto.
+    - Mi mamá está lidiando con un dolor de cabeza que no le da tregua.
+    - Mi amigo está pasando por un episodio de jaqueca que no puede soportar.
+    - Un familiar está sufriendo de un dolor de cabeza incapacitante.
+    - Mi mamá parece estar afectada por un dolor de cabeza que no cesa.
+    - Mi amigo está lidiando con un dolor en la cabeza que le está molestando.
+    - Mi papá está experimentando una jaqueca que no le permite concentrarse.
+    - Un familiar tiene un dolor de cabeza que le está afectando mucho.
+    - Mi amigo parece estar afectado por un dolor de cabeza punzante que no se va.
+    - Mi papá está lidiando con un dolor de cabeza agobiante que no le da tregua.
+    - Un familiar está pasando por un episodio de jaqueca que no cesa.
+    - Mi amigo está sufriendo de un dolor de cabeza constante que le impide descansar.
+    - Mi papá parece estar afectado por un dolor de cabeza que no cede.
+    - Un familiar está lidiando con un dolor en la cabeza que le está molestando.
+    - Mi mamá está experimentando una jaqueca debilitante.
+    - Mi amigo tiene un dolor de cabeza que no le permite concentrarse.
+    - Un familiar parece estar afectado por un dolor de cabeza punzante que no se va.
+    - Mi mamá está lidiando con un dolor de cabeza agobiante que no le da tregua.
+    - Mi amigo está pasando por un episodio de jaqueca que no cesa.
+    - Un familiar está sufriendo de un dolor de cabeza incapacitante.
+    - Mi mamá parece estar afectada por un dolor de cabeza que no cesa.
+    - Mi amigo está lidiando con un dolor en la cabeza que le está molestando.
+    - Mi papá está experimentando una jaqueca que no le permite concentrarse.
+    - Un familiar tiene un dolor de cabeza que le está afectando mucho.
+    - Mi amigo parece estar afectado por un dolor de cabeza punzante que no se va.
+    - Mi papá está lidiando con un dolor de cabeza agobiante que no le da tregua.
+    - Un familiar está pasando por un episodio de jaqueca que no cesa.
+    - Mi amigo está sufriendo de un dolor de cabeza constante que le impide descansar.
+    - Mi papá parece estar afectado por un dolor de cabeza que no cede.
+    - Un familiar está lidiando con un dolor en la cabeza que le está molestando.
+    - Mi mamá está experimentando una jaqueca debilitante.
+    - Mi amigo tiene un dolor de cabeza que no le permite concentrarse.
+    - Un familiar parece estar afectado por un dolor de cabeza punzante que no se va.
+    - Mi mamá está lidiando con un dolor de cabeza agobiante que no le da tregua.
+    - Mi amigo está pasando por un episodio de jaqueca que no cesa.
+    - Un familiar está sufriendo de un dolor de cabeza incapacitante.
+    - Mi mamá parece estar afectada por un dolor de cabeza que no cesa.
+    - Mi amigo está lidiando con un dolor en la cabeza que le está molestando.
+    - Mi papá está experimentando una jaqueca que no le permite concentrarse.
+    - Un familiar tiene un dolor de cabeza que le está afectando mucho.
+    - Mi amigo parece estar afectado por un dolor de cabeza punzante que no se va.
+    - Mi papá está lidiando con un dolor de cabeza agobiante que no le da tregua.
+    - Un familiar está pasando por un episodio de jaqueca que no cesa.
+    - Mi mamá está con un fuerte dolor de cabeza.
+    - Mi amigo tiene una molesta jaqueca.
+    - Mi papá parece tener un intenso dolor de cabeza.
+    - Mi mamá tiene dolor en la cabeza.
+    - Mi amigo está sufriendo de una jaqueca persistente.
+    - Mi papá tiene un dolor punzante en la cabeza.
+    - Un familiar se queja de un dolor de cabeza constante.
+    - Mi mamá está sintiendo una fuerte presión en la cabeza.
+    - Mi amigo parece estar afectado por un dolor de cabeza agudo.
+    - Mi papá está experimentando una jaqueca pulsátil.
+    - Mi mamá parece tener un dolor de cabeza persistente.
+    - Mi amigo está luchando contra un dolor de cabeza intenso.
+    - Mi papá tiene una jaqueca debilitante.
+    - Un familiar está sufriendo de un fuerte dolor en la cabeza.
+    - Mi mamá parece estar afectada por una jaqueca molesta.
+    - Mi amigo está pasando por un dolor de cabeza agobiante.
+    - Mi papá tiene un dolor de cabeza que le está afectando mucho.
+    - Un familiar está experimentando una jaqueca insoportable.
+    - Mi mamá parece tener un dolor de cabeza incapacitante.
+    - Mi amigo está sufriendo de un dolor de cabeza pulsátil.
+    - Un familiar está lidiando con un dolor de cabeza que no cede.
+    - Mi mamá está experimentando una jaqueca palpitante.
+    - Mi amigo tiene un dolor de cabeza recurrente.
+    - Mi papá parece estar afectado por un dolor de cabeza constante.
+    - Un familiar está sufriendo de una jaqueca punzante.
+    - Mi mamá está pasando por un dolor de cabeza molesto.
+    - Mi papá está luchando contra un dolor de cabeza que no se va.
+    - Un familiar tiene una jaqueca que no puede soportar.
+    - Mi mamá parece tener un dolor de cabeza agobiante.
+    - Mi amigo está sufriendo de un intenso dolor en la cabeza.
+    - Mi papá tiene un dolor de cabeza que no le permite concentrarse.
+    - Mi mamá parece estar afectada por un dolor de cabeza recurrente.
+    - Mi amigo está pasando por un episodio de jaqueca que le está afectando.
+    - Mi papá tiene una jaqueca que le impide descansar.
+    - Un familiar está lidiando con un dolor de cabeza agobiante que no cesa.
+    - Mi mamá está sufriendo de un dolor de cabeza debilitante.
+    - Mi papá parece estar afectado por un dolor de cabeza incapacitante.
+    - Un familiar está experimentando una jaqueca insoportable.
+    - Mi mamá parece tener un dolor de cabeza punzante que no se va.
+    - Mi amigo está luchando contra un dolor de cabeza molesto.
+    - Mi papá tiene un dolor de cabeza recurrente que no le permite descansar.
+    - Un familiar está pasando por un dolor de cabeza que no puede soportar.
+    - Mi mamá parece estar afectada por un dolor de cabeza agobiante que no cesa.
+    - Mi amigo está sufriendo de un intenso dolor en la cabeza que le impide concentrarse.
+    - Un familiar está experimentando una jaqueca punzante que no cede.
+    - Mi mamá parece tener un dolor de cabeza que le está afectando mucho.
+    - Mi amigo está pasando por un episodio de jaqueca que no puede soportar.
+    - Mi papá tiene una jaqueca que le está afectando de manera significativa.
+    - Un familiar está lidiando con un dolor de cabeza que le impide funcionar correctamente.
+    - Mi mamá parece estar afectada por un dolor de cabeza que no cesa.
+    - Mi amigo está sufriendo de un dolor de cabeza palpitante que le impide concentrarse.
+    - Mi papá tiene un dolor de cabeza molesto que no le da tregua.
+    - Mi mamá parece tener un dolor de cabeza incapacitante que le impide realizar sus actividades diarias.
+    - Mi amigo está pasando por un episodio de jaqueca que no cesa.
+    - Mi papá tiene una jaqueca punzante que le impide descansar adecuadamente.
+    - Un familiar está lidiando con un dolor de cabeza recurrente que le está afectando emocionalmente.
+    - Mi mamá parece estar afectada por un dolor de cabeza agudo que le impide disfrutar de su día.
+    - Mi amigo está sufriendo de un intenso dolor en la cabeza que le está causando malestar general.
+    - Un familiar está experimentando una jaqueca insoportable que no le permite concentrarse en nada más.
+    - Mi mamá parece tener un dolor de cabeza punzante que le está causando dificultades para dormir.
+    - Mi amigo está luchando contra un dolor de cabeza molesto que le está afectando su calidad de vida.
+    - Mi papá tiene un dolor de cabeza recurrente que le está causando preocupación por su salud.
+    - Un familiar está pasando por un dolor de cabeza que no le permite disfrutar de las actividades cotidianas.
+    - Mi mamá parece estar afectada por un dolor de cabeza agobiante que le está causando estrés.
+    - Mi amigo está sufriendo de un dolor de cabeza palpitante que le está causando irritabilidad.
+    - Un familiar está experimentando una jaqueca incapacitante que le está afectando su estado de ánimo.
+    - Mi mamá parece tener un dolor de cabeza incapacitante que le está causando ansiedad.
+    - Mi amigo está pasando por un episodio de jaqueca que le está afectando su rendimiento laboral.
+    - Mi papá tiene una jaqueca punzante que le está causando pérdida de apetito.
+    - Un familiar está lidiando con un dolor de cabeza recurrente que le está afectando su interacción social.
+    - Mi mamá parece estar afectada por un dolor de cabeza agudo que le está causando falta de concentración.
+    - Mi amigo está sufriendo de un intenso dolor en la cabeza que le está causando problemas de memoria.
+    - Un familiar está experimentando una jaqueca insoportable que le está afectando su estado de ánimo.
+    - Mi mamá parece tener un dolor de cabeza punzante que le está causando sensibilidad a la luz.
+    - Mi amigo está luchando contra un dolor de cabeza molesto que le está causando sensibilidad al sonido.
+    - Mi papá tiene un dolor de cabeza recurrente que le está causando problemas de visión.
+    - Un familiar está pasando por un dolor de cabeza que le está causando náuseas.
+    - Mi mamá parece estar afectada por un dolor de cabeza agobiante que le está causando vómitos.
+    - Mi amigo está sufriendo de un dolor de cabeza palpitante que le está causando dificultades para respirar.+
+    - Un familiar está experimentando una jaqueca incapacitante que le está causando dificultades para moverse.
+    - Mi mamá parece tener un dolor de cabeza incapacitante que le está causando temblores.
+    - Mi amigo está pasando por un episodio de jaqueca que le está causando entumecimiento en las extremidades.
+    - Mi papá tiene una jaqueca punzante que le está causando palpitaciones.
+    - Un familiar está lidiando con un dolor de cabeza recurrente que le está causando sudoración excesiva.
+    - Mi mamá parece estar afectada por un dolor de cabeza agudo que le está causando escalofríos.
+    - Mi amigo está sufriendo de un intenso dolor en la cabeza que le está causando fiebre.
+    - Un familiar está experimentando una jaqueca insoportable que le está causando confusión.
+
+- intent: definicion_dolor_cabeza
+  examples: |
+    - que es el dolor de cabeza
+    - ¿Cuál es la naturaleza del dolor de cabeza?
+    - ¿Cómo definirías el dolor de cabeza?
+    - ¿Qué significa tener dolor de cabeza?
+    - ¿Qué se entiende por dolor de cabeza?
+    - ¿Cómo se caracteriza el dolor de cabeza?
+    - ¿Qué se experimenta cuando se tiene dolor de cabeza?
+    - ¿Cuál es la descripción del dolor de cabeza?
+    - ¿Qué se puede decir sobre el dolor de cabeza?
+    - ¿Cuál es la esencia del dolor de cabeza?
+    - ¿Cómo se puede explicar el dolor de cabeza?
+    - ¿Qué se puede identificar como dolor de cabeza?
+    - ¿Cuál es la percepción común del dolor de cabeza?
+    - ¿Qué se entiende por sensación de dolor de cabeza?
+    - ¿Cómo se puede entender el dolor de cabeza?
+    - ¿Qué se puede decir sobre la sensación de dolor de cabeza?
+    - ¿Cuál es la explicación del dolor de cabeza?
+    - ¿Cómo se puede describir el dolor de cabeza?
+    - ¿Qué se puede concluir sobre el dolor de cabeza?
+    - ¿Cuál es la comprensión del dolor de cabeza?
+    - ¿Cómo se puede interpretar el dolor de cabeza?
+    - ¿Qué se puede inferir sobre el dolor de cabeza?
+    - ¿Cuál es la interpretación habitual del dolor de cabeza?
+    - ¿Cómo se puede caracterizar el dolor de cabeza?
+    - ¿Qué se puede concluir a partir del dolor de cabeza?
+    - ¿Cuál es la explicación más común del dolor de cabeza?
+    - ¿Cómo se puede conceptualizar el dolor de cabeza?
+    - ¿Qué se puede entender intuitivamente sobre el dolor de cabeza?
+    - ¿Cuál es la definición más precisa del dolor de cabeza?
+    - ¿Cómo se puede representar el dolor de cabeza?
+    - ¿Qué se puede deducir sobre el dolor de cabeza?
+    - ¿Cuál es la interpretación general del dolor de cabeza?
+    - ¿Cómo se puede sintetizar el dolor de cabeza?
+    - ¿Qué se puede asumir sobre el dolor de cabeza?
+    - ¿Cuál es la impresión habitual del dolor de cabeza?
+    - ¿Cómo se puede esclarecer el dolor de cabeza?
+    - ¿Qué se puede aclarar sobre el dolor de cabeza?
+    - ¿Cuál es la percepción predominante del dolor de cabeza?
+    - ¿Cómo se puede representar el dolor de cabeza de manera clara?
+    - ¿Qué se puede explicar de manera concisa sobre el dolor de cabeza?
+    - ¿Cuál es la comprensión generalizada del dolor de cabeza?
+    - ¿Cómo se puede resumir el dolor de cabeza?
+    - ¿Qué se puede discernir sobre el dolor de cabeza?
+    - ¿Cuál es la comprensión ampliamente aceptada del dolor de cabeza?
+    - ¿Cómo se puede definir el dolor de cabeza de manera simple?
+    - ¿Qué se puede entender fácilmente sobre el dolor de cabeza?
+    - ¿Cuál es la percepción comúnmente compartida del dolor de cabeza?
+    - ¿Cómo se puede interpretar el dolor de cabeza en términos simples?
+    - ¿Qué se puede concluir de manera clara sobre el dolor de cabeza?
+    - ¿Cuál es la concepción básica del dolor de cabeza?
+    - ¿Cómo se puede describir el dolor de cabeza de manera accesible?
+    - ¿Qué se puede entender sin complicaciones sobre el dolor de cabeza?
+    - ¿Cuál es la explicación sencilla del dolor de cabeza?
+    - ¿Cómo se puede explicar el dolor de cabeza de manera elemental?
+    - ¿Qué se puede comprender de forma directa sobre el dolor de cabeza?
+    - ¿Cuál es la descripción más simple del dolor de cabeza?
+    - ¿Cómo se puede simplificar la explicación del dolor de cabeza?
+    - ¿Qué se puede comprender sin necesidad de detalles sobre el dolor de cabeza?
+    - ¿Cuál es la representación más básica del dolor de cabeza?
+    - ¿Cómo se puede resumir el dolor de cabeza en pocas palabras?
+    - ¿Qué se puede entender sin tener que profundizar en el tema del dolor de cabeza?
+    - ¿Cuál es la percepción general que se tiene sobre el dolor de cabeza?
+    - ¿Cómo se puede explicar el dolor de cabeza de manera superficial?
+    - ¿Qué se puede entender con una breve explicación sobre el dolor de cabeza?
+    - ¿Cuál es la definición más elemental del dolor de cabeza?
+    - ¿Cómo se puede simplificar el entendimiento del dolor de cabeza?
+    - ¿Qué se puede entender con una descripción breve del dolor de cabeza?
+    - ¿Cuál es la explicación más básica que se puede dar sobre el dolor de cabeza?
+    - ¿Cómo se puede resumir el concepto del dolor de cabeza de manera simple?
+    - ¿Qué se puede comprender sin necesidad de entrar en detalles técnicos sobre el dolor de cabeza?
+    - ¿Cuál es la representación más simple que se puede dar del dolor de cabeza?
+    - ¿Cómo se puede presentar el dolor de cabeza de forma fácil de entender?
+    - ¿Qué se puede entender con una explicación sin términos complicados sobre el dolor de cabeza?
+    - ¿Cuál es la definición más accesible del dolor de cabeza?
+    - ¿Cómo se puede explicar el dolor de cabeza de manera que sea comprendido por todos?
+    - ¿Qué se puede entender con una definición que no requiera conocimientos previos sobre el dolor de cabeza?
+    - ¿Cuál es la percepción más básica que se puede tener sobre el dolor de cabeza?
+    - ¿Cómo se puede describir el dolor de cabeza de forma que cualquier persona pueda entenderlo?
+    - ¿Qué se puede entender con una explicación que no sea técnica sobre el dolor de cabeza?
+    - ¿Cuál es la explicación más clara y simple que se puede dar sobre el dolor de cabeza?
+    - ¿Cómo se puede presentar el dolor de cabeza de manera que sea intuitivo para todos?
+    - ¿Qué se puede entender con una descripción que no requiera conocimientos especializados sobre el dolor de cabeza?
+    - ¿Cuál es la definición más directa y fácil de entender del dolor de cabeza?
+    - ¿Cómo se puede simplificar la explicación del dolor de cabeza para hacerla más comprensible?
+    - ¿Qué se puede entender con una explicación que se base en la experiencia común sobre el dolor de cabeza?
+    - ¿Cuál es la representación más sencilla que se puede dar del dolor de cabeza?
+    - ¿Cómo se puede explicar el dolor de cabeza de forma que sea familiar para todos?
+    - ¿Qué se puede entender con una descripción que se base en sensaciones conocidas sobre el dolor de cabeza?
+    - ¿Cuál es la definición más básica que se puede dar del dolor de cabeza?
+    - ¿Cómo se puede presentar el dolor de cabeza de manera que sea entendido por todos, independientemente de su formación?
+    - ¿Qué se puede entender con una explicación que no requiera términos técnicos sobre el dolor de cabeza?
+    - ¿Cuál es la explicación más simple y fácil de recordar sobre el dolor de cabeza?
+    - ¿Cómo se puede describir el dolor de cabeza de forma que sea fácil de visualizar?
+    - ¿Qué se puede entender con una explicación que se base en ejemplos cotidianos sobre el dolor de cabeza?
+    - ¿Cuál es la representación más clara y concisa que se puede dar del dolor de cabeza?
+    - ¿Cómo se puede simplificar la explicación del dolor de cabeza para hacerla más accesible?
+    - ¿Qué se puede entender con una descripción que se base en analogías simples sobre el dolor de cabeza?
+    - ¿Cuál es la definición más directa y sin complicaciones que se puede dar del dolor de cabeza?
+    - ¿Cómo se puede presentar el dolor de cabeza de manera que sea fácil de relacionar con la experiencia personal?
+    - ¿Qué se puede entender con una explicación que se base en sensaciones familiares sobre el dolor de cabeza?
+    - ¿Cuál es la explicación más clara y comprensible que se puede dar del dolor de cabeza?
+    - ¿Qué es sentir dolor en la cabeza?
+    - ¿Qué significa tener la cabeza dolida?
+    - ¿Qué pasa cuando te duele la cabeza?
+    - ¿Cómo se siente tener dolor de cabeza?
+    - ¿Qué es tener una molestia en la cabeza?
+    - ¿Qué se siente cuando la cabeza te duele?
+    - ¿Qué es tener una cabeza que duele?
+    - ¿Cómo se puede definir tener dolor de cabeza?
+    - ¿Qué sensaciones acompañan al dolor de cabeza?
+    - ¿Cómo se puede describir la sensación de dolor en la cabeza?
+    - ¿Qué es tener una sensación de molestia en la cabeza?
+    - ¿Qué se puede decir sobre el dolor de cabeza?
+    - ¿Qué se siente cuando la cabeza está dolorida?
+    - ¿Cómo se puede explicar lo que es tener dolor de cabeza?
+    - ¿Qué es tener una cabeza incómoda?
+    - ¿Qué sensaciones se experimentan con el dolor de cabeza?
+    - ¿Cómo se puede entender el dolor de cabeza de manera simple?
+    - ¿Qué es tener la cabeza que molesta?
+    - ¿Qué significa tener una cabeza que duele?
+    - ¿Cómo describirías tener dolor en la cabeza?
+    - ¿Qué es tener una cabeza incómoda?
+    - ¿Qué se siente cuando tienes dolor de cabeza?
+    - ¿Cómo se puede explicar el dolor de cabeza de forma simple?
+    - ¿Qué es tener una cabeza molesta?
+    - ¿Qué sensaciones acompañan al dolor en la cabeza?
+    - ¿Cómo se siente tener la cabeza dolida?
+    - ¿Qué es tener dolor en la cabeza?
+    - ¿Qué significa cuando la cabeza te duele?
+    - ¿Cómo se puede describir el dolor de cabeza de manera simple?
+    - ¿Qué se experimenta cuando la cabeza está dolorida?
+    - ¿Qué es tener una cabeza que duele mucho?
+    - ¿Qué sensaciones se tienen cuando hay dolor en la cabeza?
+    - ¿Cómo se puede entender el dolor de cabeza sin complicaciones?
+    - ¿Qué es tener una cabeza que molesta constantemente?
+    - ¿Qué significa tener la cabeza que molesta?
+    - ¿Cómo se siente tener dolor en la cabeza?
+    - ¿Qué es tener una molestia en la cabeza?
+    - ¿Qué se siente cuando la cabeza está dolorida?
+    - ¿Cómo se puede explicar el dolor de cabeza de forma sencilla?
+    - ¿Qué es tener la cabeza que duele todo el tiempo?
+    - ¿Qué sensaciones se tienen cuando hay dolor de cabeza?
+    - ¿Cómo se puede entender el dolor en la cabeza sin complicaciones?
+    - ¿Qué es tener una cabeza incómoda constantemente?
+    - ¿Qué significa tener una cabeza que molesta?
+    - ¿Cómo se siente tener dolor en la cabeza?
+    - ¿Qué es tener una molestia en la cabeza?
+    - ¿Qué se siente cuando la cabeza está dolorida?
+    - ¿Cómo se puede explicar el dolor de cabeza de forma fácil?
+    - ¿Qué es tener la cabeza que duele sin parar?
+    - ¿Qué sensaciones acompañan al dolor de cabeza?
+    - ¿Cómo se puede entender el dolor en la cabeza de manera simple?
+    - ¿Qué es tener una cabeza que molesta siempre?
+    - ¿Qué significa tener una cabeza dolorida?
+    - ¿Cómo se siente tener dolor de cabeza?
+    - ¿Qué es tener una cabeza incómoda?
+    - ¿Qué se siente cuando la cabeza duele?
+    - ¿Cómo se puede explicar el dolor de cabeza sin complicaciones?
+    - ¿Qué es tener la cabeza que duele mucho tiempo?
+    - ¿Qué sensaciones acompañan al dolor en la cabeza?
+    - ¿Cómo se puede entender el dolor de cabeza de manera simple?
+    - ¿Qué es tener una cabeza que molesta durante mucho tiempo?
+    - ¿Qué significa tener una cabeza dolorida constantemente?
+    - ¿Cómo se siente tener dolor de cabeza?
+    - ¿Qué es tener una molestia en la cabeza?
+    - ¿Qué se siente cuando la cabeza está dolorida?
+    - ¿Cómo se puede explicar el dolor de cabeza de manera fácil?
+    - ¿Qué es tener la cabeza que duele todo el día?
+    - ¿Qué sensaciones acompañan al dolor de cabeza?
+    - ¿Cómo se puede entender el dolor en la cabeza sin complicaciones?
+    - ¿Qué es tener una cabeza que molesta día tras día?
+    - ¿Qué significa tener una cabeza dolorida todo el tiempo?
+    - ¿Cómo se siente tener dolor de cabeza?
+    - ¿Qué es tener una cabeza incómoda?
+    - ¿Qué se siente cuando la cabeza duele constantemente?
+    - ¿Cómo se puede explicar el dolor de cabeza sin complicaciones?
+    - ¿Qué es tener la cabeza que duele sin cesar?
+    - ¿Qué sensaciones acompañan al dolor de cabeza?
+    - ¿Cómo se puede entender el dolor en la cabeza de manera simple?
+    - ¿Qué es tener una cabeza que molesta siempre?
+    - ¿Qué significa tener una cabeza dolorida constantemente?
+    - ¿Cómo se siente tener dolor de cabeza?
+    - ¿Qué es tener una molestia en la cabeza?
+    - ¿Qué se siente cuando la cabeza está dolorida?
+    - ¿Cómo se puede explicar el dolor de cabeza de manera fácil?
+    - ¿Qué es tener la cabeza que duele todo el tiempo?
+    - ¿Qué sensaciones acompañan al dolor de cabeza?
+    - ¿Cómo se puede entender el dolor en la cabeza sin complicaciones?
+    - ¿Qué es tener una cabeza que molesta durante mucho tiempo?
+    - ¿Qué significa tener una cabeza dolorida constantemente?
+    - ¿Cómo se siente tener dolor de cabeza?
+    - ¿Qué es tener una cabeza incómoda?
+    - ¿Qué se siente cuando la cabeza duele siempre?
+    - ¿Cómo se puede explicar el dolor de cabeza sin complicaciones?
+    - ¿Qué es tener la cabeza que duele sin cesar?
+    - ¿Qué sensaciones acompañan al dolor de cabeza?
+    - ¿Cómo se puede entender el dolor en la cabeza de manera simple?
+    - ¿Qué es tener una cabeza que molesta siempre?
+    - ¿Qué significa tener una cabeza dolorida constantemente?
+    - ¿Cómo se siente tener dolor de cabeza?
+    - ¿Qué es tener una molestia en la cabeza?
+
+- intent: tipos_dolor_cabeza
+  examples: |  
+    - ¿Qué clases de dolor de cabeza existen?
+    - ¿Cuáles son los diferentes tipos de dolor de cabeza?
+    - ¿Qué variedades de dolor de cabeza hay?
+    - ¿Cómo se clasifican los dolores de cabeza?
+    - ¿Qué categorías de dolor de cabeza conoces?
+    - ¿Cuáles son las variantes de dolor de cabeza que puedes mencionar?
+    - ¿Qué tipos de dolor en la cabeza son comunes?
+    - ¿Podrías enumerar los distintos tipos de dolor de cabeza?
+    - ¿Qué clasificaciones se utilizan para el dolor de cabeza?
+    - ¿Cuáles son las formas de dolor de cabeza más frecuentes?
+    - ¿Podrías describir las diferentes formas de dolor de cabeza?
+    - ¿Qué tipos de dolor de cabeza son más conocidos?
+    - ¿Qué tipos de dolor en la cabeza se pueden distinguir?
+    - ¿Cuáles son las principales categorías de dolor de cabeza?
+    - ¿Podrías explicar los tipos de dolor de cabeza que existen?
+    - ¿Qué variaciones de dolor de cabeza son más comunes?
+    - ¿Cuáles son las clases de dolor de cabeza más importantes?
+    - ¿Qué tipos de dolor en la cabeza son más predominantes?
+    - ¿Podrías identificar los diferentes tipos de dolor de cabeza?
+    - ¿Qué divisiones de dolor de cabeza se pueden hacer?
+    - ¿Cuáles son los grupos de dolor de cabeza que se reconocen?
+    - ¿Qué clases de dolor en la cabeza son más ampliamente aceptadas?
+    - ¿Cuáles son las variedades de dolor de cabeza que se pueden distinguir fácilmente?
+    - ¿Qué tipos de dolor de cabeza se diferencian en la práctica clínica?
+    - ¿Podrías enumerar las distintas formas de dolor de cabeza que se conocen?
+    - ¿Qué categorías de dolor de cabeza son las más estudiadas?
+    - ¿Cuáles son las clasificaciones de dolor de cabeza que los profesionales de la salud consideran más importantes?
+    - ¿Podrías describir los distintos tipos de dolor de cabeza en detalle?
+    - ¿Qué clases de dolor de cabeza se reconocen internacionalmente?
+    - ¿Cuáles son los tipos de dolor en la cabeza que presentan características únicas?
+    - ¿Qué variaciones de dolor de cabeza se asocian comúnmente con condiciones médicas específicas?
+    - ¿Cuáles son los tipos de dolor de cabeza que requieren una atención médica especializada?
+    - ¿Qué categorías de dolor en la cabeza se pueden distinguir según su duración?
+    - ¿Cuáles son las clasificaciones de dolor de cabeza que influyen en el tratamiento recomendado?
+    - ¿Podrías explicar cómo se diferencian los tipos de dolor de cabeza según su ubicación?
+    - ¿Qué variaciones de dolor de cabeza se asocian con factores desencadenantes específicos?
+    - ¿Cuáles son las clases de dolor de cabeza que pueden ser indicativas de problemas de salud más graves?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden presentar síntomas adicionales?
+    - ¿Qué categorías de dolor de cabeza se consideran crónicas?
+    - ¿Cuáles son las clasificaciones de dolor de cabeza que pueden mejorar con cambios en el estilo de vida?
+    - ¿Podrías describir los diferentes tipos de dolor de cabeza según su gravedad?
+    - ¿Qué variaciones de dolor de cabeza se pueden aliviar con tratamientos caseros?
+    - ¿Cuáles son los tipos de dolor en la cabeza que se pueden manejar con medicamentos de venta libre?
+    - ¿Cuáles son las clases de dolor de cabeza que pueden requerir una evaluación médica inmediata?
+    - ¿Qué categorías de dolor de cabeza se pueden prevenir con cambios en la dieta y el ejercicio?
+    - ¿Cuáles son las clasificaciones de dolor de cabeza que pueden ser recurrentes?
+    - ¿Podrías explicar cómo se distinguen los diferentes tipos de dolor de cabeza en función de sus características?
+    - ¿Qué variaciones de dolor de cabeza se pueden experimentar durante el embarazo?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden estar relacionados con el estrés?
+    - ¿Qué clases de dolor de cabeza se consideran más debilitantes?
+    - ¿Cuáles son las categorías de dolor de cabeza que pueden requerir pruebas de diagnóstico adicionales?
+    - ¿Qué tipos de dolor de cabeza se pueden mejorar con técnicas de relajación y manejo del estrés?
+    - ¿Cuáles son las clasificaciones de dolor de cabeza que pueden presentar síntomas visuales?
+    - ¿Podrías describir los diferentes tipos de dolor de cabeza según su inicio?
+    - ¿Qué variaciones de dolor de cabeza se pueden asociar con cambios hormonales?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden afectar la calidad del sueño?
+    - ¿Qué clases de dolor de cabeza se pueden exacerbar con el consumo de ciertos alimentos o bebidas?
+    - ¿Cuáles son las categorías de dolor de cabeza que se pueden tratar con terapias alternativas?
+    - ¿Podrías explicar cómo se diferencian los diferentes tipos de dolor de cabeza según la edad del paciente?
+    - ¿Qué variaciones de dolor de cabeza se pueden asociar con la actividad física intensa?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden requerir la evaluación de un especialista?
+    - ¿Qué clases de dolor de cabeza se pueden prevenir con técnicas de postura adecuadas?
+    - ¿Cuáles son las clasificaciones de dolor de cabeza que pueden ser recurrentes durante ciertas estaciones del año?
+    - ¿Podrías describir los diferentes tipos de dolor de cabeza según su patrón de presentación?
+    - ¿Qué variaciones de dolor de cabeza se pueden asociar con el consumo de tabaco o alcohol?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden presentar sensibilidad al ruido o la luz?
+    - ¿Qué clases de dolor de cabeza se pueden agravar con la exposición a ciertos olores?
+    - ¿Cuáles son las categorías de dolor de cabeza que pueden presentarse como síntomas de otras afecciones?
+    - ¿Podrías explicar cómo se distinguen los diferentes tipos de dolor de cabeza según la presencia de aura?
+    - ¿Qué variaciones de dolor de cabeza se pueden experimentar como resultado de lesiones físicas?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden interferir con las actividades diarias?
+    - ¿Qué clases de dolor de cabeza se pueden asociar con trastornos del sueño?
+    - ¿Cuáles son las clasificaciones de dolor de cabeza que pueden requerir una evaluación neurológica?
+    - ¿Podrías describir los diferentes tipos de dolor de cabeza según su respuesta a ciertos medicamentos?
+    - ¿Qué variaciones de dolor de cabeza se pueden experimentar como parte de un síndrome específico?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden presentarse con náuseas o vómitos?
+    - ¿Qué clases de dolor de cabeza se pueden clasificar como migrañas?
+    - ¿Cuáles son las categorías de dolor de cabeza que pueden asociarse con trastornos de la visión?
+    - ¿Podrías explicar cómo se distinguen los diferentes tipos de dolor de cabeza según su duración y frecuencia?
+    - ¿Qué variaciones de dolor de cabeza se pueden asociar con trastornos de la articulación temporomandibular?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden ser indicativos de una emergencia médica?
+    - ¿Qué clases de dolor de cabeza se pueden tratar con terapias de rehabilitación física?
+    - ¿Cuáles son las clasificaciones de dolor de cabeza que pueden presentarse con alteraciones del estado de ánimo?
+    - ¿Podrías describir los diferentes tipos de dolor de cabeza según su localización en la cabeza?
+    - ¿Qué variaciones de dolor de cabeza se pueden experimentar como parte de una enfermedad sistémica?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden requerir la evaluación de un especialista en dolor?
+    - ¿Qué clases de dolor de cabeza se pueden clasificar como cefaleas tensionales?
+    - ¿Cuáles son las categorías de dolor de cabeza que pueden asociarse con trastornos del sistema nervioso central?
+    - ¿Podrías explicar cómo se distinguen los diferentes tipos de dolor de cabeza según su aparición repentina o gradual?
+    - ¿Qué variaciones de dolor de cabeza se pueden asociar con cambios en la presión atmosférica?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden presentarse con dificultades de concentración?
+    - ¿Qué clases de dolor de cabeza se pueden clasificar como cefaleas primarias?
+    - ¿Cuáles son las clasificaciones de dolor de cabeza que pueden presentarse con trastornos del sueño?
+    - ¿Podrías describir los diferentes tipos de dolor de cabeza según su respuesta a factores desencadenantes específicos?
+    - ¿Qué variaciones de dolor de cabeza se pueden experimentar como resultado de una lesión traumática?
+    - ¿Cuáles son los tipos de dolor en la cabeza que pueden asociarse con trastornos vasculares?
+    - ¿Qué clases de dolor de cabeza se pueden clasificar como cefaleas secundarias?
+    - ¿Cuáles son las categorías de dolor de cabeza que pueden presentarse con cambios en el apetito?
+    - ¿Podrías explicar cómo se distinguen los diferentes tipos de dolor de cabeza según la presencia de síntomas neurológicos adicionales?
+    - ¿Qué variaciones de dolor de cabeza se pueden experimentar como resultado de condiciones médicas subyacentes?
+    - ¿Cuántos tipos de dolores de cabeza hay?
+    - ¿Cómo se pueden clasificar los dolores de cabeza?
+    - ¿Cuáles son las diferentes formas de dolor de cabeza?
+    - ¿Qué tipos de dolores de cabeza son más comunes?
+    - ¿Puedes nombrar algunos tipos de dolores de cabeza?
+    - ¿Hay diferentes clases de dolor en la cabeza?
+    - ¿Cuáles son los tipos más conocidos de dolor de cabeza?
+    - ¿Cómo se pueden distinguir los diferentes dolores de cabeza?
+    - ¿Qué variaciones de dolor en la cabeza existen?
+    - ¿Qué tipos de dolores de cabeza se pueden identificar fácilmente?
+    - ¿Cuántos tipos de dolor de cabeza se reconocen en la medicina?
+    - ¿Hay varios tipos de dolor de cabeza?
+    - ¿Cuáles son las variedades de dolor de cabeza más frecuentes?
+    - ¿Qué tipos de dolor en la cabeza son más habituales?
+    - ¿Se pueden agrupar los dolores de cabeza en categorías?
+    - ¿Qué clases de dolor de cabeza son más conocidas?
+    - ¿Puedes mencionar algunas formas de dolor de cabeza?
+    - ¿Cuáles son las diferentes clasificaciones de dolor de cabeza?
+    - ¿Existen varios tipos de dolor de cabeza?
+    - ¿Qué tipos de dolores en la cabeza son más corrientes?
+    - ¿Hay diferentes tipos de dolor de cabeza según su intensidad?
+    - ¿Cuáles son las clasificaciones más simples de dolor de cabeza?
+    - ¿Qué variedades de dolor de cabeza se encuentran con mayor frecuencia?
+    - ¿Cuántos tipos de dolores de cabeza se pueden experimentar?
+    - ¿Existen varias categorías de dolor de cabeza?
+    - ¿Qué tipos de dolor de cabeza son más típicos?
+    - ¿Puedes nombrar algunas categorías de dolor en la cabeza?
+    - ¿Cuáles son los tipos de dolores de cabeza más conocidos?
+    - ¿Hay diferentes formas de clasificar los dolores de cabeza?
+    - ¿Qué variaciones de dolor en la cabeza se pueden distinguir?
+    - ¿Cuántos tipos de dolor de cabeza existen en general?
+    - ¿Se pueden identificar varios tipos de dolores en la cabeza?
+    - ¿Qué clases de dolor de cabeza son más comunes en la vida cotidiana?
+    - ¿Cuáles son las categorías más simples de dolor de cabeza?
+    - ¿Qué tipos de dolores de cabeza se pueden describir con facilidad?
+    - ¿Existen varias clases de dolor en la cabeza según su causa?
+    - ¿Cuáles son los tipos más básicos de dolor de cabeza?
+    - ¿Puedes mencionar algunas formas sencillas de dolor de cabeza?
+    - ¿Cuántos tipos de dolores de cabeza se pueden experimentar?
+    - ¿Existen diferentes grupos de dolor de cabeza?
+    - ¿Qué variaciones de dolor en la cabeza son más frecuentes en la población?
+    - ¿Cuáles son las clasificaciones más simples de dolor de cabeza?
+    - ¿Qué tipos de dolor de cabeza son más comunes en el día a día?
+    - ¿Se pueden agrupar los dolores de cabeza en categorías básicas?
+    - ¿Qué clases de dolor de cabeza son más habituales de encontrar?
+    - ¿Existen varias formas de clasificar los dolores de cabeza?
+    - ¿Cuáles son las variedades de dolor de cabeza que se pueden reconocer fácilmente?
+    - ¿Puedes mencionar algunos tipos de dolores en la cabeza que sean fáciles de entender?
+    - ¿Cuántos tipos de dolores de cabeza se pueden distinguir fácilmente?
+    - ¿Hay diferentes tipos de dolor de cabeza que se experimentan comúnmente?
+    - ¿Cuáles son las clasificaciones más simples de dolor en la cabeza?
+    - ¿Qué variaciones de dolor de cabeza se encuentran con mayor frecuencia?
+    - ¿Cuántos tipos de dolor de cabeza se pueden identificar fácilmente?
+    - ¿Existen varias categorías de dolor en la cabeza según su intensidad?
+    - ¿Qué tipos de dolores de cabeza son más típicos en situaciones diarias?
+    - ¿Puedes nombrar algunas formas básicas de dolor de cabeza?
+    - ¿Cuáles son los tipos de dolor de cabeza que son más fáciles de entender?
+    - ¿Se pueden agrupar los dolores de cabeza en categorías generales?
+    - ¿Qué clases de dolor de cabeza son más comunes de experimentar?
+    - ¿Existen diferentes formas de clasificar los dolores de cabeza?
+    - ¿Cuáles son las variedades de dolor de cabeza que se encuentran con mayor frecuencia?
+    - ¿Puedes mencionar algunos tipos de dolores en la cabeza que sean muy conocidos?
+    - ¿Cuántos tipos de dolores de cabeza se pueden distinguir en general?
+    - ¿Hay diferentes grupos de dolor de cabeza según su causa?
+    - ¿Qué tipos de dolores de cabeza son más comunes de experimentar?
+    - ¿Cuáles son las clasificaciones más simples de dolor de cabeza?
+    - ¿Existen varias categorías de dolor en la cabeza que sean fáciles de entender?
+    - ¿Qué variaciones de dolor de cabeza se encuentran con mayor frecuencia?
+    - ¿Cuántos tipos de dolor de cabeza se pueden identificar con facilidad?
+    - ¿Se pueden agrupar los dolores de cabeza en categorías básicas?
+    - ¿Qué clases de dolor de cabeza son más comunes de encontrar?
+    - ¿Existen diferentes formas de clasificar los dolores de cabeza?
+    - ¿Cuáles son las variedades de dolor de cabeza que se pueden reconocer fácilmente?
+    - ¿Puedes mencionar algunos tipos de dolores en la cabeza que sean muy comunes?
+    - ¿Cuántos tipos de dolores de cabeza se pueden distinguir fácilmente?
+    - ¿Hay diferentes tipos de dolor de cabeza que se experimentan con frecuencia?
+    - ¿Cuáles son las clasificaciones más simples de dolor en la cabeza?
+    - ¿Qué variaciones de dolor de cabeza se encuentran con mayor frecuencia?
+    - ¿Cuántos tipos de dolor de cabeza se pueden identificar fácilmente?
+    - ¿Existen varias categorías de dolor en la cabeza según su intensidad?
+    - ¿Qué tipos de dolores de cabeza son más típicos en situaciones diarias?
+    - ¿Puedes nombrar algunas formas básicas de dolor de cabeza?
+    - ¿Cuáles son los tipos de dolor de cabeza que son más fáciles de entender?
+    - ¿Se pueden agrupar los dolores de cabeza en categorías generales?
+    - ¿Qué clases de dolor de cabeza son más comunes de experimentar?
+    - ¿Existen diferentes formas de clasificar los dolores de cabeza?
+    - ¿Cuáles son las variedades de dolor de cabeza que se encuentran con mayor frecuencia?
+    - ¿Puedes mencionar algunos tipos de dolores en la cabeza que sean muy conocidos?
+    - ¿Cuántos tipos de dolores de cabeza se pueden distinguir en general?
+    - ¿Hay diferentes grupos de dolor de cabeza según su causa?
+    - ¿Qué tipos de dolores de cabeza son más comunes de experimentar?
+    - ¿Cuáles son las clasificaciones más simples de dolor de cabeza?
+    - ¿Existen varias categorías de dolor en la cabeza que sean fáciles de entender?
+    - ¿Qué variaciones de dolor de cabeza se encuentran con mayor frecuencia?
+    - ¿Cuántos tipos de dolor de cabeza se pueden identificar con facilidad?
+    - ¿Se pueden agrupar los dolores de cabeza en categorías básicas?
+    - ¿Qué clases de dolor de cabeza son más comunes de encontrar?
+    - ¿Existen diferentes formas de clasificar los dolores de cabeza?
+    - ¿Cuáles son las variedades de dolor de cabeza que se pueden reconocer fácilmente?
+    - ¿Puedes mencionar algunos tipos de dolores en la cabeza que sean muy comunes?
+
+- intent: identificar_tipos_dolor_cabeza
+  examples: |
+    - que tipo de dolor de cabeza tengo
+    - como se que dolor tengo
+    - como identifico que dolor tengo
+    - como podria identificarlo
+    - como puedo saber
+    - ¿Qué rollo de dolor de cabeza tengo ahora?
+    - ¿Cómo rayos sé qué tipo de dolor de cabeza tengo?
+    - ¿Cómo identifico el tipo de dolor que me está jodiendo?
+    - ¿Cómo puedo saber qué dolor de cabeza tengo ahora?
+    - ¿Cómo demonios puedo distinguir qué tipo de dolor es este?
+    - ¿Cómo miro y digo qué tipo de dolor de cabeza tengo?
+    - ¿Cómo puedo entender qué dolor de cabeza tengo hoy?
+    - ¿Cómo sé qué tipo de dolor es este que me está molestando?
+    - ¿Cómo hago para identificar qué tipo de dolor tengo en la cabeza?
+    - ¿Cómo diablos puedo saber qué tipo de dolor de cabeza es?
+    - ¿Cómo cacho qué tipo de dolor de cabeza tengo?
+    - ¿Cómo puedo averiguar qué tipo de dolor estoy teniendo ahora?
+    - ¿Cómo rayos puedo distinguir qué tipo de dolor de cabeza es este?
+    - ¿Cómo puedo saber qué tipo de dolor me está fastidiando?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza tengo ahora mismo?
+    - ¿Cómo sé qué tipo de dolor es este que me está dando lata?
+    - ¿Cómo puedo reconocer qué tipo de dolor de cabeza estoy teniendo hoy?
+    - ¿Cómo puedo saber qué tipo de dolor me está pegando en este momento?
+    - ¿Cómo miro y me doy cuenta qué tipo de dolor de cabeza tengo?
+    - ¿Cómo hago para identificar qué tipo de dolor tengo ahora?
+    - ¿Cómo puedo saber qué tipo de dolor de cabeza tengo hoy?
+    - ¿Cómo chucha sé qué tipo de dolor es este?
+    - ¿Cómo puedo distinguir qué tipo de dolor de cabeza tengo hoy en día?
+    - ¿Cómo puedo entender qué tipo de dolor de cabeza tengo ahora mismo?
+    - ¿Cómo puedo saber qué tipo de dolor me está rompiendo la cabeza hoy?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza es este que estoy sintiendo?
+    - ¿Cómo cacho qué tipo de dolor tengo hoy en mi cabeza?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza tengo en este momento?
+    - ¿Cómo hago para saber qué tipo de dolor de cabeza tengo hoy en día?
+    - ¿Cómo puedo identificar qué tipo de dolor me está jodiendo ahora?
+    - ¿Cómo puedo saber qué tipo de dolor de cabeza es este que me tiene mal?
+    - ¿Cómo rayos sé qué tipo de dolor de cabeza estoy teniendo hoy?
+    - ¿Cómo puedo distinguir qué tipo de dolor tengo hoy en mi cabeza?
+    - ¿Cómo puedo entender qué tipo de dolor de cabeza tengo ahora?
+    - ¿Cómo puedo saber qué tipo de dolor me está dando hoy?
+    - ¿Cómo miro y sé qué tipo de dolor de cabeza tengo en este momento?
+    - ¿Cómo puedo reconocer qué tipo de dolor de cabeza estoy teniendo hoy en día?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza es este que me está molestando?
+    - ¿Cómo cacho qué tipo de dolor tengo ahora mismo?
+    - ¿Cómo puedo saber qué tipo de dolor de cabeza tengo hoy en mi cabeza?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza es este que me está molestando ahora?
+    - ¿Cómo diablos sé qué tipo de dolor de cabeza tengo hoy?
+    - ¿Cómo puedo distinguir qué tipo de dolor tengo hoy en la cabeza?
+    - ¿Cómo puedo entender qué tipo de dolor de cabeza tengo hoy en día?
+    - ¿Cómo puedo saber qué tipo de dolor me está fastidiando en este momento?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza es este que me está rompiendo la cabeza?
+    - ¿Cómo cacho qué tipo de dolor tengo hoy en día?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza tengo en este momento?
+    - ¿Cómo miro y sé qué tipo de dolor de cabeza tengo hoy?
+    - ¿Cómo puedo saber qué tipo de dolor me está matando hoy?
+    - ¿Cómo puedo reconocer qué tipo de dolor tengo hoy en mi cabeza?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza es este que me tiene mal?
+    - ¿Cómo rayos sé qué tipo de dolor de cabeza tengo hoy en día?
+    - ¿Cómo puedo distinguir qué tipo de dolor tengo hoy en mi cabeza?
+    - ¿Cómo puedo entender qué tipo de dolor de cabeza tengo ahora mismo?
+    - ¿Cómo puedo saber qué tipo de dolor me está dando hoy en mi cabeza?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza es este que me está jodiendo ahora?
+    - ¿Cómo hago para cachar qué tipo de dolor tengo hoy?
+    - ¿Cómo puedo saber qué tipo de dolor de cabeza tengo hoy en este momento?
+    - ¿Cómo puedo reconocer qué tipo de dolor tengo hoy en día?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza es este que me está molestando ahora?
+    - ¿Cómo puedo distinguir qué tipo de dolor tengo hoy en mi cabeza?
+    - ¿Cómo puedo entender qué tipo de dolor de cabeza tengo hoy?
+    - ¿Cómo puedo saber qué tipo de dolor me está matando hoy en día?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza es este que me está fastidiando?
+    - ¿Cómo cacho qué tipo de dolor tengo hoy?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza tengo en este momento?
+    - ¿Cómo miro y sé qué tipo de dolor de cabeza tengo hoy en día?
+    - ¿Cómo puedo saber qué tipo de dolor me está dando hoy en mi cabeza?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza es este que me está jodiendo?
+    - ¿Cómo hago para cachar qué tipo de dolor tengo hoy en este momento?
+    - ¿Cómo puedo saber qué tipo de dolor de cabeza tengo hoy?
+    - ¿Cómo puedo reconocer qué tipo de dolor tengo hoy en mi cabeza?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza es este que me está molestando hoy?
+    - ¿Cómo puedo distinguir qué tipo de dolor tengo hoy en día?
+    - ¿Cómo puedo entender qué tipo de dolor de cabeza tengo ahora mismo?
+    - ¿Cómo puedo saber qué tipo de dolor me está matando hoy en mi cabeza?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza es este que me está fastidiando ahora?
+    - ¿Cómo cacho qué tipo de dolor tengo hoy en mi cabeza?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza tengo en este momento?
+    - ¿Cómo miro y sé qué tipo de dolor de cabeza tengo hoy?
+    - ¿Cómo puedo saber qué tipo de dolor me está dando hoy en día?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza es este que me está jodiendo hoy?
+    - ¿Cómo hago para cachar qué tipo de dolor tengo hoy en este momento?
+    - ¿Cómo puedo saber qué tipo de dolor de cabeza tengo hoy?
+    - ¿Cómo puedo reconocer qué tipo de dolor tengo hoy en mi cabeza?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza es este que me está molestando hoy?
+    - ¿Cómo puedo distinguir qué tipo de dolor tengo hoy en día?
+    - ¿Cómo puedo entender qué tipo de dolor de cabeza tengo ahora mismo?
+    - ¿Cómo puedo saber qué tipo de dolor me está matando hoy?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza es este que me está fastidiando ahora?
+    - ¿Cómo cacho qué tipo de dolor tengo hoy?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza tengo en este momento?
+    - ¿Cómo miro y sé qué tipo de dolor de cabeza tengo hoy en día?
+    - ¿Cómo puedo saber qué tipo de dolor me está dando hoy en mi cabeza?
+    - ¿Cómo puedo identificar qué tipo de dolor de cabeza es este que me está jodiendo?
+    - ¿Cómo hago para cachar qué tipo de dolor tengo hoy?
+    - ¿Cómo puedo saber qué tipo de dolor de cabeza tengo hoy?
+    - ¿Cómo puedo reconocer qué tipo de dolor tengo hoy en mi cabeza?
+    - ¿Cómo puedo averiguar qué tipo de dolor de cabeza es este que me está molestando hoy?
+    - ¿Qué tipo de dolor tengo en la cabeza?
+    - Cómo sé qué dolor de cabeza tengo.
+    - ¿Cómo reconozco qué tipo de dolor es?
+    - Cómo descubro qué dolor tengo.
+    - ¿Cómo puedo saber qué tipo de dolor es?
+    - Cómo averiguo qué dolor de cabeza tengo.
+    - Cómo identificar qué dolor tengo.
+    - ¿Qué tipo de dolor de cabeza es este?
+    - Cómo darme cuenta de qué dolor es.
+    - ¿Qué tipo de dolor tengo aquí?
+    - Cómo entender qué dolor tengo.
+    - ¿Qué dolor es este que siento?
+    - Cómo descubrir qué dolor es este.
+    - ¿Qué tipo de dolor me aqueja?
+    - Cómo distinguir qué dolor tengo.
+    - ¿Qué dolor de cabeza tengo ahora?
+    - Cómo saber qué dolor es este.
+    - ¿Qué tipo de dolor me molesta?
+    - Cómo identificar qué dolor siento.
+    - ¿Qué dolor de cabeza tengo hoy?
+    - Cómo reconocer qué dolor tengo.
+    - ¿Qué tipo de dolor es este?
+    - Cómo descifrar qué dolor es.
+    - ¿Qué dolor de cabeza es este que siento?
+    - Cómo averiguar qué dolor tengo aquí.
+    - ¿Qué tipo de dolor me está molestando?
+    - Cómo entender qué dolor es este.
+    - ¿Qué dolor es este que tengo?
+    - Cómo distinguir qué dolor tengo aquí.
+    - ¿Qué tipo de dolor tengo en este momento?
+    - Cómo saber qué dolor tengo ahora.
+    - ¿Qué tipo de dolor me está dando aquí?
+    - Cómo identificar qué dolor es este.
+    - ¿Qué dolor tengo en la cabeza ahora?
+    - Cómo descubrir qué dolor de cabeza es este.
+    - ¿Qué tipo de dolor estoy sintiendo?
+    - Cómo reconocer qué dolor tengo ahora.
+    - ¿Qué dolor es este que tengo aquí?
+    - Cómo saber qué dolor de cabeza tengo.
+    - ¿Qué tipo de dolor tengo en mi cabeza?
+    - Cómo entender qué dolor es este que tengo.
+    - ¿Qué dolor es este que siento aquí?
+    - Cómo averiguar qué dolor tengo en este momento.
+    - ¿Qué tipo de dolor de cabeza es este que siento?
+    - Cómo identificar qué dolor tengo ahora mismo.
+    - ¿Qué dolor tengo en la cabeza en este momento?
+    - Cómo descifrar qué dolor tengo.
+    - ¿Qué tipo de dolor me está dando ahora?
+    - Cómo distinguir qué dolor de cabeza tengo.
+    - ¿Qué dolor tengo aquí en la cabeza?
+    - Cómo saber qué dolor tengo hoy.
+    - ¿Qué tipo de dolor estoy experimentando?
+    - Cómo reconocer qué dolor tengo hoy.
+    - ¿Qué dolor es este que siento hoy?
+    - Cómo entender qué dolor tengo hoy.
+    - ¿Qué dolor tengo en la cabeza hoy?
+    - Cómo averiguar qué dolor de cabeza tengo hoy.
+    - ¿Qué tipo de dolor me está afectando hoy?
+    - Cómo identificar qué dolor tengo hoy.
+    - ¿Qué dolor de cabeza tengo hoy en este momento?
+    - Cómo descubrir qué dolor tengo hoy.
+    - ¿Qué tipo de dolor tengo en mi cabeza hoy?
+    - Cómo saber qué dolor es este que tengo hoy.
+    - ¿Qué dolor tengo hoy aquí?
+    - Cómo reconocer qué dolor tengo hoy en mi cabeza.
+    - ¿Qué tipo de dolor estoy sintiendo hoy?
+    - Cómo entender qué dolor tengo hoy aquí.
+    - ¿Qué dolor es este que siento hoy?
+    - Cómo averiguar qué dolor de cabeza tengo hoy en este momento.
+    - ¿Qué tipo de dolor me está dando hoy?
+    - Cómo identificar qué dolor tengo hoy.
+    - ¿Qué dolor tengo aquí hoy?
+    - Cómo descifrar qué dolor tengo hoy.
+    - ¿Qué tipo de dolor estoy teniendo hoy?
+    - Cómo distinguir qué dolor tengo hoy.
+    - ¿Qué dolor de cabeza tengo hoy ahora?
+    - Cómo saber qué dolor es este que tengo hoy.
+    - ¿Qué tipo de dolor me está molestando hoy?
+    - Cómo entender qué dolor tengo hoy en mi cabeza.
+    - ¿Qué dolor tengo hoy en este momento?
+    - Cómo averiguar qué dolor de cabeza tengo hoy.
+    - ¿Qué tipo de dolor tengo ahora mismo?
+    - Cómo identificar qué dolor tengo hoy.
+    - ¿Qué dolor tengo aquí ahora?
+    - Cómo reconocer qué dolor de cabeza tengo hoy.
+    - ¿Qué tipo de dolor estoy sintiendo ahora mismo?
+    - Cómo entender qué dolor es este que tengo ahora.
+    - ¿Qué dolor es este que siento ahora mismo?
+    - Cómo averiguar qué dolor tengo aquí ahora.
+    - ¿Qué tipo de dolor me está dando ahora mismo?
+    - Cómo identificar qué dolor tengo ahora mismo.
+    - ¿Qué dolor tengo aquí en este momento?
+    - Cómo saber qué dolor tengo ahora mismo.
+    - ¿Qué tipo de dolor estoy teniendo aquí?
+    - Cómo reconocer qué dolor tengo aquí ahora.
+    - ¿Qué dolor de cabeza tengo ahora mismo aquí?
+    - Cómo entender qué dolor es este que tengo aquí ahora.
+    - ¿Qué dolor tengo aquí hoy?
+    - Cómo averiguar qué dolor tengo aquí hoy.
+    - ¿Qué tipo de dolor tengo ahora mismo aquí?
+
+- intent: recomendacion_dolor_cabeza
+  examples: |
+    - que me recomiendas para el dolor de cabeza
+    - como puedo tratar el dolor de cabeza
+    - que puedo hacer para el dolor de cabeza
+    - como controlo el dolor de cabeza
+    - que podria tomar para el dolor de cabeza
+    - alguna recomendacion para el dolor de cabeza
+    - ¿Qué me aconsejas tomar para aliviar el dolor de cabeza?
+    - ¿Cómo puedo manejar el dolor de cabeza de forma efectiva?
+    - ¿Qué recomendaciones tienes para tratar el dolor de cabeza?
+    - ¿Cómo puedo controlar el dolor de cabeza de manera natural?
+    - ¿Qué medidas puedo tomar para aliviar el dolor de cabeza?
+    - ¿Tienes alguna sugerencia para calmar el dolor de cabeza?
+    - ¿Qué remedios caseros son buenos para el dolor de cabeza?
+    - ¿Cuáles son los mejores métodos para tratar el dolor de cabeza?
+    - ¿Qué opciones tengo para aliviar el dolor de cabeza?
+    - ¿Cómo puedo reducir el dolor de cabeza sin medicamentos?
+    - ¿Qué consejos tienes para lidiar con el dolor de cabeza?
+    - ¿Qué puedo hacer en casa para aliviar el dolor de cabeza?
+    - ¿Cuál es la mejor manera de controlar el dolor de cabeza crónico?
+    - ¿Qué tratamientos alternativos recomiendas para el dolor de cabeza?
+    - ¿Cuál es el mejor enfoque para tratar el dolor de cabeza de forma segura?
+    - ¿Qué medicamentos de venta libre son eficaces para el dolor de cabeza?
+    - ¿Cuál es la dosis adecuada de analgésicos para el dolor de cabeza?
+    - ¿Qué técnicas de relajación ayudan a reducir el dolor de cabeza?
+    - ¿Cómo puedo prevenir los dolores de cabeza frecuentes?
+    - ¿Hay alguna dieta específica que pueda seguir para evitar el dolor de cabeza?
+    - ¿Qué tipo de ejercicios puedo hacer para aliviar el dolor de cabeza?
+    - ¿Qué terapias alternativas son útiles para el tratamiento del dolor de cabeza?
+    - ¿Hay alguna postura de yoga recomendada para aliviar el dolor de cabeza?
+    - ¿Cuál es el mejor enfoque para tratar el dolor de cabeza en niños?
+    - ¿Qué recomendaciones tienes para tratar el dolor de cabeza durante el embarazo?
+    - ¿Cuál es el mejor método para tratar el dolor de cabeza después de una lesión?
+    - ¿Qué suplementos naturales pueden ayudar a aliviar el dolor de cabeza?
+    - ¿Hay alguna técnica de respiración que pueda ayudar a reducir el dolor de cabeza?
+    - ¿Qué hierbas medicinales son efectivas para el tratamiento del dolor de cabeza?
+    - ¿Cuál es la mejor manera de aplicar compresas frías para aliviar el dolor de cabeza?
+    - ¿Qué masajes o técnicas de presión pueden ayudar a aliviar el dolor de cabeza?
+    - ¿Cuál es la importancia del descanso para el tratamiento del dolor de cabeza?
+    - ¿Qué productos de aromaterapia son útiles para el alivio del dolor de cabeza?
+    - ¿Cómo puedo modificar mi entorno para prevenir los dolores de cabeza?
+    - ¿Qué cambios en el estilo de vida pueden ayudar a reducir el dolor de cabeza?
+    - ¿Cuál es el mejor enfoque para tratar el dolor de cabeza en personas mayores?
+    - ¿Hay algún tipo de masaje en el cuero cabelludo que pueda aliviar el dolor de cabeza?
+    - ¿Cuál es la importancia de mantenerse hidratado para prevenir el dolor de cabeza?
+    - ¿Qué actividades de relajación son más efectivas para reducir el dolor de cabeza?
+    - ¿Qué métodos de acupuntura pueden ser beneficiosos para el tratamiento del dolor de cabeza?
+    - ¿Cuál es el papel de la fisioterapia en el tratamiento del dolor de cabeza crónico?
+    - ¿Qué alimentos o bebidas debo evitar para prevenir el dolor de cabeza?
+    - ¿Cuál es la mejor forma de abordar el dolor de cabeza relacionado con el estrés?
+    - ¿Qué técnicas de visualización o meditación pueden ayudar a aliviar el dolor de cabeza?
+    - ¿Hay algún tipo de música o sonido que pueda ayudar a reducir el dolor de cabeza?
+    - ¿Qué efecto tienen las técnicas de biofeedback en el tratamiento del dolor de cabeza?
+    - ¿Cuál es la importancia de mantener un diario de los desencadenantes del dolor de cabeza?
+    - ¿Cómo puedo cambiar mi rutina diaria para prevenir los dolores de cabeza recurrentes?
+    - ¿Qué tratamientos son recomendados para el dolor de cabeza asociado con la sinusitis?
+    - ¿Cuál es la mejor manera de abordar el dolor de cabeza relacionado con la tensión muscular?
+    - ¿Hay alguna técnica de liberación miofascial que pueda aliviar el dolor de cabeza?
+    - ¿Qué posturas de estiramiento son útiles para reducir el dolor de cabeza causado por la tensión?
+    - ¿Cuál es el papel de la quiropráctica en el tratamiento del dolor de cabeza?
+    - ¿Cómo puedo mejorar mi postura para prevenir el dolor de cabeza relacionado con el cuello?
+    - ¿Qué tipo de almohada es mejor para reducir el dolor de cabeza mientras duermo?
+    - ¿Hay algún dispositivo de biofeedback portátil que pueda ayudar a controlar el dolor de cabeza?
+    - ¿Qué suplementos vitamínicos pueden ser beneficiosos para prevenir el dolor de cabeza?
+    - ¿Cómo puedo mejorar mi calidad de sueño para reducir los dolores de cabeza nocturnos?
+    - ¿Qué técnicas de manejo del estrés son más efectivas para prevenir el dolor de cabeza?
+    - ¿Cuál es el papel de la terapia cognitivo-conductual en el tratamiento del dolor de cabeza?
+    - ¿Cómo puedo ajustar mi rutina de ejercicio para evitar los dolores de cabeza por esfuerzo físico?
+    - ¿Qué estrategias de afrontamiento son útiles para lidiar con el dolor de cabeza crónico?
+    - ¿Hay alguna técnica de relajación muscular progresiva que pueda ayudar a aliviar el dolor de cabeza?
+    - ¿Cuál es el papel de la hipnoterapia en el tratamiento del dolor de cabeza crónico?
+    - ¿Cómo puedo prevenir los dolores de cabeza asociados con los cambios climáticos?
+    - ¿Qué tratamientos son recomendados para el dolor de cabeza relacionado con la abstinencia de cafeína?
+    - ¿Hay algún dispositivo de estimulación nerviosa periférica que pueda ayudar a controlar el dolor de cabeza?
+    - ¿Cuál es el mejor enfoque para tratar el dolor de cabeza causado por la tensión ocular?
+    - ¿Qué técnicas de terapia ocupacional son útiles para manejar el dolor de cabeza en el trabajo?
+    - ¿Cómo puedo mejorar mi ergonomía en el lugar de trabajo para prevenir el dolor de cabeza?
+    - ¿Hay alguna técnica de terapia de liberación emocional que pueda ayudar a reducir el dolor de cabeza?
+    - ¿Cuál es el papel de los masajes de tejido profundo en el tratamiento del dolor de cabeza?
+    - ¿Qué tratamientos son recomendados para el dolor de cabeza relacionado con el síndrome de la articulación temporomandibular?
+    - ¿Cómo puedo identificar y evitar los desencadenantes dietéticos que provocan el dolor de cabeza?
+    - ¿Hay algún enfoque holístico que pueda ayudar a abordar tanto los síntomas físicos como emocionales del dolor de cabeza?
+    - ¿Cuál es el mejor enfoque para tratar el dolor de cabeza relacionado con la menstruación?
+    - ¿Qué tratamientos son recomendados para el dolor de cabeza asociado con la fibromialgia?
+    - ¿Cómo puedo prevenir los dolores de cabeza asociados con la falta de sueño?
+    - ¿Hay algún enfoque de atención plena que pueda ayudar a reducir el impacto del dolor de cabeza en la vida diaria?
+    - ¿Cuál es el papel de la acupresión en el tratamiento del dolor de cabeza?
+    - ¿Qué tratamientos son recomendados para el dolor de cabeza relacionado con la neuralgia occipital?
+    - ¿Cómo puedo evitar los dolores de cabeza al viajar en avión?
+    - ¿Hay algún tratamiento alternativo que pueda ayudar a reducir los efectos secundarios de los medicamentos para el dolor de cabeza?
+    - ¿Cuál es el mejor enfoque para tratar el dolor de cabeza relacionado con la tensión emocional?
+    - ¿Qué tratamientos son recomendados para el dolor de cabeza asociado con la enfermedad de la arteria carótida?
+    - ¿Cómo puedo prevenir los dolores de cabeza por exposición prolongada a pantallas digitales?
+    - ¿Hay alguna técnica de neurofeedback que pueda ayudar a controlar el dolor de cabeza?
+    - ¿Cuál es el papel de la terapia de exposición en el tratamiento del dolor de cabeza relacionado con el trastorno de estrés postraumático?
+    - ¿Qué tratamientos son recomendados para el dolor de cabeza asociado con la ansiedad?
+    - ¿Cómo puedo prevenir los dolores de cabeza relacionados con el consumo de alcohol?
+    - ¿Hay algún enfoque de terapia de movimiento rítmico que pueda ayudar a aliviar el dolor de cabeza?
+    - ¿Cuál es el mejor enfoque para tratar el dolor de cabeza relacionado con la enfermedad de las arterias coronarias?
+    - ¿Qué tratamientos son recomendados para el dolor de cabeza asociado con la enfermedad de Lyme?
+    - ¿Cómo puedo prevenir los dolores de cabeza por cambios bruscos en la presión atmosférica?
+    - ¿Hay alguna técnica de terapia de sonido que pueda ayudar a aliviar el dolor de cabeza?
+    - ¿Cuál es el papel de la terapia cognitivo-conductual en el tratamiento del dolor de cabeza en niños?
+    - ¿Qué tratamientos son recomendados para el dolor de cabeza asociado con la enfermedad celíaca?
+    - ¿Cómo puedo prevenir los dolores de cabeza relacionados con la exposición al humo del tabaco?
+    - ¿Hay algún enfoque de terapia de resolución de problemas que pueda ayudar a manejar el dolor de cabeza crónico?
+    - ¿Qué tomo para el dolor de cabeza?
+    - ¿Cómo quito el dolor de cabeza?
+    - ¿Qué hago con el dolor de cabeza?
+    - ¿Cómo controlo el dolor de cabeza?
+    - ¿Qué me alivia el dolor de cabeza?
+    - ¿Qué puedo tomar para el dolor de cabeza?
+    - ¿Algún remedio para el dolor de cabeza?
+    - ¿Cómo calmo el dolor de cabeza?
+    - ¿Qué remedio casero sirve para el dolor de cabeza?
+    - ¿Qué puedo hacer para el dolor de cabeza?
+    - ¿Cómo me quito el dolor de cabeza?
+    - ¿Qué puedo tomar para el dolor de cabeza fuerte?
+    - ¿Alguna pastilla para el dolor de cabeza?
+    - ¿Cómo me deshago del dolor de cabeza?
+    - ¿Qué alivia el dolor de cabeza rápido?
+    - ¿Qué me ayuda con el dolor de cabeza?
+    - ¿Qué me quita el dolor de cabeza ahora?
+    - ¿Cómo me deshago del dolor de cabeza en casa?
+    - ¿Qué puedo hacer para quitar el dolor de cabeza?
+    - ¿Cómo mejoro el dolor de cabeza?
+    - ¿Qué me quita el dolor de cabeza naturalmente?
+    - ¿Cómo curo el dolor de cabeza rápido?
+    - ¿Qué remedio es bueno para el dolor de cabeza?
+    - ¿Algún consejo para el dolor de cabeza?
+    - ¿Cómo elimino el dolor de cabeza?
+    - ¿Qué remedio es efectivo para el dolor de cabeza?
+    - ¿Algún truco para el dolor de cabeza?
+    - ¿Qué remedio casero puedo usar para el dolor de cabeza?
+    - ¿Cómo me deshago del dolor de cabeza en casa?
+    - ¿Qué remedio puedo usar para el dolor de cabeza?
+    - ¿Algún tratamiento para el dolor de cabeza?
+    - ¿Cómo me quito el dolor de cabeza en minutos?
+    - ¿Qué alivio puedo encontrar para el dolor de cabeza?
+    - ¿Cómo me deshago del dolor de cabeza sin medicamentos?
+    - ¿Qué truco casero funciona para el dolor de cabeza?
+    - ¿Algún método natural para el dolor de cabeza?
+    - ¿Cómo alivio el dolor de cabeza en casa?
+    - ¿Qué puedo hacer para calmar el dolor de cabeza?
+    - ¿Algún método rápido para el dolor de cabeza?
+    - ¿Cómo me quito el dolor de cabeza sin pastillas?
+    - ¿Qué truco conoces para el dolor de cabeza?
+    - ¿Algún remedio natural para el dolor de cabeza?
+    - ¿Cómo hago desaparecer el dolor de cabeza?
+    - ¿Qué me ayuda a sentir mejor con el dolor de cabeza?
+    - ¿Algún consejo práctico para el dolor de cabeza?
+    - ¿Cómo hago para que el dolor de cabeza se vaya?
+    - ¿Qué puedo usar para aliviar el dolor de cabeza en casa?
+    - ¿Algún método sencillo para el dolor de cabeza?
+    - ¿Cómo alivio el dolor de cabeza sin medicinas?
+    - ¿Qué puedo aplicarme para el dolor de cabeza?
+    - ¿Algún truco que recomiendes para el dolor de cabeza?
+    - ¿Cómo calmo el dolor de cabeza de forma natural?
+    - ¿Qué remedio conoces para el dolor de cabeza?
+    - ¿Algún método casero efectivo para el dolor de cabeza?
+    - ¿Cómo me libero del dolor de cabeza?
+    - ¿Qué truco casero alivia el dolor de cabeza?
+    - ¿Algún consejo práctico para el dolor de cabeza fuerte?
+    - ¿Cómo me deshago del dolor de cabeza sin ir al médico?
+    - ¿Qué hago para quitar el dolor de cabeza rápido?
+    - ¿Algún remedio eficaz para el dolor de cabeza?
+    - ¿Cómo hago para sentirme mejor con el dolor de cabeza?
+    - ¿Qué método natural conoces para el dolor de cabeza?
+    - ¿Algún truco simple para el dolor de cabeza?
+    - ¿Cómo me libro del dolor de cabeza sin pastillas?
+    - ¿Qué me recomiendas para el dolor de cabeza intenso?
+    - ¿Algún remedio que funcione bien para el dolor de cabeza?
+    - ¿Cómo puedo aliviar el dolor de cabeza sin gastar mucho?
+    - ¿Qué hago para reducir el dolor de cabeza rápidamente?
+    - ¿Algún consejo para aliviar el dolor de cabeza en casa?
+    - ¿Cómo puedo eliminar el dolor de cabeza de forma natural?
+    - ¿Qué puedo probar para el dolor de cabeza que tengo?
+    - ¿Algún truco rápido para quitar el dolor de cabeza?
+    - ¿Cómo me quito el dolor de cabeza sin efectos secundarios?
+    - ¿Qué remedio casero puedo usar para el dolor de cabeza ahora?
+    - ¿Algún método que funcione para el dolor de cabeza frecuente?
+    - ¿Cómo alivio el dolor de cabeza de manera rápida y fácil?
+    - ¿Qué hago para calmar el dolor de cabeza de inmediato?
+    - ¿Algún consejo práctico para el dolor de cabeza constante?
+    - ¿Cómo me deshago del dolor de cabeza sin mucho esfuerzo?
+    - ¿Qué puedo hacer para aliviar el dolor de cabeza sin complicaciones?
+    - ¿Algún remedio natural que recomiendes para el dolor de cabeza?
+    - ¿Cómo calmo el dolor de cabeza sin salir de casa?
+    - ¿Qué puedo tomar para el dolor de cabeza que tengo ahora mismo?
+    - ¿Algún truco efectivo para el dolor de cabeza que tengo hoy?
+    - ¿Cómo me quito el dolor de cabeza sin tener que ir a la farmacia?
+    - ¿Qué remedio conoces que sea bueno para el dolor de cabeza?
+    - ¿Algún método casero que funcione para el dolor de cabeza?
+    - ¿Cómo puedo aliviar el dolor de cabeza de forma rápida y económica?
+    - ¿Qué hago para que el dolor de cabeza desaparezca lo más pronto posible?
+    - ¿Algún consejo práctico para el dolor de cabeza que me aqueja?
+    - ¿Cómo puedo deshacerme del dolor de cabeza sin complicaciones?
+    - ¿Qué remedio casero puedo usar para el dolor de cabeza que tengo ahora?
+    - ¿Algún método sencillo para aliviar el dolor de cabeza que tengo hoy?
+    - ¿Cómo calmo el dolor de cabeza sin tener que tomar pastillas?
+    - ¿Qué puedo hacer para sentirme mejor con el dolor de cabeza que tengo?
+    - ¿Algún truco que funcione bien para aliviar el dolor de cabeza rápidamente?
+    - ¿Cómo puedo reducir el dolor de cabeza sin necesidad de medicamentos?
+    - ¿Qué remedio conoces que sea efectivo para el dolor de cabeza que sufro?
+    - ¿Algún método natural que recomiendes para el dolor de cabeza que tengo?
+    - ¿Cómo me libero del dolor de cabeza de manera fácil y sin esfuerzo?
+
+- intent: sentir_migraña
+  examples: |
+    - Tengo migraña.
+    - Estoy con migraña.
+    - Me está dando migraña.
+    - Sufro de migraña.
+    - Estoy sufriendo de migraña.
+    - Tengo un episodio de migraña.
+    - Estoy lidiando con migraña.
+    - Me aqueja la migraña.
+    - Estoy padeciendo de migraña.
+    - Migraña de nuevo.
+    - Otra vez con migraña.
+    - Es migraña otra vez.
+    - Una migraña persistente.
+    - Con una migraña intensa.
+    - Migraña insoportable.
+    - Migraña muy molesta.
+    - En pleno ataque de migraña.
+    - Migraña recurrente.
+    - Migraña incapacitante.
+    - Migraña palpitante.
+    - Migraña pulsátil.
+    - Con una migraña fuerte.
+    - Migraña aguda.
+    - Migraña punzante.
+    - Migraña constante.
+    - Migraña que no cede.
+    - Con una migraña que no se va.
+    - Migraña crónica.
+    - Migraña que me deja inactivo.
+    - Migraña debilitante.
+    - Migraña que me afecta.
+    - Migraña que me detiene.
+    - Migraña que me limita.
+    - Migraña que me agota.
+    - Migraña que me paraliza.
+    - Migraña que me abruma.
+    - Migraña que me consume.
+    - Migraña que me atormenta.
+    - Migraña que me aplasta.
+    - Migraña que me desgasta.
+    - Migraña que me desanima.
+    - Migraña que me derrumba.
+    - Migraña que me anula.
+    - Migraña que me derrota.
+    - Migraña que me rinde.
+    - Migraña que me supera.
+    - Migraña que me domina.
+    - Migraña que me sofoca.
+    - Migraña que me asfixia.
+    - Migraña que me aturde.
+    - Migraña que me confunde.
+    - Migraña que me desconcierta.
+    - Migraña que me desorienta.
+    - Migraña que me desequilibra.
+    - Migraña que me desestabiliza.
+    - Migraña que me desarma.
+    - Migraña que me debilita.
+    - Migraña que me mareo.
+    - Migraña que me desvanece.
+    - Migraña que me desespera.
+    - Migraña que me desalienta.
+    - Migraña que me desanima.
+    - Migraña que me desmotiva.
+    - Migraña que me desalienta.
+    - Migraña que me desespera.
+    - Migraña que me aísla.
+    - Migraña que me agobia.
+    - Migraña que me angustia.
+    - Migraña que me preocupa.
+    - Migraña que me inquieta.
+    - Migraña que me atemoriza.
+    - Migraña que me entristece.
+    - Migraña que me deprime.
+    - Migraña que me desilusiona.
+    - Migraña que me desencanta.
+    - Migraña que me frustra.
+    - Migraña que me enoja.
+    - Migraña que me irrita.
+    - Migraña que me agita.
+    - Migraña que me desestresa.
+    - Migraña que me fatiga.
+    - Migraña que me cansa.
+    - Migraña que me agota.
+    - Migraña que me estresa.
+    - Migraña que me agobia.
+    - Migraña que me desgasta.
+    - Migraña que me desespera.
+    - Migraña que me preocupa.
+    - Migraña que me angustia.
+    - Migraña que me abruma.
+    - Migraña que me consume.
+    - Migraña que me aprieta.
+    - Migraña que me oprime.
+    - Migraña que me agobia.
+    - Migraña que me sofoca.
+    - Migraña que me atormenta.
+    - Migraña que me martiriza.
+    - Migraña que me tortura.
+    - Migraña que me carcome.
+    - Migraña que me atormenta.
+    - Con migraña otra vez.
+    - Migraña en pleno.
+    - Migraña que no cede.
+    - Migraña fuerte.
+    - Migraña persistente.
+    - Con una migraña molesta.
+    - Migraña que me agobia.
+    - Migraña incapacitante.
+    - Con migraña intensa.
+    - Migraña recurrente.
+    - Migraña insoportable.
+    - Con una migraña debilitante.
+    - Migraña palpitante.
+    - Migraña que me afecta.
+    - Migraña crónica.
+    - Migraña pulsátil.
+    - Migraña que me limita.
+    - Migraña que me martiriza.
+    - Migraña que me oprime.
+    - Migraña que me desgasta.
+    - Migraña que me consume.
+    - Migraña que me desanima.
+    - Migraña que me fatiga.
+    - Migraña que me angustia.
+    - Migraña que me atormenta.
+    - Migraña que me deja sin energía.
+    - Migraña que me provoca náuseas.
+    - Migraña que me deja con sensibilidad a la luz.
+    - Migraña que me hace sentir mareado.
+    - Migraña que me deja sin apetito.
+    - Migraña que me deja con sensación de presión.
+    - Migraña que me provoca dolor detrás de los ojos.
+    - Migraña que me deja con dificultad para concentrarme.
+    - Migraña que me hace sentir irritable.
+    - Migraña que me deja con sensación de malestar.
+    - Migraña que me desorienta.
+    - Migraña que me deja con sensación de vértigo.
+    - Migraña que me provoca dolor en el cuello.
+    - Migraña que me deja con sensación de estar fuera de lugar.
+    - Migraña que me hace sentir tenso.
+    - Migraña que me deja con sensación de estar aturdido.
+    - Migraña que me provoca dolor en los hombros.
+    - Migraña que me deja con sensación de pesadez.
+    - Migraña que me hace sentir débil.
+    - Migraña que me deja con sensación de confusión.
+    - Migraña que me provoca dolor en la mandíbula.
+    - Migraña que me deja con sensación de entumecimiento.
+    - Migraña que me hace sentir ansioso.
+    - Migraña que me deja con sensación de opresión.
+    - Migraña que me provoca dolor en la espalda.
+    - Migraña que me deja con sensación de vacío.
+    - Migraña que me hace sentir adormecido.
+    - Migraña que me deja con sensación de estar ausente.
+    - Migraña que me provoca dolor en el pecho.
+    - Migraña que me deja con sensación de despersonalización.
+    - Migraña que me hace sentir fuera de lugar.
+    - Migraña que me deja con sensación de estar ausente.
+    - Migraña que me provoca dolor en los músculos.
+    - Migraña que me deja con sensación de estar flotando.
+    - Migraña que me hace sentir extraño.
+    - Migraña que me deja con sensación de estar en una neblina.
+    - Migraña que me provoca dolor en las articulaciones.
+    - Migraña que me deja con sensación de estar en una pesadilla.
+    - Migraña que me hace sentir en un sueño.
+    - Migraña que me deja con sensación de estar en una nube.
+    - Migraña que me provoca dolor en el abdomen.
+    - Migraña que me deja con sensación de estar en un sueño profundo.
+    - Migraña que me hace sentir desconectado.
+    - Migraña que me deja con sensación de estar en un estado alterado.
+    - Migraña que me provoca dolor en el estómago.
+    - Migraña que me deja con sensación de estar en otro mundo.
+    - Migraña que me hace sentir en un estado de trance.
+    - Migraña que me deja con sensación de estar en una burbuja.
+    - Migraña que me provoca dolor en el abdomen.
+    - Migraña que me deja con sensación de estar en un limbo.
+    - Migraña que me hace sentir desconectado de la realidad.
+    - Migraña que me deja con sensación de estar en un estado de ensoñación.
+    - Migraña que me provoca dolor en el abdomen.
+    - Migraña que me deja con sensación de estar en un mundo aparte.
+    - Migraña que me hace sentir como en un estado de trance.
+    - Migraña que me deja con sensación de estar en un mundo paralelo.
+    - Migraña que me provoca dolor en el abdomen.
+    - Migraña que me deja con sensación de estar en una realidad alterna.
+    - Migraña que me hace sentir como si estuviera en un sueño lúcido.
+    - Migraña que me deja con sensación de estar en un estado onírico.
+    - Migraña que me provoca dolor en el abdomen.
+    - Migraña que me deja con sensación de estar en un estado de semi-consciencia.
+    - Migraña que me hace sentir como si estuviera en un estado de trance profundo.
+    - Migraña que me deja con sensación de estar en un mundo de ensueño.
+    - Migraña que me provoca dolor en el abdomen.
+    - Migraña que me deja con sensación de estar en un estado de conciencia alterada.
+    - Migraña que me hace sentir como si estuviera en un estado de semi-consciencia.
+    - Migraña que me deja con sensación de estar en un estado de ensueño.
+    - Migraña que me provoca dolor en el abdomen.
+    - Migraña que me deja con sensación de estar en un estado de ensoñación.
+    - Migraña que me hace sentir como si estuviera en un estado de conciencia alterada.
+    - Migraña que me deja con sensación de estar en un estado onírico.
+    - Migraña que me provoca dolor en el abdomen.
+    - Migraña que me deja con sensación de estar en un mundo de fantasía.
+    - Migraña que me hace sentir como si estuviera en un estado de semi-consciencia.
+
+- intent: sentir_cefalea_de_racimos
+  examples: |
+    - Estoy sufriendo de cefalea de racimos.
+    - Tengo un ataque de cefalea en racimos.
+    - Estoy con dolor intenso por la cefalea de racimos.
+    - Me está dando una cefalea de racimos muy fuerte.
+    - Estoy con una cefalea de racimos insoportable.
+    - Tengo una cefalea de racimos que me incapacita.
+    - Estoy con una cefalea de racimos aguda.
+    - Me aqueja una cefalea de racimos.
+    - Estoy padeciendo de cefalea de racimos.
+    - Con una cefalea de racimos otra vez.
+    - Estoy con una cefalea de racimos persistente.
+    - Me está dando un fuerte dolor por la cefalea de racimos.
+    - Estoy con una cefalea de racimos que me deja sin aliento.
+    - Con una cefalea de racimos que no se va.
+    - Estoy con una cefalea de racimos que me martiriza.
+    - Tengo una cefalea de racimos que me deja sin energía.
+    - Estoy con una cefalea de racimos que me limita.
+    - Me aqueja una cefalea de racimos intensa.
+    - Estoy con una cefalea de racimos recurrente.
+    - Con una cefalea de racimos que me deja sin palabras.
+    - Estoy con una cefalea de racimos incapacitante.
+    - Me está dando una cefalea de racimos que me deja aturdido.
+    - Con una cefalea de racimos que no cede.
+    - Tengo una cefalea de racimos que me afecta mucho.
+    - Estoy con una cefalea de racimos que me deja sin aliento.
+    - Me aqueja una cefalea de racimos que no me deja en paz.
+    - Estoy padeciendo de una cefalea de racimos muy molesta.
+    - Con una cefalea de racimos que me deja sin fuerzas.
+    - Estoy con una cefalea de racimos que me limita mucho.
+    - Me está dando una cefalea de racimos muy intensa.
+    - Con una cefalea de racimos que me deja sin energía.
+    - Estoy con una cefalea de racimos que me incapacita por completo.
+    - Me aqueja una cefalea de racimos que me deja aturdido.
+    - Estoy padeciendo de una cefalea de racimos muy incapacitante.
+    - Con una cefalea de racimos que me deja sin palabras.
+    - Estoy con una cefalea de racimos que me deja sin aliento.
+    - Me está dando una cefalea de racimos que no me deja en paz.
+    - Con una cefalea de racimos que no cede.
+    - Tengo una cefalea de racimos que me afecta mucho.
+    - Estoy con una cefalea de racimos muy molesta.
+    - Me aqueja una cefalea de racimos que me deja sin fuerzas.
+    - Estoy padeciendo de una cefalea de racimos que me limita mucho.
+    - Con una cefalea de racimos que me incapacita por completo.
+    - Estoy con una cefalea de racimos muy intensa.
+    - Me está dando una cefalea de racimos que me deja sin energía.
+    - Con una cefalea de racimos que me incapacita por completo.
+    - Estoy padeciendo de una cefalea de racimos muy incapacitante.
+    - Con una cefalea de racimos que me deja sin palabras.
+    - Estoy con una cefalea de racimos que me deja sin aliento.
+    - Me está dando una cefalea de racimos que no me deja en paz.
+    - Con una cefalea de racimos que no cede.
+    - Tengo una cefalea de racimos que me afecta mucho.
+    - Estoy con una cefalea de racimos muy molesta.
+    - Me aqueja una cefalea de racimos que me deja sin fuerzas.
+    - Estoy padeciendo de una cefalea de racimos que me limita mucho.
+    - Con una cefalea de racimos que me incapacita por completo.
+    - Estoy con una cefalea de racimos muy intensa.
+    - Me está dando una cefalea de racimos que me deja sin energía.
+    - Con una cefalea de racimos que me incapacita por completo.
+    - Estoy padeciendo de una cefalea de racimos muy incapacitante.
+    - Con una cefalea de racimos que me deja sin palabras.
+    - Estoy con una cefalea de racimos que me deja sin aliento.
+    - Me está dando una cefalea de racimos que no me deja en paz.
+    - Con una cefalea de racimos que no cede.
+    - Tengo una cefalea de racimos que me afecta mucho.
+    - Estoy con una cefalea de racimos muy molesta.
+    - Me aqueja una cefalea de racimos que me deja sin fuerzas.
+    - Estoy padeciendo de una cefalea de racimos que me limita mucho.
+    - Con una cefalea de racimos que me incapacita por completo.
+    - Estoy con una cefalea de racimos muy intensa.
+    - Me está dando una cefalea de racimos que me deja sin energía.
+    - Con una cefalea de racimos que me incapacita por completo.
+    - Estoy padeciendo de una cefalea de racimos muy incapacitante.
+    - Con una cefalea de racimos que me deja sin palabras.
+    - Estoy con una cefalea de racimos que me deja sin aliento.
+    - Me está dando una cefalea de racimos que no me deja en paz.
+    - Con una cefalea de racimos que no cede.
+    - Tengo una cefalea de racimos que me afecta mucho.
+    - Estoy con una cefalea de racimos muy molesta.
+    - Me aqueja una cefalea de racimos que me deja sin fuerzas.
+    - Estoy padeciendo de una cefalea de racimos que me limita mucho.
+    - Con una cefalea de racimos que me incapacita por completo.
+    - Estoy con una cefalea de racimos muy intensa.
+    - Me está dando una cefalea de racimos que me deja sin energía.
+    - Con una cefalea de racimos que me incapacita por completo.
+    - Estoy padeciendo de una cefalea de racimos muy incapacitante.
+    - Con una cefalea de racimos que me deja sin palabras.
+    - Estoy con una cefalea de racimos que me deja sin aliento.
+    - Me está dando una cefalea de racimos que no me deja en paz.
+    - Con una cefalea de racimos que no cede.
+    - Tengo una cefalea de racimos que me afecta mucho.
+    - Estoy con una cefalea de racimos muy molesta.
+    - Me aqueja una cefalea de racimos que me deja sin fuerzas.
+    - Estoy padeciendo de una cefalea de racimos que me limita mucho.
+    - Con una cefalea de racimos que me incapacita por completo.
+    - Estoy con una cefalea de racimos muy intensa.
+    - Me está dando una cefalea de racimos que me deja sin energía.
+    - Con una cefalea de racimos que me incapacita por completo.
+    - Estoy padeciendo de una cefalea de racimos muy incapacitante.
+    - Con una cefalea de racimos que me deja sin palabras.
+    - Estoy enfrentando una cefalea de racimos.
+    - Me aqueja una intensa cefalea en racimos.
+    - Sufro de fuertes dolores por la cefalea de racimos.
+    - La cefalea de racimos me está martirizando.
+    - Con una cefalea de racimos que me paraliza.
+    - Me está golpeando una cefalea de racimos.
+    - Tengo una cefalea en racimos que me abruma.
+    - Estoy padeciendo una cefalea de racimos persistente.
+    - La cefalea de racimos me está agotando.
+    - Lidiando con una cefalea de racimos que no cede.
+    - Experimentando una cefalea en racimos incapacitante.
+    - La cefalea de racimos me está dejando sin aliento.
+    - Con una cefalea de racimos que me anula.
+    - Sufriendo de cefalea de racimos otra vez.
+    - La cefalea de racimos me está dejando sin fuerzas.
+    - Estoy con una cefalea de racimos que me desanima.
+    - La cefalea de racimos me está atormentando.
+    - Con una cefalea de racimos que me oprime.
+    - Sintiendo una intensa cefalea en racimos.
+    - La cefalea de racimos me está superando.
+    - Tengo una cefalea de racimos que me deja desmotivado.
+    - Estoy padeciendo de cefalea de racimos de forma recurrente.
+    - Con una cefalea de racimos que me deja sin energía.
+    - Me está afectando una cefalea de racimos muy molesta.
+    - La cefalea de racimos me está haciendo sentir vulnerable.
+    - Luchando contra una cefalea de racimos aguda.
+    - La cefalea de racimos me está dejando exhausto.
+    - Estoy con una cefalea de racimos que me aplasta.
+    - La cefalea de racimos me está desgastando.
+    - Con una cefalea de racimos que me deja desanimado.
+    - Me aqueja una cefalea de racimos incapacitante.
+    - La cefalea de racimos me está debilitando.
+    - Tengo una cefalea en racimos que me hace sentir derrotado.
+    - Estoy enfrentando una cefalea de racimos muy intensa.
+    - La cefalea de racimos me está dejando sin palabras.
+    - Con una cefalea de racimos que me deja agotado.
+    - Me está afectando una cefalea de racimos persistente.
+    - La cefalea de racimos me está haciendo sentir impotente.
+    - Sufro de cefalea de racimos que no cede.
+    - Estoy padeciendo una cefalea de racimos que me deja aturdido.
+    - Con una cefalea de racimos que me deja sin aliento.
+    - La cefalea de racimos me está agobiando.
+    - Tengo una cefalea de racimos que me deja abatido.
+    - Estoy enfrentando una cefalea de racimos que me limita.
+    - La cefalea de racimos me está haciendo sentir agobiado.
+    - Con una cefalea de racimos que me deja sin energía.
+    - Me aqueja una cefalea de racimos que me deja desanimado.
+    - La cefalea de racimos me está dejando sin fuerzas.
+    - Estoy padeciendo de cefalea de racimos que me deja exhausto.
+    - La cefalea de racimos me está debilitando físicamente.
+    - Con una cefalea de racimos que me hace sentir vencido.
+    - Sufro de una intensa cefalea en racimos que me incapacita.
+    - Estoy enfrentando una cefalea de racimos que me oprime.
+    - La cefalea de racimos me está dejando sin ánimos.
+    - Con una cefalea de racimos que me deja desmotivado.
+    - Me aqueja una cefalea de racimos que me deja sin aliento.
+    - La cefalea de racimos me está agotando mentalmente.
+    - Tengo una cefalea de racimos que me deja desalentado.
+    - Estoy padeciendo una cefalea de racimos que me deja sin energía.
+    - La cefalea de racimos me está haciendo sentir abrumado.
+    - Con una cefalea de racimos que me deja exhausto.
+    - Estoy enfrentando una cefalea de racimos que me deja aturdido.
+    - La cefalea de racimos me está dejando desanimado.
+    - Sufriendo de una cefalea en racimos que me limita.
+    - Con una cefalea de racimos que me deja sin fuerzas.
+    - Me aqueja una cefalea de racimos que me deja desanimado.
+    - La cefalea de racimos me está haciendo sentir vulnerable.
+    - Estoy padeciendo una cefalea de racimos que me deja sin aliento.
+    - La cefalea de racimos me está debilitando emocionalmente.
+    - Con una cefalea de racimos que me deja sin energía.
+    - Estoy enfrentando una cefalea de racimos que me deja exhausto.
+    - La cefalea de racimos me está haciendo sentir impotente.
+    - Tengo una cefalea de racimos que me deja desmotivado.
+    - La cefalea de racimos me está dejando sin fuerzas.
+    - Con una cefalea de racimos que me hace sentir abatido.
+    - Estoy padeciendo una cefalea de racimos que me deja sin palabras.
+    - La cefalea de racimos me está agotando físicamente.
+    - Sufriendo de una intensa cefalea en racimos que me deja desanimado.
+    - Con una cefalea de racimos que me deja agotado.
+    - La cefalea de racimos me está haciendo sentir agobiado.
+    - Estoy enfrentando una cefalea de racimos que me limita.
+    - Tengo una cefalea de racimos que me deja sin energía.
+    - La cefalea de racimos me está debilitando mentalmente.
+    - Con una cefalea de racimos que me deja exhausto.
+    - Estoy padeciendo una cefalea de racimos que me deja desalentado.
+    - La cefalea de racimos me está haciendo sentir vencido.
+    - Con una cefalea de racimos que me deja sin aliento.
+    - Me aqueja una cefalea de racimos que me deja sin fuerzas.
+    - La cefalea de racimos me está haciendo sentir abatido.
+    - Con una cefalea de racimos que me deja desmotivado.
+    - Tengo una cefalea de racimos que me deja exhausto.
+    - La cefalea de racimos me está dejando desanimado.
+    - Con una cefalea de racimos que me hace sentir vulnerable.
+    - Estoy enfrentando una cefalea de racimos que me deja sin energía.
+    - La cefalea de racimos me está agotando emocionalmente.
+    - Con una cefalea de racimos que me deja desanimado.
+    - Tengo una cefalea de racimos que me deja sin fuerzas.
+    - La cefalea de racimos me está haciendo sentir impotente.
+    - Con una cefalea de racimos que me deja exhausto.
+    - Estoy padeciendo una cefalea de racimos que me deja desmotivado.
+
+- intent: sentir_cefalea_consumo_medicamentos
+  examples: |
+    - Tengo dolor de cabeza por tomar demasiada medicación.
+    - Mi cabeza me duele por usar muchos medicamentos.
+    - Siento dolor de cabeza por tomar demasiadas pastillas.
+    - Me duele la cabeza por abusar de los medicamentos.
+    - Tengo dolor de cabeza por medicarme demasiado.
+    - Estoy con dolor de cabeza por exceso de medicamentos.
+    - Mi cabeza está dolorida por tomar muchos remedios.
+    - Experimento dolor de cabeza por tomar demasiados medicamentos.
+    - Me duele la cabeza por tomar medicamentos en exceso.
+    - Sufro de dolor de cabeza por haber usado demasiados medicamentos.
+    - Tengo dolor de cabeza porque he tomado demasiadas pastillas.
+    - Mi cabeza me duele por haber tomado demasiada medicación.
+    - Estoy con dolor de cabeza porque tomé demasiados medicamentos.
+    - Me duele la cabeza por haber abusado de la medicación.
+    - Tengo dolor de cabeza debido al abuso de los medicamentos.
+    - Mi cabeza está dolorida por el exceso de medicamentos.
+    - Experimento dolor de cabeza por el uso excesivo de medicamentos.
+    - Me duele la cabeza por el consumo excesivo de medicación.
+    - Sufro de dolor de cabeza por haber tomado demasiados remedios.
+    - Tengo dolor de cabeza debido al consumo desmedido de medicamentos.
+    - Mi cabeza me duele por haber tomado demasiada medicina.
+    - Estoy con dolor de cabeza por haber excedido la dosis de medicamentos.
+    - Me duele la cabeza por haber consumido demasiados medicamentos.
+    - Tengo dolor de cabeza debido al exceso de medicamentos recetados.
+    - Mi cabeza está dolorida por tomar medicamentos en exceso.
+    - Experimento dolor de cabeza por haber abusado de la medicación.
+    - Me duele la cabeza por haber tomado demasiados fármacos.
+    - Tengo dolor de cabeza por el consumo excesivo de pastillas.
+    - Mi cabeza me duele por haber excedido la cantidad de medicamentos.
+    - Estoy con dolor de cabeza por el uso desmedido de medicamentos.
+    - Me duele la cabeza por tomar demasiadas pastillas seguidas.
+    - Tengo dolor de cabeza debido al abuso prolongado de medicamentos.
+    - Mi cabeza está dolorida por haber tomado demasiados comprimidos.
+    - Experimento dolor de cabeza por haber sobrepasado la dosis de medicamentos.
+    - Me duele la cabeza por haber ingerido demasiada medicación.
+    - Tengo dolor de cabeza debido al uso excesivo de medicamentos recetados.
+    - Mi cabeza me duele por haber consumido demasiados analgésicos.
+    - Estoy con dolor de cabeza por haber tomado demasiadas píldoras.
+    - Me duele la cabeza por haber abusado del uso de medicamentos.
+    - Tengo dolor de cabeza por el exceso de pastillas que he tomado.
+    - Mi cabeza está dolorida por tomar demasiadas medicinas.
+    - Experimento dolor de cabeza por haber excedido la cantidad recomendada de medicamentos.
+    - Me duele la cabeza por haber tomado demasiados fármacos seguidos.
+    - Tengo dolor de cabeza debido al uso indiscriminado de medicamentos.
+    - Mi cabeza me duele por haber sobrepasado la dosis de medicación.
+    - Estoy con dolor de cabeza por el consumo continuo de medicamentos.
+    - Me duele la cabeza por tomar demasiados remedios seguido.
+    - Tengo dolor de cabeza debido al abuso prolongado de medicinas.
+    - Mi cabeza está dolorida por haber tomado demasiados comprimidos seguidos.
+    - Experimento dolor de cabeza por el uso excesivo y continuo de medicamentos.
+    - Me duele la cabeza por haber consumido demasiadas pastillas seguidas.
+    - Tengo dolor de cabeza debido al consumo excesivo y prolongado de medicamentos.
+    - Mi cabeza me duele por haber tomado demasiadas píldoras seguidas.
+    - Estoy con dolor de cabeza por haber excedido la dosis recomendada de medicamentos.
+    - Me duele la cabeza por haber abusado del uso de medicamentos recetados.
+    - Tengo dolor de cabeza por el exceso de medicamentos que he tomado.
+    - Mi cabeza está dolorida por tomar demasiados analgésicos seguidos.
+    - Experimento dolor de cabeza por el consumo desmedido y prolongado de medicamentos.
+    - Me duele la cabeza por haber sobrepasado la cantidad de medicamentos recetados.
+    - Tengo dolor de cabeza debido al uso continuado y excesivo de medicamentos.
+    - Mi cabeza me duele por haber tomado demasiada medicación en poco tiempo.
+    - Estoy con dolor de cabeza por haber consumido demasiadas pastillas en poco tiempo.
+    - Me duele la cabeza por haber abusado del consumo de medicamentos en poco tiempo.
+    - Tengo dolor de cabeza debido al consumo excesivo de medicamentos en poco tiempo.
+    - Mi cabeza está dolorida por haber tomado demasiados medicamentos en poco tiempo.
+    - Experimento dolor de cabeza por haber ingerido demasiada medicación en poco tiempo.
+    - Me duele la cabeza por haber excedido la dosis recomendada de medicamentos en poco tiempo.
+    - Tengo dolor de cabeza debido al uso excesivo de medicamentos recetados en poco tiempo.
+    - Mi cabeza me duele por tomar demasiadas pastillas seguidas en poco tiempo.
+    - Estoy con dolor de cabeza por haber consumido demasiados analgésicos en poco tiempo.
+    - Me duele la cabeza por haber sobrepasado la cantidad de medicamentos recetados en poco tiempo.
+    - Tengo dolor de cabeza debido al consumo desmedido y prolongado de medicamentos en poco tiempo.
+    - Mi cabeza está dolorida por haber tomado demasiados comprimidos seguidos en poco tiempo.
+    - Experimento dolor de cabeza por el uso excesivo y continuo de medicamentos en poco tiempo.
+    - Me duele la cabeza por haber consumido demasiadas pastillas en poco tiempo.
+    - Tengo dolor de cabeza debido al abuso prolongado del consumo de medicamentos en poco tiempo.
+    - Mi cabeza me duele por haber tomado demasiada medicación en un corto periodo de tiempo.
+    - Estoy con dolor de cabeza por haber tomado demasiadas pastillas en un corto periodo de tiempo.
+    - Me duele la cabeza por haber abusado del uso de medicamentos en un corto periodo de tiempo.
+    - Tengo dolor de cabeza debido al consumo excesivo de medicamentos en un corto periodo de tiempo.
+    - Mi cabeza está dolorida por haber tomado demasiados medicamentos en un corto periodo de tiempo.
+    - Experimento dolor de cabeza por haber ingerido demasiada medicación en un corto periodo de tiempo.
+    - Me duele la cabeza por haber excedido la dosis recomendada de medicamentos en un corto periodo de tiempo.
+    - Tengo dolor de cabeza debido al uso excesivo de medicamentos recetados en un corto periodo de tiempo.
+    - Mi cabeza me duele por tomar demasiadas pastillas seguidas en un corto periodo de tiempo.
+    - Estoy con dolor de cabeza por haber consumido demasiados analgésicos en un corto periodo de tiempo.
+    - Me duele la cabeza por haber sobrepasado la cantidad de medicamentos recetados en un corto periodo de tiempo.
+    - Tengo dolor de cabeza debido al consumo desmedido y prolongado de medicamentos en un corto periodo de tiempo.
+    - Mi cabeza está dolorida por haber tomado demasiados comprimidos seguidos en un corto periodo de tiempo.
+    - Experimento dolor de cabeza por el uso excesivo y continuo de medicamentos en un corto periodo de tiempo.
+    - Me duele la cabeza por haber consumido demasiadas pastillas en un corto periodo de tiempo.
+    - Tengo dolor de cabeza debido al abuso prolongado del consumo de medicamentos en un corto periodo de tiempo.
+    - Mi cabeza me duele por haber tomado demasiada medicación en un periodo breve.
+    - Estoy con dolor de cabeza por haber tomado demasiadas pastillas en un periodo breve.
+    - Me duele la cabeza por haber abusado del uso de medicamentos en un periodo breve.
+    - Tengo dolor de cabeza debido al consumo excesivo de medicamentos en un periodo breve.
+    - Mi cabeza está dolorida por haber tomado demasiados medicamentos en un periodo breve.
+    - Experimento dolor de cabeza por haber ingerido demasiada medicación en un periodo breve.
+    - Me duele la cabeza por haber excedido la dosis recomendada de medicamentos en un periodo breve.
+    - Tengo dolor de cabeza debido al uso excesivo de medicamentos recetados en un periodo breve.
+    - Estoy sufriendo de cefalea por abuso de medicamentos.
+    - Tengo dolor de cabeza debido al uso excesivo de medicamentos.
+    - Me duele la cabeza por tomar demasiados medicamentos.
+    - Experimento cefalea debido al abuso de medicamentos.
+    - Estoy padeciendo de dolor de cabeza por exceso de medicación.
+    - Mi cabeza me duele por haber tomado demasiados medicamentos.
+    - Estoy con cefalea por haber excedido la dosis de medicamentos.
+    - Me está dando dolor de cabeza debido al consumo excesivo de medicamentos.
+    - Tengo un dolor de cabeza persistente por el uso excesivo de medicamentos.
+    - Estoy con dolor de cabeza a causa del abuso de medicamentos.
+    - Me aqueja una cefalea por haber tomado demasiada medicación.
+    - Mi cabeza está dolorida por haber excedido la cantidad de medicamentos.
+    - Estoy experimentando cefalea debido al consumo desmedido de medicamentos.
+    - Tengo dolor de cabeza como consecuencia del uso excesivo de medicamentos.
+    - Estoy sufriendo de cefalea debido al abuso prolongado de medicamentos.
+    - Me duele la cabeza por haber tomado más medicamentos de lo recomendado.
+    - Experimento dolor de cabeza por haber excedido la ingesta de medicamentos.
+    - Estoy padeciendo cefalea a causa del uso indiscriminado de medicamentos.
+    - Mi cabeza me está doliendo por haber abusado de los medicamentos.
+    - Tengo un fuerte dolor de cabeza debido al consumo exagerado de medicamentos.
+    - Estoy con cefalea debido al uso inadecuado de los medicamentos.
+    - Me está dando dolor de cabeza por haber consumido medicamentos en exceso.
+    - Tengo cefalea por haber excedido la dosis recomendada de medicamentos.
+    - Estoy sufriendo de dolor de cabeza por haber tomado demasiados medicamentos seguido.
+    - Experimento dolor de cabeza por haber abusado del consumo de medicamentos.
+    - Estoy con cefalea a causa del consumo excesivo y prolongado de medicamentos.
+    - Me duele la cabeza por haber ingerido una cantidad excesiva de medicamentos.
+    - Tengo dolor de cabeza debido al exceso de medicamentos que he tomado.
+    - Estoy padeciendo cefalea por haber tomado medicamentos en exceso durante mucho tiempo.
+    - Mi cabeza me está doliendo debido al uso exagerado de medicamentos.
+    - Experimento cefalea intensa por haber consumido medicamentos en exceso.
+    - Estoy con dolor de cabeza persistente debido al uso crónico de medicamentos.
+    - Me está dando dolor de cabeza por haber excedido la cantidad recomendada de medicamentos.
+    - Tengo cefalea debido al uso prolongado y abusivo de medicamentos.
+    - Estoy sufriendo de dolor de cabeza debido a la sobredosis de medicamentos.
+    - Estoy padeciendo cefalea por haber ingerido demasiados medicamentos durante mucho tiempo.
+    - Mi cabeza me duele intensamente por haber consumido medicamentos de manera excesiva.
+    - Tengo un dolor de cabeza agudo a causa del consumo incontrolado de medicamentos.
+    - Experimento cefalea debido al abuso reiterado de medicamentos.
+    - Estoy con dolor de cabeza persistente por haber tomado medicamentos sin control.
+    - Me está dando cefalea por haber excedido la dosis de medicamentos recomendada.
+    - Tengo cefalea a causa del consumo continuo de medicamentos en dosis elevadas.
+    - Estoy sufriendo de dolor de cabeza por haber utilizado medicamentos de manera descontrolada.
+    - Mi cabeza me duele debido al exceso de medicamentos que he consumido.
+    - Experimento cefalea por haber abusado de los medicamentos durante mucho tiempo.
+    - Estoy con dolor de cabeza debido al uso excesivo de medicamentos recetados.
+    - Tengo cefalea crónica por haber tomado medicamentos en exceso durante años.
+    - Estoy padeciendo cefalea a causa del consumo desmedido de analgésicos.
+    - Me duele la cabeza intensamente por haber tomado medicamentos más de lo debido.
+    - Tengo un dolor de cabeza persistente debido al abuso de medicamentos.
+    - Estoy con cefalea aguda por haber ingerido medicamentos en exceso.
+    - Experimento cefalea intensa por haber consumido medicamentos de manera indiscriminada.
+    - Estoy sufriendo de dolor de cabeza a causa del consumo exagerado de medicamentos.
+    - Tengo cefalea crónica debido al uso prolongado e indiscriminado de medicamentos.
+    - Mi cabeza me duele mucho por haber tomado demasiados medicamentos durante mucho tiempo.
+    - Experimento cefalea intensa y constante debido al abuso crónico de medicamentos.
+    - Estoy con dolor de cabeza persistente por haber ingerido medicamentos en exceso durante años.
+    - Tengo cefalea crónica y recurrente debido al consumo excesivo de medicamentos.
+    - Me duele la cabeza de forma continua a causa del uso prolongado de medicamentos.
+    - Experimento cefalea persistente y debilitante por el abuso prolongado de medicamentos.
+    - Estoy sufriendo de dolor de cabeza crónico y severo debido al consumo excesivo de medicamentos.
+    - Tengo cefalea aguda y recurrente por haber tomado medicamentos en exceso de forma repetida.
+    - Mi cabeza me duele de forma intensa y constante a causa del uso crónico de medicamentos.
+    - Experimento cefalea persistente y agotadora debido al abuso continuo de medicamentos.
+    - Estoy con dolor de cabeza crónico e incapacitante por haber consumido medicamentos de manera abusiva.
+    - Tengo cefalea recurrente y debilitante debido al consumo exagerado y prolongado de medicamentos.
+    - Me duele la cabeza de manera crónica y severa por haber abusado de los medicamentos durante mucho tiempo.
+    - Experimento cefalea crónica y persistente debido al consumo excesivo y continuado de medicamentos.
+    - Estoy sufriendo de dolor de cabeza crónico y debilitante a causa del uso indiscriminado de medicamentos.
+    - Tengo cefalea recurrente y incapacitante por haber tomado medicamentos de manera descontrolada durante años.
+    - Mi cabeza me duele de forma crónica e incapacitante debido al abuso prolongado de medicamentos recetados.
+    - Experimento cefalea crónica e incapacitante por haber consumido medicamentos en exceso durante un largo período.
+    - Estoy con dolor de cabeza crónico y debilitante a causa del consumo continuado y excesivo de medicamentos.
+    - Tengo cefalea recurrente y severa por haber tomado medicamentos en exceso de manera repetida durante mucho tiempo.
+    - Me duele la cabeza de forma crónica e intensa debido al abuso prolongado de medicamentos recetados.
+    - Experimento cefalea crónica y persistente por el consumo desmedido y prolongado de medicamentos sin control.
+    - Estoy sufriendo de dolor de cabeza crónico y incapacitante debido al uso excesivo y continuado de medicamentos.
+    - Tengo cefalea recurrente y debilitante por haber tomado medicamentos en exceso de forma indiscriminada durante años.
+    - Mi cabeza me duele de manera crónica e incapacitante a causa del abuso prolongado y desmedido de medicamentos recetados.
+    - Experimento cefalea crónica y severa debido al consumo excesivo y continuado de medicamentos sin supervisión médica.
+    - Estoy con dolor de cabeza crónico y debilitante por haber ingerido medicamentos en exceso de forma repetida durante mucho tiempo.
+    - Tengo cefalea recurrente y incapacitante debido al abuso prolongado y descontrolado de medicamentos recetados.
+    - Me duele la cabeza de forma crónica e intensa por el consumo exagerado y prolongado de medicamentos sin seguimiento médico.
+    - Experimento cefalea crónica y persistente a causa del uso excesivo y continuado de medicamentos sin control ni supervisión médica.
+    - Estoy sufriendo de dolor de cabeza crónico y debilitante debido al abuso prolongado y desmedido de medicamentos recetados.
+    - Tengo cefalea recurrente y severa por haber tomado medicamentos en exceso de forma indiscriminada y sin seguimiento médico adecuado.
+    - Mi cabeza me duele de manera crónica e incapacitante a causa del consumo exagerado y prolongado de medicamentos recetados sin supervisión médica.
+    - Experimento cefalea crónica y persistente debido al uso excesivo y continuado de medicamentos sin control, lo que ha desencadenado una cefalea por consumo excesivo de medicamentos.
+    - Estoy con dolor de cabeza crónico y debilitante por haber ingerido medicamentos en exceso durante un largo período sin la debida supervisión y control médico.
+    - Tengo cefalea recurrente y incapacitante a causa del abuso prolongado y descontrolado de medicamentos recetados, lo que ha generado una cefalea por consumo excesivo de medicamentos.
+    - Mi cabeza me duele de forma crónica e intensa debido al uso exagerado y prolongado de medicamentos recetados sin seguimiento ni control médico, lo que ha desencadenado una cefalea por abuso de medicamentos.
+    - Experimento cefalea crónica y persistente por el consumo excesivo y continuado de medicamentos sin supervisión médica adecuada, lo que ha desembocado en una cefalea por consumo excesivo de medicamentos.
+    - Estoy sufriendo de dolor de cabeza crónico y debilitante a causa del abuso prolongado y desmedido de medicamentos recetados sin control, lo que ha desencadenado una cefalea por consumo excesivo de medicamentos.
+    - Tengo cefalea recurrente y severa debido al uso excesivo y continuado de medicamentos sin control ni supervisión médica, lo que ha generado una cefalea por abuso de medicamentos.
+    - Mi cabeza me duele de forma crónica e incapacitante por haber consumido medicamentos en exceso durante un largo período sin la debida supervisión y control médico, lo que ha desembocado en una cefalea por consumo excesivo de medicamentos.
+    - Experimento cefalea crónica y persistente a causa del consumo excesivo y descontrolado de medicamentos recetados, lo que ha desencadenado una cefalea por abuso de medicamentos.
+    - Estoy con dolor de cabeza crónico y debilitante por haber tomado medicamentos en exceso de forma indiscriminada y prolongada sin supervisión médica, lo que ha generado una cefalea por consumo excesivo de medicamentos.
+    - Tengo cefalea recurrente y incapacitante debido al abuso prolongado y desmedido de medicamentos recetados sin seguimiento ni control médico adecuado, lo que ha desencadenado una cefalea por abuso de medicamentos.
+    - Mi cabeza me duele de forma crónica e intensa a causa del uso exagerado y continuado de medicamentos sin control, lo que ha generado una cefalea por consumo excesivo de medicamentos.
+    - Experimento cefalea crónica y persistente por haber consumido medicamentos en exceso durante mucho tiempo sin la debida supervisión médica, lo que ha desencadenado una cefalea por abuso de medicamentos.
+
+- intent: sentir_cefalea_sinusal
+  examples: |
+    - Tengo dolor de cabeza por la congestión nasal.
+    - Mi cabeza me duele por los senos bloqueados.
+    - Siento dolor de cabeza por la inflamación de los senos nasales.
+    - Me duele la cabeza por la presión en los senos paranasales.
+    - Tengo dolor de cabeza debido a la sinusitis.
+    - Estoy con dolor de cabeza por la obstrucción de los senos.
+    - Mi cabeza está dolorida por problemas en los senos nasales.
+    - Experimento dolor de cabeza por la presión sinusal.
+    - Me duele la cabeza por la congestión en los senos faciales.
+    - Tengo dolor de cabeza debido a la obstrucción nasal.
+    - Mi cabeza me duele por la inflamación en los senos maxilares.
+    - Estoy con dolor de cabeza por la congestión en los senos frontales.
+    - Siento dolor de cabeza debido a la sinusitis aguda.
+    - Me duele la cabeza por la presión en los senos etmoidales.
+    - Tengo dolor de cabeza debido a la congestión en los senos esfenoidales.
+    - Mi cabeza está dolorida por la inflamación de los senos paranasales.
+    - Experimento dolor de cabeza por la obstrucción de los senos maxilares.
+    - Me duele la cabeza por la congestión en los senos etmoidales.
+    - Tengo dolor de cabeza debido a la presión en los senos frontales.
+    - Mi cabeza me duele por la inflamación en los senos esfenoidales.
+    - Estoy con dolor de cabeza por la congestión en los senos maxilares.
+    - Siento dolor de cabeza debido a la obstrucción en los senos frontales.
+    - Me duele la cabeza por la presión en los senos etmoidales.
+    - Tengo dolor de cabeza debido a la inflamación en los senos esfenoidales.
+    - Mi cabeza está dolorida por la congestión en los senos nasales.
+    - Experimento dolor de cabeza por la obstrucción en los senos paranasales.
+    - Me duele la cabeza por la presión en los senos faciales.
+    - Tengo dolor de cabeza debido a la inflamación en los senos frontales.
+    - Mi cabeza me duele por la congestión en los senos etmoidales.
+    - Estoy con dolor de cabeza por la obstrucción en los senos esfenoidales.
+    - Siento dolor de cabeza debido a la presión en los senos nasales.
+    - Me duele la cabeza por la inflamación en los senos faciales.
+    - Tengo dolor de cabeza debido a la congestión en los senos paranasales.
+    - Mi cabeza está dolorida por la obstrucción de los senos frontales.
+    - Experimento dolor de cabeza por la presión en los senos etmoidales.
+    - Me duele la cabeza por la inflamación en los senos esfenoidales.
+    - Tengo dolor de cabeza debido a la congestión en los senos maxilares.
+    - Mi cabeza me duele por la obstrucción en los senos nasales.
+    - Estoy con dolor de cabeza por la presión en los senos faciales.
+    - Siento dolor de cabeza debido a la inflamación en los senos paranasales.
+    - Me duele la cabeza por la congestión en los senos frontales.
+    - Tengo dolor de cabeza debido a la obstrucción en los senos etmoidales.
+    - Mi cabeza está dolorida por la presión en los senos esfenoidales.
+    - Experimento dolor de cabeza por la inflamación en los senos maxilares.
+    - Me duele la cabeza por la congestión en los senos paranasales.
+    - Tengo dolor de cabeza debido a la obstrucción en los senos faciales.
+    - Mi cabeza me duele por la presión en los senos frontales.
+    - Estoy con dolor de cabeza por la inflamación en los senos etmoidales.
+    - Siento dolor de cabeza debido a la congestión en los senos esfenoidales.
+    - Me duele la cabeza por la obstrucción en los senos maxilares.
+    - Tengo dolor de cabeza debido a la presión en los senos paranasales.
+    - Mi cabeza está dolorida por la inflamación en los senos faciales.
+    - Experimento dolor de cabeza por la congestión en los senos frontales.
+    - Me duele la cabeza por la obstrucción en los senos etmoidales.
+    - Tengo dolor de cabeza debido a la presión en los senos esfenoidales.
+    - Mi cabeza me duele por la inflamación en los senos maxilares.
+    - Estoy con dolor de cabeza por la congestión en los senos paranasales.
+    - Siento dolor de cabeza debido a la obstrucción en los senos faciales.
+    - Me duele la cabeza por la presión en los senos frontales.
+    - Tengo dolor de cabeza debido a la inflamación en los senos etmoidales.
+    - Mi cabeza está dolorida por la congestión en los senos esfenoidales.
+    - Experimento dolor de cabeza por la obstrucción en los senos maxilares.
+    - Me duele la cabeza por la presión en los senos paranasales.
+    - Tengo dolor de cabeza debido a la inflamación en los senos faciales.
+    - Mi cabeza me duele por la congestión en los senos frontales.
+    - Estoy con dolor de cabeza por la obstrucción en los senos etmoidales.
+    - Siento dolor de cabeza debido a la presión en los senos esfenoidales.
+    - Me duele la cabeza por la inflamación en los senos maxilares.
+    - Tengo dolor de cabeza debido a la congestión en los senos paranasales.
+    - Mi cabeza está dolorida por la obstrucción en los senos faciales.
+    - Experimento dolor de cabeza por la presión en los senos frontales.
+    - Me duele la cabeza por la inflamación en los senos etmoidales.
+    - Tengo dolor de cabeza debido a la congestión en los senos esfenoidales.
+    - Mi cabeza me duele por la obstrucción en los senos maxilares.
+    - Estoy con dolor de cabeza por la presión en los senos paranasales.
+    - Siento dolor de cabeza debido a la inflamación en los senos faciales.
+    - Me duele la cabeza por la congestión en los senos frontales.
+    - Tengo dolor de cabeza debido a la obstrucción en los senos etmoidales.
+    - Mi cabeza está dolorida por la presión en los senos esfenoidales.
+    - Experimento dolor de cabeza por la inflamación en los senos maxilares.
+    - Me duele la cabeza por la congestión en los senos paranasales.
+    - Tengo dolor de cabeza debido a la obstrucción en los senos faciales.
+    - Mi cabeza me duele por la presión en los senos frontales.
+    - Estoy con dolor de cabeza por la inflamación en los senos etmoidales.
+    - Siento dolor de cabeza debido a la congestión en los senos esfenoidales.
+    - Me duele la cabeza por la obstrucción en los senos maxilares.
+    - Tengo dolor de cabeza debido a la presión en los senos paranasales.
+    - Mi cabeza está dolorida por la inflamación en los senos faciales.
+    - Experimento dolor de cabeza por la congestión en los senos frontales.
+    - Me duele la cabeza por la obstrucción en los senos etmoidales.
+    - Tengo dolor de cabeza debido a la presión en los senos esfenoidales.
+    - Mi cabeza me duele por la inflamación en los senos maxilares.
+    - Estoy con dolor de cabeza por la congestión en los senos paranasales.
+    - Siento dolor de cabeza debido a la obstrucción en los senos faciales.
+    - Me duele la cabeza por la presión en los senos frontales.
+    - Tengo dolor de cabeza debido a la inflamación en los senos etmoidales.
+    - Mi cabeza está dolorida por la congestión en los senos esfenoidales.
+    - Experimento dolor de cabeza por la obstrucción en los senos maxilares.
+    - Me duele la cabeza por la presión en los senos paranasales.
+    - Tengo dolor de cabeza debido a la inflamación en los senos faciales.
+    - Tengo dolor de cabeza por los senos paranasales.
+    - Mi cabeza me duele por problemas en los senos nasales.
+    - Siento dolor de cabeza debido a los senos bloqueados.
+    - Me duele la cabeza por congestión sinusal.
+    - Tengo dolor de cabeza por la sinusitis.
+    - Estoy con dolor de cabeza por la inflamación de los senos.
+    - Mi cabeza está dolorida debido a la congestión nasal.
+    - Experimento dolor de cabeza por la presión sinusal.
+    - Me duele la cabeza por la obstrucción de los senos.
+    - Tengo dolor de cabeza a causa de la sinusitis crónica.
+    - Mi cabeza me duele por la inflamación de los senos nasales.
+    - Estoy con dolor de cabeza por la congestión en los senos nasales.
+    - Siento dolor de cabeza debido a la sinusitis aguda.
+    - Me duele la cabeza por la obstrucción de los conductos nasales.
+    - Tengo dolor de cabeza por la presión en los senos paranasales.
+    - Mi cabeza está dolorida debido a la congestión de los senos nasales.
+    - Experimento dolor de cabeza por la inflamación de los senos faciales.
+    - Me duele la cabeza por la obstrucción de los senos maxilares.
+    - Tengo dolor de cabeza debido a la congestión en los senos frontales.
+    - Mi cabeza me duele por la presión en los senos etmoidales.
+    - Estoy con dolor de cabeza por la inflamación de los senos esfenoidales.
+    - Siento dolor de cabeza debido a la obstrucción de los senos paranasales.
+    - Me duele la cabeza por la congestión en los senos maxilares.
+    - Tengo dolor de cabeza por la presión en los senos frontales.
+    - Mi cabeza está dolorida debido a la inflamación en los senos etmoidales.
+    - Experimento dolor de cabeza por la obstrucción en los senos esfenoidales.
+    - Me duele la cabeza por la congestión en los senos faciales.
+    - Tengo dolor de cabeza debido a la presión en los senos nasales.
+    - Mi cabeza me duele por la sinusitis recurrente.
+    - Estoy con dolor de cabeza por la inflamación crónica de los senos paranasales.
+    - Siento dolor de cabeza debido a la congestión persistente en los senos nasales.
+    - Me duele la cabeza por la obstrucción repetida de los conductos nasales.
+    - Tengo dolor de cabeza por la presión constante en los senos maxilares.
+    - Mi cabeza está dolorida debido a la congestión crónica de los senos frontales.
+    - Experimento dolor de cabeza por la inflamación persistente de los senos esfenoidales.
+    - Me duele la cabeza por la obstrucción continua de los senos paranasales.
+    - Tengo dolor de cabeza debido a la congestión prolongada en los senos nasales.
+    - Mi cabeza me duele por la presión sostenida en los senos frontales.
+    - Estoy con dolor de cabeza por la inflamación recurrente de los senos esfenoidales.
+    - Siento dolor de cabeza debido a la obstrucción crónica de los senos maxilares.
+    - Me duele la cabeza por la congestión persistente en los senos faciales.
+    - Tengo dolor de cabeza por la presión constante en los senos etmoidales.
+    - Mi cabeza está dolorida debido a la inflamación sostenida de los senos nasales.
+    - Experimento dolor de cabeza por la obstrucción prolongada de los senos paranasales.
+    - Me duele la cabeza por la congestión continuada en los senos maxilares.
+    - Tengo dolor de cabeza debido a la presión recurrente en los senos frontales.
+    - Mi cabeza me duele por la inflamación persistente de los senos etmoidales.
+    - Estoy con dolor de cabeza por la obstrucción recurrente de los senos esfenoidales.
+    - Siento dolor de cabeza debido a la congestión crónica en los senos faciales.
+    - Me duele la cabeza por la presión persistente en los senos nasales.
+    - Tengo dolor de cabeza por la inflamación continua de los senos maxilares.
+    - Mi cabeza está dolorida debido a la obstrucción sostenida de los senos frontales.
+    - Experimento dolor de cabeza por la congestión prolongada en los senos etmoidales.
+    - Me duele la cabeza por la presión continuada en los senos esfenoidales.
+    - Tengo dolor de cabeza debido a la inflamación recurrente de los senos faciales.
+    - Mi cabeza me duele por la obstrucción persistente de los senos nasales.
+    - Estoy con dolor de cabeza por la congestión sostenida en los senos maxilares.
+    - Siento dolor de cabeza debido a la presión crónica en los senos frontales.
+    - Me duele la cabeza por la inflamación continuada de los senos etmoidales.
+    - Tengo dolor de cabeza por la obstrucción recurrente de los senos esfenoidales.
+    - Mi cabeza está dolorida debido a la congestión persistente en los senos faciales.
+    - Experimento dolor de cabeza por la presión prolongada en los senos nasales.
+    - Me duele la cabeza por la inflamación continuada de los senos maxilares.
+    - Tengo dolor de cabeza debido a la obstrucción recurrente de los senos frontales.
+    - Mi cabeza me duele por la congestión persistente en los senos etmoidales.
+    - Estoy con dolor de cabeza por la presión sostenida en los senos esfenoidales.
+    - Siento dolor de cabeza debido a la inflamación crónica de los senos faciales.
+    - Me duele la cabeza por la obstrucción continuada de los senos nasales.
+    - Tengo dolor de cabeza debido a la congestión recurrente en los senos maxilares.
+    - Mi cabeza está dolorida debido a la presión persistente en los senos frontales.
+    - Experimento dolor de cabeza por la inflamación prolongada de los senos etmoidales.
+    - Me duele la cabeza por la obstrucción continuada de los senos esfenoidales.
+    - Tengo dolor de cabeza debido a la congestión recurrente en los senos faciales.
+    - Mi cabeza me duele por la presión persistente en los senos nasales.
+    - Estoy con dolor de cabeza por la inflamación sostenida de los senos maxilares.
+    - Siento dolor de cabeza debido a la obstrucción crónica de los senos frontales.
+    - Me duele la cabeza por la congestión continuada en los senos etmoidales.
+    - Tengo dolor de cabeza debido a la presión recurrente en los senos esfenoidales.
+    - Mi cabeza está dolorida debido a la inflamación persistente de los senos faciales.
+    - Experimento dolor de cabeza por la obstrucción prolongada de los senos nasales.
+    - Me duele la cabeza por la congestión continuada en los senos maxilares.
+    - Tengo dolor de cabeza debido a la presión crónica en los senos frontales.
+    - Mi cabeza me duele por la inflamación continuada de los senos etmoidales.
+    - Estoy con dolor de cabeza por la obstrucción recurrente de los senos esfenoidales.
+    - Siento dolor de cabeza debido a la congestión persistente en los senos faciales.
+    - Me duele la cabeza por la presión sostenida en los senos nasales.
+    - Tengo dolor de cabeza debido a la inflamación recurrente de los senos maxilares.
+    - Mi cabeza está dolorida debido a la obstrucción persistente de los senos frontales.
+    - Experimento dolor de cabeza por la congestión prolongada en los senos etmoidales.
+    - Me duele la cabeza por la presión continuada en los senos esfenoidales.
+    - Tengo dolor de cabeza debido a la inflamación crónica de los senos faciales.
+    - Mi cabeza me duele por la obstrucción continuada de los senos nasales.
+    - Estoy con dolor de cabeza por la congestión recurrente en los senos maxilares.
+    - Siento dolor de cabeza debido a la presión persistente en los senos frontales.
+    - Me duele la cabeza por la inflamación continuada de los senos etmoidales.
+    - Tengo dolor de cabeza debido a la obstrucción crónica de los senos esfenoidales.
+    - Mi cabeza está dolorida debido a la congestión persistente en los senos faciales.
+    - Experimento dolor de cabeza por la presión prolongada en los senos nasales.
+    - Me duele la cabeza por la inflamación continuada de los senos maxilares.
+    - Tengo dolor de cabeza debido a la obstrucción recurrente de los senos frontales.
+    - Tengo dolor de cabeza debido a la sinusitis.
+    - Mi cabeza está adolorida por la congestión en los senos nasales.
+    - Siento dolor de cabeza a causa de la inflamación de los senos paranasales.
+    - Me duele la cabeza por la presión en los senos maxilares.
+    - Estoy con dolor de cabeza debido a la obstrucción en los senos faciales.
+    - Tengo dolor de cabeza por la congestión en los senos etmoidales.
+    - Mi cabeza me duele por la inflamación en los senos esfenoidales.
+    - Experimento dolor de cabeza debido a la obstrucción en los senos frontales.
+    - Me duele la cabeza por la presión en los senos paranasales.
+    - Estoy con dolor de cabeza a causa de la congestión en los senos nasales.
+    - Siento dolor de cabeza por la inflamación de los senos maxilares.
+    - Tengo dolor de cabeza debido a la obstrucción en los senos etmoidales.
+    - Mi cabeza está adolorida por la presión en los senos esfenoidales.
+    - Experimento dolor de cabeza por la congestión en los senos frontales.
+    - Me duele la cabeza a causa de la sinusitis aguda.
+    - Estoy con dolor de cabeza debido a la inflamación en los senos esfenoidales.
+    - Siento dolor de cabeza por la obstrucción en los senos maxilares.
+    - Tengo dolor de cabeza por la congestión en los senos faciales.
+    - Mi cabeza me duele por la presión en los senos frontales.
+    - Experimento dolor de cabeza debido a la sinusitis crónica.
+    - Me duele la cabeza por la inflamación en los senos nasales.
+    - Estoy con dolor de cabeza a causa de la obstrucción en los senos paranasales.
+    - Siento dolor de cabeza por la congestión en los senos etmoidales.
+    - Tengo dolor de cabeza debido a la presión en los senos esfenoidales.
+    - Mi cabeza está adolorida por la sinusitis recurrente.
+    - Experimento dolor de cabeza por la inflamación en los senos faciales.
+    - Me duele la cabeza a causa de la obstrucción en los senos maxilares.
+    - Estoy con dolor de cabeza por la presión en los senos frontales.
+    - Siento dolor de cabeza por la congestión en los senos paranasales.
+    - Tengo dolor de cabeza debido a la sinusitis persistente.
+    - Mi cabeza me duele por la inflamación en los senos esfenoidales.
+    - Experimento dolor de cabeza a causa de la obstrucción en los senos nasales.
+    - Me duele la cabeza por la presión en los senos etmoidales.
+    - Estoy con dolor de cabeza debido a la congestión en los senos faciales.
+    - Siento dolor de cabeza por la sinusitis crónica.
+    - Tengo dolor de cabeza por la inflamación en los senos frontales.
+    - Mi cabeza está adolorida por la obstrucción en los senos paranasales.
+    - Experimento dolor de cabeza debido a la presión en los senos maxilares.
+    - Me duele la cabeza por la congestión en los senos esfenoidales.
+    - Estoy con dolor de cabeza a causa de la sinusitis aguda.
+    - Siento dolor de cabeza por la inflamación en los senos nasales.
+    - Tengo dolor de cabeza debido a la obstrucción en los senos etmoidales.
+    - Mi cabeza me duele por la presión en los senos faciales.
+    - Experimento dolor de cabeza por la congestión en los senos frontales.
+    - Me duele la cabeza a causa de la sinusitis persistente.
+    - Estoy con dolor de cabeza debido a la inflamación en los senos esfenoidales.
+    - Siento dolor de cabeza por la obstrucción en los senos maxilares.
+    - Tengo dolor de cabeza por la presión en los senos paranasales.
+    - Mi cabeza está adolorida por la congestión en los senos nasales.
+    - Experimento dolor de cabeza debido a la sinusitis recurrente.
+    - Me duele la cabeza por la inflamación en los senos faciales.
+    - Estoy con dolor de cabeza a causa de la obstrucción en los senos frontales.
+    - Siento dolor de cabeza por la presión en los senos etmoidales.
+    - Tengo dolor de cabeza debido a la congestión en los senos esfenoidales.
+    - Mi cabeza me duele por la sinusitis crónica.
+    - Experimento dolor de cabeza por la inflamación en los senos maxilares.
+    - Me duele la cabeza a causa de la obstrucción en los senos paranasales.
+    - Estoy con dolor de cabeza por la presión en los senos faciales.
+    - Siento dolor de cabeza por la congestión en los senos frontales.
+    - Tengo dolor de cabeza debido a la sinusitis aguda.
+    - Mi cabeza está adolorida por la inflamación en los senos nasales.
+    - Experimento dolor de cabeza a causa de la obstrucción en los senos etmoidales.
+    - Me duele la cabeza por la presión en los senos esfenoidales.
+    - Estoy con dolor de cabeza debido a la congestión en los senos maxilares.
+    - Siento dolor de cabeza por la sinusitis persistente.
+    - Tengo dolor de cabeza por la inflamación en los senos frontales.
+    - Mi cabeza me duele por la obstrucción en los senos paranasales.
+    - Experimento dolor de cabeza debido a la presión en los senos maxilares.
+    - Me duele la cabeza por la congestión en los senos faciales.
+    - Estoy con dolor de cabeza a causa de la sinusitis recurrente.
+    - Siento dolor de cabeza por la inflamación en los senos esfenoidales.
+    - Tengo dolor de cabeza debido a la obstrucción en los senos nasales.
+    - Mi cabeza está adolorida por la presión en los senos frontales.
+    - Experimento dolor de cabeza por la congestión en los senos etmoidales.
+    - Me duele la cabeza a causa de la sinusitis crónica.
+    - Estoy con dolor de cabeza debido a la inflamación en los senos maxilares.
+    - Siento dolor de cabeza por la obstrucción en los senos paranasales.
+    - Tengo dolor de cabeza por la presión en los senos faciales.
+    - Mi cabeza está adolorida por la congestión en los senos frontales.
+    - Experimento dolor de cabeza debido a la sinusitis aguda.
+    - Me duele la cabeza por la inflamación en los senos nasales.
+    - Estoy con dolor de cabeza a causa de la obstrucción en los senos etmoidales.
+    - Siento dolor de cabeza por la presión en los senos esfenoidales.
+    - Tengo dolor de cabeza debido a la congestión en los senos paranasales.
+    - Mi cabeza me duele por la sinusitis persistente.
+    - Experimento dolor de cabeza por la inflamación en los senos faciales.
+    - Me duele la cabeza a causa de la obstrucción en los senos maxilares.
+    - Estoy con dolor de cabeza por la presión en los senos frontales.
+    - Siento dolor de cabeza por la congestión en los senos etmoidales.
+    - Tengo dolor de cabeza debido a la sinusitis recurrente.
+    - Mi cabeza está adolorida por la inflamación en los senos esfenoidales.
+    - Experimento dolor de cabeza debido a la obstrucción en los senos nasales.
+    - Me duele la cabeza por la presión en los senos paranasales.
+    - Estoy con dolor de cabeza a causa de la congestión en los senos nasales.
+    - Siento dolor de cabeza por la sinusitis crónica.
+    - Tengo dolor de cabeza por la inflamación en los senos maxilares.
+    - Mi cabeza me duele por la obstrucción en los senos faciales.
+    - Experimento dolor de cabeza a causa de la presión en los senos frontales.
+    - Me duele la cabeza por la congestión en los senos etmoidales.
+    - Estoy con dolor de cabeza debido a la sinusitis aguda.
+
+- intent: sentir_cefalea_cervical
+  examples: |
+    - cefalea cervical
+    - Dolor de cabeza por cuello.
+    - Cefalea por tensión cervical.
+    - Dolor cervical causando dolor de cabeza.
+    - Cuello rígido con dolor de cabeza.
+    - Cefalea por problemas cervicales.
+    - Dolor de cabeza por cervicalgia.
+    - Tensión en cuello y cabeza adolorida.
+    - Dolor de cabeza por lesión cervical.
+    - Cefalea por inflamación cervical.
+    - Cervicalgia causando dolor de cabeza.
+    - Cefalea por hernia de disco cervical.
+    - Dolor de cabeza por problemas en el cuello.
+    - Cuello tenso con dolor de cabeza.
+    - Dolor cervical causando cefalea.
+    - Cefalea por tensión en el cuello.
+    - Dolor de cabeza por rigidez cervical.
+    - Cervicalgia con cefalea.
+    - Dolor de cabeza debido a lesión cervical.
+    - Cefalea por inflamación en el cuello.
+    - Dolor cervical causando dolor de cabeza.
+    - Cefalea por hernia cervical.
+    - Dolor de cabeza por tensión en el cuello.
+    - Cuello rígido con cefalea.
+    - Dolor de cabeza debido a problemas cervicales.
+    - Cefalea por irritación cervical.
+    - Dolor de cabeza por lesión en el cuello.
+    - Cervicalgia causando cefalea.
+    - Dolor de cabeza debido a inflamación cervical.
+    - Cefalea por pinzamiento cervical.
+    - Dolor de cabeza por tensión en el cuello.
+    - Cuello tenso con cefalea.
+    - Dolor de cabeza debido a problemas en la columna cervical.
+    - Cefalea por contractura cervical.
+    - Dolor de cabeza por hernia de disco en el cuello.
+    - Cefalea por tensión en cuello y cabeza.
+    - Dolor cervical causando cefalea.
+    - Cefalea por lesión en la columna cervical.
+    - Dolor de cabeza por rigidez en el cuello.
+    - Cervicalgia con dolor de cabeza.
+    - Cefalea por irritación en el cuello.
+    - Dolor de cabeza debido a problemas cervicales.
+    - Cuello tenso con cefalea.
+    - Dolor de cabeza por inflamación en la columna cervical.
+    - Cefalea por tensión en el cuello.
+    - Dolor cervical causando dolor de cabeza.
+    - Cefalea por contractura cervical.
+    - Dolor de cabeza por hernia cervical.
+    - Cervicalgia con cefalea.
+    - Dolor de cabeza debido a lesión cervical.
+    - Cefalea por rigidez en el cuello.
+    - Dolor cervical causando cefalea.
+    - Cefalea por inflamación cervical.
+    - Dolor de cabeza por irritación en el cuello.
+    - Cuello tenso con dolor de cabeza.
+    - Cefalea por problemas cervicales.
+    - Dolor de cabeza por pinzamiento cervical.
+    - Cefalea debido a tensión en el cuello.
+    - Dolor cervical causando cefalea.
+    - Cefalea por hernia de disco cervical.
+    - Dolor de cabeza por lesión en la columna cervical.
+    - Cervicalgia con cefalea.
+    - Dolor de cabeza debido a rigidez cervical.
+    - Cefalea por irritación en el cuello.
+    - Dolor cervical causando dolor de cabeza.
+    - Cefalea por problemas cervicales.
+    - Dolor de cabeza por contractura cervical.
+    - Cefalea debido a hernia cervical.
+    - Dolor de cabeza por tensión en el cuello.
+    - Cuello tenso con cefalea.
+    - Dolor de cabeza por lesión cervical.
+    - Cefalea por inflamación en la columna cervical.
+    - Dolor cervical causando cefalea.
+    - Cefalea por irritación en el cuello.
+    - Dolor de cabeza debido a problemas cervicales.
+    - Cefalea por tensión en el cuello.
+    - Dolor de cabeza por rigidez cervical.
+    - Cervicalgia con dolor de cabeza.
+    - Dolor de cabeza debido a hernia de disco en el cuello.
+    - Cefalea por contractura cervical.
+    - Dolor cervical causando cefalea.
+    - Cefalea por lesión en la columna cervical.
+    - Dolor de cabeza por inflamación en el cuello.
+    - Cuello tenso con dolor cervical.
+    - Dolor de cabeza por problemas cervicales.
+    - Cefalea debido a irritación cervical.
+    - Dolor cervical causando cefalea.
+    - Cefalea por tensión en el cuello.
+    - Dolor de cabeza debido a rigidez en el cuello.
+    - Cervicalgia con cefalea.
+    - Dolor de cabeza por hernia cervical.
+    - Cefalea por lesión cervical.
+    - Dolor de cabeza debido a problemas cervicales.
+    - Cefalea por inflamación en la columna cervical.
+    - Dolor cervical causando cefalea.
+    - Cefalea debido a irritación en el cuello.
+    - Dolor de cabeza por tensión cervical.
+    - Cuello tenso con cefalea.
+    - Dolor de cabeza debido a rigidez cervical.
+    - Cefalea por contractura cervical.
+    - Dolor cervical causando cefalea.
+    - Tengo dolor de cabeza por problemas en el cuello.
+    - Mi cabeza me duele debido a la tensión en el cuello.
+    - Siento dolor de cabeza por problemas cervicales.
+    - Me duele la cabeza por la rigidez en el cuello.
+    - Estoy con dolor de cabeza debido a la cervicalgia.
+    - Tengo dolor de cabeza por la disfunción cervical.
+    - Mi cabeza está adolorida por la tensión en los músculos del cuello.
+    - Experimento dolor de cabeza por la lesión en la columna cervical.
+    - Me duele la cabeza por la inflamación en las vértebras cervicales.
+    - Estoy con dolor de cabeza a causa del pinzamiento cervical.
+    - Siento dolor de cabeza debido a la hernia de disco cervical.
+    - Tengo dolor de cabeza por la sobrecarga en las articulaciones cervicales.
+    - Mi cabeza me duele por la contractura muscular en el cuello.
+    - Experimento dolor de cabeza debido a la degeneración de los discos cervicales.
+    - Me duele la cabeza por la compresión de los nervios cervicales.
+    - Estoy con dolor de cabeza debido a la irritación en las estructuras cervicales.
+    - Siento dolor de cabeza por la artrosis cervical.
+    - Tengo dolor de cabeza por la tensión en los ligamentos cervicales.
+    - Mi cabeza está adolorida por la mala postura del cuello.
+    - Experimento dolor de cabeza debido a la subluxación vertebral cervical.
+    - Me duele la cabeza por la contractura de los músculos del cuello.
+    - Estoy con dolor de cabeza a causa de la compresión en la columna cervical.
+    - Siento dolor de cabeza por la distensión en los tejidos cervicales.
+    - Tengo dolor de cabeza por la inflamación en las articulaciones del cuello.
+    - Mi cabeza me duele por la sobrecarga en los discos cervicales.
+    - Experimento dolor de cabeza debido al espasmo muscular cervical.
+    - Me duele la cabeza por la tensión en las vértebras del cuello.
+    - Estoy con dolor de cabeza debido a la cervicalgia crónica.
+    - Siento dolor de cabeza por la lesión en las estructuras cervicales.
+    - Tengo dolor de cabeza por la rigidez persistente en el cuello.
+    - Mi cabeza está adolorida por la compresión de los nervios cervicales.
+    - Experimento dolor de cabeza debido a la inflamación crónica en el cuello.
+    - Me duele la cabeza por la contractura persistente de los músculos cervicales.
+    - Estoy con dolor de cabeza a causa de la degeneración continua de los discos cervicales.
+    - Siento dolor de cabeza por la irritación crónica en las estructuras cervicales.
+    - Tengo dolor de cabeza por la mala alineación de las vértebras cervicales.
+    - Mi cabeza me duele por la tensión constante en los ligamentos cervicales.
+    - Experimento dolor de cabeza debido a la compresión continua en la columna cervical.
+    - Me duele la cabeza por la distensión persistente en los tejidos cervicales.
+    - Estoy con dolor de cabeza debido a la contractura crónica de los músculos del cuello.
+    - Siento dolor de cabeza por la subluxación vertebral cervical recurrente.
+    - Tengo dolor de cabeza por la rigidez persistente en las vértebras cervicales.
+    - Mi cabeza está adolorida por la hernia de disco cervical crónica.
+    - Experimento dolor de cabeza debido a la tensión continua en las articulaciones cervicales.
+    - Me duele la cabeza por la inflamación persistente en los discos cervicales.
+    - Estoy con dolor de cabeza a causa de la irritación crónica en los nervios cervicales.
+    - Siento dolor de cabeza por la contractura de los músculos del cuello de larga duración.
+    - Tengo dolor de cabeza por la compresión persistente de los nervios cervicales.
+    - Mi cabeza me duele por la tensión crónica en las estructuras cervicales.
+    - Experimento dolor de cabeza debido a la distensión persistente en los tejidos cervicales.
+    - Me duele la cabeza por la rigidez recurrente en los ligamentos cervicales.
+    - Estoy con dolor de cabeza debido a la lesión crónica en la columna cervical.
+    - Siento dolor de cabeza por la inflamación recurrente en las vértebras cervicales.
+    - Tengo dolor de cabeza por la contractura muscular cervical persistente.
+    - Mi cabeza está adolorida por la tensión continua en las articulaciones del cuello.
+    - Experimento dolor de cabeza debido a la hernia de disco cervical persistente.
+    - Me duele la cabeza por la irritación persistente en los nervios cervicales.
+    - Estoy con dolor de cabeza a causa de la compresión crónica en la columna cervical.
+    - Siento dolor de cabeza por la tensión persistente en las estructuras cervicales.
+    - Tengo dolor de cabeza por la rigidez crónica en las vértebras cervicales.
+    - Mi cabeza me duele por la contractura muscular cervical de larga duración.
+    - Experimento dolor de cabeza debido a la distensión recurrente en los tejidos cervicales.
+    - Me duele la cabeza por la inflamación persistente en las articulaciones cervicales.
+    - Estoy con dolor de cabeza debido a la subluxación vertebral cervical persistente.
+    - Siento dolor de cabeza por la lesión recurrente en la columna cervical.
+    - Tengo dolor de cabeza por la compresión crónica de los nervios cervicales.
+    - Mi cabeza está adolorida por la tensión de larga duración en las vértebras cervicales.
+    - Experimento dolor de cabeza debido a la hernia de disco cervical recurrente.
+    - Me duele la cabeza por la irritación de larga duración en los nervios cervicales.
+    - Estoy con dolor de cabeza a causa de la contractura muscular cervical crónica.
+    - Siento dolor de cabeza por la compresión persistente de los nervios cervicales.
+    - Tengo dolor de cabeza por la tensión crónica en las estructuras cervicales.
+    - Mi cabeza me duele por la rigidez de larga duración en las vértebras cervicales.
+    - Experimento dolor de cabeza debido a la distensión persistente en los tejidos cervicales.
+    - Me duele la cabeza por la inflamación recurrente en las articulaciones cervicales.
+    - Estoy con dolor de cabeza a causa de la subluxación vertebral cervical persistente.
+    - Siento dolor de cabeza por la lesión crónica en la columna cervical.
+    - Tengo dolor de cabeza por la compresión de larga duración en los nervios cervicales.
+    - Mi cabeza está adolorida por la tensión persistente en las vértebras cervicales.
+    - Experimento dolor de cabeza debido a la hernia de disco cervical recurrente.
+    - Me duele la cabeza por la irritación de larga duración en los nervios cervicales.
+    - Estoy con dolor de cabeza a causa de la contractura muscular cervical crónica.
+    - Siento dolor de cabeza por la compresión persistente de los nervios cervicales.
+    - Tengo dolor de cabeza por la tensión crónica en las estructuras cervicales.
+    - Mi cabeza me duele por la rigidez de larga duración en las vértebras cervicales.
+    - Experimento dolor de cabeza debido a la distensión persistente en los tejidos cervicales.
+    - Me duele la cabeza por la inflamación recurrente en las articulaciones cervicales.
+    - Estoy con dolor de cabeza a causa de la subluxación vertebral cervical persistente.
+    - Siento dolor de cabeza por la lesión crónica en la columna cervical.
+    - Tengo dolor de cabeza por la compresión de larga duración en los nervios cervicales.
+    - Mi cabeza está adolorida por la tensión persistente en las vértebras cervicales.
+    - Experimento dolor de cabeza debido a la hernia de disco cervical recurrente.
+    - Me duele la cabeza por la irritación de larga duración en los nervios cervicales.
+    - Estoy con dolor de cabeza a causa de la contractura muscular cervical crónica.
+    - Siento dolor de cabeza por la compresión persistente de los nervios cervicales.
+    - Tengo dolor de cabeza por la tensión crónica en las estructuras cervicales.
+    - Mi cabeza me duele por la rigidez de larga duración en las vértebras cervicales.
+    - Experimento dolor de cabeza debido a la distensión persistente en los tejidos cervicales.
+    - Me duele la cabeza por la inflamación recurrente en las articulaciones cervicales. 
+    - Estoy con dolor de cabeza a causa de la subluxación vertebral cervical persistente.
 
 - intent: sintoma_comun_mareos
   examples: |
@@ -13390,7 +15690,7 @@ nlu:
 
 #------------------------------------------------------
 
-#agradecimiento
+#tratamiento hormonas
 
 #------------------------------------------------------
 

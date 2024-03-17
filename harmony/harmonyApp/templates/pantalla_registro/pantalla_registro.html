@@ -49,8 +49,7 @@
         }
 
         #formulario {
-            width: 40%;
-            padding-bottom: 100px;
+            width: 100%;
         }
 
         #body {
@@ -59,6 +58,7 @@
 
         #titulo {
             text-align: center;
+            padding: 1vw;
         }
 
         #cont_button {
@@ -198,98 +198,119 @@
 </head>
 
 <body id="body">
-    <div>
-        <header id="navbar">
-            <img id="logoNavbar" src="{% static '/images/nuevo_logo.png'  %}">
-        </header>
-
-        <main>
-
-
-            <div id="contendor" class="container">
-
-                <div class="centered-div">
-                    <div id="carga" class="oculto">
-                        <div class="spinner"></div>
-            
-                    </div>
-                    <form id="formulario" method="POST" action="{% url 'pantalla_registro' %}"
-                        enctype="multipart/form-data">
-                        <div id="titulo">
-                            <br>
-                            <br>
-                            <h1>
-                                Crear una cuenta
-                            </h1>
-                            <br>
-
-                        </div>
-
-                        {% csrf_token %}
-                        <label for="id_nombre" class="form-label">Nombre:</label>
-                        <input type="text" class="form-control" id="id_nombre" name="nombre"
-                            aria-describedby="emailHelp" >
-                        <br>
-                        <label for="id_apellido" class="form-label">Apellido:</label>
-                        <input type="text" class="form-control" id="id_apellido" name="apellido"
-                            aria-describedby="emailHelp" >
-                        <br>
-                        <label for="id_correo" class="form-label">Correo electrónico:</label>
-                        <input type="email" class="form-control" id="id_correo" name="correo"
-                            aria-describedby="emailHelp" >
-                        <br>
-                        <label for="id_clave" class="form-label">Contraseña:</label>
-                        <input type="password" class="form-control" id="id_clave" name="clave"
-                            aria-describedby="emailHelp">
-                        <br>
-                        <label for="id_clave_doble" class="form-label">Vuelve a escribir la contraseña:</label>
-                        <input type="password" class="form-control" id="id_clave_doble" name="clave_doble"
-                            aria-describedby="emailHelp">
-                        <br>
-                        <label for="id_genero" class="form-label">Género:</label>
-                        <select class="form-control" id="id_genero" name="genero">
-                            <option value="" disabled selected>Selecciona tu género</option>
-                            <option value="H">Hombre</option>
-                            <option value="M">Mujer</option>
-                        </select>
-                        <br>
-                        <label for="id_fecha_nacimiento" class="form-label">Cuando naciste:</label><br>
-                        <label style="font-size: 12px;" for="id_fecha_nacimiento" class="form-label">(Recuerda que debes ser mayor de 14 años)</label>
-                        <input type="date" class="form-control" id="id_fecha_nacimiento" name="fecha_nacimiento"
-                            aria-describedby="emailHelp">
-                        <br>
-                        <label for="imagen_perfil_label" class="form-label">¿Deseas       subir una imagen tuya?</label>
-                        <br>
-                        <input type="file" id="imagen_perfil" name="imagen_perfil">
-
-                        <br><br>
-                        <div class="buttons"></div>
-                        <div id="cont_button" class="action_btn">
-                            <button id="boton1" type="submit" class="btn btn-primary" id="custom-register-button" >
-                                Registrarme 
-                            </button>
-                            <div style="width: 100px;">
-
-                            </div>
-                            <a id="boton1" href="{% url 'pantalla_login' %}" class="btn btn-primary"
-                                id="custom-cancel-button">
-                                Ya tengo cuenta
-                            </a>
-                            <p id="saved"></p>
-                        </div>
-                    </form>
-                    <br>
-
-                </div>
-                <div id="cont_img">
-                    <img id="img" alt="Imagen" src="{% static '/images/Man_sends_message.png'  %}">
-
-                </div>
+    <header id="navbar">
+        <img id="logoNavbar" src="{% static '/images/nuevo_logo.png'  %}">
+    </header>
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="{%static 'images/Man_studies_online.png'%}"
+                class="img-fluid" alt="Sample image">
             </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                  <form id="formulario" method="POST" action="{% url 'pantalla_registro' %}"
+                  enctype="multipart/form-data" >
+                  <div id="titulo">
+                      <br>
+                      <br>
+                      <h1>
+                          Crear una cuenta
+                      </h1>
+                      <br>
 
-        </main>
-    </div>
+                  </div>
 
+                  {% csrf_token %}
+                  <div class="form-outline mb-9">
+                      <div>
+                          <label for="id_nombre" class="form-label">Nombre:</label>
+                          <input type="text" class="form-control" id="id_nombre" name="nombre"
+                              aria-describedby="emailHelp" >
+                      </div>
+                  </div>
+                  <div class="form-outline mb-9">
+                      <div>
+                          <label for="id_apellido" class="form-label">Apellido:</label>
+                          <input type="text" class="form-control" id="id_apellido" name="apellido"
+                               aria-describedby="emailHelp" >
+                      </div>
+                  </div>
+                  <div class="form-outline mb-9">
+                      <div>
+                          <label for="id_correo" class="form-label">Correo electrónico:</label>
+                          <input type="email" class="form-control" id="id_correo" name="correo"
+                      aria-describedby="emailHelp" >
+                      </div>
+                  </div>
+                  <div class="form-outline mb-9">
+                      <div>
+                          <label for="id_clave" class="form-label">Contraseña:</label>
+                          <input type="password" class="form-control" id="id_clave" name="clave"
+                      aria-describedby="emailHelp">
+                      </div>
+                  </div>
+                  <div class="form-outline mb-9">
+                      <div>
+                          <label for="id_clave_doble" class="form-label">Vuelve a escribir la contraseña:</label>
+                  <input type="password" class="form-control" id="id_clave_doble" name="clave_doble"
+                      aria-describedby="emailHelp">
+                      </div>
+                  </div>
+                  <div class="form-outline mb-9">
+                      <div>
+                          <label for="id_genero" class="form-label">Género:</label>
+                          <select class="form-control" id="id_genero" name="genero">
+                              <option value="" disabled selected>Selecciona tu género</option>
+                              <option value="H">Hombre</option>
+                              <option value="M">Mujer</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-outline mb-9">
+                      <div>
+                          <label for="id_fecha_nacimiento" class="form-label">Cuando naciste:</label><br>
+                          <label style="font-size: 12px;" for="id_fecha_nacimiento" class="form-label">(Recuerda que debes ser mayor de 14 años)</label>
+                          <input type="date" class="form-control" id="id_fecha_nacimiento" name="fecha_nacimiento"
+                      aria-describedby="emailHelp">
+                      </div>
+                  </div>
+                  <div class="form-outline mb-9">
+                      <div>
+                          <label for="imagen_perfil_label" class="form-label">¿Deseas subir una imagen tuya?</label>
+                          <br>
+                          <input type="file" id="imagen_perfil" name="imagen_perfil">
+                      </div>
+                  </div>
+                  
+
+                  <div class="form-outline mb-4">
+                      
+                  <div class="buttons"></div>
+                  <div id="cont_button" class="action_btn">
+                      <button id="boton1" type="submit" class="btn btn-primary" id="custom-register-button" >
+                          Registrarme 
+                      </button>
+                      <div style="width: 100px;">
+
+                      </div>
+                      <a id="boton1" href="{% url 'pantalla_login' %}" class="btn btn-primary"
+                          id="custom-cancel-button">
+                          Ya tengo cuenta
+                      </a>
+                      <p id="saved"></p>
+                  </div>
+                  </div>
+              </form>
+                </div>
+               
+                <br><br>
+
+            </div>
+          </div>
+        </div>
+      </section>
 </body>
 
 </html>
