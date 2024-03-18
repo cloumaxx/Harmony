@@ -113,30 +113,10 @@ rules:
   - intent: sintoma_comun_dolor_cabeza
   - action: utter_sintoma_comun_dolor_cabeza
 
-- rule: Responde cuando alguien te diga que tiene migraña
+- rule: Responde cuando alguien te diga que tiene migrana
   steps:
-  - intent: sentir_migraña
-  - action: utter_sentir_migraña
-
-- rule: Responde cuando alguien te diga tener cefalea de racimos
-  steps:
-  - intent: sentir_cefalea_de_racimos
-  - action: utter_sentir_cefalea_de_racimos
-
-- rule: Responde cuando alguien te diga que tiene cefalea por consumo excesivo de medicamentos
-  steps:
-  - intent: sentir_cefalea_consumo_medicamentos
-  - action: utter_sentir_cefalea_consumo_medicamentos
-
-- rule: Responde cuando alguien te diga que tienen cefalia sinusal
-  steps:
-  - intent: sentir_cefalea_sinusal
-  - action: utter_sentir_cefalea_sinusal
-
-- rule: Responde cuando alguien te diga que tienen cefalia cervical
-  steps:
-  - intent: sentir_cefalea_cervical
-  - action: utter_sentir_cefalea_cervical
+  - intent: sentir_migrana
+  - action: utter_sentir_migrana
 
 - rule: Responde cuando alguien te pregunte el origen del dolor de cabeza
   steps:
@@ -165,7 +145,43 @@ rules:
 
 #------------------------------------------------------
 
-#SINTOMAS DOLOR DE CABEZA
+#SINTOMAS FIEBRE
+
+#------------------------------------------------------
+
+- rule: Responde cuando alguien te hable sobre el sintoma comun fiebre
+  steps:
+  - intent: sintoma_comun_fiebre
+  - action: utter_sintoma_comun_fiebre
+
+- rule: Responde cuando alguien te pregunte el origen de la fiebre
+  steps:
+  - intent: origen_fiebre
+  - action: utter_origen_fiebre
+
+- rule: Responde cuando alguien te diga que un familiar o allegado tiene fiebre
+  steps:
+  - intent: fiebre_allegados
+  - action: utter_fiebre_allegados
+
+- rule: Responde cuando alguien pregunte que es la fiebre
+  steps:
+  - intent: definicion_fiebre
+  - action: utter_definicion_fiebre
+
+- rule: Responde cuando alguien pregunte los tipos de fiebre
+  steps:
+  - intent: tipos_fiebre
+  - action: utter_tipos_fiebre
+
+- rule: Responde cuando alguien pregunte recomendaciones para la fiebre
+  steps:
+  - intent: recomendacion_fiebre
+  - action: utter_recomendacion_fiebre
+
+#------------------------------------------------------
+
+#SINTOMAS MAREOS
 
 #------------------------------------------------------
 
@@ -174,36 +190,211 @@ rules:
   - intent: sintoma_comun_mareos
   - action: utter_sintoma_comun_mareos
 
+- rule: Responde cuando alguien te pregunte el origen de los mareos
+  steps:
+  - intent: origen_mareos
+  - action: utter_origen_mareos
+
+- rule: Responde cuando alguien te diga que un familiar o allegado tiene mareos
+  steps:
+  - intent: mareos_allegados
+  - action: utter_mareos_allegados
+
+- rule: Responde cuando alguien pregunte que son los mareos
+  steps:
+  - intent: definicion_mareos
+  - action: utter_definicion_mareos
+
+- rule: Responde cuando alguien pregunte los tipos de mareos
+  steps:
+  - intent: tipos_mareos
+  - action: utter_tipos_mareos
+
+- rule: Responde cuando alguien pregunte recomendaciones para los mareos
+  steps:
+  - intent: recomendacion_mareos
+  - action: utter_recomendacion_mareos
+#------------------------------------------------------
+
+#NAUSEAS Y VOMITO
+
+#------------------------------------------------------
+
 - rule: Responde cuando alguien te hable sobre el sintoma comun nauseas o vomito
   steps:
-  - intent: sintoma_comun_nauseas_vomito
-  - action: utter_sintoma_comun_nauseas_vomito
+  - intent: sintoma_comun_nauseas_y_vomito
+  - action: utter_sintoma_comun_nauseas_y_vomito
+
+- rule: Responde cuando alguien te pregunte el origen de las nauseas y vomito
+  steps:
+  - intent: origen_nauseas_y_vomito
+  - action: utter_origen_nauseas_y_vomito
+
+- rule: Responde cuando alguien te diga que un familiar o allegado tiene nauseas o vomito
+  steps:
+  - intent: nauseas_y_vomito_allegados
+  - action: utter_nauseas_y_vomito_allegados
+
+- rule: Responde cuando alguien pregunte que son las nauseas y el vomito
+  steps:
+  - intent: definicion_nauseas_y_vomito
+  - action: utter_definicion_nauseas_y_vomito
+
+- rule: Responde cuando alguien pregunte los tipos de nauseas y vomito
+  steps:
+  - intent: tipos_nauseas_y_vomito
+  - action: utter_tipos_nauseas_y_vomito
+
+- rule: Responde cuando alguien pregunte recomendaciones para las nauseas y vomitos
+  steps:
+  - intent: recomendacion_nauseas_y_vomito
+  - action: utter_recomendacion_nauseas_y_vomito
+
+#------------------------------------------------------
+
+#DIARREA E INDIGESTION
+
+#------------------------------------------------------
+
 
 - rule: Responde cuando alguien te hable sobre el sintoma comun diarrea o indigestion
   steps:
   - intent: sintoma_comun_diarrea_indigestion
   - action: utter_sintoma_comun_diarrea_indigestion
 
-- rule: Responde cuando alguien te hable sobre el sintoma comun fiebre
+- rule: Responde cuando alguien te pregunte el origen de la diarrea o indigestion
   steps:
-  - intent: sintoma_comun_fiebre
-  - action: utter_sintoma_comun_fiebre
+  - intent: origen_diarrea_indigestion
+  - action: utter_origen_diarrea_indigestion
+
+- rule: Responde cuando alguien te diga que un familiar o allegado tiene diarrea o indigestion
+  steps:
+  - intent: diarrea_indigestion_allegados
+  - action: utter_diarrea_indigestion_allegados
+
+- rule: Responde cuando alguien pregunte que son la diarrea o indigestion
+  steps:
+  - intent: definicion_diarrea_indigestion
+  - action: utter_definicion_diarrea_indigestion
+
+- rule: Responde cuando alguien pregunte los tipos de diarrea e indigestion
+  steps:
+  - intent: tipos_diarrea_indigestion
+  - action: utter_tipos_diarrea_indigestion
+
+- rule: Responde cuando alguien pregunte recomendaciones para la diarrea o indigestion
+  steps:
+  - intent: recomendacion_diarrea_indigestion
+  - action: utter_recomendacion_diarrea_indigestion
+
+#------------------------------------------------------
+
+#GRIPE Y ESTORNUDOS
+
+#------------------------------------------------------
 
 - rule: Responde cuando alguien te hable sobre el sintoma comun gripe y estornudos
   steps:
   - intent: sintoma_comun_gripe_y_estornudos
   - action: utter_sintoma_comun_gripe_y_estornudos
 
+- rule: Responde cuando alguien te pregunte el origen de la gripe y estornudos
+  steps:
+  - intent: origen_gripe_y_estornudos
+  - action: utter_origen_gripe_y_estornudos
+
+- rule: Responde cuando alguien te diga que un familiar o allegado tiene gripe y estornudos
+  steps:
+  - intent: gripe_y_estornudos_allegados
+  - action: utter_gripe_y_estornudos_allegados
+
+- rule: Responde cuando alguien pregunte que son la gripe y estornudos
+  steps:
+  - intent: definicion_gripe_y_estornudos
+  - action: utter_definicion_gripe_y_estornudos
+
+- rule: Responde cuando alguien pregunte los tipos de gripe y estornudos
+  steps:
+  - intent: tipos_gripe_y_estornudos
+  - action: utter_tipos_gripe_y_estornudos
+
+- rule: Responde cuando alguien pregunte recomendaciones para la gripe y estornudos
+  steps:
+  - intent: recomendacion_gripe_y_estornudos
+  - action: utter_recomendacion_gripe_y_estornudos
+
+#------------------------------------------------------
+
+#INSOMNIO
+
+#------------------------------------------------------
+
 - rule: Responde cuando alguien te hable sobre el sintoma comun insomnio
   steps:
   - intent: sintoma_comun_insomnio
   - action: utter_sintoma_comun_insomnio
+
+- rule: Responde cuando alguien te pregunte el origen del insomnio
+  steps:
+  - intent: origen_insomnio
+  - action: utter_origen_insomnio
+
+- rule: Responde cuando alguien te diga que un familiar o allegado tiene insomnio
+  steps:
+  - intent: insomnio_allegados
+  - action: utter_insomnio_allegados
+
+- rule: Responde cuando alguien pregunte que es el insomnio
+  steps:
+  - intent: definicion_insomnio
+  - action: utter_definicion_insomnio
+
+- rule: Responde cuando alguien pregunte los tipos de insomnio
+  steps:
+  - intent: tipos_insomnio
+  - action: utter_tipos_insomnio
+
+- rule: Responde cuando alguien pregunte recomendaciones para el insomnio
+  steps:
+  - intent: recomendacion_insomnio
+  - action: utter_recomendacion_insomnio
+
+
+  #------------------------------------------------------
+
+#FALTA DE APETITO
+
+#------------------------------------------------------
 
 - rule: Responde cuando alguien te hable sobre el sintoma comun falta de apetito
   steps:
   - intent: sintoma_comun_falta_apetito
   - action: utter_sintoma_comun_falta_apetito
 
+- rule: Responde cuando alguien te pregunte el origen de la falta de apetito
+  steps:
+  - intent: origen_falta_apetito
+  - action: utter_origen_falta_apetito
+
+- rule: Responde cuando alguien te diga que un familiar o allegado tiene falta de apetito
+  steps:
+  - intent: falta_apetito_allegados
+  - action: utter_falta_apetito_allegados
+
+- rule: Responde cuando alguien pregunte que es la falta de apetito
+  steps:
+  - intent: definicion_falta_apetito
+  - action: utter_definicion_falta_apetito
+
+- rule: Responde cuando alguien pregunte los tipos de falta de apetito
+  steps:
+  - intent: tipos_falta_apetito
+  - action: utter_tipos_falta_apetito
+
+- rule: Responde cuando alguien pregunte recomendaciones para la falta de apetito
+  steps:
+  - intent: recomendacion_falta_apetito
+  - action: utter_recomendacion_falta_apetito
 #------------------------------------------------------
 
 #AGRADECIMIENTO

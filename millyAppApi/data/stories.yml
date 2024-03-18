@@ -224,46 +224,1328 @@ stories:
 #----------------------------------------------
 # SINTOMAS COMUNES
 #----------------------------------------------
+#----------------------------------------------
+# DOLOR DE CABEZA
+#----------------------------------------------
 
 - story: sintoma_comun_dolor_cabeza path
   steps:
     - intent: sintoma_comun_dolor_cabeza
     - action: utter_sintoma_comun_dolor_cabeza
 
-- story: sintoma_comun_mareos path
+- story: sintoma_comun_dolor_cabeza path 2
   steps:
-    - intent: sintoma_comun_mareos
-    - action: utter_sintoma_comun_mareos
+    - intent: sintoma_comun_dolor_cabeza
+    - action: utter_sintoma_comun_dolor_cabeza
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
 
-- story: sintoma_comun_nauseas_vomito path
+- story: sintoma_comun_dolor_cabeza path 3
   steps:
-    - intent: sintoma_comun_nauseas_vomito
-    - action: utter_sintoma_comun_nauseas_vomito
+    - intent: sintoma_comun_dolor_cabeza
+    - action: utter_sintoma_comun_dolor_cabeza
+    - intent: tipos_dolor_cabeza
+    - action: utter_tipos_dolor_cabeza
 
-- story: sintoma_comun_diarrea_indigestion path
+- story: sintoma_comun_dolor_cabeza path 4
   steps:
-    - intent: sintoma_comun_diarrea_indigestion
-    - action: utter_sintoma_comun_diarrea_indigestion
+    - intent: sintoma_comun_dolor_cabeza
+    - action: utter_sintoma_comun_dolor_cabeza
+    - intent: definicion_dolor_cabeza
+    - action: utter_definicion_dolor_cabeza
+
+- story: sintoma_comun_dolor_cabeza path 5
+  steps:
+    - intent: sintoma_comun_dolor_cabeza
+    - action: utter_sintoma_comun_dolor_cabeza
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
+
+- story: sintoma_comun_dolor_cabeza path 6
+  steps:
+    - intent: sintoma_comun_dolor_cabeza
+    - action: utter_sintoma_comun_dolor_cabeza
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: sintoma_comun_dolor_cabeza path 7
+  steps:
+    - intent: sintoma_comun_dolor_cabeza
+    - action: utter_sintoma_comun_dolor_cabeza
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+    - intent: tipos_dolor_cabeza
+    - action: utter_tipos_dolor_cabeza
+
+- story: sintoma_comun_dolor_cabeza path 8
+  steps:
+    - intent: sintoma_comun_dolor_cabeza
+    - action: utter_sintoma_comun_dolor_cabeza
+    - intent: tipos_dolor_cabeza
+    - action: utter_tipos_dolor_cabeza
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: sintoma_comun_dolor_cabeza path 9
+  steps:
+    - intent: sintoma_comun_dolor_cabeza
+    - action: utter_sintoma_comun_dolor_cabeza
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
+    - intent: tipos_dolor_cabeza
+    - action: utter_tipos_dolor_cabeza
+
+- story: sintoma_comun_dolor_cabeza path 10
+  steps:
+    - intent: tipos_dolor_cabeza
+    - action: utter_tipos_dolor_cabeza
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
+
+- story: definicion_dolor_cabeza path
+  steps:
+    - intent: definicion_dolor_cabeza
+    - action: utter_definicion_dolor_cabeza
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: definicion_dolor_cabeza path 2
+  steps:
+    - intent: definicion_dolor_cabeza
+    - action: utter_definicion_dolor_cabeza
+    - intent: dolor_cabeza_allegados
+    - action: utter_dolor_cabeza_allegados
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: dolor_cabeza_allegados path
+  steps:
+    - intent: dolor_cabeza_allegados
+    - action: utter_dolor_cabeza_allegados
+
+- story: dolor_cabeza_allegados path 2
+  steps:
+    - intent: dolor_cabeza_allegados
+    - action: utter_dolor_cabeza_allegados
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: dolor_cabeza_allegados path 3
+  steps:
+    - intent: dolor_cabeza_allegados
+    - action: utter_dolor_cabeza_allegados
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: tipos_dolor_cabeza path
+  steps:
+    - intent: tipos_dolor_cabeza
+    - action: utter_tipos_dolor_cabeza
+
+- story: tipos_dolor_cabeza path 2
+  steps:
+    - intent: tipos_dolor_cabeza
+    - action: utter_tipos_dolor_cabeza
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: tipos_dolor_cabeza path 3
+  steps:
+    - intent: tipos_dolor_cabeza
+    - action: utter_tipos_dolor_cabeza
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza   
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: recomendacion_dolor_cabeza path
+  steps:
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: origen_dolor_cabeza path
+  steps:
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
+
+- story: origen_dolor_cabeza path 2
+  steps:
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: sentir_migrana path
+  steps:
+    - intent: sentir_migrana
+    - action: utter_sentir_migrana
+
+- story: sentir_migrana path 2
+  steps:
+    - intent: sentir_migrana
+    - action: utter_sentir_migrana
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: sentir_migrana path 3
+  steps:
+    - intent: sentir_migrana
+    - action: utter_sentir_migrana
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+- story: sentir_migrana path 4
+  steps:
+    - intent: sentir_migrana
+    - action: utter_sentir_migrana
+    - intent: origen_dolor_cabeza
+    - action: utter_origen_dolor_cabeza
+
+- story: sentir_migrana path 5
+  steps:
+    - intent: sentir_migrana
+    - action: utter_sentir_migrana
+    - intent: recomendacion_dolor_cabeza
+    - action: utter_recomendacion_dolor_cabeza
+
+#----------------------------------------------
+# FIEBRE
+#----------------------------------------------
 
 - story: sintoma_comun_fiebre path
   steps:
     - intent: sintoma_comun_fiebre
     - action: utter_sintoma_comun_fiebre
 
+- story: sintoma_comun_fiebre path 2
+  steps:
+    - intent: sintoma_comun_fiebre
+    - action: utter_sintoma_comun_fiebre
+    - intent: origen_fiebre
+    - action: utter_fiebre
+
+- story: sintoma_comun_fiebre path 3
+  steps:
+    - intent: sintoma_comun_fiebre
+    - action: utter_sintoma_comun_fiebre
+    - intent: tipos_fiebre
+    - action: utter_tipos_fiebre
+
+- story: sintoma_comun_fiebre path 4
+  steps:
+    - intent: sintoma_comun_fiebre
+    - action: utter_sintoma_comun_fiebre
+    - intent: definicion_fiebre
+    - action: utter_definicion_fiebre
+
+- story: sintoma_comun_fiebre path 5
+  steps:
+    - intent: sintoma_comun_fiebre
+    - action: utter_sintoma_comun_fiebre
+    - intent: origen_fiebre
+    - action: utter_origen_fiebre
+
+- story: sintoma_comun_fiebre path 6
+  steps:
+    - intent: sintoma_comun_fiebre
+    - action: utter_sintoma_comun_fiebre
+    - intent: origen_fiebre
+    - action: utter_origen_fiebre
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+
+- story: sintoma_comun_fiebre path 7
+  steps:
+    - intent: sintoma_comun_fiebre
+    - action: utter_sintoma_comun_fiebre
+    - intent: origen_fiebre
+    - action: utter_origen_fiebre
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+    - intent: tipos_fiebre
+    - action: utter_tipos_fiebre
+
+- story: sintoma_comun_fiebre path 8
+  steps:
+    - intent: sintoma_comun_fiebre
+    - action: utter_sintoma_comun_fiebre
+    - intent: tipos_fiebre
+    - action: utter_tipos_fiebre
+    - intent: origen_fiebre
+    - action: utter_origen_fiebre
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+
+- story: sintoma_comun_fiebre path 9
+  steps:
+    - intent: sintoma_comun_fiebre
+    - action: utter_sintoma_comun_fiebre
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+    - intent: origen_fiebre
+    - action: utter_origen_fiebre
+    - intent: tipos_fiebre
+    - action: utter_tipos_fiebre
+
+- story: sintoma_comun_fiebre path 10
+  steps:
+    - intent: tipos_fiebre
+    - action: utter_tipos_fiebre
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+    - intent: origen_fiebre
+    - action: utter_origen_fiebre
+
+- story: definicion_fiebre path
+  steps:
+    - intent: definicion_fiebre
+    - action: utter_definicion_fiebre
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+
+- story: definicion_fiebre path 2
+  steps:
+    - intent: definicion_fiebre
+    - action: utter_definicion_fiebre
+    - intent: fiebre_allegados
+    - action: utter_fiebre_allegados
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+
+- story: fiebre_allegados path
+  steps:
+    - intent: fiebre_allegados
+    - action: utter_fiebre_allegados
+
+- story: fiebre_allegados path 2
+  steps:
+    - intent: fiebre_allegados
+    - action: utter_fiebre_allegados
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+
+- story: fiebre_allegados path 3
+  steps:
+    - intent: fiebre_allegados
+    - action: utter_fiebre_allegados
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+
+- story: tipos_fiebre path
+  steps:
+    - intent: tipos_fiebre
+    - action: utter_tipos_fiebre
+
+- story: tipos_fiebre path 2
+  steps:
+    - intent: tipos_fiebre
+    - action: utter_tipos_fiebre
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+
+- story: tipos_fiebre path 3
+  steps:
+    - intent: tipos_fiebre
+    - action: utter_tipos_fiebre
+    - intent: origen_fiebre
+    - action: utter_origen_fiebre   
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+
+- story: recomendacion_fiebre path
+  steps:
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+
+- story: origen_fiebre path
+  steps:
+    - intent: origen_fiebre
+    - action: utter_origen_fiebre
+
+- story: origen_fiebre path 2
+  steps:
+    - intent: origen_fiebre
+    - action: utter_origen_fiebre
+    - intent: recomendacion_fiebre
+    - action: utter_recomendacion_fiebre
+
+#----------------------------------------------
+# MAREOS
+#----------------------------------------------
+
+- story: sintoma_comun_mareos path
+  steps:
+    - intent: sintoma_comun_mareos
+    - action: utter_sintoma_comun_mareos
+
+- story: sintoma_comun_mareos path 2
+  steps:
+    - intent: sintoma_comun_mareos
+    - action: utter_sintoma_comun_mareos
+    - intent: origen_mareos
+    - action: utter_mareos
+
+- story: sintoma_comun_mareos path 3
+  steps:
+    - intent: sintoma_comun_mareos
+    - action: utter_sintoma_comun_mareos
+    - intent: tipos_mareos
+    - action: utter_tipos_mareos
+
+- story: sintoma_comun_mareos path 4
+  steps:
+    - intent: sintoma_comun_mareos
+    - action: utter_sintoma_comun_mareos
+    - intent: definicion_mareos
+    - action: utter_definicion_mareos
+
+- story: sintoma_comun_mareos path 5
+  steps:
+    - intent: sintoma_comun_mareos
+    - action: utter_sintoma_comun_mareos
+    - intent: origen_mareos
+    - action: utter_origen_mareos
+
+- story: sintoma_comun_mareos path 6
+  steps:
+    - intent: sintoma_comun_mareos
+    - action: utter_sintoma_comun_mareos
+    - intent: origen_mareos
+    - action: utter_origen_mareos
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+
+- story: sintoma_comun_mareos path 7
+  steps:
+    - intent: sintoma_comun_mareos
+    - action: utter_sintoma_comun_mareos
+    - intent: origen_mareos
+    - action: utter_origen_mareos
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+    - intent: tipos_mareos
+    - action: utter_tipos_mareos
+
+- story: sintoma_comun_mareos path 8
+  steps:
+    - intent: sintoma_comun_mareos
+    - action: utter_sintoma_comun_mareos
+    - intent: tipos_mareos
+    - action: utter_tipos_mareos
+    - intent: origen_mareos
+    - action: utter_origen_mareos
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+
+- story: sintoma_comun_mareos path 9
+  steps:
+    - intent: sintoma_comun_mareos
+    - action: utter_sintoma_comun_mareos
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+    - intent: origen_mareos
+    - action: utter_origen_mareos
+    - intent: tipos_mareos
+    - action: utter_tipos_mareos
+
+- story: sintoma_comun_mareos path 10
+  steps:
+    - intent: tipos_mareos
+    - action: utter_tipos_mareos
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+    - intent: origen_mareos
+    - action: utter_origen_mareos
+
+- story: definicion_mareos path
+  steps:
+    - intent: definicion_mareos
+    - action: utter_definicion_mareos
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+
+- story: definicion_mareos path 2
+  steps:
+    - intent: definicion_mareos
+    - action: utter_definicion_mareos
+    - intent: mareos_allegados
+    - action: utter_mareos_allegados
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+
+- story: mareos_allegados path
+  steps:
+    - intent: mareos_allegados
+    - action: utter_mareos_allegados
+
+- story: mareos_allegados path 2
+  steps:
+    - intent: mareos_allegados
+    - action: utter_mareos_allegados
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+
+- story: mareos_allegados path 3
+  steps:
+    - intent: mareos_allegados
+    - action: utter_mareos_allegados
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+
+- story: tipos_mareos path
+  steps:
+    - intent: tipos_mareos
+    - action: utter_tipos_mareos
+
+- story: tipos_mareos path 2
+  steps:
+    - intent: tipos_mareos
+    - action: utter_tipos_mareos
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+
+- story: tipos_mareos path 3
+  steps:
+    - intent: tipos_mareos
+    - action: utter_tipos_mareos
+    - intent: origen_mareos
+    - action: utter_origen_mareos   
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+
+- story: recomendacion_mareos path
+  steps:
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+
+- story: origen_mareos path
+  steps:
+    - intent: origen_mareos
+    - action: utter_origen_mareos
+
+- story: origen_mareos path 2
+  steps:
+    - intent: origen_mareos
+    - action: utter_origen_mareos
+    - intent: recomendacion_mareos
+    - action: utter_recomendacion_mareos
+
+#----------------------------------------------
+# NAUSEAS Y VOMITO
+#----------------------------------------------
+
+
+- story: sintoma_comun_nauseas_y_vomito path
+  steps:
+    - intent: sintoma_comun_nauseas_y_vomito
+    - action: utter_sintoma_comun_nauseas_y_vomito
+
+- story: sintoma_comun_nauseas_y_vomito path 2
+  steps:
+    - intent: sintoma_comun_nauseas_y_vomito
+    - action: utter_sintoma_comun_nauseas_y_vomito
+    - intent: origen_nauseas_y_vomito
+    - action: utter_nauseas_y_vomito
+
+- story: sintoma_comun_nauseas_y_vomito path 3
+  steps:
+    - intent: sintoma_comun_nauseas_y_vomito
+    - action: utter_sintoma_comun_nauseas_y_vomito
+    - intent: tipos_nauseas_y_vomito
+    - action: utter_tipos_nauseas_y_vomito
+
+- story: sintoma_comun_nauseas_y_vomito path 4
+  steps:
+    - intent: sintoma_comun_nauseas_y_vomito
+    - action: utter_sintoma_comun_nauseas_y_vomito
+    - intent: definicion_nauseas_y_vomito
+    - action: utter_definicion_nauseas_y_vomito
+
+- story: sintoma_comun_nauseas_y_vomito path 5
+  steps:
+    - intent: sintoma_comun_nauseas_y_vomito
+    - action: utter_sintoma_comun_nauseas_y_vomito
+    - intent: origen_nauseas_y_vomito
+    - action: utter_origen_nauseas_y_vomito
+
+- story: sintoma_comun_nauseas_y_vomito path 6
+  steps:
+    - intent: sintoma_comun_nauseas_y_vomito
+    - action: utter_sintoma_comun_nauseas_y_vomito
+    - intent: origen_nauseas_y_vomito
+    - action: utter_origen_nauseas_y_vomito
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+
+- story: sintoma_comun_nauseas_y_vomito path 7
+  steps:
+    - intent: sintoma_comun_nauseas_y_vomito
+    - action: utter_sintoma_comun_nauseas_y_vomito
+    - intent: origen_nauseas_y_vomito
+    - action: utter_origen_nauseas_y_vomito
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+    - intent: tipos_nauseas_y_vomito
+    - action: utter_tipos_nauseas_y_vomito
+
+- story: sintoma_comun_nauseas_y_vomito path 8
+  steps:
+    - intent: sintoma_comun_nauseas_y_vomito
+    - action: utter_sintoma_comun_nauseas_y_vomito
+    - intent: tipos_nauseas_y_vomito
+    - action: utter_tipos_nauseas_y_vomito
+    - intent: origen_nauseas_y_vomito
+    - action: utter_origen_nauseas_y_vomito
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+
+- story: sintoma_comun_nauseas_y_vomito path 9
+  steps:
+    - intent: sintoma_comun_nauseas_y_vomito
+    - action: utter_sintoma_comun_nauseas_y_vomito
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+    - intent: origen_nauseas_y_vomito
+    - action: utter_origen_nauseas_y_vomito
+    - intent: tipos_nauseas_y_vomito
+    - action: utter_tipos_nauseas_y_vomito
+
+- story: sintoma_comun_nauseas_y_vomito path 10
+  steps:
+    - intent: tipos_nauseas_y_vomito
+    - action: utter_tipos_nauseas_y_vomito
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+    - intent: origen_nauseas_y_vomito
+    - action: utter_origen_nauseas_y_vomito
+
+- story: definicion_nauseas_y_vomito path
+  steps:
+    - intent: definicion_nauseas_y_vomito
+    - action: utter_definicion_nauseas_y_vomito
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+
+- story: definicion_nauseas_y_vomito path 2
+  steps:
+    - intent: definicion_nauseas_y_vomito
+    - action: utter_definicion_nauseas_y_vomito
+    - intent: nauseas_y_vomito_allegados
+    - action: utter_nauseas_y_vomito_allegados
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+
+- story: nauseas_y_vomito_allegados path
+  steps:
+    - intent: nauseas_y_vomito_allegados
+    - action: utter_nauseas_y_vomito_allegados
+
+- story: nauseas_y_vomito_allegados path 2
+  steps:
+    - intent: nauseas_y_vomito_allegados
+    - action: utter_nauseas_y_vomito_allegados
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+
+- story: nauseas_y_vomito_allegados path 3
+  steps:
+    - intent: nauseas_y_vomito_allegados
+    - action: utter_nauseas_y_vomito_allegados
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+
+- story: tipos_nauseas_y_vomito path
+  steps:
+    - intent: tipos_nauseas_y_vomito
+    - action: utter_tipos_nauseas_y_vomito
+
+- story: tipos_nauseas_y_vomito path 2
+  steps:
+    - intent: tipos_nauseas_y_vomito
+    - action: utter_tipos_nauseas_y_vomito
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+
+- story: tipos_nauseas_y_vomito path 3
+  steps:
+    - intent: tipos_nauseas_y_vomito
+    - action: utter_tipos_nauseas_y_vomito
+    - intent: origen_nauseas_y_vomito
+    - action: utter_origen_nauseas_y_vomito   
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+
+- story: recomendacion_nauseas_y_vomito path
+  steps:
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+
+- story: origen_nauseas_y_vomito path
+  steps:
+    - intent: origen_nauseas_y_vomito
+    - action: utter_origen_nauseas_y_vomito
+
+- story: origen_nauseas_y_vomito path 2
+  steps:
+    - intent: origen_nauseas_y_vomito
+    - action: utter_origen_nauseas_y_vomito
+    - intent: recomendacion_nauseas_y_vomito
+    - action: utter_recomendacion_nauseas_y_vomito
+#----------------------------------------------
+# INDIGESTION
+#----------------------------------------------
+
+- story: sintoma_comun_diarrea_indigestion path
+  steps:
+    - intent: sintoma_comun_diarrea_indigestion
+    - action: utter_sintoma_comun_diarrea_indigestion
+
+- story: sintoma_comun_diarrea_indigestion path 2
+  steps:
+    - intent: sintoma_comun_diarrea_indigestion
+    - action: utter_sintoma_comun_diarrea_indigestion
+    - intent: origen_diarrea_indigestion
+    - action: utter_diarrea_indigestion
+
+- story: sintoma_comun_diarrea_indigestion path 3
+  steps:
+    - intent: sintoma_comun_diarrea_indigestion
+    - action: utter_sintoma_comun_diarrea_indigestion
+    - intent: tipos_diarrea_indigestion
+    - action: utter_tipos_diarrea_indigestion
+
+- story: sintoma_comun_diarrea_indigestion path 4
+  steps:
+    - intent: sintoma_comun_diarrea_indigestion
+    - action: utter_sintoma_comun_diarrea_indigestion
+    - intent: definicion_diarrea_indigestion
+    - action: utter_definicion_diarrea_indigestion
+
+- story: sintoma_comun_diarrea_indigestion path 5
+  steps:
+    - intent: sintoma_comun_diarrea_indigestion
+    - action: utter_sintoma_comun_diarrea_indigestion
+    - intent: origen_diarrea_indigestion
+    - action: utter_origen_diarrea_indigestion
+
+- story: sintoma_comun_diarrea_indigestion path 6
+  steps:
+    - intent: sintoma_comun_diarrea_indigestion
+    - action: utter_sintoma_comun_diarrea_indigestion
+    - intent: origen_diarrea_indigestion
+    - action: utter_origen_diarrea_indigestion
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+
+- story: sintoma_comun_diarrea_indigestion path 7
+  steps:
+    - intent: sintoma_comun_diarrea_indigestion
+    - action: utter_sintoma_comun_diarrea_indigestion
+    - intent: origen_diarrea_indigestion
+    - action: utter_origen_diarrea_indigestion
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+    - intent: tipos_diarrea_indigestion
+    - action: utter_tipos_diarrea_indigestion
+
+- story: sintoma_comun_diarrea_indigestion path 8
+  steps:
+    - intent: sintoma_comun_diarrea_indigestion
+    - action: utter_sintoma_comun_diarrea_indigestion
+    - intent: tipos_diarrea_indigestion
+    - action: utter_tipos_diarrea_indigestion
+    - intent: origen_diarrea_indigestion
+    - action: utter_origen_diarrea_indigestion
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+
+- story: sintoma_comun_diarrea_indigestion path 9
+  steps:
+    - intent: sintoma_comun_diarrea_indigestion
+    - action: utter_sintoma_comun_diarrea_indigestion
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+    - intent: origen_diarrea_indigestion
+    - action: utter_origen_diarrea_indigestion
+    - intent: tipos_diarrea_indigestion
+    - action: utter_tipos_diarrea_indigestion
+
+- story: sintoma_comun_diarrea_indigestion path 10
+  steps:
+    - intent: tipos_diarrea_indigestion
+    - action: utter_tipos_diarrea_indigestion
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+    - intent: origen_diarrea_indigestion
+    - action: utter_origen_diarrea_indigestion
+
+- story: definicion_diarrea_indigestion path
+  steps:
+    - intent: definicion_diarrea_indigestion
+    - action: utter_definicion_diarrea_indigestion
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+
+- story: definicion_diarrea_indigestion path 2
+  steps:
+    - intent: definicion_diarrea_indigestion
+    - action: utter_definicion_diarrea_indigestion
+    - intent: diarrea_indigestion_allegados
+    - action: utter_diarrea_indigestion_allegados
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+
+- story: diarrea_indigestion_allegados path
+  steps:
+    - intent: diarrea_indigestion_allegados
+    - action: utter_diarrea_indigestion_allegados
+
+- story: diarrea_indigestion_allegados path 2
+  steps:
+    - intent: diarrea_indigestion_allegados
+    - action: utter_diarrea_indigestion_allegados
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+
+- story: diarrea_indigestion_allegados path 3
+  steps:
+    - intent: diarrea_indigestion_allegados
+    - action: utter_diarrea_indigestion_allegados
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+
+- story: tipos_diarrea_indigestion path
+  steps:
+    - intent: tipos_diarrea_indigestion
+    - action: utter_tipos_diarrea_indigestion
+
+- story: tipos_diarrea_indigestion path 2
+  steps:
+    - intent: tipos_diarrea_indigestion
+    - action: utter_tipos_diarrea_indigestion
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+
+- story: tipos_diarrea_indigestion path 3
+  steps:
+    - intent: tipos_diarrea_indigestion
+    - action: utter_tipos_diarrea_indigestion
+    - intent: origen_diarrea_indigestion
+    - action: utter_origen_diarrea_indigestion   
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+
+- story: recomendacion_diarrea_indigestion path
+  steps:
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+
+- story: origen_diarrea_indigestion path
+  steps:
+    - intent: origen_diarrea_indigestion
+    - action: utter_origen_diarrea_indigestion
+
+- story: origen_diarrea_indigestion path 2
+  steps:
+    - intent: origen_diarrea_indigestion
+    - action: utter_origen_diarrea_indigestion
+    - intent: recomendacion_diarrea_indigestion
+    - action: utter_recomendacion_diarrea_indigestion
+
+ #----------------------------------------------
+# GRIPA Y ESTORNUDOS
+#----------------------------------------------   
+
 - story: sintoma_comun_gripe_y_estornudos path
   steps:
     - intent: sintoma_comun_gripe_y_estornudos
     - action: utter_sintoma_comun_gripe_y_estornudos
+
+- story: sintoma_comun_gripe_y_estornudos path 2
+  steps:
+    - intent: sintoma_comun_gripe_y_estornudos
+    - action: utter_sintoma_comun_gripe_y_estornudos
+    - intent: origen_gripe_y_estornudos
+    - action: utter_gripe_y_estornudos
+
+- story: sintoma_comun_gripe_y_estornudos path 3
+  steps:
+    - intent: sintoma_comun_gripe_y_estornudos
+    - action: utter_sintoma_comun_gripe_y_estornudos
+    - intent: tipos_gripe_y_estornudos
+    - action: utter_tipos_gripe_y_estornudos
+
+- story: sintoma_comun_gripe_y_estornudos path 4
+  steps:
+    - intent: sintoma_comun_gripe_y_estornudos
+    - action: utter_sintoma_comun_gripe_y_estornudos
+    - intent: definicion_gripe_y_estornudos
+    - action: utter_definicion_gripe_y_estornudos
+
+- story: sintoma_comun_gripe_y_estornudos path 5
+  steps:
+    - intent: sintoma_comun_gripe_y_estornudos
+    - action: utter_sintoma_comun_gripe_y_estornudos
+    - intent: origen_gripe_y_estornudos
+    - action: utter_origen_gripe_y_estornudos
+
+- story: sintoma_comun_gripe_y_estornudos path 6
+  steps:
+    - intent: sintoma_comun_gripe_y_estornudos
+    - action: utter_sintoma_comun_gripe_y_estornudos
+    - intent: origen_gripe_y_estornudos
+    - action: utter_origen_gripe_y_estornudos
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+
+- story: sintoma_comun_gripe_y_estornudos path 7
+  steps:
+    - intent: sintoma_comun_gripe_y_estornudos
+    - action: utter_sintoma_comun_gripe_y_estornudos
+    - intent: origen_gripe_y_estornudos
+    - action: utter_origen_gripe_y_estornudos
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+    - intent: tipos_gripe_y_estornudos
+    - action: utter_tipos_gripe_y_estornudos
+
+- story: sintoma_comun_gripe_y_estornudos path 8
+  steps:
+    - intent: sintoma_comun_gripe_y_estornudos
+    - action: utter_sintoma_comun_gripe_y_estornudos
+    - intent: tipos_gripe_y_estornudos
+    - action: utter_tipos_gripe_y_estornudos
+    - intent: origen_gripe_y_estornudos
+    - action: utter_origen_gripe_y_estornudos
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+
+- story: sintoma_comun_gripe_y_estornudos path 9
+  steps:
+    - intent: sintoma_comun_gripe_y_estornudos
+    - action: utter_sintoma_comun_gripe_y_estornudos
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+    - intent: origen_gripe_y_estornudos
+    - action: utter_origen_gripe_y_estornudos
+    - intent: tipos_gripe_y_estornudos
+    - action: utter_tipos_gripe_y_estornudos
+
+- story: sintoma_comun_gripe_y_estornudos path 10
+  steps:
+    - intent: tipos_gripe_y_estornudos
+    - action: utter_tipos_gripe_y_estornudos
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+    - intent: origen_gripe_y_estornudos
+    - action: utter_origen_gripe_y_estornudos
+
+- story: definicion_gripe_y_estornudos path
+  steps:
+    - intent: definicion_gripe_y_estornudos
+    - action: utter_definicion_gripe_y_estornudos
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+
+- story: definicion_gripe_y_estornudos path 2
+  steps:
+    - intent: definicion_gripe_y_estornudos
+    - action: utter_definicion_gripe_y_estornudos
+    - intent: gripe_y_estornudos_allegados
+    - action: utter_gripe_y_estornudos_allegados
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+
+- story: gripe_y_estornudos_allegados path
+  steps:
+    - intent: gripe_y_estornudos_allegados
+    - action: utter_gripe_y_estornudos_allegados
+
+- story: gripe_y_estornudos_allegados path 2
+  steps:
+    - intent: gripe_y_estornudos_allegados
+    - action: utter_gripe_y_estornudos_allegados
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+
+- story: gripe_y_estornudos_allegados path 3
+  steps:
+    - intent: gripe_y_estornudos_allegados
+    - action: utter_gripe_y_estornudos_allegados
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+
+- story: tipos_gripe_y_estornudos path
+  steps:
+    - intent: tipos_gripe_y_estornudos
+    - action: utter_tipos_gripe_y_estornudos
+
+- story: tipos_gripe_y_estornudos path 2
+  steps:
+    - intent: tipos_gripe_y_estornudos
+    - action: utter_tipos_gripe_y_estornudos
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+
+- story: tipos_gripe_y_estornudos path 3
+  steps:
+    - intent: tipos_gripe_y_estornudos
+    - action: utter_tipos_gripe_y_estornudos
+    - intent: origen_gripe_y_estornudos
+    - action: utter_origen_gripe_y_estornudos   
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+
+- story: recomendacion_gripe_y_estornudos path
+  steps:
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+
+- story: origen_gripe_y_estornudos path
+  steps:
+    - intent: origen_gripe_y_estornudos
+    - action: utter_origen_gripe_y_estornudos
+
+- story: origen_gripe_y_estornudos path 2
+  steps:
+    - intent: origen_gripe_y_estornudos
+    - action: utter_origen_gripe_y_estornudos
+    - intent: recomendacion_gripe_y_estornudos
+    - action: utter_recomendacion_gripe_y_estornudos
+
+ #----------------------------------------------
+# INSOMNIO
+#---------------------------------------------- 
 
 - story: sintoma_comun_insomnio path
   steps:
     - intent: sintoma_comun_insomnio
     - action: utter_sintoma_comun_insomnio
 
+- story: sintoma_comun_insomnio path 2
+  steps:
+    - intent: sintoma_comun_insomnio
+    - action: utter_sintoma_comun_insomnio
+    - intent: origen_insomnio
+    - action: utter_insomnio
+
+- story: sintoma_comun_insomnio path 3
+  steps:
+    - intent: sintoma_comun_insomnio
+    - action: utter_sintoma_comun_insomnio
+    - intent: tipos_insomnio
+    - action: utter_tipos_insomnio
+
+- story: sintoma_comun_insomnio path 4
+  steps:
+    - intent: sintoma_comun_insomnio
+    - action: utter_sintoma_comun_insomnio
+    - intent: definicion_insomnio
+    - action: utter_definicion_insomnio
+
+- story: sintoma_comun_insomnio path 5
+  steps:
+    - intent: sintoma_comun_insomnio
+    - action: utter_sintoma_comun_insomnio
+    - intent: origen_insomnio
+    - action: utter_origen_insomnio
+
+- story: sintoma_comun_insomnio path 6
+  steps:
+    - intent: sintoma_comun_insomnio
+    - action: utter_sintoma_comun_insomnio
+    - intent: origen_insomnio
+    - action: utter_origen_insomnio
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+
+- story: sintoma_comun_insomnio path 7
+  steps:
+    - intent: sintoma_comun_insomnio
+    - action: utter_sintoma_comun_insomnio
+    - intent: origen_insomnio
+    - action: utter_origen_insomnio
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+    - intent: tipos_insomnio
+    - action: utter_tipos_insomnio
+
+- story: sintoma_comun_insomnio path 8
+  steps:
+    - intent: sintoma_comun_insomnio
+    - action: utter_sintoma_comun_insomnio
+    - intent: tipos_insomnio
+    - action: utter_tipos_insomnio
+    - intent: origen_insomnio
+    - action: utter_origen_insomnio
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+
+- story: sintoma_comun_insomnio path 9
+  steps:
+    - intent: sintoma_comun_insomnio
+    - action: utter_sintoma_comun_insomnio
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+    - intent: origen_insomnio
+    - action: utter_origen_insomnio
+    - intent: tipos_insomnio
+    - action: utter_tipos_insomnio
+
+- story: sintoma_comun_insomnio path 10
+  steps:
+    - intent: tipos_insomnio
+    - action: utter_tipos_insomnio
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+    - intent: origen_insomnio
+    - action: utter_origen_insomnio
+
+- story: definicion_insomnio path
+  steps:
+    - intent: definicion_insomnio
+    - action: utter_definicion_insomnio
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+
+- story: definicion_insomnio path 2
+  steps:
+    - intent: definicion_insomnio
+    - action: utter_definicion_insomnio
+    - intent: insomnio_allegados
+    - action: utter_insomnio_allegados
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+
+- story: insomnio_allegados path
+  steps:
+    - intent: insomnio_allegados
+    - action: utter_insomnio_allegados
+
+- story: insomnio_allegados path 2
+  steps:
+    - intent: insomnio_allegados
+    - action: utter_insomnio_allegados
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+
+- story: insomnio_allegados path 3
+  steps:
+    - intent: insomnio_allegados
+    - action: utter_insomnio_allegados
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+
+- story: tipos_insomnio path
+  steps:
+    - intent: tipos_insomnio
+    - action: utter_tipos_insomnio
+
+- story: tipos_insomnio path 2
+  steps:
+    - intent: tipos_insomnio
+    - action: utter_tipos_insomnio
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+
+- story: tipos_insomnio path 3
+  steps:
+    - intent: tipos_insomnio
+    - action: utter_tipos_insomnio
+    - intent: origen_insomnio
+    - action: utter_origen_insomnio   
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+
+- story: recomendacion_insomnio path
+  steps:
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+
+- story: origen_insomnio path
+  steps:
+    - intent: origen_insomnio
+    - action: utter_origen_insomnio
+
+- story: origen_insomnio path 2
+  steps:
+    - intent: origen_insomnio
+    - action: utter_origen_insomnio
+    - intent: recomendacion_insomnio
+    - action: utter_recomendacion_insomnio
+
+#----------------------------------------------
+# FALTA DE APETITO
+#----------------------------------------------
+
 - story: sintoma_comun_falta_apetito path
   steps:
     - intent: sintoma_comun_falta_apetito
     - action: utter_sintoma_comun_falta_apetito
+
+- story: sintoma_comun_falta_apetito path 2
+  steps:
+    - intent: sintoma_comun_falta_apetito
+    - action: utter_sintoma_comun_falta_apetito
+    - intent: origen_falta_apetito
+    - action: utter_falta_apetito
+
+- story: sintoma_comun_falta_apetito path 3
+  steps:
+    - intent: sintoma_comun_falta_apetito
+    - action: utter_sintoma_comun_falta_apetito
+    - intent: tipos_falta_apetito
+    - action: utter_tipos_falta_apetito
+
+- story: sintoma_comun_falta_apetito path 4
+  steps:
+    - intent: sintoma_comun_falta_apetito
+    - action: utter_sintoma_comun_falta_apetito
+    - intent: definicion_falta_apetito
+    - action: utter_definicion_falta_apetito
+
+- story: sintoma_comun_falta_apetito path 5
+  steps:
+    - intent: sintoma_comun_falta_apetito
+    - action: utter_sintoma_comun_falta_apetito
+    - intent: origen_falta_apetito
+    - action: utter_origen_falta_apetito
+
+- story: sintoma_comun_falta_apetito path 6
+  steps:
+    - intent: sintoma_comun_falta_apetito
+    - action: utter_sintoma_comun_falta_apetito
+    - intent: origen_falta_apetito
+    - action: utter_origen_falta_apetito
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+
+- story: sintoma_comun_falta_apetito path 7
+  steps:
+    - intent: sintoma_comun_falta_apetito
+    - action: utter_sintoma_comun_falta_apetito
+    - intent: origen_falta_apetito
+    - action: utter_origen_falta_apetito
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+    - intent: tipos_falta_apetito
+    - action: utter_tipos_falta_apetito
+
+- story: sintoma_comun_falta_apetito path 8
+  steps:
+    - intent: sintoma_comun_falta_apetito
+    - action: utter_sintoma_comun_falta_apetito
+    - intent: tipos_falta_apetito
+    - action: utter_tipos_falta_apetito
+    - intent: origen_falta_apetito
+    - action: utter_origen_falta_apetito
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+
+- story: sintoma_comun_falta_apetito path 9
+  steps:
+    - intent: sintoma_comun_falta_apetito
+    - action: utter_sintoma_comun_falta_apetito
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+    - intent: origen_falta_apetito
+    - action: utter_origen_falta_apetito
+    - intent: tipos_falta_apetito
+    - action: utter_tipos_falta_apetito
+
+- story: sintoma_comun_falta_apetito path 10
+  steps:
+    - intent: tipos_falta_apetito
+    - action: utter_tipos_falta_apetito
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+    - intent: origen_falta_apetito
+    - action: utter_origen_falta_apetito
+
+- story: definicion_falta_apetito path
+  steps:
+    - intent: definicion_falta_apetito
+    - action: utter_definicion_falta_apetito
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+
+- story: definicion_falta_apetito path 2
+  steps:
+    - intent: definicion_falta_apetito
+    - action: utter_definicion_falta_apetito
+    - intent: falta_apetito_allegados
+    - action: utter_falta_apetito_allegados
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+
+- story: falta_apetito_allegados path
+  steps:
+    - intent: falta_apetito_allegados
+    - action: utter_falta_apetito_allegados
+
+- story: falta_apetito_allegados path 2
+  steps:
+    - intent: falta_apetito_allegados
+    - action: utter_falta_apetito_allegados
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+
+- story: falta_apetito_allegados path 3
+  steps:
+    - intent: falta_apetito_allegados
+    - action: utter_falta_apetito_allegados
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+
+- story: tipos_falta_apetito path
+  steps:
+    - intent: tipos_falta_apetito
+    - action: utter_tipos_falta_apetito
+
+- story: tipos_falta_apetito path 2
+  steps:
+    - intent: tipos_falta_apetito
+    - action: utter_tipos_falta_apetito
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+
+- story: tipos_falta_apetito path 3
+  steps:
+    - intent: tipos_falta_apetito
+    - action: utter_tipos_falta_apetito
+    - intent: origen_falta_apetito
+    - action: utter_origen_falta_apetito   
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+
+- story: recomendacion_falta_apetito path
+  steps:
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
+
+- story: origen_falta_apetito path
+  steps:
+    - intent: origen_falta_apetito
+    - action: utter_origen_falta_apetito
+
+- story: origen_falta_apetito path 2
+  steps:
+    - intent: origen_falta_apetito
+    - action: utter_origen_falta_apetito
+    - intent: recomendacion_falta_apetito
+    - action: utter_recomendacion_falta_apetito
 
 #----------------------------------------------
 # HORMONAS
