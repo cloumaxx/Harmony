@@ -46,36 +46,39 @@ def pantalla_menu_inicial(request,usuario_id ):
 ////////////////////////////////////////////////////////
 """
 @login_required
-def pantalla_estadisticas(request,usuario_id):
+def pantalla_estadisticas(request, usuario_id):
     try:
         usuario_id = ObjectId(str(request.session['id_user']))
         usuarios_cursor = db_connection.db.Usuario.find()
         cantidad_usuarios = sum(1 for _ in usuarios_cursor)
-        # mensajes mas comunes
-        mensajes_cursor = db_connection.db.Mensajes.find()
-        # Crear un DataFrame vacío
-        df = pd.DataFrame()
-
-        # Agregar la columna 'mensaje' al DataFrame
-        df = pd.DataFrame(mensajes_cursor)
-        # Convierte la columna 'fecha' a tipo datetime
-        df['fecha'] = pd.to_datetime(df['fecha'])
-
-        # Agrupa los mensajes por día y cuenta la cantidad de mensajes en cada día
-        mensajes_por_dia = df.groupby(df['fecha'].dt.date)['mensaje'].count()
         
-        # Crea un gráfico de barras interactivo con Plotly
-        fig = px.bar(mensajes_por_dia, x=mensajes_por_dia.index, y='mensaje', labels={'x': 'Fecha', 'y': 'Cantidad de Mensajes'})
-        plot_div = opy.plot(fig, auto_open=False, output_type='div')       
+        # Obtener mensajes más comunes
+        mensajes_cursor = db_connection.db.Mensajes.find()
+        df = pd.DataFrame(mensajes_cursor)
+        df['fecha'] = pd.to_datetime(df['fecha'])
+        
+        # Agregar una columna de fecha sin la hora para agrupar por día
+        df['fecha_dia'] = df['fecha'].dt.floor('d')  # Redondear a la fecha más cercana
+        
+        # Contar la cantidad de mensajes por día
+        mensajes_por_dia = df.groupby('fecha_dia').size()
+        
+        # Calcular el ancho de las barras
+        ancho_barra_dias = 2  # Ancho de la barra en días
+        ancho_barra_milisegundos = ancho_barra_dias * 24 * 60 * 60 * 1000  # Convertir días a milisegundos
 
-        # Usa value_counts en la columna 'mensaje' para obtener las frecuencias de cada valor
-        frecuencias = df['mensaje'].value_counts()
-        mensajes_enviados = df['mensaje'].count()
+        # Crear gráfico de barras con Plotly
+        fig = px.bar(x=mensajes_por_dia.index, y=mensajes_por_dia.values, labels={'x': 'Fecha', 'y': 'Cantidad de Mensajes'})
+        fig.update_layout(title='Mensajes Enviados a Milly', xaxis_title='Fecha', yaxis_title='Cantidad de Mensajes', plot_bgcolor='rgba(0,0,0,0)', title_x=0.5) # Establecer un color de fondo para el gráfico
+        fig.update_xaxes(tickformat="%d/%m/%Y", tickangle=45, tickvals=mensajes_por_dia.index, tickmode='array', showline=True, linewidth=2, linecolor='black')  # Formato de fecha: Día/Mes/Año y rotación de 45 grados
+        fig.update_yaxes(range=[0, mensajes_por_dia.max()*1.1], fixedrange=True,showline=True, linewidth=2, linecolor='black')  # Fijar el rango del eje y para que siempre sea positivo
+        fig.update_traces(width=ancho_barra_milisegundos)
+        plot_div = opy.plot(fig, auto_open=False, output_type='div')
+        
 
-        # El resultado contendrá los elementos más repetidos en orden descendente
-        elementos_mas_repetidos = frecuencias.head(1).index.tolist()
 
-        #Promedio de calificacion 
+        ##############
+ #Promedio de calificacion 
         # Crear un DataFrame vacío
         dfCal = pd.DataFrame()
         calificaciones_cursor = db_connection.db.Calificacion.find()
@@ -83,7 +86,7 @@ def pantalla_estadisticas(request,usuario_id):
         dfCal['contador'] = [0,0,0,0,0]
         for calificacion in calificaciones_cursor:
             dfCal.at[(calificacion['calificacion']-1),'contador'] += 1
-        # Crea un gráfico de barras
+
         dfCal.plot.pie(y='contador', figsize=(4, 4), labels=dfCal['calificacion'])
         img = BytesIO()
         plt.savefig(img, format='png')
@@ -94,7 +97,12 @@ def pantalla_estadisticas(request,usuario_id):
 
         promCalificacion = round(promCalificacion,2)
 
-        return render(request, "pantalla_estadisticas/pantalla_estadisticas.html",{"plot":plot,"usuario_id": usuario_id,"cantidad_usuarios":cantidad_usuarios,"mensajes_enviados":mensajes_enviados,"elementos_mas_repetidos":elementos_mas_repetidos,"promCalificacion":promCalificacion,"plot_div":plot_div })
+
+        ##############3
+        mensajes_enviados = df['mensaje'].count()
+        elementos_mas_repetidos = df['mensaje'].value_counts().head(1).index.tolist()
+
+        return render(request, "pantalla_estadisticas/pantalla_estadisticas.html", {"plot": plot, "usuario_id": usuario_id, "cantidad_usuarios": cantidad_usuarios, "mensajes_enviados": mensajes_enviados, "elementos_mas_repetidos": elementos_mas_repetidos, "promCalificacion": promCalificacion, "plot_div": plot_div })
 
     except Exception as e:
         print(e)
@@ -635,6 +643,7 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                 salida = "No entendí tu pregunta"
 
             else:
+                pregunta_inicial = pregunta
                 pregunta = pregunta.lower()
                 pregunta = pregunta.replace("  ", "")
                 pregunta = eliminar_tildes(pregunta)
@@ -648,8 +657,9 @@ def enviarMensajeChatBot(request,usuario_id,posicion=0):
                     salida = "No entendí tu pregunta"
                     
                 nuevo_mensaje ={
-                    'pregunta': pregunta,
-                    'respuesta': salida
+                    'pregunta': pregunta_inicial,
+                    'respuesta': salida,
+                    'fecha' : datetime.now()
                 }
                 
                 conversacion.append(nuevo_mensaje)

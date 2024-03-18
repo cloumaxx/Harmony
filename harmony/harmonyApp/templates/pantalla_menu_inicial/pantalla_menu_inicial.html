@@ -251,7 +251,34 @@
                                 </button>
                             </a>
                         </div>
-
+                        <div class="modal fade" id="modalCalificarApp{{ usuario_id }}">
+                            <div class="modal-dialog" style="height: auto;">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Calificar la app</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                    
+                                        <form method="POST" action="{% url 'calificarApp' usuario_id=usuario_id  %}">
+                                            {% csrf_token %}
+                                            <fieldset class="rating">
+                                                <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
+                                                <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                                                <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                                                <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                                                <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                            </fieldset>
+                    
+                                            <button type="submit">Calificar</button>
+                                        </form>
+                    
+                    
+                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
               </div>
@@ -260,34 +287,7 @@
         
     </div>
     <!-- Ventana Modal Calificar app -->
-    <div class="modal fade" id="modalCalificarApp{{ usuario_id }}">
-        <div class="modal-dialog" style="height: auto;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Calificar la app</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" action="{% url 'calificarApp' usuario_id=usuario_id  %}">
-                        {% csrf_token %}
-                        <fieldset class="rating">
-                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
-                        </fieldset>
-
-                        <button type="submit">Calificar</button>
-                    </form>
-
-
-
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <footer>
         <!-- Tu código del pie de página aquí -->
     </footer>

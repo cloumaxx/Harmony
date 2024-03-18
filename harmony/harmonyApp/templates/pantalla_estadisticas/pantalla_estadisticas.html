@@ -93,11 +93,6 @@
                 <div>
                     <img src="data:image/png;base64,{{ plot }}">
                 </div>
-                
-              </div>
-              <div data-aos="fade-up" class="col-lg-6 custom-graph"  id="esta_actividad">
-                <h1 data-aos="fade-up">Tu actividad</h1>
-                {{ plot_div | safe }}
                 <div id="div_info">
                   <p style="margin-left: 10px;"><br>   
                     <svg style="font-size: 33px; padding-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-quote-fill" viewBox="0 0 16 16">
@@ -118,6 +113,12 @@
                     </p>
                   <br>
                 </div>
+              </div>
+              <div data-aos="fade-up" class="col-lg-6 custom-graph"  id="esta_actividad">
+                <h1 data-aos="fade-up" style="font-size: 1.8em;">Análisis de la Interacción Global</h1>
+                <br>
+                {{ plot_div | safe }}
+                
               </div>
               </div>
               
