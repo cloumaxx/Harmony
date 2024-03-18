@@ -145,32 +145,43 @@
             font-weight: 400;
             line-height: normal;
         }
-        #txt_ver_temas{
+
+        #txt_ver_temas {
             fill: rgb(0, 68, 255);
 
         }
-        #txt_ver_temas:hover{
+
+        #txt_ver_temas:hover {
             cursor: pointer;
         }
+
         #cuadroTexto {
             display: none;
             /* Por defecto, el cuadro de texto está oculto */
-            position: absolute;
-            /* Para posicionar el cuadro de texto */
+            position: fixed;
+            /* Para posicionar el cuadro de texto de manera fija en la ventana del navegador */
+            top: 50%;
+            /* Posición vertical del cuadro de texto en el centro */
+            right: 0;
+            /* Posición horizontal del cuadro de texto en el extremo derecho */
+            transform: translate(0, -50%);
+            /* Para centrar verticalmente el cuadro de texto */
             background-color: #f9f9f9;
             /* Color de fondo */
             padding: 10px;
             /* Espacio interno del cuadro de texto */
             border: 1px solid #ccc;
             /* Borde del cuadro de texto */
-        
+            margin-right: 30px;
         }
 
         #txt_ver_temas:hover+#cuadroTexto {
+            
             cursor: pointer;
             display: block;
             /* Mostrar el cuadro de texto cuando se pasa el ratón sobre el párrafo */
         }
+        
     </style>
     <script>
         function abrirModalCalificarApp(usuario_id) {
@@ -197,97 +208,150 @@
         <br>
         <section class="vh-40">
             <div class="container-fluid h-custom">
-              <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                    <div style="text-align: center;">
-                        <img id="img_milly" src="{% static '/images/mily.png'  %}" height="400" class="img-responsive">
-                        <br>
-                        <div id="nombMilly">
-                            <p id="txtMilly">Milly</p>
-                        </div>
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-md-9 col-lg-6 col-xl-5">
+                        <div style="text-align: center;">
+                            <img id="img_milly" src="{% static '/images/mily.png'  %}" height="400"
+                                class="img-responsive">
+                            <br>
+                            <div id="nombMilly">
+                                <p id="txtMilly">Milly</p>
+                            </div>
 
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <div>
-                        <br><br>
-                        <p id="txt_largo">Hola, soy Milly, tu chatbot de confianza. Estoy aqui para que
-                            hables conmigo</p>
-                        <p id="txt_ver_temas"><u>Los temas que puedo hablar son:</u></p>
-                        <div id="cuadroTexto">Este es un cuadro de texto que se muestra al pasar el ratón sobre el
-                            párrafo.</div>
+                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                        <div>
+                            <br><br>
+                            <p id="txt_largo">Hola, soy Milly, tu chatbot de confianza. Estoy aqui para que
+                                hables conmigo</p>
+                            <p id="txt_ver_temas"><u>Los temas que puedo hablar son:</u></p>
+                            <div id="cuadroTexto">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <h2>Temas</h2>
+                                                <ul>
+                                                    <li>Ansiedad</li>
+                                                    <li>Estrés</li>
+                                                    <li>Desanimo</li>
+                                                    <li>Sentimientos de desánimo y tentación de rendirse</li>
+                                                    <li>Dolor de cabeza</li>
+                                                    <li>Migraña</li>
+                                                </ul>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <h2>Hormonas</h2>
+                                <ul>
+                                    <li>Insulina</li>
+                                    <li>Tiroxina</li>
+                                    <li>Antidiurética</li>
+                                    <li>Cortisol</li>
+                                    <li>Adrenalina</li>
+                                    <li>Noradrenalina</li>
+                                    <li>Estrógenos</li>
+                                    <li>Progesterona</li>
+                                    <li>Testosterona</li>
+                                    <li>Melatonina</li>
+                                    <li>Serotonina</li>
+                                    <li>Dopamina</li>
+                                    <li>Endorfinas</li>
+                                    <li>Prolactina</li>
+                                    <li>Folículo estimulante</li>
+                                    <li>Luteinizante</li>
+                                    <li>Colecistoquinina</li>
+                                    <li>Antimulleriana</li>
 
-                        <br>
-                        <div id="cont_btn" style="display: flex; justify-content: center; align-items: center;">
-                            <a href="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=0 %}">
-                                <button class="btn btn-primary" id="botones">
-                                    <p id="text_button">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="10%"
-                                            fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
-                                            <path
-                                                d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                        </svg>
-                                        &nbsp;&nbsp;
-                                        Hablemos
-                                    </p>
-                                </button>
-                            </a>
-                        </div>
+                                    <li>Hormona del crecimiento</li>
 
-
-                        <br><br>
-                        <div id="cont_btn">
-                            <a href="#" onclick="abrirModalCalificarApp('{{ usuario_id }}')">
-                                <button class="btn btn-primary" id="botones">
-                                    <p id="text_button">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="10%"
-                                            style="fill:yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                        &nbsp;
-                                        Califica nuestra app
-                                    </p>
-                                </button>
-                            </a>
-                        </div>
-                        <div class="modal fade" id="modalCalificarApp{{ usuario_id }}">
-                            <div class="modal-dialog" style="height: auto;">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Calificar la app</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </ul>
+                                        </div>
+                                        
                                     </div>
-                                    <div class="modal-body">
-                    
-                                        <form method="POST" action="{% url 'calificarApp' usuario_id=usuario_id  %}">
-                                            {% csrf_token %}
-                                            <fieldset class="rating">
-                                                <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                                <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                                <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                                <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                                <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
-                                            </fieldset>
-                    
-                                            <button type="submit">Calificar</button>
-                                        </form>
-                    
-                    
-                    
+
+                                </div>
+                                
+                                
+                            </div>
+
+                            <br>
+                            <div id="cont_btn" style="display: flex; justify-content: center; align-items: center;">
+                                <a href="{% url 'pantalla_chatbot' usuario_id=usuario_id posicion=0 %}">
+                                    <button class="btn btn-primary" id="botones">
+                                        <p id="text_button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="10%"
+                                                fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                            </svg>
+                                            &nbsp;&nbsp;
+                                            Hablemos
+                                        </p>
+                                    </button>
+                                </a>
+                            </div>
+
+
+                            <br><br>
+                            <div id="cont_btn">
+                                <a href="#" onclick="abrirModalCalificarApp('{{ usuario_id }}')">
+                                    <button class="btn btn-primary" id="botones">
+                                        <p id="text_button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10%" height="10%"
+                                                style="fill:yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg>
+                                            &nbsp;
+                                            Califica nuestra app
+                                        </p>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="modal fade" id="modalCalificarApp{{ usuario_id }}">
+                                <div class="modal-dialog" style="height: auto;">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Calificar la app</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <form method="POST"
+                                                action="{% url 'calificarApp' usuario_id=usuario_id  %}">
+                                                {% csrf_token %}
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="star5" name="rating" value="5" /><label
+                                                        for="star5"></label>
+                                                    <input type="radio" id="star4" name="rating" value="4" /><label
+                                                        for="star4"></label>
+                                                    <input type="radio" id="star3" name="rating" value="3" /><label
+                                                        for="star3"></label>
+                                                    <input type="radio" id="star2" name="rating" value="2" /><label
+                                                        for="star2"></label>
+                                                    <input type="radio" id="star1" name="rating" value="1" /><label
+                                                        for="star1"></label>
+                                                </fieldset>
+
+                                                <button type="submit">Calificar</button>
+                                            </form>
+
+
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-              </div>
             </div>
-          </section>
-        
+        </section>
+
     </div>
     <!-- Ventana Modal Calificar app -->
-    
+
     <footer>
         <!-- Tu código del pie de página aquí -->
     </footer>

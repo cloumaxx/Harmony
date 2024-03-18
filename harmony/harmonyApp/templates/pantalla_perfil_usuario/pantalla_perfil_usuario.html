@@ -131,12 +131,14 @@
                 reader.onload = function (e) {
                     imagen.src = e.target.result;
                     imagen.style.display = 'block';
+                    foto_nueva.style.display = 'block';
                 }
 
                 reader.readAsDataURL(input.files[0]);
             } else {
                 imagen.src = '#';
                 imagen.style.display = 'none';
+                foto_nueva.style.display = 'none';
             }
         }
     </script>
@@ -150,10 +152,10 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5" style="height: 100%; background-color: ;">
+                    <div class="col-md-5" style="height: 100%; ">
                         <h1>{{ usuario_obj.nombre }} {{ usuario_obj.apellido }}</h1>
-                        <img class="border rounded-circle border-1 border-dark" style="border-radius: 50%;"
-                            src="{{usuario_obj.url_imagen_perfil}}" width="40%" height="100%">
+                        <img class="border rounded-circle border-1 border-dark" style="border-radius: 20px;"
+                            src="{{usuario_obj.url_imagen_perfil}}" width="120px" height="120%">
                         <div id="info_user">
 
                             <div id="conText">
@@ -201,78 +203,73 @@
     </div>
     <!-- Ventana Modal Editar Usuario-->
     <div class="modal fade" id="modalEditarUsuario{{ usuario_id }}">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <!-- Contenido de la ventana modal -->
+                <!-- Encabezado de la ventana modal -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalAgregarComentarioLabel">Editar tu perfil</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <!-- Contenido principal del modal -->
                 <div class="modal-body">
                     <!-- Formulario para editar el perfil -->
-                    <form method="POST" action="{% url 'editar_usuario' usuario_id=usuario_id %}"
-                        enctype="multipart/form-data">
+                    <form method="POST" action="{% url 'editar_usuario' usuario_id=usuario_id %}" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <label id="id_nombre" class="form-label">Nombre: </label>
-                        <input style="width: 80%;" type="text" name="nombre" value="{{ usuario_obj.nombre }}"
-                            placeholder="Nombre"><br>
-
-                        <label id="id_apellido" class="form-label">Apellido: </label>
-                        <input type="text" name="apellido" value="{{ usuario_obj.apellido }}"
-                            placeholder="Apellido"><br>
-
-                        <label id="id_correo" class="form-label">Correo: </label>
-                        <input type="email" name="correo" value="{{ usuario_obj.correo }}"
-                            placeholder="Correo electrónico"><br>
-
-                        <label id="id_genero" class="form-label">Genero:</label>
-                        <select class="form-control" id="id_genero" name="genero">
-                            {% if usuario_obj.genero == 'M' %}
-                            <option value="H">Hombre</option>
-                            <option value="M" selected>Mujer</option>
-                            {% else %}
-                            <option value="H" selected>Hombre</option>
-                            <option value="M">Mujer</option>
-                            {% endif %}
-                        </select>
-
-
-                        <br>
-                        <label id="id_fechaNacido" class="form-label">Fecha nacimiento:</label>
-
-                        <input type="date" name="fecha_nacimiento"
-                            value="{{ usuario_obj.fecha_nacimiento|date:'Y-m-d' }}"
-                            placeholder="Fecha de nacimiento"><br>
-                        <!-- Agrega los demás campos del formulario -->
-                        <p>¿Deseas cambiar tú foto de perfil?</p><br>
-                        <input type="file" id="nueva_imagen_perfil" name="nueva_imagen_perfil"
-                            onchange="previsualizarImagen(event) " accept="image/png, image/jpeg">
-
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ usuario_obj.nombre }}" placeholder="Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellido" class="form-label">Apellido:</label>
+                            <input type="text" class="form-control" id="apellido" name="apellido" value="{{ usuario_obj.apellido }}" placeholder="Apellido">
+                        </div>
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo:</label>
+                            <input type="email" class="form-control" id="correo" name="correo" value="{{ usuario_obj.correo }}" placeholder="Correo electrónico">
+                        </div>
+                        <div class="mb-3">
+                            <label for="genero" class="form-label">Género:</label>
+                            <select class="form-select" id="genero" name="genero">
+                                {% if usuario_obj.genero == 'M' %}
+                                <option value="H">Hombre</option>
+                                <option value="M" selected>Mujer</option>
+                                {% else %}
+                                <option value="H" selected>Hombre</option>
+                                <option value="M">Mujer</option>
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaNacido" class="form-label">Fecha de nacimiento:</label>
+                            <input type="date" class="form-control" id="fechaNacido" name="fecha_nacimiento" value="{{ usuario_obj.fecha_nacimiento|date:'Y-m-d' }}">
+                        </div>
+                        <div class="mb-3">
+                            <p>¿Deseas cambiar tu foto de perfil?</p>
+                            <input type="file" id="nueva_imagen_perfil" name="nueva_imagen_perfil" onchange="previsualizarImagen(event)" accept="image/png, image/jpeg">
+                        </div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
                                     <p>Foto de perfil actual</p>
-                                    <img src="{{usuario_obj.url_imagen_perfil}}" alt="Foto de perfil" width="100px"
-                                        height="100px">
-
+                                    <img src="{{ usuario_obj.url_imagen_perfil }}" style="border-radius: 40px; border: 2px solid black;" alt="Foto de perfil" class="img-fluid rounded-circle" width="100px" height="100px">
                                 </div>
                                 <div class="col-md-6">
-                                    <br>
-                                    <img id="imagen_previa" src="#" alt="Previsualización" style="display: none;"
-                                        width="100px" height="100px">
+                                    <p id="foto_nueva" style="display: none;">Foto de perfil actual</p>
 
+                                    <img id="imagen_previa" src="#" alt="Previsualización" style="display: none;border-radius: 40px; border: 2px solid black;" class="img-fluid rounded-circle" width="100px" height="100px">
                                 </div>
                             </div>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
-
+    
 
     <!-- Ventana Modal Editar Comentario-->
     {% for comentario, _,_, id_comentario in comentarios %}

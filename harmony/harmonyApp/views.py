@@ -5,7 +5,7 @@ from django.shortcuts import  redirect, render
 from harmonyApp.forms import LoginForm
 from harmonyApp.models import Comentarios, Credenciales, Usuario
 from harmonyApp.operations.imgru import actualizar_imagen, subir_imagen
-from harmonyApp.operations.utils import  cifrarClaves, comunicacionMillyApi, decifrarClaves, detectarStopWords, eliminar_tildes, enviar_correo_inicio_sesion, get_comentariosVer
+from harmonyApp.operations.utils import  cifrarClaves, comunicacionMillyApi, decifrarClaves, eliminar_tildes, get_comentariosVer
 from harmonyProject.database import MongoDBConnection
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -18,6 +18,8 @@ from io import BytesIO
 import base64
 import matplotlib.pyplot as plt
 from bson import ObjectId, errors
+import matplotlib.colors as mcolors
+import datetime
 
 
 # Create your views here.
@@ -62,23 +64,20 @@ def pantalla_estadisticas(request, usuario_id):
         
         # Contar la cantidad de mensajes por día
         mensajes_por_dia = df.groupby('fecha_dia').size()
-        
-        # Calcular el ancho de las barras
-        ancho_barra_dias = 2  # Ancho de la barra en días
-        ancho_barra_milisegundos = ancho_barra_dias * 24 * 60 * 60 * 1000  # Convertir días a milisegundos
+        hoy = datetime.datetime.now().date()
+        inicio_semana = hoy - datetime.timedelta(days=hoy.weekday())
+        fin_semana = inicio_semana + datetime.timedelta(days=7)  
 
         # Crear gráfico de barras con Plotly
+       # Crear gráfico de barras con Plotly y ajustar el espaciado entre barras
         fig = px.bar(x=mensajes_por_dia.index, y=mensajes_por_dia.values, labels={'x': 'Fecha', 'y': 'Cantidad de Mensajes'})
         fig.update_layout(title='Mensajes Enviados a Milly', xaxis_title='Fecha', yaxis_title='Cantidad de Mensajes', plot_bgcolor='rgba(0,0,0,0)', title_x=0.5) # Establecer un color de fondo para el gráfico
-        fig.update_xaxes(tickformat="%d/%m/%Y", tickangle=45, tickvals=mensajes_por_dia.index, tickmode='array', showline=True, linewidth=2, linecolor='black')  # Formato de fecha: Día/Mes/Año y rotación de 45 grados
+        fig.update_xaxes(tickformat="%d/%m/%Y", tickangle=25, tickvals=mensajes_por_dia.index, tickmode='array', showline=True, linewidth=2, linecolor='black', range=[inicio_semana, fin_semana])  # Establecer los límites del eje x para la semana actual
         fig.update_yaxes(range=[0, mensajes_por_dia.max()*1.1], fixedrange=True,showline=True, linewidth=2, linecolor='black')  # Fijar el rango del eje y para que siempre sea positivo
-        fig.update_traces(width=ancho_barra_milisegundos)
+        fig.update_traces(marker_color='#6F698C', selector=dict(type='bar'))  # Cambiar el color de las barras
         plot_div = opy.plot(fig, auto_open=False, output_type='div')
-        
-
-
         ##############
- #Promedio de calificacion 
+      
         # Crear un DataFrame vacío
         dfCal = pd.DataFrame()
         calificaciones_cursor = db_connection.db.Calificacion.find()
@@ -87,22 +86,42 @@ def pantalla_estadisticas(request, usuario_id):
         for calificacion in calificaciones_cursor:
             dfCal.at[(calificacion['calificacion']-1),'contador'] += 1
 
-        dfCal.plot.pie(y='contador', figsize=(4, 4), labels=dfCal['calificacion'])
+        # Colores personalizados
+        colores_personalizados = ['#DC3545', '#FFC107', '#007BFF', '#17A2B8', '#28A745']
+
+        # Se crea el gráfico de dona
+        plt.figure(figsize=(4, 5))
+        plt.pie(dfCal['contador'], startangle=90, colors=colores_personalizados, wedgeprops=dict(width=0.4))
+
+        plt.axis('equal')  # Hace que el gráfico sea circular
+        plt.title('Distribución de Calificaciones')
+        plt.legend(loc='lower center', labels=['1', '2', '3', '4', '5'], bbox_to_anchor=(0.5, -0.15), ncol=5)
+        #plt.axis('equal')  # Hace que el gráfico sea circular
+        #######
         img = BytesIO()
         plt.savefig(img, format='png')
         img.seek(0)
         plot = base64.b64encode(img.read()).decode()
         
+        
+        #Promedio de calificacion 
         promCalificacion= ((dfCal['contador']*dfCal['calificacion']).sum()) / dfCal['contador'].sum()
 
         promCalificacion = round(promCalificacion,2)
 
 
-        ##############3
+        ##############
         mensajes_enviados = df['mensaje'].count()
         elementos_mas_repetidos = df['mensaje'].value_counts().head(1).index.tolist()
 
-        return render(request, "pantalla_estadisticas/pantalla_estadisticas.html", {"plot": plot, "usuario_id": usuario_id, "cantidad_usuarios": cantidad_usuarios, "mensajes_enviados": mensajes_enviados, "elementos_mas_repetidos": elementos_mas_repetidos, "promCalificacion": promCalificacion, "plot_div": plot_div })
+        ##############
+        usuario_dict = db_connection.db.Usuario.find_one({'_id': usuario_id})
+            # Crear una instancia del modelo Usuario con los datos obtenidos
+        conversaciones = usuario_dict.get('conversaciones', [])
+        total_preguntas = sum(len(sublista) for sublista in conversaciones)
+        total_conversaciones = len(conversaciones)
+      
+        return render(request, "pantalla_estadisticas/pantalla_estadisticas.html", {"plot": plot, "usuario_id": usuario_id, "cantidad_usuarios": cantidad_usuarios, "mensajes_enviados": mensajes_enviados, "elementos_mas_repetidos": elementos_mas_repetidos, "promCalificacion": promCalificacion, "plot_div": plot_div,"total_preguntas": total_preguntas,"total_conversaciones":total_conversaciones })
 
     except Exception as e:
         print(e)
