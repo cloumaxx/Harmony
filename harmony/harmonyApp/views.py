@@ -19,7 +19,8 @@ import base64
 import matplotlib.pyplot as plt
 from bson import ObjectId, errors
 import matplotlib.colors as mcolors
-import datetime
+from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
 
 
 # Create your views here.
@@ -64,10 +65,9 @@ def pantalla_estadisticas(request, usuario_id):
         
         # Contar la cantidad de mensajes por día
         mensajes_por_dia = df.groupby('fecha_dia').size()
-        hoy = datetime.datetime.now().date()
-        inicio_semana = hoy - datetime.timedelta(days=hoy.weekday())
-        fin_semana = inicio_semana + datetime.timedelta(days=7)  
-
+        hoy = datetime.now()
+        inicio_semana = hoy - timedelta(days=hoy.weekday())
+        fin_semana = inicio_semana + timedelta(days=6)
         # Crear gráfico de barras con Plotly
        # Crear gráfico de barras con Plotly y ajustar el espaciado entre barras
         fig = px.bar(x=mensajes_por_dia.index, y=mensajes_por_dia.values, labels={'x': 'Fecha', 'y': 'Cantidad de Mensajes'})

@@ -52,16 +52,10 @@ intents:
   - recomendacion_diarrea_indigestion
   - sintoma_comun_gripe_y_estornudos
   - origen_gripe_y_estornudos
-  - gripe_y_estornudos_allegados
-  - definicion_gripe_y_estornudos
   - tipos_gripe_y_estornudos
   - recomendacion_gripe_y_estornudos
-  - sintoma_comun_gripe_y_estornudos
-  - origen_gripe_y_estornudos
   - gripe_y_estornudos_allegados
   - definicion_gripe_y_estornudos
-  - tipos_gripe_y_estornudos
-  - recomendacion_gripe_y_estornudos
   - sintoma_comun_falta_apetito
   - origen_falta_apetito
   - falta_apetito_allegados
@@ -90,6 +84,18 @@ intents:
   - tratamiento_hormonas
   - agradecimiento
   - exception
+  - origen_insomnio
+  - insomnio_allegados
+  - sentir_migrana
+  - recomendacion_insomnio
+  - definicion_insomnio
+  - sintoma_comun_insomnio
+  - tipos_insomnio
+  - origen_migrana
+  - migrana_allegados
+  - definicion_migrana
+  - tipos_migrana
+  
 
 responses:
   utter_preguntar_version:
@@ -574,9 +580,9 @@ responses:
 
   #MAREOS
 
-  #------------------------------------------------------
+#------------------------------------------------------
 
-    utter_sintoma_comun_mareos: 
+  utter_sintoma_comun_mareos: 
   - text: "Los mareos constantemente dependen de muchos factores como el vertigo, la deshidratación, la falta de alimento e incluso con el ejercicio. Algo que puede ayudarte con los mareos es inhalar un poco de alcohol etilico, tener una buena alimentación y no sobreexigir tu cuerpo a ejercicio excesivo"
   - text: "Los mareos pueden estar relacionados con varios factores como el vértigo, la deshidratación, la falta de alimentos e incluso el ejercicio intenso. Puedes aliviar los mareos manteniendo una buena hidratación, una alimentación adecuada y evitando el ejercicio excesivo."
   - text: "Los mareos son síntomas que pueden ser causados por diversas razones, como el vértigo, la deshidratación, la falta de alimentos e incluso el ejercicio vigoroso. Para aliviar los mareos, es importante mantenerse bien hidratado, comer adecuadamente y no exagerar con el ejercicio."
@@ -711,16 +717,16 @@ responses:
   - text: "Lamento profundamente que estén experimentando estas náuseas y vómitos. Te insto a que busques un enfoque multidisciplinario que combine tratamientos médicos convencionales con terapias complementarias, como la terapia cognitivo-conductual o la fisioterapia, para obtener los mejores resultados posibles."
  
   utter_definicion_nauseas_y_vomito:
-  - text: "Los mareos, acompanados de náuseas y vómitos, constituyen una experiencia extremadamente incómoda y debilitante para quienes los experimentan".
-  - text: "La combinación de mareos, náuseas y vómitos puede indicar una variedad de condiciones médicas subyacentes, desde trastornos del oído interno hasta problemas gastrointestinales o neurológicos".
-  - text: "La presencia de náuseas junto con los mareos sugiere una alteración en el sistema vestibular, el cual es responsable del equilibrio y la percepción espacial".
-  - text: "Los episodios de mareos seguidos de náuseas y vómitos pueden desencadenarse por una respuesta del sistema nervioso autónomo ante situaciones de estrés o desequilibrio interno".
-  - text: "Las náuseas y el vómito asociados con los mareos pueden provocar una pérdida de líquidos y electrolitos, lo que agrava aún más la sensación de malestar y debilidad".
-  - text: "El tratamiento de los mareos que incluye náuseas y vómitos a menudo implica medidas para aliviar los síntomas gastrointestinales, como antieméticos y rehidratación oral".
-  - text: "Los mareos acompanados de náuseas y vómitos pueden interferir significativamente con las actividades diarias y la calidad de vida de la persona afectada".
-  - text: "Las personas que experimentan frecuentemente mareos junto con náuseas y vómitos pueden desarrollar un temor anticipatorio a futuros episodios, lo que puede contribuir a la ansiedad y el estrés".
-  - text: "La evaluación médica de los mareos con náuseas y vómitos puede requerir pruebas adicionales para descartar condiciones médicas subyacentes, como trastornos gastrointestinales o neurológicos".
-  - text: "El manejo integral de los mareos que incluye náuseas y vómitos puede requerir un enfoque multidisciplinario que aborde tanto los síntomas vestibulares como los gastrointestinales, con el objetivo de mejorar la calidad de vida y el bienestar general del paciente".
+  - text: "Los mareos, acompanados de náuseas y vómitos, constituyen una experiencia extremadamente incómoda y debilitante para quienes los experimentan"
+  - text: "La combinación de mareos, náuseas y vómitos puede indicar una variedad de condiciones médicas subyacentes, desde trastornos del oído interno hasta problemas gastrointestinales o neurológicos"
+  - text: "La presencia de náuseas junto con los mareos sugiere una alteración en el sistema vestibular, el cual es responsable del equilibrio y la percepción espacial"
+  - text: "Los episodios de mareos seguidos de náuseas y vómitos pueden desencadenarse por una respuesta del sistema nervioso autónomo ante situaciones de estrés o desequilibrio interno"
+  - text: "Las náuseas y el vómito asociados con los mareos pueden provocar una pérdida de líquidos y electrolitos, lo que agrava aún más la sensación de malestar y debilidad"
+  - text: "El tratamiento de los mareos que incluye náuseas y vómitos a menudo implica medidas para aliviar los síntomas gastrointestinales, como antieméticos y rehidratación oral"
+  - text: "Los mareos acompanados de náuseas y vómitos pueden interferir significativamente con las actividades diarias y la calidad de vida de la persona afectada"
+  - text: "Las personas que experimentan frecuentemente mareos junto con náuseas y vómitos pueden desarrollar un temor anticipatorio a futuros episodios, lo que puede contribuir a la ansiedad y el estrés"
+  - text: "La evaluación médica de los mareos con náuseas y vómitos puede requerir pruebas adicionales para descartar condiciones médicas subyacentes, como trastornos gastrointestinales o neurológicos"
+  - text: "El manejo integral de los mareos que incluye náuseas y vómitos puede requerir un enfoque multidisciplinario que aborde tanto los síntomas vestibulares como los gastrointestinales, con el objetivo de mejorar la calidad de vida y el bienestar general del paciente"
   
   utter_tipos_nauseas_y_vomito:
   - text: "Los mareos leves acompanados de náuseas pueden indicar una sensación de malestar general."
@@ -800,16 +806,16 @@ responses:
   - text: "Lamento profundamente que estén experimentando esta diarrea e indigestión. Te insto a que busques un enfoque multidisciplinario que combine tratamientos médicos convencionales con terapias complementarias, como la fisioterapia o la terapia nutricional, para obtener los mejores resultados posibles."
   
   utter_definicion_diarrea_indigestion:
-  - text: "Los mareos acompanados de náuseas, vómitos, diarrea e indigestión forman un conjunto de síntomas que pueden indicar una alteración en múltiples sistemas del cuerpo".
-  - text: "La combinación de mareos, náuseas, vómitos, diarrea e indigestión puede sugerir una reacción adversa a alimentos o toxinas, como la intoxicación alimentaria".
-  - text: "La presencia de diarrea e indigestión junto con los mareos puede indicar una respuesta del sistema gastrointestinal a un desequilibrio interno o una infección".
-  - text: "Los episodios de mareos seguidos de náuseas, vómitos, diarrea e indigestión pueden desencadenarse por factores como la intolerancia a ciertos alimentos, el estrés o trastornos gastrointestinales subyacentes".
-  - text: "La diarrea y la indigestión asociadas con los mareos pueden provocar una pérdida significativa de líquidos y electrolitos, lo que agrava aún más la sensación de malestar y debilidad".
-  - text: "El tratamiento de los mareos que incluye diarrea e indigestión a menudo implica medidas para aliviar los síntomas gastrointestinales, como la ingesta de líquidos, la dieta blanda y, en algunos casos, medicamentos para controlar la diarrea".
-  - text: "Los mareos acompanados de náuseas, vómitos, diarrea e indigestión pueden interferir significativamente con las actividades diarias y la calidad de vida de la persona afectada".
-  - text: "Las personas que experimentan con frecuencia mareos junto con náuseas, vómitos, diarrea e indigestión pueden experimentar una disminución en su estado nutricional y bienestar general".
-  - text: "La evaluación médica de los mareos con náuseas, vómitos, diarrea e indigestión puede requerir pruebas adicionales para descartar condiciones médicas subyacentes, como trastornos gastrointestinales o infecciones".
-  - text: "El manejo integral de los mareos que incluye náuseas, vómitos, diarrea e indigestión puede requerir un enfoque multidisciplinario que aborde tanto los síntomas vestibulares como los gastrointestinales, con el objetivo de mejorar la calidad de vida y el bienestar general del paciente".
+  - text: "Los mareos acompanados de náuseas, vómitos, diarrea e indigestión forman un conjunto de síntomas que pueden indicar una alteración en múltiples sistemas del cuerpo"
+  - text: "La combinación de mareos, náuseas, vómitos, diarrea e indigestión puede sugerir una reacción adversa a alimentos o toxinas, como la intoxicación alimentaria"
+  - text: "La presencia de diarrea e indigestión junto con los mareos puede indicar una respuesta del sistema gastrointestinal a un desequilibrio interno o una infección"
+  - text: "Los episodios de mareos seguidos de náuseas, vómitos, diarrea e indigestión pueden desencadenarse por factores como la intolerancia a ciertos alimentos, el estrés o trastornos gastrointestinales subyacentes"
+  - text: "La diarrea y la indigestión asociadas con los mareos pueden provocar una pérdida significativa de líquidos y electrolitos, lo que agrava aún más la sensación de malestar y debilidad"
+  - text: "El tratamiento de los mareos que incluye diarrea e indigestión a menudo implica medidas para aliviar los síntomas gastrointestinales, como la ingesta de líquidos, la dieta blanda y, en algunos casos, medicamentos para controlar la diarrea"
+  - text: "Los mareos acompanados de náuseas, vómitos, diarrea e indigestión pueden interferir significativamente con las actividades diarias y la calidad de vida de la persona afectada"
+  - text: "Las personas que experimentan con frecuencia mareos junto con náuseas, vómitos, diarrea e indigestión pueden experimentar una disminución en su estado nutricional y bienestar general"
+  - text: "La evaluación médica de los mareos con náuseas, vómitos, diarrea e indigestión puede requerir pruebas adicionales para descartar condiciones médicas subyacentes, como trastornos gastrointestinales o infecciones"
+  - text: "El manejo integral de los mareos que incluye náuseas, vómitos, diarrea e indigestión puede requerir un enfoque multidisciplinario que aborde tanto los síntomas vestibulares como los gastrointestinales, con el objetivo de mejorar la calidad de vida y el bienestar general del paciente"
  
   utter_tipos_diarrea_indigestion:
   - text: "La diarrea y la indigestión pueden indicar una sensación de malestar gastrointestinal."
@@ -887,16 +893,16 @@ responses:
   - text: "Lamento profundamente que estén experimentando esta fiebre. Te insto a que busques un enfoque multidisciplinario que combine tratamientos médicos convencionales con terapias complementarias, como la acupuntura o la terapia de ejercicio suave, para obtener alivio y una pronta recuperación."
   
   utter_definicion_fiebre:
-  - text: "La fiebre es una respuesta del sistema inmunológico ante una infección o inflamación en el cuerpo, que se caracteriza por un aumento anormal de la temperatura corporal".
-  - text: "La fiebre puede indicar la presencia de una enfermedad subyacente, como una infección viral, bacteriana o fúngica, o una reacción inflamatoria ante un dano tisular".
-  - text: "La fiebre puede acompanarse de otros síntomas, como escalofríos, sudoración, dolores musculares y fatiga, dependiendo de la causa subyacente".
-  - text: "Es importante controlar la fiebre adecuadamente mediante la ingesta de líquidos, reposo y, en algunos casos, medicamentos antipiréticos, para evitar complicaciones y promover la recuperación".
-  - text: "La fiebre persistente o alta, especialmente si se acompana de otros síntomas graves, puede requerir atención médica inmediata para determinar la causa subyacente y recibir tratamiento adecuado".
-  - text: "El tratamiento de la fiebre se centra en abordar la causa subyacente, ya sea mediante el uso de medicamentos antivirales, antibióticos u otros tratamientos específicos según el diagnóstico médico".
-  - text: "La fiebre puede ser un mecanismo de defensa del cuerpo para combatir la infección, pero en ciertos casos puede ser perjudicial si no se controla adecuadamente".
-  - text: "Las personas con fiebre deben vigilar su temperatura corporal regularmente y buscar atención médica si experimentan síntomas preocupantes o si la fiebre persiste durante más de unos pocos días".
-  - text: "La prevención de la fiebre implica mantener un estilo de vida saludable, practicar una buena higiene personal y evitar el contacto cercano con personas enfermas para reducir el riesgo de infecciones".
-  - text: "Es fundamental mantener una comunicación abierta con el médico para recibir orientación sobre el manejo adecuado de la fiebre y garantizar una recuperación óptima".
+  - text: "La fiebre es una respuesta del sistema inmunológico ante una infección o inflamación en el cuerpo, que se caracteriza por un aumento anormal de la temperatura corporal"
+  - text: "La fiebre puede indicar la presencia de una enfermedad subyacente, como una infección viral, bacteriana o fúngica, o una reacción inflamatoria ante un dano tisular"
+  - text: "La fiebre puede acompanarse de otros síntomas, como escalofríos, sudoración, dolores musculares y fatiga, dependiendo de la causa subyacente"
+  - text: "Es importante controlar la fiebre adecuadamente mediante la ingesta de líquidos, reposo y, en algunos casos, medicamentos antipiréticos, para evitar complicaciones y promover la recuperación"
+  - text: "La fiebre persistente o alta, especialmente si se acompana de otros síntomas graves, puede requerir atención médica inmediata para determinar la causa subyacente y recibir tratamiento adecuado"
+  - text: "El tratamiento de la fiebre se centra en abordar la causa subyacente, ya sea mediante el uso de medicamentos antivirales, antibióticos u otros tratamientos específicos según el diagnóstico médico"
+  - text: "La fiebre puede ser un mecanismo de defensa del cuerpo para combatir la infección, pero en ciertos casos puede ser perjudicial si no se controla adecuadamente"
+  - text: "Las personas con fiebre deben vigilar su temperatura corporal regularmente y buscar atención médica si experimentan síntomas preocupantes o si la fiebre persiste durante más de unos pocos días"
+  - text: "La prevención de la fiebre implica mantener un estilo de vida saludable, practicar una buena higiene personal y evitar el contacto cercano con personas enfermas para reducir el riesgo de infecciones"
+  - text: "Es fundamental mantener una comunicación abierta con el médico para recibir orientación sobre el manejo adecuado de la fiebre y garantizar una recuperación óptima"
 
   utter_tipos_fiebre:
   - text: "Los tipos de fiebre abarcan desde la intermitente hasta la asociada a enfermedades particulares como la fiebre tifoidea o del dengue."
@@ -976,16 +982,16 @@ responses:
   - text: "Lamento profundamente que estén experimentando esta gripe y estornudos. Te insto a que busques un enfoque integral que combine tratamientos médicos convencionales con medidas de autocuidado, como descansar lo suficiente y mantenerse bien hidratado, para una pronta recuperación."
 
   utter_definicion_gripe_y_estornudos:
-  - text: "La gripe es una enfermedad viral contagiosa que afecta las vías respiratorias, causando síntomas como fiebre, congestión nasal, dolores musculares y, a menudo, estornudos".
-  - text: "Los estornudos son un síntoma común de la gripe, provocados por la irritación de las vías respiratorias superiores debido a la presencia del virus influenza".
-  - text: "Los estornudos son una forma en la que el cuerpo intenta deshacerse del virus, expulsándolo junto con las secreciones nasales que pueden contener partículas virales".
-  - text: "Durante un episodio de gripe, los estornudos pueden ser frecuentes y pueden aumentar la propagación del virus a través de gotas respiratorias expulsadas al ambiente".
-  - text: "La combinación de gripe y estornudos puede provocar una sensación de malestar general, fatiga y debilidad, lo que afecta significativamente la calidad de vida del paciente".
-  - text: "Es importante tomar medidas preventivas, como lavarse las manos con frecuencia, cubrirse la boca y la nariz al estornudar o toser, y evitar el contacto cercano con personas enfermas para reducir la propagación de la gripe".
-  - text: "El tratamiento de la gripe generalmente incluye reposo, ingesta adecuada de líquidos y, en algunos casos, medicamentos antivirales recetados por un médico".
-  - text: "Los estornudos asociados con la gripe pueden ser especialmente problemáticos para las personas vulnerables, como los ancianos, los ninos pequenos y aquellos con sistemas inmunológicos comprometidos".
-  - text: "La vacunación anual contra la gripe es una medida efectiva para prevenir la enfermedad y reducir la gravedad de los síntomas en caso de contagio".
-  - text: "Si experimentas síntomas de gripe, incluidos estornudos frecuentes, es importante consultar a un médico para recibir un diagnóstico adecuado y tratamiento según sea necesario".
+  - text: "La gripe es una enfermedad viral contagiosa que afecta las vías respiratorias, causando síntomas como fiebre, congestión nasal, dolores musculares y, a menudo, estornudos"
+  - text: "Los estornudos son un síntoma común de la gripe, provocados por la irritación de las vías respiratorias superiores debido a la presencia del virus influenza"
+  - text: "Los estornudos son una forma en la que el cuerpo intenta deshacerse del virus, expulsándolo junto con las secreciones nasales que pueden contener partículas virales"
+  - text: "Durante un episodio de gripe, los estornudos pueden ser frecuentes y pueden aumentar la propagación del virus a través de gotas respiratorias expulsadas al ambiente"
+  - text: "La combinación de gripe y estornudos puede provocar una sensación de malestar general, fatiga y debilidad, lo que afecta significativamente la calidad de vida del paciente"
+  - text: "Es importante tomar medidas preventivas, como lavarse las manos con frecuencia, cubrirse la boca y la nariz al estornudar o toser, y evitar el contacto cercano con personas enfermas para reducir la propagación de la gripe"
+  - text: "El tratamiento de la gripe generalmente incluye reposo, ingesta adecuada de líquidos y, en algunos casos, medicamentos antivirales recetados por un médico"
+  - text: "Los estornudos asociados con la gripe pueden ser especialmente problemáticos para las personas vulnerables, como los ancianos, los ninos pequenos y aquellos con sistemas inmunológicos comprometidos"
+  - text: "La vacunación anual contra la gripe es una medida efectiva para prevenir la enfermedad y reducir la gravedad de los síntomas en caso de contagio"
+  - text: "Si experimentas síntomas de gripe, incluidos estornudos frecuentes, es importante consultar a un médico para recibir un diagnóstico adecuado y tratamiento según sea necesario"
   
   utter_tipos_gripe_y_estornudos:
   - text: "Desde la gripe estacional hasta la influenza pandémica, y los estornudos que pueden acompanarlas, hay una variedad de infecciones respiratorias."
@@ -1063,16 +1069,16 @@ responses:
   - text: "Lamento profundamente que estén experimentando este insomnio. Te insto a que busques un enfoque integral que combine tratamientos médicos y terapias alternativas, junto con hábitos de higiene del sueno, para mejorar la calidad de descanso y bienestar general."
 
   utter_definicion_insomnio:
-  - text: "El insomnio es un trastorno del sueno caracterizado por la dificultad para conciliar el sueno, permanecer dormido o disfrutar de un sueno reparador".
-  - text: "Durante el insomnio, las personas pueden experimentar un aumento del estado de alerta nocturno, lo que dificulta el proceso natural de conciliación del sueno".
-  - text: "El insomnio puede tener diversas causas, que van desde el estrés y la ansiedad hasta trastornos médicos subyacentes, como el síndrome de piernas inquietas o la apnea del sueno".
-  - text: "Los efectos del insomnio pueden incluir fatiga diurna, irritabilidad, dificultad para concentrarse y disminución del rendimiento laboral o académico".
-  - text: "La falta de sueno puede afectar negativamente la salud física y mental a largo plazo, aumentando el riesgo de desarrollar enfermedades crónicas como la diabetes, la obesidad y las enfermedades cardiovasculares".
-  - text: "El tratamiento del insomnio puede implicar cambios en el estilo de vida, como establecer una rutina de sueno regular, practicar técnicas de relajación y evitar el consumo de cafeína o alcohol antes de acostarse".
-  - text: "En algunos casos, se pueden recetar medicamentos para ayudar a conciliar el sueno, pero estos deben usarse con precaución y bajo la supervisión de un médico".
-  - text: "El insomnio crónico puede requerir la evaluación y el tratamiento por parte de un profesional de la salud mental o un especialista en trastornos del sueno".
-  - text: "Es importante abordar el insomnio de manera temprana para prevenir complicaciones adicionales y mejorar la calidad de vida".
-  - text: "Adoptar hábitos de sueno saludables y buscar ayuda profesional cuando sea necesario pueden ser pasos cruciales para superar el insomnio y promover un sueno reparador".
+  - text: "El insomnio es un trastorno del sueno caracterizado por la dificultad para conciliar el sueno, permanecer dormido o disfrutar de un sueno reparador"
+  - text: "Durante el insomnio, las personas pueden experimentar un aumento del estado de alerta nocturno, lo que dificulta el proceso natural de conciliación del sueno"
+  - text: "El insomnio puede tener diversas causas, que van desde el estrés y la ansiedad hasta trastornos médicos subyacentes, como el síndrome de piernas inquietas o la apnea del sueno"
+  - text: "Los efectos del insomnio pueden incluir fatiga diurna, irritabilidad, dificultad para concentrarse y disminución del rendimiento laboral o académico"
+  - text: "La falta de sueno puede afectar negativamente la salud física y mental a largo plazo, aumentando el riesgo de desarrollar enfermedades crónicas como la diabetes, la obesidad y las enfermedades cardiovasculares"
+  - text: "El tratamiento del insomnio puede implicar cambios en el estilo de vida, como establecer una rutina de sueno regular, practicar técnicas de relajación y evitar el consumo de cafeína o alcohol antes de acostarse"
+  - text: "En algunos casos, se pueden recetar medicamentos para ayudar a conciliar el sueno, pero estos deben usarse con precaución y bajo la supervisión de un médico"
+  - text: "El insomnio crónico puede requerir la evaluación y el tratamiento por parte de un profesional de la salud mental o un especialista en trastornos del sueno"
+  - text: "Es importante abordar el insomnio de manera temprana para prevenir complicaciones adicionales y mejorar la calidad de vida"
+  - text: "Adoptar hábitos de sueno saludables y buscar ayuda profesional cuando sea necesario pueden ser pasos cruciales para superar el insomnio y promover un sueno reparador"
 
   utter_tipos_insomnio:
   - text: "Existen diversas clasificaciones de insomnio, que abarcan desde el agudo hasta el relacionado con la higiene del sueno."
@@ -1152,16 +1158,16 @@ responses:
   - text: "Lamento profundamente que estén experimentando esta falta de apetito. Te insto a que busques un enfoque integral que combine el tratamiento médico con cambios en la dieta y el estilo de vida, así como el apoyo emocional necesario para superar este desafío y mejorar la salud nutricional."
 
   utter_definicion_falta_apetito:
-  - text: "La falta de apetito es una condición en la que se experimenta una disminución o pérdida del deseo de comer, lo que puede deberse a una variedad de factores como estrés, ansiedad o enfermedades subyacentes".
-  - text: "La falta de apetito puede ser temporal o crónica, y puede tener un impacto significativo en la ingesta nutricional y el bienestar general de una persona".
-  - text: "La falta de apetito puede estar asociada con cambios en el estado de ánimo, trastornos del sueno, fatiga y otros síntomas físicos y emocionales".
-  - text: "Durante períodos de falta de apetito, es importante intentar consumir alimentos nutritivos y fáciles de digerir para garantizar una ingesta adecuada de nutrientes".
-  - text: "El estrés y la ansiedad pueden desencadenar la falta de apetito al afectar el funcionamiento del sistema digestivo y reducir el interés por la comida".
-  - text: "Los cambios en los hábitos alimenticios, los trastornos alimentarios y ciertas condiciones médicas, como la depresión o la enfermedad crónica, pueden contribuir a la falta de apetito".
-  - text: "La falta de apetito puede ser un síntoma de enfermedades físicas, como infecciones, problemas gastrointestinales, problemas de tiroides o cáncer, que requieren evaluación médica y tratamiento adecuado".
-  - text: "Los cambios en el sentido del gusto y el olfato, así como los efectos secundarios de ciertos medicamentos, también pueden contribuir a la falta de apetito".
-  - text: "El tratamiento de la falta de apetito puede implicar abordar la causa subyacente, así como adoptar estrategias para mejorar el apetito, como la práctica de ejercicio regular y la reducción del estrés".
-  - text: "Si la falta de apetito persiste durante un período prolongado o está afectando significativamente la salud y el bienestar, es importante buscar orientación médica para identificar y abordar las causas subyacentes".
+  - text: "La falta de apetito es una condición en la que se experimenta una disminución o pérdida del deseo de comer, lo que puede deberse a una variedad de factores como estrés, ansiedad o enfermedades subyacentes"
+  - text: "La falta de apetito puede ser temporal o crónica, y puede tener un impacto significativo en la ingesta nutricional y el bienestar general de una persona"
+  - text: "La falta de apetito puede estar asociada con cambios en el estado de ánimo, trastornos del sueno, fatiga y otros síntomas físicos y emocionales"
+  - text: "Durante períodos de falta de apetito, es importante intentar consumir alimentos nutritivos y fáciles de digerir para garantizar una ingesta adecuada de nutrientes"
+  - text: "El estrés y la ansiedad pueden desencadenar la falta de apetito al afectar el funcionamiento del sistema digestivo y reducir el interés por la comida"
+  - text: "Los cambios en los hábitos alimenticios, los trastornos alimentarios y ciertas condiciones médicas, como la depresión o la enfermedad crónica, pueden contribuir a la falta de apetito"
+  - text: "La falta de apetito puede ser un síntoma de enfermedades físicas, como infecciones, problemas gastrointestinales, problemas de tiroides o cáncer, que requieren evaluación médica y tratamiento adecuado"
+  - text: "Los cambios en el sentido del gusto y el olfato, así como los efectos secundarios de ciertos medicamentos, también pueden contribuir a la falta de apetito"
+  - text: "El tratamiento de la falta de apetito puede implicar abordar la causa subyacente, así como adoptar estrategias para mejorar el apetito, como la práctica de ejercicio regular y la reducción del estrés"
+  - text: "Si la falta de apetito persiste durante un período prolongado o está afectando significativamente la salud y el bienestar, es importante buscar orientación médica para identificar y abordar las causas subyacentes"
 
   utter_tipos_falta_apetito:
   - text: "La ausencia de deseo por la comida puede presentarse en variadas maneras y ser resultado de distintos factores."

@@ -434,7 +434,7 @@ stories:
     - intent: sintoma_comun_fiebre
     - action: utter_sintoma_comun_fiebre
     - intent: origen_fiebre
-    - action: utter_fiebre
+    - action: utter_origen_fiebre
 
 - story: sintoma_comun_fiebre path 3
   steps:
@@ -595,7 +595,7 @@ stories:
     - intent: sintoma_comun_mareos
     - action: utter_sintoma_comun_mareos
     - intent: origen_mareos
-    - action: utter_mareos
+    - action: utter_origen_mareos
 
 - story: sintoma_comun_mareos path 3
   steps:
@@ -757,7 +757,7 @@ stories:
     - intent: sintoma_comun_nauseas_y_vomito
     - action: utter_sintoma_comun_nauseas_y_vomito
     - intent: origen_nauseas_y_vomito
-    - action: utter_nauseas_y_vomito
+    - action: utter_origen_nauseas_y_vomito
 
 - story: sintoma_comun_nauseas_y_vomito path 3
   steps:
@@ -917,7 +917,7 @@ stories:
     - intent: sintoma_comun_diarrea_indigestion
     - action: utter_sintoma_comun_diarrea_indigestion
     - intent: origen_diarrea_indigestion
-    - action: utter_diarrea_indigestion
+    - action: utter_origen_diarrea_indigestion
 
 - story: sintoma_comun_diarrea_indigestion path 3
   steps:
@@ -1078,7 +1078,7 @@ stories:
     - intent: sintoma_comun_gripe_y_estornudos
     - action: utter_sintoma_comun_gripe_y_estornudos
     - intent: origen_gripe_y_estornudos
-    - action: utter_gripe_y_estornudos
+    - action: utter_origen_gripe_y_estornudos
 
 - story: sintoma_comun_gripe_y_estornudos path 3
   steps:
@@ -1239,7 +1239,7 @@ stories:
     - intent: sintoma_comun_insomnio
     - action: utter_sintoma_comun_insomnio
     - intent: origen_insomnio
-    - action: utter_insomnio
+    - action: utter_origen_insomnio
 
 - story: sintoma_comun_insomnio path 3
   steps:
@@ -1400,7 +1400,7 @@ stories:
     - intent: sintoma_comun_falta_apetito
     - action: utter_sintoma_comun_falta_apetito
     - intent: origen_falta_apetito
-    - action: utter_falta_apetito
+    - action: utter_origen_falta_apetito
 
 - story: sintoma_comun_falta_apetito path 3
   steps:

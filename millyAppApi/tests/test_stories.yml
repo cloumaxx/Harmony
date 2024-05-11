@@ -24,3 +24,71 @@ steps:
     - user: |
         ¿Cuáles son los síntomas de la ansiedad?
     - action: utter_responder_sintomas_ansiedad
+  - story: preguntar_version_path
+    steps:
+      - intent: preguntar_version
+      - action: utter_preguntar_version
+
+  - story: saludando_path
+    steps:
+      - intent: saludar
+      - action: utter_saludar
+
+  - story: despidiendose_path
+    steps:
+      - intent: despedirse
+      - action: utter_despedirse
+
+  - story: presentandose_path
+    steps:
+      - intent: presentarse
+      - action: utter_presentarse
+
+  - story: expresando_sentimientos_bien_path
+    steps:
+      - intent: sentir_bien
+      - action: utter_sentir_bien
+      - intent: agradecer
+      - action: utter_agradecer
+
+  - story: expresando_sentimientos_mal_path
+    steps:
+      - intent: sentir_mal
+      - action: utter_sentir_mal
+      - intent: ofrecer_ayuda
+      - action: utter_ofrecer_ayuda
+
+  - story: expresando_sentimientos_soledad_path
+    steps:
+      - intent: sentir_soledad
+      - action: utter_sentir_soledad
+      - intent: brindar_apoyo
+      - action: utter_brindar_apoyo
+
+  - story: obteniendo_definicion_ansiedad_path
+    steps:
+      - intent: definicion_ansiedad
+      - action: utter_definicion_ansiedad
+      - intent: solicitar_mas_informacion
+      - action: utter_solicitar_mas_informacion
+
+  - story: expresando_sentimientos_ansiedad_path
+    steps:
+      - intent: sentir_ansiedad
+      - action: utter_sentir_ansiedad
+      - intent: ofrecer_recursos
+      - action: utter_ofrecer_recursos
+
+  - story: obteniendo_sintomas_ansiedad_path
+    steps:
+      - intent: sintomas_ansiedad
+      - action: utter_sintomas_ansiedad
+      - intent: preguntar_experiencia_personal
+      - action: utter_preguntar_experiencia_personal
+
+  - story: buscando_tratamiento_ansiedad_path
+    steps:
+      - intent: tratamiento_ansiedad
+      - action: utter_tratamiento_ansiedad
+      - intent: recomendar_terapia
+      - action: utter_recomendar_terapia
