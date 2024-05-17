@@ -245,7 +245,17 @@
                         </div>
                         <div class="mb-3">
                             <p>¿Deseas cambiar tu foto de perfil?</p>
-                            <input type="file" id="nueva_imagen_perfil" name="nueva_imagen_perfil" onchange="previsualizarImagen(event)" accept="image/png, image/jpeg">
+                            <input type="file" id="nueva_imagen_perfil" name="nueva_imagen_perfil" onchange="previsualizarImagen(event)" accept="image/png, image/jpeg" >
+                            <script>
+                                const uploadField = document.getElementById("nueva_imagen_perfil");
+
+                                uploadField.onchange = function() {
+                                    if(this.files[0].size > 2097152) {
+                                    alert("El archivo no puede exceder los 2 MB!");
+                                    this.value = "";
+                                    }
+                                };
+                            </script>
                         </div>
                         <div class="container">
                             <div class="row">
