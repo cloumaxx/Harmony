@@ -252,12 +252,12 @@
 
                         </div>
                         <div class="col-md-2 d-flex align-items-center justify-content-end">
-
                             <!-- Espacio entre los botones -->
                             <form method="POST"
                                 action="{% url 'incrementar_likes' usuario_id=usuario_id comentario_id=id_comentario %}">
                                 {% csrf_token %}
                                 <div class="container" id="container_like">
+                                    {% if usuario_id_Object in comentario.likes %}
                                     <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" style="color: red;" class="bi bi-heart-fill"
@@ -266,6 +266,17 @@
                                                 d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                                         </svg>
                                     </button>
+                                    {% else %}
+                                    <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" style="color: gray;" class="bi bi-heart-fill"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                        </svg>
+                                    </button>
+                                    {% endif %}
+                                   
                                     <p>{{ comentario.likes|length }}</p>
                                 </div>
                             </form>
@@ -358,6 +369,7 @@
                                 action="{% url 'incrementar_likes_replica' usuario_id=usuario_id comentario_id=id_comentario pos=forloop.counter %}">
                                 {% csrf_token %}
                                 <div class="container" id="container_like">
+                                    {% if usuario_id_Object in replica.likes %}
                                     <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" style="color: red;" class="bi bi-heart-fill"
@@ -366,6 +378,17 @@
                                                 d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                                         </svg>
                                     </button>
+                                    {% else %}
+                                    <button type="submit" class="btn btn-sm p-0" style="font-size: 2rem;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" style="color: gray;" class="bi bi-heart-fill"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                        </svg>
+                                    </button>
+                                    {% endif %}
+                                    
 
                                     <p>{{ replica.likes|length }}</p>
                                 </div>

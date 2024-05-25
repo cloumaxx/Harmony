@@ -151,7 +151,7 @@ def pantalla_foro(request,usuario_id,ordenar="mas likes"):
             'fechaPublicacion' : fechaPublicacion,
             'replicas': comentario.replicas
         }
-
+            
         db_connection.db.Comentarios.insert_one(comentario_dict)
 
         return redirect('pantalla_foro', usuario_id=usuario_id)
@@ -174,8 +174,8 @@ def pantalla_foro(request,usuario_id,ordenar="mas likes"):
         numero_pagina = request.GET.get('page')
         page_obj = paginator.get_page(numero_pagina)
 
-        # ['id_replicas']
-        return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj,'ordenar': ordenar})
+        usuario_id_Object = ObjectId(str(usuario_id))
+        return render(request, "pantalla_foro/pantalla_foro.html", {"usuario_id": usuario_id, "comentarios": page_obj,'ordenar': ordenar,"usuario_id_Object":usuario_id_Object})
     except Exception as e:
         return HttpResponseBadRequest(f"Usuario no válido: {usuario_id}<br> ordenar: {ordenar}<br> comentarios: {comentarios }<br> error: {e}   ")
 
@@ -359,10 +359,11 @@ def pantalla_login(request):
                     request.session['nombre'] = nombre['nombre']
                     request.session['id_user'] = user_id
                     
+
                     return redirect('pantalla_menu_inicial/pantalla_menu_inicial.html',usuario_id=user_id)  
                 else:
-                    messages.error(request, 'Credenciales inválidas')
-                  
+                   
+                    messages.error(request, 'Credenciales inválidas') 
             else:
                 messages.error(request, 'Credenciales inválidas')
 
@@ -571,7 +572,8 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
         url_imagen_perfil = usuario_dict['url_imagen_perfil']
         nombre_usuario = usuario_dict['nombre'] + " " + usuario_dict['apellido']
         conversaciones = usuario_dict['conversaciones']
-        
+        usuario_id_Object = ObjectId(str(usuario_id))
+
         # Crear el objeto Paginator
         
        
@@ -584,7 +586,7 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
         else:
             posicion = posicion
             conversacion = conversaciones[posicion]
-        return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': url_imagen_perfil,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj})
+        return render(request, "pantalla_chatbot/pantalla_chatbot.html", {"usuario_id": usuario_id,"url_imagen_perfil":url_imagen_perfil,'nombre_usuario': url_imagen_perfil,"conversaciones": conversaciones,"conversacion":conversacion,"posicion":posicion, "comentarios": page_obj,"usuario_id_Object":usuario_id_Object})
     except :
         # Manejar el error si el ObjectId no es válido
         #return render(request,"pantalla_chatbot/pantalla_chatbot.html")
