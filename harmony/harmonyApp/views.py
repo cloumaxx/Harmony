@@ -324,14 +324,30 @@ def editar_comentario(request, usuario_id, comentario_id):
 def borrar_comentario(request, usuario_id, comentario_id):
     if request.method == 'POST':
         # Eliminar el comentario de la base de datos
-        
         db_connection.db.Comentarios.delete_one({'_id': ObjectId(comentario_id)})
-        
+       
          # Redirigir al perfil del usuario actualizado
         return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
     
     return HttpResponseBadRequest("Bad Request")
 
+@login_required
+def borrar_replica(request, usuario_id, comentario_id,pos):
+    
+    if request.method == 'POST':
+        # Eliminar el comentario de la base de datos
+       
+        comentario = db_connection.db.Comentarios.find_one({'_id': ObjectId(comentario_id)})
+        comentario['replicas'].pop(pos-1)
+        db_connection.db.Comentarios.update_one(
+            {'_id': ObjectId(comentario_id)},
+            {'$set': {'replicas': comentario['replicas']}}
+        )
+                 
+        # Redirigir al perfil del usuario actualizado
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    
+    return HttpResponseBadRequest("Bad Request")
 """
 /////////////////////////////////////////////////////
 ////// Funciones enfocadas en los usuarios  /////////
