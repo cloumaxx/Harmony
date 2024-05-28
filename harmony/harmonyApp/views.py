@@ -192,7 +192,7 @@ def agregar_replica(request, usuario_id, comentario_id):
             if comentario:
                 replicas = comentario.get('replicas', [])
                 replica_dict = {
-                    
+                    'idReplica':str(ObjectId()),
                     'idRedactorReplica': usuario_id,
                     'contenidoReplica': replica_comentario,
                     'fechaPublicacion': datetime.now(),
@@ -314,6 +314,23 @@ def editar_comentario(request, usuario_id, comentario_id):
         db_connection.db.Comentarios.update_one(
             {'_id': ObjectId(comentario_id)},
             {'$set': {'comentario': nuevo_comentario}}
+        )
+        
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    
+    return HttpResponseBadRequest("Bad Request")
+
+@login_required
+def editar_replica(request, usuario_id, comentario_id, idReplica=""):
+    if request.method == 'POST':
+        nueva_replica = request.POST['replica']
+        print(usuario_id, comentario_id, idReplica)
+        print(nueva_replica)
+        # Actualizar el comentario en la base de datos
+        
+        db_connection.db.Comentarios.update_one(
+            {'_id': ObjectId(comentario_id), 'replicas.idReplica': idReplica},
+            {'$set': {'replicas.$.contenidoReplica': nueva_replica}}
         )
         
         return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))

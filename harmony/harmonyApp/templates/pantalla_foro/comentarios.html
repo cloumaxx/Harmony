@@ -122,17 +122,17 @@
         $("#" + idModal).modal("hide");
     }
 
-    function abrirModalReplica(forloopCounter) {
+    function abrirModalReplica(idModal) {
         // Ocultar las modales anteriores (si las hay)
         $(".modal").modal("hide");
 
         // Mostrar la modal actual
-        $("#modalEditarReplica" + forloopCounter).modal("show");
+        $("#" + idModal).modal("show");
     }
 
-    function cerrarModalReplica(replica) {
+    function cerrarModalReplica(idModal) {
         // Ocultar la modal actual
-        $("#" + replica).modal("hide");
+        $("#" + idModal).modal("hide");
     }
 
     function toggleReplicas(button) {
@@ -401,7 +401,7 @@
             {% endif %}
             <div id="contReplica" style="display: none;">
                 {% for replica in comentario.replicas %}
-
+                
                  <div id="replica" class="container">
                     <div class="row">
                         <div class="col-md-2 d-flex align-items-center">
@@ -480,11 +480,10 @@
 
                                     <li>
 
-                                  
                                             <a class="dropdown-item"
-                                            onclick="abrirModalReplica('{{ forloop.counter }}')">
-
-
+                                            onclick="abrirModalReplica('modalEditarReplica{{ replica.idReplica }}')">
+                                            
+                                            
                                             <button id="btnEditar" type="button" class="btn btn-info rounded-circle"
                                                 title="Editar" data-bs-toggle="tooltip" data-bs-placement="top">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -528,6 +527,31 @@
                     </div>
                 </div>
                 <br>
+                <div class="modal fade" id="modalEditarReplica{{  replica.idReplica }}">
+                    <!-- Contenido de la ventana modal -->
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalAgregarComentarioLabel">Editar Replica</h5>
+                                <button type="button" class="btn-close"
+                                    onclick="cerrarModalReplica('modalEditarReplica{{ replica.idReplica }}')" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Formulario para editar el comentario -->
+                                <form method="POST"
+                                action="{% url 'editar_replica' usuario_id=usuario_id comentario_id=id_comentario idReplica=replica.idReplica %}">
+                                {% csrf_token %}
+        
+                                <textarea name="replica" value="{{ replica.contenidoReplica }}"
+                                    style="width: 90%; height: 150px; "
+                                    placeholder="{{ replica.contenidoReplica }}">{{replica.contenidoReplica}}</textarea> <br><br>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </form>
+            
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
             </div>
 
@@ -586,24 +610,7 @@
         </div>
     </div>
     <!-- Ventana Modal Editar Replica-->
-    <div class="modal fade" id="modalEditarReplica{{ posicion }}">
-        <!-- Contenido de la ventana modal -->
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalAgregarComentarioLabel">Editar Replica</h5>
-                    <button type="button" class="btn-close"
-                        onclick="cerrarModalReplica('modalEditarReplica{{ posicion }}')" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Formulario para editar el comentario -->
-
-
-                    <p>{{comentario.id_replicas}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     {% endfor %}
     <br>
     <br>
