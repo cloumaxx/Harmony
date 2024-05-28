@@ -324,8 +324,7 @@ def editar_comentario(request, usuario_id, comentario_id):
 def editar_replica(request, usuario_id, comentario_id, idReplica=""):
     if request.method == 'POST':
         nueva_replica = request.POST['replica']
-        print(usuario_id, comentario_id, idReplica)
-        print(nueva_replica)
+   
         # Actualizar el comentario en la base de datos
         
         db_connection.db.Comentarios.update_one(
