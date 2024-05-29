@@ -464,7 +464,7 @@ responses:
   #------------------------------------------------------
 
   utter_sintoma_comun_dolor_cabeza: 
-  - text: "Los dolores de cabeza pueden como pueden no estar relacionada con el desarrollo hormonal, pues es un sintoma muy general y es difícil determinar la causa principal. Para tratar el dolor de cabeza lo mas recomendable es descansar o tomar una pastilla para aliviar"
+  - text: "Los dolores de cabeza pueden como pueden no estar relacionada con el desarrollo hormonal, pues es un síntoma muy general y es difícil determinar la causa principal. Para tratar el dolor de cabeza lo mas recomendable es descansar o tomar una pastilla para aliviar"
   - text: "Los dolores de cabeza pueden estar relacionados o no con el desarrollo hormonal, ya que es un síntoma muy general y es difícil determinar la causa principal. Para aliviar el dolor de cabeza, es recomendable descansar o tomar una pastilla para aliviarlo."
   - text: "Los dolores de cabeza pueden o no estar relacionados con cambios hormonales, ya que es un síntoma bastante común y puede tener múltiples causas. Si estás experimentando dolor de cabeza, intenta descansar o tomar un analgésico para aliviarlo."
   - text: "Los dolores de cabeza pueden estar relacionados o no con cambios hormonales, ya que es un síntoma muy general y puede tener diversas causas. Si estás sufriendo de dolor de cabeza, intenta descansar o tomar un analgésico para aliviarlo."
@@ -754,11 +754,11 @@ responses:
 
 #------------------------------------------------------
 
-  #DIARREA E INDIGESTION
+  #DIARREA E INDIGESTIÓN
 
   #------------------------------------------------------
   utter_sintoma_comun_diarrea_indigestion: 
-  - text: "La diarrea y la indigestion es un sintoma que esta relacionado con la ingesta de comida. Cuando sientes diarrea o indigestión significa que tu cuerpo esta tratando de expulsar dichos alimentos que pudiesen ser pesados o en cantidades excesivas. Te recomiendo no ingerir comida tan pesada y en cantidades racionales que tu cuerpo pueda resistir"
+  - text: "La diarrea y la indigestión es un síntoma que esta relacionado con la ingesta de comida. Cuando sientes diarrea o indigestión significa que tu cuerpo esta tratando de expulsar dichos alimentos que pudiesen ser pesados o en cantidades excesivas. Te recomiendo no ingerir comida tan pesada y en cantidades racionales que tu cuerpo pueda resistir"
   - text: "La diarrea y la indigestión son síntomas relacionados con la ingesta de alimentos. Cuando experimentas diarrea o indigestión, significa que tu cuerpo está intentando eliminar alimentos que pueden ser pesados o en cantidades excesivas. Se recomienda evitar comidas muy pesadas y consumir cantidades moderadas que tu cuerpo pueda manejar."
   - text: "La diarrea y la indigestión suelen estar relacionadas con la alimentación. Estos síntomas indican que tu cuerpo está tratando de eliminar alimentos que podrían ser difíciles de digerir o consumidos en exceso. Se sugiere evitar comidas copiosas y moderar las porciones para evitar estos problemas."
   - text: "La diarrea y la indigestión son señales de que tu cuerpo está teniendo dificultades para digerir los alimentos. Es importante moderar la cantidad de comida y evitar alimentos pesados para evitar estos síntomas."
@@ -816,7 +816,7 @@ responses:
   - text: "Las personas que experimentan con frecuencia mareos junto con náuseas, vómitos, diarrea e indigestión pueden experimentar una disminución en su estado nutricional y bienestar general"
   - text: "La evaluación médica de los mareos con náuseas, vómitos, diarrea e indigestión puede requerir pruebas adicionales para descartar condiciones médicas subyacentes, como trastornos gastrointestinales o infecciones"
   - text: "El manejo integral de los mareos que incluye náuseas, vómitos, diarrea e indigestión puede requerir un enfoque multidisciplinario que aborde tanto los síntomas vestibulares como los gastrointestinales, con el objetivo de mejorar la calidad de vida y el bienestar general del paciente"
- 
+
   utter_tipos_diarrea_indigestion:
   - text: "La diarrea y la indigestión pueden indicar una sensación de malestar gastrointestinal."
   - text: "Episodios de indigestión y diarrea pueden ser desencadenados por factores como alimentos picantes o irritantes."
@@ -1004,7 +1004,7 @@ responses:
   - text: "Tanto la gripe estacional como la pandémica pueden ir acompañadas de estornudos, que son una característica distintiva de estas enfermedades respiratorias."
   - text: "Los distintos tipos de gripe, como la estacional y la pandémica, pueden provocar estornudos como parte de los síntomas que presentan estas infecciones respiratorias."
   - text: "Desde la gripe estacional hasta la pandémica, y los estornudos que las acompañan, hay una amplia gama de infecciones respiratorias que afectan a las personas en diferentes momentos y formas."
-  
+  #------------------------------------------------------------------------------------------------------------------------------
   utter_recomendacion_gripe_y_estornudos:
   - text: "Se aconseja descansar, mantenerse hidratado, tomar medicamentos antivirales y analgésicos, usar humidificadores, consumir una dieta saludable, evitar el contacto cercano con personas enfermas, quedarse en casa y consultar a un médico si es necesario para tratar la gripe y los estornudos."
   - text: "Para tratar la gripe y los estornudos, es recomendable descansar, mantenerse hidratado, tomar medicamentos antivirales y analgésicos, usar humidificadores, seguir una dieta saludable, evitar el contacto cercano con personas enfermas, quedarse en casa y buscar atención médica si es necesario."
@@ -1306,7 +1306,7 @@ responses:
 
   #------------------------------------------------------
   utter_sintomas_relacionados_hormona_crecimiento:
-  - text: "El sintoma que me describes posiblemente este relacionado con la hormona del crecimiento (GH), esta hormona se encarga mayormente de estimular y controlar el crecimiento y desarrollo del cuerpo humano" 
+  - text: "El síntoma que me describes posiblemente esté relacionado con la hormona del crecimiento (GH), esta hormona se encarga mayormente de estimular y controlar el crecimiento y desarrollo del cuerpo humano" 
   - text: "Los síntomas que describes podrían estar relacionados con la hormona del crecimiento (GH), la cual se encarga principalmente de estimular y controlar el crecimiento y desarrollo del cuerpo humano."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la hormona del crecimiento (GH), la cual se encarga principalmente de estimular y controlar el crecimiento y desarrollo del cuerpo humano."
   - text: "La descripción que proporcionas sugiere una posible relación con la hormona del crecimiento (GH), la cual se encarga principalmente de estimular y controlar el crecimiento y desarrollo del cuerpo humano."
@@ -1329,7 +1329,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con la hormona del crecimiento (GH), la cual se encarga principalmente de estimular y controlar el crecimiento y desarrollo del cuerpo humano."
 
   utter_sintomas_relacionados_insulina:
-  - text: "El sintoma que me describes posiblemente este relacionado con insulina, esta hormona se encarga de la fomentación de captación celular de glucosa y azúcar en los músculos esquelético y cardíaco, así como en el tejido adiposo"
+  - text: "El síntoma que me describes posiblemente esté relacionado con insulina, esta hormona se encarga de la fomentación de captación celular de glucosa y azúcar en los músculos esquelético y cardíaco, así como en el tejido adiposo"
   - text: "Los síntomas que describes podrían estar relacionados con la insulina, una hormona que se encarga de fomentar la captación celular de glucosa y azúcar en los músculos esqueléticos y cardíacos, así como en el tejido adiposo."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la insulina, una hormona que se encarga de fomentar la captación celular de glucosa y azúcar en los músculos esqueléticos y cardíacos, así como en el tejido adiposo."
   - text: "La descripción que proporcionas sugiere una posible relación con la insulina, una hormona que se encarga de fomentar la captación celular de glucosa y azúcar en los músculos esqueléticos y cardíacos, así como en el tejido adiposo."
@@ -1352,7 +1352,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con la insulina, una hormona que fomenta la captación celular de glucosa y azúcar en los músculos esqueléticos y cardíacos, así como en el tejido adiposo."
 
   utter_sintomas_relacionados_tiroxina_o_triyodotironina:
-  - text: "El sintoma que me describes posiblemente este relacionado con la tiroxína o triyoditironina, esta hormona es esencial para el desarrollo normal de una persona y en la regulación del metabolismo corporal"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la tiroxína o triyoditironina, esta hormona es esencial para el desarrollo normal de una persona y en la regulación del metabolismo corporal"
   - text: "Los síntomas que describes podrían estar relacionados con la tiroxína o triyoditironina, hormonas esenciales para el desarrollo normal de una persona y para la regulación del metabolismo corporal."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la tiroxína o triyoditironina, hormonas esenciales para el desarrollo normal de una persona y para la regulación del metabolismo corporal."
   - text: "La descripción que proporcionas sugiere una posible relación con la tiroxína o triyoditironina, hormonas esenciales para el desarrollo normal de una persona y para la regulación del metabolismo corporal."
@@ -1375,7 +1375,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con la tiroxína o triyoditironina, hormonas esenciales para el desarrollo normal de una persona y para la regulación del metabolismo corporal."
 
   utter_sintomas_relacionados_antidiuretica:
-  - text: "El sintoma que me describes posiblemente este relacionado con la hormona antidiuretica, esta hormona se encarga de la regulación de la cantidad de agua expulsada por los riñones y con ello la concentración de la orina en el cuerpo"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la hormona antidiuretica, esta hormona se encarga de la regulación de la cantidad de agua expulsada por los riñones y con ello la concentración de la orina en el cuerpo"
   - text: "Los síntomas que describes podrían estar relacionados con la hormona antidiuretica, la cual se encarga de regular la cantidad de agua expulsada por los riñones y, por ende, la concentración de la orina en el cuerpo."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la hormona antidiuretica, encargada de regular la cantidad de agua expulsada por los riñones y, con ello, la concentración de la orina en el cuerpo."
   - text: "La descripción que proporcionas sugiere una posible relación con la hormona antidiuretica, responsable de regular la cantidad de agua expulsada por los riñones y, por ende, la concentración de la orina en el cuerpo."
@@ -1398,7 +1398,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con la hormona antidiurética, la cual se encarga de regular la cantidad de agua expulsada por los riñones y, con ello, la concentración de la orina en el cuerpo."
 
   utter_sintomas_relacionados_cortisol:
-  - text: "El sintoma que me describes posiblemente este relacionado con el cortisol, una hormona que puede manifestarse cuando una persona presenta o ha estado expuesta a muchas situaciones de estres o ansiedad"
+  - text: "El síntoma que me describes posiblemente esté relacionado con el cortisol, una hormona que puede manifestarse cuando una persona presenta o ha estado expuesta a muchas situaciones de estrés o ansiedad"
   - text: "Los síntomas que describes podrían estar relacionados con el cortisol, una hormona que puede manifestarse cuando una persona experimenta o ha estado expuesta a muchas situaciones de estrés o ansiedad."
   - text: "Es posible que los síntomas que mencionas estén vinculados con el cortisol, una hormona que puede manifestarse cuando una persona presenta o ha estado expuesta a muchas situaciones de estrés o ansiedad."
   - text: "La descripción que proporcionas sugiere una posible relación con el cortisol, una hormona que puede manifestarse cuando una persona experimenta o ha estado expuesta a muchas situaciones de estrés o ansiedad."
@@ -1421,7 +1421,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con el cortisol, una hormona que puede manifestarse cuando una persona experimenta o ha estado expuesta a muchas situaciones de estrés o ansiedad."
 
   utter_sintomas_relacionados_adrenalina:
-  - text: "El sintoma que me describes posiblemente este relacionado con la adrenalina, una hormona que se encarga de preparar el cuerpo en situaciones que se consideren de peligro y responsables de la activación del organismo en cuanto se requiera causado por factores como el miedo, el ejercicio o situaciones que el cuerpo considere necesarias para la activación de este"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la adrenalina, una hormona que se encarga de preparar el cuerpo en situaciones que se consideren de peligro y responsables de la activación del organismo en cuanto se requiera causado por factores como el miedo, el ejercicio o situaciones que el cuerpo considere necesarias para la activación de este"
   - text: "Los síntomas que describes podrían estar relacionados con la adrenalina, una hormona que se encarga de preparar el cuerpo en situaciones consideradas peligrosas y es responsable de activar el organismo cuando se requiere, como en situaciones de miedo, ejercicio o cualquier otra situación que el cuerpo considere necesaria para su activación."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la adrenalina, una hormona que se encarga de preparar el cuerpo en situaciones de peligro y es responsable de activar el organismo cuando se requiere, como en situaciones de miedo, ejercicio u otras situaciones que el cuerpo considere necesarias para su activación."
   - text: "La descripción que proporcionas sugiere una posible relación con la adrenalina, una hormona que se encarga de preparar el cuerpo en situaciones consideradas peligrosas y es responsable de activar el organismo cuando se requiere, como en situaciones de miedo, ejercicio u otras situaciones que el cuerpo considere necesarias para su activación."
@@ -1444,7 +1444,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con la adrenalina, una hormona que prepara el cuerpo en situaciones consideradas peligrosas y activa el organismo cuando se requiere, como en situaciones de miedo, ejercicio u otras situaciones que el cuerpo considere necesarias para su activación."
 
   utter_sintomas_relacionados_noradrenalina:
-  - text: "El sintoma que me describes posiblemente este relacionado con la noradrenalina, una hormona que juega un papel crucial, junto con la adrenalina, a la respuesta y preparación del cuerpo en situaciones de peligro cuando se requiere "
+  - text: "El síntoma que me describes posiblemente esté relacionado con la noradrenalina, una hormona que juega un papel crucial, junto con la adrenalina, a la respuesta y preparación del cuerpo en situaciones de peligro cuando se requiere "
   - text: "Los síntomas que describes podrían estar relacionados con la noradrenalina, una hormona que desempeña un papel crucial, junto con la adrenalina, en la respuesta y preparación del cuerpo en situaciones de peligro cuando se requiere."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la noradrenalina, una hormona que juega un papel crucial, junto con la adrenalina, en la respuesta y preparación del cuerpo en situaciones de peligro cuando se requiere."
   - text: "La descripción que proporcionas sugiere una posible relación con la noradrenalina, una hormona que desempeña un papel crucial, junto con la adrenalina, en la respuesta y preparación del cuerpo en situaciones de peligro cuando se requiere."
@@ -1467,7 +1467,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con la noradrenalina, una hormona que desempeña un papel crucial, junto con la adrenalina, en la respuesta y preparación del cuerpo en situaciones de peligro cuando se requiere."
 
   utter_sintomas_relacionados_estrogenos:
-  - text: "El sintoma que me describes posiblemente este relacionado con los estrógenos, los estrógenos son hormonas necesarias para el desarrollo sexual, así como estimular la hipertrofia miometrial"
+  - text: "El síntoma que me describes posiblemente esté relacionado con los estrógenos, los estrógenos son hormonas necesarias para el desarrollo sexual, así como estimular la hipertrofia miometrial"
   - text: "Los síntomas que describes podrían estar relacionados con los estrógenos, unas hormonas necesarias para el desarrollo sexual y para estimular la hipertrofia miometrial."
   - text: "Es posible que los síntomas que mencionas estén vinculados con los estrógenos, unas hormonas necesarias para el desarrollo sexual y para estimular la hipertrofia miometrial."
   - text: "La descripción que proporcionas sugiere una posible relación con los estrógenos, unas hormonas necesarias para el desarrollo sexual y para estimular la hipertrofia miometrial."
@@ -1490,7 +1490,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con los estrógenos, unas hormonas necesarias para el desarrollo sexual y para estimular la hipertrofia miometrial."
 
   utter_sintomas_relacionados_progesterona:
-  - text: "El sintoma que me describes posiblemente este relacionado con la progesterona, una hormona esteroide que esta involucrada y relacionada con el ciclo menstrual de la mujer y el embarazo en la etapa de gestación"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la progesterona, una hormona esteroide que está involucrada y relacionada con el ciclo menstrual de la mujer y el embarazo en la etapa de gestación"
   - text: "Los síntomas que describes podrían estar relacionados con la progesterona, una hormona esteroide que está involucrada en el ciclo menstrual de la mujer y en el embarazo durante la etapa de gestación."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la progesterona, una hormona esteroide que juega un papel en el ciclo menstrual de la mujer y durante el embarazo en la etapa de gestación."
   - text: "La descripción que proporcionas sugiere una posible relación con la progesterona, una hormona esteroide que está involucrada en el ciclo menstrual de la mujer y en el embarazo durante la etapa de gestación."
@@ -1513,7 +1513,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con la progesterona, una hormona esteroide que desempeña un papel en el ciclo menstrual de la mujer y durante el embarazo en la etapa de gestación."
 
   utter_sintomas_relacionados_testosterona:
-  - text: "El sintoma que me describes posiblemente este relacionado con la testosterona, una hormona esteroide producida en los testículos y es necesaria para desarrollar las características fenotípicas de un hombre y sus efectos androgénicos"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la testosterona, una hormona esteroide producida en los testículos y es necesaria para desarrollar las características fenotípicas de un hombre y sus efectos androgénicos"
   - text: "Los síntomas que describes podrían estar relacionados con la testosterona, una hormona esteroide producida en los testículos que es necesaria para desarrollar las características fenotípicas de un hombre y sus efectos androgénicos."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la testosterona, una hormona esteroide producida en los testículos que es necesaria para el desarrollo de las características fenotípicas masculinas y sus efectos androgénicos."
   - text: "La descripción que proporcionas sugiere una posible relación con la testosterona, una hormona esteroide producida en los testículos que es necesaria para desarrollar las características fenotípicas de un hombre y sus efectos androgénicos."
@@ -1536,7 +1536,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con la testosterona, una hormona esteroide producida en los testículos que es necesaria para desarrollar las características fenotípicas masculinas y sus efectos androgénicos."
 
   utter_sintomas_relacionados_melatonina:
-  - text: "El sintoma que me describes posiblemente este relacionado con la melatonina, una hormona que se encarga de la regulación del ciclo de sueño y vigilia, proceso conocido como ritmo circadiano"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la melatonina, una hormona que se encarga de la regulación del ciclo de sueño y vigilia, proceso conocido como ritmo circadiano"
   - text: "Los síntomas que describes podrían estar relacionados con la melatonina, una hormona que se encarga de regular el ciclo de sueño y vigilia, un proceso conocido como ritmo circadiano."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la melatonina, una hormona que regula el ciclo de sueño y vigilia, un proceso conocido como ritmo circadiano."
   - text: "La descripción que proporcionas sugiere una posible relación con la melatonina, una hormona que se encarga de regular el ciclo de sueño y vigilia, un proceso conocido como ritmo circadiano."
@@ -1559,7 +1559,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con la melatonina, una hormona que se encarga de regular el ciclo de sueño y vigilia, un proceso conocido como ritmo circadiano."
 
   utter_sintomas_relacionados_serotonina:
-  - text: "El sintoma que me describes posiblemente este relacionado con la serotonina, una hormona que actúa como inhibidor y sus efectos mayormente actúan en la regulación del humor y el estado afectivo de una persona, así como posiblemente la producción del sueño"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la serotonina, una hormona que actúa como inhibidor y sus efectos mayormente actúan en la regulación del humor y el estado afectivo de una persona, así como posiblemente la producción del sueño"
   - text: "Los síntomas que describes podrían estar relacionados con la serotonina, una hormona que actúa como inhibidor y principalmente influye en la regulación del estado de ánimo, el afecto y posiblemente la inducción del sueño."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la serotonina, una hormona que actúa como inhibidor y tiene efectos significativos en la regulación del humor, el afecto y posiblemente la promoción del sueño."
   - text: "La descripción que proporcionas sugiere una posible relación con la serotonina, una hormona que actúa como inhibidor y mayormente influye en la regulación del estado de ánimo, el afecto y posiblemente la generación del sueño."
@@ -1582,7 +1582,7 @@ responses:
   - text: "Parece que los síntomas que mencionas podrían estar asociados con la serotonina, una hormona que actúa como inhibidor y tiene efectos importantes en la regulación del humor, el afecto y posiblemente la inducción del sueño."
 
   utter_sintomas_relacionados_dopamina:
-  - text: "El sintoma que me describes posiblemente este relacionado con la dopamina, una hormona que interviene y cumple sus funciones en la regulación de la conducta motora, así como de la emotividad y afectividad y en la comunicación neuroendocrina"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la dopamina, una hormona que interviene y cumple sus funciones en la regulación de la conducta motora, así como de la emotividad y afectividad y en la comunicación neuroendocrina"
   - text: "Los síntomas que describes podrían estar relacionados con la dopamina, una hormona que desempeña funciones en la regulación de la conducta motora, la emotividad y la afectividad, así como en la comunicación neuroendocrina."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la dopamina, una hormona que interviene en la regulación de la conducta motora, la emotividad y la afectividad, así como en la comunicación neuroendocrina."
   - text: "La descripción que proporcionas sugiere una posible relación con la dopamina, una hormona que cumple funciones en la regulación de la conducta motora, la emotividad y la afectividad, así como en la comunicación neuroendocrina."
@@ -1605,7 +1605,7 @@ responses:
   - text: "Los síntomas que describes podrían estar vinculados con la dopamina, una hormona que desempeña funciones en la regulación de la conducta motora, la emotividad y la afectividad, así como en la comunicación neuroendocrina."
 
   utter_sintomas_relacionados_endorfinas:
-  - text: "Es bueno que sientas ese alivio, eso puede ser causado gracias a las endorfinas. Las endorfinas son sustancias que pueden contrarrestas o reparar los daños que pudiesen ser producidos por situaciones de estrés y se consideran como drogas naturales que producen en el cuerpo humano una sensación de bienestar"
+  - text: "Es bueno que sientas ese alivio, eso puede ser causado gracias a las endorfinas. Las endorfinas son sustancias que pueden contrarrestar o reparar los daños que pudiesen ser producidos por situaciones de estrés y se consideran como drogas naturales que producen en el cuerpo humano una sensación de bienestar"
   - text: "El alivio que estás experimentando podría estar relacionado con las endorfinas. Estas sustancias pueden contrarrestar o reparar los daños causados por el estrés y se consideran como drogas naturales que producen una sensación de bienestar en el cuerpo humano."
   - text: "Es posible que el alivio que estás sintiendo sea gracias a las endorfinas. Estas sustancias tienen la capacidad de contrarrestar o reparar los efectos del estrés y se consideran como drogas naturales que generan una sensación de bienestar."
   - text: "La sensación de alivio que experimentas puede ser causada por las endorfinas. Estas sustancias son capaces de contrarrestar o reparar los efectos del estrés y se conocen como drogas naturales que producen una sensación de bienestar en el cuerpo."
@@ -1628,7 +1628,7 @@ responses:
   - text: "La sensación de alivio que experimentas puede estar relacionada con las endorfinas. Estas sustancias tienen la capacidad de contrarrestar o reparar los efectos del estrés y se consideran como drogas naturales que producen una sensación de bienestar en el cuerpo."
 
   utter_sintomas_relacionados_prolactina:
-  - text: "El sintoma que me describes posiblemente este relacionado con la prolactina, una hormona que se encarga principalmente del desarrollo de las mamas en las mujeres y la inducción de la lactancia en las mujeres"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la prolactina, una hormona que se encarga principalmente del desarrollo de las mamas en las mujeres y la inducción de la lactancia en las mujeres"
   - text: "Los síntomas que describes podrían estar relacionados con la prolactina, una hormona que principalmente se encarga del desarrollo de las mamas en las mujeres y de la inducción de la lactancia."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la prolactina, una hormona que tiene como función principal el desarrollo de las mamas y la inducción de la lactancia en las mujeres."
   - text: "La descripción que proporcionas sugiere una posible relación con la prolactina, una hormona que principalmente se encarga del desarrollo de las mamas en las mujeres y la inducción de la lactancia."
@@ -1651,7 +1651,7 @@ responses:
   - text: "Los síntomas que describes podrían estar vinculados con la prolactina, una hormona que principalmente se encarga del desarrollo de las mamas en las mujeres y de la inducción de la lactancia."
 
   utter_sintomas_relacionados_foliculo-estimulante:
-  - text: "El sintoma que me describes posiblemente este relacionado con la hormona folículo-estimulante, una hormona que está relacionada con la regulación de los procesos reproductivos como el desarrollo de los folículos ováricos, así como de la gametogénesis testicular"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la hormona folículo-estimulante, una hormona que está relacionada con la regulación de los procesos reproductivos como el desarrollo de los folículos ováricos, así como de la gametogénesis testicular"
   - text: "Los síntomas que mencionas podrían estar relacionados con la hormona folículo-estimulante, que desempeña un papel importante en la regulación de los procesos reproductivos como el desarrollo de los folículos ováricos y la gametogénesis testicular."
   - text: "Parece que los síntomas que describes podrían estar vinculados con la hormona folículo-estimulante, la cual está relacionada con la regulación de los procesos reproductivos, incluido el desarrollo de los folículos ováricos y la gametogénesis testicular."
   - text: "Es posible que los síntomas que mencionas estén relacionados con la hormona folículo-estimulante, que juega un papel crucial en la regulación de procesos reproductivos como el desarrollo de los folículos ováricos y la gametogénesis testicular."
@@ -1675,7 +1675,7 @@ responses:
   - text: "La descripción que proporcionas sugiere una posible relación con la hormona folículo-estimulante, la cual está relacionada con la regulación de procesos reproductivos como el desarrollo de los folículos ováricos y la gametogénesis testicular."
 
   utter_sintomas_relacionados_luteinizante:
-  - text: "El sintoma que me describes posiblemente este relacionado con la hormona luteinizante (LH), una hormona que cumple con diferentes funciones dependiendo del genero de la persona. Por un lado, en las mujeres regula la menstruación y la ovulación, mientras que en los hombres ayuda a estimular la producción de testosterona para la producción de espermatozoides"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la hormona luteinizante (LH), una hormona que cumple con diferentes funciones dependiendo del género de la persona. Por un lado, en las mujeres regula la menstruación y la ovulación, mientras que en los hombres ayuda a estimular la producción de testosterona para la producción de espermatozoides"
   - text: "Los síntomas que describes podrían estar relacionados con la hormona luteinizante (LH), la cual desempeña diversas funciones dependiendo del género de la persona. En las mujeres, regula la menstruación y la ovulación, mientras que en los hombres ayuda a estimular la producción de testosterona para la formación de espermatozoides."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la hormona luteinizante (LH), que tiene diferentes funciones según el sexo. En las mujeres, regula la menstruación y la ovulación, mientras que en los hombres estimula la producción de testosterona para la formación de espermatozoides."
   - text: "La descripción que proporcionas sugiere una posible relación con la hormona luteinizante (LH), la cual cumple distintas funciones según el sexo de la persona. En las mujeres, regula la menstruación y la ovulación, mientras que en los hombres estimula la producción de testosterona para la formación de espermatozoides."
@@ -1698,7 +1698,7 @@ responses:
   - text: "La descripción que proporcionas sugiere una posible relación con la hormona luteinizante (LH), la cual desempeña distintas funciones según el sexo. En las mujeres, regula la menstruación y la ovulación, mientras que en los hombres estimula la producción de testosterona para la formación de espermatozoides."
 
   utter_sintomas_relacionados_colecistoquinina:
-  - text: "El sintoma que me describes posiblemente este relacionado con la colecistoquinina, una hormona cuya función principal es estimular y producir la saciedad y estar implicada en situaciones de ayuno del ser humano, así como en otras especies"
+  - text: "El síntoma que me describes posiblemente esté relacionado con la colecistoquinina, una hormona cuya función principal es estimular y producir la saciedad y estar implicada en situaciones de ayuno del ser humano, así como en otras especies"
   - text: "Los síntomas que describes podrían estar relacionados con la colecistoquinina, una hormona que principalmente estimula la saciedad y está implicada en situaciones de ayuno en humanos y otras especies."
   - text: "Es posible que los síntomas que mencionas estén vinculados con la colecistoquinina, una hormona que desempeña un papel importante en la inducción de la saciedad y está implicada en el ayuno tanto en humanos como en otras especies."
   - text: "La descripción que proporcionas sugiere una posible relación con la colecistoquinina, una hormona que estimula la saciedad y está involucrada en situaciones de ayuno en humanos y otras especies."
@@ -1721,30 +1721,30 @@ responses:
   - text: "La descripción que me das sugiere una posible relación con la colecistoquinina, una hormona que induce la saciedad y está involucrada en situaciones de ayuno tanto en humanos como en otras especies."
 
   utter_sintomas_relacionados_anti-Mulleriana:
-  - text: "El sintoma que me describes posiblemente este relacionado con la hormona anti-Mulleriana, una hormona que se encarga de regular el reclutamiento de folículos así como el tamano de los mismos y el agotamiento folicular, estas funciones cumplen un papel importante en la inducción de la ovulación"
-  - text: "Los síntomas que mencionas podrían estar relacionados con la hormona anti-Mülleriana, la cual regula el reclutamiento y el tamano de los folículos, así como el agotamiento folicular, lo que desempeña un papel importante en la ovulación."
-  - text: "Es posible que los síntomas que describes estén asociados con la hormona anti-Mülleriana, que controla el reclutamiento y el tamano de los folículos, así como el agotamiento folicular, aspectos cruciales en la ovulación."
-  - text: "La descripción que me das sugiere una posible relación con la hormona anti-Mülleriana, que regula el reclutamiento y el tamano de los folículos, así como el agotamiento folicular, lo que influye en la ovulación."
-  - text: "Los síntomas que mencionas podrían estar vinculados con la hormona anti-Mülleriana, la cual desempeña un papel en el reclutamiento y tamano de los folículos, así como en el agotamiento folicular, siendo importantes para la ovulación."
-  - text: "Parece que los síntomas que mencionas podrían estar relacionados con la hormona anti-Mülleriana, que controla aspectos como el reclutamiento y tamano de los folículos, así como el agotamiento folicular, cruciales para la ovulación."
-  - text: "Los síntomas descritos podrían estar asociados con la hormona anti-Mülleriana, la cual regula el reclutamiento y el tamano de los folículos, así como el agotamiento folicular, influyendo en la inducción de la ovulación."
-  - text: "Es posible que los síntomas que mencionas estén relacionados con la hormona anti-Mülleriana, que regula el reclutamiento y el tamano de los folículos, así como el agotamiento folicular, siendo importantes para la ovulación."
-  - text: "Los síntomas que describes podrían estar vinculados con la hormona anti-Mülleriana, la cual controla el reclutamiento y el tamano de los folículos, así como el agotamiento folicular, aspectos clave para la ovulación."
-  - text: "La descripción que proporcionas sugiere una posible relación con la hormona anti-Mülleriana, que regula el reclutamiento y el tamano de los folículos, así como el agotamiento folicular, aspectos cruciales en la ovulación."
-  - text: "Parece que los síntomas que mencionas podrían estar asociados con la hormona anti-Mülleriana, que controla aspectos como el reclutamiento y tamano de los folículos, así como el agotamiento folicular, siendo importantes para la ovulación."
-  - text: "El cuadro que describes podría estar relacionado con la hormona anti-Mülleriana, la cual regula el reclutamiento y tamano de los folículos, así como el agotamiento folicular, funciones cruciales en la ovulación."
-  - text: "Los síntomas mencionados pueden estar asociados con la hormona anti-Mülleriana, la cual controla el reclutamiento y tamano de los folículos, así como el agotamiento folicular, aspectos importantes en la ovulación."
-  - text: "Parece que los síntomas que has mencionado podrían tener relación con la hormona anti-Mülleriana, encargada de regular el reclutamiento y tamano de los folículos, así como el agotamiento folicular, esencial para la ovulación."
-  - text: "Es posible que los síntomas descritos estén vinculados con la hormona anti-Mülleriana, que regula aspectos como el reclutamiento y tamano de los folículos, así como el agotamiento folicular, cruciales para la ovulación."
-  - text: "Los síntomas que has mencionado podrían estar asociados con la hormona anti-Mülleriana, la cual controla el reclutamiento y tamano de los folículos, así como el agotamiento folicular, aspectos fundamentales para la ovulación."
-  - text: "El cuadro que describes parece estar relacionado con la hormona anti-Mülleriana, la cual regula el reclutamiento y tamano de los folículos, así como el agotamiento folicular, funciones esenciales para la ovulación."
-  - text: "Los síntomas que has mencionado podrían tener relación con la hormona anti-Mülleriana, encargada de regular el reclutamiento y tamano de los folículos, así como el agotamiento folicular, importantes para la ovulación."
-  - text: "Es posible que los síntomas descritos estén vinculados con la hormona anti-Mülleriana, que regula aspectos como el reclutamiento y tamano de los folículos, así como el agotamiento folicular, necesarios para la ovulación."
-  - text: "Los síntomas que has mencionado parecen estar asociados con la hormona anti-Mülleriana, la cual controla el reclutamiento y tamano de los folículos, así como el agotamiento folicular, aspectos clave para la ovulación."
-  - text: "El cuadro que describes podría tener relación con la hormona anti-Mülleriana, la cual regula el reclutamiento y tamano de los folículos, así como el agotamiento folicular, siendo esencial para la ovulación."
+  - text: "El síntoma que me describes posiblemente esté relacionado con la hormona anti-Mulleriana, una hormona que se encarga de regular el reclutamiento de folículos así como el tamaño de los mismos y el agotamiento folicular, estas funciones cumplen un papel importante en la inducción de la ovulación"
+  - text: "Los síntomas que mencionas podrían estar relacionados con la hormona anti-Mülleriana, la cual regula el reclutamiento y el tamaño de los folículos, así como el agotamiento folicular, lo que desempeña un papel importante en la ovulación."
+  - text: "Es posible que los síntomas que describes estén asociados con la hormona anti-Mülleriana, que controla el reclutamiento y el tamaño de los folículos, así como el agotamiento folicular, aspectos cruciales en la ovulación."
+  - text: "La descripción que me das sugiere una posible relación con la hormona anti-Mülleriana, que regula el reclutamiento y el tamaño de los folículos, así como el agotamiento folicular, lo que influye en la ovulación."
+  - text: "Los síntomas que mencionas podrían estar vinculados con la hormona anti-Mülleriana, la cual desempeña un papel en el reclutamiento y tamaño de los folículos, así como en el agotamiento folicular, siendo importantes para la ovulación."
+  - text: "Parece que los síntomas que mencionas podrían estar relacionados con la hormona anti-Mülleriana, que controla aspectos como el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, cruciales para la ovulación."
+  - text: "Los síntomas descritos podrían estar asociados con la hormona anti-Mülleriana, la cual regula el reclutamiento y el tamaño de los folículos, así como el agotamiento folicular, influyendo en la inducción de la ovulación."
+  - text: "Es posible que los síntomas que mencionas estén relacionados con la hormona anti-Mülleriana, que regula el reclutamiento y el tamaño de los folículos, así como el agotamiento folicular, siendo importantes para la ovulación."
+  - text: "Los síntomas que describes podrían estar vinculados con la hormona anti-Mülleriana, la cual controla el reclutamiento y el tamaño de los folículos, así como el agotamiento folicular, aspectos clave para la ovulación."
+  - text: "La descripción que proporcionas sugiere una posible relación con la hormona anti-Mülleriana, que regula el reclutamiento y el tamaño de los folículos, así como el agotamiento folicular, aspectos cruciales en la ovulación."
+  - text: "Parece que los síntomas que mencionas podrían estar asociados con la hormona anti-Mülleriana, que controla aspectos como el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, siendo importantes para la ovulación."
+  - text: "El cuadro que describes podría estar relacionado con la hormona anti-Mülleriana, la cual regula el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, funciones cruciales en la ovulación."
+  - text: "Los síntomas mencionados pueden estar asociados con la hormona anti-Mülleriana, la cual controla el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, aspectos importantes en la ovulación."
+  - text: "Parece que los síntomas que has mencionado podrían tener relación con la hormona anti-Mülleriana, encargada de regular el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, esencial para la ovulación."
+  - text: "Es posible que los síntomas descritos estén vinculados con la hormona anti-Mülleriana, que regula aspectos como el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, cruciales para la ovulación."
+  - text: "Los síntomas que has mencionado podrían estar asociados con la hormona anti-Mülleriana, la cual controla el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, aspectos fundamentales para la ovulación."
+  - text: "El cuadro que describes parece estar relacionado con la hormona anti-Mülleriana, la cual regula el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, funciones esenciales para la ovulación."
+  - text: "Los síntomas que has mencionado podrían tener relación con la hormona anti-Mülleriana, encargada de regular el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, importantes para la ovulación."
+  - text: "Es posible que los síntomas descritos estén vinculados con la hormona anti-Mülleriana, que regula aspectos como el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, necesarios para la ovulación."
+  - text: "Los síntomas que has mencionado parecen estar asociados con la hormona anti-Mülleriana, la cual controla el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, aspectos clave para la ovulación."
+  - text: "El cuadro que describes podría tener relación con la hormona anti-Mülleriana, la cual regula el reclutamiento y tamaño de los folículos, así como el agotamiento folicular, siendo esencial para la ovulación."
 
   utter_tratamiento_hormonas: 
-  - text: "Como modelo de procesamiento de lenguaje natural no estoy en la capacidad para recomendar medicamentos o remedios para tratar las hormonas. Te recomiendo si el sintoma persiste consultar a tu medico o a un profesional"
+  - text: "Como modelo de procesamiento de lenguaje natural no estoy en la capacidad para recomendar medicamentos o remedios para tratar las hormonas. Te recomiendo si el síntoma persiste consultar a tu medico o a un profesional"
   - text: "Como modelo de procesamiento de lenguaje natural, no puedo prescribir medicamentos ni ofrecer remedios para tratar desbalances hormonales. Te recomendaría que consultes a tu médico o a un profesional si los síntomas persisten."
   - text: "Mi capacidad como modelo de procesamiento de lenguaje natural no incluye la recomendación de medicamentos o tratamientos hormonales. Es importante que consultes a tu médico o a un profesional si los síntomas continúan."
   - text: "No puedo proporcionar recomendaciones de medicamentos o tratamientos hormonales como modelo de procesamiento de lenguaje natural. Te sugiero que busques la orientación de tu médico o de un profesional si experimentas síntomas persistentes."

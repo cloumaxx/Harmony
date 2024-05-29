@@ -19,7 +19,7 @@
     }
 
     #conText {
-        color: white;
+        color: black;
         padding-top: 10px;
     }
 
@@ -153,25 +153,25 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5" style="height: 100%; ">
-                        <h1>{{ usuario_obj.nombre }} {{ usuario_obj.apellido }}</h1>
                         <img class="border rounded-circle border-1 border-dark" style="border-radius: 20px;"
                             src="{{usuario_obj.url_imagen_perfil}}" width="120px" height="120%">
+                        <h1>{{ usuario_obj.nombre }} {{ usuario_obj.apellido }}</h1>
                         <div id="info_user">
 
                             <div id="conText">
                                 <h2>Correo:</h2>
-                                <p>{{ usuario_obj.correo }}</p>
+                                <p style="font-size: x-large;">{{ usuario_obj.correo }}</p>
                             </div>
                             <div id="conText">
                                 <h2>Fecha de nacimiento:</h2>
-                                <p>{{usuario_obj.fecha_nacimiento|date:"d/m/Y"}}</p>
+                                <p style="font-size: x-large;">{{usuario_obj.fecha_nacimiento|date:"d/m/Y"}}</p>
                             </div>
                             <div id="conText">
                                 <h2>Género:</h2>
                                 {% if usuario_obj.genero == "H" %}
-                                <p>Hombre</p>
+                                <p style="font-size: x-large;">Hombre</p>
                                 {% else %}
-                                <p>Mujer</p>
+                                <p style="font-size: x-large;">Mujer</p>
                                 {% endif %}
                             </div>
 
@@ -179,7 +179,7 @@
 
                         </div>
                         <br>
-                        <button class="btn btn-sm p-0 custom-button" id="boton_editar" data-bs-toggle="modal"
+                        <button class="btn btn-sm p-0 custom-button align-items-center text-center" id="boton_editar" data-bs-toggle="modal"
                             data-bs-target="#modalEditarUsuario{{ usuario_obj.id }}"
                             data-id-usuario="{{ usuario_obj.id }}">
 
@@ -215,6 +215,43 @@
                     <!-- Formulario para editar el perfil -->
                     <form method="POST" action="{% url 'editar_usuario' usuario_id=usuario_id %}" enctype="multipart/form-data">
                         {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <p>¿Deseas cambiar tu foto de perfil? 
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+                                  </svg>
+                            </p>
+                            <input type="file" id="nueva_imagen_perfil" name="nueva_imagen_perfil" onchange="previsualizarImagen(event)" accept="image/png, image/jpeg" >
+                            <script>
+                                const uploadField = document.getElementById("nueva_imagen_perfil");
+
+                                uploadField.onchange = function() {
+                                    if(this.files[0].size > 2097152) {
+                                    alert("El archivo no puede exceder los 2 MB!");
+                                    this.value = "";
+                                    }
+                                };
+                            </script>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>Foto de perfil actual
+
+                                        
+                                    </p>
+                                    <img src="{{ usuario_obj.url_imagen_perfil }}" style="border-radius: 40px; border: 2px solid black;" alt="Foto de perfil" class="img-fluid rounded-circle" width="100px" height="100px">
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="foto_nueva" style="display: none;">Foto de perfil nueva</p>
+
+                                    <img id="imagen_previa" src="#" alt="Previsualización" style="display: none;border-radius: 40px; border: 2px solid black;" class="img-fluid rounded-circle" width="100px" height="100px">
+                                    
+                                </div>
+                            </div>
+                        </div>
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre:</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" value="{{ usuario_obj.nombre }}" placeholder="Nombre">
@@ -242,33 +279,6 @@
                         <div class="mb-3">
                             <label for="fechaNacido" class="form-label">Fecha de nacimiento:</label>
                             <input type="date" class="form-control" id="fechaNacido" name="fecha_nacimiento" value="{{ usuario_obj.fecha_nacimiento|date:'Y-m-d' }}">
-                        </div>
-                        <div class="mb-3">
-                            <p>¿Deseas cambiar tu foto de perfil?</p>
-                            <input type="file" id="nueva_imagen_perfil" name="nueva_imagen_perfil" onchange="previsualizarImagen(event)" accept="image/png, image/jpeg" >
-                            <script>
-                                const uploadField = document.getElementById("nueva_imagen_perfil");
-
-                                uploadField.onchange = function() {
-                                    if(this.files[0].size > 2097152) {
-                                    alert("El archivo no puede exceder los 2 MB!");
-                                    this.value = "";
-                                    }
-                                };
-                            </script>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p>Foto de perfil actual</p>
-                                    <img src="{{ usuario_obj.url_imagen_perfil }}" style="border-radius: 40px; border: 2px solid black;" alt="Foto de perfil" class="img-fluid rounded-circle" width="100px" height="100px">
-                                </div>
-                                <div class="col-md-6">
-                                    <p id="foto_nueva" style="display: none;">Foto de perfil nueva</p>
-
-                                    <img id="imagen_previa" src="#" alt="Previsualización" style="display: none;border-radius: 40px; border: 2px solid black;" class="img-fluid rounded-circle" width="100px" height="100px">
-                                </div>
-                            </div>
                         </div>
                         <br>
                         <div class="text-center">
