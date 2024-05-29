@@ -758,7 +758,7 @@ responses:
 
   #------------------------------------------------------
   utter_sintoma_comun_diarrea_indigestion: 
-  - text: "La diarrea y la indigestion es un síntoma que esta relacionado con la ingesta de comida. Cuando sientes diarrea o indigestión significa que tu cuerpo esta tratando de expulsar dichos alimentos que pudiesen ser pesados o en cantidades excesivas. Te recomiendo no ingerir comida tan pesada y en cantidades racionales que tu cuerpo pueda resistir"
+  - text: "La diarrea y la indigestión es un síntoma que está relacionado con la ingesta de comida. Cuando sientes diarrea o indigestión significa que tu cuerpo está tratando de expulsar dichos alimentos que pudiesen ser pesados o en cantidades excesivas. Te recomiendo no ingerir comida tan pesada y en cantidades racionales que tu cuerpo pueda resistir"
   - text: "La diarrea y la indigestión son síntomas relacionados con la ingesta de alimentos. Cuando experimentas diarrea o indigestión, significa que tu cuerpo está intentando eliminar alimentos que pueden ser pesados o en cantidades excesivas. Se recomienda evitar comidas muy pesadas y consumir cantidades moderadas que tu cuerpo pueda manejar."
   - text: "La diarrea y la indigestión suelen estar relacionadas con la alimentación. Estos síntomas indican que tu cuerpo está tratando de eliminar alimentos que podrían ser difíciles de digerir o consumidos en exceso. Se sugiere evitar comidas copiosas y moderar las porciones para evitar estos problemas."
   - text: "La diarrea y la indigestión son señales de que tu cuerpo está teniendo dificultades para digerir los alimentos. Es importante moderar la cantidad de comida y evitar alimentos pesados para evitar estos síntomas."
@@ -934,7 +934,7 @@ responses:
 
   #------------------------------------------------------
   utter_sintoma_comun_gripe_y_estornudos: 
-  - text: "La gripe son bacterias que se acumulan en tus fosas nasales y afectan tu respiración. Los estornudos es la forma en que tu cuerpo trata de expulsar dichas bacterias para volver a respirar comun y corriente. Se recomienda mucho usar desinfectante nasal"
+  - text: "La gripe son bacterias que se acumulan en tus fosas nasales y afectan tu respiración. Los estornudos es la forma en que tu cuerpo trata de expulsar dichas bacterias para volver a respirar común y corriente. Se recomienda mucho usar desinfectante nasal"
   - text: "La gripe es causada por virus que se acumulan en las vías respiratorias y pueden afectar la respiración. Los estornudos son una forma natural del cuerpo de expulsar estos virus y restaurar la respiración normal. Se recomienda el uso de desinfectante nasal para ayudar a combatir la propagación de los virus."
   - text: "La gripe es una infección viral que afecta las vías respiratorias, lo que puede dificultar la respiración. Los estornudos son una respuesta natural del cuerpo para eliminar los virus y mejorar la respiración. El uso de desinfectante nasal puede ayudar a prevenir la propagación de la gripe."
   - text: "La gripe es causada por virus que infectan las vías respiratorias y pueden causar dificultad para respirar. Los estornudos son una forma natural del cuerpo de eliminar estos virus y mejorar la respiración. Es importante usar desinfectante nasal para prevenir la propagación de la gripe."
@@ -959,9 +959,9 @@ responses:
   
   utter_origen_gripe_y_estornudos:
   - text: "La gripe y los estornudos pueden ser síntomas de una infección viral que afecta las vías respiratorias superiores."
-  - text: "La gripe y los estornudos pueden ser desencadenados por la exposición a virus respiratorios como el influenza, que se propagan a través del aire o el contacto directo."
+  - text: "La gripe y los estornudos pueden ser desencadenados por la exposición a virus respiratorios como la influenza, que se propagan a través del aire o el contacto directo."
   - text: "Los estornudos y la gripe pueden ser una reacción del sistema inmunológico a la presencia de patógenos, como el virus de la gripe, que intenta eliminarlos del cuerpo."
-  - text: "La gripe y los estornudos pueden ser más comunes durante los cambios estacionales, ya que los virus respiratorios tienden a ser más activos en ciertas épocas del ano."
+  - text: "La gripe y los estornudos pueden ser más comunes durante los cambios estacionales, ya que los virus respiratorios tienden a ser más activos en ciertas épocas del año."
   - text: "Los estornudos y la gripe pueden ser síntomas de alergias estacionales o ambientales, que desencadenan una respuesta inflamatoria en las vías respiratorias."
   - text: "La gripe y los estornudos pueden propagarse fácilmente de persona a persona a través de las gotículas respiratorias expulsadas al toser o estornudar."
   - text: "Los estornudos y la gripe pueden causar malestar generalizado, incluyendo fiebre, dolores musculares y congestión nasal, debido a la respuesta del cuerpo a la infección viral."
@@ -1022,7 +1022,7 @@ responses:
 
   #------------------------------------------------------
   utter_sintoma_comun_insomnio: 
-  - text: "El insomnio y la falta de sueño pueden tener muchos factores y orígenes, por lo que es incierto determinar una causa exacta. El sueño y el descanso son muy importantes para el cuerpo humano, pues este nos ayuda a recuperar energías y nos ayuda a ser mas productivos"
+  - text: "El insomnio y la falta de sueño pueden tener muchos factores y orígenes, por lo que es incierto determinar una causa exacta. El sueño y el descanso son muy importantes para el cuerpo humano, pues este nos ayuda a recuperar energías y nos ayuda a ser más productivos"
   - text: "El insomnio puede tener múltiples factores y causas, por lo que es difícil determinar una causa exacta. El sueño y el descanso son fundamentales para el cuerpo humano, ya que nos ayudan a recuperar energía y a ser más productivos."
   - text: "El insomnio y la falta de sueño pueden ser el resultado de diversos factores y causas, por lo que su origen puede ser incierto. El descanso adecuado es esencial para el cuerpo humano, ya que nos permite recuperar energía y ser más efectivos en nuestras actividades diarias."
   - text: "El insomnio puede ser causado por una variedad de factores y su origen puede ser difícil de determinar. El sueño y el descanso son cruciales para el cuerpo humano, ya que nos ayudan a recargar energías y a mejorar nuestro rendimiento."
@@ -1141,7 +1141,7 @@ responses:
   - text: "La falta de apetito puede ser causada por efectos secundarios de ciertos medicamentos, tratamientos médicos o quimioterapia que interfieren con el sentido del gusto o causan náuseas."
   - text: "La falta de apetito puede ser un indicador de trastornos alimenticios como la anorexia nerviosa o la bulimia, que afectan la relación con la comida y la percepción del cuerpo."
   - text: "La falta de apetito puede ser resultado de un estilo de vida poco saludable, como una dieta desequilibrada, la falta de ejercicio físico o el consumo excesivo de alcohol, que pueden afectar el metabolismo y la regulación del hambre."
-  - text: "La falta de apetito puede ser temporal y relacionarse con cambios en el entorno o la rutina diaria, como viajes, cambios en el clima o situaciones estrésantes que afectan el hábito alimentario."
+  - text: "La falta de apetito puede ser temporal y relacionarse con cambios en el entorno o la rutina diaria, como viajes, cambios en el clima o situaciones estresantes que afectan el hábito alimentario."
   - text: "La falta de apetito puede estar asociada con trastornos gastrointestinales como la enfermedad inflamatoria intestinal, la gastritis o la úlcera péptica, que causan malestar estomacal y reducen la capacidad para comer."
   - text: "La falta de apetito puede ser tratada con enfoques como la terapia nutricional, cambios en la dieta, el manejo del estrés y la identificación y tratamiento de cualquier enfermedad subyacente que pueda estar afectando el deseo de comer."
 
@@ -1199,7 +1199,7 @@ responses:
 
   #------------------------------------------------------
   utter_sentir_ganas_rendirse:
-  - text: "Se que en este momento puedes estar pasando por una situación difícil y sientes que no puedes mas. Lo que yo puedo recomendarte es que luches por lo que deseas y por lo que quieres. Nunca perder el rumbo y siempre mirar hacia adelante y tomar todo como un aprendizaje y una experiencia que puedan ayudarte a superar tus metas"
+  - text: "Se que en este momento puedes estar pasando por una situación difícil y sientes que no puedes más. Lo que yo puedo recomendarte es que luches por lo que deseas y por lo que quieres. Nunca perder el rumbo y siempre mirar hacia adelante y tomar todo como un aprendizaje y una experiencia que puedan ayudarte a superar tus metas"
   - text: "Entiendo que estés pasando por momentos difíciles y sientas que ya no puedes más. Te animo a luchar por tus sueños y metas. Mantén tu enfoque y mira hacia adelante, cada experiencia te hace más fuerte."
   - text: "Sé que puedes estar enfrentando momentos difíciles y sintiendo que ya no puedes más. Recuerda que es importante seguir adelante y nunca perder de vista tus objetivos. Cada desafío es una oportunidad de crecimiento."
   - text: "Comprendo que estés atravesando una situación difícil y sientas que no puedes más. Te animo a seguir luchando por lo que quieres. Mira hacia adelante y toma cada experiencia como una lección para alcanzar tus metas."
@@ -1222,7 +1222,7 @@ responses:
   - text: "Puedo imaginar que te sientes abrumado y tentado a rendirte. No lo hagas, sigue adelante con fuerza y ​​determinación. Cada desafío te acerca más a tus objetivos y sueños."
 
   utter_sentir_desanimo:
-  - text: "¡Se que hay situaciones que pueden desanimarte mucho y que te pueden poner triste. Lo mas importante es entender que esas situaciones nos ayudan a entender mejor nuestro entorno y a enfrentar las situaciones que se nos presenten de la mejor manera. Animo!"
+  - text: "¡Se que hay situaciones que pueden desanimarte mucho y que te pueden poner triste! Lo más importante es entender que esas situaciones nos ayudan a entender mejor nuestro entorno y a enfrentar las situaciones que se nos presenten de la mejor manera. ¡Animo!"
   - text: "Entiendo que hay momentos que pueden desanimarte y entristecerte. Recuerda que son oportunidades para crecer y aprender. ¡Ánimo!"
   - text: "Sé que hay situaciones que pueden desanimarte y ponerte triste. Pero recuerda que cada obstáculo nos fortalece. ¡No pierdas la esperanza!"
   - text: "Es normal sentirse desanimado en ocasiones, pero cada dificultad nos da la oportunidad de crecer. ¡No te rindas!"
@@ -1250,7 +1250,7 @@ responses:
   #------------------------------------------------------
 
   utter_agradecimiento: 
-  - text: "Es un placer ayudarte. Si necesitas algo mas, no dudes en preguntar"
+  - text: "Es un placer ayudarte. Si necesitas algo más, no dudes en preguntar"
   - text: "Estoy feliz de haber sido útil. Si tienes más preguntas, estoy aquí para ayudarte."
   - text: "Es un placer estar a tu servicio. ¿Hay algo más en lo que pueda asistirte?"
   - text: "Me alegra poder ayudarte. No dudes en contactarme si necesitas algo más."
@@ -1278,7 +1278,7 @@ responses:
   #------------------------------------------------------
 
   utter_exception: 
-  - text: "Lo siento, en este momento no se como responder a tu inquietud. Intenta de nuevo con otra pregunta"
+  - text: "Lo siento, en este momento no se cómo responder a tu inquietud. Intenta de nuevo con otra pregunta"
   - text: "Mis disculpas, en este momento no tengo la información necesaria para responder tu pregunta. ¿Podrías intentar con otro tema?"
   - text: "Lo siento, parece que no puedo ayudarte con eso en este momento. ¿Hay algo más en lo que pueda asistirte?"
   - text: "Perdón, parece que no tengo la respuesta que estás buscando en este momento. ¿Hay algo más en lo que pueda ayudarte?"
