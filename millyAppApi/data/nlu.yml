@@ -693,11 +693,12 @@ nlu:
 - intent: sentir_mal
   examples: |
     - me siento muy triste en este momento
-    - estoy pasando por un momento dificil y me siento abatido
+    - estoy pasando por un momento dificil
     - estoy pasando por un momento dificil y me siento abatida
     - la tristeza me ha invadido y no puedo evitarlo
     - siento un profundo pesar en mi corazon
     - mi animo esta por el suelo y no encuentro consuelo
+    - me siento mal
     - estoy atravesando una etapa de melancolia
     - las lagrimas no dejan de caer y no se como detenerlas
     - me siento desanimado y sin energias
@@ -733,7 +734,6 @@ nlu:
     - my heart feels empty and shattered
     - tears are my only way to release the sadness
     - sadness is like a shadow that follows me everywhere
-    - me siento mal
     - no estoy bien
     - estoy pasando un mal momento
     - me encuentro triste
@@ -2197,101 +2197,6 @@ nlu:
     - me siento como si estuviera luchando una batalla perdida contra mi propia mente
     - tengo dificultades para concentrarme en el trabajo debido a la ansiedad
     - experimento una sensacion de desapego emocional con los demas
-
-- intent: sentir_ansiedad_allegados
-  examples: |
-    - creo que mi mama esta sufriendo de ansiedad
-    - temo que mi mama este experimentando ansiedad
-    - siento que mi mama pueda tener sintomas de ansiedad
-    - me preocupa que mi mama este lidiando con ansiedad
-    - sospecho que mi mama esta enfrentando ansiedad
-    - observo signos de ansiedad en mi mama
-    - percibo que mi mama esta afectada por la ansiedad
-    - tengo la impresion de que mi mama esta padeciendo ansiedad
-    - considero que mi mama puede estar sufriendo de ansiedad
-    - estimo que mi mama esta pasando por un episodio de ansiedad
-    - deduzco que mi mama esta viviendo con ansiedad
-    - supongo que mi mama esta experimentando niveles de ansiedad
-    - imagino que mi mama se enfrenta a problemas de ansiedad
-    - sospecho que mi mama esta experimentando sintomas de ansiedad
-    - presiento que mi mama esta siendo afectada por la ansiedad
-    - creo que mi mama enfrenta desafios relacionados con la ansiedad
-    - me inquieta que mi mama este experimentando ansiedad
-    - tengo la sensacion de que mi mama esta luchando contra la ansiedad
-    - opino que mi mama puede estar sufriendo de ansiedad
-    - observo que mi mama esta afectada por la ansiedad
-    - creo que mi papa esta experimentando ansiedad
-    - siento que mi papa podria tener sintomas de ansiedad
-    - me preocupa que mi papa este enfrentando ansiedad
-    - temo que mi papa este sufriendo de ansiedad
-    - observo signos de ansiedad en mi papa
-    - percibo que mi papa esta afectado por la ansiedad
-    - tengo la impresion de que mi papa esta padeciendo ansiedad
-    - considero que mi papa puede estar pasando por un episodio de ansiedad
-    - estimo que mi papa esta lidiando con la ansiedad
-    - deduzco que mi papa esta experimentando niveles de ansiedad
-    - supongo que mi papa esta viviendo con ansiedad
-    - imagino que mi papa se enfrenta a problemas de ansiedad
-    - sospecho que mi papa esta experimentando sintomas de ansiedad
-    - presiento que mi papa esta siendo afectado por la ansiedad
-    - creo que mi papa enfrenta desafios relacionados con la ansiedad
-    - me inquieta que mi papa este luchando contra la ansiedad
-    - opino que mi papa puede estar sufriendo de ansiedad
-    - observo que mi papa esta afectado por la ansiedad
-    - creo que mi hermano esta experimentando ansiedad
-    - siento que mi hermano podria tener sintomas de ansiedad
-    - me preocupa que mi hermano este enfrentando ansiedad
-    - temo que mi hermano este sufriendo de ansiedad
-    - observo signos de ansiedad en mi hermano
-    - percibo que mi hermano esta afectado por la ansiedad
-    - tengo la impresion de que mi hermano esta padeciendo ansiedad
-    - considero que mi hermano puede estar pasando por un episodio de ansiedad
-    - estimo que mi hermano esta lidiando con la ansiedad
-    - deduzco que mi hermano esta experimentando niveles de ansiedad
-    - supongo que mi hermano esta viviendo con ansiedad
-    - imagino que mi hermano se enfrenta a problemas de ansiedad
-    - sospecho que mi hermano esta experimentando sintomas de ansiedad
-    - presiento que mi hermano esta siendo afectado por la ansiedad
-    - creo que mi hermano enfrenta desafios relacionados con la ansiedad
-    - me inquieta que mi hermano este luchando contra la ansiedad
-    - opino que mi hermano puede estar sufriendo de ansiedad
-    - observo que mi hermano esta afectado por la ansiedad
-    - creo que un familiar esta experimentando ansiedad
-    - siento que algun familiar podria tener sintomas de ansiedad
-    - me preocupa que un familiar este enfrentando ansiedad
-    - temo que algun familiar este sufriendo de ansiedad
-    - observo signos de ansiedad en algun familiar
-    - percibo que un familiar esta afectado por la ansiedad
-    - tengo la impresion de que algun familiar esta padeciendo ansiedad
-    - considero que un familiar puede estar pasando por un episodio de ansiedad
-    - estimo que un familiar esta lidiando con la ansiedad
-    - deduzco que algun familiar esta experimentando niveles de ansiedad
-    - supongo que algun familiar esta viviendo con ansiedad
-    - imagino que un familiar se enfrenta a problemas de ansiedad
-    - sospecho que algun familiar esta experimentando sintomas de ansiedad
-    - presiento que un familiar esta siendo afectado por la ansiedad
-    - creo que un familiar enfrenta desafios relacionados con la ansiedad
-    - me inquieta que algun familiar este luchando contra la ansiedad
-    - opino que algun familiar puede estar sufriendo de ansiedad
-    - observo que algun familiar esta afectado por la ansiedad
-    - creo que mi amigo esta experimentando ansiedad
-    - siento que mi amigo podria tener sintomas de ansiedad
-    - me preocupa que mi amigo este enfrentando ansiedad
-    - temo que mi amigo este sufriendo de ansiedad
-    - observo signos de ansiedad en mi amigo
-    - percibo que mi amigo esta afectado por la ansiedad
-    - tengo la impresion de que mi amigo esta padeciendo ansiedad
-    - considero que mi amigo puede estar pasando por un episodio de ansiedad
-    - estimo que mi amigo esta lidiando con la ansiedad
-    - deduzco que mi amigo esta experimentando niveles de ansiedad
-    - supongo que mi amigo esta viviendo con ansiedad
-    - imagino que mi amigo se enfrenta a problemas de ansiedad
-    - sospecho que mi amigo esta experimentando sintomas de ansiedad
-    - presiento que mi amigo esta siendo afectado por la ansiedad
-    - creo que mi amigo enfrenta desafios relacionados con la ansiedad
-    - me inquieta que mi amigo este luchando contra la ansiedad
-    - opino que mi amigo puede estar sufriendo de ansiedad
-    - observo que mi amigo esta afectado por la ansiedad
 
 - intent: origen_ansiedad
   examples: |
@@ -3969,7 +3874,6 @@ nlu:
     - estoy al limite de mis capacidades
     - mi nivel de ansiedad esta elevado
     - esto me esta desgastando
-    - me siento abatido
     - estoy bajo constante tension
     - mi mente esta en un caos
     - me siento atrapado en una espiral de estres
@@ -4077,7 +3981,6 @@ nlu:
     - estoy luchando contra una marea de estres
     - mi cuerpo esta mostrando signos fisicos de estres
     - me siento como si estuviera en una carrera contra el tiempo
-    - estoy en un estado de desgaste emocional
     - mi mente esta en un estado de confusion constante
     - siento que estoy en un campo de batalla mental
     - estoy en una constante lucha interna
@@ -4324,113 +4227,6 @@ nlu:
     - siento que estoy en un callejon sin salida emocional
     - estoy en un constante estado de lucha y resistencia
     - mi mente esta en un estado de agitacion constante
-
-- intent: sentir_estres_allegados
-  examples: |
-    - mi amigo esta estresado
-    - mi hermana esta pasando por un momento dificil
-    - mi companero de trabajo esta bajo mucha presion
-    - mi pareja esta lidiando con una carga emocional intensa
-    - mi hijo esta experimentando un agotamiento emocional
-    - mi jefe esta bajo una gran presion
-    - mi vecino esta enfrentando una tormenta de inquietudes
-    - mi amiga esta en un estado de constante preocupacion
-    - mi hermano esta en un constante estado de tension
-    - mi companera de trabajo esta lidiando con una carga emocional abrumadora
-    - mi pareja esta enfrentando una avalancha de problemas
-    - mi hijo esta experimentando una sobrecarga de responsabilidades
-    - mi jefe esta enfrentando una tormenta de problemas
-    - mi vecina esta en un estado de constante agotamiento emocional
-    - mi amiga esta lidiando con una carga emocional intensa
-    - mi hermano esta en un constante estado de tension
-    - mi companera de trabajo esta enfrentando una avalancha de problemas
-    - mi pareja esta experimentando una sobrecarga de responsabilidades
-    - mi hijo esta enfrentando una tormenta de problemas
-    - mi jefe esta en un estado de constante agotamiento emocional
-    - mi vecina esta lidiando con una carga emocional intensa
-    - mi amiga esta en un constante estado de tension
-    - mi hermano esta enfrentando una avalancha de problemas
-    - mi companera de trabajo esta experimentando una sobrecarga de responsabilidades
-    - mi pareja esta enfrentando una tormenta de problemas
-    - mi hijo esta en un estado de constante agotamiento emocional
-    - mi jefe esta lidiando con una carga emocional intensa
-    - mi vecina esta en un constante estado de tension
-    - mi amiga esta enfrentando una avalancha de problemas
-    - mi hermano esta experimentando una sobrecarga de responsabilidades
-    - mi companera de trabajo esta enfrentando una tormenta de problemas
-    - mi pareja esta en un estado de constante agotamiento emocional
-    - me parece que mi mama esta estresada
-    - tengo la impresion de que mi mama esta sufriendo de estres
-    - estoy convencido de que mi mama esta experimentando estres
-    - creo que mi mama esta pasando por un periodo estresante
-    - siento que mi mama esta bajo mucho estres
-    - tengo la sospecha de que mi mama esta estresada
-    - me da la impresion de que mi mama esta abrumada por el estres
-    - pienso que mi mama esta lidiando con el estres
-    - estoy seguro de que mi mama esta sintiendo estres
-    - tengo la corazonada de que mi mama esta estresada
-    - creo que mi mama esta experimentando niveles altos de estres
-    - me parece que mi mama esta afectada por el estres
-    - tengo la certeza de que mi mama esta sufriendo de estres
-    - siento que mi mama esta bajo presion y estres
-    - creo que mi mama esta agobiada por el estres
-    - tengo la sensacion de que mi mama esta estresada
-    - me da la impresion de que mi mama esta luchando contra el estres
-    - creo que mi mama esta atravesando una etapa estresante
-    - pienso que mi papa esta experimentando estres
-    - tengo la impresion de que mi papa esta estresado
-    - estoy convencido de que mi papa esta bajo estres
-    - creo que mi papa esta sufriendo de estres
-    - me parece que mi papa esta pasando por un periodo estresante
-    - siento que mi papa esta lidiando con el estres
-    - estoy seguro de que mi papa esta sintiendo estres
-    - tengo la corazonada de que mi papa esta estresado
-    - creo que mi papa esta experimentando niveles altos de estres
-    - me parece que mi papa esta afectado por el estres
-    - tengo la certeza de que mi papa esta estresado
-    - siento que mi papa esta bajo presion y estres
-    - creo que mi papa esta abrumado por el estres
-    - tengo la sensacion de que mi papa esta estresado
-    - me da la impresion de que mi papa esta luchando contra el estres
-    - creo que mi papa esta atravesando una etapa estresante
-    - tengo la sensacion de que mi papa esta agobiado por el estres
-    - estoy convencido de que mi papa esta experimentando estres cronico
-    - pienso que mi hermano esta experimentando estres
-    - tengo la impresion de que mi hermano esta estresado
-    - estoy convencido de que mi hermano esta bajo estres
-    - creo que mi hermano esta sufriendo de estres
-    - me parece que mi hermano esta pasando por un periodo estresante
-    - siento que mi hermano esta lidiando con el estres
-    - estoy seguro de que mi hermano esta sintiendo estres
-    - tengo la corazonada de que mi hermano esta estresado
-    - creo que mi hermano esta experimentando niveles altos de estres
-    - me parece que mi hermano esta afectado por el estres
-    - tengo la certeza de que mi hermano esta estresado
-    - siento que mi hermano esta bajo presion y estres
-    - creo que mi hermano esta abrumado por el estres
-    - tengo la sensacion de que mi hermano esta estresado
-    - me da la impresion de que mi hermano esta luchando contra el estres
-    - creo que mi hermano esta atravesando una etapa estresante
-    - tengo la sensacion de que mi hermano esta agobiado por el estres
-    - estoy convencido de que mi hermano esta experimentando estres cronico
-    - pienso que mi amigo esta experimentando estres
-    - tengo la impresion de que mi amigo esta estresado
-    - estoy convencido de que mi amigo esta bajo estres
-    - creo que mi amigo esta sufriendo de estres
-    - me parece que mi amigo esta pasando por un periodo estresante
-    - siento que mi amigo esta lidiando con el estres
-    - estoy seguro de que mi amigo esta sintiendo estres
-    - tengo la corazonada de que mi amigo esta estresado
-    - creo que mi amigo esta experimentando niveles altos de estres
-    - me parece que mi amigo esta afectado por el estres
-    - tengo la certeza de que mi amigo esta estresado
-    - siento que mi amigo esta bajo presion y estres
-    - creo que mi amigo esta abrumado por el estres
-    - tengo la sensacion de que mi amigo esta estresado
-    - me da la impresion de que mi amigo esta luchando contra el estres
-    - creo que mi amigo esta atravesando una etapa estresante
-    - tengo la sensacion de que mi amigo esta agobiado por el estres
-    - estoy convencido de que mi amigo esta experimentando estres cronico
 
 - intent: origen_estres
   examples: |
@@ -10147,7 +9943,7 @@ nlu:
     - estoy con nauseas y experimente vomito
     - siento malestar y tuve episodios de vomitar
     - me encuentro mal del estomago y vomite
-    - estoy a punto de vomitar me siento mal
+    - estoy a punto de vomitar 
     - tengo nauseas y he lanzado
     - experimento asco y he tenido vomitos
     - me duele la barriga acabo de vomitar
@@ -10159,8 +9955,8 @@ nlu:
     - siento asco y experimente vomito
     - me duele la barriga y acabo de vomitar
     - estoy con nauseas y he tenido vomitos
-    - me siento mal del estomago y vomite
-    - estoy a punto de vomitar me siento mal
+    -  del estomago y vomite
+    - estoy a punto de vomitar 
     - tengo nauseas y lanzo
     - experimento asco y he tenido vomitos
     - me duele la barriga acabo de vomitar
@@ -10172,8 +9968,8 @@ nlu:
     - siento asco y experimente vomito
     - me duele la barriga he lanzado
     - estoy con nauseas y vomite hace poco
-    - me siento mal del estomago y tuve vomitos
-    - estoy a punto de vomitar me siento mal
+    -  del estomago y tuve vomitos
+    - estoy a punto de vomitar 
     - tengo nauseas y lanzo
     - experimento asco y he tenido vomitos
     - me duele la barriga acabo de vomitar
@@ -10185,8 +9981,8 @@ nlu:
     - siento asco y experimente vomito
     - me duele la barriga he lanzado
     - estoy con nauseas y vomite hace poco
-    - me siento mal del estomago y tuve vomitos
-    - estoy a punto de vomitar me siento mal
+    -  del estomago y tuve vomitos
+    - estoy a punto de vomitar 
     - tengo nauseas y lanzo
     - experimento asco y he tenido vomitos
     - me duele la barriga acabo de vomitar
@@ -10198,8 +9994,8 @@ nlu:
     - siento asco y experimente vomito
     - me duele la barriga he lanzado
     - estoy con nauseas y vomite hace poco
-    - me siento mal del estomago y tuve vomitos
-    - estoy a punto de vomitar me siento mal
+    -  del estomago y tuve vomitos
+    - estoy a punto de vomitar 
     - tengo nauseas y lanzo
     - experimento asco y he tenido vomitos
     - me duele la barriga acabo de vomitar
@@ -10211,8 +10007,8 @@ nlu:
     - siento asco y experimente vomito
     - me duele la barriga he lanzado
     - estoy con nauseas y vomite hace poco
-    - me siento mal del estomago y tuve vomitos
-    - estoy a punto de vomitar me siento mal
+    -  del estomago y tuve vomitos
+    - estoy a punto de vomitar 
     - tengo nauseas y lanzo
     - experimento asco y he tenido vomitos
     - me duele la barriga acabo de vomitar
@@ -10224,8 +10020,8 @@ nlu:
     - siento asco y experimente vomito
     - me duele la barriga he lanzado
     - estoy con nauseas y vomite hace poco
-    - me siento mal del estomago y tuve vomitos
-    - estoy a punto de vomitar me siento mal
+    -  del estomago y tuve vomitos
+    - estoy a punto de vomitar 
     - tengo nauseas y lanzo
     - experimento asco y he tenido vomitos
     - me duele la barriga acabo de vomitar
@@ -10235,202 +10031,202 @@ nlu:
     - estoy experimentando nauseas y ya he tenido episodios de vomito
     - mi estomago esta revuelto y recientemente lance
     - tengo la sensacion de querer vomitar y ya lo hice
-    - me siento mal del estomago y acabo de vomitar
+    -  del estomago y acabo de vomitar
     - estoy a punto de arrojar y me siento muy mal
     - siento asco y he tenido vomitos
     - experimento malestar y acabo de lanzar
     - mi estomago no esta bien y ya vomite
     - estoy con nauseas y tuve episodios de vomito
     - tengo la sensacion de querer vomitar y ya lo hice
-    - me siento mal del estomago y he tenido vomitos
+    -  del estomago y he tenido vomitos
     - estoy a punto de arrojar y me siento muy mal
     - siento asco y he lanzado
     - experimento malestar y acabo de vomitar
     - mi estomago no esta bien y ya lanze
     - estoy con nauseas y recientemente vomite
-    - tengo la sensacion de querer vomitar y me siento mal
-    - me siento mal del estomago y acabo de lanzar
+    - tengo la sensacion de querer vomitar y 
+    -  del estomago y acabo de lanzar
     - estoy a punto de arrojar y ya vomite
     - siento asco y he tenido vomitos
     - experimento malestar y lanzo
     - mi estomago no esta bien y he tenido vomitos
     - estoy con nauseas y ya vomite
-    - tengo la sensacion de querer vomitar y me siento mal
-    - me siento mal del estomago y acabo de lanzar
+    - tengo la sensacion de querer vomitar y 
+    -  del estomago y acabo de lanzar
     - estoy a punto de arrojar y he tenido vomitos
     - siento asco y lanzo
     - experimento malestar y ya vomite
-    - mi estomago no esta bien y me siento mal
+    - mi estomago no esta bien y 
     - estoy con nauseas y acabo de lanzar
     - tengo la sensacion de querer vomitar y he tenido vomitos
-    - me siento mal del estomago y ya vomite
+    -  del estomago y ya vomite
     - estoy a punto de arrojar y me siento muy mal
     - siento asco y acabo de lanzar
     - experimento malestar y he tenido vomitos
     - mi estomago no esta bien y recientemente vomite
     - estoy con nauseas y ya lanze
-    - tengo la sensacion de querer vomitar y me siento mal
-    - me siento mal del estomago y a punto de arrojar
+    - tengo la sensacion de querer vomitar y 
+    -  del estomago y a punto de arrojar
     - estoy a punto de vomitar y he tenido vomitos
     - siento asco y recientemente lanzo
     - experimento malestar y acabo de vomitar
     - mi estomago no esta bien y ya vomite
-    - estoy con nauseas y me siento mal
+    - estoy con nauseas y 
     - tengo la sensacion de querer vomitar y acabo de lanzar
-    - me siento mal del estomago y he tenido vomitos
+    -  del estomago y he tenido vomitos
     - estoy a punto de arrojar y ya lanze
     - siento asco y a punto de vomitar
     - experimento malestar y he tenido vomitos
     - mi estomago no esta bien y acabo de vomitar
     - estoy con nauseas y a punto de arrojar
     - tengo la sensacion de querer vomitar y recientemente lanzo
-    - me siento mal del estomago y ya vomite
-    - estoy a punto de vomitar y me siento mal
+    -  del estomago y ya vomite
+    - estoy a punto de vomitar y 
     - siento asco y acabo de lanzar
     - experimento malestar y a punto de arrojar
     - mi estomago no esta bien y he tenido vomitos
     - estoy con nauseas y ya lanze
-    - tengo la sensacion de querer vomitar y me siento mal
-    - me siento mal del estomago y a punto de vomitar
+    - tengo la sensacion de querer vomitar y 
+    -  del estomago y a punto de vomitar
     - estoy a punto de arrojar y he tenido vomitos
     - siento asco y recientemente lanzo
     - experimento malestar y acabo de vomitar
     - mi estomago no esta bien y a punto de vomitar
     - estoy con nauseas y he tenido vomitos
     - tengo la sensacion de querer vomitar y acabo de lanzar
-    - me siento mal del estomago y ya vomite
-    - estoy a punto de arrojar y me siento mal
+    -  del estomago y ya vomite
+    - estoy a punto de arrojar y 
     - siento asco y acabo de lanzar
     - experimento malestar y a punto de arrojar
     - mi estomago no esta bien y recientemente vomite
     - estoy con nauseas y ya lanze
-    - tengo la sensacion de querer vomitar y me siento mal
-    - me siento mal del estomago y a punto de arrojar
+    - tengo la sensacion de querer vomitar y 
+    -  del estomago y a punto de arrojar
     - estoy a punto de vomitar y he tenido vomitos
     - siento asco y a punto de lanzar
     - experimento malestar y recientemente lanzo
     - mi estomago no esta bien y acabo de vomitar
-    - estoy con nauseas y me siento mal
+    - estoy con nauseas y 
     - tengo la sensacion de querer vomitar y a punto de arrojar
-    - me siento mal del estomago y he tenido vomitos
+    -  del estomago y he tenido vomitos
     - estoy a punto de arrojar y ya lanze
     - siento asco y a punto de vomitar
     - experimento malestar y recientemente vomite
     - mi estomago no esta bien y a punto de vomitar
     - estoy con nauseas y he tenido vomitos
     - tengo la sensacion de querer vomitar y acabo de lanzar
-    - me siento mal del estomago y ya vomite
-    - estoy a punto de vomitar y me siento mal
+    -  del estomago y ya vomite
+    - estoy a punto de vomitar y 
     - siento asco y acabo de lanzar
     - experimento malestar y a punto de arrojar
     - mi estomago no esta bien y recientemente vomite
     - estoy con nauseas y ya lanze
-    - tengo la sensacion de querer vomitar y me siento mal
-    - me siento mal del estomago y a punto de arrojar
+    - tengo la sensacion de querer vomitar y 
+    -  del estomago y a punto de arrojar
     - estoy a punto de vomitar y he tenido vomitos
     - siento asco y a punto de lanzar
     - experimento malestar y recientemente lanzo
     - mi estomago no esta bien y acabo de vomitar
-    - estoy con nauseas y me siento mal
+    - estoy con nauseas y 
     - tengo la sensacion de querer vomitar y a punto de arrojar
-    - me siento mal del estomago y he tenido vomitos
+    -  del estomago y he tenido vomitos
     - estoy a punto de arrojar y ya lanze
     - siento asco y a punto de vomitar
     - experimento malestar y recientemente vomite
     - mi estomago no esta bien y a punto de vomitar
     - estoy con nauseas y he tenido vomitos
     - tengo la sensacion de querer vomitar y acabo de lanzar
-    - me siento mal del estomago y ya vomite
-    - estoy a punto de vomitar y me siento mal
+    -  del estomago y ya vomite
+    - estoy a punto de vomitar y 
     - siento asco y acabo de lanzar
     - experimento malestar y a punto de arrojar
     - mi estomago no esta bien y recientemente vomite
     - estoy con nauseas y ya lanze
-    - tengo la sensacion de querer vomitar y me siento mal
-    - me siento mal del estomago y a punto de arrojar
+    - tengo la sensacion de querer vomitar y 
+    -  del estomago y a punto de arrojar
     - estoy a punto de vomitar y he tenido vomitos
     - siento asco y a punto de lanzar
     - experimento malestar y recientemente lanzo
     - mi estomago no esta bien y acabo de vomitar
-    - estoy con nauseas y me siento mal
+    - estoy con nauseas y 
     - tengo la sensacion de querer vomitar y a punto de arrojar
-    - me siento mal del estomago y he tenido vomitos
+    -  del estomago y he tenido vomitos
     - estoy a punto de arrojar y ya lanze
     - siento asco y a punto de vomitar
     - experimento malestar y recientemente vomite
     - mi estomago no esta bien y a punto de vomitar
     - estoy con nauseas y he tenido vomitos
     - tengo la sensacion de querer vomitar y acabo de lanzar
-    - me siento mal del estomago y ya vomite
-    - estoy a punto de vomitar y me siento mal
+    -  del estomago y ya vomite
+    - estoy a punto de vomitar y 
     - siento asco y acabo de lanzar
     - experimento malestar y a punto de arrojar
     - mi estomago no esta bien y recientemente vomite
     - estoy con nauseas y ya lanze
-    - tengo la sensacion de querer vomitar y me siento mal
-    - me siento mal del estomago y a punto de arrojar
+    - tengo la sensacion de querer vomitar y 
+    -  del estomago y a punto de arrojar
     - estoy a punto de vomitar y he tenido vomitos
     - siento asco y a punto de lanzar
     - experimento malestar y recientemente lanzo
     - mi estomago no esta bien y acabo de vomitar
-    - estoy con nauseas y me siento mal
+    - estoy con nauseas y 
     - tengo la sensacion de querer vomitar y a punto de arrojar
-    - me siento mal del estomago y he tenido vomitos
+    -  del estomago y he tenido vomitos
     - estoy a punto de arrojar y ya lanze
     - siento asco y a punto de vomitar
     - experimento malestar y recientemente vomite
     - mi estomago no esta bien y a punto de vomitar
     - estoy con nauseas y he tenido vomitos
     - tengo la sensacion de querer vomitar y acabo de lanzar
-    - me siento mal del estomago y ya vomite
-    - estoy a punto de vomitar y me siento mal
+    -  del estomago y ya vomite
+    - estoy a punto de vomitar y 
     - siento asco y acabo de lanzar
     - experimento malestar y a punto de arrojar
     - mi estomago no esta bien y recientemente vomite
     - estoy con nauseas y ya lanze
-    - tengo la sensacion de querer vomitar y me siento mal
-    - me siento mal del estomago y a punto de arrojar
+    - tengo la sensacion de querer vomitar y 
+    -  del estomago y a punto de arrojar
     - estoy a punto de vomitar y he tenido vomitos
     - siento asco y a punto de lanzar
     - experimento malestar y recientemente lanzo
     - mi estomago no esta bien y acabo de vomitar
-    - estoy con nauseas y me siento mal
+    - estoy con nauseas y 
     - tengo la sensacion de querer vomitar y a punto de arrojar
-    - me siento mal del estomago y he tenido vomitos
+    -  del estomago y he tenido vomitos
     - estoy a punto de arrojar y ya lanze
     - siento asco y a punto de vomitar
     - experimento malestar y recientemente vomite
     - mi estomago no esta bien y a punto de vomitar
     - estoy con nauseas y he tenido vomitos
     - tengo la sensacion de querer vomitar y acabo de lanzar
-    - me siento mal del estomago y ya vomite
-    - estoy a punto de vomitar y me siento mal
+    -  del estomago y ya vomite
+    - estoy a punto de vomitar y 
     - siento asco y acabo de lanzar
     - experimento malestar y a punto de arrojar
     - mi estomago no esta bien y recientemente vomite
     - estoy con nauseas y ya lanze
-    - tengo la sensacion de querer vomitar y me siento mal
-    - me siento mal del estomago y a punto de arrojar
+    - tengo la sensacion de querer vomitar y 
+    -  del estomago y a punto de arrojar
     - estoy a punto de vomitar y he tenido vomitos
     - siento asco y a punto de lanzar
     - experimento malestar y recientemente lanzo
     - mi estomago no esta bien y acabo de vomitar
-    - estoy con nauseas y me siento mal
+    - estoy con nauseas y 
     - tengo la sensacion de querer vomitar y a punto de arrojar
-    - me siento mal del estomago y he tenido vomitos
+    -  del estomago y he tenido vomitos
     - estoy a punto de arrojar y ya lanze
     - siento asco y a punto de vomitar
     - experimento malestar y recientemente vomite
     - mi estomago no esta bien y a punto de vomitar
     - estoy con nauseas y he tenido vomitos
     - tengo la sensacion de querer vomitar y acabo de lanzar
-    - me siento mal del estomago y ya vomite
-    - estoy a punto de vomitar y me siento mal
+    -  del estomago y ya vomite
+    - estoy a punto de vomitar y 
     - siento asco y acabo de lanzar
     - experimento malestar y a punto de arrojar
     - mi estomago no esta bien y recientemente vomite
     - estoy con nauseas y ya lanze
-    - tengo la sensacion de querer vomitar y me siento mal
+    - tengo la sensacion de querer vomitar y 
 
 - intent: origen_nauseas_y_vomito
   examples: |
@@ -21046,13 +20842,10 @@ nlu:
     - experimento impedimentos en la busqueda de la paternidad
     - siento obstaculos en el proceso de concepcion
     - he enfrentado dificultades en la concepcion exitosa
-    - note problemas para lograr la gestacion
     - observe complicaciones en mi capacidad reproductiva
-    - experimento dificultades en la fertilizacion
     - siento obstaculos para lograr un embarazo exitoso
     - he enfrentado desafios en la busqueda de la maternidad
     - note impedimentos para concebir un hijo
-    - observe complicaciones en mi capacidad para quedar embarazada
     - experimento problemas para lograr la gestacion
     - siento obstaculos en el proceso de concepcion
     - he enfrentado dificultades en la fertilizacion exitosa
@@ -21061,13 +20854,10 @@ nlu:
     - experimento impedimentos en la busqueda de la paternidad
     - siento obstaculos en el proceso de concepcion
     - he enfrentado desafios en la concepcion exitosa
-    - note problemas para lograr la gestacion
     - observe complicaciones en mi capacidad reproductiva
-    - experimento dificultades en la fertilizacion
     - siento obstaculos para lograr un embarazo exitoso
     - he enfrentado desafios en la busqueda de la maternidad
     - note impedimentos para concebir un hijo
-    - observe complicaciones en mi capacidad para quedar embarazada
     - experimento problemas para lograr la gestacion
     - siento obstaculos en el proceso de concepcion
     - he enfrentado dificultades en la fertilizacion exitosa
@@ -21474,7 +21264,7 @@ nlu:
     - siento la modulacion meticulosa de la secrecion de insulina
 
 
-- intent: sintomas_relacionados_anti-mulleriana
+- intent: sintomas_relacionados_anti-Mulleriana
   examples: |
     - experimento indicios de menopausia en una etapa temprana
     - siento senales de la menopausia que han aparecido antes de lo esperado

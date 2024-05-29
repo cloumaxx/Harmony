@@ -91,10 +91,6 @@ intents:
   - definicion_insomnio
   - sintoma_comun_insomnio
   - tipos_insomnio
-  - origen_migrana
-  - migrana_allegados
-  - definicion_migrana
-  - tipos_migrana
   
 
 responses:
