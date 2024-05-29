@@ -56,11 +56,13 @@ def get_inforeplicas(replica, db_connection):
         nombreRedactor = usuario['nombre']
         url_imagen_perfil = usuario['url_imagen_perfil']
         dic = {
+           
             "idRedactorReplica": replica['idRedactorReplica'],
             "nombreRedactor": nombreRedactor,
             "url_imagen_perfil": url_imagen_perfil,
             "contenidoReplica": replica['contenidoReplica'],
             "fechaPublicacion":replica['fechaPublicacion'],
+            "idReplica": replica.get('idReplica', "") if replica.get('idReplica') else "1",
             "likes": replica['likes']
         }
         return dic
