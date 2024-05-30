@@ -511,8 +511,9 @@ def pantalla_perfil_usuario(request, usuario_id):
             # Obtener el número de página a mostrar
             numero_pagina = request.GET.get('page')
             page_obj = paginator.get_page(numero_pagina)
-            
-            return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": page_obj})
+            usuario_id_Object = ObjectId(str(usuario_id))
+
+            return render(request, 'pantalla_perfil_usuario/pantalla_perfil_usuario.html', {'usuario_id': usuario_id,'usuario_obj':usuario_obj, "comentarios": page_obj,"usuario_id_Object":usuario_id_Object})
         else:
             return HttpResponseBadRequest("Usuario no encontrado")
     
