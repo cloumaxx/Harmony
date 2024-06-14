@@ -197,7 +197,7 @@
                     </a>
                     <br><br>
                     <div id="cont_button">
-                        <a  href="{% url 'pantalla_registro' %}">
+                        <a data-bs-toggle="modal" data-bs-target="#largeModal">
                             ¿No tienes una cuenta? Crea tu cuenta hoy
                         </a>
                      </div>
@@ -209,6 +209,298 @@
           </div>
         </div>
       </section>
+
+      <div class="modal fade" id="largeModal" tabindex="-1">
+        <style>
+            #logoNavbar {
+                margin: 5px;
+                margin-bottom: 15px;
+                width: 300px;
+                height: 100%;
+            }
+            #navbar{
+                position: fixed;
+                background-color: #D9D9D9;
+                text-align: center;
+                width: 100%;
+                height: 60px;
+                padding-bottom: 10px;
+            }
+            .form-control {
+                border-radius: 17px;
+                background: #E9DEB3;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+    
+            .form-control:active,
+            .form-control:focus {
+                background-color: #bbb395;
+                /* Color oscurecido al hacer clic o enfocar el input */
+            }
+    
+            .centered-div {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            #formulario {
+                width: 100%;
+            }
+    
+            #body {
+                background-color: #F1F0EC;
+            }
+    
+            #titulo {
+                text-align: center;
+                padding: 1vw;
+            }
+    
+            #cont_button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 20px;
+            }
+    
+            #boton1 {
+                border-radius: 17px;
+                background: #3853FF;
+                width: 35%;
+            }
+    
+            #boton2 {
+                border-radius: 17px;
+                background: #3853FF;
+                width: 40%;
+            }
+    
+            #cont_img {
+    
+                margin-left: -14%;
+                flex-shrink: 0;
+            }
+    
+            #img {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 5;
+                max-width: 100%;
+                height: 50%;
+            }
+    
+            #contendor {
+                padding-top: 30px;
+                display: flex;
+                align-items: flex-start;
+            }
+            .form-label{
+                font-size: 20px;
+            }
+            .oculto {
+                display: none;
+            }
+            
+            .spinner {
+                border: 9px solid rgba(0, 0, 0, 0.1);
+                border-left: 9px solid white;
+                border-radius: 50%;
+                width: 65px;
+                height: 65px;
+                animation: spin 1s linear infinite;
+                margin: auto;
+                z-index: 9999;
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+    
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+    
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Selecciona el formulario por su id
+                var formulario = document.getElementById("formulario");
+                
+    
+                formulario.addEventListener("submit", function (event) {
+                    // Agrega aquí tus validaciones para cada campo
+                    var nombre = document.getElementById("id_nombre").value;
+                    var apellido = document.getElementById("id_apellido").value;
+                    var correo = document.getElementById("id_correo").value;
+                    var clave = document.getElementById("id_clave").value;
+                    var claveDoble = document.getElementById("id_clave_doble").value;
+                    var genero = document.getElementById("id_genero").value;
+                    var fechaNacimiento = document.getElementById("id_fecha_nacimiento").value;
+                    var valido = true;
+                    var mensaje = "";
+                    if (nombre === "" || apellido === "" || correo === "" || clave === "" || genero ===
+                        "" || fechaNacimiento === "") {
+                        // Si algún campo está vacío, muestra un mensaje de error y evita enviar el formulario
+                        mensaje="Por favor, complete todos los campos.";
+                        valido = false;
+                        
+                    } else if (clave !== claveDoble) {
+                        // Si las contraseñas no son iguales, muestra un mensaje de error y evita enviar el formulario
+                        mensaje="Las contraseñas no coinciden.";
+                        valido = false;
+                    } else {
+                        var fechaActual = new Date();
+                        var fechaNacimientoDate = new Date(fechaNacimiento);
+                        var diferenciaTiempo = fechaActual - fechaNacimientoDate;
+                        var edad = Math.floor(diferenciaTiempo / (365.25 * 24 * 60 * 60 * 1000));
+    
+                        if (edad < 14) {
+                            mensaje="Recuerda que la aplicación es para adolescentes de 14 años en adelante";
+                            valido = false;
+                        }
+                    }
+                    if (valido==true) {
+                        mostrarCarga();
+                    }else{
+                        alert(mensaje);
+                        event.preventDefault();
+                    }
+                });
+            });
+            function mostrarCarga() {
+                var carga = document.getElementById("carga");
+                carga.classList.remove("oculto");
+    
+                setTimeout(function () {
+                    carga.classList.add("oculto");
+                }, 8000); // Cambia 3000 por el tiempo real de tu proceso
+            }
+            $(document).ready(function () {
+    
+                var columnChat = document.getElementById('main');
+                columnChat.scrollTop = columnChat.scrollHeight;
+            });
+        </script>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Crear una Cuenta</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formulario" method="POST" action="{% url 'pantalla_registro' %}"
+                enctype="multipart/form-data" >
+            
+                {% csrf_token %}
+                <div class="row g-3">
+                    <div class="col form-outline md-6">
+                        <div>
+                            <label for="id_nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="id_nombre" name="nombre"
+                                aria-describedby="emailHelp" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="col form-outline md-6">
+                        <div>
+                            <label for="id_apellido" class="form-label">Apellido:</label>
+                            <input type="text" class="form-control" id="id_apellido" name="apellido"
+                                aria-describedby="emailHelp" placeholder="Apellido">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-outline mb-9">
+                    <div>
+                        <label for="id_correo" class="form-label">Correo electrónico:</label>
+                        <input type="email" class="form-control" id="id_correo" name="correo"
+                    aria-describedby="emailHelp" placeholder="usuario@gmail.com">
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col form-outline mb-9">
+                        <div>
+                            <label for="id_clave" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="id_clave" name="clave"
+                        aria-describedby="emailHelp">
+                        </div>
+                    </div>
+                    <div class="col form-outline mb-9">
+                        <div>
+                            <label for="id_clave_doble" class="form-label">Vuelve a escribir la contraseña:</label>
+                        <input type="password" class="form-control" id="id_clave_doble" name="clave_doble"
+                        aria-describedby="emailHelp">
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    
+                <div class="col form-outline mb-9">
+                    <div>
+                        <label for="id_genero" class="form-label">Género:</label>
+                        <select class="form-control" id="id_genero" name="genero">
+                            <option value="" disabled selected>Selecciona tu género</option>
+                            <option value="H">Hombre</option>
+                            <option value="M">Mujer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col form-outline mb-9">
+                    <div>
+                        <label for="id_fecha_nacimiento" class="form-label">Cuando naciste:</label><br>
+                        <label style="font-size: 12px;" for="id_fecha_nacimiento" class="form-label">(Recuerda que debes ser mayor de 14 años)</label>
+                        <input type="date" class="form-control" id="id_fecha_nacimiento" name="fecha_nacimiento"
+                    aria-describedby="emailHelp">
+                    </div>
+                </div>
+                </div>
+                
+                <div class="form-outline mb-9">
+                    <div>
+                        <label for="imagen_perfil_label" class="form-label">¿Deseas subir una imagen tuya?</label>
+                        <br>
+                        <input type="file" id="imagen_perfil" name="imagen_perfil" accept="image/png, image/jpeg">
+                        <script>
+                          const uploadField = document.getElementById("imagen_perfil");
+
+                          uploadField.onchange = function() {
+                              if(this.files[0].size > 2097152) {
+                              alert("El archivo no puede exceder los 2 MB!");
+                              this.value = "";
+                              }
+                          };
+                      </script>
+                    </div>
+                </div>
+                
+
+                <div class="form-outline mb-4">
+                    
+                <div class="buttons"></div>
+                <div id="cont_button" class="action_btn">
+                    <button id="boton1" type="submit" class="btn btn-primary" id="custom-register-button" >
+                        Registrarme 
+                    </button>
+                    <div style="width: 100px;">
+
+                    </div>
+                    <p id="saved"></p>
+                </div>
+                </div>
+            </form>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div><!-- End Large Modal-->
 </body>
 
 </html>
