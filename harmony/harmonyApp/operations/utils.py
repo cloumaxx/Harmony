@@ -141,7 +141,7 @@ def decifrarClaves(clave):
     return texto_descifrado
 
 def comunicacionMillyApi(pregunta ):
-    webhook_url = 'https://rasaharmony.azurewebsites.net/webhooks/rest/webhook'
+    webhook_url = 'https://apirasaharmony.azurewebsites.net/webhooks/rest/webhook'
 
     headers = {
         'Content-Type': 'application/json'

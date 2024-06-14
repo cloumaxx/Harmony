@@ -614,6 +614,10 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
             conversaciones.append([])
             posicion = 0
             conversacion = conversaciones[posicion]
+            info_chat ={
+                'nombre_chat': 'Chat #'+str(len()),
+            }
+            conversaciones.append(info_chat)
             db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
 
         else:
@@ -624,6 +628,19 @@ def pantalla_chatbot(request, usuario_id,posicion=0):
         # Manejar el error si el ObjectId no es válido
         #return render(request,"pantalla_chatbot/pantalla_chatbot.html")
         return HttpResponseBadRequest(f"Usuario no válido: {usuario_id}<br> posicion: {posicion} <br> palabraBuscar: {palabraBuscar} <br> comentarios: {comentarios}   ")
+@login_required
+def editarNombreChat(request, usuario_id,posicion=0):
+    usuario_id = ObjectId(str(request.session['id_user']))
+    if request.method == 'POST':
+        # Obtener el usuario de la base de datos
+        usuario = db_connection.db.Usuario.find_one({'_id': ObjectId(usuario_id)})
+        if usuario:
+            conversaciones = usuario.get('conversaciones', [])
+            conversacion = conversaciones[posicion]
+            conversacion_inicial = conversacion[0]
+            conversacion_inicial['nombre_chat'] = request.POST.get('nuevo_nombre') 
+            db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})       
+    return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
 
 @login_required
 def crearNuevoChat(request, usuario_id,posicion=0):
@@ -635,9 +652,13 @@ def crearNuevoChat(request, usuario_id,posicion=0):
         if usuario:
             # Obtener las conversaciones actuales del usuario
             conversaciones = usuario.get('conversaciones', [])
-            
+            conversacion = []
+            info_chat ={
+                'nombre_chat': 'Chat #'+str(len(conversaciones)),
+            }
+            conversacion.append(info_chat)
             # Agregar una nueva conversación vacía
-            conversaciones.append([])
+            conversaciones.append(conversacion)
             # Actualizar las conversaciones en la base de datos
             db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
         return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=len(conversaciones)-1)
@@ -656,6 +677,7 @@ def vaciarChat(request,usuario_id,posicion):
                 conversaciones[posicion] = chat
                 db_connection.db.Usuario.update_one({'_id': ObjectId(usuario_id)}, {'$set': {'conversaciones': conversaciones}})
                 return redirect('pantalla_chatbot', usuario_id=usuario_id,posicion=posicion)
+    
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 @login_required
